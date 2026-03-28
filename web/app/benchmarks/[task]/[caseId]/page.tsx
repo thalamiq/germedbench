@@ -7,8 +7,9 @@ import {
   getModelRun,
   getICD10Catalog,
 } from "@/lib/data";
-import { Card, CardContent } from "@thalamiq/ui/components/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@thalamiq/ui/components/card";
 import { Badge } from "@thalamiq/ui/components/badge";
+import { Separator } from "@thalamiq/ui/components/separator";
 import { getModelMeta } from "@/lib/types";
 import type { SummarizationPrediction, ClinicalReasoningPrediction, NERPrediction, MedExtractionPrediction } from "@/lib/types";
 
@@ -38,6 +39,23 @@ export async function generateMetadata({
     alternates: { canonical: `/benchmarks/${task}/${caseId}` },
   };
 }
+
+// ---------------------------------------------------------------------------
+// Score pill helper
+// ---------------------------------------------------------------------------
+
+function ScorePill({ label, value, muted }: { label: string; value: string | number; muted?: boolean }) {
+  return (
+    <div className="flex flex-col items-center gap-0.5">
+      <span className={`font-mono text-sm font-semibold ${muted ? "text-muted-foreground" : ""}`}>{value}</span>
+      <span className="text-[10px] text-muted-foreground">{label}</span>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Page
+// ---------------------------------------------------------------------------
 
 export default async function CaseDetailPage({
   params,
@@ -84,18 +102,20 @@ export default async function CaseDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl">
+      {/* Breadcrumb */}
       <div className="mb-1 flex gap-1 text-sm text-muted-foreground">
-        <Link href="/benchmarks" className="hover:text-foreground">
+        <Link href="/benchmarks" className="hover:text-foreground transition-colors">
           Benchmarks
         </Link>
         <span>/</span>
-        <Link href={`/benchmarks/${task}`} className="hover:text-foreground">
+        <Link href={`/benchmarks/${task}`} className="hover:text-foreground transition-colors">
           {taskName}
         </Link>
       </div>
 
-      <div className="mb-8 flex items-center gap-3">
-        <h1 className="font-mono text-2xl font-semibold tracking-tight">
+      {/* Header */}
+      <div className="mb-6 flex flex-wrap items-center gap-2 sm:gap-3">
+        <h1 className="font-mono text-xl font-semibold tracking-tight sm:text-2xl">
           {caseData.id}
         </h1>
         <Badge variant="outline">{caseData.fachbereich}</Badge>
@@ -112,9 +132,16 @@ export default async function CaseDetailPage({
       </div>
 
       {/* Clinical text */}
-      <p className="mb-8 text-sm leading-relaxed text-muted-foreground">
-        {caseData.text}
-      </p>
+      <Card className="mb-8">
+        <CardContent className="py-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">
+            Klinischer Text
+          </p>
+          <p className="text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
+            {caseData.text}
+          </p>
+        </CardContent>
+      </Card>
 
       {/* Ground truth */}
       <div className="mb-10">
@@ -122,249 +149,267 @@ export default async function CaseDetailPage({
           Ground Truth
         </h2>
 
-        {isICD10 && "diagnosen" in caseData && (
-          <div className="space-y-1.5">
-            {caseData.diagnosen.map((d) => (
-              <div key={d.code} className="flex items-baseline gap-3 text-sm">
-                <code className="w-16 shrink-0 font-mono text-xs">{d.code}</code>
-                <span className="text-muted-foreground">{d.display}</span>
-                {d.typ === "Hauptdiagnose" && (
-                  <Badge variant="secondary" className="ml-auto text-xs">HD</Badge>
-                )}
+        <Card>
+          <CardContent className="py-4">
+            {isICD10 && "diagnosen" in caseData && (
+              <div className="space-y-2">
+                {caseData.diagnosen.map((d) => (
+                  <div key={d.code} className="flex items-center gap-3 text-sm">
+                    <code className="w-16 shrink-0 rounded bg-muted px-1.5 py-0.5 text-center font-mono text-xs">
+                      {d.code}
+                    </code>
+                    <span className="flex-1 text-muted-foreground">{d.display}</span>
+                    {d.typ === "Hauptdiagnose" && (
+                      <Badge variant="default" className="shrink-0 text-xs">HD</Badge>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
+            )}
 
-        {isSumm && "gold_summary" in caseData && (
-          <div className="space-y-3">
-            {(["hauptdiagnose", "therapie", "procedere", "offene_fragen"] as const).map((field) => (
-              <div key={field}>
-                <p className="text-xs font-medium capitalize text-foreground">
-                  {field === "offene_fragen" ? "Offene Fragen" : field.charAt(0).toUpperCase() + field.slice(1)}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {caseData.gold_summary[field]}
-                </p>
+            {isSumm && "gold_summary" in caseData && (
+              <div className="space-y-4">
+                {([
+                  ["Hauptdiagnose", caseData.gold_summary.hauptdiagnose],
+                  ["Therapie", caseData.gold_summary.therapie],
+                  ["Procedere", caseData.gold_summary.procedere],
+                  ["Offene Fragen", caseData.gold_summary.offene_fragen],
+                ] as const).map(([label, text]) => (
+                  <div key={label}>
+                    <p className="mb-1 text-xs font-medium text-foreground">{label}</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
+            )}
 
-        {isCR && "gold_diagnoses" in caseData && (
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-foreground">
-              Bestätigte Diagnose: {caseData.correct_diagnosis}
-            </p>
-            {caseData.gold_diagnoses.map((d, i) => (
-              <div key={i} className="flex items-baseline gap-3 text-sm">
-                <span className="w-6 shrink-0 font-mono text-xs text-muted-foreground">#{i + 1}</span>
-                <div>
-                  <span className="font-medium">{d.name}</span>
-                  {d.icd10_code && (
-                    <code className="ml-2 text-xs text-muted-foreground">{d.icd10_code}</code>
-                  )}
-                  <Badge variant="secondary" className="ml-2 text-xs">{d.likelihood}</Badge>
-                  <p className="mt-0.5 text-xs text-muted-foreground">
-                    {d.key_findings.join(", ")}
-                  </p>
+            {isCR && "gold_diagnoses" in caseData && (
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-medium text-foreground">Bestätigte Diagnose:</span>
+                  <Badge variant="default" className="text-xs">{caseData.correct_diagnosis}</Badge>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {isNER && "entities" in caseData && (
-          <div className="space-y-1.5">
-            {(["diagnose", "prozedur", "medikament", "laborwert"] as const).map((typ) => {
-              const filtered = caseData.entities.filter((e) => e.typ === typ);
-              if (filtered.length === 0) return null;
-              return (
-                <div key={typ}>
-                  <p className="mb-1 text-xs font-medium capitalize text-foreground">{typ}n ({filtered.length})</p>
-                  {filtered.map((e, i) => (
-                    <div key={i} className="flex items-baseline gap-2 text-xs text-muted-foreground">
-                      <span className="font-medium text-foreground">{e.name}</span>
-                      {e.code && <code className="font-mono">{e.code}</code>}
-                      {e.wirkstoff && <span>{e.wirkstoff}</span>}
-                      {e.dosierung && <span>{e.dosierung}</span>}
-                      {e.parameter && <span>{e.parameter}</span>}
-                      {e.wert && <span>{e.wert} {e.einheit}</span>}
+                <Separator />
+                <div className="space-y-3">
+                  {caseData.gold_diagnoses.map((d, i) => (
+                    <div key={i} className="flex gap-3">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted font-mono text-xs text-muted-foreground">
+                        {i + 1}
+                      </span>
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-sm font-medium">{d.name}</span>
+                          {d.icd10_code && (
+                            <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-muted-foreground">{d.icd10_code}</code>
+                          )}
+                          <Badge variant="secondary" className="text-xs">{d.likelihood}</Badge>
+                        </div>
+                        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                          {d.key_findings.join(" · ")}
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>
-              );
-            })}
-          </div>
-        )}
-
-        {isMed && "medications" in caseData && (
-          <div className="space-y-1.5">
-            {caseData.medications.map((m, i) => (
-              <div key={i} className="flex items-baseline gap-3 text-sm">
-                <span className="font-medium text-foreground">{m.wirkstoff}</span>
-                <span className="text-muted-foreground">{m.dosis}</span>
-                <span className="text-muted-foreground">{m.frequenz}</span>
-                {m.darreichungsform && (
-                  <Badge variant="outline" className="text-xs">{m.darreichungsform}</Badge>
-                )}
               </div>
-            ))}
-          </div>
-        )}
+            )}
+
+            {isNER && "entities" in caseData && (
+              <div className="space-y-4">
+                {(["diagnose", "prozedur", "medikament", "laborwert"] as const).map((typ) => {
+                  const filtered = caseData.entities.filter((e) => e.typ === typ);
+                  if (filtered.length === 0) return null;
+                  const typLabels: Record<string, string> = {
+                    diagnose: "Diagnosen",
+                    prozedur: "Prozeduren",
+                    medikament: "Medikamente",
+                    laborwert: "Laborwerte",
+                  };
+                  return (
+                    <div key={typ}>
+                      <p className="mb-2 text-xs font-medium text-foreground">
+                        {typLabels[typ]} <span className="text-muted-foreground">({filtered.length})</span>
+                      </p>
+                      <div className="space-y-1.5">
+                        {filtered.map((e, i) => (
+                          <div key={i} className="flex flex-wrap items-center gap-2 text-xs">
+                            <span className="font-medium text-foreground">{e.name}</span>
+                            {e.code && <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-muted-foreground">{e.code}</code>}
+                            {e.wirkstoff && e.wirkstoff !== e.name && <span className="text-muted-foreground">{e.wirkstoff}</span>}
+                            {e.dosierung && <span className="text-muted-foreground">{e.dosierung}</span>}
+                            {e.parameter && <span className="text-muted-foreground">{e.parameter}</span>}
+                            {e.wert && <span className="text-muted-foreground">{e.wert} {e.einheit}</span>}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
+            {isMed && "medications" in caseData && (
+              <div className="space-y-2">
+                {caseData.medications.map((m, i) => (
+                  <div key={i} className="flex flex-wrap items-center gap-2 text-sm">
+                    <span className="font-medium text-foreground">{m.wirkstoff}</span>
+                    <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-muted-foreground">{m.dosis}</span>
+                    <span className="text-xs text-muted-foreground">{m.frequenz}</span>
+                    {m.darreichungsform && (
+                      <Badge variant="outline" className="text-xs">{m.darreichungsform}</Badge>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
 
       {/* Model predictions */}
       {modelPredictions.length > 0 && (
         <div>
           <h2 className="mb-4 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Modell-Ergebnisse
+            Modell-Ergebnisse ({modelPredictions.length})
           </h2>
           <div className="space-y-3">
             {modelPredictions.map(({ model, meta, prediction }) => {
               const hasError = prediction.error || prediction.parse_error;
 
+              // ICD-10
               if (isICD10) {
                 const predCodes = new Set((prediction.codes ?? []) as string[]);
                 const tp = [...predCodes].filter((c) => goldCodes.has(c));
                 const fp = [...predCodes].filter((c) => !goldCodes.has(c));
                 const fn = [...goldCodes].filter((c) => !predCodes.has(c));
                 const perfect = !hasError && fp.length === 0 && fn.length === 0;
+                const goldHd = ("diagnosen" in caseData) ? caseData.diagnosen.find((d) => d.typ === "Hauptdiagnose") : undefined;
+                const hdCorrect = goldHd && prediction.hauptdiagnose === goldHd.code;
 
                 return (
-                  <Card key={model} className={perfect ? "border-green-500/20" : ""}>
-                    <CardContent className="flex items-start gap-4 py-3">
-                      <div className="w-32 shrink-0">
-                        <Link
-                          href={`/model/${encodeURIComponent(model)}`}
-                          className="text-sm font-medium hover:underline"
-                        >
-                          {meta.shortName}
-                        </Link>
+                  <Card key={model} className={perfect ? "border-green-500/30" : ""}>
+                    <CardHeader className="pb-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Link href={`/model/${encodeURIComponent(model)}`} className="text-sm font-medium hover:underline">
+                            {meta.shortName}
+                          </Link>
+                          <span className="text-xs text-muted-foreground">{meta.provider}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {hasError ? (
+                            <Badge variant="destructive" className="text-xs">Fehler</Badge>
+                          ) : (
+                            <>
+                              {goldHd && (
+                                <span className={`text-xs font-medium ${hdCorrect ? "text-green-600" : "text-destructive"}`}>
+                                  HD {hdCorrect ? "✓" : "✗"}
+                                </span>
+                              )}
+                              <Badge variant={perfect ? "default" : "secondary"} className="text-xs">
+                                {tp.length}/{goldCodes.size}
+                              </Badge>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-3">
+                      {hasError ? (
                         <p className="text-xs text-muted-foreground">
-                          {hasError ? "Fehler" : perfect ? "Perfekt" : `${tp.length}/${goldCodes.size} korrekt`}
+                          {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
                         </p>
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        {hasError ? (
-                          <p className="text-xs text-destructive">
-                            {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
-                          </p>
-                        ) : (
-                          <div className="space-y-1">
-                            {tp.map((c) => (
-                              <div key={c} className="flex items-center gap-2 text-xs">
-                                <span className="text-green-600">&#10003;</span>
-                                <code className="font-mono">{c}</code>
-                                {catalog[c] && <span className="text-muted-foreground">{catalog[c].display}</span>}
-                              </div>
-                            ))}
-                            {fp.map((c) => (
-                              <div key={c} className="flex items-center gap-2 text-xs">
-                                <span className="text-destructive">+</span>
-                                <code className="font-mono text-destructive">{c}</code>
-                                <span className="text-muted-foreground">{catalog[c] ? catalog[c].display : "ungültiger Code"}</span>
-                              </div>
-                            ))}
-                            {fn.map((c) => (
-                              <div key={c} className="flex items-center gap-2 text-xs">
-                                <span className="text-muted-foreground">&#10007;</span>
-                                <code className="font-mono text-muted-foreground line-through">{c}</code>
-                                <span className="text-muted-foreground">nicht erkannt</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
+                      ) : (
+                        <div className="space-y-1.5">
+                          {tp.map((c) => (
+                            <div key={c} className="flex items-center gap-2 text-xs">
+                              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-green-500/10 text-green-600 text-[10px]">✓</span>
+                              <code className="rounded bg-muted px-1.5 py-0.5 font-mono">{c}</code>
+                              {catalog[c] && <span className="text-muted-foreground">{catalog[c].display}</span>}
+                            </div>
+                          ))}
+                          {fp.map((c) => (
+                            <div key={c} className="flex items-center gap-2 text-xs">
+                              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-destructive/10 text-destructive text-[10px]">+</span>
+                              <code className="rounded bg-destructive/10 px-1.5 py-0.5 font-mono text-destructive">{c}</code>
+                              <span className="text-muted-foreground">{catalog[c] ? catalog[c].display : "ungültiger Code"}</span>
+                            </div>
+                          ))}
+                          {fn.map((c) => (
+                            <div key={c} className="flex items-center gap-2 text-xs">
+                              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground text-[10px]">✗</span>
+                              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-muted-foreground line-through">{c}</code>
+                              <span className="text-muted-foreground">nicht erkannt</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 );
               }
 
-              if (isMed) {
-                const pred = prediction as MedExtractionPrediction;
-                const medCount = pred.medications?.length ?? 0;
+              // Summarization
+              if (isSumm) {
+                const pred = prediction as SummarizationPrediction;
+                const scores = pred.judge_scores;
 
                 return (
                   <Card key={model}>
-                    <CardContent className="flex items-start gap-4 py-3">
-                      <div className="w-32 shrink-0">
-                        <Link
-                          href={`/model/${encodeURIComponent(model)}`}
-                          className="text-sm font-medium hover:underline"
-                        >
-                          {meta.shortName}
-                        </Link>
-                        <p className="font-mono text-xs text-muted-foreground">
-                          {medCount} Medikamente
-                        </p>
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        {hasError ? (
-                          <p className="text-xs text-destructive">
-                            {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
-                          </p>
-                        ) : (
-                          <div className="space-y-1 text-xs text-muted-foreground">
-                            {pred.medications?.slice(0, 5).map((m, i) => (
-                              <div key={i} className="flex items-baseline gap-2">
-                                <span className="font-medium text-foreground">{m.wirkstoff}</span>
-                                <span>{m.dosis}</span>
-                                <span>{m.frequenz}</span>
-                              </div>
-                            ))}
-                            {medCount > 5 && <p>+{medCount - 5} weitere</p>}
-                          </div>
+                    <CardHeader className="pb-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Link href={`/model/${encodeURIComponent(model)}`} className="text-sm font-medium hover:underline">
+                            {meta.shortName}
+                          </Link>
+                          <span className="text-xs text-muted-foreground">{meta.provider}</span>
+                        </div>
+                        {scores && (
+                          <Badge variant="secondary" className="font-mono text-xs">
+                            {scores.overall.toFixed(1)}/5
+                          </Badge>
                         )}
                       </div>
+                    </CardHeader>
+                    <CardContent className="pt-3">
+                      {hasError ? (
+                        <p className="text-xs text-muted-foreground">
+                          {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
+                        </p>
+                      ) : (
+                        <div className="space-y-3">
+                          {scores && (
+                            <div className="flex gap-4 rounded-md bg-muted/50 px-3 py-2">
+                              <ScorePill label="Fakten" value={scores.faktentreue} />
+                              <ScorePill label="Vollst." value={scores.vollstaendigkeit} />
+                              <ScorePill label="Halluz." value={scores.halluzinationsfreiheit} />
+                              <ScorePill label="Format" value={scores.formatkonformitaet} />
+                            </div>
+                          )}
+                          {pred.summary && (
+                            <div className="space-y-2 text-xs">
+                              <div>
+                                <span className="font-medium text-foreground">Hauptdiagnose: </span>
+                                <span className="text-muted-foreground">{pred.summary.hauptdiagnose}</span>
+                              </div>
+                              <div>
+                                <span className="font-medium text-foreground">Therapie: </span>
+                                <span className="text-muted-foreground">{pred.summary.therapie}</span>
+                              </div>
+                              <div>
+                                <span className="font-medium text-foreground">Procedere: </span>
+                                <span className="text-muted-foreground">{pred.summary.procedere}</span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 );
               }
 
-              if (isNER) {
-                const pred = prediction as NERPrediction;
-                const entityCount = pred.entities?.length ?? 0;
-
-                return (
-                  <Card key={model}>
-                    <CardContent className="flex items-start gap-4 py-3">
-                      <div className="w-32 shrink-0">
-                        <Link
-                          href={`/model/${encodeURIComponent(model)}`}
-                          className="text-sm font-medium hover:underline"
-                        >
-                          {meta.shortName}
-                        </Link>
-                        <p className="font-mono text-xs text-muted-foreground">
-                          {entityCount} Entitäten
-                        </p>
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        {hasError ? (
-                          <p className="text-xs text-destructive">
-                            {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
-                          </p>
-                        ) : (
-                          <div className="space-y-1.5 text-xs text-muted-foreground">
-                            {pred.entities?.slice(0, 6).map((e, i) => (
-                              <div key={i} className="flex items-center gap-2">
-                                <Badge variant="outline" className="text-xs shrink-0">{e.typ}</Badge>
-                                <span className="font-medium text-foreground">{e.name}</span>
-                                {e.code && <code className="font-mono">{e.code}</code>}
-                              </div>
-                            ))}
-                            {(pred.entities?.length ?? 0) > 6 && (
-                              <p className="text-muted-foreground">+{(pred.entities?.length ?? 0) - 6} weitere</p>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              }
-
+              // Clinical Reasoning
               if (isCR) {
                 const pred = prediction as ClinicalReasoningPrediction;
                 const jScores = pred.judge_scores;
@@ -372,124 +417,169 @@ export default async function CaseDetailPage({
 
                 return (
                   <Card key={model}>
-                    <CardContent className="flex items-start gap-4 py-3">
-                      <div className="w-32 shrink-0">
-                        <Link
-                          href={`/model/${encodeURIComponent(model)}`}
-                          className="text-sm font-medium hover:underline"
-                        >
-                          {meta.shortName}
-                        </Link>
+                    <CardHeader className="pb-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Link href={`/model/${encodeURIComponent(model)}`} className="text-sm font-medium hover:underline">
+                            {meta.shortName}
+                          </Link>
+                          <span className="text-xs text-muted-foreground">{meta.provider}</span>
+                        </div>
                         {aScores && (
-                          <p className="font-mono text-xs text-muted-foreground">
-                            Top-1: {aScores.top1_accuracy ? "Yes" : "No"}
-                          </p>
+                          <Badge variant={aScores.top1_accuracy ? "default" : "secondary"} className="text-xs">
+                            Top-1 {aScores.top1_accuracy ? "✓" : "✗"}
+                          </Badge>
                         )}
                       </div>
-                      <div className="min-w-0 flex-1">
-                        {hasError ? (
-                          <p className="text-xs text-destructive">
-                            {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
-                          </p>
-                        ) : (
-                          <div className="space-y-3">
-                            {(aScores || jScores) && (
-                              <div className="flex gap-3">
-                                {aScores && ([
-                                  ["Top1", aScores.top1_accuracy ? "1" : "0"],
-                                  ["Top3", aScores.top3_recall ? "1" : "0"],
-                                  ["F1", aScores.ddx_overlap_f1.toFixed(2)],
-                                ] as const).map(([label, val]) => (
-                                  <div key={label} className="text-center">
-                                    <p className="font-mono text-sm font-semibold">{val}</p>
-                                    <p className="text-xs text-muted-foreground">{label}</p>
+                    </CardHeader>
+                    <CardContent className="pt-3">
+                      {hasError ? (
+                        <p className="text-xs text-muted-foreground">
+                          {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
+                        </p>
+                      ) : (
+                        <div className="space-y-3">
+                          {(aScores || jScores) && (
+                            <div className="flex gap-4 rounded-md bg-muted/50 px-3 py-2">
+                              {aScores && (
+                                <>
+                                  <ScorePill label="Top-3" value={aScores.top3_recall ? "✓" : "✗"} muted={!aScores.top3_recall} />
+                                  <ScorePill label="DDx F1" value={aScores.ddx_overlap_f1.toFixed(2)} />
+                                </>
+                              )}
+                              {jScores && (
+                                <>
+                                  <ScorePill label="Reasoning" value={jScores.reasoning_quality} />
+                                  <ScorePill label="Plausib." value={jScores.ddx_plausibility} />
+                                  <ScorePill label="Red Flags" value={jScores.red_flag_awareness} />
+                                </>
+                              )}
+                            </div>
+                          )}
+                          {pred.differentialdiagnosen && (
+                            <div className="space-y-2">
+                              {pred.differentialdiagnosen.map((d, i) => (
+                                <div key={i} className="flex gap-2 text-xs">
+                                  <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-muted font-mono text-[10px] text-muted-foreground">
+                                    {i + 1}
+                                  </span>
+                                  <div className="flex-1">
+                                    <span className="font-medium text-foreground">{d.name}</span>
+                                    <p className="mt-0.5 leading-relaxed text-muted-foreground">{d.reasoning}</p>
                                   </div>
-                                ))}
-                                {jScores && ([
-                                  ["RQ", jScores.reasoning_quality],
-                                  ["DP", jScores.ddx_plausibility],
-                                  ["RF", jScores.red_flag_awareness],
-                                ] as const).map(([label, val]) => (
-                                  <div key={label} className="text-center">
-                                    <p className="font-mono text-sm font-semibold">{val}</p>
-                                    <p className="text-xs text-muted-foreground">{label}</p>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                            {pred.differentialdiagnosen && (
-                              <div className="space-y-1.5 text-xs text-muted-foreground">
-                                {pred.differentialdiagnosen.map((d, i) => (
-                                  <p key={i}>
-                                    <span className="font-medium text-foreground">#{i + 1} {d.name}</span>
-                                    {" "}{d.reasoning}
-                                  </p>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 );
               }
 
-              // Summarization
-              const pred = prediction as SummarizationPrediction;
-              const scores = pred.judge_scores;
+              // NER
+              if (isNER) {
+                const pred = prediction as NERPrediction;
+                const entityCount = pred.entities?.length ?? 0;
+                const goldCount = ("entities" in caseData) ? caseData.entities.length : 0;
 
-              return (
-                <Card key={model}>
-                  <CardContent className="flex items-start gap-4 py-3">
-                    <div className="w-32 shrink-0">
-                      <Link
-                        href={`/model/${encodeURIComponent(model)}`}
-                        className="text-sm font-medium hover:underline"
-                      >
-                        {meta.shortName}
-                      </Link>
-                      {scores && (
-                        <p className="font-mono text-xs text-muted-foreground">
-                          {scores.overall.toFixed(1)}/5
-                        </p>
-                      )}
-                    </div>
-                    <div className="min-w-0 flex-1">
+                return (
+                  <Card key={model}>
+                    <CardHeader className="pb-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Link href={`/model/${encodeURIComponent(model)}`} className="text-sm font-medium hover:underline">
+                            {meta.shortName}
+                          </Link>
+                          <span className="text-xs text-muted-foreground">{meta.provider}</span>
+                        </div>
+                        <Badge variant="secondary" className="text-xs">
+                          {entityCount}/{goldCount} Entitäten
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-3">
                       {hasError ? (
-                        <p className="text-xs text-destructive">
+                        <p className="text-xs text-muted-foreground">
                           {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
                         </p>
                       ) : (
-                        <div className="space-y-3">
-                          {scores && (
-                            <div className="flex gap-3">
-                              {([
-                                ["F", scores.faktentreue],
-                                ["V", scores.vollstaendigkeit],
-                                ["H", scores.halluzinationsfreiheit],
-                                ["K", scores.formatkonformitaet],
-                              ] as const).map(([label, val]) => (
-                                <div key={label} className="text-center">
-                                  <p className="font-mono text-sm font-semibold">{val}</p>
-                                  <p className="text-xs text-muted-foreground">{label}</p>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                          {pred.summary && (
-                            <div className="space-y-1.5 text-xs text-muted-foreground">
-                              <p><span className="font-medium text-foreground">HD:</span> {pred.summary.hauptdiagnose}</p>
-                              <p><span className="font-medium text-foreground">Therapie:</span> {pred.summary.therapie}</p>
-                              <p><span className="font-medium text-foreground">Procedere:</span> {pred.summary.procedere}</p>
-                            </div>
-                          )}
+                        <div className="flex flex-wrap gap-1.5">
+                          {pred.entities?.map((e, i) => {
+                            const typeColors: Record<string, string> = {
+                              diagnose: "border-blue-500/30 bg-blue-500/5",
+                              prozedur: "border-amber-500/30 bg-amber-500/5",
+                              medikament: "border-green-500/30 bg-green-500/5",
+                              laborwert: "border-purple-500/30 bg-purple-500/5",
+                            };
+                            return (
+                              <span
+                                key={i}
+                                className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs ${typeColors[e.typ] ?? "border-border"}`}
+                              >
+                                <span className="text-muted-foreground">{e.typ}</span>
+                                <span className="font-medium">{e.name}</span>
+                              </span>
+                            );
+                          })}
                         </div>
                       )}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
+                    </CardContent>
+                  </Card>
+                );
+              }
+
+              // Med Extraction
+              if (isMed) {
+                const pred = prediction as MedExtractionPrediction;
+                const medCount = pred.medications?.length ?? 0;
+                const goldCount = ("medications" in caseData) ? caseData.medications.length : 0;
+
+                return (
+                  <Card key={model}>
+                    <CardHeader className="pb-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Link href={`/model/${encodeURIComponent(model)}`} className="text-sm font-medium hover:underline">
+                            {meta.shortName}
+                          </Link>
+                          <span className="text-xs text-muted-foreground">{meta.provider}</span>
+                        </div>
+                        <Badge variant="secondary" className="text-xs">
+                          {medCount}/{goldCount} Medikamente
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-3">
+                      {hasError ? (
+                        <p className="text-xs text-muted-foreground">
+                          {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
+                        </p>
+                      ) : (
+                        <div className="space-y-1.5">
+                          {pred.medications?.map((m, i) => (
+                            <div key={i} className="flex flex-wrap items-center gap-2 text-xs">
+                              <span className="font-medium text-foreground">{m.wirkstoff}</span>
+                              {m.dosis && (
+                                <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-muted-foreground">{m.dosis}</span>
+                              )}
+                              {m.frequenz && (
+                                <span className="text-muted-foreground">{m.frequenz}</span>
+                              )}
+                              {m.darreichungsform && (
+                                <Badge variant="outline" className="text-xs">{m.darreichungsform}</Badge>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+              }
+
+              return null;
             })}
           </div>
         </div>

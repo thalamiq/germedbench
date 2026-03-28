@@ -1,0 +1,148 @@
+{
+  "summary": {
+    "model": "qwen3-32b",
+    "task": "icd10_coding",
+    "timestamp": "20260328_214445",
+    "n_cases": 10,
+    "n_scored": 0,
+    "n_parse_errors": 10,
+    "n_api_errors": 0,
+    "exact_match_f1": 0,
+    "exact_match_precision": 0,
+    "exact_match_recall": 0,
+    "category_match_f1": 0,
+    "hauptdiagnose_accuracy": 0
+  },
+  "predictions": [
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis should be the most specific one mentioned, and the rest are secondary.\n\nLooking at the text: The patient has an acute exacerbation of chronic heart failure. The ICD-10-GM code for chronic heart failure is I50.90, but since it's an acute exacerbation, I should check if there's a more specific code. Wait, I50.90 is for chronic heart failure, unspecified. For acute on chronic, maybe I50.91? Let me confirm. In the 2025 version, I50.91 is for acute on chronic heart failure. So that's the main diagnosis.\n\nNext, the patient has a reduced left ventricular ejection fraction (LVEF 30%), which is coded as I50.90? Wait, no. The LVEF is a subcategory. I50.90 is for heart failure without specifying LVEF. But there's a more specific code for reduced EF. Let me check. I50.91 is for acute on chronic, and the subcategory for reduced EF would be I50.91. Wait, maybe I50.91 is the main code here. Let me verify. The text says \"hochgradig reduzierte linksventrikuläre Ejektionsfraktion (LVEF ca. 30 %) bei globaler Hypokinesie.\" So the main diagnosis is acute exacerbation of chronic heart failure with reduced EF. The code for that is I50.91. So the main code is I50.91.\n\nThen, the patient has arterial hypertension (I10.90) and type 2 diabetes mellitus (E11.90). Both are mentioned as existing conditions. So those are secondary diagnoses.\n\nWait, the user said to mark exactly one main diagnosis. The acute exacerbation is the main reason for admission, so I50.91 is the main code. The hypertension and diabetes are comorbidities, so they are secondary.\n\nSo the codes would be:\n\nMain: I50.91 (Acute on chronic heart failure with reduced EF)\n\nSecondary: I10.90 (Essential hypertension), E11.90 (Type 2 diabetes mellitus, unspecified)\n\nI need to make sure the codes are in the correct format. I50.91 is correct for the main diagnosis. The others are I10.90 and E11.90. Let me double-check the 2025 version to confirm these codes. Yes, I10.90 is for essential hypertension without complications, and E11.90 is for type 2 diabetes without complications. The patient's diabetes is managed dietetically, so no complications, hence E11.90.\n\nSo the final JSON should list I50.91 as the main diagnosis and the other two as secondary.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"I50.91\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2110,
+      "response_length": 2580,
+      "usage": {
+        "prompt_tokens": 690,
+        "completion_tokens": 749
+      },
+      "case_id": "case_001"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis is the NSTEMI, which is a non-ST elevation myocardial infarction. The ICD-10 code for that is I20.0. Wait, no, wait. Wait, I20.0 is for unstable angina. But the text mentions a Troponin-T increase and EKG changes, so it's an NSTEMI. The correct code for NSTEMI is I21.0. Let me confirm that. Yes, I21.0 is for acute myocardial infarction, unspecified, but in the context of NSTEMI, I21.0 is the right code. \n\nNext, the patient has a history of type 2 diabetes mellitus. The code for that is E11.90, which is the unspecified form. Then there's arterial hypertension, which is I10.90. The coronary artery disease with a stenosis in the left anterior descending artery is I25.10. The left ventricular dysfunction with an ejection fraction of 48% is I50.90. \n\nNow, the main diagnosis should be the NSTEMI (I21.0), and the rest are secondary. Let me check if all these codes are valid in the 2025 version. I21.0 is correct. E11.90 for diabetes without complications. I10.90 for essential hypertension. I25.10 for atherosclerotic heart disease. I50.90 for heart failure, unspecified. \n\nI need to make sure there are no other conditions mentioned. The text also mentions the stent placement, but that's a procedure, not a diagnosis. The apical hypokinesia is part of the LV dysfunction. So the codes should be I21.0 (main), E11.90, I10.90, I25.10, I50.90. Let me double-check each code against the 2025 ICD-10-GM guidelines to ensure they're correct. Yes, all these codes are valid. The main diagnosis is the acute MI, and the others are comorbidities.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"I21.0\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I25.10\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I50.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2271,
+      "response_length": 2003,
+      "usage": {
+        "prompt_tokens": 734,
+        "completion_tokens": 638
+      },
+      "case_id": "case_002"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis should be the most specific one mentioned, and the rest are secondary.\n\nLooking at the text, the patient has an acute exacerbation of COPD (GOLD IV). The ICD-10-GM code for acute exacerbation of COPD is J44.1. Since GOLD IV is mentioned, maybe there's a more specific code, but J44.1 is the standard for acute exacerbation. \n\nNext, the patient has a history of arterial hypertension (I10.90). The text mentions \"arterieller Hypertonus,\" which is hypertension. The code I10.90 is for essential (primary) hypertension without complications. \n\nDiabetes mellitus Type 2 is present. The code for that is E11.90, which is Type 2 diabetes without complications. \n\nChronic kidney insufficiency stage 3 is mentioned. The code for that is N18.3. \n\nThe patient also has a long-term nicotine abuse (40 pack-years). The code for nicotine dependence is F17.210. \n\nRespiratory insufficiency is noted with paO2 52 mmHg. The code for respiratory insufficiency is J96.90. \n\nThe text also mentions elevated inflammatory parameters (CRP 84, leukocytes 14.2). However, these are lab results and not a diagnosis, so no code needed here. \n\nThe main diagnosis is the acute exacerbation of COPD (J44.1). The other conditions are secondary. I need to check if all codes are from the 2025 version. Let me confirm each code:\n\n- J44.1: Acute exacerbation of COPD (correct)\n- I10.90: Essential hypertension (correct)\n- E11.90: Type 2 diabetes without complications (correct)\n- N18.3: Chronic kidney disease stage 3 (correct)\n- F17.210: Nicotine dependence (correct)\n- J96.90: Respiratory insufficiency (correct)\n\nI think that's all. The main diagnosis is J44.1, and the rest are secondary. Let me structure the JSON accordingly.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"J44.1\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"F17.210\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J96.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2146,
+      "response_length": 2204,
+      "usage": {
+        "prompt_tokens": 685,
+        "completion_tokens": 664
+      },
+      "case_id": "case_003"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis is the one that's most significant, and the rest are secondary.\n\nLooking at the text, the patient presented with an acute brachiofacial paresis on the right and mild motor aphasia. The NIHSS score was 4, and they had a diffusion lesion in the left MCA territory. The stroke was ischaemic, and they received thrombolytic therapy. The codes for stroke need to be specific. \n\nFor the main diagnosis, since it's an ischaemic stroke in the MCA territory, the code would be I63.3 for cerebral infarction due to occlusion of the MCA. The subcode might be I63.31 for the left side. But wait, the text says \"kleinfleckige Diffusionsstörung im Versorgungsgebiet der Arteria cerebri media links,\" so left MCA. So I63.31.\n\nNow, the other conditions. The patient has hypertension, as they're on Ramipril. The code for essential hypertension is I10.90. Also, hyperlipidemia is mentioned with Atorvastatin, so E78.5 for hypercholesterolemia. The motor aphasia is a residual effect, so G74.4 for motor aphasia. The brachiofacial paresis is a transient ischaemic attack, so G45.9 for unspecified TIA. \n\nWait, but the stroke was acute and they had a full recovery. The codes for stroke should be the acute phase. The TIA might not be necessary if the stroke is the main event. Hmm, the text mentions the symptoms resolved completely, but the MRI showed an infarction. So the main diagnosis is the stroke. The TIA might not be needed here. Let me check the ICD-10-GM guidelines. If there's an infarction, it's a stroke, not a TIA. So maybe G45.9 isn't needed. \n\nAlso, the patient has a history of hypertension and hyperlipidemia, which are risk factors. So I10.90 and E78.5 as secondary diagnoses. The motor aphasia is a residual effect, so G74.4. \n\nWait, the aphasia resolved? The text says \"rasche und vollständige Regredienz der neurologischen Defizite,\" so the aphasia resolved. Then maybe G74.4 isn't needed because it's a resolved condition. But the code for transient aphasia might be G45.9. But since the stroke is the main event, maybe the aphasia is part of the stroke's manifestations. \n\nI think the main code is I63.31, then I10.90, E78.5, and G74.4. Let me confirm. The ICD-10-GM for cerebral infarction in MCA left is I63.31. Hypertension is I10.90. Hypercholesterolemia is E78.5. The motor aphasia, even if resolved, is a residual effect, so G74.4. But if it's resolved, maybe it's not coded. Hmm, tricky. The text says the NIHSS was 0 at discharge, so no residual deficits. Then maybe the aphasia is part of the stroke and doesn't need a separate code. \n\nSo the main diagnosis is I63.31, and the secondary are I10.90 and E78.5. Let me check again. The patient was on Ramipril and Atorvastatin, so those are for hypertension and hyperlipidemia. So those are comorbidities. The stroke is the main reason for admission. So the codes would be:\n\nMain: I63.31 (Cerebral infarction due to occlusion of the left MCA)\n\nSecondary: I10.90 (Essential hypertension), E78.5 (Hypercholesterolemia)\n\nI think that's it. The aphasia and paresis are part of the stroke and don't need separate codes since they resolved. The TIA code isn't needed because there's an infarction. So the final answer should have those three codes.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"I63.31\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2281,
+      "response_length": 3567,
+      "usage": {
+        "prompt_tokens": 733,
+        "completion_tokens": 1038
+      },
+      "case_id": "case_004"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis should be the primary reason for the hospital visit, and the rest are secondary.\n\nLooking at the text, the patient presented with acute hematochezia and dizziness. The main issue here is the gastrointestinal bleeding from a diverticulum. The colonoscopy found an active bleed in the sigmoid colon, which was treated with clips. So the main diagnosis would be the acute lower gastrointestinal hemorrhage. The ICD-10-GM code for that is K25.0 (acute lower gastrointestinal hemorrhage, unspecified), but since it's from a diverticulum, maybe K25.1 (acute lower gastrointestinal hemorrhage due to diverticulosis). Wait, the text says \"Divertikulose des Kolons\" which is diverticulosis. So K25.1 is more specific. \n\nThen the secondary diagnoses: the patient has a known diverticulosis (K57.31), hypertension (I10.90), and type 2 diabetes (E11.90). Also, the use of aspirin (ASS) is mentioned, but that's a medication, not a diagnosis. The anemia from blood loss would be D62.8 (other anemia due to chronic disease), but the text mentions a hemoglobin drop, so maybe D62.8 is appropriate. Wait, the patient had a significant drop from 14.2 to 10.8, which is acute blood loss anemia. The code for acute blood loss anemia is D62.0. But the text says \"relevanter Hämoglobinabfall\", which is a significant drop, so D62.0 might be better. However, the ICD-10-GM codes for anemia due to blood loss are D62.0 (acute) and D62.1 (chronic). Since the bleeding was acute, D62.0 would be correct. \n\nWait, but the main diagnosis is the hemorrhage itself, and the anemia is a consequence. So the main code is K25.1, and the anemia is a secondary code. Let me check the ICD-10-GM 2025 codes. K25.1 is \"Akutes unteres gastrointestinales Blutungsereignis aufgrund von Divertikulose\". That fits. The anemia due to acute blood loss would be D62.0. So the codes would be:\n\nMain: K25.1 (acute lower GI hemorrhage due to diverticulosis)\nSecondary: K57.31 (diverticulosis of colon), I10.90 (essential hypertension), E11.90 (type 2 diabetes), D62.0 (acute blood loss anemia).\n\nWait, but the text mentions the patient had a known diverticulosis, so K57.31 is a comorbidity. The main diagnosis is the acute bleed. The anemia is a result of the acute blood loss, so D62.0. Let me confirm the codes. Yes, K25.1 is the main, and the others are secondary. The other codes are present in the text. So the final list should include all these.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"K25.1\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"K57.31\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"D62.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2078,
+      "response_length": 2861,
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 857
+      },
+      "case_id": "case_005"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. I need to extract all ICD-10-GM codes from the given clinical text, using the 2025 version. The main diagnosis should be marked as such, and the rest as secondary. Let me start by reading through the text carefully.\n\nFirst, the patient has metastatic sigmoid cancer (pT3, N1, M1b). The ICD-10 code for malignant neoplasm of the sigmoid colon is C18.7. Since it's metastatic, I should check if there's a specific code for metastasis. The text mentions M1b, which in ICD-10-GM is coded as C78.7 for secondary malignant neoplasm of the liver. Wait, but the primary is the sigmoid, so the main code would be C18.7, and the metastasis as a secondary code. But the user wants the main diagnosis to be the primary one. So C18.7 as the main diagnosis.\n\nNext, the patient has febrile neutropenia. The code for febrile neutropenia is D61.1. That's a secondary diagnosis.\n\nChronic kidney disease stage 3 is mentioned. The code for chronic kidney disease stage 3 is N18.3. That's another secondary.\n\nDiabetes mellitus type 2, insulin-dependent. The code for that is E11.90. Secondary.\n\nArterial hypertension. The code is I10.90. Secondary.\n\nCOPD GOLD II. The code for COPD is J44.11. Secondary.\n\nPrerenal acute kidney injury. The code for prerenal acute kidney failure is N94.0. Secondary.\n\nSystemic inflammatory response (CRP 145). The code for systemic inflammatory response is R65.1. Secondary.\n\nSo compiling all these, the main diagnosis is the sigmoid cancer (C18.7), and the rest are secondary. Let me check each code against the 2025 version to ensure they're correct. Also, make sure the codes are in the right format with the decimal and three digits after. For example, C18.7, D61.1, N18.3, etc. I think that's all. Let me list them out again to confirm.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"C18.7\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"D61.1\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J44.11\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N94.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R65.1\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2332,
+      "response_length": 2198,
+      "usage": {
+        "prompt_tokens": 755,
+        "completion_tokens": 679
+      },
+      "case_id": "case_006"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis should be marked, and the rest as secondary.\n\nLooking at the text: The patient has dyspnea on exertion (NYHA III), leg edema, hypertension, hypercholesterolemia, and a reduced ejection fraction. The echocardiogram shows concentric myocardial hypertrophy, which points to hypertensive heart disease. The NT-proBNP is high, indicating heart failure. The treatment includes diuretics and beta-blockers, which are for heart failure management.\n\nSo, the main diagnosis is probably heart failure. The ICD-10-GM code for heart failure with reduced ejection fraction is I50.22. The text mentions LVEF of 42%, which is reduced, so I50.22 is specific enough. \n\nHypertensive heart disease is I11.0. The patient has a history of hypertension and the echocardiogram shows concentric hypertrophy, so that's a secondary diagnosis. \n\nHypercholesterolemia is E78.5. The text mentions hypercholesterinemia, so that's another secondary code. \n\nThe patient also has peripheral edema, which is R60.0. But wait, the edema is part of the heart failure, so maybe it's not a separate code. However, the text specifically mentions progressive leg edema, so R60.0 could be a secondary diagnosis. \n\nWait, but in ICD-10-GM, edema as a symptom is R60.0. Since the edema is due to heart failure, it's a manifestation, so maybe it's not coded separately. But the guidelines might require coding the symptom if it's explicitly mentioned. I need to check. The rules say to code as specific as the text allows. The text says \"progredienten Beinödemen\", so R60.0 is appropriate as a secondary diagnosis.\n\nSo the codes would be:\n\nMain: I50.22 (Heart failure with reduced ejection fraction)\n\nSecondary: I11.0 (Hypertensive heart disease), E78.5 (Hypercholesterolemia), R60.0 (Peripheral edema)\n\nWait, but the text also mentions NYHA III, which is a classification of heart failure severity. The ICD-10-GM code for heart failure with reduced EF is I50.22, which includes the severity. So no need for an additional code for NYHA III. \n\nDouble-checking the codes for 2025. I11.0 is for hypertensive heart disease. E78.5 is for hypercholesterolemia. R60.0 for peripheral edema. I50.22 for heart failure with reduced EF. \n\nYes, that seems right. So the main diagnosis is I50.22, and the others are secondary.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"I50.22\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I11.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R60.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 1982,
+      "response_length": 2673,
+      "usage": {
+        "prompt_tokens": 671,
+        "completion_tokens": 756
+      },
+      "case_id": "case_007"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis is NSTEMI, which in ICD-10-GM is I20.0. Then there's hypertension (I10.90), type 2 diabetes (E11.90), nicotine dependence (F17.20), hypercholesterolemia (E78.5), and reduced ejection fraction (I50.23). I need to check each of these codes for the 2025 version. The main diagnosis is NSTEMI, so I20.0 is the main code. The others are secondary. Let me verify each code to ensure they're correct for 2025. Also, make sure the format is correct with the decimal and three digits after. No markdown, just JSON. Alright, that should cover all the diagnoses mentioned.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"I20.0\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"F17.20\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I50.23\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2077,
+      "response_length": 1066,
+      "usage": {
+        "prompt_tokens": 676,
+        "completion_tokens": 365
+      },
+      "case_id": "case_008"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis is the primary one, and the rest are secondary.\n\nLooking at the text, the patient has COPD in stage GOLD IV/D. The ICD-10-GM code for COPD is J44.11. Since it's in a severe stage, that's the main diagnosis. Then there's an acute exacerbation mentioned, which would be J44.11 as well, but maybe with a subcode. Wait, the text says \"infektgetriggerte Exazerbation,\" so maybe J44.11 is the main code, and the exacerbation is part of that. \n\nNext, the patient has chronic heart failure. The code for that is I50.90. The text mentions \"chronische Herzinsuffizienz\" and \"kardiale Kompensation,\" so I50.90 fits. Also, the NT-proBNP is high, which supports heart failure. \n\nThere's also a respiratory insufficiency from the blood gas analysis (pH 7.32, pCO2 58, pO2 52). The code for respiratory insufficiency is J96.90. The text says \"respiratorische Globalinsuffizienz,\" so J96.90 is appropriate. \n\nDiabetes mellitus type 2 is mentioned, which is E11.90. The patient has it and it's stable, so that's a secondary code. \n\nChronic kidney disease stage 3a is present. The code for that is N18.3. The text states \"chronische Niereninsuffizienz (Stadium 3a)\" and the creatinine is 1.4 mg/dl, which aligns with stage 3a. \n\nSo the main diagnosis is the COPD exacerbation (J44.11), and the others are secondary. Let me check each code again to ensure they're correct for 2025. J44.11 is for COPD with acute lower respiratory infection, which fits the exacerbation. I50.90 is for heart failure, unspecified. J96.90 is for respiratory insufficiency, unspecified. E11.90 is for type 2 diabetes without complications. N18.3 is for CKD stage 3a. \n\nI think that's all. Let me make sure there are no other conditions mentioned. The patient had a productive cough, but that's part of the COPD exacerbation. The treatment includes steroids and antibiotics, which are for the exacerbation. The main diagnosis is the COPD with exacerbation, so J44.11 as the main code. The rest are secondary.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I50.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J96.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2221,
+      "response_length": 2425,
+      "usage": {
+        "prompt_tokens": 731,
+        "completion_tokens": 747
+      },
+      "case_id": "case_009"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": "<think>\nOkay, let's tackle this. The user wants me to extract ICD-10-GM codes from the clinical text provided. First, I need to make sure I'm using the 2025 version. The main diagnosis should be the most specific one mentioned, and the rest are secondary.\n\nLooking at the text, the patient had an acute vertigo, nausea, and gait instability. The MRI showed a fresh ischemic infarct in the left PICA territory of the cerebellum. That's a cerebellar infarction. The ICD-10 code for cerebellar infarction is I63.3. But wait, the text says \"frischer ischämischer Infarkt im linksseitigen PICA-Stromgebiet (Kleinhirn)\". So, I63.3 is for infarction of the cerebellum. The main diagnosis here is the stroke, so that's the primary code.\n\nNext, the patient has a history of arterial hypertension (arterielle Hypertonie) and hypercholesterolemia (Hypercholesterinämie). For hypertension, the code is I10.90 (Essential (primary) hypertension without complications). Hypercholesterolemia is E78.5 (Hypercholesterolemia). \n\nThe EKG showed a regular sinus rhythm without signs of atrial fibrillation. But the text mentions recommending a long-term EKG to rule out paroxysmal atrial fibrillation. However, since there's no current diagnosis of atrial fibrillation, that's not coded here. \n\nThe treatment includes secondary prevention with aspirin and blood pressure medication. The codes for the conditions being treated (hypertension and hypercholesterolemia) are already included as secondary diagnoses.\n\nSo, the main diagnosis is the cerebellar infarction (I63.3), and the secondary diagnoses are hypertension (I10.90) and hypercholesterolemia (E78.5). I need to check if these codes are in the 2025 version. I63.3 is correct for cerebellar infarction. I10.90 is for essential hypertension without complications. E78.5 is for hypercholesterolemia. \n\nWait, the user mentioned to code as specific as the text allows. The infarction is in the PICA territory, but I63.3 is the code for cerebellar infarction, which is specific enough. There's no more detailed code for PICA territory in ICD-10-GM. So I63.3 is correct. \n\nNo other conditions are mentioned that need coding. The vertigo and gait issues are symptoms of the infarction, so they don't need separate codes. The hypertension and hypercholesterolemia are comorbidities, so they are secondary. \n\nSo the final codes should be I63.3 as main, and I10.90 and E78.5 as secondary. Let me double-check the ICD-10-GM 2025 codes to confirm. Yes, I63.3 is for infarction of the cerebellum. I10.90 is for essential hypertension without complications. E78.5 is for hypercholesterolemia. All correct.\n</think>\n\n{\n  \"diagnosen\": [\n    {\"code\": \"I63.3\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2178,
+      "response_length": 2805,
+      "usage": {
+        "prompt_tokens": 706,
+        "completion_tokens": 793
+      },
+      "case_id": "case_010"
+    }
+  ]
+}

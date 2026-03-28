@@ -74,6 +74,59 @@ export function icd10Display(code: string): string {
   return entry?.display ?? code;
 }
 
+// Primary metric per task, normalized to 0-1 for aggregation
+const TASK_PRIMARY_METRIC: Record<string, { key: string; scale: number }> = {
+  icd10_coding: { key: "exact_match_f1", scale: 1 },      // already 0-1
+  summarization: { key: "overall_score", scale: 5 },       // 1-5 -> /5
+  clinical_reasoning: { key: "overall_score", scale: 5 },  // 1-5 -> /5
+  ner: { key: "micro_f1", scale: 1 },                      // already 0-1
+  med_extraction: { key: "wirkstoff_f1", scale: 1 },       // already 0-1
+};
+
+export interface AggregatedScore {
+  model: string;
+  shortName: string;
+  provider: string;
+  size: import("./types").ModelSize;
+  score: number;       // 0-100 normalized average
+  taskCount: number;   // how many tasks this model has results for
+}
+
+export function getAggregatedScores(): AggregatedScore[] {
+  const all = getLeaderboard();
+  // Group by model
+  const byModel = new Map<string, LeaderboardEntry[]>();
+  for (const r of all) {
+    const list = byModel.get(r.model) ?? [];
+    list.push(r);
+    byModel.set(r.model, list);
+  }
+
+  const scores: AggregatedScore[] = [];
+  for (const [model, results] of byModel) {
+    let total = 0;
+    let count = 0;
+    for (const r of results) {
+      const cfg = TASK_PRIMARY_METRIC[r.task];
+      if (!cfg) continue;
+      const raw = r[cfg.key] as number | undefined;
+      if (raw == null) continue;
+      total += raw / cfg.scale; // normalize to 0-1
+      count++;
+    }
+    if (count === 0) continue;
+    const meta = getModelMeta(model);
+    scores.push({
+      model,
+      ...meta,
+      score: (total / count) * 100, // 0-100
+      taskCount: count,
+    });
+  }
+
+  return scores.sort((a, b) => b.score - a.score);
+}
+
 export function getAllModelIds(): string[] {
   if (!fs.existsSync(RESULTS_DIR)) return [];
   return fs

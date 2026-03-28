@@ -1,0 +1,179 @@
+{
+  "summary": {
+    "model": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "task": "icd10_coding",
+    "timestamp": "20260328_213954",
+    "n_cases": 10,
+    "n_scored": 8,
+    "n_parse_errors": 2,
+    "n_api_errors": 0,
+    "exact_match_f1": 0.42297979797979796,
+    "exact_match_precision": 0.4708333333333333,
+    "exact_match_recall": 0.39226190476190476,
+    "category_match_f1": 0.6473484848484848,
+    "hauptdiagnose_accuracy": 0.0
+  },
+  "predictions": [
+    {
+      "codes": [
+        "I50.90",
+        "I10.90",
+        "E11.90"
+      ],
+      "hauptdiagnose": "I50.90",
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"I50.90\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2110,
+      "response_length": 168,
+      "usage": {
+        "prompt_tokens": 762,
+        "completion_tokens": 86
+      },
+      "case_id": "case_001"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n\nAnmerkungen:\n- Hauptdiagnose: I21.4 (Nicht-ST-Hebungsinfarkt)\n- Nebendiagnosen: I10.90 (Primäre Hypertonie), E11.90 (Diabetes mellitus ohne Komplikationen)",
+      "prompt_length": 2271,
+      "response_length": 324,
+      "usage": {
+        "prompt_tokens": 817,
+        "completion_tokens": 160
+      },
+      "case_id": "case_002"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "I10.90",
+        "I10",
+        "E11.90",
+        "N18.3"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2146,
+      "response_length": 260,
+      "usage": {
+        "prompt_tokens": 770,
+        "completion_tokens": 130
+      },
+      "case_id": "case_003"
+    },
+    {
+      "codes": [
+        "I63.0",
+        "G81.0",
+        "I60.90",
+        "I48.9",
+        "Z87.39"
+      ],
+      "hauptdiagnose": "I63.0",
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"I63.0\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"G81.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I60.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I48.9\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z87.39\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2281,
+      "response_length": 261,
+      "usage": {
+        "prompt_tokens": 792,
+        "completion_tokens": 131
+      },
+      "case_id": "case_004"
+    },
+    {
+      "codes": [
+        "K57.0",
+        "I10.90",
+        "I10",
+        "E11.90"
+      ],
+      "hauptdiagnose": "K57.0",
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"K57.0\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2078,
+      "response_length": 212,
+      "usage": {
+        "prompt_tokens": 749,
+        "completion_tokens": 106
+      },
+      "case_id": "case_005"
+    },
+    {
+      "codes": [
+        "C18.7",
+        "I10.90",
+        "I11.90",
+        "J44.9"
+      ],
+      "hauptdiagnose": "C18.7",
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"C18.7\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J44.9\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2332,
+      "response_length": 214,
+      "usage": {
+        "prompt_tokens": 830,
+        "completion_tokens": 108
+      },
+      "case_id": "case_006"
+    },
+    {
+      "codes": [
+        "I50.90",
+        "I10.90",
+        "E78.0"
+      ],
+      "hauptdiagnose": "I50.90",
+      "raw": " {\n  \"diagnosen\": [\n    {\n      \"code\": \"I50.90\",\n      \"typ\": \"Hauptdiagnose\"\n    },\n    {\n      \"code\": \"I10.90\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"E78.0\",\n      \"typ\": \"Nebendiagnose\"\n    }\n  ]\n}",
+      "prompt_length": 1982,
+      "response_length": 221,
+      "usage": {
+        "prompt_tokens": 742,
+        "completion_tokens": 109
+      },
+      "case_id": "case_007"
+    },
+    {
+      "codes": [],
+      "hauptdiagnose": null,
+      "parse_error": true,
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"F17.20\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n\nAnmerkungen:\n- Hauptdiagnose: I21.4 (Nicht-ST-Hebungsmyokardinfarkt [NSTEMI])\n- Nebendiagnosen:\n  - I10.90 (Primärer Hypertonus, unbekannte und nicht spezifizierte Untergruppe)\n  - E11.90 (Diabetes mellitus Typ 2 ohne Komplikationen)\n  - F17.20 (Nikotinabhängigkeit, unkompliziert)\n  - E78.0 (Hypercholesterinämie)",
+      "prompt_length": 2077,
+      "response_length": 578,
+      "usage": {
+        "prompt_tokens": 759,
+        "completion_tokens": 282
+      },
+      "case_id": "case_008"
+    },
+    {
+      "codes": [
+        "I25.50",
+        "J44.9",
+        "E11.90",
+        "N18.3"
+      ],
+      "hauptdiagnose": "I25.50",
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"I25.50\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"J44.9\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2221,
+      "response_length": 214,
+      "usage": {
+        "prompt_tokens": 807,
+        "completion_tokens": 108
+      },
+      "case_id": "case_009"
+    },
+    {
+      "codes": [
+        "H81.10",
+        "I10.90",
+        "E78.0"
+      ],
+      "hauptdiagnose": "H81.10",
+      "raw": " {\n  \"diagnosen\": [\n    {\"code\": \"H81.10\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2178,
+      "response_length": 167,
+      "usage": {
+        "prompt_tokens": 783,
+        "completion_tokens": 85
+      },
+      "case_id": "case_010"
+    }
+  ]
+}

@@ -112,7 +112,7 @@ Closed-Source als Referenz:
 
 ## Team und Hintergrund
 
-GerMedBench wird von **ThalamiQ GmbH** initiiert — einem deutschen Healthcare-AI-Unternehmen mit Fokus auf klinische KI-Infrastruktur und FHIR-Interoperabilität. Das Projekt entsteht in enger Zusammenarbeit mit dem **Institut für KI in der Medizin (IKIM)** am Universitätsklinikum Essen, das direkte klinische Deployment-Erfahrung und Zugang zu medizinisch-informatischem Know-how einbringt.
+GerMedBench wird von **ThalamiQ GmbH** initiiert — einem deutschen Healthcare-AI-Unternehmen mit Fokus auf klinische KI-Infrastruktur und FHIR-Interoperabilität.
 
 Wir verstehen GerMedBench als neutrales, wissenschaftlich fundiertes Instrument — kein Vendor-Tool, sondern ein offener Standard für die Community.
 

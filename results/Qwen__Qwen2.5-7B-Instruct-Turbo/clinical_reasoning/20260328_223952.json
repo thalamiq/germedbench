@@ -1,0 +1,480 @@
+{
+  "summary": {
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "task": "clinical_reasoning",
+    "timestamp": "20260328_223952",
+    "n_cases": 10,
+    "n_scored": 10,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "top1_accuracy": 0.0,
+    "top3_recall": 0.1,
+    "ddx_overlap_f1": 0.075,
+    "reasoning_quality": 1.4,
+    "ddx_plausibility": 1.9,
+    "red_flag_awareness": 2.0,
+    "overall_score": 1.1766666666666665
+  },
+  "predictions": [
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Rechtsherzinsuffizienz",
+          "icd10_code": "I50.9",
+          "reasoning": "Die klinischen Symptome wie Belastungsdyspnoe, Orthopnoe, Anschwellungen der Beine und prätibiale Ödeme, sowie die erhöhten NT-proBNP-Werte und Kardiomegalie auf dem Röntgenbild sind typisch für Rechtsherzinsuffizienz.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Myokardialer Infarkt",
+          "icd10_code": "I21",
+          "reasoning": "Die erhöhten Troponin-Werte und die feuchten Rasselgeräusche in den Lungenflügeln könnten auf einen Myokardialen Infarkt hinweisen. Allerdings gibt es keine akuten Schmerzen, was die Wahrscheinlichkeit etwas reduziert, aber dennoch in Betracht gezogen werden muss.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pulmonale Hypertonie",
+          "icd10_code": "I27.0",
+          "reasoning": "Die erhöhte Gefäßzeichnung in den Oberfeldern (Kranialisation) und die jugularvenöse Stauung könnten auf eine pulmonale Hypertonie hinweisen. Diese kann durch Rechtsherzinsuffizienz oder andere Ursachen wie eine chronische Obstruktive Pneumonie (COPD) verursacht werden.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+          "icd10_code": "J44",
+          "reasoning": "Die feuchten Rasselgeräusche in den Lungenflügeln und die Kranialisation könnten auch auf eine COPD hinweisen. Allerdings gibt es keine akuten Schmerzen, was die Wahrscheinlichkeit etwas reduziert, aber dennoch in Betracht gezogen werden muss.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Rechtsherzinsuffizienz\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Die klinischen Symptome wie Belastungsdyspnoe, Orthopnoe, Anschwellungen der Beine und prätibiale Ödeme, sowie die erhöhten NT-proBNP-Werte und Kardiomegalie auf dem Röntgenbild sind typisch für Rechtsherzinsuffizienz.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Myokardialer Infarkt\",\n      \"icd10_code\": \"I21\",\n      \"reasoning\": \"Die erhöhten Troponin-Werte und die feuchten Rasselgeräusche in den Lungenflügeln könnten auf einen Myokardialen Infarkt hinweisen. Allerdings gibt es keine akuten Schmerzen, was die Wahrscheinlichkeit etwas reduziert, aber dennoch in Betracht gezogen werden muss.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pulmonale Hypertonie\",\n      \"icd10_code\": \"I27.0\",\n      \"reasoning\": \"Die erhöhte Gefäßzeichnung in den Oberfeldern (Kranialisation) und die jugularvenöse Stauung könnten auf eine pulmonale Hypertonie hinweisen. Diese kann durch Rechtsherzinsuffizienz oder andere Ursachen wie eine chronische Obstruktive Pneumonie (COPD) verursacht werden.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronic Obstructive Pulmonary Disease (COPD)\",\n      \"icd10_code\": \"J44\",\n      \"reasoning\": \"Die feuchten Rasselgeräusche in den Lungenflügeln und die Kranialisation könnten auch auf eine COPD hinweisen. Allerdings gibt es keine akuten Schmerzen, was die Wahrscheinlichkeit etwas reduziert, aber dennoch in Betracht gezogen werden muss.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2429,
+      "response_length": 1578,
+      "usage": {
+        "prompt_tokens": 855,
+        "completion_tokens": 505
+      },
+      "case_id": "cr_001",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 1.0,
+        "ddx_plausibility": 1.0,
+        "red_flag_awareness": 2.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akutes Myokardinfarkt",
+          "icd10_code": "I21",
+          "reasoning": "Die progredienten Dyspnoenbeschwerden, die belastungsabhängigen Druckgefühle, das erhöhte Troponin-T-Level und die raue Systolikum im EKG sind klinische Hinweise auf einen akuten Myokardinfarkt.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Kardiale Dysfunktion",
+          "icd10_code": "I50",
+          "reasoning": "Die erhöhte NT-proBNP, die raue Systolikum und die leichte Herzschattenvergrößerung auf der Röntgen-Thorax-Aufnahme deuten auf eine potenzielle kardiale Dysfunktion hin, insbesondere bei der Vorstellung von Dyspnoe und Druckgefühlen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Aortenstenose",
+          "icd10_code": "I70.0",
+          "reasoning": "Das raue, spindelförmige Systolikum mit Punctum maximum über dem 2. Interkostalraum rechts, die präkordialen T-Wellen-Inversionen und die linksventrikuläre Hypertrophie auf dem EKG sind klinische Hinweise auf eine potenzielle Aortenstenose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pulmonärer Embolismus",
+          "icd10_code": "I26",
+          "reasoning": "Die progredienten Dyspnoenbeschwerden, die belastungsabhängigen Druckgefühle und die diskreten prätibialen Ödeme könnten auf einen pulmonären Embolismus hinweisen, insbesondere wenn es sich um einen rezenten Embolismus handelt, der die Symptome verstärkt hat.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akutes Myokardinfarkt\",\n      \"icd10_code\": \"I21\",\n      \"reasoning\": \"Die progredienten Dyspnoenbeschwerden, die belastungsabhängigen Druckgefühle, das erhöhte Troponin-T-Level und die raue Systolikum im EKG sind klinische Hinweise auf einen akuten Myokardinfarkt.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Kardiale Dysfunktion\",\n      \"icd10_code\": \"I50\",\n      \"reasoning\": \"Die erhöhte NT-proBNP, die raue Systolikum und die leichte Herzschattenvergrößerung auf der Röntgen-Thorax-Aufnahme deuten auf eine potenzielle kardiale Dysfunktion hin, insbesondere bei der Vorstellung von Dyspnoe und Druckgefühlen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Aortenstenose\",\n      \"icd10_code\": \"I70.0\",\n      \"reasoning\": \"Das raue, spindelförmige Systolikum mit Punctum maximum über dem 2. Interkostalraum rechts, die präkordialen T-Wellen-Inversionen und die linksventrikuläre Hypertrophie auf dem EKG sind klinische Hinweise auf eine potenzielle Aortenstenose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pulmonärer Embolismus\",\n      \"icd10_code\": \"I26\",\n      \"reasoning\": \"Die progredienten Dyspnoenbeschwerden, die belastungsabhängigen Druckgefühle und die diskreten prätibialen Ödeme könnten auf einen pulmonären Embolismus hinweisen, insbesondere wenn es sich um einen rezenten Embolismus handelt, der die Symptome verstärkt hat.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2461,
+      "response_length": 1476,
+      "usage": {
+        "prompt_tokens": 827,
+        "completion_tokens": 488
+      },
+      "case_id": "cr_002",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 2.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Interstitielle Lungenkrankheit (ILD)",
+          "icd10_code": "J84.9",
+          "reasoning": "Die klinischen Symptome (progredientive Dyspnoe, Sklerophonie, Mosaic Pattern auf HR-CT) und die Laborwerte (hoch erhöhter sIL-2R) sind typisch für eine Interstitielle Lungenkrankheit. Die feuchte Arbeit im Haus sorgt für eine erhöhte Staubexposition, was zu einer Triggersituation führen könnte.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Vogelasterhust (Vogelastermykose)",
+          "icd10_code": "B26.9",
+          "reasoning": "Obwohl der Patient keine Haustiere hält, ist es möglich, dass er während der Renovierung des Hauses Vogelaster ausgesetzt war. Die klinischen Symptome (Reizhusten, progredientive Dyspnoe, feuchte Lungen) und die fehlende Exposition aufgrund von Haustieren machen Vogelasterhust eine mögliche Diagnose. Die feuchte Arbeit im Haus könnte zu einer Triggersituation geführt haben.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronic Obstructive Pulmonar Disease (COPD) mit akuter Exacerbation",
+          "icd10_code": "J44.9",
+          "reasoning": "Obwohl der Patient nie geraucht hat, könnte die Staubexposition während der Renovierung zu einer akuten Exacerbation der COPD führen. Die klinischen Symptome (Dyspnoe, Reizhusten) und die fehlende Raucheranamnese machen COPD mit akuter Exacerbation eine mögliche Diagnose, obwohl die feuchte Arbeit im Haus eher untypisch für COPD ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Systemische Lupus Erythematodes (SLE) mit Lungenbeteiligung",
+          "icd10_code": "M32.9",
+          "reasoning": "Die klinischen Symptome (progredientive Dyspnoe, subfebrile Temperaturen, ungewollter Gewichtsverlust) und die erhöhten Leukozyten und LDH könnten auf eine Systemische Lupus Erythematodes (SLE) hindeuten. Die fehlende Raucheranamnese und die feuchte Arbeit im Haus könnten zu einer Triggersituation geführt haben. Allerdings ist die Anamnese bezüglich der SLE leer, sodass diese Diagnose eher unwahrscheinlich ist.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Interstitielle Lungenkrankheit (ILD)\",\n      \"icd10_code\": \"J84.9\",\n      \"reasoning\": \"Die klinischen Symptome (progredientive Dyspnoe, Sklerophonie, Mosaic Pattern auf HR-CT) und die Laborwerte (hoch erhöhter sIL-2R) sind typisch für eine Interstitielle Lungenkrankheit. Die feuchte Arbeit im Haus sorgt für eine erhöhte Staubexposition, was zu einer Triggersituation führen könnte.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Vogelasterhust (Vogelastermykose)\",\n      \"icd10_code\": \"B26.9\",\n      \"reasoning\": \"Obwohl der Patient keine Haustiere hält, ist es möglich, dass er während der Renovierung des Hauses Vogelaster ausgesetzt war. Die klinischen Symptome (Reizhusten, progredientive Dyspnoe, feuchte Lungen) und die fehlende Exposition aufgrund von Haustieren machen Vogelasterhust eine mögliche Diagnose. Die feuchte Arbeit im Haus könnte zu einer Triggersituation geführt haben.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronic Obstructive Pulmonar Disease (COPD) mit akuter Exacerbation\",\n      \"icd10_code\": \"J44.9\",\n      \"reasoning\": \"Obwohl der Patient nie geraucht hat, könnte die Staubexposition während der Renovierung zu einer akuten Exacerbation der COPD führen. Die klinischen Symptome (Dyspnoe, Reizhusten) und die fehlende Raucheranamnese machen COPD mit akuter Exacerbation eine mögliche Diagnose, obwohl die feuchte Arbeit im Haus eher untypisch für COPD ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Systemische Lupus Erythematodes (SLE) mit Lungenbeteiligung\",\n      \"icd10_code\": \"M32.9\",\n      \"reasoning\": \"Die klinischen Symptome (progredientive Dyspnoe, subfebrile Temperaturen, ungewollter Gewichtsverlust) und die erhöhten Leukozyten und LDH könnten auf eine Systemische Lupus Erythematodes (SLE) hindeuten. Die fehlende Raucheranamnese und die feuchte Arbeit im Haus könnten zu einer Triggersituation geführt haben. Allerdings ist die Anamnese bezüglich der SLE leer, sodass diese Diagnose eher unwahrscheinlich ist.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2663,
+      "response_length": 2097,
+      "usage": {
+        "prompt_tokens": 904,
+        "completion_tokens": 662
+      },
+      "case_id": "cr_003",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 1.0,
+        "ddx_plausibility": 1.0,
+        "red_flag_awareness": 1.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akutes Ischämisches Schlaganfall",
+          "icd10_code": "I63.2",
+          "reasoning": "Die Patientenbeschreibung mit plötzlichem Auftreten von Symptomen, die NIHSS von 13 Punkten und das Hyperdenses Media-Zeichen auf der CT-Bildgebung deutlich auf einen akuten ischämischen Schlaganfall hinweisen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Hemorragisches Schlaganfall",
+          "icd10_code": "I61",
+          "reasoning": "Obwohl die CT-Bildgebung keine intrakraniale Blutung zeigt, ist eine Hemorragie nicht ausgeschlossen, insbesondere bei einer Pausierung der Antikoagulation. Das Hyperdenses Media-Zeichen könnte auch bei einer kleinen Hemorragie sichtbar sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Akutes Migräneanfall",
+          "icd10_code": "G80.0",
+          "reasoning": "Die plötzliche Symptomatik und die ausgeprägte Dysarthrie könnten auf einen akuten Migräneanfall hinweisen, insbesondere bei einem Patienten mit Vorhofflimmern. Allerdings sind die neurologischen Defizite eher untypisch für einen Migräneanfall.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Akutes TIA (Transitorisches Ischämisches Anfall)",
+          "icd10_code": "I63.81",
+          "reasoning": "Die Symptome und die NIHSS von 13 Punkten sind typisch für einen TIA, insbesondere bei einem Patienten mit arterieller Hypertonie und Vorhofflimmern. Allerdings sind die neurologischen Defizite nicht vollständig abgeklungen, was einen Schlaganfall eher wahrscheinlich macht.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akutes Ischämisches Schlaganfall\",\n      \"icd10_code\": \"I63.2\",\n      \"reasoning\": \"Die Patientenbeschreibung mit plötzlichem Auftreten von Symptomen, die NIHSS von 13 Punkten und das Hyperdenses Media-Zeichen auf der CT-Bildgebung deutlich auf einen akuten ischämischen Schlaganfall hinweisen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Hemorragisches Schlaganfall\",\n      \"icd10_code\": \"I61\",\n      \"reasoning\": \"Obwohl die CT-Bildgebung keine intrakraniale Blutung zeigt, ist eine Hemorragie nicht ausgeschlossen, insbesondere bei einer Pausierung der Antikoagulation. Das Hyperdenses Media-Zeichen könnte auch bei einer kleinen Hemorragie sichtbar sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Akutes Migräneanfall\",\n      \"icd10_code\": \"G80.0\",\n      \"reasoning\": \"Die plötzliche Symptomatik und die ausgeprägte Dysarthrie könnten auf einen akuten Migräneanfall hinweisen, insbesondere bei einem Patienten mit Vorhofflimmern. Allerdings sind die neurologischen Defizite eher untypisch für einen Migräneanfall.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Akutes TIA (Transitorisches Ischämisches Anfall)\",\n      \"icd10_code\": \"I63.81\",\n      \"reasoning\": \"Die Symptome und die NIHSS von 13 Punkten sind typisch für einen TIA, insbesondere bei einem Patienten mit arterieller Hypertonie und Vorhofflimmern. Allerdings sind die neurologischen Defizite nicht vollständig abgeklungen, was einen Schlaganfall eher wahrscheinlich macht.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2583,
+      "response_length": 1584,
+      "usage": {
+        "prompt_tokens": 833,
+        "completion_tokens": 480
+      },
+      "case_id": "cr_004",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 1.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Chronischer Entzündlicher Darmerkrankung (CDE)",
+          "icd10_code": "K51",
+          "reasoning": "Die klinischen Symptome wie diffusen Oberbauchschmerz, Fatigue, Gewichtsverlust und veränderte Stuhlgewohnheiten sind typisch für eine CDE. Die Abdomensonographie zeigt eine ausgeprägte Wandverdickung des Duodenums und Jejunums, was häufig bei CDE auftritt. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie unterstützen diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Entzündliche Kolitis Ulcerosa (EKU)",
+          "icd10_code": "K50",
+          "reasoning": "Die klinischen Symptome und die Befunde der Abdomensonographie sind auch typisch für EKU. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie und die vergrößerten mesenterialen Lymphknoten unterstützen diese Diagnose. Allerdings ist die Transglutaminase-Antikörper (IgA) negativ, was EKU eher ausschließt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Malignes Duodenalpathologisches Syndrom (MDPS)",
+          "icd10_code": "C16",
+          "reasoning": "Die klinischen Symptome wie Gewichtsverlust, Fatigue und die diffusen Bauchschmerzen sind auch bei MDPS beobachtet. Die Abdomensonographie zeigt eine ausgeprägte Wandverdickung des Duodenums, was auch bei MDPS vorkommt. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie unterstützen diese Diagnose. Allerdings ist die Pankreaselastase im Stuhl normal, was MDPS eher ausschließt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Entzündliche Pancreatitis",
+          "icd10_code": "K71",
+          "reasoning": "Die erhöhten CRP-Werte und die verminderte Pankreaselastase im Stuhl könnten auf eine Entzündung hinweisen. Allerdings sind die klinischen Symptome und die Abdomensonographie eher typisch für eine CDE oder EKU. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie unterstützen diese Diagnose weniger als die anderen Optionen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Chronischer Entzündlicher Darmerkrankung (CDE)\",\n      \"icd10_code\": \"K51\",\n      \"reasoning\": \"Die klinischen Symptome wie diffusen Oberbauchschmerz, Fatigue, Gewichtsverlust und veränderte Stuhlgewohnheiten sind typisch für eine CDE. Die Abdomensonographie zeigt eine ausgeprägte Wandverdickung des Duodenums und Jejunums, was häufig bei CDE auftritt. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie unterstützen diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Entzündliche Kolitis Ulcerosa (EKU)\",\n      \"icd10_code\": \"K50\",\n      \"reasoning\": \"Die klinischen Symptome und die Befunde der Abdomensonographie sind auch typisch für EKU. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie und die vergrößerten mesenterialen Lymphknoten unterstützen diese Diagnose. Allerdings ist die Transglutaminase-Antikörper (IgA) negativ, was EKU eher ausschließt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Malignes Duodenalpathologisches Syndrom (MDPS)\",\n      \"icd10_code\": \"C16\",\n      \"reasoning\": \"Die klinischen Symptome wie Gewichtsverlust, Fatigue und die diffusen Bauchschmerzen sind auch bei MDPS beobachtet. Die Abdomensonographie zeigt eine ausgeprägte Wandverdickung des Duodenums, was auch bei MDPS vorkommt. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie unterstützen diese Diagnose. Allerdings ist die Pankreaselastase im Stuhl normal, was MDPS eher ausschließt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Entzündliche Pancreatitis\",\n      \"icd10_code\": \"K71\",\n      \"reasoning\": \"Die erhöhten CRP-Werte und die verminderte Pankreaselastase im Stuhl könnten auf eine Entzündung hinweisen. Allerdings sind die klinischen Symptome und die Abdomensonographie eher typisch für eine CDE oder EKU. Die lymphangiektatischen Veränderungen in der Gastroduodenoskopie unterstützen diese Diagnose weniger als die anderen Optionen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2483,
+      "response_length": 2028,
+      "usage": {
+        "prompt_tokens": 855,
+        "completion_tokens": 618
+      },
+      "case_id": "cr_005",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 1.0,
+        "ddx_plausibility": 1.0,
+        "red_flag_awareness": 1.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Multiple Myelom",
+          "icd10_code": "C90",
+          "reasoning": "Die klinischen Symptome wie Fatigue, Inappetenz, Gewichtsverlust, Schmerzen in der rechten Flanke und Lendenwirbelsäule, hypercalcämische Krise, erhöhte LDH und AP, sowie die Bildgebung mit osteolysischen Veränderungen in der Lendenwirbelsäule und im Os ilium sind klinisch und radiologisch typisch für Multiple Myelom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Renale Krebs (z.B. Renakarzinom)",
+          "icd10_code": "C64",
+          "reasoning": "Die inhomogene hypervaskuläre Raumforderung am rechten Nierenoberpol, die Arrosion des Parenchyms und die Verdacht auf Infiltration der Vena renalis sowie die B-Symptome (Nachtschweiß) sind klinisch und radiologisch typisch für Renakarzinom.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hodgkin-Lymphom",
+          "icd10_code": "C81",
+          "reasoning": "Die multiple pulmonale Rundherde und die osteolysischen Veränderungen in der Lendenwirbelsäule und im Os ilium könnten auch bei Hodgkin-Lymphom auftreten. Zusätzlich die B-Symptome und die kachektische Veränderung könnten indizieren.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Metastasen",
+          "icd10_code": "C76",
+          "reasoning": "Die osteolysischen Veränderungen in der Lendenwirbelsäule und im Os ilium, die multiple pulmonale Rundherde und die erhöhten Leukozyten könnten auf Metastasen hinweisen. Allerdings sind diese weniger spezifisch als die Befunde bei Multiple Myelom oder Renakarzinom.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Multiple Myelom\",\n      \"icd10_code\": \"C90\",\n      \"reasoning\": \"Die klinischen Symptome wie Fatigue, Inappetenz, Gewichtsverlust, Schmerzen in der rechten Flanke und Lendenwirbelsäule, hypercalcämische Krise, erhöhte LDH und AP, sowie die Bildgebung mit osteolysischen Veränderungen in der Lendenwirbelsäule und im Os ilium sind klinisch und radiologisch typisch für Multiple Myelom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Renale Krebs (z.B. Renakarzinom)\",\n      \"icd10_code\": \"C64\",\n      \"reasoning\": \"Die inhomogene hypervaskuläre Raumforderung am rechten Nierenoberpol, die Arrosion des Parenchyms und die Verdacht auf Infiltration der Vena renalis sowie die B-Symptome (Nachtschweiß) sind klinisch und radiologisch typisch für Renakarzinom.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hodgkin-Lymphom\",\n      \"icd10_code\": \"C81\",\n      \"reasoning\": \"Die multiple pulmonale Rundherde und die osteolysischen Veränderungen in der Lendenwirbelsäule und im Os ilium könnten auch bei Hodgkin-Lymphom auftreten. Zusätzlich die B-Symptome und die kachektische Veränderung könnten indizieren.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Metastasen\",\n      \"icd10_code\": \"C76\",\n      \"reasoning\": \"Die osteolysischen Veränderungen in der Lendenwirbelsäule und im Os ilium, die multiple pulmonale Rundherde und die erhöhten Leukozyten könnten auf Metastasen hinweisen. Allerdings sind diese weniger spezifisch als die Befunde bei Multiple Myelom oder Renakarzinom.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2607,
+      "response_length": 1603,
+      "usage": {
+        "prompt_tokens": 879,
+        "completion_tokens": 508
+      },
+      "case_id": "cr_006",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 2.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Myokardinfarkt",
+          "icd10_code": "I21",
+          "reasoning": "Die Patientenbeschreibung mit akut aufgetretenen Schmerzen im lateralen Thoraxbereich, orthopnoeischen Anzeichen, erhöhtem Troponin-T-Wert und einer S1Q3-Lagetyp-Veränderung auf dem EKG deutet auf einen Myokardinfarkt hin.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pneumothorax",
+          "icd10_code": "J22",
+          "reasoning": "Obwohl die Röntgen-Thorax-Aufnahme keine Stauungszeichen oder einen Pneumothorax zeigt, ist eine spontane oder traumatische Entstehung nicht ausgeschlossen, insbesondere bei einer sechs-stündigen Busreise. Die akute Luftnot und die orthopnoeischen Anzeichen könnten darauf hinweisen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Perikarditis",
+          "icd10_code": "I56",
+          "reasoning": "Die akute Luftnot, die Schmerzen im lateralen Thoraxbereich und die erhöhte Herzfrequenz könnten auf eine Perikarditis hinweisen. Allerdings sind keine typischen Perikardzeichen wie Perikarddruck oder Perikardflüssigkeit auf der Röntgenaufnahme zu sehen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Asthma bronchiale",
+          "icd10_code": "J45",
+          "reasoning": "Die akute Luftnot, die orthopnoeischen Anzeichen und die vesikuläres Atemgeräusch könnten auf eine akute Asthmaattacke hinweisen. Allerdings sind keine typischen Bronchospasmen oder Rasselgeräusche auf der Röntgenaufnahme zu sehen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Myokardinfarkt\",\n      \"icd10_code\": \"I21\",\n      \"reasoning\": \"Die Patientenbeschreibung mit akut aufgetretenen Schmerzen im lateralen Thoraxbereich, orthopnoeischen Anzeichen, erhöhtem Troponin-T-Wert und einer S1Q3-Lagetyp-Veränderung auf dem EKG deutet auf einen Myokardinfarkt hin.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pneumothorax\",\n      \"icd10_code\": \"J22\",\n      \"reasoning\": \"Obwohl die Röntgen-Thorax-Aufnahme keine Stauungszeichen oder einen Pneumothorax zeigt, ist eine spontane oder traumatische Entstehung nicht ausgeschlossen, insbesondere bei einer sechs-stündigen Busreise. Die akute Luftnot und die orthopnoeischen Anzeichen könnten darauf hinweisen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Perikarditis\",\n      \"icd10_code\": \"I56\",\n      \"reasoning\": \"Die akute Luftnot, die Schmerzen im lateralen Thoraxbereich und die erhöhte Herzfrequenz könnten auf eine Perikarditis hinweisen. Allerdings sind keine typischen Perikardzeichen wie Perikarddruck oder Perikardflüssigkeit auf der Röntgenaufnahme zu sehen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Asthma bronchiale\",\n      \"icd10_code\": \"J45\",\n      \"reasoning\": \"Die akute Luftnot, die orthopnoeischen Anzeichen und die vesikuläres Atemgeräusch könnten auf eine akute Asthmaattacke hinweisen. Allerdings sind keine typischen Bronchospasmen oder Rasselgeräusche auf der Röntgenaufnahme zu sehen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2371,
+      "response_length": 1518,
+      "usage": {
+        "prompt_tokens": 829,
+        "completion_tokens": 479
+      },
+      "case_id": "cr_007",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.25
+      },
+      "judge_scores": {
+        "reasoning_quality": 1.0,
+        "ddx_plausibility": 1.0,
+        "red_flag_awareness": 1.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Myokardinfarkt",
+          "icd10_code": "I21",
+          "reasoning": "Hochgradige Wahrscheinlichkeit basierend auf den klinischen Symptomen, dem kardiovaskulären Risikoprofil und den erhöhten Biomarkern (Troponin T, NT-proBNP).",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Myokarditis",
+          "icd10_code": "G96.8",
+          "reasoning": "Erhöhte Troponin Werte und die Vorstellung eines fieberhaften Infekts der oberen Atemwege könnten auf Myokarditis hindeuten.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Angina pectoris",
+          "icd10_code": "I20",
+          "reasoning": "Intermittierende, dumpfe retrosternale Druckgefühle, die vor allem bei körperlicher Belastung zunehmen, sind typisch für angina pectoris.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Perikarditis",
+          "icd10_code": "I54.9",
+          "reasoning": "Obwohl kein Perikarderguss festgestellt wurde, könnten die dumpfen Druckgefühle und die erhöhten Biomarkern auf eine subakute Perikarditis hinweisen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Myokardinfarkt\",\n      \"icd10_code\": \"I21\",\n      \"reasoning\": \"Hochgradige Wahrscheinlichkeit basierend auf den klinischen Symptomen, dem kardiovaskulären Risikoprofil und den erhöhten Biomarkern (Troponin T, NT-proBNP).\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Myokarditis\",\n      \"icd10_code\": \"G96.8\",\n      \"reasoning\": \"Erhöhte Troponin Werte und die Vorstellung eines fieberhaften Infekts der oberen Atemwege könnten auf Myokarditis hindeuten.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Angina pectoris\",\n      \"icd10_code\": \"I20\",\n      \"reasoning\": \"Intermittierende, dumpfe retrosternale Druckgefühle, die vor allem bei körperlicher Belastung zunehmen, sind typisch für angina pectoris.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Perikarditis\",\n      \"icd10_code\": \"I54.9\",\n      \"reasoning\": \"Obwohl kein Perikarderguss festgestellt wurde, könnten die dumpfen Druckgefühle und die erhöhten Biomarkern auf eine subakute Perikarditis hinweisen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2576,
+      "response_length": 1096,
+      "usage": {
+        "prompt_tokens": 896,
+        "completion_tokens": 360
+      },
+      "case_id": "cr_008",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Non-specific interstitial pneumonia (NSIP)",
+          "icd10_code": "J84.5",
+          "reasoning": "Die HR-CT-Befunde sind typisch für NSIP, wobei sich die Milchglastrübungen und retikuläre Zeichnungsvermehrungen symmetrisch und subpleural betont zeigen. Die fehlende Honigwabenbildung und die leichte erhöhte CK und LDH unterstützen diese Diagnose. Die klinischen Symptome, insbesondere die progredienten Dyspnoe und der Reizhusten, sind konsistent mit NSIP.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Systemic lupus erythematosus (SLE)",
+          "icd10_code": "M32.9",
+          "reasoning": "Die ANA-Titer von 1:640 mit zytoplasmatischem Fluoreszenzmuster und die hyperkeratotischen Rhagaden sowie die Schwäche der proximalen Extremitätenmuskulatur könnten auf eine Systemische Lupus-Erythematodes (SLE) hindeuten. Allerdings sind c-ANCA und p-ANCA negativ, was SLE weniger wahrscheinlich macht als NSIP.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Churg-Strauss-Syndrom (CSS)",
+          "icd10_code": "M31.4",
+          "reasoning": "Die klinischen Symptome, insbesondere der Reizhusten und die progredienten Dyspnoe, könnten auf Churg-Strauss-Syndrom hindeuten. Allerdings sind die c-ANCA und p-ANCA negativ, und die fehlende Honigwabenbildung in der HR-CT-Mitteilung spricht gegen CSS. Die erhöhte CK und LDH könnten aber auch bei CSS auftreten.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Rheumatoide Arthritis (RA) mit extragelenklichen Manifestationen",
+          "icd10_code": "M05.1",
+          "reasoning": "Die Patientin hat eine vor zwei Jahren diagnostizierte rheumatoide Arthritis, die jedoch unzureichend regredient war. Das Raynaud-Phänomen und die hyperkeratotischen Rhagaden könnten auf eine extragelenkliche Manifestation der rheumatoide Arthritis hindeuten. Allerdings sind die c-ANCA und p-ANCA negativ, was die Diagnose weniger wahrscheinlich macht als NSIP.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Non-specific interstitial pneumonia (NSIP)\",\n      \"icd10_code\": \"J84.5\",\n      \"reasoning\": \"Die HR-CT-Befunde sind typisch für NSIP, wobei sich die Milchglastrübungen und retikuläre Zeichnungsvermehrungen symmetrisch und subpleural betont zeigen. Die fehlende Honigwabenbildung und die leichte erhöhte CK und LDH unterstützen diese Diagnose. Die klinischen Symptome, insbesondere die progredienten Dyspnoe und der Reizhusten, sind konsistent mit NSIP.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Systemic lupus erythematosus (SLE)\",\n      \"icd10_code\": \"M32.9\",\n      \"reasoning\": \"Die ANA-Titer von 1:640 mit zytoplasmatischem Fluoreszenzmuster und die hyperkeratotischen Rhagaden sowie die Schwäche der proximalen Extremitätenmuskulatur könnten auf eine Systemische Lupus-Erythematodes (SLE) hindeuten. Allerdings sind c-ANCA und p-ANCA negativ, was SLE weniger wahrscheinlich macht als NSIP.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Churg-Strauss-Syndrom (CSS)\",\n      \"icd10_code\": \"M31.4\",\n      \"reasoning\": \"Die klinischen Symptome, insbesondere der Reizhusten und die progredienten Dyspnoe, könnten auf Churg-Strauss-Syndrom hindeuten. Allerdings sind die c-ANCA und p-ANCA negativ, und die fehlende Honigwabenbildung in der HR-CT-Mitteilung spricht gegen CSS. Die erhöhte CK und LDH könnten aber auch bei CSS auftreten.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Rheumatoide Arthritis (RA) mit extragelenklichen Manifestationen\",\n      \"icd10_code\": \"M05.1\",\n      \"reasoning\": \"Die Patientin hat eine vor zwei Jahren diagnostizierte rheumatoide Arthritis, die jedoch unzureichend regredient war. Das Raynaud-Phänomen und die hyperkeratotischen Rhagaden könnten auf eine extragelenkliche Manifestation der rheumatoide Arthritis hindeuten. Allerdings sind die c-ANCA und p-ANCA negativ, was die Diagnose weniger wahrscheinlich macht als NSIP.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2820,
+      "response_length": 1994,
+      "usage": {
+        "prompt_tokens": 944,
+        "completion_tokens": 628
+      },
+      "case_id": "cr_009",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 1.0,
+        "ddx_plausibility": 1.0,
+        "red_flag_awareness": 1.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Strok",
+          "icd10_code": "I63",
+          "reasoning": "Der Patient präsentiert sich mit typischen Stroksymptomen, insbesondere einer ausgeprägten globalen Aphasie und einer Rechts-Vernachlässigung, sowie einer zentrale Fazialisparese und eine schlaffe Hemiparese. Die Bildgebungsbefunde bestätigen einen umschriebenen Gefäßverschluss im M1-Segment der linken Arteria cerebri media und ein Mismatch-Areal, was auf einen ischämischen Strok hindeutet.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hypoglykämie",
+          "icd10_code": "E11",
+          "reasoning": "Obwohl die Blutglukose im Normbereich ist, könnte eine vorübergehende Hypoglykämie die Symptome verursacht haben, insbesondere wenn der Patient vor der Einnahme der Apixaban eine ungewöhnlich hohe Dosis Diabetesmedikamente eingenommen hat. Die Aphasie und die Rechts-Vernachlässigung könnten als neurologische Folgeschäden interpretiert werden.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Krankheit von Reye",
+          "icd10_code": "G11",
+          "reasoning": "Obwohl die klinischen Befunde eher auf einen ischämischen Strok hindeuten, ist eine Krankheit von Reye nicht ausgeschlossen, insbesondere bei einem Patienten mit vorliegender Insulinabhängigkeit. Die Fehlpausierung der Apixaban könnte als möglicher Triggers in Betracht gezogen werden, obwohl keine direkten Hinweise auf eine Viralinfektion vorliegen.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Vasulitis",
+          "icd10_code": "I70",
+          "reasoning": "Die klinischen Befunde könnten auch auf eine Vasulitis hinweisen, insbesondere wenn es sich um eine granulomatöse Vasulitis handelt. Die Fehlpausierung der Apixaban könnte als möglicher Triggers in Betracht gezogen werden, obwohl keine direkten Hinweise auf eine Infektion vorliegen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Strok\",\n      \"icd10_code\": \"I63\",\n      \"reasoning\": \"Der Patient präsentiert sich mit typischen Stroksymptomen, insbesondere einer ausgeprägten globalen Aphasie und einer Rechts-Vernachlässigung, sowie einer zentrale Fazialisparese und eine schlaffe Hemiparese. Die Bildgebungsbefunde bestätigen einen umschriebenen Gefäßverschluss im M1-Segment der linken Arteria cerebri media und ein Mismatch-Areal, was auf einen ischämischen Strok hindeutet.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hypoglykämie\",\n      \"icd10_code\": \"E11\",\n      \"reasoning\": \"Obwohl die Blutglukose im Normbereich ist, könnte eine vorübergehende Hypoglykämie die Symptome verursacht haben, insbesondere wenn der Patient vor der Einnahme der Apixaban eine ungewöhnlich hohe Dosis Diabetesmedikamente eingenommen hat. Die Aphasie und die Rechts-Vernachlässigung könnten als neurologische Folgeschäden interpretiert werden.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Krankheit von Reye\",\n      \"icd10_code\": \"G11\",\n      \"reasoning\": \"Obwohl die klinischen Befunde eher auf einen ischämischen Strok hindeuten, ist eine Krankheit von Reye nicht ausgeschlossen, insbesondere bei einem Patienten mit vorliegender Insulinabhängigkeit. Die Fehlpausierung der Apixaban könnte als möglicher Triggers in Betracht gezogen werden, obwohl keine direkten Hinweise auf eine Viralinfektion vorliegen.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Vasulitis\",\n      \"icd10_code\": \"I70\",\n      \"reasoning\": \"Die klinischen Befunde könnten auch auf eine Vasulitis hinweisen, insbesondere wenn es sich um eine granulomatöse Vasulitis handelt. Die Fehlpausierung der Apixaban könnte als möglicher Triggers in Betracht gezogen werden, obwohl keine direkten Hinweise auf eine Infektion vorliegen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2758,
+      "response_length": 1901,
+      "usage": {
+        "prompt_tokens": 910,
+        "completion_tokens": 574
+      },
+      "case_id": "cr_010",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 1.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 1.0
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getModelRun, getBenchmarkCases, getICD10Catalog } from "@/lib/data";
 import { getModelMeta, TASK_CONFIG } from "@/lib/types";
 import type { TaskId, SummarizationPrediction, ClinicalReasoningPrediction, NERPrediction, MedExtractionPrediction } from "@/lib/types";
-import { Card, CardContent } from "@thalamiq/ui/components/card";
+import { Card, CardContent, CardHeader } from "@thalamiq/ui/components/card";
 import { Badge } from "@thalamiq/ui/components/badge";
 
 export const dynamic = "force-dynamic";
@@ -30,6 +30,17 @@ function formatPct(v: number) {
   return `${(v * 100).toFixed(1)}%`;
 }
 
+function Stat({ label, value, destructive }: { label: string; value: string; destructive?: boolean }) {
+  return (
+    <div className="rounded-md bg-muted/50 px-3 py-2">
+      <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">{label}</p>
+      <p className={`font-mono text-lg font-semibold ${destructive ? "text-destructive" : ""}`}>
+        {value}
+      </p>
+    </div>
+  );
+}
+
 export default async function ModelDetailPage({
   params,
 }: {
@@ -39,7 +50,6 @@ export default async function ModelDetailPage({
   const modelId = decodeURIComponent(id);
   const meta = getModelMeta(modelId);
 
-  // Load runs for all tasks
   const runs = ALL_TASKS.map((task) => ({
     task,
     run: getModelRun(modelId, task),
@@ -55,14 +65,14 @@ export default async function ModelDetailPage({
       <div className="mb-1">
         <Link
           href="/"
-          className="text-sm text-muted-foreground hover:text-foreground"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           Leaderboard
         </Link>
       </div>
 
-      <div className="mb-8 flex items-center gap-3">
-        <h1 className="text-2xl font-semibold tracking-tight">
+      <div className="mb-8 flex flex-wrap items-center gap-2 sm:gap-3">
+        <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">
           {meta.shortName}
         </h1>
         <Badge variant="outline">{meta.provider}</Badge>
@@ -80,10 +90,14 @@ export default async function ModelDetailPage({
 
         return (
           <div key={task} className="mb-12">
-            <h2 className="mb-4 text-lg font-semibold">{taskConfig.name}</h2>
+            <h2 className="mb-4 text-lg font-semibold">
+              <Link href={`/benchmarks/${task}`} className="hover:underline">
+                {taskConfig.name}
+              </Link>
+            </h2>
 
             {/* Stats */}
-            <div className="mb-6 flex flex-wrap gap-6">
+            <div className="mb-6 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3">
               {task === "icd10_coding" && "exact_match_f1" in summary && (
                 <>
                   <Stat label="Exact F1" value={formatPct(summary.exact_match_f1)} />
@@ -210,16 +224,9 @@ export default async function ModelDetailPage({
   );
 }
 
-function Stat({ label, value, destructive }: { label: string; value: string; destructive?: boolean }) {
-  return (
-    <div>
-      <p className="text-xs text-muted-foreground">{label}</p>
-      <p className={`font-mono text-xl font-semibold ${destructive ? "text-destructive" : ""}`}>
-        {value}
-      </p>
-    </div>
-  );
-}
+// ---------------------------------------------------------------------------
+// ICD-10
+// ---------------------------------------------------------------------------
 
 function ICD10CaseResult({
   task,
@@ -246,9 +253,9 @@ function ICD10CaseResult({
   const hdCorrect = goldHd && prediction.hauptdiagnose === goldHd.code;
 
   return (
-    <Card className={perfect ? "border-green-500/20" : ""}>
-      <CardContent className="py-4">
-        <div className="mb-3 flex items-center justify-between">
+    <Card className={perfect ? "border-green-500/30" : ""}>
+      <CardHeader className="pb-0">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link
               href={`/benchmarks/${task}/${prediction.case_id}`}
@@ -260,61 +267,65 @@ function ICD10CaseResult({
           </div>
           <div className="flex items-center gap-2">
             {hasError ? (
-              <span className="text-xs text-destructive">
+              <Badge variant="destructive" className="text-xs">
                 {prediction.parse_error ? "Parse Error" : "API Error"}
-              </span>
+              </Badge>
             ) : (
               <>
                 {goldHd && (
-                  <span className={`text-xs ${hdCorrect ? "text-green-600" : "text-destructive"}`}>
+                  <span className={`text-xs font-medium ${hdCorrect ? "text-green-600" : "text-destructive"}`}>
                     HD {hdCorrect ? "✓" : "✗"}
                   </span>
                 )}
-                <span className="text-xs text-muted-foreground">{tp.length}/{goldCodes.size}</span>
+                <Badge variant={perfect ? "default" : "secondary"} className="text-xs">
+                  {tp.length}/{goldCodes.size}
+                </Badge>
               </>
             )}
           </div>
         </div>
+      </CardHeader>
+      <CardContent className="pt-3">
         {hasError ? (
           <p className="text-xs text-muted-foreground">
             {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
           </p>
         ) : (
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div>
-              <p className="mb-1.5 text-xs font-medium text-muted-foreground">Ground Truth</p>
-              <div className="space-y-1">
+              <p className="mb-2 text-xs font-medium text-muted-foreground">Ground Truth</p>
+              <div className="space-y-1.5">
                 {goldCase?.diagnosen?.map((d: { code: string; display: string; typ: string }) => (
                   <div key={d.code} className="flex items-center gap-2 text-xs">
-                    <code className="w-16 shrink-0 font-mono">{d.code}</code>
+                    <code className="shrink-0 rounded bg-muted px-1.5 py-0.5 font-mono">{d.code}</code>
                     <span className="text-muted-foreground">{d.display}</span>
-                    {d.typ === "Hauptdiagnose" && <Badge variant="secondary" className="ml-auto shrink-0 text-xs">HD</Badge>}
+                    {d.typ === "Hauptdiagnose" && <Badge variant="default" className="ml-auto shrink-0 text-[10px]">HD</Badge>}
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <p className="mb-1.5 text-xs font-medium text-muted-foreground">Prediction</p>
-              <div className="space-y-1">
+              <p className="mb-2 text-xs font-medium text-muted-foreground">Prediction</p>
+              <div className="space-y-1.5">
                 {tp.map((c) => (
                   <div key={c} className="flex items-center gap-2 text-xs">
-                    <span className="w-4 shrink-0 text-center text-green-600">✓</span>
-                    <code className="font-mono">{c}</code>
+                    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-green-500/10 text-green-600 text-[10px]">✓</span>
+                    <code className="rounded bg-muted px-1.5 py-0.5 font-mono">{c}</code>
                     {catalog[c] && <span className="text-muted-foreground">{catalog[c].display}</span>}
                   </div>
                 ))}
                 {fp.map((c) => (
                   <div key={c} className="flex items-center gap-2 text-xs">
-                    <span className="w-4 shrink-0 text-center text-destructive">+</span>
-                    <code className="font-mono text-destructive">{c}</code>
+                    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-destructive/10 text-destructive text-[10px]">+</span>
+                    <code className="rounded bg-destructive/10 px-1.5 py-0.5 font-mono text-destructive">{c}</code>
                     <span className="text-muted-foreground">{catalog[c] ? catalog[c].display : "ungültiger Code"}</span>
                   </div>
                 ))}
                 {fn.map((c) => (
                   <div key={c} className="flex items-center gap-2 text-xs">
-                    <span className="w-4 shrink-0 text-center text-muted-foreground">✗</span>
-                    <code className="font-mono text-muted-foreground line-through">{c}</code>
-                    <span className="text-muted-foreground">{catalog[c] ? catalog[c].display : "nicht erkannt"}</span>
+                    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground text-[10px]">✗</span>
+                    <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-muted-foreground line-through">{c}</code>
+                    <span className="text-muted-foreground">nicht erkannt</span>
                   </div>
                 ))}
               </div>
@@ -325,6 +336,10 @@ function ICD10CaseResult({
     </Card>
   );
 }
+
+// ---------------------------------------------------------------------------
+// Summarization
+// ---------------------------------------------------------------------------
 
 function SummarizationCaseResult({
   task,
@@ -341,8 +356,8 @@ function SummarizationCaseResult({
 
   return (
     <Card>
-      <CardContent className="py-4">
-        <div className="mb-3 flex items-center justify-between">
+      <CardHeader className="pb-0">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link
               href={`/benchmarks/${task}/${prediction.case_id}`}
@@ -353,11 +368,13 @@ function SummarizationCaseResult({
             <span className="text-xs text-muted-foreground">{goldCase?.fachbereich}</span>
           </div>
           {scores && (
-            <span className="font-mono text-xs text-muted-foreground">
+            <Badge variant="secondary" className="font-mono text-xs">
               {scores.overall.toFixed(1)}/5
-            </span>
+            </Badge>
           )}
         </div>
+      </CardHeader>
+      <CardContent className="pt-3">
         {hasError ? (
           <p className="text-xs text-muted-foreground">
             {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
@@ -365,37 +382,37 @@ function SummarizationCaseResult({
         ) : (
           <div className="space-y-3">
             {scores && (
-              <div className="flex gap-4">
+              <div className="flex gap-4 rounded-md bg-muted/50 px-3 py-2">
                 {([
                   ["Fakten", scores.faktentreue],
                   ["Vollst.", scores.vollstaendigkeit],
                   ["Halluz.", scores.halluzinationsfreiheit],
                   ["Format", scores.formatkonformitaet],
                 ] as const).map(([label, val]) => (
-                  <div key={label} className="text-center">
-                    <p className="font-mono text-sm font-semibold">{val}</p>
-                    <p className="text-xs text-muted-foreground">{label}</p>
+                  <div key={label} className="flex flex-col items-center gap-0.5">
+                    <span className="font-mono text-sm font-semibold">{val}</span>
+                    <span className="text-[10px] text-muted-foreground">{label}</span>
                   </div>
                 ))}
               </div>
             )}
             {prediction.summary && (
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <p className="mb-1 text-xs font-medium text-muted-foreground">Prediction</p>
-                  <div className="space-y-1 text-xs text-muted-foreground">
-                    <p><span className="font-medium text-foreground">HD:</span> {prediction.summary.hauptdiagnose}</p>
-                    <p><span className="font-medium text-foreground">Therapie:</span> {prediction.summary.therapie}</p>
-                    <p><span className="font-medium text-foreground">Procedere:</span> {prediction.summary.procedere}</p>
+                  <p className="mb-1.5 text-xs font-medium text-muted-foreground">Prediction</p>
+                  <div className="space-y-1.5 text-xs">
+                    <p><span className="font-medium text-foreground">HD:</span> <span className="text-muted-foreground">{prediction.summary.hauptdiagnose}</span></p>
+                    <p><span className="font-medium text-foreground">Therapie:</span> <span className="text-muted-foreground">{prediction.summary.therapie}</span></p>
+                    <p><span className="font-medium text-foreground">Procedere:</span> <span className="text-muted-foreground">{prediction.summary.procedere}</span></p>
                   </div>
                 </div>
                 {goldCase?.gold_summary && (
                   <div>
-                    <p className="mb-1 text-xs font-medium text-muted-foreground">Gold</p>
-                    <div className="space-y-1 text-xs text-muted-foreground">
-                      <p><span className="font-medium text-foreground">HD:</span> {goldCase.gold_summary.hauptdiagnose}</p>
-                      <p><span className="font-medium text-foreground">Therapie:</span> {goldCase.gold_summary.therapie}</p>
-                      <p><span className="font-medium text-foreground">Procedere:</span> {goldCase.gold_summary.procedere}</p>
+                    <p className="mb-1.5 text-xs font-medium text-muted-foreground">Gold</p>
+                    <div className="space-y-1.5 text-xs">
+                      <p><span className="font-medium text-foreground">HD:</span> <span className="text-muted-foreground">{goldCase.gold_summary.hauptdiagnose}</span></p>
+                      <p><span className="font-medium text-foreground">Therapie:</span> <span className="text-muted-foreground">{goldCase.gold_summary.therapie}</span></p>
+                      <p><span className="font-medium text-foreground">Procedere:</span> <span className="text-muted-foreground">{goldCase.gold_summary.procedere}</span></p>
                     </div>
                   </div>
                 )}
@@ -407,6 +424,10 @@ function SummarizationCaseResult({
     </Card>
   );
 }
+
+// ---------------------------------------------------------------------------
+// Clinical Reasoning
+// ---------------------------------------------------------------------------
 
 function ClinicalReasoningCaseResult({
   task,
@@ -424,8 +445,8 @@ function ClinicalReasoningCaseResult({
 
   return (
     <Card>
-      <CardContent className="py-4">
-        <div className="mb-3 flex items-center justify-between">
+      <CardHeader className="pb-0">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link
               href={`/benchmarks/${task}/${prediction.case_id}`}
@@ -436,11 +457,13 @@ function ClinicalReasoningCaseResult({
             <span className="text-xs text-muted-foreground">{goldCase?.fachbereich}</span>
           </div>
           {aScores && (
-            <span className={`text-xs ${aScores.top1_accuracy ? "text-green-600" : "text-destructive"}`}>
-              Top-1 {aScores.top1_accuracy ? "\u2713" : "\u2717"}
-            </span>
+            <Badge variant={aScores.top1_accuracy ? "default" : "secondary"} className="text-xs">
+              Top-1 {aScores.top1_accuracy ? "✓" : "✗"}
+            </Badge>
           )}
         </div>
+      </CardHeader>
+      <CardContent className="pt-3">
         {hasError ? (
           <p className="text-xs text-muted-foreground">
             {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
@@ -448,34 +471,39 @@ function ClinicalReasoningCaseResult({
         ) : (
           <div className="space-y-3">
             {(aScores || jScores) && (
-              <div className="flex gap-4">
-                {aScores && ([
-                  ["F1", aScores.ddx_overlap_f1.toFixed(2)],
-                ] as const).map(([label, val]) => (
-                  <div key={label} className="text-center">
-                    <p className="font-mono text-sm font-semibold">{val}</p>
-                    <p className="text-xs text-muted-foreground">{label}</p>
-                  </div>
-                ))}
+              <div className="flex gap-4 rounded-md bg-muted/50 px-3 py-2">
+                {aScores && (
+                  <>
+                    <div className="flex flex-col items-center gap-0.5">
+                      <span className="font-mono text-sm font-semibold">{aScores.ddx_overlap_f1.toFixed(2)}</span>
+                      <span className="text-[10px] text-muted-foreground">DDx F1</span>
+                    </div>
+                  </>
+                )}
                 {jScores && ([
                   ["Reason.", jScores.reasoning_quality],
                   ["Plausi.", jScores.ddx_plausibility],
                   ["Red Fl.", jScores.red_flag_awareness],
                 ] as const).map(([label, val]) => (
-                  <div key={label} className="text-center">
-                    <p className="font-mono text-sm font-semibold">{val}</p>
-                    <p className="text-xs text-muted-foreground">{label}</p>
+                  <div key={label} className="flex flex-col items-center gap-0.5">
+                    <span className="font-mono text-sm font-semibold">{val}</span>
+                    <span className="text-[10px] text-muted-foreground">{label}</span>
                   </div>
                 ))}
               </div>
             )}
             {prediction.differentialdiagnosen && (
-              <div className="space-y-1.5 text-xs text-muted-foreground">
+              <div className="space-y-2">
                 {prediction.differentialdiagnosen.slice(0, 3).map((d, i) => (
-                  <p key={i}>
-                    <span className="font-medium text-foreground">#{i + 1} {d.name}</span>
-                    {" "}{d.reasoning}
-                  </p>
+                  <div key={i} className="flex gap-2 text-xs">
+                    <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-muted font-mono text-[10px] text-muted-foreground">
+                      {i + 1}
+                    </span>
+                    <div className="flex-1">
+                      <span className="font-medium text-foreground">{d.name}</span>
+                      <p className="mt-0.5 leading-relaxed text-muted-foreground">{d.reasoning}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
@@ -485,6 +513,10 @@ function ClinicalReasoningCaseResult({
     </Card>
   );
 }
+
+// ---------------------------------------------------------------------------
+// NER
+// ---------------------------------------------------------------------------
 
 function NERCaseResult({
   task,
@@ -500,10 +532,17 @@ function NERCaseResult({
   const predCount = prediction.entities?.length ?? 0;
   const goldCount = goldCase?.entities?.length ?? 0;
 
+  const typeColors: Record<string, string> = {
+    diagnose: "border-blue-500/30 bg-blue-500/5",
+    prozedur: "border-amber-500/30 bg-amber-500/5",
+    medikament: "border-green-500/30 bg-green-500/5",
+    laborwert: "border-purple-500/30 bg-purple-500/5",
+  };
+
   return (
     <Card>
-      <CardContent className="py-4">
-        <div className="mb-3 flex items-center justify-between">
+      <CardHeader className="pb-0">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link
               href={`/benchmarks/${task}/${prediction.case_id}`}
@@ -513,23 +552,31 @@ function NERCaseResult({
             </Link>
             <span className="text-xs text-muted-foreground">{goldCase?.fachbereich}</span>
           </div>
-          <span className="text-xs text-muted-foreground">
+          <Badge variant="secondary" className="text-xs">
             {predCount}/{goldCount} Entitäten
-          </span>
+          </Badge>
         </div>
+      </CardHeader>
+      <CardContent className="pt-3">
         {hasError ? (
           <p className="text-xs text-muted-foreground">
             {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
           </p>
         ) : (
           <div className="flex flex-wrap gap-1.5">
-            {prediction.entities?.slice(0, 8).map((e, i) => (
-              <Badge key={i} variant="secondary" className="text-xs">
-                {e.typ}: {e.name}
-              </Badge>
+            {prediction.entities?.slice(0, 10).map((e, i) => (
+              <span
+                key={i}
+                className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs ${typeColors[e.typ] ?? "border-border"}`}
+              >
+                <span className="text-muted-foreground">{e.typ}</span>
+                <span className="font-medium">{e.name}</span>
+              </span>
             ))}
-            {predCount > 8 && (
-              <span className="text-xs text-muted-foreground">+{predCount - 8}</span>
+            {predCount > 10 && (
+              <span className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+                +{predCount - 10}
+              </span>
             )}
           </div>
         )}
@@ -537,6 +584,10 @@ function NERCaseResult({
     </Card>
   );
 }
+
+// ---------------------------------------------------------------------------
+// Med Extraction
+// ---------------------------------------------------------------------------
 
 function MedExtractionCaseResult({
   task,
@@ -554,8 +605,8 @@ function MedExtractionCaseResult({
 
   return (
     <Card>
-      <CardContent className="py-4">
-        <div className="mb-3 flex items-center justify-between">
+      <CardHeader className="pb-0">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link
               href={`/benchmarks/${task}/${prediction.case_id}`}
@@ -565,24 +616,32 @@ function MedExtractionCaseResult({
             </Link>
             <span className="text-xs text-muted-foreground">{goldCase?.fachbereich}</span>
           </div>
-          <span className="text-xs text-muted-foreground">
+          <Badge variant="secondary" className="text-xs">
             {predCount}/{goldCount} Medikamente
-          </span>
+          </Badge>
         </div>
+      </CardHeader>
+      <CardContent className="pt-3">
         {hasError ? (
           <p className="text-xs text-muted-foreground">
             {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
           </p>
         ) : (
-          <div className="space-y-1 text-xs text-muted-foreground">
+          <div className="space-y-1.5">
             {prediction.medications?.slice(0, 5).map((m, i) => (
-              <div key={i} className="flex items-baseline gap-2">
+              <div key={i} className="flex flex-wrap items-center gap-2 text-xs">
                 <span className="font-medium text-foreground">{m.wirkstoff}</span>
-                <span>{m.dosis}</span>
-                <span>{m.frequenz}</span>
+                {m.dosis && (
+                  <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-muted-foreground">{m.dosis}</span>
+                )}
+                {m.frequenz && (
+                  <span className="text-muted-foreground">{m.frequenz}</span>
+                )}
               </div>
             ))}
-            {predCount > 5 && <p>+{predCount - 5} weitere</p>}
+            {predCount > 5 && (
+              <p className="text-xs text-muted-foreground">+{predCount - 5} weitere</p>
+            )}
           </div>
         )}
       </CardContent>

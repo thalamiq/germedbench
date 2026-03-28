@@ -11,6 +11,9 @@ const PROVIDER_CONFIG: Record<string, ProviderConfig> = {
   Alibaba: { color: "#FF6A00", icon: "/icons/alibaba.svg" },
   Moonshot: { color: "#E8B931", icon: "/icons/moonshot.svg" },
   OpenAI: { color: "#000000", icon: "/icons/openai.svg" },
+  "Swiss AI": { color: "#E42313", icon: "" },
+  "Z.ai": { color: "#4A4A4A", icon: "/icons/zai.svg" },
+  "OpenGPT-X": { color: "#003399", icon: "" },
 };
 
 const FALLBACK: ProviderConfig = { color: "#6b7280", icon: "" };

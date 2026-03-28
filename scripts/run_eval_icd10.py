@@ -1,14 +1,14 @@
-"""Evaluate models on ICD-10 coding task via Together AI."""
+"""Evaluate models on ICD-10 coding task."""
 
 import json
 import logging
 import sys
 import time
 
-from openai import OpenAI, APIError
+from openai import APIError
 
 from germedbench.config import settings
-from germedbench.eval_helpers import model_slug, extract_json, update_latest
+from germedbench.eval_helpers import model_slug, extract_json, update_latest, get_client, call_model, parse_eval_args, run_eval
 from germedbench.evaluation.icd10_scoring import score_icd10, ICD10Score
 from germedbench.logging import setup_run_logger
 from germedbench.schemas import ICD10Case
@@ -53,31 +53,13 @@ def load_cases() -> list[ICD10Case]:
     return cases
 
 
-def extract_codes(client: OpenAI, model: str, text: str) -> dict:
+def extract_codes(client, model: str, text: str) -> dict:
     """Send clinical text to model and parse ICD-10 codes from response."""
     prompt = EXTRACTION_PROMPT.format(text=text)
-
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.0,
-        max_tokens=2048,
-    )
-
-    raw = response.choices[0].message.content or ""
-    usage = response.usage
-
+    raw, usage = call_model(client, model, prompt)
     json_str = extract_json(raw)
 
-    log = {
-        "raw": raw,
-        "prompt_length": len(prompt),
-        "response_length": len(raw),
-        "usage": {
-            "prompt_tokens": usage.prompt_tokens if usage else None,
-            "completion_tokens": usage.completion_tokens if usage else None,
-        },
-    }
+    meta = {"raw": raw, "prompt_length": len(prompt), "response_length": len(raw), "usage": usage}
 
     try:
         data = json.loads(json_str)
@@ -87,13 +69,13 @@ def extract_codes(client: OpenAI, model: str, text: str) -> dict:
             (d["code"] for d in diagnosen if d.get("typ") == "Hauptdiagnose"),
             None,
         )
-        return {"codes": codes, "hauptdiagnose": hauptdiagnose, **log}
+        return {"codes": codes, "hauptdiagnose": hauptdiagnose, **meta}
     except (json.JSONDecodeError, KeyError):
-        return {"codes": [], "hauptdiagnose": None, "parse_error": True, **log}
+        return {"codes": [], "hauptdiagnose": None, "parse_error": True, **meta}
 
 
 def evaluate_model(
-    client: OpenAI, model: str, cases: list[ICD10Case]
+    client, model: str, cases: list[ICD10Case]
 ) -> dict | None:
     """Run evaluation for a single model. Returns None if model is unavailable."""
     log.info(f"\n{'='*60}")
@@ -204,26 +186,17 @@ def main():
     global log
     log = setup_run_logger(TASK_NAME)
 
-    if not settings.together_api_key:
-        log.error("TOGETHER_API_KEY not set in .env")
-        sys.exit(1)
-
-    client = OpenAI(
-        api_key=settings.together_api_key,
-        base_url=settings.together_base_url,
-    )
-
     cases = load_cases()
     log.info(f"Loaded {len(cases)} cases from {settings.icd10_output_file}")
-    log.info(f"Models: {settings.eval_models}")
 
-    models = sys.argv[1:] if len(sys.argv) > 1 else settings.eval_models
+    eval_args = parse_eval_args(TASK_NAME)
+    log.info(f"Models: {[m.id for m in eval_args.models]}")
 
-    all_results = []
-    for model in models:
-        result = evaluate_model(client, model, cases)
-        if result:
-            all_results.append(result)
+    def eval_fn(m):
+        client = get_client(m.provider)
+        return evaluate_model(client, m.id, cases)
+
+    all_results = run_eval(eval_args, eval_fn)
 
     if all_results:
         update_latest(all_results)

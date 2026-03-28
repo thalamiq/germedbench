@@ -29,15 +29,21 @@ export default function MethodikPage() {
         <section>
           <h2 className="mb-3 text-lg font-semibold">Warum GerMedBench?</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Für den englischsprachigen Raum existieren etablierte medizinische
-            LLM-Benchmarks wie MedQA, MedHELM oder LLMEval-Med. Der
-            deutschsprachige klinische Bereich ist hingegen ein blinder Fleck:
+            Allgemeine LLM-Leaderboards wie{" "}
+            <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80">Artificial Analysis</a> und{" "}
+            <a href="https://lmarena.ai/" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80">LM Arena</a>{" "}
+            messen Modelle auf englischsprachigen, domänenübergreifenden Tasks.
+            GerMedBench ergänzt diese um eine Dimension, die dort fehlt:
+            die Evaluation auf <strong>deutschen klinischen Texten</strong> mit
+            fachspezifischen Aufgaben wie ICD-10-Kodierung, Arztbrief-Zusammenfassung
+            und Differentialdiagnostik.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             Bestehende deutsche Datensätze (GGPONC, BRONCO, GraSCCo) wurden für
             die BERT-Ära entwickelt und evaluieren vorwiegend klassische
             NLP-Tasks wie Named Entity Recognition. Generative klinische
-            Fähigkeiten moderner LLMs — Kodierung, Zusammenfassung, klinisches
-            Reasoning — wurden für Deutsch bisher nicht systematisch und
-            öffentlich bewertet.
+            Fähigkeiten moderner LLMs wurden für Deutsch bisher nicht
+            systematisch und öffentlich bewertet.
           </p>
         </section>
 
@@ -429,9 +435,7 @@ export default function MethodikPage() {
         <Separator />
 
         <p className="text-xs text-muted-foreground">
-          GerMedBench ist ein Open-Source-Projekt von ThalamiQ GmbH in
-          Zusammenarbeit mit dem Institut für KI in der Medizin (IKIM),
-          Universitätsklinikum Essen.
+          GerMedBench ist ein Open-Source-Projekt von der ThalamiQ GmbH.
         </p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getLeaderboard } from "@/lib/data";
+import { getLeaderboard, getAggregatedScores } from "@/lib/data";
 import { LeaderboardChart } from "@/components/leaderboard-chart";
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export const dynamic = "force-dynamic";
 
 export default function Home() {
   const data = getLeaderboard();
+  const aggregated = getAggregatedScores();
 
-  return <LeaderboardChart data={data} />;
+  return <LeaderboardChart data={data} aggregated={aggregated} />;
 }

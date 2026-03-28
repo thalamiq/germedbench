@@ -21,21 +21,28 @@ Anforderungen an den Text:
 - Der Text soll Diagnosen, Prozeduren, Medikamente und Laborwerte enthalten
 
 Erstelle zusätzlich eine vollständige Liste aller klinischen Entitäten im Text. \
-Jede Entität hat einen Typ und typspezifische Felder:
+Jede Entität hat einen Typ, typspezifische Felder und eine Liste von "acceptable_names" — \
+alternative Bezeichnungen, die ebenfalls korrekt wären. Typische Alternativen:
+- Abkürzungen (z.B. "COPD" für "Chronisch obstruktive Lungenkrankheit")
+- Handelsnamen vs. Wirkstoffe (z.B. "Beloc" für "Metoprolol")
+- Laborabkürzungen (z.B. "CRP" für "C-reaktives Protein")
+- Unterschiedliche Schreibweisen oder Synonyme
+Wenn keine sinnvollen Alternativen existieren, lasse die Liste leer.
 
-- **diagnose**: name (deutsche Bezeichnung), code (ICD-10-GM Code)
-- **prozedur**: name (deutsche Bezeichnung), code (OPS Code)
-- **medikament**: name (Handelsname oder Wirkstoff), wirkstoff, dosierung (z.B. "47.5mg 1-0-0"), einheit
-- **laborwert**: name (Parametername), parameter, wert (numerisch als String), einheit
+Entitätstypen:
+- **diagnose**: name, acceptable_names, code (ICD-10-GM)
+- **prozedur**: name, acceptable_names, code (OPS)
+- **medikament**: name, acceptable_names, wirkstoff, dosierung, einheit
+- **laborwert**: name, acceptable_names, parameter, wert, einheit
 
 Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar):
 {{
   "text": "Der Auszug aus dem Entlassbrief...",
   "entities": [
-    {{"typ": "diagnose", "name": "Vorhofflimmern", "code": "I48.0"}},
-    {{"typ": "prozedur", "name": "Elektrokardioversion", "code": "8-640.0"}},
-    {{"typ": "medikament", "name": "Metoprolol", "wirkstoff": "Metoprolol", "dosierung": "47.5mg 1-0-0", "einheit": "mg"}},
-    {{"typ": "laborwert", "name": "Kalium", "parameter": "Kalium", "wert": "4.2", "einheit": "mmol/L"}}
+    {{"typ": "diagnose", "name": "Chronisch obstruktive Lungenkrankheit", "acceptable_names": ["COPD", "chronische Bronchitis"], "code": "J44.1"}},
+    {{"typ": "prozedur", "name": "Elektrokardioversion", "acceptable_names": ["EKV", "Kardioversion"], "code": "8-640.0"}},
+    {{"typ": "medikament", "name": "Metoprolol", "acceptable_names": ["Beloc", "Metoprolol-succinat"], "wirkstoff": "Metoprolol", "dosierung": "47.5mg 1-0-0", "einheit": "mg"}},
+    {{"typ": "laborwert", "name": "C-reaktives Protein", "acceptable_names": ["CRP"], "parameter": "CRP", "wert": "4.2", "einheit": "mg/l"}}
   ]
 }}
 """

@@ -248,6 +248,7 @@ export interface ClinicalReasoningBenchmarkCase {
 export interface ClinicalEntityEntry {
   typ: string;
   name: string;
+  acceptable_names?: string[];
   code?: string;
   wirkstoff?: string;
   dosierung?: string;
@@ -361,16 +362,107 @@ export const MODEL_META: Record<
     provider: "Google",
     size: "small",
   },
+  // Chat-AI (Academic Cloud)
+  "apertus-70b-instruct-2509": {
+    shortName: "Apertus 70B",
+    provider: "Swiss AI",
+    size: "large",
+  },
+  "deepseek-r1-distill-llama-70b": {
+    shortName: "DeepSeek R1 Distill 70B",
+    provider: "DeepSeek",
+    size: "large",
+  },
+  "devstral-2-123b-instruct-2512": {
+    shortName: "Devstral 2 123B",
+    provider: "Mistral",
+    size: "large",
+  },
+  "mistral-large-3-675b-instruct-2512": {
+    shortName: "Mistral Large 3 675B",
+    provider: "Mistral",
+    size: "large",
+  },
+  "openai-gpt-oss-120b": {
+    shortName: "GPT-oss 120B",
+    provider: "OpenAI",
+    size: "large",
+  },
+  "glm-4.7": {
+    shortName: "GLM-4.7",
+    provider: "Z.ai",
+    size: "large",
+  },
+  "qwen3-235b-a22b": {
+    shortName: "Qwen 3 235B",
+    provider: "Alibaba",
+    size: "large",
+  },
+  "gemma-3-27b-it": {
+    shortName: "Gemma 3 27B",
+    provider: "Google",
+    size: "medium",
+  },
+  "medgemma-27b-it": {
+    shortName: "MedGemma 27B",
+    provider: "Google",
+    size: "medium",
+  },
+  "llama-3.3-70b-instruct": {
+    shortName: "Llama 3.3 70B",
+    provider: "Meta",
+    size: "large",
+  },
+  "llama-3.1-sauerkrautlm-70b-instruct": {
+    shortName: "SauerkrautLM 70B",
+    provider: "Meta",
+    size: "large",
+  },
+  "qwen3-30b-a3b-instruct-2507": {
+    shortName: "Qwen 3 30B Instruct",
+    provider: "Alibaba",
+    size: "medium",
+  },
+  "qwen3-30b-a3b-thinking-2507": {
+    shortName: "Qwen 3 30B Thinking",
+    provider: "Alibaba",
+    size: "medium",
+  },
+  "qwen3-32b": {
+    shortName: "Qwen 3 32B",
+    provider: "Alibaba",
+    size: "medium",
+  },
+  "qwen3-coder-30b-a3b-instruct": {
+    shortName: "Qwen 3 Coder 30B",
+    provider: "Alibaba",
+    size: "medium",
+  },
+  "meta-llama-3.1-8b-instruct": {
+    shortName: "Llama 3.1 8B",
+    provider: "Meta",
+    size: "small",
+  },
+  "teuken-7b-instruct-research": {
+    shortName: "Teuken 7B",
+    provider: "OpenGPT-X",
+    size: "small",
+  },
 };
 
 const PROVIDER_ALIASES: Record<string, string> = {
   Qwen: "Alibaba",
+  qwen: "Alibaba",
   "meta-llama": "Meta",
   "deepseek-ai": "DeepSeek",
+  deepseek: "DeepSeek",
   mistralai: "Mistral",
   google: "Google",
   moonshotai: "Moonshot",
   openai: "OpenAI",
+  swissai: "Swiss AI",
+  zhipu: "Z.ai",
+  opengptx: "OpenGPT-X",
 };
 
 export function getModelMeta(modelId: string) {

@@ -1,0 +1,200 @@
+{
+  "summary": {
+    "model": "medgemma-27b-it",
+    "task": "summarization",
+    "timestamp": "20260328_230617",
+    "n_cases": 10,
+    "n_scored": 2,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "faktentreue": 5.0,
+    "vollstaendigkeit": 4.5,
+    "halluzinationsfreiheit": 5.0,
+    "formatkonformitaet": 5.0,
+    "overall_score": 4.875
+  },
+  "predictions": [
+    {
+      "summary": {
+        "hauptdiagnose": "Akut dekompensierte chronische Herzinsuffizienz (HFrEF) mit Erstdiagnose Vorhofflimmern und arterieller Hypertonie.",
+        "therapie": "Der Patient erhielt eine intravenöse Diuretikatherapie (Furosemid) zur Entlastung, eine Frequenzkontrolle des Vorhofflimmerns mit Metoprololsuccinat, eine orale Antikoagulation (Apixaban) aufgrund des Schlaganfallrisikos sowie eine schrittweise Etablierung der Standardtherapie für HFrEF (ARNI, SGLT2-Inhibitor, Spironolacton).",
+        "procedere": "Fortführung der entlassungsmedikation. Kontrolle der Elektrolyte und Nierenfunktion in 10-14 Tagen. Elektive Kardioversion des Vorhofflimmerns nach ausreichender Antikoagulation erwägen. Kardiologische Verlaufskontrolle inklusive Echokardiographie in drei Monaten. Empfehlungen zur Lebensstiländerung (kochsalzarme Ernährung, Flüssigkeitsrestriktion, tägliche Gewichtskontrolle).",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akut dekompensierte chronische Herzinsuffizienz (HFrEF) mit Erstdiagnose Vorhofflimmern und arterieller Hypertonie.\",\n  \"therapie\": \"Der Patient erhielt eine intravenöse Diuretikatherapie (Furosemid) zur Entlastung, eine Frequenzkontrolle des Vorhofflimmerns mit Metoprololsuccinat, eine orale Antikoagulation (Apixaban) aufgrund des Schlaganfallrisikos sowie eine schrittweise Etablierung der Standardtherapie für HFrEF (ARNI, SGLT2-Inhibitor, Spironolacton).\",\n  \"procedere\": \"Fortführung der entlassungsmedikation. Kontrolle der Elektrolyte und Nierenfunktion in 10-14 Tagen. Elektive Kardioversion des Vorhofflimmerns nach ausreichender Antikoagulation erwägen. Kardiologische Verlaufskontrolle inklusive Echokardiographie in drei Monaten. Empfehlungen zur Lebensstiländerung (kochsalzarme Ernährung, Flüssigkeitsrestriktion, tägliche Gewichtskontrolle).\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 5640,
+      "response_length": 923,
+      "usage": {
+        "prompt_tokens": 1731,
+        "completion_tokens": 264
+      },
+      "case_id": "summ_001",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h56m26.336311134s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6986s'}]}}"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akuter Myokardinfarkt ohne ST-Hebung (NSTEMI) aufgrund einer Koronaren 1-Gefäß-Erkrankung (RCA), behandelt mit PCI und DES-Implantation.",
+        "therapie": "Durchführung einer Koronarangiographie mit perkutaner transluminaler Koronarangiographie (PTCA) und Implantation eines Drug-Eluting-Stents (DES) in die rechte Koronararterie (RCA). Initiierung einer dualen antithrombotischen Therapie (DAPT) mit Aspirin und Ticagrelor, sowie einer Therapie mit Ramipril, Bisoprolol, Atorvastatin und Metformin. Durchführung einer Ernährungsberatung.",
+        "procedere": "Fortsetzung der empfohlenen Medikation (ASS, Ticagrelor, Atorvastatin, Ramipril, Bisoprolol, Metformin, Pantoprazol). Kardiologische Kontrolle in 4-6 Wochen inklusive EKG und Belastungs-Echokardiographie. Nikotinkarenz. Kontrolle der Nierenwerte und Elektrolyte in 2 Wochen. Diabetologische Mitbetreuung. Teilnahme an einer stationären Anschlussheilbehandlung (AHB).",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akuter Myokardinfarkt ohne ST-Hebung (NSTEMI) aufgrund einer Koronaren 1-Gefäß-Erkrankung (RCA), behandelt mit PCI und DES-Implantation.\",\n  \"therapie\": \"Durchführung einer Koronarangiographie mit perkutaner transluminaler Koronarangiographie (PTCA) und Implantation eines Drug-Eluting-Stents (DES) in die rechte Koronararterie (RCA). Initiierung einer dualen antithrombotischen Therapie (DAPT) mit Aspirin und Ticagrelor, sowie einer Therapie mit Ramipril, Bisoprolol, Atorvastatin und Metformin. Durchführung einer Ernährungsberatung.\",\n  \"procedere\": \"Fortsetzung der empfohlenen Medikation (ASS, Ticagrelor, Atorvastatin, Ramipril, Bisoprolol, Metformin, Pantoprazol). Kardiologische Kontrolle in 4-6 Wochen inklusive EKG und Belastungs-Echokardiographie. Nikotinkarenz. Kontrolle der Nierenwerte und Elektrolyte in 2 Wochen. Diabetologische Mitbetreuung. Teilnahme an einer stationären Anschlussheilbehandlung (AHB).\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 5356,
+      "response_length": 986,
+      "usage": {
+        "prompt_tokens": 1780,
+        "completion_tokens": 286
+      },
+      "case_id": "summ_002",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h56m14.7592827s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6974s'}]}}"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exazerbierte chronisch-obstruktive Lungenerkrankung (AECOPD) mit respiratorischer Globalinsuffizienz, Verdacht auf idiopathische pulmonale Fibrose (IPF) im Rahmen einer Combined Pulmonary Fibrosis and Emphysema (CPFE) sowie dekompensierte chronische Herzinsuffizienz (HFrEF).",
+        "therapie": "Die AECOPD wurde mit systemischen Glukokortikoiden und inhalativen LAMA/LABA behandelt, ergänzt durch Antibiotika aufgrund von Infektzeichen. Die kardiale Dekompensation wurde mit intravenösen Diuretika behandelt und die Medikation auf Sacubitril/Valsartan umgestellt. Eine Sauerstofflangzeittherapie (LTOT) wurde eingeleitet. Der Verdacht auf IPF wurde in einer ILD-Konferenz besprochen.",
+        "procedere": "Fortführung der inhalativen Therapie und LTOT. Medikation der Herzinsuffizienz (Sacubitril/Valsartan, Bisoprolol, Spironolacton, Furosemid bei Bedarf) und Antidiabetika. Ambulante Vorstellung in der ILD-Spezialsprechstunde zur Evaluation einer antifibrotischen Therapie (Nintedanib). Teilnahme an pneumologischer Rehabilitation und Nikotinkarenz empfohlen. Kontrolle der Nierenwerte und Elektrolyte nach Medikationsumstellung.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akut exazerbierte chronisch-obstruktive Lungenerkrankung (AECOPD) mit respiratorischer Globalinsuffizienz, Verdacht auf idiopathische pulmonale Fibrose (IPF) im Rahmen einer Combined Pulmonary Fibrosis and Emphysema (CPFE) sowie dekompensierte chronische Herzinsuffizienz (HFrEF).\",\n  \"therapie\": \"Die AECOPD wurde mit systemischen Glukokortikoiden und inhalativen LAMA/LABA behandelt, ergänzt durch Antibiotika aufgrund von Infektzeichen. Die kardiale Dekompensation wurde mit intravenösen Diuretika behandelt und die Medikation auf Sacubitril/Valsartan umgestellt. Eine Sauerstofflangzeittherapie (LTOT) wurde eingeleitet. Der Verdacht auf IPF wurde in einer ILD-Konferenz besprochen.\",\n  \"procedere\": \"Fortführung der inhalativen Therapie und LTOT. Medikation der Herzinsuffizienz (Sacubitril/Valsartan, Bisoprolol, Spironolacton, Furosemid bei Bedarf) und Antidiabetika. Ambulante Vorstellung in der ILD-Spezialsprechstunde zur Evaluation einer antifibrotischen Therapie (Nintedanib). Teilnahme an pneumologischer Rehabilitation und Nikotinkarenz empfohlen. Kontrolle der Nierenwerte und Elektrolyte nach Medikationsumstellung.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 5907,
+      "response_length": 1196,
+      "usage": {
+        "prompt_tokens": 1841,
+        "completion_tokens": 315
+      },
+      "case_id": "summ_003",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h56m1.689445148s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6961s'}]}}"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Ischämischer Hirninfarkt im Stromgebiet der Arteria cerebri media rechts (M1-Abgangsnah) aufgrund einer Makroangiopathie, verursacht durch eine hochgradige symptomatische Karotisstenose rechts.",
+        "therapie": "Intravenöse Thrombolyse (Alteplase) wurde erfolgreich durchgeführt, was zu einer deutlichen Verbesserung der neurologischen Symptomatik führte. Es wurde eine medikamentöse Sekundärprävention mit ASS, Atorvastatin und einem ACE-Hemmer eingeleitet. Die Diabeteseinstellung wurde optimiert.",
+        "procedere": "Fortführung der aktuellen Medikation und konsequente Kontrolle der vaskulären Risikofaktoren (Blutdruck, LDL-Cholesterin, Nikotin). Zeitnahe Durchführung einer elektiven Karotis-Endarteriektomie (CEA) rechts wurde empfohlen und terminiert. Ambulante neurologische Verlaufskontrolle inklusive Duplexsonographie in 3 Monaten sowie Fortführung der Physiotherapie/Ergotherapie.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Ischämischer Hirninfarkt im Stromgebiet der Arteria cerebri media rechts (M1-Abgangsnah) aufgrund einer Makroangiopathie, verursacht durch eine hochgradige symptomatische Karotisstenose rechts.\",\n  \"therapie\": \"Intravenöse Thrombolyse (Alteplase) wurde erfolgreich durchgeführt, was zu einer deutlichen Verbesserung der neurologischen Symptomatik führte. Es wurde eine medikamentöse Sekundärprävention mit ASS, Atorvastatin und einem ACE-Hemmer eingeleitet. Die Diabeteseinstellung wurde optimiert.\",\n  \"procedere\": \"Fortführung der aktuellen Medikation und konsequente Kontrolle der vaskulären Risikofaktoren (Blutdruck, LDL-Cholesterin, Nikotin). Zeitnahe Durchführung einer elektiven Karotis-Endarteriektomie (CEA) rechts wurde empfohlen und terminiert. Ambulante neurologische Verlaufskontrolle inklusive Duplexsonographie in 3 Monaten sowie Fortführung der Physiotherapie/Ergotherapie.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 6348,
+      "response_length": 955,
+      "usage": {
+        "prompt_tokens": 2005,
+        "completion_tokens": 246
+      },
+      "case_id": "summ_004",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h55m49.457669826s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6949s'}]}}"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Ulcus ventriculi (Forrest III) mit Nachweis von Helicobacter pylori, vermutlich NSAR-induziert, kompliziert durch Meläna und Anämie.",
+        "therapie": "Stationäre Behandlung umfasste intravenöse Volumensubstitution, hochdosierte intravenöse Protonenpumpeninhibitoren (PPI) initial, gefolgt von oraler PPI-Therapie. Es wurde eine 10-tägige Eradikationstherapie mit Pylera® (Bismut, Metronidazol, Tetracyclin) in Kombination mit Pantoprazol eingeleitet.",
+        "procedere": "Fortführung der Eradikationstherapie bis zum 23.10.2023. Fortsetzung der PPI-Therapie (Pantoprazol 40 mg 1-0-1 für 4 Wochen, dann 40 mg 1-0-0 für 4 Wochen). Durchführung einer Kontrollgastroskopie in ca. 8 Wochen zur Ulkusabheilungsdokumentation und Malignomausschluss. Nachweis des Eradikationserfolges 4 Wochen nach Beendigung der PPI-Therapie (z.B. C13-Atemtest). Strikte Meidung von NSAR. Verlaufskontrolle von Blutbild und Nierenwerten beim Hausarzt.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Ulcus ventriculi (Forrest III) mit Nachweis von Helicobacter pylori, vermutlich NSAR-induziert, kompliziert durch Meläna und Anämie.\",\n  \"therapie\": \"Stationäre Behandlung umfasste intravenöse Volumensubstitution, hochdosierte intravenöse Protonenpumpeninhibitoren (PPI) initial, gefolgt von oraler PPI-Therapie. Es wurde eine 10-tägige Eradikationstherapie mit Pylera® (Bismut, Metronidazol, Tetracyclin) in Kombination mit Pantoprazol eingeleitet.\",\n  \"procedere\": \"Fortführung der Eradikationstherapie bis zum 23.10.2023. Fortsetzung der PPI-Therapie (Pantoprazol 40 mg 1-0-1 für 4 Wochen, dann 40 mg 1-0-0 für 4 Wochen). Durchführung einer Kontrollgastroskopie in ca. 8 Wochen zur Ulkusabheilungsdokumentation und Malignomausschluss. Nachweis des Eradikationserfolges 4 Wochen nach Beendigung der PPI-Therapie (z.B. C13-Atemtest). Strikte Meidung von NSAR. Verlaufskontrolle von Blutbild und Nierenwerten beim Hausarzt.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 6015,
+      "response_length": 988,
+      "usage": {
+        "prompt_tokens": 1818,
+        "completion_tokens": 316
+      },
+      "case_id": "summ_005",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 4.0,
+        "halluzinationsfreiheit": 5.0,
+        "formatkonformitaet": 5.0,
+        "overall": 4.75
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Metastasierte Adenokarzinom der Lunge (NSCLC) mit Erstdiagnose im August 2023, kompliziert durch febrile Neutropenie (Grad 4) nach Chemotherapie, akute Nierenschädigung (Stadium I) auf chronischer Niereninsuffizienz (Stadium G3a) und bekannte KHK, Diabetes mellitus Typ 2, arterielle Hypertonie und COPD.",
+        "therapie": "Der Patient wurde stationär wegen febriler Neutropenie nach dem ersten Chemozyklus (Carboplatin/Pemetrexed/Pembrolizumab) behandelt. Es erfolgte eine kalkulierte antibiotische Therapie mit Piperacillin/Tazobactam, forcierte Volumensubstitution zur Behandlung der akuten Nierenschädigung und Gabe von G-CSF zur Stimulierung der Hämatopoese. Die Metformin-Medikation wurde pausiert.",
+        "procedere": "Der Patient wird mit oraler Antibiotikatherapie (Ciprofloxacin) entlassen. Der nächste, dosisreduzierte Chemozyklus (Carboplatin/Pemetrexed/Pembrolizumab) ist ambulant für den 31.10.2023 geplant. Es sind engmaschige Laborkontrollen beim Hausarzt am 26.10.2023 erforderlich. Bei Fieber oder Schüttelfrost ist eine sofortige Wiedervorstellung erforderlich. Metformin bleibt pausiert, Blutzuckerkontrollen sind notwendig. Die bestehende Begleitmedikation wird fortgeführt.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Metastasierte Adenokarzinom der Lunge (NSCLC) mit Erstdiagnose im August 2023, kompliziert durch febrile Neutropenie (Grad 4) nach Chemotherapie, akute Nierenschädigung (Stadium I) auf chronischer Niereninsuffizienz (Stadium G3a) und bekannte KHK, Diabetes mellitus Typ 2, arterielle Hypertonie und COPD.\",\n  \"therapie\": \"Der Patient wurde stationär wegen febriler Neutropenie nach dem ersten Chemozyklus (Carboplatin/Pemetrexed/Pembrolizumab) behandelt. Es erfolgte eine kalkulierte antibiotische Therapie mit Piperacillin/Tazobactam, forcierte Volumensubstitution zur Behandlung der akuten Nierenschädigung und Gabe von G-CSF zur Stimulierung der Hämatopoese. Die Metformin-Medikation wurde pausiert.\",\n  \"procedere\": \"Der Patient wird mit oraler Antibiotikatherapie (Ciprofloxacin) entlassen. Der nächste, dosisreduzierte Chemozyklus (Carboplatin/Pemetrexed/Pembrolizumab) ist ambulant für den 31.10.2023 geplant. Es sind engmaschige Laborkontrollen beim Hausarzt am 26.10.2023 erforderlich. Bei Fieber oder Schüttelfrost ist eine sofortige Wiedervorstellung erforderlich. Metformin bleibt pausiert, Blutzuckerkontrollen sind notwendig. Die bestehende Begleitmedikation wird fortgeführt.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 5565,
+      "response_length": 1255,
+      "usage": {
+        "prompt_tokens": 1827,
+        "completion_tokens": 361
+      },
+      "case_id": "summ_006",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h54m45.067516298s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6885s'}]}}"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akute dekompensierte chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF, EF 32 %) im NYHA Stadium III, Stadium C.",
+        "therapie": "Intensivierung der diuretischen Therapie mit Furosemid zur Volumenreduktion und Rekompensation. Umstellung der Medikation auf Sacubitril/Valsartan (ARNI), Steigerung der Betablocker-Dosis (Bisoprolol) und Initiierung eines SGLT2-Inhibitors (Empagliflozin) gemäß Leitlinien. Zusätzlich wurde Spironolacton fortgeführt und Pantoprazol zum Magenschutz hinzugefügt.",
+        "procedere": "Fortführung der optimierten, leitliniengerechten HFrEF-Therapie durch den Hausarzt und Kardiologen. Konsequente Medikamenteneinnahme sicherstellen, Zieldosis von Sacubitril/Valsartan anstreben. Tägliche Gewichtskontrolle und Flüssigkeitsrestriktion (max. 2 Liter/Tag) zur Vermeidung erneuter Dekompensation. Kontrolle der Nierenwerte und Elektrolyte in 7-10 Tagen. Echokardiographische Kontrolle der LVEF in 3 Monaten.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akute dekompensierte chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF, EF 32 %) im NYHA Stadium III, Stadium C.\",\n  \"therapie\": \"Intensivierung der diuretischen Therapie mit Furosemid zur Volumenreduktion und Rekompensation. Umstellung der Medikation auf Sacubitril/Valsartan (ARNI), Steigerung der Betablocker-Dosis (Bisoprolol) und Initiierung eines SGLT2-Inhibitors (Empagliflozin) gemäß Leitlinien. Zusätzlich wurde Spironolacton fortgeführt und Pantoprazol zum Magenschutz hinzugefügt.\",\n  \"procedere\": \"Fortführung der optimierten, leitliniengerechten HFrEF-Therapie durch den Hausarzt und Kardiologen. Konsequente Medikamenteneinnahme sicherstellen, Zieldosis von Sacubitril/Valsartan anstreben. Tägliche Gewichtskontrolle und Flüssigkeitsrestriktion (max. 2 Liter/Tag) zur Vermeidung erneuter Dekompensation. Kontrolle der Nierenwerte und Elektrolyte in 7-10 Tagen. Echokardiographische Kontrolle der LVEF in 3 Monaten.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 6631,
+      "response_length": 1012,
+      "usage": {
+        "prompt_tokens": 2056,
+        "completion_tokens": 293
+      },
+      "case_id": "summ_007",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 5.0,
+        "halluzinationsfreiheit": 5.0,
+        "formatkonformitaet": 5.0,
+        "overall": 5.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akutes Koronarsyndrom (NSTEMI) aufgrund einer Koronaren 1-Gefäß-Erkrankung (RCA), behandelt mit PTCA und Stentimplantation.",
+        "therapie": "Die Therapie umfasste eine sofortige Koronarangiographie mit erfolgreicher perkutaner transluminaler Koronarangiographie (PTCA) und Implantation eines Drug-Eluting-Stents (DES) in die distale rechte Koronararterie (RCA). Zusätzlich wurde eine duale Thrombozytenaggregationshemmung (DAPT) mit ASS und Ticagrelor eingeleitet, sowie eine antihypertensive Therapie mit ACE-Hemmer und Betablocker intensiviert. Neu wurde ein Diabetes mellitus Typ 2 diagnostiziert und mit Metformin behandelt.",
+        "procedere": "Der Patient soll eine Anschlussheilbehandlung (AHB) erhalten. Es sind regelmäßige Kontrollen beim Hausarzt (Nierenwerte, Elektrolyte in 2 Wochen) und beim Kardiologen (Belastungs-EKG in 3 Monaten) erforderlich. Die Medikation (ASS, Ticagrelor, Atorvastatin, Ramipril, Bisoprolol, Metformin) ist fortzusetzen. Nikotinkarenz wurde dringend empfohlen. Bei erneuten Thoraxschmerzen ist eine sofortige Vorstellung in einer Chest Pain Unit notwendig.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akutes Koronarsyndrom (NSTEMI) aufgrund einer Koronaren 1-Gefäß-Erkrankung (RCA), behandelt mit PTCA und Stentimplantation.\",\n  \"therapie\": \"Die Therapie umfasste eine sofortige Koronarangiographie mit erfolgreicher perkutaner transluminaler Koronarangiographie (PTCA) und Implantation eines Drug-Eluting-Stents (DES) in die distale rechte Koronararterie (RCA). Zusätzlich wurde eine duale Thrombozytenaggregationshemmung (DAPT) mit ASS und Ticagrelor eingeleitet, sowie eine antihypertensive Therapie mit ACE-Hemmer und Betablocker intensiviert. Neu wurde ein Diabetes mellitus Typ 2 diagnostiziert und mit Metformin behandelt.\",\n  \"procedere\": \"Der Patient soll eine Anschlussheilbehandlung (AHB) erhalten. Es sind regelmäßige Kontrollen beim Hausarzt (Nierenwerte, Elektrolyte in 2 Wochen) und beim Kardiologen (Belastungs-EKG in 3 Monaten) erforderlich. Die Medikation (ASS, Ticagrelor, Atorvastatin, Ramipril, Bisoprolol, Metformin) ist fortzusetzen. Nikotinkarenz wurde dringend empfohlen. Bei erneuten Thoraxschmerzen ist eine sofortige Vorstellung in einer Chest Pain Unit notwendig.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 5602,
+      "response_length": 1156,
+      "usage": {
+        "prompt_tokens": 1759,
+        "completion_tokens": 316
+      },
+      "case_id": "summ_008",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h54m7.399020078s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6847s'}]}}"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exacerbierte COPD (GOLD IV, Gruppe E) mit Infektexazerbation (Haemophilus influenzae) und Community-acquired Pneumonia (CAP) des rechten Unterlappens, sowie dekompensierte chronische Herzinsuffizienz (HFrEF, LVEF 32%) mit pleuralen Ergüssen.",
+        "therapie": "Der Patient erhielt intravenöse Antibiotika (Piperacillin/Tazobactam, später Ampicillin/Sulbactam) zur Behandlung der Pneumonie und COPD-Exazerbation. Aufgrund respiratorischer Globalinsuffizienz wurde eine nicht-invasive Beatmung (NIV) durchgeführt. Die kardiale Dekompensation wurde mit intravenösem Furosemid behandelt, was zu einer Gewichtsreduktion führte. Die inhalative Therapie wurde auf eine Triple-Therapie optimiert. Es erfolgte eine Diabetesschulung, Anpassung der Antihypertensiva, Physiotherapie und Beratung zur Nikotinkarenz.",
+        "procedere": "Fortführung der aktuellen Medikation, einschließlich LTOT (2l/min, 16h/Tag). Pneumologische Kontrolle in 4 Wochen mit Bodyplethysmographie und Diffusionskapazität. Kardiologische Kontrolle zur Optimierung der HFrEF-Therapie (ggf. ARNI). Teilnahme an Lungensportgruppe. Stationäre pneumologische Rehabilitation wurde beantragt. Jährliche Influenza- und Pneumokokken-Impfung.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akut exacerbierte COPD (GOLD IV, Gruppe E) mit Infektexazerbation (Haemophilus influenzae) und Community-acquired Pneumonia (CAP) des rechten Unterlappens, sowie dekompensierte chronische Herzinsuffizienz (HFrEF, LVEF 32%) mit pleuralen Ergüssen.\",\n  \"therapie\": \"Der Patient erhielt intravenöse Antibiotika (Piperacillin/Tazobactam, später Ampicillin/Sulbactam) zur Behandlung der Pneumonie und COPD-Exazerbation. Aufgrund respiratorischer Globalinsuffizienz wurde eine nicht-invasive Beatmung (NIV) durchgeführt. Die kardiale Dekompensation wurde mit intravenösem Furosemid behandelt, was zu einer Gewichtsreduktion führte. Die inhalative Therapie wurde auf eine Triple-Therapie optimiert. Es erfolgte eine Diabetesschulung, Anpassung der Antihypertensiva, Physiotherapie und Beratung zur Nikotinkarenz.\",\n  \"procedere\": \"Fortführung der aktuellen Medikation, einschließlich LTOT (2l/min, 16h/Tag). Pneumologische Kontrolle in 4 Wochen mit Bodyplethysmographie und Diffusionskapazität. Kardiologische Kontrolle zur Optimierung der HFrEF-Therapie (ggf. ARNI). Teilnahme an Lungensportgruppe. Stationäre pneumologische Rehabilitation wurde beantragt. Jährliche Influenza- und Pneumokokken-Impfung.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 5818,
+      "response_length": 1262,
+      "usage": {
+        "prompt_tokens": 1783,
+        "completion_tokens": 338
+      },
+      "case_id": "summ_009",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h53m53.878569626s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-pro'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6833s'}]}}"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akuter ischämischer Hirninfarkt im Mediastromgebiet rechts (M2-Segment der A. cerebri media) aufgrund wahrscheinlich makroangiopathischer Ätiologie.",
+        "therapie": "Durchführung einer systemischen Thrombolyse mit Alteplase innerhalb des therapeutischen Zeitfensters. Beginn der Sekundärprophylaxe mit ASS und Atorvastatin. Blutdruckeinstellung mit Ramipril und Amlodipin. Physiotherapie und Ergotherapie.",
+        "procedere": "Fortsetzung der Sekundärprophylaxe (ASS, Atorvastatin, Ramipril, Amlodipin). Zielgerichtete Blutdruckeinstellung (< 130/80 mmHg) und Lipidsenkung (LDL < 55 mg/dl). Einleitung einer Anschlussheilbehandlung (AHB). Kontrolle der Halsschlagadern mittels Duplexsonographie in 6 Monaten. Rhythmologische Abklärung (z.B. Langzeit-EKG) im ambulanten Bereich oder in der Reha.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akuter ischämischer Hirninfarkt im Mediastromgebiet rechts (M2-Segment der A. cerebri media) aufgrund wahrscheinlich makroangiopathischer Ätiologie.\",\n  \"therapie\": \"Durchführung einer systemischen Thrombolyse mit Alteplase innerhalb des therapeutischen Zeitfensters. Beginn der Sekundärprophylaxe mit ASS und Atorvastatin. Blutdruckeinstellung mit Ramipril und Amlodipin. Physiotherapie und Ergotherapie.\",\n  \"procedere\": \"Fortsetzung der Sekundärprophylaxe (ASS, Atorvastatin, Ramipril, Amlodipin). Zielgerichtete Blutdruckeinstellung (< 130/80 mmHg) und Lipidsenkung (LDL < 55 mg/dl). Einleitung einer Anschlussheilbehandlung (AHB). Kontrolle der Halsschlagadern mittels Duplexsonographie in 6 Monaten. Rhythmologische Abklärung (z.B. Langzeit-EKG) im ambulanten Bereich oder in der Reha.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "prompt_length": 6489,
+      "response_length": 856,
+      "usage": {
+        "prompt_tokens": 2039,
+        "completion_tokens": 248
+      },
+      "case_id": "summ_010",
+      "judge_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\\nPlease retry in 1h53m43.483502663s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'model': 'gemini-3.1-pro', 'location': 'global'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6823s'}]}}"
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "summary": {
+    "model": "deepseek-ai/DeepSeek-V3.1",
+    "task": "med_extraction",
+    "timestamp": "20260328_225835",
+    "n_cases": 10,
+    "n_scored": 8,
+    "n_parse_errors": 2,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.36764705882352944,
+    "wirkstoff_precision": 0.3611111111111111,
+    "wirkstoff_recall": 0.375,
+    "partial_f1": 0.36764705882352944,
+    "exact_f1": 0.35294117647058826
+  },
+  "predictions": [
+    {
+      "medications": [
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Tiotropium",
+          "dosis": "2,5 µg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "Inhalation"
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Ferinject",
+          "dosis": "500 mg",
+          "frequenz": "einmalig",
+          "darreichungsform": "Infusion"
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Tiotropium\",\n      \"dosis\": \"2,5 µg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"Inhalation\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Ferinject\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"einmalig\",\n      \"darreichungsform\": \"Infusion\"\n    }\n  ]\n}",
+      "prompt_length": 1990,
+      "response_length": 696,
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 255
+      },
+      "case_id": "med_001"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "20mg/h",
+          "frequenz": "initialer Perfusor",
+          "darreichungsform": "i.v."
+        },
+        {
+          "wirkstoff": "Sacubitril/Valsartan",
+          "dosis": "24/26 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Spironolacton",
+          "dosis": "25 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Empagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "14 IE",
+          "frequenz": "0-0-0-14",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "ASS",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "20 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Eisen-Carboxymaltose",
+          "dosis": "1000 mg",
+          "frequenz": "einmalig",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"20mg/h\",\n      \"frequenz\": \"initialer Perfusor\",\n      \"darreichungsform\": \"i.v.\"\n    },\n    {\n      \"wirkstoff\": \"Sacubitril/Valsartan\",\n      \"dosis\": \"24/26 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Spironolacton\",\n      \"dosis\": \"25 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Empagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"14 IE\",\n      \"frequenz\": \"0-0-0-14\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"20 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Eisen-Carboxymaltose\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"einmalig\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2047,
+      "response_length": 1244,
+      "usage": {
+        "prompt_tokens": 737,
+        "completion_tokens": 454
+      },
+      "case_id": "med_002"
+    },
+    {
+      "medications": null,
+      "parse_error": true,
+      "raw": "\nWe are given a string of text that appears to be a mix of German and possibly other languages, with some typos and errors. The string is:\n\n\"Die Dosierung von Metoprolol beträgt 47.5 mg, und die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metop2.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung von Metoprolol beträgt 47.5 mg. Die Dosierung",
+      "prompt_length": 2131,
+      "response_length": 23603,
+      "usage": {
+        "prompt_tokens": 742,
+        "completion_tokens": 8192
+      },
+      "case_id": "med_003"
+    },
+    {
+      "medications": [],
+      "raw": "```json\n{\n  \"patient\": {\n    \"name\": \"Hans-Joachim Müller\",\n    \"geburtsdatum\": \"15.03.1956\"\n  },\n  \"stationärer_aufenthalt\": {\n    \"von\": \"10.05.2024\",\n    \"bis\": \"15.05.2024\"\n  },\n  \"diagnose\": {\n    \"hauptdiagnose\": \"Linkshemisphärischer Minor Stroke\",\n    \"begleiterkrankungen\": [\n      \"Arterielle Hypertonie\",\n      \"Diabetes mellitus Typ 2\"\n    ]\n  },\n  \"symptomatik\": {\n    \"initial\": [\n      \"Diskrete motorische Aphasie\",\n      \"Flüchtige Brachiofacialparese rechts\"\n    ],\n    \"entlassung\": \"Keine verbliebenen neurologischen Defizite\"\n  },\n  \"diagnostik\": {\n    \"mrt\": \"Punktförmige Diffusionsstörung links kortikal\",\n    \"doppler_duplex\": \"Keine hämodynamisch relevanten Stenosen\",\n    \"ekg\": \"24-Stunden-Langzeit-EKG: Kein paroxysmales Vorhofflimmern\"\n  },\n  \"therapie\": {\n    \"sekundärprophylaxe\": \"Thrombozytenaggregationshemmung\",\n    \"lipidsenkung\": \"Atorvastatin\",\n    \"antihypertensive_medikation\": \"Fortführung\",\n    \"diabetestherapie\": {\n      \"oral\": \"Fortführung\",\n      \"basalinsulin\": \"Ergänzung\"\n    }\n  },\n  \"entlassmedikation\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"stärke\": \"100 mg\",\n      \"dosierung\": \"0-1-0-0\",\n      \"hinweis\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Atorvastatin\",\n      \"stärke\": \"40 mg\",\n      \"dosierung\": \"0-0-0-1\",\n      \"hinweis\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"stärke\": \"5 mg\",\n      \"dosierung\": \"1-0-1-0\",\n      \"hinweis\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"stärke\": \"500 mg\",\n      \"dosierung\": \"1-0-1-0\",\n      \"hinweis\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin (Lantus)\",\n      \"dosierung\": \"0-0-0-14 E\",\n      \"hinweis\": \"s.c.\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2242,
+      "response_length": 1677,
+      "usage": {
+        "prompt_tokens": 712,
+        "completion_tokens": 595
+      },
+      "case_id": "med_004"
+    },
+    {
+      "medications": [],
+      "raw": "{\n  \"medikamente\": [\n    {\n      \"name\": \"Mesalazin (Salofalk) 1,5 g Granulat\",\n      \"dosierung\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Prednisolon 40 mg Tabletten\",\n      \"dosierung\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\",\n      \"bemerkung\": \"Reduktion wöchentlich um 5 mg\"\n    },\n    {\n      \"name\": \"Ramipril 5 mg Tabletten\",\n      \"dosierung\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Metformin 1000 mg Tabletten\",\n      \"dosierung\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Pantoprazol 40 mg Tabletten\",\n      \"dosierung\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Enoxaparin (Clexane) 40 mg Fertigspritze\",\n      \"dosierung\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\",\n      \"bemerkung\": \"für weitere 3 Tage\"\n    }\n  ]\n}",
+      "prompt_length": 2370,
+      "response_length": 851,
+      "usage": {
+        "prompt_tokens": 764,
+        "completion_tokens": 311
+      },
+      "case_id": "med_005"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Oxycodon/Naloxon",
+          "dosis": "20/10 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metamizol",
+          "dosis": "500 mg",
+          "frequenz": "1-1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "24 IE",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Denosumab",
+          "dosis": "120 mg",
+          "frequenz": "alle 4 Wochen",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Oxycodon/Naloxon\",\n      \"dosis\": \"20/10 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metamizol\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"24 IE\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Denosumab\",\n      \"dosis\": \"120 mg\",\n      \"frequenz\": \"alle 4 Wochen\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2160,
+      "response_length": 954,
+      "usage": {
+        "prompt_tokens": 704,
+        "completion_tokens": 351
+      },
+      "case_id": "med_006"
+    },
+    {
+      "medications": [],
+      "raw": "```json\n{\n  \"patient\": {\n    \"name\": \"Hans Müller\",\n    \"geburtsdatum\": \"15.05.1951\",\n    \"aufenthalt\": {\n      \"von\": \"12.10.2023\",\n      \"bis\": \"19.10.2023\"\n    }\n  },\n  \"diagnose\": {\n    \"hauptdiagnose\": \"Akut dekompensierte chronische Herzinsuffizienz (NYHA III)\",\n    \"begleitdiagnosen\": [\n      \"Diabetes mellitus Typ 2\",\n      \"Hypertonie\"\n    ]\n  },\n  \"befunde\": {\n    \"symptome\": [\n      \"Progrediente Belastungsdyspnoe\",\n      \"Ausgeprägte prätibiale Ödeme beidseits\"\n    ],\n    \"radiologie\": \"Pulmonale Stauung\",\n    \"labor\": {\n      \"LVEF\": \"35%\",\n      \"HbA1c\": \"8,2%\"\n    }\n  },\n  \"therapie\": {\n    \"initial\": {\n      \"furosemid\": {\n        \"initialbolus\": \"40 mg i.v.\",\n        \"perfusor\": \"10 mg/h\"\n      }\n    },\n    \"erfolg\": \"Gewichtsreduktion von 5,2 kg\",\n    \"umstellung\": \"Torasemid oral\"\n  },\n  \"medikation\": {\n    \"bestehend\": {\n      \"ramipril\": \"Fortführung unter Kontrolle der Nierenretentionsparameter\"\n    },\n    \"neu\": {\n      \"metformin\": \"Neueinstellung\",\n      \"insulin\": \"Basalunterstützte Insulintherapie zur Nacht\"\n    }\n  },\n  \"entlassung\": {\n    \"zustand\": \"Kompensierter Allgemeinzustand\",\n    \"entlassmedikation\": [\n      {\n        \"wirkstoff\": \"Ramipril\",\n        \"dosierung\": \"5 mg\",\n        \"einnahme\": \"1-0-0-0\",\n        \"weg\": \"p.o.\"\n      },\n      {\n        \"wirkstoff\": \"Torasemid\",\n        \"dosierung\": \"10 mg\",\n        \"einnahme\": \"1-0-0-0\",\n        \"weg\": \"p.o.\"\n      },\n      {\n        \"wirkstoff\": \"Metformin\",\n        \"dosierung\": \"1000 mg\",\n        \"einnahme\": \"1-0-1-0\",\n        \"weg\": \"p.o.\"\n      },\n      {\n        \"wirkstoff\": \"Insulin Glargin\",\n        \"dosierung\": \"100 E/ml\",\n        \"einnahme\": \"0-0-0-12 IE\",\n        \"weg\": \"s.c.\"\n      },\n      {\n        \"wirkstoff\": \"Pantoprazol\",\n        \"dosierung\": \"20 mg\",\n        \"einnahme\": \"1-0-0-0\",\n        \"weg\": \"p.o.\"\n      }\n    ]\n  }\n}\n```",
+      "prompt_length": 2139,
+      "response_length": 1855,
+      "usage": {
+        "prompt_tokens": 711,
+        "completion_tokens": 651
+      },
+      "case_id": "med_007"
+    },
+    {
+      "medications": null,
+      "parse_error": true,
+      "raw": "Entlassmedikation:\n- Sacubitril/Valsartan 49/51 mg: 1-0-1 p.o.\n- Bisoprolol 5 mg: 1-0-0 p.o.\n- Empagliflozin 10 mg: 1-0-0 p.o.\n- Apixaban 5 mg: 1-0-1 p.o.\n- Furosemid 40 mg: 1-0-0 p.o.\n- Insulin Glargin 10 I.E.: 0-0-0-1 s.c. (zur Nacht)\n\nKlinischer Text:\nSehr geehrte Kolleginnen und Kollegen, wir berichten über die stationäre Behandlung des oben genannten Patienten, der sich bei uns aufgrund einer progredienten Belastungsdyspnoe (NYHA III) vorstellte. Kardiologisch zeigte sich eine dekompensierte chronische Herzinsuffizienz (HFrEF, EF 32 %) bei bekannter ischämischer Kardiomyopathie und permanentem Vorhofflimmern. Initial erfolgte eine forcierte intravenöse Diurese mit Furosemid, welche bei klinischer Rekompensation auf eine orale Gabe umgestellt werden konnte. Die leitliniengerechte Herzinsuffizienztherapie wurde unter engmaschiger Kontrolle von Blutdruck und Nierenretentionsparametern optimiert. Aufgrund eines begleitenden funktionellen Eisenmangels (Ferritin 45 ng/ml, Tf-Sättigung 12 %) applizierten wir einmalig 1000 mg Eisen-Carboxymaltose als Kurzinfusion. Der vorbekannte Diabetes mellitus Typ 2 zeigte sich unter der bestehenden Therapie mit einem SGLT2-Inhibitor und Basalinsulin stabil eingestellt. Wir entlassen den Patienten in gebessertem Allgemeinzustand in Ihre ambulante Weiterbetreuung.",
+      "prompt_length": 1947,
+      "response_length": 1318,
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 426
+      },
+      "case_id": "med_008"
+    },
+    {
+      "medications": [],
+      "raw": "{\n  \"medikamente\": [\n    {\n      \"name\": \"Spiolto Respimat (2,5/2,5 µg/Hub)\",\n      \"dosierung\": \"2 Hübe\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"Inhalation\"\n    },\n    {\n      \"name\": \"Budesonid\",\n      \"dosierung\": \"400 µg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"Inhalation\"\n    },\n    {\n      \"name\": \"Prednisolon\",\n      \"dosierung\": \"20 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o., Reduktion alle 5 Tage um 5 mg\"\n    },\n    {\n      \"name\": \"Metoprololsuccinat\",\n      \"dosierung\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Sacubitril/Valsartan\",\n      \"dosierung\": \"24/26 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Furosemid\",\n      \"dosierung\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Apixaban\",\n      \"dosierung\": \"2,5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"name\": \"Insulin Glargin (100 E/ml)\",\n      \"dosierung\": \"14 IE\",\n      \"frequenz\": \"0-0-0-14\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2094,
+      "response_length": 1165,
+      "usage": {
+        "prompt_tokens": 730,
+        "completion_tokens": 432
+      },
+      "case_id": "med_009"
+    },
+    {
+      "medications": [],
+      "raw": "{\n  \"patient\": {\n    \"name\": \"Max Mustermann\",\n    \"geburtsdatum\": \"12.04.1955\"\n  },\n  \"aufenthalt\": {\n    \"beginn\": \"10.05.2024\",\n    \"ende\": \"15.05.2024\"\n  },\n  \"diagnose\": {\n    \"hauptdiagnose\": \"Frischer lakunärer Ischämieherd im linksseitigen Thalamus\",\n    \"risikofaktoren\": [\n      \"Arterielle Hypertonie\",\n      \"Diabetes mellitus Typ 2 (HbA1c 8,2%)\"\n    ]\n  },\n  \"behandlung\": {\n    \"initial\": \"Hämodynamische Stabilisierung mit Sterofundin 1000 ml/24h i.v.\",\n    \"therapie\": {\n      \"plättchenhemmend\": \"ASS 100 mg\",\n      \"antihypertensiv\": \"Ramipril 5 mg\",\n      \"antidiabetisch\": \"Insulin Glargin\"\n    }\n  },\n  \"entlassmedikation\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosierung\": \"100 mg\",\n      \"frequenz\": \"0-1-0-0\",\n      \"darreichungsform\": \"Tablette p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosierung\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"Tablette p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Atorvastatin\",\n      \"dosierung\": \"40 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"Tablette p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosierung\": \"12 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"Injektion s.c.\"\n    }\n  ],\n  \"empfehlungen\": [\n    \"Fortführung der Sekundärprophylaxe\",\n    \"Regelmäßige Blutdruckkontrolle\",\n    \"Regelmäßige Blutzuckerkontrolle\",\n    \"Weiterbetreuung durch Hausarzt\"\n  ]\n}",
+      "prompt_length": 2189,
+      "response_length": 1411,
+      "usage": {
+        "prompt_tokens": 692,
+        "completion_tokens": 502
+      },
+      "case_id": "med_010"
+    }
+  ]
+}

@@ -81,6 +81,21 @@ export default function BenchmarksPage() {
           );
         })}
       </div>
+
+      <div className="mt-10 text-sm text-muted-foreground">
+        <p>
+          Alle Datensätze, Prompts und Evaluations-Ergebnisse sind Open Source
+          und als JSONL verfügbar:{" "}
+          <a
+            href="https://github.com/thalamiq/germedbench"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80"
+          >
+            github.com/thalamiq/germedbench
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

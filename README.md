@@ -60,8 +60,16 @@ uv run python scripts/run_eval_ner.py
 # Medikamentenextraktion (automatische Evaluation)
 uv run python scripts/run_eval_med_extraction.py
 
+# Nur Modelle eines bestimmten Providers:
+uv run python scripts/run_eval_icd10.py --provider together
+uv run python scripts/run_eval_icd10.py -p chat_ai
+
+# Parallel (4 Workers default):
+uv run python scripts/run_eval_icd10.py --parallel
+uv run python scripts/run_eval_icd10.py -j 8              # 8 Workers
+
 # Spezifische Modelle:
-uv run python scripts/run_eval_icd10.py "meta-llama/Llama-3.3-70B-Instruct-Turbo"
+uv run python scripts/run_eval_icd10.py "llama-3.3-70b-instruct"
 ```
 
 Ergebnisse werden nach `results/<model>/<task>/<timestamp>.json` geschrieben.
@@ -136,4 +144,4 @@ Apache 2.0
 
 ---
 
-Ein Projekt von [ThalamiQ GmbH](https://thalamiq.io) in Zusammenarbeit mit dem [Institut für KI in der Medizin (IKIM)](https://ikim.uk-essen.de), Universitätsklinikum Essen.
+Ein Projekt von [ThalamiQ GmbH](https://thalamiq.io).

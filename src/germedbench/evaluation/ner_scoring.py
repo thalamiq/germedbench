@@ -23,11 +23,21 @@ class NERScore:
     laborwert_f1: float
 
 
+def _name_matches_gold(pred_name: str, gold: dict) -> bool:
+    """Check if predicted name matches gold name or any acceptable alternative."""
+    if names_match(pred_name, gold.get("name", "")):
+        return True
+    for alt in gold.get("acceptable_names", []):
+        if names_match(pred_name, alt):
+            return True
+    return False
+
+
 def _entities_match(pred: dict, gold: dict) -> bool:
     """Check if a predicted entity matches a gold entity of the same type."""
     typ = gold.get("typ", "")
 
-    if not names_match(pred.get("name", ""), gold.get("name", "")):
+    if not _name_matches_gold(pred.get("name", ""), gold):
         return False
 
     # For diagnose/prozedur: also check code if both have one

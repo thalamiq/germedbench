@@ -2,10 +2,16 @@
 
 from pathlib import Path
 
+from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+
+
+class EvalModel(BaseModel):
+    id: str
+    provider: str = "together"
 
 
 class Settings(BaseSettings):
@@ -14,17 +20,19 @@ class Settings(BaseSettings):
         env_file_encoding="utf-8",
     )
 
-    # Gemini (data generation)
+    # Gemini (data generation + LLM-as-Judge)
     gemini_api_key: str = ""
     generation_model: str = "gemini-3-flash-preview"
     generation_temperature: float = 0.9
+    judge_model: str = "gemini-3.1-pro-preview"
 
-    # Together AI (open-source model inference)
+    # Provider: Together AI
     together_api_key: str = ""
     together_base_url: str = "https://api.together.xyz/v1"
 
-    # LLM-as-Judge (Gemini)
-    judge_model: str = "gemini-3.1-pro-preview"
+    # Provider: Chat-AI (Academic Cloud)
+    chat_ai_api_key: str = ""
+    chat_ai_base_url: str = "https://chat-ai.academiccloud.de/v1"
 
     # Per-task case generation
     icd10_num_cases: int = 10
@@ -33,23 +41,34 @@ class Settings(BaseSettings):
     ner_num_cases: int = 10
     med_extraction_num_cases: int = 10
 
-    # Evaluation models (Together AI model IDs)
-    eval_models: list[str] = [
-        # Large (70B+) — reference performance
-        "meta-llama/Llama-3.3-70B-Instruct-Turbo",
-        "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-        "deepseek-ai/DeepSeek-V3.1",
-        "moonshotai/Kimi-K2.5",
-        "openai/gpt-oss-120b",
-        # Mid-range (15-27B) — sweet spot for on-prem hospital GPU
-        "mistralai/Mistral-Small-24B-Instruct-2501",
-        "mistralai/Mixtral-8x7B-Instruct-v0.1",
-        # Small (7-9B) — single consumer GPU / edge deployment
-        "Qwen/Qwen2.5-7B-Instruct-Turbo",
-        "Qwen/Qwen3.5-9B",
-        "Qwen/Qwen3-Next-80B-A3B-Instruct",
-        "meta-llama/Meta-Llama-3-8B-Instruct-Lite",
-        "google/gemma-3n-E4B-it",
+    # Evaluation models
+    eval_models: list[EvalModel] = [
+        # --- Together AI ---
+        EvalModel(id="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", provider="together"),
+        EvalModel(id="deepseek-ai/DeepSeek-V3.1", provider="together"),
+        EvalModel(id="mistralai/Mistral-Small-24B-Instruct-2501", provider="together"),
+        EvalModel(id="mistralai/Mixtral-8x7B-Instruct-v0.1", provider="together"),
+        EvalModel(id="Qwen/Qwen2.5-7B-Instruct-Turbo", provider="together"),
+        EvalModel(id="google/gemma-3n-E4B-it", provider="together"),
+        # --- Chat-AI (Academic Cloud) ---
+        # Large
+        # EvalModel(id="apertus-70b-instruct-2509", provider="chat_ai"),
+        # EvalModel(id="deepseek-r1-distill-llama-70b", provider="chat_ai"),
+        # EvalModel(id="devstral-2-123b-instruct-2512", provider="chat_ai"),
+        EvalModel(id="mistral-large-3-675b-instruct-2512", provider="chat_ai"),
+        EvalModel(id="openai-gpt-oss-120b", provider="chat_ai"),
+        EvalModel(id="glm-4.7", provider="chat_ai"),
+        # EvalModel(id="qwen3-235b-a22b", provider="chat_ai"),  # thinking model, too slow + hits max_tokens
+        # Mid-range
+        EvalModel(id="gemma-3-27b-it", provider="chat_ai"),
+        EvalModel(id="medgemma-27b-it", provider="chat_ai"),
+        EvalModel(id="llama-3.3-70b-instruct", provider="chat_ai"),
+        EvalModel(id="llama-3.1-sauerkrautlm-70b-instruct", provider="chat_ai"),
+        EvalModel(id="qwen3-30b-a3b-instruct-2507", provider="chat_ai"),
+        # EvalModel(id="qwen3-32b", provider="chat_ai"),  # thinking model, too slow + hits max_tokens
+        # Small
+        # EvalModel(id="meta-llama-3.1-8b-instruct", provider="chat_ai"),  # refuses to answer, hallucinates tool calls
+        # EvalModel(id="teuken-7b-instruct-research", provider="chat_ai"),
     ]
 
     @property

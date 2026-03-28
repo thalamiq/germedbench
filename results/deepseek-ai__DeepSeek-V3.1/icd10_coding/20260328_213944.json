@@ -1,0 +1,202 @@
+{
+  "summary": {
+    "model": "deepseek-ai/DeepSeek-V3.1",
+    "task": "icd10_coding",
+    "timestamp": "20260328_213944",
+    "n_cases": 10,
+    "n_scored": 10,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "exact_match_f1": 0.5517094017094017,
+    "exact_match_precision": 0.5083333333333333,
+    "exact_match_recall": 0.625,
+    "category_match_f1": 0.7800976800976801,
+    "hauptdiagnose_accuracy": 0.6
+  },
+  "predictions": [
+    {
+      "codes": [
+        "I50.13",
+        "I50.23",
+        "I10.90",
+        "E11.90"
+      ],
+      "hauptdiagnose": "I50.13",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I50.13\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I50.23\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2110,
+      "response_length": 215,
+      "usage": {
+        "prompt_tokens": 638,
+        "completion_tokens": 90
+      },
+      "case_id": "case_001"
+    },
+    {
+      "codes": [
+        "I21.4",
+        "I25.19",
+        "I50.19",
+        "E11.90",
+        "I10.90"
+      ],
+      "hauptdiagnose": "I21.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I25.19\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I50.19\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2271,
+      "response_length": 262,
+      "usage": {
+        "prompt_tokens": 667,
+        "completion_tokens": 110
+      },
+      "case_id": "case_002"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "I27.0",
+        "F17.20",
+        "I10.90",
+        "E11.90",
+        "N18.3"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I27.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"F17.20\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2146,
+      "response_length": 309,
+      "usage": {
+        "prompt_tokens": 634,
+        "completion_tokens": 130
+      },
+      "case_id": "case_003"
+    },
+    {
+      "codes": [
+        "I63.4",
+        "R47.0",
+        "I10.90",
+        "Z79.3",
+        "Z79.82"
+      ],
+      "hauptdiagnose": "I63.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I63.4\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"R47.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z79.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z79.82\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2281,
+      "response_length": 260,
+      "usage": {
+        "prompt_tokens": 665,
+        "completion_tokens": 110
+      },
+      "case_id": "case_004"
+    },
+    {
+      "codes": [
+        "K92.2",
+        "K57.30",
+        "I10.90",
+        "E11.90"
+      ],
+      "hauptdiagnose": "K92.2",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"K92.2\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"K57.30\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2078,
+      "response_length": 214,
+      "usage": {
+        "prompt_tokens": 595,
+        "completion_tokens": 90
+      },
+      "case_id": "case_005"
+    },
+    {
+      "codes": [
+        "D75.82",
+        "C18.7",
+        "N17.0",
+        "N18.3",
+        "E11.90",
+        "I10.90",
+        "J44.11"
+      ],
+      "hauptdiagnose": "D75.82",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"D75.82\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"C18.7\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N17.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J44.11\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2332,
+      "response_length": 356,
+      "usage": {
+        "prompt_tokens": 705,
+        "completion_tokens": 150
+      },
+      "case_id": "case_006"
+    },
+    {
+      "codes": [
+        "I50.9",
+        "I11.0",
+        "I10.90",
+        "E78.0"
+      ],
+      "hauptdiagnose": "I50.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I50.9\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I11.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 1982,
+      "response_length": 212,
+      "usage": {
+        "prompt_tokens": 613,
+        "completion_tokens": 90
+      },
+      "case_id": "case_007"
+    },
+    {
+      "codes": [
+        "I21.4",
+        "I25.11",
+        "I10.90",
+        "E11.90",
+        "F17.20",
+        "E78.00",
+        "I50.11"
+      ],
+      "hauptdiagnose": "I21.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I25.11\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"F17.20\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.00\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I50.11\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2077,
+      "response_length": 358,
+      "usage": {
+        "prompt_tokens": 620,
+        "completion_tokens": 150
+      },
+      "case_id": "case_008"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "I50.20",
+        "J44.99",
+        "E11.90",
+        "N18.3",
+        "I10.90"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I50.20\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J44.99\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2221,
+      "response_length": 310,
+      "usage": {
+        "prompt_tokens": 669,
+        "completion_tokens": 130
+      },
+      "case_id": "case_009"
+    },
+    {
+      "codes": [
+        "I63.4",
+        "I10.90",
+        "E78.00",
+        "R42",
+        "R11",
+        "R26.2"
+      ],
+      "hauptdiagnose": "I63.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I63.4\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.00\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R42\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R11\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R26.2\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2178,
+      "response_length": 303,
+      "usage": {
+        "prompt_tokens": 643,
+        "completion_tokens": 126
+      },
+      "case_id": "case_010"
+    }
+  ]
+}

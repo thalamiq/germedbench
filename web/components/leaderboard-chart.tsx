@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Bar,
@@ -21,6 +22,7 @@ import { Button } from "@thalamiq/ui/components/button";
 import type { LeaderboardEntry, ModelSize, TaskId } from "@/lib/types";
 import { TASK_CONFIG } from "@/lib/types";
 import { getProviderConfig } from "@/lib/providers";
+import type { AggregatedScore } from "@/lib/data";
 
 function ProviderIcon({
   provider,
@@ -69,6 +71,7 @@ interface ChartEntry {
   model: string;
   provider: string;
   size: ModelSize;
+  errorRate: number; // 0-1
 }
 
 function AxisTickWithIcon({
@@ -118,6 +121,119 @@ function AxisTickWithIcon({
 }
 
 // ---------------------------------------------------------------------------
+// AggregatedChart
+// ---------------------------------------------------------------------------
+
+function AggregatedChart({
+  aggregated,
+  activeModels,
+}: {
+  aggregated: AggregatedScore[];
+  activeModels: Set<string>;
+}) {
+  const router = useRouter();
+  const filtered = aggregated.filter((d) => activeModels.has(d.model));
+
+  if (filtered.length === 0) {
+    return (
+      <Card>
+        <CardContent className="py-12 text-center text-sm text-muted-foreground">
+          Keine Ergebnisse.
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const chartData: ChartEntry[] = filtered.map((entry) => ({
+    name: entry.shortName,
+    value: entry.score,
+    model: entry.model,
+    provider: entry.provider,
+    size: entry.size,
+    errorRate: 0,
+  }));
+
+  return (
+    <Card>
+      <CardContent className="pt-6">
+        <div className="h-80">
+          <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+            <BarChart
+              data={chartData}
+              margin={{ left: 0, right: 8, top: 8, bottom: 0 }}
+            >
+              <CartesianGrid
+                vertical={false}
+                strokeDasharray="3 3"
+                stroke="var(--border, #e5e7eb)"
+                opacity={0.5}
+              />
+              <XAxis
+                type="category"
+                dataKey="name"
+                tick={(props: Record<string, unknown>) => (
+                  <AxisTickWithIcon
+                    x={props.x as number}
+                    y={props.y as number}
+                    payload={props.payload as { value: string }}
+                    chartData={chartData}
+                  />
+                )}
+                height={100}
+                interval={0}
+                tickLine={false}
+                axisLine={{ stroke: "var(--border, #e5e7eb)" }}
+              />
+              <YAxis
+                type="number"
+                domain={[0, 100]}
+                tick={{ fontSize: 11 }}
+                tickFormatter={(v) => `${v.toFixed(0)}%`}
+                width={40}
+                stroke="var(--muted-foreground, #6b7280)"
+              />
+              <Tooltip
+                content={({ active, payload }) => {
+                  if (!active || !payload?.[0]) return null;
+                  const d = payload[0].payload;
+                  return (
+                    <div className="rounded-md border border-border bg-background px-3 py-2 text-sm shadow-sm">
+                      <div className="flex items-center gap-1.5">
+                        <ProviderIcon provider={d.provider} />
+                        <p className="font-medium">{d.name}</p>
+                      </div>
+                      <p className="text-muted-foreground">{d.provider}</p>
+                      <p className="mt-1 font-mono">{d.value.toFixed(1)}%</p>
+                    </div>
+                  );
+                }}
+              />
+              <Bar
+                dataKey="value"
+                radius={[4, 4, 0, 0]}
+                cursor="pointer"
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                onClick={(_data: any) => {
+                  const model = _data?.model as string | undefined;
+                  if (model) router.push(`/model/${encodeURIComponent(model)}`);
+                }}
+              >
+                {chartData.map((entry) => (
+                  <Cell
+                    key={entry.model}
+                    fill={getProviderConfig(entry.provider).color}
+                  />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // TaskChart
 // ---------------------------------------------------------------------------
 
@@ -150,12 +266,15 @@ function TaskChart({
 
   const chartData: ChartEntry[] = sorted.map((entry) => {
     const raw = (entry[primaryMetric] as number) ?? 0;
+    const errors = entry.n_parse_errors + entry.n_api_errors;
+    const total = entry.n_cases || 1;
     return {
       name: entry.shortName,
       value: isScaleToFive ? raw : raw * 100,
       model: entry.model,
       provider: entry.provider,
       size: entry.size,
+      errorRate: errors / total,
     };
   });
 
@@ -172,7 +291,7 @@ function TaskChart({
   return (
     <Card>
       <CardContent className="pt-6">
-        <div className="h-96">
+        <div className="h-72">
           <ResponsiveContainer width="100%" height="100%" minWidth={0}>
             <BarChart
               data={chartData}
@@ -211,7 +330,7 @@ function TaskChart({
               <Tooltip
                 content={({ active, payload }) => {
                   if (!active || !payload?.[0]) return null;
-                  const d = payload[0].payload;
+                  const d = payload[0].payload as ChartEntry;
                   return (
                     <div className="rounded-md border border-border bg-background px-3 py-2 text-sm shadow-sm">
                       <div className="flex items-center gap-1.5">
@@ -222,6 +341,11 @@ function TaskChart({
                       <p className="mt-1 font-mono">
                         {formatValue(d.value)}
                       </p>
+                      {d.errorRate > 0 && (
+                        <p className="mt-0.5 text-xs text-destructive">
+                          {Math.round(d.errorRate * 100)}% Errors
+                        </p>
+                      )}
                     </div>
                   );
                 }}
@@ -242,6 +366,7 @@ function TaskChart({
                   <Cell
                     key={entry.model}
                     fill={getProviderConfig(entry.provider).color}
+                    opacity={entry.errorRate > 0.5 ? 0.35 : 1}
                   />
                 ))}
               </Bar>
@@ -257,7 +382,7 @@ function TaskChart({
 // LeaderboardChart (main)
 // ---------------------------------------------------------------------------
 
-export function LeaderboardChart({ data }: { data: LeaderboardEntry[] }) {
+export function LeaderboardChart({ data, aggregated }: { data: LeaderboardEntry[]; aggregated: AggregatedScore[] }) {
   const allModels = useMemo<ModelInfo[]>(() => {
     const seen = new Map<string, ModelInfo>();
     for (const d of data) {
@@ -332,130 +457,89 @@ export function LeaderboardChart({ data }: { data: LeaderboardEntry[] }) {
   return (
     <div>
       {/* Filter bar */}
-      <Card className="mb-8">
-        <CardContent className="py-4">
-          <div className="flex flex-col gap-4">
-            {/* Size filter */}
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide w-16 shrink-0">
-                Größe
-              </span>
-              <ToggleGroup
-                type="single"
-                value={sizeFilter}
-                onValueChange={(v) => {
-                  if (v) setSizeFilter(v as ModelSize | "all");
-                }}
+      <div className="mb-8 flex flex-wrap items-center gap-2">
+        {/* Size filter */}
+        <ToggleGroup
+          type="single"
+          value={sizeFilter}
+          onValueChange={(v) => {
+            if (v) setSizeFilter(v as ModelSize | "all");
+          }}
+        >
+          {Object.entries(SIZE_LABELS).map(([value, label]) => (
+            <ToggleGroupItem
+              key={value}
+              value={value}
+              className="text-xs h-7"
+            >
+              {label}
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
+
+        <span className="mx-1 h-4 w-px bg-border" />
+
+        {/* Model pills — flat list */}
+        {allModels
+          .filter((m) => sizeFilter === "all" || m.size === sizeFilter)
+          .map((m) => {
+            const isActive = activeModels.has(m.model);
+            const { color } = getProviderConfig(m.provider);
+            return (
+              <button
+                key={m.model}
+                onClick={() => toggleModel(m.model)}
+                className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-xs transition-colors ${
+                  isActive
+                    ? "border-border bg-background text-foreground"
+                    : "border-transparent bg-muted/50 text-muted-foreground line-through"
+                }`}
               >
-                {Object.entries(SIZE_LABELS).map(([value, label]) => (
-                  <ToggleGroupItem
-                    key={value}
-                    value={value}
-                    className="text-xs"
-                  >
-                    {label}
-                  </ToggleGroupItem>
-                ))}
-              </ToggleGroup>
-            </div>
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full"
+                  style={{ backgroundColor: color, opacity: isActive ? 1 : 0.3 }}
+                />
+                {m.shortName}
+              </button>
+            );
+          })}
 
-            {/* Model toggles grouped by provider */}
-            <div className="flex items-start gap-3">
-              <span className="mt-1 text-xs font-medium text-muted-foreground uppercase tracking-wide w-16 shrink-0">
-                Modelle
-              </span>
-              <div className="flex flex-col gap-3 min-w-0">
-                {[...providerGroups.entries()].map(([provider, models]) => {
-                  const { color } = getProviderConfig(provider);
-                  const visibleModels =
-                    sizeFilter === "all"
-                      ? models
-                      : models.filter((m) => m.size === sizeFilter);
-                  if (visibleModels.length === 0) return null;
+        <span className="mx-1 h-4 w-px bg-border" />
 
-                  const allActive = visibleModels.every((m) =>
-                    activeModels.has(m.model)
-                  );
+        <Button variant="ghost" size="sm" className="h-7 text-xs px-2" onClick={selectAll}>
+          Alle
+        </Button>
+        <Button variant="ghost" size="sm" className="h-7 text-xs px-2" onClick={selectNone}>
+          Keine
+        </Button>
+      </div>
 
-                  return (
-                    <div key={provider} className="flex items-center gap-2 flex-wrap">
-                      {/* Provider label (clickable to toggle all) */}
-                      <button
-                        onClick={() => toggleProvider(provider)}
-                        className={`inline-flex items-center gap-1.5 rounded-md border px-2 py-0.5 text-xs font-semibold transition-colors shrink-0 ${
-                          allActive
-                            ? "border-border bg-background text-foreground"
-                            : "border-transparent bg-muted/50 text-muted-foreground"
-                        }`}
-                        style={{
-                          borderColor: allActive ? color : undefined,
-                        }}
-                      >
-                        <ProviderIcon provider={provider} />
-                        {provider}
-                      </button>
+      {/* Gesamt-Ranking */}
+      {aggregated.length > 0 && (
+        <section className="mb-10">
+          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+            Gesamt-Ranking
+          </h2>
+          <p className="mt-1 mb-4 text-sm text-muted-foreground">
+            Normalisierter Durchschnitt über alle Tasks
+          </p>
+          <AggregatedChart
+            aggregated={aggregated}
+            activeModels={effectiveModels}
+          />
+        </section>
+      )}
 
-                      {/* Individual model toggles */}
-                      {visibleModels.map((m) => {
-                        const isActive = activeModels.has(m.model);
-                        return (
-                          <button
-                            key={m.model}
-                            onClick={() => toggleModel(m.model)}
-                            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors ${
-                              isActive
-                                ? "border-border bg-background text-foreground"
-                                : "border-transparent bg-muted/50 text-muted-foreground line-through"
-                            }`}
-                          >
-                            <span
-                              className="inline-block h-2 w-2 rounded-full transition-opacity"
-                              style={{
-                                backgroundColor: color,
-                                opacity: isActive ? 1 : 0.3,
-                              }}
-                            />
-                            {m.shortName}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  );
-                })}
-
-                {/* Select all / none */}
-                <div className="flex items-center gap-1">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-6 text-xs px-2"
-                    onClick={selectAll}
-                  >
-                    Alle
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-6 text-xs px-2"
-                    onClick={selectNone}
-                  >
-                    Keine
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Task charts */}
-      <div className="space-y-12">
+      {/* Per-task charts in grid */}
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {availableTasks.map((task) => (
-          <section key={task}>
-            <h2 className="text-2xl font-semibold tracking-tight">
-              {TASK_CONFIG[task].name}
+          <section key={task} className="min-w-0">
+            <h2 className="text-lg font-semibold tracking-tight">
+              <Link href={`/benchmarks/${task}`} className="hover:underline">
+                {TASK_CONFIG[task].name}
+              </Link>
             </h2>
-            <p className="mt-1 mb-4 text-sm text-muted-foreground">
+            <p className="mt-1 mb-3 text-sm text-muted-foreground">
               {TASK_CONFIG[task].primaryMetricLabel}
             </p>
             <TaskChart

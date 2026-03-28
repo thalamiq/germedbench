@@ -6,10 +6,10 @@ import sys
 import time
 from typing import Callable
 
-from openai import OpenAI, APIError
+from openai import APIError
 
 from germedbench.config import settings
-from germedbench.eval_helpers import model_slug, extract_json, update_latest
+from germedbench.eval_helpers import model_slug, extract_json, update_latest, get_client, call_model, parse_eval_args, run_eval
 from germedbench.evaluation.summarization_scoring import (
     SummarizationScore,
     judge_summary_gemini,
@@ -51,31 +51,14 @@ def load_cases() -> list[SummarizationCase]:
     return cases
 
 
-def generate_summary(client: OpenAI, model: str, text: str) -> dict:
+def generate_summary(client, model: str, text: str) -> dict:
     """Send discharge letter to model and parse structured summary."""
     prompt = SUMMARIZATION_PROMPT.format(text=text)
 
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.0,
-        max_tokens=2048,
-    )
-
-    raw = response.choices[0].message.content or ""
-    usage = response.usage
-
+    raw, usage = call_model(client, model, prompt)
     json_str = extract_json(raw)
 
-    log = {
-        "raw": raw,
-        "prompt_length": len(prompt),
-        "response_length": len(raw),
-        "usage": {
-            "prompt_tokens": usage.prompt_tokens if usage else None,
-            "completion_tokens": usage.completion_tokens if usage else None,
-        },
-    }
+    log = {"raw": raw, "prompt_length": len(prompt), "response_length": len(raw), "usage": usage}
 
     try:
         data = json.loads(json_str)
@@ -93,7 +76,7 @@ def generate_summary(client: OpenAI, model: str, text: str) -> dict:
 
 
 def evaluate_model(
-    client: OpenAI,
+    client,
     judge_fn: Callable[..., SummarizationScore],
     model: str,
     cases: list[SummarizationCase],
@@ -240,27 +223,19 @@ def main():
     global log
     log = setup_run_logger(TASK_NAME)
 
-    if not settings.together_api_key:
-        log.error("TOGETHER_API_KEY not set in .env")
-        sys.exit(1)
-
-    client = OpenAI(
-        api_key=settings.together_api_key,
-        base_url=settings.together_base_url,
-    )
     judge_fn = _create_judge_fn()
 
     cases = load_cases()
     log.info(f"Loaded {len(cases)} cases from {settings.summarization_output_file}")
-    log.info(f"Models: {settings.eval_models}")
 
-    models = sys.argv[1:] if len(sys.argv) > 1 else settings.eval_models
+    eval_args = parse_eval_args(TASK_NAME)
+    log.info(f"Models: {[m.id for m in eval_args.models]}")
 
-    all_results = []
-    for model in models:
-        result = evaluate_model(client, judge_fn, model, cases)
-        if result:
-            all_results.append(result)
+    def eval_fn(m):
+        client = get_client(m.provider)
+        return evaluate_model(client, judge_fn, m.id, cases)
+
+    all_results = run_eval(eval_args, eval_fn)
 
     if all_results:
         update_latest(all_results)

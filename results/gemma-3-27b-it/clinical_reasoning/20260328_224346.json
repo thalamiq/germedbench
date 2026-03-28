@@ -1,0 +1,522 @@
+{
+  "summary": {
+    "model": "gemma-3-27b-it",
+    "task": "clinical_reasoning",
+    "timestamp": "20260328_224346",
+    "n_cases": 10,
+    "n_scored": 10,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "top1_accuracy": 0.0,
+    "top3_recall": 0.1,
+    "ddx_overlap_f1": 0.22222222222222224,
+    "reasoning_quality": 3.3,
+    "ddx_plausibility": 3.7,
+    "red_flag_awareness": 4.3,
+    "overall_score": 2.4748148148148146
+  },
+  "predictions": [
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute dekompensierte Herzinsuffizienz",
+          "icd10_code": "I50.9",
+          "reasoning": "Die Kombination aus Belastungsdyspnoe, Orthopnoe, Beinödemen, Jugularvenenstauung, Kardiomegalie im Röntgen-Thorax und einem stark erhöhten NT-proBNP weist stark auf eine Herzinsuffizienz hin, die akut dekompensiert ist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Chronische Herzinsuffizienz mit akuter Exazerbation",
+          "icd10_code": "I50.9",
+          "reasoning": "Der Patient hat Risikofaktoren (Hypertonus, Diabetes), und die Symptome deuten auf eine chronische Erkrankung hin, die sich akut verschlechtert hat. Die Kardiomegalie und die Röntgenbefunde unterstützen dies.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Koronare Herzkrankheit (KHK) mit instabiler Angina pectoris",
+          "icd10_code": "I20.0",
+          "reasoning": "Der Patient berichtet über Druck im Brustkorb bei Belastung, und ein leicht erhöhtes Troponin T kann auf eine myokardiale Schädigung hindeuten, die durch eine KHK verursacht wird. Dies könnte zur Herzinsuffizienz beitragen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Niereninsuffizienz als auslösender Faktor für Volumenüberlastung",
+          "icd10_code": "N18.9",
+          "reasoning": "Die reduzierte GFR und das erhöhte Kreatinin deuten auf eine Niereninsuffizienz hin, die zu einer Volumenretention und somit zu den Symptomen der Herzinsuffizienz beitragen könnte. Allerdings ist das NT-proBNP stark erhöht, was eher für eine primäre kardiale Ursache spricht.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die Dyspnoe und die Tachykardie könnten auch durch eine Lungenembolie verursacht werden. Allerdings sind die typischen Zeichen einer Lungenembolie (pleuritische Schmerzen, Hämoptyse) nicht beschrieben und das NT-proBNP ist sehr hoch, was gegen eine isolierte Lungenembolie spricht.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute dekompensierte Herzinsuffizienz\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Die Kombination aus Belastungsdyspnoe, Orthopnoe, Beinödemen, Jugularvenenstauung, Kardiomegalie im Röntgen-Thorax und einem stark erhöhten NT-proBNP weist stark auf eine Herzinsuffizienz hin, die akut dekompensiert ist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Chronische Herzinsuffizienz mit akuter Exazerbation\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Der Patient hat Risikofaktoren (Hypertonus, Diabetes), und die Symptome deuten auf eine chronische Erkrankung hin, die sich akut verschlechtert hat. Die Kardiomegalie und die Röntgenbefunde unterstützen dies.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Koronare Herzkrankheit (KHK) mit instabiler Angina pectoris\",\n      \"icd10_code\": \"I20.0\",\n      \"reasoning\": \"Der Patient berichtet über Druck im Brustkorb bei Belastung, und ein leicht erhöhtes Troponin T kann auf eine myokardiale Schädigung hindeuten, die durch eine KHK verursacht wird. Dies könnte zur Herzinsuffizienz beitragen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Niereninsuffizienz als auslösender Faktor für Volumenüberlastung\",\n      \"icd10_code\": \"N18.9\",\n      \"reasoning\": \"Die reduzierte GFR und das erhöhte Kreatinin deuten auf eine Niereninsuffizienz hin, die zu einer Volumenretention und somit zu den Symptomen der Herzinsuffizienz beitragen könnte. Allerdings ist das NT-proBNP stark erhöht, was eher für eine primäre kardiale Ursache spricht.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die Dyspnoe und die Tachykardie könnten auch durch eine Lungenembolie verursacht werden. Allerdings sind die typischen Zeichen einer Lungenembolie (pleuritische Schmerzen, Hämoptyse) nicht beschrieben und das NT-proBNP ist sehr hoch, was gegen eine isolierte Lungenembolie spricht.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2429,
+      "response_length": 2036,
+      "usage": {
+        "prompt_tokens": 760,
+        "completion_tokens": 603
+      },
+      "case_id": "cr_001",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.22222222222222224
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Stenose der Aortenklappe",
+          "icd10_code": "I35.0",
+          "reasoning": "Das raue, spindelförmige Systolikum mit Fortleitung in die Karotiden, die Belastungsdyspnoe und die erhöhten Werte von NT-proBNP sind typisch für eine Aortenklappenstenose. Die Synkope könnte ebenfalls durch eine reduzierte Herzleistung bei Belastung bedingt sein.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Koronare Herzkrankheit (KHK) / Angina pectoris",
+          "icd10_code": "I20.0",
+          "reasoning": "Die rezidivierenden, belastungsabhängigen retrosternalen Druckgefühle deuten auf eine Angina pectoris hin. Das erhöhte Troponin T (hs) könnte auf eine instabile Angina pectoris oder einen nicht-ST-Hebungsinfarkt (NSTEMI) hinweisen, auch wenn es nur leicht erhöht ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Herzinsuffizienz",
+          "icd10_code": "I50.9",
+          "reasoning": "Die Belastungsdyspnoe (NYHA III), die erhöhten NT-proBNP-Werte, die Herzschattenvergrößerung im Röntgen-Thorax und die diskreten Ödeme sprechen für eine Herzinsuffizienz. Diese kann sowohl Folge der Aortenklappenstenose als auch der KHK sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hypertensive Herzkrankheit",
+          "icd10_code": "I11.0",
+          "reasoning": "Der langjährige, medikamentös behandelte arterielle Hypertonus und die linksventrikuläre Hypertrophie im EKG deuten auf eine hypertensive Herzkrankheit hin, die zur Dyspnoe und den Ödemen beitragen kann.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Pulmonale Hypertonie",
+          "icd10_code": "I26.0",
+          "reasoning": "Obwohl die Lungenbelüftung seitengleich ist und keine Rasselgeräusche vorliegen, kann eine pulmonale Hypertonie als Ursache der Belastungsdyspnoe in Betracht gezogen werden, insbesondere im Kontext einer möglichen linksventrikulären Dysfunktion.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Stenose der Aortenklappe\",\n      \"icd10_code\": \"I35.0\",\n      \"reasoning\": \"Das raue, spindelförmige Systolikum mit Fortleitung in die Karotiden, die Belastungsdyspnoe und die erhöhten Werte von NT-proBNP sind typisch für eine Aortenklappenstenose. Die Synkope könnte ebenfalls durch eine reduzierte Herzleistung bei Belastung bedingt sein.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Koronare Herzkrankheit (KHK) / Angina pectoris\",\n      \"icd10_code\": \"I20.0\",\n      \"reasoning\": \"Die rezidivierenden, belastungsabhängigen retrosternalen Druckgefühle deuten auf eine Angina pectoris hin. Das erhöhte Troponin T (hs) könnte auf eine instabile Angina pectoris oder einen nicht-ST-Hebungsinfarkt (NSTEMI) hinweisen, auch wenn es nur leicht erhöht ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Herzinsuffizienz\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Die Belastungsdyspnoe (NYHA III), die erhöhten NT-proBNP-Werte, die Herzschattenvergrößerung im Röntgen-Thorax und die diskreten Ödeme sprechen für eine Herzinsuffizienz. Diese kann sowohl Folge der Aortenklappenstenose als auch der KHK sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hypertensive Herzkrankheit\",\n      \"icd10_code\": \"I11.0\",\n      \"reasoning\": \"Der langjährige, medikamentös behandelte arterielle Hypertonus und die linksventrikuläre Hypertrophie im EKG deuten auf eine hypertensive Herzkrankheit hin, die zur Dyspnoe und den Ödemen beitragen kann.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Pulmonale Hypertonie\",\n      \"icd10_code\": \"I26.0\",\n      \"reasoning\": \"Obwohl die Lungenbelüftung seitengleich ist und keine Rasselgeräusche vorliegen, kann eine pulmonale Hypertonie als Ursache der Belastungsdyspnoe in Betracht gezogen werden, insbesondere im Kontext einer möglichen linksventrikulären Dysfunktion.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2461,
+      "response_length": 1958,
+      "usage": {
+        "prompt_tokens": 722,
+        "completion_tokens": 608
+      },
+      "case_id": "cr_002",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Idiopathische Lungenfibrose (IPF)",
+          "icd10_code": "J84.1",
+          "reasoning": "Das 'Mosaic Pattern' im HR-CT, die retikulären Zeichnungsvermehrungen, die Traktionsbronchiektasen und die progrediente Dyspnoe (NYHA III) sind typisch für IPF. Der ungewollte Gewichtsverlust und die subfebrile Temperatur können ebenfalls im Rahmen einer chronischen Entzündung auftreten.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hypersensitivitäts-Pneumonitis (HP)",
+          "icd10_code": "J84.2",
+          "reasoning": "Die Exposition gegenüber Staub bei der Haussanierung, kombiniert mit dem diffusen Infiltrat im HR-CT (Milchglastrübungen, zentrilobuläre Knötchen) und der Dyspnoe, deutet auf eine mögliche HP hin. Das Fehlen von mediastinaler Lymphadenopathie spricht eher gegen eine akute Form.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Nicht-infektiöse granulomatöse Lungenerkrankung (z.B. Sarkoidose)",
+          "icd10_code": "R93.2",
+          "reasoning": "Erhöhtes sIL-2R kann auf eine granulomatöse Erkrankung hindeuten. Das HR-CT-Muster könnte auch mit Sarkoidose vereinbar sein, obwohl das Fehlen mediastinaler Lymphadenopathie weniger typisch ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Atypische Pneumonie (chronisch)",
+          "icd10_code": "J18.9",
+          "reasoning": "Der unproduktive Husten, die subfebrile Temperatur und die leicht erhöhten Entzündungswerte (CRP, Leukozyten, LDH) könnten auf eine chronische, atypische Pneumonie hindeuten. Allerdings ist das HR-CT-Muster weniger typisch für eine rein infektiöse Ätiologie.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Idiopathische Lungenfibrose (IPF)\",\n      \"icd10_code\": \"J84.1\",\n      \"reasoning\": \"Das 'Mosaic Pattern' im HR-CT, die retikulären Zeichnungsvermehrungen, die Traktionsbronchiektasen und die progrediente Dyspnoe (NYHA III) sind typisch für IPF. Der ungewollte Gewichtsverlust und die subfebrile Temperatur können ebenfalls im Rahmen einer chronischen Entzündung auftreten.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hypersensitivitäts-Pneumonitis (HP)\",\n      \"icd10_code\": \"J84.2\",\n      \"reasoning\": \"Die Exposition gegenüber Staub bei der Haussanierung, kombiniert mit dem diffusen Infiltrat im HR-CT (Milchglastrübungen, zentrilobuläre Knötchen) und der Dyspnoe, deutet auf eine mögliche HP hin. Das Fehlen von mediastinaler Lymphadenopathie spricht eher gegen eine akute Form.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Nicht-infektiöse granulomatöse Lungenerkrankung (z.B. Sarkoidose)\",\n      \"icd10_code\": \"R93.2\",\n      \"reasoning\": \"Erhöhtes sIL-2R kann auf eine granulomatöse Erkrankung hindeuten. Das HR-CT-Muster könnte auch mit Sarkoidose vereinbar sein, obwohl das Fehlen mediastinaler Lymphadenopathie weniger typisch ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Atypische Pneumonie (chronisch)\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Der unproduktive Husten, die subfebrile Temperatur und die leicht erhöhten Entzündungswerte (CRP, Leukozyten, LDH) könnten auf eine chronische, atypische Pneumonie hindeuten. Allerdings ist das HR-CT-Muster weniger typisch für eine rein infektiöse Ätiologie.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2663,
+      "response_length": 1676,
+      "usage": {
+        "prompt_tokens": 778,
+        "completion_tokens": 520
+      },
+      "case_id": "cr_003",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 2.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall (rechtsseitig)",
+          "icd10_code": "I63.3",
+          "reasoning": "Die plötzliche Symptomentwicklung (Dysarthrie, Hemiparese links, Fazialisparese links, Sensibilitätsstörung links) in Kombination mit dem 'Hyperdenses Media-Zeichen' in der rechten Arteria cerebri media und den frühen Zeichen einer Ischämie in der CCT (Sulci-Verstreichung, Differenzierungsminderung) sprechen stark für einen ischämischen Schlaganfall im Versorgungsgebiet der rechten Arteria cerebri media.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Transitorische ischämische Attacke (TIA)",
+          "icd10_code": "G45.9",
+          "reasoning": "Obwohl die Symptome persistieren, könnte es sich um eine TIA handeln, bei der die Symptome innerhalb von 24 Stunden vollständig remittieren würden. Das 'Hyperdenses Media-Zeichen' und die frühen ischämischen Veränderungen in der CCT machen dies jedoch weniger wahrscheinlich.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hemorragischer Schlaganfall (frühstadium)",
+          "icd10_code": "I60-I62",
+          "reasoning": "Obwohl die initiale CCT keine Blutung zeigt, kann ein sehr frühes Stadium eines intrazerebralen Blutungsereignisses initial unauffällig sein. Die plötzliche Symptomentwicklung und der positive Babinski-Reflex könnten auch auf eine Blutung hindeuten, die in der initialen CCT noch nicht erkennbar ist.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Seizereignis mit postiktalem Defizit",
+          "icd10_code": "G40.9",
+          "reasoning": "Ein epileptischer Anfall kann zu fokalen neurologischen Defiziten führen, die einem Schlaganfall ähneln können. Allerdings ist die Anamnese ohne Hinweise auf einen Anfall und die Bildgebung spricht eher gegen einen Anfall.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall (rechtsseitig)\",\n      \"icd10_code\": \"I63.3\",\n      \"reasoning\": \"Die plötzliche Symptomentwicklung (Dysarthrie, Hemiparese links, Fazialisparese links, Sensibilitätsstörung links) in Kombination mit dem 'Hyperdenses Media-Zeichen' in der rechten Arteria cerebri media und den frühen Zeichen einer Ischämie in der CCT (Sulci-Verstreichung, Differenzierungsminderung) sprechen stark für einen ischämischen Schlaganfall im Versorgungsgebiet der rechten Arteria cerebri media.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Transitorische ischämische Attacke (TIA)\",\n      \"icd10_code\": \"G45.9\",\n      \"reasoning\": \"Obwohl die Symptome persistieren, könnte es sich um eine TIA handeln, bei der die Symptome innerhalb von 24 Stunden vollständig remittieren würden. Das 'Hyperdenses Media-Zeichen' und die frühen ischämischen Veränderungen in der CCT machen dies jedoch weniger wahrscheinlich.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hemorragischer Schlaganfall (frühstadium)\",\n      \"icd10_code\": \"I60-I62\",\n      \"reasoning\": \"Obwohl die initiale CCT keine Blutung zeigt, kann ein sehr frühes Stadium eines intrazerebralen Blutungsereignisses initial unauffällig sein. Die plötzliche Symptomentwicklung und der positive Babinski-Reflex könnten auch auf eine Blutung hindeuten, die in der initialen CCT noch nicht erkennbar ist.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Seizereignis mit postiktalem Defizit\",\n      \"icd10_code\": \"G40.9\",\n      \"reasoning\": \"Ein epileptischer Anfall kann zu fokalen neurologischen Defiziten führen, die einem Schlaganfall ähneln können. Allerdings ist die Anamnese ohne Hinweise auf einen Anfall und die Bildgebung spricht eher gegen einen Anfall.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2583,
+      "response_length": 1856,
+      "usage": {
+        "prompt_tokens": 717,
+        "completion_tokens": 535
+      },
+      "case_id": "cr_004",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Morbus Crohn",
+          "icd10_code": "K50.9",
+          "reasoning": "Die Kombination aus chronischen Oberbauchschmerzen, Gewichtsverlust, veränderten Stuhlgewohnheiten (voluminöse, übelriechende Stühle), entzündlichen Laborwerten (CRP, Leukozyten) und den sonographischen/endoskopischen Befunden (Duodenalwandverdickung, Lymphknotenvergrößerung, lymphangiektatische Veränderungen) sprechen stark für eine Beteiligung des oberen Verdauungstrakts im Rahmen eines Morbus Crohn.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Lymphom (intestinal)",
+          "icd10_code": "C88.0",
+          "reasoning": "Die zervikalen Lymphknoten, die Gewichtsabnahme, die entzündlichen Laborwerte und die Duodenalwandverdickung können auch auf ein Lymphom hindeuten. Die endoskopischen Veränderungen könnten durch Infiltration der Schleimhaut erklärt werden.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.0",
+          "reasoning": "Obwohl das Pankreas sonographisch unauffällig ist, könnte eine chronische Pankreatitis mit exokriner Insuffizienz (niedrige Pankreaselastase) die Oberbauchschmerzen und die Malabsorption erklären. Die Gewichtsabnahme und die veränderten Stuhlgewohnheiten passen ebenfalls dazu.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Zöliakie (atypisch)",
+          "icd10_code": "K90.0",
+          "reasoning": "Trotz negativer Transglutaminase-Antikörper kann eine atypische Zöliakie mit Duodenalbeteiligung und Malabsorption in Betracht gezogen werden. Die Duodenalwandverdickung und die Symptome könnten damit vereinbar sein, obwohl die fehlenden Antikörper die Wahrscheinlichkeit reduzieren.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Infektiöse Enteritis/Kolitis (chronisch)",
+          "icd10_code": "A09.9",
+          "reasoning": "Eine chronische Infektion, insbesondere mit atypischen Erregern, könnte die Symptome verursachen. Die entzündlichen Laborwerte und die Duodenalveränderungen könnten darauf hindeuten, obwohl die Anamnese und die fehlenden spezifischen Befunde dies weniger wahrscheinlich machen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Morbus Crohn\",\n      \"icd10_code\": \"K50.9\",\n      \"reasoning\": \"Die Kombination aus chronischen Oberbauchschmerzen, Gewichtsverlust, veränderten Stuhlgewohnheiten (voluminöse, übelriechende Stühle), entzündlichen Laborwerten (CRP, Leukozyten) und den sonographischen/endoskopischen Befunden (Duodenalwandverdickung, Lymphknotenvergrößerung, lymphangiektatische Veränderungen) sprechen stark für eine Beteiligung des oberen Verdauungstrakts im Rahmen eines Morbus Crohn.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Lymphom (intestinal)\",\n      \"icd10_code\": \"C88.0\",\n      \"reasoning\": \"Die zervikalen Lymphknoten, die Gewichtsabnahme, die entzündlichen Laborwerte und die Duodenalwandverdickung können auch auf ein Lymphom hindeuten. Die endoskopischen Veränderungen könnten durch Infiltration der Schleimhaut erklärt werden.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.0\",\n      \"reasoning\": \"Obwohl das Pankreas sonographisch unauffällig ist, könnte eine chronische Pankreatitis mit exokriner Insuffizienz (niedrige Pankreaselastase) die Oberbauchschmerzen und die Malabsorption erklären. Die Gewichtsabnahme und die veränderten Stuhlgewohnheiten passen ebenfalls dazu.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Zöliakie (atypisch)\",\n      \"icd10_code\": \"K90.0\",\n      \"reasoning\": \"Trotz negativer Transglutaminase-Antikörper kann eine atypische Zöliakie mit Duodenalbeteiligung und Malabsorption in Betracht gezogen werden. Die Duodenalwandverdickung und die Symptome könnten damit vereinbar sein, obwohl die fehlenden Antikörper die Wahrscheinlichkeit reduzieren.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Infektiöse Enteritis/Kolitis (chronisch)\",\n      \"icd10_code\": \"A09.9\",\n      \"reasoning\": \"Eine chronische Infektion, insbesondere mit atypischen Erregern, könnte die Symptome verursachen. Die entzündlichen Laborwerte und die Duodenalveränderungen könnten darauf hindeuten, obwohl die Anamnese und die fehlenden spezifischen Befunde dies weniger wahrscheinlich machen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2483,
+      "response_length": 2200,
+      "usage": {
+        "prompt_tokens": 739,
+        "completion_tokens": 637
+      },
+      "case_id": "cr_005",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Nierenparenchymkarzinom",
+          "icd10_code": "C64.9",
+          "reasoning": "Die Raumforderung am rechten Nierenoberpol mit Arrosion und möglicher Vena-renalis-Infiltration, die Osteolysen und pulmonalen Rundherde in Kombination mit Gewichtsverlust, Fatigue und Hyperkalzämie sprechen stark für ein fortgeschrittenes Nierenkarzinom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Metastasiertes Bronchialkarzinom",
+          "icd10_code": "C34.9",
+          "reasoning": "Der Nikotinabusus, die pulmonalen Rundherde und die Osteolysen könnten auf ein Bronchialkarzinom mit Fernmetastasen hindeuten. Die Hyperkalzämie kann paraneoplastisch bedingt sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Multiples Myelom",
+          "icd10_code": "C90.0",
+          "reasoning": "Die Osteolysen, die Anämie, die Hyperkalzämie und die erhöhte Thrombozytenzahl könnten im Rahmen eines Multiplen Myeloms auftreten. Die Knochenschmerzen unterstützen diese Diagnose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lymphom (z.B. diffuses großzelliges B-Zell-Lymphom)",
+          "icd10_code": "C88.0",
+          "reasoning": "Die B-Symptomatik (Nachtschweiß), die Anämie, die erhöhte AP und die Raumforderung könnten im Rahmen eines Lymphoms auftreten. Die diffuse Infiltration könnte die Osteolysen und pulmonalen Rundherde erklären.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Paraneoplastisches Syndrom bei anderem zugrunde liegendem Tumor",
+          "icd10_code": "C99.9",
+          "reasoning": "Die Hyperkalzämie und die kognitive Verlangsamung könnten Ausdruck eines paraneoplastischen Syndroms sein, das durch einen noch nicht identifizierten Tumor verursacht wird. Die anderen Befunde könnten sekundär sein.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Nierenparenchymkarzinom\",\n      \"icd10_code\": \"C64.9\",\n      \"reasoning\": \"Die Raumforderung am rechten Nierenoberpol mit Arrosion und möglicher Vena-renalis-Infiltration, die Osteolysen und pulmonalen Rundherde in Kombination mit Gewichtsverlust, Fatigue und Hyperkalzämie sprechen stark für ein fortgeschrittenes Nierenkarzinom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Metastasiertes Bronchialkarzinom\",\n      \"icd10_code\": \"C34.9\",\n      \"reasoning\": \"Der Nikotinabusus, die pulmonalen Rundherde und die Osteolysen könnten auf ein Bronchialkarzinom mit Fernmetastasen hindeuten. Die Hyperkalzämie kann paraneoplastisch bedingt sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Multiples Myelom\",\n      \"icd10_code\": \"C90.0\",\n      \"reasoning\": \"Die Osteolysen, die Anämie, die Hyperkalzämie und die erhöhte Thrombozytenzahl könnten im Rahmen eines Multiplen Myeloms auftreten. Die Knochenschmerzen unterstützen diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lymphom (z.B. diffuses großzelliges B-Zell-Lymphom)\",\n      \"icd10_code\": \"C88.0\",\n      \"reasoning\": \"Die B-Symptomatik (Nachtschweiß), die Anämie, die erhöhte AP und die Raumforderung könnten im Rahmen eines Lymphoms auftreten. Die diffuse Infiltration könnte die Osteolysen und pulmonalen Rundherde erklären.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Paraneoplastisches Syndrom bei anderem zugrunde liegendem Tumor\",\n      \"icd10_code\": \"C99.9\",\n      \"reasoning\": \"Die Hyperkalzämie und die kognitive Verlangsamung könnten Ausdruck eines paraneoplastischen Syndroms sein, das durch einen noch nicht identifizierten Tumor verursacht wird. Die anderen Befunde könnten sekundär sein.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2607,
+      "response_length": 1829,
+      "usage": {
+        "prompt_tokens": 758,
+        "completion_tokens": 560
+      },
+      "case_id": "cr_006",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.22222222222222224
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.0",
+          "reasoning": "Die akute Luftnot, die pleuritischen Schmerzen, die Tachypnoe, die Hypoxämie (pO2 62 mmHg), die Sinustachykardie und der erhöhte D-Dimer-Wert (4.200 µg/l) sprechen stark für eine Lungenembolie. Der Rechtstyp im EKG mit S1Q3-Lagetyp unterstützt diese Diagnose zusätzlich.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Tiefe Venenthrombose (TVT) mit postembolischer Pneumonitis",
+          "icd10_code": "I80.2",
+          "reasoning": "Das diskrete Ödem und der Wadendruckschmerz im rechten Unterbein deuten auf eine mögliche TVT hin, welche als Ursprung für eine Lungenembolie dienen könnte. Eine postembolische Pneumonitis könnte die Hypoxämie und die Tachypnoe erklären, obwohl die Röntgen-Thorax-Aufnahme unauffällig ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Akutes Koronarsyndrom (ACS)",
+          "icd10_code": "I20.0",
+          "reasoning": "Die stechenden, atemabhängigen Schmerzen im Thorax können auch kardial bedingt sein. Das leicht erhöhte Troponin T (18 ng/l) könnte auf eine Myokardverletzung hindeuten, obwohl es nicht stark erhöht ist. Die Busreise könnte einen auslösenden Faktor gewesen sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pneumothorax (klein)",
+          "icd10_code": "J98.8",
+          "reasoning": "Obwohl die Röntgen-Thorax-Aufnahme keinen Pneumothorax zeigt, kann ein kleiner Pneumothorax initial übersehen werden. Die akute Luftnot und die pleuritischen Schmerzen passen zu dieser Diagnose. Die Busreise könnte einen bestehenden kleinen Pneumothorax verstärkt haben.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Herzinsuffizienz (dekompensiert)",
+          "icd10_code": "I50.9",
+          "reasoning": "Die arterielle Hypertonie in der Anamnese und die Orthopnoe könnten auf eine Herzinsuffizienz hindeuten. Die Tachykardie und die Hypoxämie könnten Zeichen einer dekompensierten Herzinsuffizienz sein. Allerdings sind die Stauungszeichen auf der Röntgen-Thorax-Aufnahme nicht erkennbar.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.0\",\n      \"reasoning\": \"Die akute Luftnot, die pleuritischen Schmerzen, die Tachypnoe, die Hypoxämie (pO2 62 mmHg), die Sinustachykardie und der erhöhte D-Dimer-Wert (4.200 µg/l) sprechen stark für eine Lungenembolie. Der Rechtstyp im EKG mit S1Q3-Lagetyp unterstützt diese Diagnose zusätzlich.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Tiefe Venenthrombose (TVT) mit postembolischer Pneumonitis\",\n      \"icd10_code\": \"I80.2\",\n      \"reasoning\": \"Das diskrete Ödem und der Wadendruckschmerz im rechten Unterbein deuten auf eine mögliche TVT hin, welche als Ursprung für eine Lungenembolie dienen könnte. Eine postembolische Pneumonitis könnte die Hypoxämie und die Tachypnoe erklären, obwohl die Röntgen-Thorax-Aufnahme unauffällig ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom (ACS)\",\n      \"icd10_code\": \"I20.0\",\n      \"reasoning\": \"Die stechenden, atemabhängigen Schmerzen im Thorax können auch kardial bedingt sein. Das leicht erhöhte Troponin T (18 ng/l) könnte auf eine Myokardverletzung hindeuten, obwohl es nicht stark erhöht ist. Die Busreise könnte einen auslösenden Faktor gewesen sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pneumothorax (klein)\",\n      \"icd10_code\": \"J98.8\",\n      \"reasoning\": \"Obwohl die Röntgen-Thorax-Aufnahme keinen Pneumothorax zeigt, kann ein kleiner Pneumothorax initial übersehen werden. Die akute Luftnot und die pleuritischen Schmerzen passen zu dieser Diagnose. Die Busreise könnte einen bestehenden kleinen Pneumothorax verstärkt haben.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Herzinsuffizienz (dekompensiert)\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Die arterielle Hypertonie in der Anamnese und die Orthopnoe könnten auf eine Herzinsuffizienz hindeuten. Die Tachykardie und die Hypoxämie könnten Zeichen einer dekompensierten Herzinsuffizienz sein. Allerdings sind die Stauungszeichen auf der Röntgen-Thorax-Aufnahme nicht erkennbar.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2371,
+      "response_length": 2130,
+      "usage": {
+        "prompt_tokens": 728,
+        "completion_tokens": 650
+      },
+      "case_id": "cr_007",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akutes Koronarsyndrom (ACS) – instabile Angina pectoris / Nicht-ST-Hebungsinfarkt (NSTEMI)",
+          "icd10_code": "I20.0",
+          "reasoning": "Der Patient präsentiert mit typischen retrosternalen Beschwerden, die bei Belastung zunehmen, sowie erhöhten Troponinwerten und CK-MB. Die unspezifischen ST-Streckensenkungen im EKG und die Hypokinesie in der Echokardiographie unterstützen diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Myokarditis",
+          "icd10_code": "I40.x",
+          "reasoning": "Der Patient hatte vor kurzem einen Atemwegsinfekt, was ein möglicher Auslöser für eine Myokarditis sein kann. Erhöhtes NT-proBNP und die diskrete Hypokinesie könnten dafür sprechen, obwohl die klinische Präsentation weniger typisch ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische stabile Angina pectoris (KHK)",
+          "icd10_code": "I25.1",
+          "reasoning": "Aufgrund des Risikoprofils (Hypertonie, Nikotinabusus, Familienanamnese) und der intermittierenden Beschwerden ist eine stabile Angina pectoris möglich, die sich aktuell dekompensiert hat. Die erhöhten Troponinwerte sprechen jedoch eher gegen eine rein stabile Angina.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Herzinsuffizienz",
+          "icd10_code": "I50.x",
+          "reasoning": "Die geringgradig eingeschränkte LVEF und das erhöhte NT-proBNP deuten auf eine Herzinsuffizienz hin, die durch die zugrundeliegende KHK oder eine Myokarditis verursacht sein könnte. Die Schwere im Brustkorb könnte auch durch die Herzinsuffizienz bedingt sein.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.x",
+          "reasoning": "Das erhöhte D-Dimer könnte auf eine Lungenembolie hindeuten, obwohl es unspezifisch ist und auch bei anderen Erkrankungen erhöht sein kann. Die Symptome sind jedoch weniger typisch für eine Lungenembolie.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akutes Koronarsyndrom (ACS) – instabile Angina pectoris / Nicht-ST-Hebungsinfarkt (NSTEMI)\",\n      \"icd10_code\": \"I20.0\",\n      \"reasoning\": \"Der Patient präsentiert mit typischen retrosternalen Beschwerden, die bei Belastung zunehmen, sowie erhöhten Troponinwerten und CK-MB. Die unspezifischen ST-Streckensenkungen im EKG und die Hypokinesie in der Echokardiographie unterstützen diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Myokarditis\",\n      \"icd10_code\": \"I40.x\",\n      \"reasoning\": \"Der Patient hatte vor kurzem einen Atemwegsinfekt, was ein möglicher Auslöser für eine Myokarditis sein kann. Erhöhtes NT-proBNP und die diskrete Hypokinesie könnten dafür sprechen, obwohl die klinische Präsentation weniger typisch ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische stabile Angina pectoris (KHK)\",\n      \"icd10_code\": \"I25.1\",\n      \"reasoning\": \"Aufgrund des Risikoprofils (Hypertonie, Nikotinabusus, Familienanamnese) und der intermittierenden Beschwerden ist eine stabile Angina pectoris möglich, die sich aktuell dekompensiert hat. Die erhöhten Troponinwerte sprechen jedoch eher gegen eine rein stabile Angina.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Herzinsuffizienz\",\n      \"icd10_code\": \"I50.x\",\n      \"reasoning\": \"Die geringgradig eingeschränkte LVEF und das erhöhte NT-proBNP deuten auf eine Herzinsuffizienz hin, die durch die zugrundeliegende KHK oder eine Myokarditis verursacht sein könnte. Die Schwere im Brustkorb könnte auch durch die Herzinsuffizienz bedingt sein.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.x\",\n      \"reasoning\": \"Das erhöhte D-Dimer könnte auf eine Lungenembolie hindeuten, obwohl es unspezifisch ist und auch bei anderen Erkrankungen erhöht sein kann. Die Symptome sind jedoch weniger typisch für eine Lungenembolie.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2576,
+      "response_length": 1997,
+      "usage": {
+        "prompt_tokens": 789,
+        "completion_tokens": 598
+      },
+      "case_id": "cr_008",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Interstitielle Lungenerkrankung (ILD) im Rahmen einer Kollagenose",
+          "icd10_code": "J84.9",
+          "reasoning": "Die progrediente Dyspnoe, das inspiratorische Klettverschlussknistern, das NSIP-Muster im HR-CT und der positive ANA-Titer sprechen stark für eine ILD. Die bekannte rheumatoide Arthritis und das Raynaud-Phänomen erhöhen die Wahrscheinlichkeit einer Kollagenose-assoziierten ILD, auch wenn RF und ANCA negativ sind.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Idiopathische Nicht-Spezifische Interstitielle Pneumonie (NSIP)",
+          "icd10_code": "J84.8",
+          "reasoning": "Das HR-CT zeigt ein typisches NSIP-Muster ohne Hinweise auf andere spezifische ILD-Subtypen. Da keine eindeutige zugrunde liegende Kollagenose identifiziert wurde (trotz positivem ANA), ist eine idiopathische NSIP eine wichtige Differentialdiagnose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Medikamenteninduzierte Lungenerkrankung (MIL)",
+          "icd10_code": "J84.9",
+          "reasoning": "Methotrexat kann eine ILD verursachen. Obwohl die Patientin das Medikament seit zwei Jahren einnimmt und die Gelenkbeschwerden unzureichend regredient waren, muss eine MIL in Betracht gezogen werden, insbesondere angesichts des NSIP-Musters im HR-CT.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Polymyositis/Dermatomyositis mit Lungenbeteiligung",
+          "icd10_code": "M33.9",
+          "reasoning": "Die diskrete Schwäche der proximalen Extremitätenmuskulatur und die Rhagaden an den Fingern können auf eine Myositis hindeuten. Einige Myositis-Formen können mit einer interstitiellen Lungenerkrankung einhergehen.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Atypische Pneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Obwohl die antibiotische Therapie nicht angeschlagen hat und die Leukozytenzahl normal ist, kann eine persistierende atypische Pneumonie (z.B. durch Mycoplasma pneumoniae) nicht vollständig ausgeschlossen werden, insbesondere da der Husten unproduktiv ist. Die Dyspnoe und das Klettverschlussknistern könnten auch hierfür Ausdruck sein.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Interstitielle Lungenerkrankung (ILD) im Rahmen einer Kollagenose\",\n      \"icd10_code\": \"J84.9\",\n      \"reasoning\": \"Die progrediente Dyspnoe, das inspiratorische Klettverschlussknistern, das NSIP-Muster im HR-CT und der positive ANA-Titer sprechen stark für eine ILD. Die bekannte rheumatoide Arthritis und das Raynaud-Phänomen erhöhen die Wahrscheinlichkeit einer Kollagenose-assoziierten ILD, auch wenn RF und ANCA negativ sind.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Idiopathische Nicht-Spezifische Interstitielle Pneumonie (NSIP)\",\n      \"icd10_code\": \"J84.8\",\n      \"reasoning\": \"Das HR-CT zeigt ein typisches NSIP-Muster ohne Hinweise auf andere spezifische ILD-Subtypen. Da keine eindeutige zugrunde liegende Kollagenose identifiziert wurde (trotz positivem ANA), ist eine idiopathische NSIP eine wichtige Differentialdiagnose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Medikamenteninduzierte Lungenerkrankung (MIL)\",\n      \"icd10_code\": \"J84.9\",\n      \"reasoning\": \"Methotrexat kann eine ILD verursachen. Obwohl die Patientin das Medikament seit zwei Jahren einnimmt und die Gelenkbeschwerden unzureichend regredient waren, muss eine MIL in Betracht gezogen werden, insbesondere angesichts des NSIP-Musters im HR-CT.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Polymyositis/Dermatomyositis mit Lungenbeteiligung\",\n      \"icd10_code\": \"M33.9\",\n      \"reasoning\": \"Die diskrete Schwäche der proximalen Extremitätenmuskulatur und die Rhagaden an den Fingern können auf eine Myositis hindeuten. Einige Myositis-Formen können mit einer interstitiellen Lungenerkrankung einhergehen.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Atypische Pneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Obwohl die antibiotische Therapie nicht angeschlagen hat und die Leukozytenzahl normal ist, kann eine persistierende atypische Pneumonie (z.B. durch Mycoplasma pneumoniae) nicht vollständig ausgeschlossen werden, insbesondere da der Husten unproduktiv ist. Die Dyspnoe und das Klettverschlussknistern könnten auch hierfür Ausdruck sein.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2820,
+      "response_length": 2209,
+      "usage": {
+        "prompt_tokens": 822,
+        "completion_tokens": 644
+      },
+      "case_id": "cr_009",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akuter ischämischer Schlaganfall",
+          "icd10_code": "I63.3",
+          "reasoning": "Die plötzliche Entwicklung einer globalen Aphasie, Rechts-Vernachlässigung, zentraler Fazialisparese rechts und Hemiparese, kombiniert mit dem Nachweis eines Gefäßverschlusses im M1-Segment der linken Arteria cerebri media in der CT-Angiographie und dem entsprechenden Perfusions-Mismatch, sprechen stark für einen akuten ischämischen Schlaganfall.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "TIA (transitorische ischämische Attacke)",
+          "icd10_code": "G45.9",
+          "reasoning": "Obwohl die Symptome persistieren und die Bildgebung einen akuten Verschluss zeigt, muss initial eine TIA in Betracht gezogen werden, die sich zu einem manifesten Schlaganfall entwickelt hat. Die vorübergehende Unterbrechung der Antikoagulation könnte ein Risikofaktor gewesen sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hypoglykämie",
+          "icd10_code": "E16.2",
+          "reasoning": "Der Patient hat einen Diabetes mellitus Typ 2 und die Symptome traten akut auf. Eine Hypoglykämie kann neurologische Defizite verursachen, die einer Aphasie und Hemiparese ähneln können. Die Glukose von 142 mg/dl ist zwar nicht akut niedrig, aber im Kontext des Diabetes und der schnellen Symptomentwicklung muss dies ausgeschlossen werden.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Seizereinfall mit postiktalem Defizit",
+          "icd10_code": "G40.9",
+          "reasoning": "Obwohl keine Zeugen für einen Krampfanfall vorliegen, kann ein nicht beobachteter Anfall mit nachfolgendem postiktalen neurologischen Defizit (Aphasie, Hemiparese) in Betracht gezogen werden. Die Déviation conjuguée könnte ein Hinweis darauf sein.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akuter ischämischer Schlaganfall\",\n      \"icd10_code\": \"I63.3\",\n      \"reasoning\": \"Die plötzliche Entwicklung einer globalen Aphasie, Rechts-Vernachlässigung, zentraler Fazialisparese rechts und Hemiparese, kombiniert mit dem Nachweis eines Gefäßverschlusses im M1-Segment der linken Arteria cerebri media in der CT-Angiographie und dem entsprechenden Perfusions-Mismatch, sprechen stark für einen akuten ischämischen Schlaganfall.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"TIA (transitorische ischämische Attacke)\",\n      \"icd10_code\": \"G45.9\",\n      \"reasoning\": \"Obwohl die Symptome persistieren und die Bildgebung einen akuten Verschluss zeigt, muss initial eine TIA in Betracht gezogen werden, die sich zu einem manifesten Schlaganfall entwickelt hat. Die vorübergehende Unterbrechung der Antikoagulation könnte ein Risikofaktor gewesen sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hypoglykämie\",\n      \"icd10_code\": \"E16.2\",\n      \"reasoning\": \"Der Patient hat einen Diabetes mellitus Typ 2 und die Symptome traten akut auf. Eine Hypoglykämie kann neurologische Defizite verursachen, die einer Aphasie und Hemiparese ähneln können. Die Glukose von 142 mg/dl ist zwar nicht akut niedrig, aber im Kontext des Diabetes und der schnellen Symptomentwicklung muss dies ausgeschlossen werden.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Seizereinfall mit postiktalem Defizit\",\n      \"icd10_code\": \"G40.9\",\n      \"reasoning\": \"Obwohl keine Zeugen für einen Krampfanfall vorliegen, kann ein nicht beobachteter Anfall mit nachfolgendem postiktalen neurologischen Defizit (Aphasie, Hemiparese) in Betracht gezogen werden. Die Déviation conjuguée könnte ein Hinweis darauf sein.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2758,
+      "response_length": 1830,
+      "usage": {
+        "prompt_tokens": 775,
+        "completion_tokens": 529
+      },
+      "case_id": "cr_010",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 3.0
+      }
+    }
+  ]
+}

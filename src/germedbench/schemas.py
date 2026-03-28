@@ -55,6 +55,7 @@ class ClinicalReasoningCase(BaseModel):
 class ClinicalEntity(BaseModel):
     typ: str  # "diagnose", "prozedur", "medikament", "laborwert"
     name: str  # Surface form, e.g. "Vorhofflimmern"
+    acceptable_names: list[str] = []  # Synonyms, abbreviations, trade names
     code: str = ""  # ICD-10 or OPS code (diagnose/prozedur)
     wirkstoff: str = ""  # Active ingredient (medikament)
     dosierung: str = ""  # Dosage string (medikament)

@@ -1,0 +1,896 @@
+{
+  "summary": {
+    "model": "qwen3-30b-a3b-instruct-2507",
+    "task": "ner",
+    "timestamp": "20260328_215944",
+    "n_cases": 10,
+    "n_scored": 10,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "micro_f1": 0.6764870714367619,
+    "micro_precision": 0.7190046146663793,
+    "micro_recall": 0.6451479076479076,
+    "diagnose_f1": 0.49333333333333335,
+    "prozedur_f1": 0.1,
+    "medikament_f1": 0.975,
+    "laborwert_f1": 0.7727272727272727
+  },
+  "predictions": [
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "chronisch obstruktive Lungenerkrankung",
+          "code": "J44.9"
+        },
+        {
+          "typ": "diagnose",
+          "name": "arterielle Hypertonie",
+          "code": "I10"
+        },
+        {
+          "typ": "prozedur",
+          "name": "Spirometrie",
+          "code": "8-110.0"
+        },
+        {
+          "typ": "medikament",
+          "name": "Prednisolon",
+          "wirkstoff": "Prednisolon",
+          "dosierung": "20mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Salbutamol",
+          "wirkstoff": "Salbutamol",
+          "dosierung": "SFI bei Bedarf",
+          "einheit": "SFI"
+        },
+        {
+          "typ": "medikament",
+          "name": "Amlodipin",
+          "wirkstoff": "Amlodipin",
+          "dosierung": "5mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "C-reaktives Protein",
+          "wert": "12.5",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Leukozytose",
+          "parameter": "Leukozyten",
+          "wert": "11.2",
+          "einheit": "G/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Troponin T",
+          "parameter": "Troponin T",
+          "wert": "im Normbereich",
+          "einheit": ""
+        },
+        {
+          "typ": "laborwert",
+          "name": "Elektrolyte",
+          "parameter": "Elektrolyte",
+          "wert": "im Normbereich",
+          "einheit": ""
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"chronisch obstruktive Lungenerkrankung\", \"code\": \"J44.9\"},\n    {\"typ\": \"diagnose\", \"name\": \"arterielle Hypertonie\", \"code\": \"I10\"},\n    {\"typ\": \"prozedur\", \"name\": \"Spirometrie\", \"code\": \"8-110.0\"},\n    {\"typ\": \"medikament\", \"name\": \"Prednisolon\", \"wirkstoff\": \"Prednisolon\", \"dosierung\": \"20mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Salbutamol\", \"wirkstoff\": \"Salbutamol\", \"dosierung\": \"SFI bei Bedarf\", \"einheit\": \"SFI\"},\n    {\"typ\": \"medikament\", \"name\": \"Amlodipin\", \"wirkstoff\": \"Amlodipin\", \"dosierung\": \"5mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"C-reaktives Protein\", \"wert\": \"12.5\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"Leukozytose\", \"parameter\": \"Leukozyten\", \"wert\": \"11.2\", \"einheit\": \"G/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"Troponin T\", \"parameter\": \"Troponin T\", \"wert\": \"im Normbereich\", \"einheit\": \"\"},\n    {\"typ\": \"laborwert\", \"name\": \"Elektrolyte\", \"parameter\": \"Elektrolyte\", \"wert\": \"im Normbereich\", \"einheit\": \"\"}\n  ]\n}",
+      "prompt_length": 2825,
+      "response_length": 1074,
+      "usage": {
+        "prompt_tokens": 947,
+        "completion_tokens": 425
+      },
+      "case_id": "ner_001"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "Akut dekompensierte chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), NYHA III",
+          "code": "I50.2"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Permanentes Vorhofflimmern",
+          "code": "I48.0"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Arterielle Hypertonie",
+          "code": "I10"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Chronische Niereninsuffizienz Stadium 3a (nach KDIGO)",
+          "code": "N18.3"
+        },
+        {
+          "typ": "prozedur",
+          "name": "Koronarangiographie",
+          "code": "3-900.0"
+        },
+        {
+          "typ": "medikament",
+          "name": "Furosemid",
+          "wirkstoff": "Furosemid",
+          "dosierung": "40mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Sacubitril/Valsartan",
+          "wirkstoff": "Sacubitril/Valsartan",
+          "dosierung": "24/26mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Empagliflozin",
+          "wirkstoff": "Empagliflozin",
+          "dosierung": "10mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Bisoprolol",
+          "wirkstoff": "Bisoprolol",
+          "dosierung": "2.5mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Apixaban",
+          "wirkstoff": "Apixaban",
+          "dosierung": "5mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "NT-proBNP",
+          "parameter": "NT-proBNP",
+          "wert": "4500",
+          "einheit": "pg/ml"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Serum-Kreatinin",
+          "parameter": "Serum-Kreatinin",
+          "wert": "1.4",
+          "einheit": "mg/dl"
+        },
+        {
+          "typ": "laborwert",
+          "name": "GFR",
+          "parameter": "GFR",
+          "wert": "52",
+          "einheit": "ml/min"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"Akut dekompensierte chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), NYHA III\", \"code\": \"I50.2\"},\n    {\"typ\": \"diagnose\", \"name\": \"Permanentes Vorhofflimmern\", \"code\": \"I48.0\"},\n    {\"typ\": \"diagnose\", \"name\": \"Arterielle Hypertonie\", \"code\": \"I10\"},\n    {\"typ\": \"diagnose\", \"name\": \"Chronische Niereninsuffizienz Stadium 3a (nach KDIGO)\", \"code\": \"N18.3\"},\n    {\"typ\": \"prozedur\", \"name\": \"Koronarangiographie\", \"code\": \"3-900.0\"},\n    {\"typ\": \"medikament\", \"name\": \"Furosemid\", \"wirkstoff\": \"Furosemid\", \"dosierung\": \"40mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Sacubitril/Valsartan\", \"wirkstoff\": \"Sacubitril/Valsartan\", \"dosierung\": \"24/26mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Empagliflozin\", \"wirkstoff\": \"Empagliflozin\", \"dosierung\": \"10mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Bisoprolol\", \"wirkstoff\": \"Bisoprolol\", \"dosierung\": \"2.5mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Apixaban\", \"wirkstoff\": \"Apixaban\", \"dosierung\": \"5mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"NT-proBNP\", \"parameter\": \"NT-proBNP\", \"wert\": \"4500\", \"einheit\": \"pg/ml\"},\n    {\"typ\": \"laborwert\", \"name\": \"Serum-Kreatinin\", \"parameter\": \"Serum-Kreatinin\", \"wert\": \"1.4\", \"einheit\": \"mg/dl\"},\n    {\"typ\": \"laborwert\", \"name\": \"GFR\", \"parameter\": \"GFR\", \"wert\": \"52\", \"einheit\": \"ml/min\"}\n  ]\n}",
+      "prompt_length": 2950,
+      "response_length": 1428,
+      "usage": {
+        "prompt_tokens": 1009,
+        "completion_tokens": 569
+      },
+      "case_id": "ner_002"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "Vorhofflimmern",
+          "code": "I48.0"
+        },
+        {
+          "typ": "diagnose",
+          "name": "chronische KHK",
+          "code": "I25.1"
+        },
+        {
+          "typ": "diagnose",
+          "name": "akute Exazerbation einer COPD Gold IV",
+          "code": "J44.1"
+        },
+        {
+          "typ": "diagnose",
+          "name": "idiopathische pulmonale Fibrose (IPF)",
+          "code": "J84.1"
+        },
+        {
+          "typ": "prozedur",
+          "name": "flexible Bronchoskopie mit bronchoalveolärer Lavage (BAL)",
+          "code": "3-110.0"
+        },
+        {
+          "typ": "medikament",
+          "name": "Piperacillin/Tazobactam",
+          "wirkstoff": "Piperacillin",
+          "dosierung": "kalkulierte Antibiose",
+          "einheit": ""
+        },
+        {
+          "typ": "medikament",
+          "name": "Tiotropium (Spiriva)",
+          "wirkstoff": "Tiotropium",
+          "dosierung": "18µg 1-0-0",
+          "einheit": "µg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Budesonid/Formoterol (Symbicort)",
+          "wirkstoff": "Budesonid/Formoterol",
+          "dosierung": "160/4,5µg 2-0-2",
+          "einheit": "µg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Rivaroxaban (Xarelto)",
+          "wirkstoff": "Rivaroxaban",
+          "dosierung": "20mg 0-0-1",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Metformin",
+          "wirkstoff": "Metformin",
+          "dosierung": "500mg 1-0-1",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Furosemid",
+          "wirkstoff": "Furosemid",
+          "dosierung": "40mg i.v.",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "NT-proBNP",
+          "parameter": "NT-proBNP",
+          "wert": "4250",
+          "einheit": "pg/ml"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "CRP",
+          "wert": "84",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "CRP",
+          "wert": "12",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "pH",
+          "parameter": "pH",
+          "wert": "7,38",
+          "einheit": ""
+        },
+        {
+          "typ": "laborwert",
+          "name": "pO2",
+          "parameter": "pO2",
+          "wert": "65",
+          "einheit": "mmHg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "pCO2",
+          "parameter": "pCO2",
+          "wert": "48",
+          "einheit": "mmHg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "EF",
+          "parameter": "EF",
+          "wert": "45",
+          "einheit": "%"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"Vorhofflimmern\", \"code\": \"I48.0\"},\n    {\"typ\": \"diagnose\", \"name\": \"chronische KHK\", \"code\": \"I25.1\"},\n    {\"typ\": \"diagnose\", \"name\": \"akute Exazerbation einer COPD Gold IV\", \"code\": \"J44.1\"},\n    {\"typ\": \"diagnose\", \"name\": \"idiopathische pulmonale Fibrose (IPF)\", \"code\": \"J84.1\"},\n    {\"typ\": \"prozedur\", \"name\": \"flexible Bronchoskopie mit bronchoalveolärer Lavage (BAL)\", \"code\": \"3-110.0\"},\n    {\"typ\": \"medikament\", \"name\": \"Piperacillin/Tazobactam\", \"wirkstoff\": \"Piperacillin\", \"dosierung\": \"kalkulierte Antibiose\", \"einheit\": \"\"},\n    {\"typ\": \"medikament\", \"name\": \"Tiotropium (Spiriva)\", \"wirkstoff\": \"Tiotropium\", \"dosierung\": \"18µg 1-0-0\", \"einheit\": \"µg\"},\n    {\"typ\": \"medikament\", \"name\": \"Budesonid/Formoterol (Symbicort)\", \"wirkstoff\": \"Budesonid/Formoterol\", \"dosierung\": \"160/4,5µg 2-0-2\", \"einheit\": \"µg\"},\n    {\"typ\": \"medikament\", \"name\": \"Rivaroxaban (Xarelto)\", \"wirkstoff\": \"Rivaroxaban\", \"dosierung\": \"20mg 0-0-1\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Metformin\", \"wirkstoff\": \"Metformin\", \"dosierung\": \"500mg 1-0-1\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Furosemid\", \"wirkstoff\": \"Furosemid\", \"dosierung\": \"40mg i.v.\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"NT-proBNP\", \"parameter\": \"NT-proBNP\", \"wert\": \"4250\", \"einheit\": \"pg/ml\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"CRP\", \"wert\": \"84\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"CRP\", \"wert\": \"12\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"pH\", \"parameter\": \"pH\", \"wert\": \"7,38\", \"einheit\": \"\"},\n    {\"typ\": \"laborwert\", \"name\": \"pO2\", \"parameter\": \"pO2\", \"wert\": \"65\", \"einheit\": \"mmHg\"},\n    {\"typ\": \"laborwert\", \"name\": \"pCO2\", \"parameter\": \"pCO2\", \"wert\": \"48\", \"einheit\": \"mmHg\"},\n    {\"typ\": \"laborwert\", \"name\": \"EF\", \"parameter\": \"EF\", \"wert\": \"45\", \"einheit\": \"%\"}\n  ]\n}",
+      "prompt_length": 2550,
+      "response_length": 1918,
+      "usage": {
+        "prompt_tokens": 900,
+        "completion_tokens": 785
+      },
+      "case_id": "ner_003"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "Ischämischer Hirninfarkt im Mediastromgebiet rechts",
+          "code": "I63.3"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Arterielle Hypertonie",
+          "code": "I10.90"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "C-reaktives Protein",
+          "wert": "2.1",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "LDL-Cholesterin",
+          "parameter": "LDL-Cholesterin",
+          "wert": "145",
+          "einheit": "mg/dl"
+        },
+        {
+          "typ": "laborwert",
+          "name": "HbA1c",
+          "parameter": "HbA1c",
+          "wert": "5.8",
+          "einheit": "%"
+        },
+        {
+          "typ": "medikament",
+          "name": "ASS",
+          "wirkstoff": "Acetylsalicylsäure",
+          "dosierung": "100mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Ramipril",
+          "wirkstoff": "Ramipril",
+          "dosierung": "5mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Atorvastatin",
+          "wirkstoff": "Atorvastatin",
+          "dosierung": "40mg 0-0-1",
+          "einheit": "mg"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"Ischämischer Hirninfarkt im Mediastromgebiet rechts\", \"code\": \"I63.3\"},\n    {\"typ\": \"diagnose\", \"name\": \"Arterielle Hypertonie\", \"code\": \"I10.90\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"C-reaktives Protein\", \"wert\": \"2.1\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"LDL-Cholesterin\", \"parameter\": \"LDL-Cholesterin\", \"wert\": \"145\", \"einheit\": \"mg/dl\"},\n    {\"typ\": \"laborwert\", \"name\": \"HbA1c\", \"parameter\": \"HbA1c\", \"wert\": \"5.8\", \"einheit\": \"%\"},\n    {\"typ\": \"medikament\", \"name\": \"ASS\", \"wirkstoff\": \"Acetylsalicylsäure\", \"dosierung\": \"100mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Ramipril\", \"wirkstoff\": \"Ramipril\", \"dosierung\": \"5mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Atorvastatin\", \"wirkstoff\": \"Atorvastatin\", \"dosierung\": \"40mg 0-0-1\", \"einheit\": \"mg\"}\n  ]\n}",
+      "prompt_length": 2955,
+      "response_length": 891,
+      "usage": {
+        "prompt_tokens": 1011,
+        "completion_tokens": 371
+      },
+      "case_id": "ner_004"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "akute Sigmadivertikulitis",
+          "code": "K51.3"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "CRP",
+          "wert": "145",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Leukozytose",
+          "parameter": "Leukozytose",
+          "wert": "14.2",
+          "einheit": "G/l"
+        },
+        {
+          "typ": "medikament",
+          "name": "Cefuroxim",
+          "wirkstoff": "Cefuroxim",
+          "dosierung": "1.5g 3-0-0",
+          "einheit": "g"
+        },
+        {
+          "typ": "medikament",
+          "name": "Metronidazol",
+          "wirkstoff": "Metronidazol",
+          "dosierung": "500mg 3-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Ramipril",
+          "wirkstoff": "Ramipril",
+          "dosierung": "5mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Metformin",
+          "wirkstoff": "Metformin",
+          "dosierung": "1000mg 1-0-1",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "HbA1c",
+          "parameter": "HbA1c",
+          "wert": "7.2",
+          "einheit": "%"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"akute Sigmadivertikulitis\", \"code\": \"K51.3\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"CRP\", \"wert\": \"145\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"Leukozytose\", \"parameter\": \"Leukozytose\", \"wert\": \"14.2\", \"einheit\": \"G/l\"},\n    {\"typ\": \"medikament\", \"name\": \"Cefuroxim\", \"wirkstoff\": \"Cefuroxim\", \"dosierung\": \"1.5g 3-0-0\", \"einheit\": \"g\"},\n    {\"typ\": \"medikament\", \"name\": \"Metronidazol\", \"wirkstoff\": \"Metronidazol\", \"dosierung\": \"500mg 3-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Ramipril\", \"wirkstoff\": \"Ramipril\", \"dosierung\": \"5mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Metformin\", \"wirkstoff\": \"Metformin\", \"dosierung\": \"1000mg 1-0-1\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"HbA1c\", \"parameter\": \"HbA1c\", \"wert\": \"7.2\", \"einheit\": \"%\"}\n  ]\n}",
+      "prompt_length": 2566,
+      "response_length": 880,
+      "usage": {
+        "prompt_tokens": 892,
+        "completion_tokens": 378
+      },
+      "case_id": "ner_005"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "metastasiertes Adenokarzinom des Colon ascendens",
+          "code": "C18.0"
+        },
+        {
+          "typ": "diagnose",
+          "name": "hepatische Metastasierung",
+          "code": "C78.7"
+        },
+        {
+          "typ": "diagnose",
+          "name": "chronisch obstruktive Lungenkrankheit",
+          "code": "J44.9"
+        },
+        {
+          "typ": "diagnose",
+          "name": "arterielle Hypertonie",
+          "code": "I10"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Diabetes mellitus Typ 2",
+          "code": "E11.9"
+        },
+        {
+          "typ": "diagnose",
+          "name": "chronische Niereninsuffizienz im Stadium 3a",
+          "code": "N18.3"
+        },
+        {
+          "typ": "diagnose",
+          "name": "neutropenisches Fieber",
+          "code": "A41.9"
+        },
+        {
+          "typ": "prozedur",
+          "name": "Abdomensonographie",
+          "code": "5-100.0"
+        },
+        {
+          "typ": "medikament",
+          "name": "Piperacillin/Tazobactam",
+          "wirkstoff": "Piperacillin",
+          "dosierung": "1.5g 1-0-0",
+          "einheit": "g"
+        },
+        {
+          "typ": "medikament",
+          "name": "Piperacillin/Tazobactam",
+          "wirkstoff": "Tazobactam",
+          "dosierung": "0.225g 1-0-0",
+          "einheit": "g"
+        },
+        {
+          "typ": "medikament",
+          "name": "Ramipril",
+          "wirkstoff": "Ramipril",
+          "dosierung": "5mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Metformin",
+          "wirkstoff": "Metformin",
+          "dosierung": "500mg 1-0-1",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Pantoprazol",
+          "wirkstoff": "Pantoprazol",
+          "dosierung": "40mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Leukozyten",
+          "parameter": "Leukozyten",
+          "wert": "3.8",
+          "einheit": "/nl"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Hämoglobin",
+          "parameter": "Hämoglobin",
+          "wert": "10.2",
+          "einheit": "g/dl"
+        },
+        {
+          "typ": "laborwert",
+          "name": "C-reaktives Protein",
+          "parameter": "CRP",
+          "wert": "12.4",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Serum-Kreatinin",
+          "parameter": "Kreatinin",
+          "wert": "1.42",
+          "einheit": "mg/dl"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"metastasiertes Adenokarzinom des Colon ascendens\", \"code\": \"C18.0\"},\n    {\"typ\": \"diagnose\", \"name\": \"hepatische Metastasierung\", \"code\": \"C78.7\"},\n    {\"typ\": \"diagnose\", \"name\": \"chronisch obstruktive Lungenkrankheit\", \"code\": \"J44.9\"},\n    {\"typ\": \"diagnose\", \"name\": \"arterielle Hypertonie\", \"code\": \"I10\"},\n    {\"typ\": \"diagnose\", \"name\": \"Diabetes mellitus Typ 2\", \"code\": \"E11.9\"},\n    {\"typ\": \"diagnose\", \"name\": \"chronische Niereninsuffizienz im Stadium 3a\", \"code\": \"N18.3\"},\n    {\"typ\": \"diagnose\", \"name\": \"neutropenisches Fieber\", \"code\": \"A41.9\"},\n    {\"typ\": \"prozedur\", \"name\": \"Abdomensonographie\", \"code\": \"5-100.0\"},\n    {\"typ\": \"medikament\", \"name\": \"Piperacillin/Tazobactam\", \"wirkstoff\": \"Piperacillin\", \"dosierung\": \"1.5g 1-0-0\", \"einheit\": \"g\"},\n    {\"typ\": \"medikament\", \"name\": \"Piperacillin/Tazobactam\", \"wirkstoff\": \"Tazobactam\", \"dosierung\": \"0.225g 1-0-0\", \"einheit\": \"g\"},\n    {\"typ\": \"medikament\", \"name\": \"Ramipril\", \"wirkstoff\": \"Ramipril\", \"dosierung\": \"5mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Metformin\", \"wirkstoff\": \"Metformin\", \"dosierung\": \"500mg 1-0-1\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Pantoprazol\", \"wirkstoff\": \"Pantoprazol\", \"dosierung\": \"40mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"Leukozyten\", \"parameter\": \"Leukozyten\", \"wert\": \"3.8\", \"einheit\": \"/nl\"},\n    {\"typ\": \"laborwert\", \"name\": \"Hämoglobin\", \"parameter\": \"Hämoglobin\", \"wert\": \"10.2\", \"einheit\": \"g/dl\"},\n    {\"typ\": \"laborwert\", \"name\": \"C-reaktives Protein\", \"parameter\": \"CRP\", \"wert\": \"12.4\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"Serum-Kreatinin\", \"parameter\": \"Kreatinin\", \"wert\": \"1.42\", \"einheit\": \"mg/dl\"}\n  ]\n}",
+      "prompt_length": 2723,
+      "response_length": 1760,
+      "usage": {
+        "prompt_tokens": 936,
+        "completion_tokens": 716
+      },
+      "case_id": "ner_006"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "ambulant erworbenen Pneumonie",
+          "code": "J18.9"
+        },
+        {
+          "typ": "prozedur",
+          "name": "Röntgen-Thorax in zwei Ebenen",
+          "code": "5-100.0"
+        },
+        {
+          "typ": "medikament",
+          "name": "Amoxicillin/Clavulansäure",
+          "wirkstoff": "Amoxicillin",
+          "dosierung": "875/125 mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Ramipril",
+          "wirkstoff": "Ramipril",
+          "dosierung": "5 mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "C-reaktives Protein",
+          "wert": "152.4",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Leukozytose",
+          "parameter": "Leukozyten",
+          "wert": "16.8",
+          "einheit": "Gpt/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Kreatinin",
+          "parameter": "Kreatinin",
+          "wert": "1.1",
+          "einheit": "mg/dl"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"ambulant erworbenen Pneumonie\", \"code\": \"J18.9\"},\n    {\"typ\": \"prozedur\", \"name\": \"Röntgen-Thorax in zwei Ebenen\", \"code\": \"5-100.0\"},\n    {\"typ\": \"medikament\", \"name\": \"Amoxicillin/Clavulansäure\", \"wirkstoff\": \"Amoxicillin\", \"dosierung\": \"875/125 mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Ramipril\", \"wirkstoff\": \"Ramipril\", \"dosierung\": \"5 mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"C-reaktives Protein\", \"wert\": \"152.4\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"Leukozytose\", \"parameter\": \"Leukozyten\", \"wert\": \"16.8\", \"einheit\": \"Gpt/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"Kreatinin\", \"parameter\": \"Kreatinin\", \"wert\": \"1.1\", \"einheit\": \"mg/dl\"}\n  ]\n}",
+      "prompt_length": 3056,
+      "response_length": 769,
+      "usage": {
+        "prompt_tokens": 1015,
+        "completion_tokens": 313
+      },
+      "case_id": "ner_007"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "Akute dekompensierte Herzinsuffizienz (HFrEF) bei hypertensiver Herzkrankheit",
+          "code": "I50.13"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Erstdiagnose Vorhofflimmern, bei Aufnahme Tachyarrhythmia absoluta",
+          "code": "I48.0"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Arterielle Hypertonie",
+          "code": "I10.90"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Chronische Niereninsuffizienz Stadium 3a",
+          "code": "N18.31"
+        },
+        {
+          "typ": "prozedur",
+          "name": "Koronarangiographie",
+          "code": "1-275.0"
+        },
+        {
+          "typ": "prozedur",
+          "name": "elektrische Kardioversion",
+          "code": "8-640.0"
+        },
+        {
+          "typ": "medikament",
+          "name": "Apixaban",
+          "wirkstoff": "Apixaban",
+          "dosierung": "5 mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Bisoprolol",
+          "wirkstoff": "Bisoprolol",
+          "dosierung": "5 mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Ramipril",
+          "wirkstoff": "Ramipril",
+          "dosierung": "2,5 mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Furosemid",
+          "wirkstoff": "Furosemid",
+          "dosierung": "40 mg",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "NT-proBNP",
+          "parameter": "NT-proBNP",
+          "wert": "4.250",
+          "einheit": "pg/ml"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Serum-Kreatinin",
+          "parameter": "Serum-Kreatinin",
+          "wert": "1,42",
+          "einheit": "mg/dl"
+        },
+        {
+          "typ": "laborwert",
+          "name": "GFR",
+          "parameter": "GFR",
+          "wert": "52",
+          "einheit": "ml/min"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Serum-Kalium",
+          "parameter": "Serum-Kalium",
+          "wert": "4,1",
+          "einheit": "mmol/l"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"Akute dekompensierte Herzinsuffizienz (HFrEF) bei hypertensiver Herzkrankheit\", \"code\": \"I50.13\"},\n    {\"typ\": \"diagnose\", \"name\": \"Erstdiagnose Vorhofflimmern, bei Aufnahme Tachyarrhythmia absoluta\", \"code\": \"I48.0\"},\n    {\"typ\": \"diagnose\", \"name\": \"Arterielle Hypertonie\", \"code\": \"I10.90\"},\n    {\"typ\": \"diagnose\", \"name\": \"Chronische Niereninsuffizienz Stadium 3a\", \"code\": \"N18.31\"},\n    {\"typ\": \"prozedur\", \"name\": \"Koronarangiographie\", \"code\": \"1-275.0\"},\n    {\"typ\": \"prozedur\", \"name\": \"elektrische Kardioversion\", \"code\": \"8-640.0\"},\n    {\"typ\": \"medikament\", \"name\": \"Apixaban\", \"wirkstoff\": \"Apixaban\", \"dosierung\": \"5 mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Bisoprolol\", \"wirkstoff\": \"Bisoprolol\", \"dosierung\": \"5 mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Ramipril\", \"wirkstoff\": \"Ramipril\", \"dosierung\": \"2,5 mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Furosemid\", \"wirkstoff\": \"Furosemid\", \"dosierung\": \"40 mg\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"NT-proBNP\", \"parameter\": \"NT-proBNP\", \"wert\": \"4.250\", \"einheit\": \"pg/ml\"},\n    {\"typ\": \"laborwert\", \"name\": \"Serum-Kreatinin\", \"parameter\": \"Serum-Kreatinin\", \"wert\": \"1,42\", \"einheit\": \"mg/dl\"},\n    {\"typ\": \"laborwert\", \"name\": \"GFR\", \"parameter\": \"GFR\", \"wert\": \"52\", \"einheit\": \"ml/min\"},\n    {\"typ\": \"laborwert\", \"name\": \"Serum-Kalium\", \"parameter\": \"Serum-Kalium\", \"wert\": \"4,1\", \"einheit\": \"mmol/l\"}\n  ]\n}",
+      "prompt_length": 2728,
+      "response_length": 1492,
+      "usage": {
+        "prompt_tokens": 1025,
+        "completion_tokens": 596
+      },
+      "case_id": "ner_008"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "akute respiratorische Insuffizienz",
+          "code": "J96.0"
+        },
+        {
+          "typ": "diagnose",
+          "name": "akut exazerbierte COPD",
+          "code": "J44.1"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Unterlappenpneumonie links",
+          "code": "J15.8"
+        },
+        {
+          "typ": "diagnose",
+          "name": "chronische Herzinsuffizienz",
+          "code": "I50.9"
+        },
+        {
+          "typ": "diagnose",
+          "name": "akutes Nierenversagen",
+          "code": "N17.9"
+        },
+        {
+          "typ": "prozedur",
+          "name": "intermittierende nicht-invasive Beatmung",
+          "code": "5-200.0"
+        },
+        {
+          "typ": "prozedur",
+          "name": "diagnostische Bronchoskopie mit bronchoalveolärer Lavage",
+          "code": "3-110.0"
+        },
+        {
+          "typ": "medikament",
+          "name": "Piperacillin/Tazobactam",
+          "wirkstoff": "Piperacillin/Tazobactam",
+          "dosierung": "4,5g 1-0-0",
+          "einheit": "g"
+        },
+        {
+          "typ": "medikament",
+          "name": "Furosemid",
+          "wirkstoff": "Furosemid",
+          "dosierung": "40mg 2-1-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Metformin",
+          "wirkstoff": "Metformin",
+          "dosierung": "",
+          "einheit": ""
+        },
+        {
+          "typ": "medikament",
+          "name": "Spiriva",
+          "wirkstoff": "Tiotropium",
+          "dosierung": "18µg 1-0-0",
+          "einheit": "µg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Ramipril",
+          "wirkstoff": "Ramipril",
+          "dosierung": "5mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "CRP",
+          "wert": "112",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "CRP",
+          "wert": "8,5",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "NT-proBNP",
+          "parameter": "NT-proBNP",
+          "wert": "4500",
+          "einheit": "pg/ml"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Serum-Kreatinin",
+          "parameter": "Kreatinin",
+          "wert": "1,8",
+          "einheit": "mg/dl"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"akute respiratorische Insuffizienz\", \"code\": \"J96.0\"},\n    {\"typ\": \"diagnose\", \"name\": \"akut exazerbierte COPD\", \"code\": \"J44.1\"},\n    {\"typ\": \"diagnose\", \"name\": \"Unterlappenpneumonie links\", \"code\": \"J15.8\"},\n    {\"typ\": \"diagnose\", \"name\": \"chronische Herzinsuffizienz\", \"code\": \"I50.9\"},\n    {\"typ\": \"diagnose\", \"name\": \"akutes Nierenversagen\", \"code\": \"N17.9\"},\n    {\"typ\": \"prozedur\", \"name\": \"intermittierende nicht-invasive Beatmung\", \"code\": \"5-200.0\"},\n    {\"typ\": \"prozedur\", \"name\": \"diagnostische Bronchoskopie mit bronchoalveolärer Lavage\", \"code\": \"3-110.0\"},\n    {\"typ\": \"medikament\", \"name\": \"Piperacillin/Tazobactam\", \"wirkstoff\": \"Piperacillin/Tazobactam\", \"dosierung\": \"4,5g 1-0-0\", \"einheit\": \"g\"},\n    {\"typ\": \"medikament\", \"name\": \"Furosemid\", \"wirkstoff\": \"Furosemid\", \"dosierung\": \"40mg 2-1-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Metformin\", \"wirkstoff\": \"Metformin\", \"dosierung\": \"\", \"einheit\": \"\"},\n    {\"typ\": \"medikament\", \"name\": \"Spiriva\", \"wirkstoff\": \"Tiotropium\", \"dosierung\": \"18µg 1-0-0\", \"einheit\": \"µg\"},\n    {\"typ\": \"medikament\", \"name\": \"Ramipril\", \"wirkstoff\": \"Ramipril\", \"dosierung\": \"5mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"CRP\", \"wert\": \"112\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"CRP\", \"wert\": \"8,5\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"NT-proBNP\", \"parameter\": \"NT-proBNP\", \"wert\": \"4500\", \"einheit\": \"pg/ml\"},\n    {\"typ\": \"laborwert\", \"name\": \"Serum-Kreatinin\", \"parameter\": \"Kreatinin\", \"wert\": \"1,8\", \"einheit\": \"mg/dl\"}\n  ]\n}",
+      "prompt_length": 2715,
+      "response_length": 1644,
+      "usage": {
+        "prompt_tokens": 929,
+        "completion_tokens": 667
+      },
+      "case_id": "ner_009"
+    },
+    {
+      "entities": [
+        {
+          "typ": "diagnose",
+          "name": "Ischämischer Hirninfarkt im Mediastromgebiet links",
+          "code": "I63.3"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Essentielle Hypertonie",
+          "code": "I10.90"
+        },
+        {
+          "typ": "diagnose",
+          "name": "Hypercholesterinämie",
+          "code": "E78.0"
+        },
+        {
+          "typ": "laborwert",
+          "name": "CRP",
+          "parameter": "CRP",
+          "wert": "1.2",
+          "einheit": "mg/l"
+        },
+        {
+          "typ": "laborwert",
+          "name": "LDL-Cholesterin",
+          "parameter": "LDL-Cholesterin",
+          "wert": "145",
+          "einheit": "mg/dl"
+        },
+        {
+          "typ": "laborwert",
+          "name": "Blutzucker",
+          "parameter": "Blutzucker",
+          "wert": "102",
+          "einheit": "mg/dl"
+        },
+        {
+          "typ": "medikament",
+          "name": "ASS",
+          "wirkstoff": "Acetylsalizylsäure",
+          "dosierung": "100mg 1-0-0",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Atorvastatin",
+          "wirkstoff": "Atorvastatin",
+          "dosierung": "40mg 0-0-1",
+          "einheit": "mg"
+        },
+        {
+          "typ": "medikament",
+          "name": "Ramipril",
+          "wirkstoff": "Ramipril",
+          "dosierung": "5mg 1-0-0",
+          "einheit": "mg"
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\"typ\": \"diagnose\", \"name\": \"Ischämischer Hirninfarkt im Mediastromgebiet links\", \"code\": \"I63.3\"},\n    {\"typ\": \"diagnose\", \"name\": \"Essentielle Hypertonie\", \"code\": \"I10.90\"},\n    {\"typ\": \"diagnose\", \"name\": \"Hypercholesterinämie\", \"code\": \"E78.0\"},\n    {\"typ\": \"laborwert\", \"name\": \"CRP\", \"parameter\": \"CRP\", \"wert\": \"1.2\", \"einheit\": \"mg/l\"},\n    {\"typ\": \"laborwert\", \"name\": \"LDL-Cholesterin\", \"parameter\": \"LDL-Cholesterin\", \"wert\": \"145\", \"einheit\": \"mg/dl\"},\n    {\"typ\": \"laborwert\", \"name\": \"Blutzucker\", \"parameter\": \"Blutzucker\", \"wert\": \"102\", \"einheit\": \"mg/dl\"},\n    {\"typ\": \"medikament\", \"name\": \"ASS\", \"wirkstoff\": \"Acetylsalizylsäure\", \"dosierung\": \"100mg 1-0-0\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Atorvastatin\", \"wirkstoff\": \"Atorvastatin\", \"dosierung\": \"40mg 0-0-1\", \"einheit\": \"mg\"},\n    {\"typ\": \"medikament\", \"name\": \"Ramipril\", \"wirkstoff\": \"Ramipril\", \"dosierung\": \"5mg 1-0-0\", \"einheit\": \"mg\"}\n  ]\n}",
+      "prompt_length": 2831,
+      "response_length": 963,
+      "usage": {
+        "prompt_tokens": 990,
+        "completion_tokens": 396
+      },
+      "case_id": "ner_010"
+    }
+  ]
+}
