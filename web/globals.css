@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "@thalamiq/ui/styles";
+@import "tw-animate-css";
+@source "./node_modules/@thalamiq/ui/dist/**/*.{js,jsx,ts,tsx}";

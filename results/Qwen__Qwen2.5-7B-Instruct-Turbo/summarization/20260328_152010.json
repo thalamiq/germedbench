@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "task": "summarization",
+    "timestamp": "20260328_152010",
+    "n_cases": 3,
+    "n_scored": 2,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "faktentreue": 4.5,
+    "vollstaendigkeit": 5.0,
+    "halluzinationsfreiheit": 5.0,
+    "formatkonformitaet": 4.5,
+    "overall_score": 4.75
+  },
+  "predictions": [
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exacerbierte chronisch-obstruktive Lungenerkrankung (COPD) GOLD Stadium III, Gruppe D mit bakteriellen Infekt der unteren Atemwege und arterielle Hypertonie (Grad II).",
+        "therapie": "Die Patienten wurde eine antibiotische Therapie mit Amoxicillin/Clavulansäure und eine systemische Steroidtherapie mit Prednisolon durchgeführt. Zusätzlich wurde eine intensivierte inhalative Therapie mit Salbutamol und Ipratropiumbromid eingesetzt. Die antihypertensive Therapie mit Ramipril wurde begonnen, um die erhöhten Blutdruckwerte zu kontrollieren.",
+        "procedere": "Der Patient wird empfohlen, zeitnah einen Pneumologen zu besuchen, um eine komplette Lungenfunktion (Bodyplethysmographie) durchzuführen. Er sollte die antihypertensive Therapie fortsetzen und regelmäßige Blutdruckkontrollen bei seinem Hausarzt durchführen. Eine konsequente Nikotinkarenz wird empfohlen, wobei ihm Informationsmaterial zu Entwöhnungsprogrammen ausgehändigt wurde. Zudem sollte der Impfstatus (Pneumokokken, Influenza, COVID-19) überprüft werden.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "{\n  \"hauptdiagnose\": \"Akut exacerbierte chronisch-obstruktive Lungenerkrankung (COPD) GOLD Stadium III, Gruppe D mit bakteriellen Infekt der unteren Atemwege und arterielle Hypertonie (Grad II).\",\n  \"therapie\": \"Die Patienten wurde eine antibiotische Therapie mit Amoxicillin/Clavulansäure und eine systemische Steroidtherapie mit Prednisolon durchgeführt. Zusätzlich wurde eine intensivierte inhalative Therapie mit Salbutamol und Ipratropiumbromid eingesetzt. Die antihypertensive Therapie mit Ramipril wurde begonnen, um die erhöhten Blutdruckwerte zu kontrollieren.\",\n  \"procedere\": \"Der Patient wird empfohlen, zeitnah einen Pneumologen zu besuchen, um eine komplette Lungenfunktion (Bodyplethysmographie) durchzuführen. Er sollte die antihypertensive Therapie fortsetzen und regelmäßige Blutdruckkontrollen bei seinem Hausarzt durchführen. Eine konsequente Nikotinkarenz wird empfohlen, wobei ihm Informationsmaterial zu Entwöhnungsprogrammen ausgehändigt wurde. Zudem sollte der Impfstatus (Pneumokokken, Influenza, COVID-19) überprüft werden.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "case_id": "summ_001",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 5.0,
+        "halluzinationsfreiheit": 5.0,
+        "formatkonformitaet": 4.0,
+        "overall": 4.5
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akutes Koronarsyndrom: Nicht-ST-Hebungsinfarkt (NSTEMI) mit koronarer 1-Gefäß-Erkrankung und erfolgreicher PTCA und DES-Implantation.",
+        "therapie": "Der Patient wurde aufgrund der NSTEMI sofortig koronarangiografiert und zu einer erfolgreichen PTCA mit DES-Implantation in den proximalen RIVA geführt. Die medikamentöse Therapie wurde auf eine duale Plättchenhemmung (DAPT) mit ASS und Ticagrelor sowie eine hochdosierte Statinstherapie umgestellt. Zudem wurde die antihypertensive Medikation zur Entlastung des linken Ventrikels ergänzt.",
+        "procedere": "Der Patient soll für ca. 2 Wochen körperlich geschont werden, danach schrittweise belastbar gemacht werden. Die DAPT soll leitliniengerecht fortgesetzt werden, wobei Ticagrelor 12 Monate lang verabreicht wird, danach eine Re-Evaluation erfolgen soll. Die Blutdruckeinstellung und die Optimierung des Diabetes mellitus sowie die LDL-C-Ziele sollten streng eingehalten werden. Ambulante kardiologische Kontrolle inklusive Belastungs-EKG und Echokardiographie in 4-6 Wochen ist empfohlen. Teilnahme an einer ambulanten Herzsportgruppe und Anschlussheilbehandlung (AHB) wurde eingeleitet.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "{\n  \"hauptdiagnose\": \"Akutes Koronarsyndrom: Nicht-ST-Hebungsinfarkt (NSTEMI) mit koronarer 1-Gefäß-Erkrankung und erfolgreicher PTCA und DES-Implantation.\",\n  \"therapie\": \"Der Patient wurde aufgrund der NSTEMI sofortig koronarangiografiert und zu einer erfolgreichen PTCA mit DES-Implantation in den proximalen RIVA geführt. Die medikamentöse Therapie wurde auf eine duale Plättchenhemmung (DAPT) mit ASS und Ticagrelor sowie eine hochdosierte Statinstherapie umgestellt. Zudem wurde die antihypertensive Medikation zur Entlastung des linken Ventrikels ergänzt.\",\n  \"procedere\": \"Der Patient soll für ca. 2 Wochen körperlich geschont werden, danach schrittweise belastbar gemacht werden. Die DAPT soll leitliniengerecht fortgesetzt werden, wobei Ticagrelor 12 Monate lang verabreicht wird, danach eine Re-Evaluation erfolgen soll. Die Blutdruckeinstellung und die Optimierung des Diabetes mellitus sowie die LDL-C-Ziele sollten streng eingehalten werden. Ambulante kardiologische Kontrolle inklusive Belastungs-EKG und Echokardiographie in 4-6 Wochen ist empfohlen. Teilnahme an einer ambulanten Herzsportgruppe und Anschlussheilbehandlung (AHB) wurde eingeleitet.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "case_id": "summ_002",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 5.0,
+        "halluzinationsfreiheit": 5.0,
+        "formatkonformitaet": 5.0,
+        "overall": 5.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akute Exazerbation einer COPD (GOLD IV, Gruppe E) mit ambulant erworbener Pneumonie, tachyarrhythmia absoluta, dekompensierte chronische Herzinsuffizienz, arterielle Hypertonie, chronische Niereninsuffizienz und Diabetes mellitus Typ 2.",
+        "therapie": "Die Patienten wurde eine antibiotische Therapie mit Piperacillin/Tazobactam und eine systemische Glukokortikosteroidtherapie mit Prednisolon durchgeführt. Zudem wurde eine intensivierte Broncholyse und eine intravenöse Diurese mit Furosemid sowie eine Frequenzkontrolle mit Metoprololsuccinat eingesetzt. Die COPD-Dauertherapie wurde auf eine Triple-Therapie umgestellt.",
+        "procedere": "Die medikamentöse Therapie soll fortgeführt werden. Eine ambulante pneumologische Kontrolle in 4-6 Wochen inklusive Bodyplethysmographie und Diffusionskapazität ist empfohlen. Eine CT-Thorax-Kontrolle in ca. 6-8 Wochen zum sicheren Ausschluss eines Malignoms ist dringend empfohlen. Die kardiologische Mitbetreuung zur Optimierung der Herzinsuffizienztherapie soll fortgeführt werden. Jährliche Influenza-Impfung sowie Überprüfung des Pneumokokken-Impfstatus sind empfohlen. Teilnahme an einer Lungensportgruppe wird empfohlen.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "{\n  \"hauptdiagnose\": \"Akute Exazerbation einer COPD (GOLD IV, Gruppe E) mit ambulant erworbener Pneumonie, tachyarrhythmia absoluta, dekompensierte chronische Herzinsuffizienz, arterielle Hypertonie, chronische Niereninsuffizienz und Diabetes mellitus Typ 2.\",\n  \"therapie\": \"Die Patienten wurde eine antibiotische Therapie mit Piperacillin/Tazobactam und eine systemische Glukokortikosteroidtherapie mit Prednisolon durchgeführt. Zudem wurde eine intensivierte Broncholyse und eine intravenöse Diurese mit Furosemid sowie eine Frequenzkontrolle mit Metoprololsuccinat eingesetzt. Die COPD-Dauertherapie wurde auf eine Triple-Therapie umgestellt.\",\n  \"procedere\": \"Die medikamentöse Therapie soll fortgeführt werden. Eine ambulante pneumologische Kontrolle in 4-6 Wochen inklusive Bodyplethysmographie und Diffusionskapazität ist empfohlen. Eine CT-Thorax-Kontrolle in ca. 6-8 Wochen zum sicheren Ausschluss eines Malignoms ist dringend empfohlen. Die kardiologische Mitbetreuung zur Optimierung der Herzinsuffizienztherapie soll fortgeführt werden. Jährliche Influenza-Impfung sowie Überprüfung des Pneumokokken-Impfstatus sind empfohlen. Teilnahme an einer Lungensportgruppe wird empfohlen.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "case_id": "summ_003",
+      "judge_error": "list indices must be integers or slices, not str"
+    }
+  ]
+}

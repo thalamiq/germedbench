@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "task": "icd10_coding",
+    "timestamp": "20260328_131153",
+    "n_cases": 3,
+    "n_scored": 3,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "exact_match_f1": 0.2555555555555556,
+    "exact_match_precision": 0.3,
+    "exact_match_recall": 0.2253968253968254,
+    "category_match_f1": 0.7555555555555555,
+    "hauptdiagnose_accuracy": 0.0
+  },
+  "predictions": [
+    {
+      "codes": [
+        "J44.9",
+        "I10.90",
+        "J44.9",
+        "J44.9"
+      ],
+      "hauptdiagnose": "J44.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\n      \"code\": \"J44.9\",\n      \"display\": \"Chronische Obstruktive Lungenerkrankung, nicht näher bezeichnet\",\n      \"typ\": \"Hauptdiagnose\"\n    },\n    {\n      \"code\": \"I10.90\",\n      \"display\": \"Essentielle Hypertonie, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"J44.9\",\n      \"display\": \"Chronische Obstruktive Lungenerkrankung, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"J44.9\",\n      \"display\": \"Chronische Obstruktive Lungenerkrankung, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    }\n  ]\n}",
+      "case_id": "case_001"
+    },
+    {
+      "codes": [
+        "I20.0",
+        "I10.90",
+        "E11.9",
+        "I25.10",
+        "I50.9"
+      ],
+      "hauptdiagnose": "I20.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\n      \"code\": \"I20.0\",\n      \"display\": \"Nicht-ST-Strecken-Myokardinfarkt (NSTEMI)\",\n      \"typ\": \"Hauptdiagnose\"\n    },\n    {\n      \"code\": \"I10.90\",\n      \"display\": \"Essentielle Hypertonie, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"E11.9\",\n      \"display\": \"Diabetes mellitus Typ 2, ohne Komplikationen\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"I25.10\",\n      \"display\": \"Atherosklerose der Koronararterien, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"I50.9\",\n      \"display\": \"Herzinsuffizienz, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    }\n  ]\n}",
+      "case_id": "case_002"
+    },
+    {
+      "codes": [
+        "J44.9",
+        "I20.0",
+        "I10.90",
+        "E11.9",
+        "I50.9"
+      ],
+      "hauptdiagnose": "J44.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\n      \"code\": \"J44.9\",\n      \"display\": \"Chronisch obstruktive Lungenerkrankung, nicht näher bezeichnet\",\n      \"typ\": \"Hauptdiagnose\"\n    },\n    {\n      \"code\": \"I20.0\",\n      \"display\": \"Koronare Herzkrankheit mit Angina pectoris\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"I10.90\",\n      \"display\": \"Essentielle Hypertonie, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"E11.9\",\n      \"display\": \"Diabetes mellitus Typ 2, ohne Komplikationen\",\n      \"typ\": \"Nebendiagnose\"\n    },\n    {\n      \"code\": \"I50.9\",\n      \"display\": \"Herzinsuffizienz, nicht näher bezeichnet\",\n      \"typ\": \"Nebendiagnose\"\n    }\n  ]\n}",
+      "case_id": "case_003"
+    }
+  ]
+}
