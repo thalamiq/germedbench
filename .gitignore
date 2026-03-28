@@ -20,3 +20,6 @@ data/icd10gm/
 
 # Node
 node_modules/
+
+# Results (regenerated, not committed until production-quality)
+results/
