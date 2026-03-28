@@ -1,0 +1,54 @@
+{
+  "summary": {
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "task": "icd10_coding",
+    "timestamp": "20260328_131143",
+    "n_cases": 3,
+    "n_scored": 3,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "exact_match_f1": 0.35555555555555557,
+    "exact_match_precision": 0.3333333333333333,
+    "exact_match_recall": 0.40317460317460313,
+    "category_match_f1": 0.8015873015873015,
+    "hauptdiagnose_accuracy": 0.6666666666666666
+  },
+  "predictions": [
+    {
+      "codes": [
+        "J44.1",
+        "I10.90",
+        "J20.9",
+        "R06.2",
+        "R06.6"
+      ],
+      "hauptdiagnose": "J44.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.1\", \"display\": \"Chronische obstruktive Lungenerkrankung (COPD) mit schweren Atemnot\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"display\": \"Essentielle Hypertonie, nicht näher bezeichnet\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J20.9\", \"display\": \"Akute Bronchitis, nicht näher bezeichnet\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R06.2\", \"display\": \"Giemen\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R06.6\", \"display\": \"Brummen\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "case_id": "case_001"
+    },
+    {
+      "codes": [
+        "I21.4",
+        "I10.90",
+        "E11.9",
+        "I25.1",
+        "I50.1"
+      ],
+      "hauptdiagnose": "I21.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"display\": \"Nicht-ST-Hebungs-Myokardinfarkt (NSTEMI)\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"display\": \"Essentielle Hypertonie, nicht näher bezeichnet\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.9\", \"display\": \"Diabetes mellitus, Typ 2, ohne Angabe einer Komplikation\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I25.1\", \"display\": \"Atherosklerose der Koronargefäße\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I50.1\", \"display\": \"Linksherzinsuffizienz\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "case_id": "case_002"
+    },
+    {
+      "codes": [
+        "J44.1",
+        "I25.0",
+        "I10.90",
+        "E11.9",
+        "I50.3"
+      ],
+      "hauptdiagnose": "J44.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.1\", \"display\": \"Chronische obstruktive Lungenerkrankung (COPD) mit akuter Exazerbation\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I25.0\", \"display\": \"Atherosklerotische Herzkrankheit (KHK)\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"display\": \"Essentielle Hypertonie, nicht näher bezeichnet\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.9\", \"display\": \"Diabetes mellitus, Typ 2, ohne Angabe einer Komplikation\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I50.3\", \"display\": \"Herzinsuffizienz mit erhaltener Ejektionsfraktion (HFpEF)\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "case_id": "case_003"
+    }
+  ]
+}

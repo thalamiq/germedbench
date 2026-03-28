@@ -1,0 +1,69 @@
+{
+  "summary": {
+    "model": "google/gemma-3n-E4B-it",
+    "task": "summarization",
+    "timestamp": "20260328_152500",
+    "n_cases": 3,
+    "n_scored": 3,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "faktentreue": 5.0,
+    "vollstaendigkeit": 4.0,
+    "halluzinationsfreiheit": 5.0,
+    "formatkonformitaet": 5.0,
+    "overall_score": 4.75
+  },
+  "predictions": [
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exacerbierte chronisch-obstruktive Lungenerkrankung (AECOPD) mit Verdacht auf bakteriellen Infekt und Begleiterkrankung der arteriellen Hypertonie.",
+        "therapie": "Die Therapie umfasste eine antibiotische Behandlung mit Amoxicillin/Clavulansäure, eine systemische Steroidgabe (Prednisolon), eine intensivierte inhalative Therapie mit Salbutamol und Ipratropiumbromid sowie die Einleitung einer antihypertensiven Therapie mit Ramipril. Zusätzlich wurde der Patient über Nikotinkarenz aufgeklärt und in Atemgymnastik eingeführt.",
+        "procedere": "Es wird dringend empfohlen, eine Lungenfunktion (Bodyplethysmographie) nach Infektabklingen beim Pneumologen durchführen zu lassen. Die antihypertensive Therapie sollte fortgesetzt und der Blutdruck regelmäßig beim Hausarzt kontrolliert werden. Eine konsequente Nikotinkarenz ist essentiell.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akut exacerbierte chronisch-obstruktive Lungenerkrankung (AECOPD) mit Verdacht auf bakteriellen Infekt und Begleiterkrankung der arteriellen Hypertonie.\",\n  \"therapie\": \"Die Therapie umfasste eine antibiotische Behandlung mit Amoxicillin/Clavulansäure, eine systemische Steroidgabe (Prednisolon), eine intensivierte inhalative Therapie mit Salbutamol und Ipratropiumbromid sowie die Einleitung einer antihypertensiven Therapie mit Ramipril. Zusätzlich wurde der Patient über Nikotinkarenz aufgeklärt und in Atemgymnastik eingeführt.\",\n  \"procedere\": \"Es wird dringend empfohlen, eine Lungenfunktion (Bodyplethysmographie) nach Infektabklingen beim Pneumologen durchführen zu lassen. Die antihypertensive Therapie sollte fortgesetzt und der Blutdruck regelmäßig beim Hausarzt kontrolliert werden. Eine konsequente Nikotinkarenz ist essentiell.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "case_id": "summ_001",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 4.0,
+        "halluzinationsfreiheit": 5.0,
+        "formatkonformitaet": 5.0,
+        "overall": 4.75
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akutes Koronarsyndrom (NSTEMI) aufgrund einer hochgradigen Stenose des proximalen RIVA, erfolgreich behandelt durch PTCA und DES-Implantation.",
+        "therapie": "Herr Müller wurde aufgrund des NSTEMI notfallmäßig über einen rechtsradialen Zugang koronarangiographiert und erfolgreich mit einem Drug-Eluting-Stent (DES) im proximalen RIVA versehen. Die medikamentöse Therapie umfasste eine duale Plättchenhemmung (DAPT) mit ASS und Ticagrelor, eine hochdosierte Statinstherapie sowie die Ergänzung mit einem ACE-Hemmer zur Blutdruckentlastung. Die Angina-pectoris-Symptomatik regredierte schnell.",
+        "procedere": "Nach der Entlassung wird eine körperliche Schonung für ca. 2 Wochen gefolgt von schrittweisem Belastungsaufbau empfohlen.  Eine ambulante kardiologische Kontrolle in 4-6 Wochen inklusive Belastungs-EKG und Echokardiographie ist geplant.  Zusätzlich wird die Teilnahme an einer Herzsportgruppe und eine Anschlussheilbehandlung (AHB) beantragt.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Akutes Koronarsyndrom (NSTEMI) aufgrund einer hochgradigen Stenose des proximalen RIVA, erfolgreich behandelt durch PTCA und DES-Implantation.\",\n  \"therapie\": \"Herr Müller wurde aufgrund des NSTEMI notfallmäßig über einen rechtsradialen Zugang koronarangiographiert und erfolgreich mit einem Drug-Eluting-Stent (DES) im proximalen RIVA versehen. Die medikamentöse Therapie umfasste eine duale Plättchenhemmung (DAPT) mit ASS und Ticagrelor, eine hochdosierte Statinstherapie sowie die Ergänzung mit einem ACE-Hemmer zur Blutdruckentlastung. Die Angina-pectoris-Symptomatik regredierte schnell.\",\n  \"procedere\": \"Nach der Entlassung wird eine körperliche Schonung für ca. 2 Wochen gefolgt von schrittweisem Belastungsaufbau empfohlen.  Eine ambulante kardiologische Kontrolle in 4-6 Wochen inklusive Belastungs-EKG und Echokardiographie ist geplant.  Zusätzlich wird die Teilnahme an einer Herzsportgruppe und eine Anschlussheilbehandlung (AHB) beantragt.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "case_id": "summ_002",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 4.0,
+        "halluzinationsfreiheit": 5.0,
+        "formatkonformitaet": 5.0,
+        "overall": 4.75
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Der Patient wurde mit einer akuten COPD-Exazerbation, einer Pneumonie, einer Tachyarrhythmie absoluta, dekompensierter Herzinsuffizienz und chronischer Niereninsuffizienz aufgenommen.",
+        "therapie": "Die Therapie umfasste eine antibiotische Behandlung der Pneumonie, systemische Kortikosteroide, Broncholyse, intravenöse Diurese zur Behandlung der Herzinsuffizienz und Frequenzkontrolle mit Metoprolol. Die COPD-Dauertherapie wurde auf eine Triple-Therapie umgestellt.",
+        "procedere": "Es wird empfohlen, die medikamentöse Therapie fortzusetzen und eine ambulante pneumologische Kontrolle mit Lungenfunktionsprüfung durchzuführen. Zudem ist eine CT-Thorax-Kontrolle zur Ausschluss eines Malignoms indiziert. Die kardiologische Mitbetreuung zur Optimierung der Herzinsuffizienztherapie wird empfohlen.",
+        "offene_fragen": "Keine"
+      },
+      "raw": "```json\n{\n  \"hauptdiagnose\": \"Der Patient wurde mit einer akuten COPD-Exazerbation, einer Pneumonie, einer Tachyarrhythmie absoluta, dekompensierter Herzinsuffizienz und chronischer Niereninsuffizienz aufgenommen.\",\n  \"therapie\": \"Die Therapie umfasste eine antibiotische Behandlung der Pneumonie, systemische Kortikosteroide, Broncholyse, intravenöse Diurese zur Behandlung der Herzinsuffizienz und Frequenzkontrolle mit Metoprolol. Die COPD-Dauertherapie wurde auf eine Triple-Therapie umgestellt.\",\n  \"procedere\": \"Es wird empfohlen, die medikamentöse Therapie fortzusetzen und eine ambulante pneumologische Kontrolle mit Lungenfunktionsprüfung durchzuführen. Zudem ist eine CT-Thorax-Kontrolle zur Ausschluss eines Malignoms indiziert. Die kardiologische Mitbetreuung zur Optimierung der Herzinsuffizienztherapie wird empfohlen.\",\n  \"offene_fragen\": \"Keine\"\n}\n```",
+      "case_id": "summ_003",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 4.0,
+        "halluzinationsfreiheit": 5.0,
+        "formatkonformitaet": 5.0,
+        "overall": 4.75
+      }
+    }
+  ]
+}

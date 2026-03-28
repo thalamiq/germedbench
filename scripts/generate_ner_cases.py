@@ -1,4 +1,4 @@
-"""Generate synthetic clinical NER cases using Gemini 3 Flash."""
+"""Generate synthetic clinical NER cases using Gemini."""
 
 import json
 import sys
@@ -60,7 +60,7 @@ def generate_cases(n: int, start_id: int = 1) -> list[NERCase]:
             komplexitaet=komplexitaet,
         )
 
-        print(f"Generating case {case_id}/{n} ({fachbereich}, {komplexitaet[:10]}...)...")
+        print(f"Generating case {case_id}/{start_id + n - 1} ({fachbereich}, {komplexitaet[:10]}...)...")
 
         response = client.models.generate_content(
             model=settings.generation_model,
@@ -80,11 +80,10 @@ def generate_cases(n: int, start_id: int = 1) -> list[NERCase]:
                 entities=data["entities"],
             )
             cases.append(case)
-            entity_counts = {}
+            counts = {}
             for e in case.entities:
-                entity_counts[e.typ] = entity_counts.get(e.typ, 0) + 1
-            counts_str = ", ".join(f"{k}: {v}" for k, v in sorted(entity_counts.items()))
-            print(f"  -> {len(case.text)} chars, {len(case.entities)} entities ({counts_str})")
+                counts[e.typ] = counts.get(e.typ, 0) + 1
+            print(f"  -> {len(case.entities)} entities ({', '.join(f'{k}: {v}' for k, v in sorted(counts.items()))})")
             case_id += 1
         except (json.JSONDecodeError, KeyError, ValueError) as e:
             print(f"  -> Error parsing response: {e}, skipping", file=sys.stderr)

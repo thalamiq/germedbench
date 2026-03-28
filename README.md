@@ -28,28 +28,18 @@ cp .env.example .env
 
 ### Daten generieren
 
-Alle Generate-Skripte arbeiten standardmäßig im **Append-Modus** — neue Fälle werden an bestehende Daten angehängt, IDs werden automatisch fortgesetzt. Mit `--overwrite` wird die Datei stattdessen überschrieben.
+Jeder Task hat ein eigenes Generierungsskript, das fokussierte klinische Texte mit passender Ground Truth erstellt. Standardmäßig wird angehängt (Append-Modus), mit `--overwrite` wird die Datei überschrieben.
 
 ```bash
-# ICD-10 Kodierung (30 Fälle anhängen)
-uv run python scripts/generate_icd10_cases.py
+uv run python scripts/generate_icd10_cases.py               # ICD-10 Kodierung
+uv run python scripts/generate_summarization_cases.py        # Arztbrief-Zusammenfassung
+uv run python scripts/generate_clinical_reasoning_cases.py   # Klinisches Reasoning
+uv run python scripts/generate_ner_cases.py                  # Klinische Entitätsextraktion
+uv run python scripts/generate_med_extraction_cases.py       # Medikamentenextraktion
 
-# Arztbrief-Zusammenfassung
-uv run python scripts/generate_summarization_cases.py
-
-# Klinisches Reasoning
-uv run python scripts/generate_clinical_reasoning_cases.py
-
-# Klinische Entitätsextraktion
-uv run python scripts/generate_ner_cases.py
-
-# Medikamentenextraktion
-uv run python scripts/generate_med_extraction_cases.py
-
-# Optionen: Anzahl und Modus
-uv run python scripts/generate_icd10_cases.py 10          # 10 Fälle anhängen
-uv run python scripts/generate_icd10_cases.py --overwrite  # Datei überschreiben
-uv run python scripts/generate_icd10_cases.py 50 --overwrite
+# Optionen
+uv run python scripts/generate_icd10_cases.py 20             # 20 Fälle anhängen
+uv run python scripts/generate_icd10_cases.py --overwrite    # Datei überschreiben
 ```
 
 ### Modelle evaluieren
@@ -96,15 +86,17 @@ germedbench/
 │   ├── schemas.py          # Datenmodelle (ICD10Case, ClinicalReasoningCase, ...)
 │   └── evaluation/         # Scoring-Logik pro Task
 ├── scripts/                # Datengenerierung & Evaluation
-│   ├── generate_icd10_cases.py
+│   ├── generate_icd10_cases.py          # Generierung pro Task
 │   ├── generate_summarization_cases.py
 │   ├── generate_clinical_reasoning_cases.py
-│   ├── run_eval_icd10.py
+│   ├── generate_ner_cases.py
+│   ├── generate_med_extraction_cases.py
+│   ├── run_eval_icd10.py               # Evaluation pro Task
 │   ├── run_eval_summarization.py
 │   ├── run_eval_clinical_reasoning.py
 │   ├── run_eval_ner.py
 │   └── run_eval_med_extraction.py
-├── data/                   # Benchmark-Datensätze (.jsonl)
+├── data/                   # Task-spezifische .jsonl Datensätze
 ├── results/                # Evaluation-Ergebnisse (pro Modell/Task/Run)
 │   ├── <model>/<task>/<timestamp>.json
 │   └── latest.json
@@ -122,15 +114,15 @@ Alle Settings werden über `.env` gesteuert (siehe `.env.example`):
 | Variable | Default | Beschreibung |
 |----------|---------|-------------|
 | `GEMINI_API_KEY` | — | API-Key für Datengenerierung + LLM-as-Judge |
-| `GENERATION_MODEL` | `gemini-3.1-pro-preview` | Modell für synthetische Fälle |
+| `GENERATION_MODEL` | `gemini-3-flash-preview` | Modell für synthetische Fälle |
 | `GENERATION_TEMPERATURE` | `0.9` | Temperatur bei Generierung |
 | `TOGETHER_API_KEY` | — | API-Key für Open-Source-Modell-Inferenz |
 | `JUDGE_MODEL` | `gemini-3.1-pro-preview` | Modell für LLM-as-Judge |
-| `ICD10_NUM_CASES` | `30` | Anzahl generierter ICD-10 Fälle |
-| `SUMMARIZATION_NUM_CASES` | `30` | Anzahl generierter Zusammenfassungs-Fälle |
-| `CLINICAL_REASONING_NUM_CASES` | `30` | Anzahl generierter Reasoning-Fälle |
-| `NER_NUM_CASES` | `30` | Anzahl generierter NER-Fälle |
-| `MED_EXTRACTION_NUM_CASES` | `30` | Anzahl generierter Medikamentenextraktions-Fälle |
+| `ICD10_NUM_CASES` | `10` | Anzahl ICD-10 Fälle |
+| `SUMMARIZATION_NUM_CASES` | `10` | Anzahl Zusammenfassungs-Fälle |
+| `CLINICAL_REASONING_NUM_CASES` | `10` | Anzahl Reasoning-Fälle |
+| `NER_NUM_CASES` | `10` | Anzahl NER-Fälle |
+| `MED_EXTRACTION_NUM_CASES` | `10` | Anzahl Medikamentenextraktions-Fälle |
 
 ## Tech-Stack
 

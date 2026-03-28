@@ -1,4 +1,4 @@
-"""Generate synthetic discharge letter summarization cases using Gemini 3 Flash."""
+"""Generate synthetic discharge letter summarization cases using Gemini."""
 
 import json
 import sys
@@ -60,7 +60,7 @@ def generate_cases(n: int, start_id: int = 1) -> list[SummarizationCase]:
             komplexitaet=komplexitaet,
         )
 
-        print(f"Generating case {case_id}/{n} ({fachbereich}, {komplexitaet[:10]}...)...")
+        print(f"Generating case {case_id}/{start_id + n - 1} ({fachbereich}, {komplexitaet[:10]}...)...")
 
         response = client.models.generate_content(
             model=settings.generation_model,
@@ -73,7 +73,6 @@ def generate_cases(n: int, start_id: int = 1) -> list[SummarizationCase]:
 
         try:
             data = json.loads(response.text)
-            # Map complexity label to simple key
             komp_key = komplexitaet.split("(")[0].strip()
             case = SummarizationCase(
                 id=f"summ_{case_id:03d}",
@@ -83,7 +82,7 @@ def generate_cases(n: int, start_id: int = 1) -> list[SummarizationCase]:
                 gold_summary=data["gold_summary"],
             )
             cases.append(case)
-            print(f"  -> {len(case.text)} chars, summary OK")
+            print(f"  -> {len(case.text)} chars")
             case_id += 1
         except (json.JSONDecodeError, KeyError, ValueError) as e:
             print(f"  -> Error parsing response: {e}, skipping", file=sys.stderr)

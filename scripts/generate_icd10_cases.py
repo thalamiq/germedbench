@@ -1,4 +1,4 @@
-"""Generate synthetic ICD-10 coding benchmark cases using Gemini 3 Flash."""
+"""Generate synthetic ICD-10 coding benchmark cases using Gemini."""
 
 import json
 import sys
@@ -25,13 +25,10 @@ Anforderungen an den Text:
 Anforderungen an die Kodierung:
 - Verwende ausschließlich ICD-10-GM Version 2025 (deutsche Modifikation)
 - Verwende nur Codes, die tatsächlich in der ICD-10-GM 2025 existieren
-- WICHTIG: Nicht alle Codes haben Subklassifikationen. Viele Codes enden nach \
-dem Punkt mit einer einzigen Ziffer (z.B. "N18.3", "F17.2", "E78.0"). \
-Erfinde KEINE zusätzlichen Stellen, wenn der Code auf dieser Ebene terminal ist.
 - Markiere genau eine Hauptdiagnose, der Rest sind Nebendiagnosen
 - Gib für jede Diagnose unter "acceptable_codes" alternative ICD-10-GM Codes an, \
-die ebenfalls korrekt wären (z.B. äquivalente Codes für dieselbe Erkrankung). \
-Wenn keine sinnvollen Alternativen existieren, lasse die Liste leer
+die ebenfalls korrekt wären. Wenn keine sinnvollen Alternativen existieren, \
+lasse die Liste leer.
 
 Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar):
 {{
@@ -43,15 +40,11 @@ Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar
 }}
 """
 
-def _fix_code(code: str) -> str | None:
-    """Validate an ICD-10-GM code, truncating to parent if needed.
 
-    Returns the valid code, or None if no valid parent exists.
-    E.g. 'N18.32' (invalid) -> 'N18.3' (valid).
-    """
+def _fix_code(code: str) -> str | None:
+    """Validate an ICD-10-GM code, truncating to parent if needed."""
     if is_valid(code):
         return code
-    # Try truncating last character(s) to find valid parent
     truncated = code
     while len(truncated) > 3:
         truncated = truncated[:-1]
@@ -81,7 +74,7 @@ def generate_cases(n: int, start_id: int = 1) -> list[ICD10Case]:
             komplexitaet=komplexitaet,
         )
 
-        print(f"Generating case {case_id}/{n} ({fachbereich}, {komplexitaet[:10]}...)...")
+        print(f"Generating case {case_id}/{start_id + n - 1} ({fachbereich}, {komplexitaet[:10]}...)...")
 
         response = client.models.generate_content(
             model=settings.generation_model,

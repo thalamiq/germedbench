@@ -47,31 +47,38 @@ export default function MethodikPage() {
           <h2 className="mb-3 text-lg font-semibold">Datengenerierung</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Die Benchmark-Daten werden synthetisch generiert. Ein
-            Frontier-Modell (<code className="text-xs">gemini-3.1-pro-preview</code>)
-            erstellt realistische deutsche Kurzepikrisen nach klinisch validierten
-            Templates. Jeder Fall enthält:
+            Frontier-Modell (<code className="text-xs">gemini-3-flash-preview</code>)
+            erstellt für jeden Task fokussierte klinische Texte mit
+            passender Ground Truth. Jeder Task erhält Texte in der optimalen
+            Länge und mit dem passenden Detailgrad:
           </p>
           <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
             <li>
-              — Klinischer Freitext im deutschen Arztbrief-Stil (150–300 Wörter)
+              — ICD-10-Kodierung: Kurzepikrisen (150–300 Wörter)
             </li>
             <li>
-              — Strukturierte Ground Truth (z.B. ICD-10-GM Codes mit
-              Haupt-/Nebendiagnose-Klassifikation)
+              — Arztbrief-Zusammenfassung: Vollständige Entlassbriefe
+              (600–1000 Wörter)
             </li>
             <li>
-              — Fachbereich (Innere Medizin, Kardiologie, Pneumologie,
-              Neurologie, Gastroenterologie, Onkologie)
+              — Klinisches Reasoning: Fallvignetten ohne explizite Diagnose
+              (200–400 Wörter)
             </li>
             <li>
-              — Komplexitätsgrad (einfach: 2–3 Diagnosen, mittel: 3–5, komplex:
-              5–7)
+              — Entitätsextraktion: Klinische Textauszüge mit Diagnosen,
+              Prozeduren, Medikamenten und Laborwerten (200–400 Wörter)
+            </li>
+            <li>
+              — Medikamentenextraktion: Texte mit Medikamentenlisten
+              (150–300 Wörter)
             </li>
           </ul>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Die synthetische Generierung vermeidet Datenschutzprobleme und
-            ermöglicht eine kontrollierte Variation von Fachbereich,
-            Komplexität und Schreibstil. Langfristig ist die Integration
+            Alle Texte variieren über sechs Fachbereiche (Innere Medizin,
+            Kardiologie, Pneumologie, Neurologie, Gastroenterologie,
+            Onkologie) und drei Komplexitätsgrade. Die synthetische
+            Generierung vermeidet Datenschutzprobleme und ermöglicht eine
+            kontrollierte Variation. Langfristig ist die Integration
             öffentlicher Korpora (GraSCCo, GGPONC 2.0) sowie
             community-beigetragener anonymisierter Fälle geplant.
           </p>

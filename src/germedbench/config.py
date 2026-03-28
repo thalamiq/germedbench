@@ -16,7 +16,7 @@ class Settings(BaseSettings):
 
     # Gemini (data generation)
     gemini_api_key: str = ""
-    generation_model: str = "gemini-3.1-pro-preview"
+    generation_model: str = "gemini-3-flash-preview"
     generation_temperature: float = 0.9
 
     # Together AI (open-source model inference)
@@ -26,20 +26,12 @@ class Settings(BaseSettings):
     # LLM-as-Judge (Gemini)
     judge_model: str = "gemini-3.1-pro-preview"
 
-    # ICD-10 task
-    icd10_num_cases: int = 3
-
-    # Summarization task
-    summarization_num_cases: int = 3
-
-    # Clinical reasoning task
-    clinical_reasoning_num_cases: int = 3
-
-    # NER task
-    ner_num_cases: int = 3
-
-    # Medication extraction task
-    med_extraction_num_cases: int = 3
+    # Per-task case generation
+    icd10_num_cases: int = 10
+    summarization_num_cases: int = 10
+    clinical_reasoning_num_cases: int = 10
+    ner_num_cases: int = 10
+    med_extraction_num_cases: int = 10
 
     # Evaluation models (Together AI model IDs)
     eval_models: list[str] = [

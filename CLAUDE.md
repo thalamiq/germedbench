@@ -20,25 +20,28 @@ germedbench/
 │   ├── config.py               # pydantic-settings, .env
 │   ├── schemas.py              # ICD10Case, SummarizationCase, etc.
 │   ├── icd10_catalog.py        # BfArM ICD-10-GM 2025 Lookup
+│   ├── gen_helpers.py           # Shared: parse_gen_args, load_base_cases, write_cases
+│   ├── eval_helpers.py          # Shared: model_slug, extract_json, update_latest
 │   └── evaluation/
-│       ├── icd10_scoring.py    # Exact Match, Category Match
-│       ├── summarization_scoring.py  # LLM-as-Judge
+│       ├── utils.py             # Shared: f1, names_match, normalize_code
+│       ├── icd10_scoring.py     # Exact Match, Category Match
+│       ├── summarization_scoring.py   # LLM-as-Judge
 │       ├── clinical_reasoning_scoring.py  # Hybrid: Auto DDx + LLM-as-Judge
-│       ├── ner_scoring.py               # Micro F1, per-type F1
-│       └── med_extraction_scoring.py   # Wirkstoff/Partial/Exact F1
+│       ├── ner_scoring.py       # Micro F1, per-type F1
+│       └── med_extraction_scoring.py  # Wirkstoff/Partial/Exact F1
 ├── scripts/
-│   ├── generate_icd10_cases.py
+│   ├── generate_icd10_cases.py          # Per-task generation
 │   ├── generate_summarization_cases.py
 │   ├── generate_clinical_reasoning_cases.py
 │   ├── generate_ner_cases.py
 │   ├── generate_med_extraction_cases.py
-│   ├── run_eval_icd10.py
+│   ├── run_eval_icd10.py               # Per-task evaluation
 │   ├── run_eval_summarization.py
 │   ├── run_eval_clinical_reasoning.py
 │   ├── run_eval_ner.py
 │   ├── run_eval_med_extraction.py
 │   └── build_icd10_lookup.py
-├── data/                       # .jsonl Datensätze + icd10gm_2025.json
+├── data/                       # Task-specific .jsonl datasets
 ├── results/                    # <model>/<task>/<timestamp>.json + latest.json
 └── web/                        # Next.js 15 + @thalamiq/ui
     ├── app/                    # Leaderboard, Benchmarks, Model-Detail, Methodik

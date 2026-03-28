@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "model": "Qwen/Qwen3.5-9B",
+    "task": "summarization",
+    "timestamp": "20260328_152305",
+    "n_cases": 3,
+    "n_scored": 0,
+    "n_parse_errors": 3,
+    "n_api_errors": 0,
+    "faktentreue": 0,
+    "vollstaendigkeit": 0,
+    "halluzinationsfreiheit": 0,
+    "formatkonformitaet": 0,
+    "overall_score": 0
+  },
+  "predictions": [
+    {
+      "summary": null,
+      "raw": "",
+      "parse_error": true,
+      "case_id": "summ_001"
+    },
+    {
+      "summary": null,
+      "raw": "",
+      "parse_error": true,
+      "case_id": "summ_002"
+    },
+    {
+      "summary": null,
+      "raw": "",
+      "parse_error": true,
+      "case_id": "summ_003"
+    }
+  ]
+}

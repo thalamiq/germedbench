@@ -1,4 +1,4 @@
-"""Generate synthetic medication extraction cases using Gemini 3 Flash."""
+"""Generate synthetic medication extraction cases using Gemini."""
 
 import json
 import sys
@@ -33,12 +33,6 @@ Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar
       "dosis": "47.5 mg",
       "frequenz": "1-0-0",
       "darreichungsform": "p.o."
-    }},
-    {{
-      "wirkstoff": "Enoxaparin",
-      "dosis": "40 mg",
-      "frequenz": "1x täglich",
-      "darreichungsform": "s.c."
     }}
   ]
 }}
@@ -64,7 +58,7 @@ def generate_cases(n: int, start_id: int = 1) -> list[MedExtCase]:
             komplexitaet=komplexitaet,
         )
 
-        print(f"Generating case {case_id}/{n} ({fachbereich}, {komplexitaet[:10]}...)...")
+        print(f"Generating case {case_id}/{start_id + n - 1} ({fachbereich}, {komplexitaet[:10]}...)...")
 
         response = client.models.generate_content(
             model=settings.generation_model,
@@ -84,7 +78,7 @@ def generate_cases(n: int, start_id: int = 1) -> list[MedExtCase]:
                 medications=data["medications"],
             )
             cases.append(case)
-            print(f"  -> {len(case.text)} chars, {len(case.medications)} medications")
+            print(f"  -> {len(case.medications)} medications")
             case_id += 1
         except (json.JSONDecodeError, KeyError, ValueError) as e:
             print(f"  -> Error parsing response: {e}, skipping", file=sys.stderr)

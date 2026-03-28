@@ -1,0 +1,54 @@
+{
+  "summary": {
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "task": "icd10_coding",
+    "timestamp": "20260328_134936",
+    "n_cases": 3,
+    "n_scored": 3,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "exact_match_f1": 0.33333333333333326,
+    "exact_match_precision": 0.3333333333333333,
+    "exact_match_recall": 0.3666666666666667,
+    "category_match_f1": 0.708994708994709,
+    "hauptdiagnose_accuracy": 0.3333333333333333
+  },
+  "predictions": [
+    {
+      "codes": [
+        "J44.1",
+        "I10.90",
+        "R06.00",
+        "R09.02"
+      ],
+      "hauptdiagnose": "J44.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.1\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R06.00\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R09.02\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "case_id": "case_001"
+    },
+    {
+      "codes": [
+        "I21.4",
+        "E11.90",
+        "I10.90",
+        "J44.11"
+      ],
+      "hauptdiagnose": "I21.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"J44.11\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "case_id": "case_002"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "J96.01",
+        "I50.20",
+        "E11.90",
+        "N08.3",
+        "R06.00",
+        "R09.02"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"J96.01\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I50.20\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N08.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R06.00\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R09.02\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "case_id": "case_003"
+    }
+  ]
+}

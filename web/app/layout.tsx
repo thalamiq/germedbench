@@ -46,6 +46,35 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "GerMedBench",
+  url: SITE_URL,
+  description:
+    "Offenes Benchmark-Framework zur Evaluation von LLMs auf deutschen klinischen Texten.",
+  applicationCategory: "HealthApplication",
+  operatingSystem: "Web",
+  creator: {
+    "@type": "Organization",
+    name: "ThalamiQ GmbH",
+    url: "https://thalamiq.io",
+  },
+  inLanguage: "de",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "EUR",
+  },
+  about: [
+    { "@type": "Thing", name: "ICD-10-GM Kodierung" },
+    { "@type": "Thing", name: "Arztbrief-Zusammenfassung" },
+    { "@type": "Thing", name: "Klinisches Reasoning" },
+    { "@type": "Thing", name: "Klinische Entitätsextraktion" },
+    { "@type": "Thing", name: "Medikamentenextraktion" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -54,6 +83,10 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className="flex min-h-screen flex-col bg-background text-foreground antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-10">{children}</main>
         <Footer />

@@ -51,13 +51,7 @@ def next_case_id(output_path: Path, prefix: str) -> int:
 
 
 def write_cases(output_path: Path, cases: list, overwrite: bool) -> None:
-    """Write cases to JSONL file (append or overwrite).
-
-    Args:
-        output_path: Path to the .jsonl file
-        cases: List of Pydantic models with .model_dump_json()
-        overwrite: If True, truncate file first. If False, append.
-    """
+    """Write cases to JSONL file (append or overwrite)."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     mode = "w" if overwrite else "a"
 
