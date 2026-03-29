@@ -22,11 +22,27 @@ Diagnostik, Diagnosen, Therapie/Verlauf, Empfehlungen/Procedere
 - Verwende realistische, aber fiktive Patientendaten
 - Typische Abkürzungen und Fachbegriffe
 
+WICHTIG — Der Brief soll realistisch komplex sein. Baue gezielt 2-3 der folgenden \
+Elemente ein, die eine Zusammenfassung anspruchsvoll machen:
+- Nebenbefunde und Komorbiditäten, die nicht zur Hauptdiagnose gehören aber relevant sind
+- Therapieumstellungen oder -anpassungen während des Aufenthalts (z.B. Medikamentenwechsel, Dosisänderungen)
+- Ausstehende Befunde oder offene diagnostische Fragen zum Entlasszeitpunkt
+- Widersprüchliche oder unklare Befunde (z.B. erhöhter Tumormarker bei unauffälliger Bildgebung)
+- Komplikationen während des Aufenthalts (z.B. Blutungskomplikation, nosokomiale Infektion, Delir)
+- Relevante Informationen verstreut über mehrere Abschnitte (nicht alles sauber an einer Stelle)
+- Mehrere Medikamente mit konkreten Dosierungen, Frequenzen und Darreichungsformen
+- Quantitative Befunde: konkrete Laborwerte (mit Einheiten), Bildgebungsbefunde, Scores (LVEF, CHA2DS2-VASc, NYHA, etc.)
+- Konkrete Zeitangaben für Nachsorgetermine und Kontrolluntersuchungen
+
 Erstelle zusätzlich eine strukturierte Zusammenfassung des Entlassbriefs mit folgenden Feldern:
 - hauptdiagnose: Die Hauptdiagnose in einem Satz
-- therapie: Durchgeführte Therapie in 2-3 Sätzen
-- procedere: Empfohlenes weiteres Vorgehen in 2-3 Sätzen
-- offene_fragen: Offene klinische Fragen oder ausstehende Befunde (1-2 Sätze, oder "Keine" wenn nicht zutreffend)
+- therapie: Durchgeführte Therapie in 2-3 Sätzen, inklusive konkreter Medikamente mit Dosierungen
+- procedere: Empfohlenes weiteres Vorgehen in 2-3 Sätzen, mit konkreten Zeitangaben und Kontrollen
+- offene_fragen: Offene klinische Fragen, ausstehende Befunde oder Unsicherheiten (1-2 Sätze). \
+Wenn der Fall Komplikationen oder unklare Befunde enthält, gehören diese hierher.
+
+Die Zusammenfassung soll so spezifisch sein, dass sie nur auf diesen einen Patienten zutrifft — \
+keine generischen Formulierungen wie "medikamentöse Therapie" oder "Labor kontrollieren".
 
 Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar):
 {{

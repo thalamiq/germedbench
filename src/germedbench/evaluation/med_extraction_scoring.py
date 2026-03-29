@@ -41,6 +41,9 @@ def score_med_extraction(
     - partial: wirkstoff + (dosis OR frequenz correct)
     - exact: wirkstoff + dosis + frequenz all correct
     """
+    predicted = predicted or []
+    gold = gold or []
+
     matched_gold: set[int] = set()
     wirkstoff_tp = 0
     partial_tp = 0

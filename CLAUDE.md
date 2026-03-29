@@ -7,7 +7,7 @@ Offenes Benchmark-Framework zur Evaluation von LLMs auf deutschen klinischen Tex
 - **Benchmark (Python):** `src/germedbench/` — Schemas, Config, Evaluation, Katalog-Lookup
 - **Website (Next.js):** `web/` — Leaderboard + Benchmark-Explorer
 - **Paketmanager:** uv (Python), pnpm (Web)
-- **Daten-Generierung:** Gemini 3.1 Pro (via `google-genai`)
+- **Daten-Generierung:** Gemini 3 Flash (via `google-genai`)
 - **Modell-Inferenz:** Together AI (via `openai` SDK)
 - **Evaluation-Judge:** Gemini 3.1 Pro (via `google-genai`, für generative Tasks)
 - **Lizenz:** Apache 2.0
@@ -27,19 +27,22 @@ germedbench/
 │       ├── icd10_scoring.py     # Exact Match, Category Match
 │       ├── summarization_scoring.py   # LLM-as-Judge
 │       ├── clinical_reasoning_scoring.py  # Hybrid: Auto DDx + LLM-as-Judge
-│       ├── ner_scoring.py       # Micro F1, per-type F1
-│       └── med_extraction_scoring.py  # Wirkstoff/Partial/Exact F1
+│       ├── med_extraction_scoring.py  # Wirkstoff/Partial/Exact F1
+│       ├── med_qa_scoring.py          # MC Accuracy
+│       └── patient_text_scoring.py    # LLM-as-Judge: Laiensprache
 ├── scripts/
 │   ├── generate_icd10_cases.py          # Per-task generation
 │   ├── generate_summarization_cases.py
 │   ├── generate_clinical_reasoning_cases.py
-│   ├── generate_ner_cases.py
 │   ├── generate_med_extraction_cases.py
+│   ├── generate_med_qa_cases.py
+│   ├── generate_patient_text_cases.py
 │   ├── run_eval_icd10.py               # Per-task evaluation
 │   ├── run_eval_summarization.py
 │   ├── run_eval_clinical_reasoning.py
-│   ├── run_eval_ner.py
 │   ├── run_eval_med_extraction.py
+│   ├── run_eval_med_qa.py
+│   ├── run_eval_patient_text.py
 │   └── build_icd10_lookup.py
 ├── data/                       # Task-specific .jsonl datasets
 ├── results/                    # <model>/<task>/<timestamp>.json + latest.json
@@ -52,10 +55,11 @@ germedbench/
 ## Aktive Tasks
 
 1. **ICD-10-GM Kodierung** — Extraktion, automatisch evaluierbar (Exact Match F1, Category F1, HD Accuracy)
-2. **Arztbrief-Zusammenfassung** — Generativ, LLM-as-Judge (Faktentreue, Vollständigkeit, Halluzinationsfreiheit, Formatkonformität)
+2. **Arztbrief-Zusammenfassung** — Generativ, LLM-as-Judge (Faktentreue, Vollständigkeit, Klinische Präzision)
 3. **Klinisches Reasoning** — Differentialdiagnostik, Hybrid-Scoring: automatisch (Top-1 Acc, Top-3 Recall, DDx F1) + LLM-as-Judge (Reasoning-Qualität, DDx-Plausibilität, Red-Flag-Bewusstsein)
-4. **Klinische Entitätsextraktion (NER)** — Diagnosen, Prozeduren, Medikamente, Laborwerte; automatisch evaluierbar (Micro F1, per-type F1)
-5. **Medikamentenextraktion** — Wirkstoff, Dosis, Frequenz aus Freitext; automatisch evaluierbar (Wirkstoff F1, Partial F1, Exact F1)
+4. **Medikamentenextraktion** — Wirkstoff, Dosis, Frequenz aus Freitext; automatisch evaluierbar (Wirkstoff F1, Partial F1, Exact F1)
+5. **Medizinisches Wissen** — IMPP-Stil MC-Fragen (A–E), automatisch evaluierbar (Accuracy)
+6. **Patientenverständliche Erklärung** — Fachtext → Laiensprache, LLM-as-Judge (Verständlichkeit, Med. Korrektheit, Vollständigkeit)
 
 ## Web-Stack
 

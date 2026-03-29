@@ -52,23 +52,21 @@ class ClinicalReasoningCase(BaseModel):
     correct_diagnosis_icd10: str = ""
 
 
-class ClinicalEntity(BaseModel):
-    typ: str  # "diagnose", "prozedur", "medikament", "laborwert"
-    name: str  # Surface form, e.g. "Vorhofflimmern"
-    acceptable_names: list[str] = []  # Synonyms, abbreviations, trade names
-    code: str = ""  # ICD-10 or OPS code (diagnose/prozedur)
-    wirkstoff: str = ""  # Active ingredient (medikament)
-    dosierung: str = ""  # Dosage string (medikament)
-    parameter: str = ""  # Lab parameter name (laborwert)
-    wert: str = ""  # Lab value (laborwert)
-    einheit: str = ""  # Unit (laborwert/medikament)
-
-
-class NERCase(BaseModel):
+class MedQACase(BaseModel):
     id: str
     fachbereich: str
-    text: str  # Discharge letter excerpt (200-400 words)
-    entities: list[ClinicalEntity]
+    schwierigkeitsgrad: str  # "einfach", "mittel", "schwer"
+    question: str  # Clinical vignette + question stem
+    options: dict[str, str]  # {"A": "...", "B": "...", "C": "...", "D": "...", "E": "..."}
+    correct_answer: str  # "A", "B", "C", "D", or "E"
+    explanation: str  # Why the correct answer is right
+
+
+class PatientTextCase(BaseModel):
+    id: str
+    fachbereich: str
+    text: str  # Complex clinical text (Befund, Arztbrief-Abschnitt, Pathologiebericht)
+    gold_explanation: str  # Patient-friendly explanation (Gold Standard)
 
 
 class MedicationEntry(BaseModel):

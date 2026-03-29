@@ -1,5 +1,5 @@
 export type ModelSize = "small" | "medium" | "large";
-export type TaskId = "icd10_coding" | "summarization" | "clinical_reasoning" | "ner" | "med_extraction";
+export type TaskId = "icd10_coding" | "summarization" | "clinical_reasoning" | "med_extraction" | "med_qa" | "patient_text";
 
 // --- Task config ---
 
@@ -22,15 +22,20 @@ export const TASK_CONFIG: Record<
     primaryMetric: "overall_score",
     primaryMetricLabel: "Overall Score",
   },
-  ner: {
-    name: "Klinische Entitätsextraktion",
-    primaryMetric: "micro_f1",
-    primaryMetricLabel: "Micro F1",
-  },
   med_extraction: {
     name: "Medikamentenextraktion",
-    primaryMetric: "wirkstoff_f1",
-    primaryMetricLabel: "Wirkstoff F1",
+    primaryMetric: "exact_f1",
+    primaryMetricLabel: "Exact F1",
+  },
+  med_qa: {
+    name: "Medizinisches Wissen",
+    primaryMetric: "accuracy",
+    primaryMetricLabel: "Accuracy",
+  },
+  patient_text: {
+    name: "Patientenverständliche Erklärung",
+    primaryMetric: "overall_score",
+    primaryMetricLabel: "Overall Score",
   },
 };
 
@@ -59,8 +64,7 @@ export interface SummarizationResult extends ModelResultBase {
   task: "summarization";
   faktentreue: number;
   vollstaendigkeit: number;
-  halluzinationsfreiheit: number;
-  formatkonformitaet: number;
+  klinische_praezision: number;
   overall_score: number;
 }
 
@@ -75,17 +79,6 @@ export interface ClinicalReasoningResult extends ModelResultBase {
   overall_score: number;
 }
 
-export interface NERResult extends ModelResultBase {
-  task: "ner";
-  micro_f1: number;
-  micro_precision: number;
-  micro_recall: number;
-  diagnose_f1: number;
-  prozedur_f1: number;
-  medikament_f1: number;
-  laborwert_f1: number;
-}
-
 export interface MedExtractionResult extends ModelResultBase {
   task: "med_extraction";
   wirkstoff_f1: number;
@@ -95,14 +88,29 @@ export interface MedExtractionResult extends ModelResultBase {
   exact_f1: number;
 }
 
-export type ModelResult = ICD10Result | SummarizationResult | ClinicalReasoningResult | NERResult | MedExtractionResult;
+export interface PatientTextResult extends ModelResultBase {
+  task: "patient_text";
+  verstaendlichkeit: number;
+  medizinische_korrektheit: number;
+  vollstaendigkeit: number;
+  overall_score: number;
+}
+
+export interface MedQAResult extends ModelResultBase {
+  task: "med_qa";
+  accuracy: number;
+  n_correct: number;
+}
+
+export type ModelResult = ICD10Result | SummarizationResult | ClinicalReasoningResult | MedExtractionResult | MedQAResult | PatientTextResult;
 
 export function getPrimaryMetric(result: ModelResult): number {
   if (result.task === "icd10_coding") return result.exact_match_f1;
   if (result.task === "summarization") return result.overall_score;
   if (result.task === "clinical_reasoning") return result.overall_score;
-  if (result.task === "ner") return result.micro_f1;
-  if (result.task === "med_extraction") return result.wirkstoff_f1;
+  if (result.task === "med_extraction") return result.exact_f1;
+  if (result.task === "med_qa") return result.accuracy;
+  if (result.task === "patient_text") return result.overall_score;
   return 0;
 }
 
@@ -131,8 +139,7 @@ export interface SummarizationPrediction {
   judge_scores?: {
     faktentreue: number;
     vollstaendigkeit: number;
-    halluzinationsfreiheit: number;
-    formatkonformitaet: number;
+    klinische_praezision: number;
     overall: number;
   };
   judge_error?: string;
@@ -162,23 +169,6 @@ export interface ClinicalReasoningPrediction {
   judge_error?: string;
 }
 
-export interface NERPrediction {
-  case_id: string;
-  entities?: {
-    typ: string;
-    name: string;
-    code?: string;
-    wirkstoff?: string;
-    dosierung?: string;
-    parameter?: string;
-    wert?: string;
-    einheit?: string;
-  }[] | null;
-  raw?: string;
-  parse_error?: boolean;
-  error?: string;
-}
-
 export interface MedExtractionPrediction {
   case_id: string;
   medications?: {
@@ -192,7 +182,31 @@ export interface MedExtractionPrediction {
   error?: string;
 }
 
-export type Prediction = ICD10Prediction | SummarizationPrediction | ClinicalReasoningPrediction | NERPrediction | MedExtractionPrediction;
+export interface PatientTextPrediction {
+  case_id: string;
+  explanation?: string | null;
+  raw?: string;
+  parse_error?: boolean;
+  error?: string;
+  judge_scores?: {
+    verstaendlichkeit: number;
+    medizinische_korrektheit: number;
+    vollstaendigkeit: number;
+    overall: number;
+  };
+  judge_error?: string;
+}
+
+export interface MedQAPrediction {
+  case_id: string;
+  answer?: string | null;
+  reasoning?: string | null;
+  raw?: string;
+  parse_error?: boolean;
+  error?: string;
+}
+
+export type Prediction = ICD10Prediction | SummarizationPrediction | ClinicalReasoningPrediction | MedExtractionPrediction | MedQAPrediction | PatientTextPrediction;
 
 export interface ModelRun {
   summary: ModelResult;
@@ -245,25 +259,6 @@ export interface ClinicalReasoningBenchmarkCase {
   correct_diagnosis_icd10?: string;
 }
 
-export interface ClinicalEntityEntry {
-  typ: string;
-  name: string;
-  acceptable_names?: string[];
-  code?: string;
-  wirkstoff?: string;
-  dosierung?: string;
-  parameter?: string;
-  wert?: string;
-  einheit?: string;
-}
-
-export interface NERBenchmarkCase {
-  id: string;
-  fachbereich: string;
-  text: string;
-  entities: ClinicalEntityEntry[];
-}
-
 export interface MedExtractionBenchmarkCase {
   id: string;
   fachbereich: string;
@@ -276,7 +271,24 @@ export interface MedExtractionBenchmarkCase {
   }[];
 }
 
-export type BenchmarkCase = ICD10BenchmarkCase | SummarizationBenchmarkCase | ClinicalReasoningBenchmarkCase | NERBenchmarkCase | MedExtractionBenchmarkCase;
+export interface PatientTextBenchmarkCase {
+  id: string;
+  fachbereich: string;
+  text: string;
+  gold_explanation: string;
+}
+
+export interface MedQABenchmarkCase {
+  id: string;
+  fachbereich: string;
+  schwierigkeitsgrad: string;
+  question: string;
+  options: Record<string, string>;
+  correct_answer: string;
+  explanation: string;
+}
+
+export type BenchmarkCase = ICD10BenchmarkCase | SummarizationBenchmarkCase | ClinicalReasoningBenchmarkCase | MedExtractionBenchmarkCase | MedQABenchmarkCase | PatientTextBenchmarkCase;
 
 // --- Leaderboard ---
 

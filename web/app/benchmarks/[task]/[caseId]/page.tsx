@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@thalamiq/ui/component
 import { Badge } from "@thalamiq/ui/components/badge";
 import { Separator } from "@thalamiq/ui/components/separator";
 import { getModelMeta } from "@/lib/types";
-import type { SummarizationPrediction, ClinicalReasoningPrediction, NERPrediction, MedExtractionPrediction } from "@/lib/types";
+import type { SummarizationPrediction, ClinicalReasoningPrediction, MedExtractionPrediction, MedQAPrediction, PatientTextPrediction } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -19,8 +19,9 @@ const TASK_NAMES: Record<string, string> = {
   icd10_coding: "ICD-10-GM Kodierung",
   summarization: "Arztbrief-Zusammenfassung",
   clinical_reasoning: "Klinisches Reasoning",
-  ner: "Klinische Entitätsextraktion",
   med_extraction: "Medikamentenextraktion",
+  med_qa: "Medizinisches Wissen",
+  patient_text: "Patientenverständliche Erklärung",
 };
 
 export async function generateMetadata({
@@ -92,8 +93,9 @@ export default async function CaseDetailPage({
   const isICD10 = task === "icd10_coding";
   const isSumm = task === "summarization";
   const isCR = task === "clinical_reasoning";
-  const isNER = task === "ner";
   const isMed = task === "med_extraction";
+  const isQA = task === "med_qa";
+  const isPT = task === "patient_text";
 
   const goldCodes = isICD10 && "diagnosen" in caseData
     ? new Set(caseData.diagnosen.map((d) => d.code))
@@ -131,15 +133,32 @@ export default async function CaseDetailPage({
         )}
       </div>
 
-      {/* Clinical text */}
+      {/* Clinical text / Question */}
       <Card className="mb-8">
         <CardContent className="py-4">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">
-            Klinischer Text
+            {isQA ? "Frage" : "Klinischer Text"}
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
-            {caseData.text}
+            {"question" in caseData ? caseData.question : caseData.text}
           </p>
+          {isQA && "options" in caseData && (
+            <div className="mt-4 space-y-1.5">
+              {(["A", "B", "C", "D", "E"] as const).map((letter) => (
+                <div
+                  key={letter}
+                  className={`flex gap-2 rounded-md px-2 py-1.5 text-sm ${
+                    letter === caseData.correct_answer
+                      ? "bg-green-500/10 text-foreground font-medium"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  <span className="shrink-0 font-mono font-semibold">{letter})</span>
+                  <span>{caseData.options[letter]}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -214,37 +233,26 @@ export default async function CaseDetailPage({
               </div>
             )}
 
-            {isNER && "entities" in caseData && (
-              <div className="space-y-4">
-                {(["diagnose", "prozedur", "medikament", "laborwert"] as const).map((typ) => {
-                  const filtered = caseData.entities.filter((e) => e.typ === typ);
-                  if (filtered.length === 0) return null;
-                  const typLabels: Record<string, string> = {
-                    diagnose: "Diagnosen",
-                    prozedur: "Prozeduren",
-                    medikament: "Medikamente",
-                    laborwert: "Laborwerte",
-                  };
-                  return (
-                    <div key={typ}>
-                      <p className="mb-2 text-xs font-medium text-foreground">
-                        {typLabels[typ]} <span className="text-muted-foreground">({filtered.length})</span>
-                      </p>
-                      <div className="space-y-1.5">
-                        {filtered.map((e, i) => (
-                          <div key={i} className="flex flex-wrap items-center gap-2 text-xs">
-                            <span className="font-medium text-foreground">{e.name}</span>
-                            {e.code && <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-muted-foreground">{e.code}</code>}
-                            {e.wirkstoff && e.wirkstoff !== e.name && <span className="text-muted-foreground">{e.wirkstoff}</span>}
-                            {e.dosierung && <span className="text-muted-foreground">{e.dosierung}</span>}
-                            {e.parameter && <span className="text-muted-foreground">{e.parameter}</span>}
-                            {e.wert && <span className="text-muted-foreground">{e.wert} {e.einheit}</span>}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
+            {isQA && "correct_answer" in caseData && (
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-medium text-foreground">Richtige Antwort:</span>
+                  <Badge variant="default" className="font-mono text-xs">{caseData.correct_answer}</Badge>
+                </div>
+                {"explanation" in caseData && (
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {caseData.explanation}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {isPT && "gold_explanation" in caseData && (
+              <div>
+                <p className="mb-2 text-xs font-medium text-foreground">Referenz-Erklärung</p>
+                <p className="text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
+                  {caseData.gold_explanation}
+                </p>
               </div>
             )}
 
@@ -382,8 +390,7 @@ export default async function CaseDetailPage({
                             <div className="flex gap-4 rounded-md bg-muted/50 px-3 py-2">
                               <ScorePill label="Fakten" value={scores.faktentreue} />
                               <ScorePill label="Vollst." value={scores.vollstaendigkeit} />
-                              <ScorePill label="Halluz." value={scores.halluzinationsfreiheit} />
-                              <ScorePill label="Format" value={scores.formatkonformitaet} />
+                              <ScorePill label="Präzision" value={scores.klinische_praezision} />
                             </div>
                           )}
                           {pred.summary && (
@@ -478,11 +485,48 @@ export default async function CaseDetailPage({
                 );
               }
 
-              // NER
-              if (isNER) {
-                const pred = prediction as NERPrediction;
-                const entityCount = pred.entities?.length ?? 0;
-                const goldCount = ("entities" in caseData) ? caseData.entities.length : 0;
+              // Medical QA
+              if (isQA) {
+                const pred = prediction as MedQAPrediction;
+                const goldAnswer = "correct_answer" in caseData ? caseData.correct_answer : "";
+                const isCorrect = !hasError && pred.answer === goldAnswer;
+
+                return (
+                  <Card key={model} className={isCorrect ? "border-green-500/30" : ""}>
+                    <CardHeader className="pb-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <Link href={`/model/${encodeURIComponent(model)}`} className="text-sm font-medium hover:underline">
+                            {meta.shortName}
+                          </Link>
+                          <span className="text-xs text-muted-foreground">{meta.provider}</span>
+                        </div>
+                        {hasError ? (
+                          <Badge variant="destructive" className="text-xs">Fehler</Badge>
+                        ) : (
+                          <Badge variant={isCorrect ? "default" : "secondary"} className="font-mono text-xs">
+                            {pred.answer ?? "?"} {isCorrect ? "✓" : "✗"}
+                          </Badge>
+                        )}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-3">
+                      {hasError ? (
+                        <p className="text-xs text-muted-foreground">
+                          {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
+                        </p>
+                      ) : pred.reasoning ? (
+                        <p className="text-xs leading-relaxed text-muted-foreground">{pred.reasoning}</p>
+                      ) : null}
+                    </CardContent>
+                  </Card>
+                );
+              }
+
+              // Patient Text
+              if (isPT) {
+                const pred = prediction as PatientTextPrediction;
+                const scores = pred.judge_scores;
 
                 return (
                   <Card key={model}>
@@ -494,9 +538,11 @@ export default async function CaseDetailPage({
                           </Link>
                           <span className="text-xs text-muted-foreground">{meta.provider}</span>
                         </div>
-                        <Badge variant="secondary" className="text-xs">
-                          {entityCount}/{goldCount} Entitäten
-                        </Badge>
+                        {scores && (
+                          <Badge variant="secondary" className="font-mono text-xs">
+                            {scores.overall.toFixed(1)}/5
+                          </Badge>
+                        )}
                       </div>
                     </CardHeader>
                     <CardContent className="pt-3">
@@ -505,24 +551,19 @@ export default async function CaseDetailPage({
                           {pred.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
                         </p>
                       ) : (
-                        <div className="flex flex-wrap gap-1.5">
-                          {pred.entities?.map((e, i) => {
-                            const typeColors: Record<string, string> = {
-                              diagnose: "border-blue-500/30 bg-blue-500/5",
-                              prozedur: "border-amber-500/30 bg-amber-500/5",
-                              medikament: "border-green-500/30 bg-green-500/5",
-                              laborwert: "border-purple-500/30 bg-purple-500/5",
-                            };
-                            return (
-                              <span
-                                key={i}
-                                className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs ${typeColors[e.typ] ?? "border-border"}`}
-                              >
-                                <span className="text-muted-foreground">{e.typ}</span>
-                                <span className="font-medium">{e.name}</span>
-                              </span>
-                            );
-                          })}
+                        <div className="space-y-3">
+                          {scores && (
+                            <div className="flex gap-4 rounded-md bg-muted/50 px-3 py-2">
+                              <ScorePill label="Verständl." value={scores.verstaendlichkeit} />
+                              <ScorePill label="Korrektheit" value={scores.medizinische_korrektheit} />
+                              <ScorePill label="Vollst." value={scores.vollstaendigkeit} />
+                            </div>
+                          )}
+                          {pred.explanation && (
+                            <p className="text-xs leading-relaxed text-muted-foreground whitespace-pre-line">
+                              {pred.explanation}
+                            </p>
+                          )}
                         </div>
                       )}
                     </CardContent>

@@ -79,8 +79,9 @@ const TASK_PRIMARY_METRIC: Record<string, { key: string; scale: number }> = {
   icd10_coding: { key: "exact_match_f1", scale: 1 },      // already 0-1
   summarization: { key: "overall_score", scale: 5 },       // 1-5 -> /5
   clinical_reasoning: { key: "overall_score", scale: 5 },  // 1-5 -> /5
-  ner: { key: "micro_f1", scale: 1 },                      // already 0-1
-  med_extraction: { key: "wirkstoff_f1", scale: 1 },       // already 0-1
+  med_extraction: { key: "exact_f1", scale: 1 },             // already 0-1
+  med_qa: { key: "accuracy", scale: 1 },                     // already 0-1
+  patient_text: { key: "overall_score", scale: 5 },          // 1-5 -> /5
 };
 
 export interface AggregatedScore {

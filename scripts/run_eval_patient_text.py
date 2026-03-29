@@ -1,4 +1,4 @@
-"""Evaluate models on discharge letter summarization task."""
+"""Evaluate models on patient text simplification task."""
 
 import json
 import logging
@@ -10,76 +10,71 @@ from openai import APIError
 
 from germedbench.config import settings
 from germedbench.eval_helpers import model_slug, extract_json, update_latest, get_client, call_model, parse_eval_args, run_eval
-from germedbench.evaluation.summarization_scoring import (
-    SummarizationScore,
-    judge_summary_gemini,
+from germedbench.evaluation.patient_text_scoring import (
+    PatientTextScore,
+    judge_patient_text_gemini,
 )
 from germedbench.logging import setup_run_logger
-from germedbench.schemas import SummarizationCase
+from germedbench.schemas import PatientTextCase
 
 log: logging.Logger = logging.getLogger(__name__)
 
-TASK_NAME = "summarization"
+TASK_NAME = "patient_text"
 
-SUMMARIZATION_PROMPT = """\
-Du bist ein erfahrener deutscher Klinikarzt. Lies den folgenden Entlassbrief und erstelle \
-eine strukturierte Zusammenfassung.
+PATIENT_TEXT_PROMPT = """\
+Du bist ein erfahrener Arzt, der medizinische Befunde für Patienten verständlich erklärt.
 
-Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar):
-{{
-  "hauptdiagnose": "Die Hauptdiagnose in einem Satz",
-  "therapie": "Durchgeführte Therapie in 2-3 Sätzen",
-  "procedere": "Empfohlenes weiteres Vorgehen in 2-3 Sätzen",
-  "offene_fragen": "Offene klinische Fragen oder 'Keine'"
-}}
+Lies den folgenden medizinischen Text und erkläre ihn so, dass ein Patient ohne \
+medizinische Vorkenntnisse alles versteht.
 
-Entlassbrief:
+Regeln:
+- Erkläre jeden Fachbegriff in einfacher Sprache
+- Behalte alle wichtigen Informationen bei (Befunde, Diagnosen, Empfehlungen)
+- Verwende einen freundlichen, sachlichen Ton
+- Ordne Messwerte und Befunde verständlich ein (Was ist normal? Was weicht ab?)
+- Der Patient soll verstehen: Was wurde gefunden? Was bedeutet das? Was passiert als nächstes?
+
+Antworte ausschließlich mit der Patienten-Erklärung als Fließtext (kein JSON, kein Markdown). \
+Beginne direkt mit der Erklärung.
+
+Medizinischer Text:
 {text}
 """
 
 
-
-def load_cases() -> list[SummarizationCase]:
-    path = settings.summarization_output_file
+def load_cases() -> list[PatientTextCase]:
+    path = settings.patient_text_output_file
     if not path.exists():
-        print(f"Error: {path} not found. Run generate_summarization_cases.py first.", file=sys.stderr)
+        print(f"Error: {path} not found. Run generate_patient_text_cases.py first.", file=sys.stderr)
         sys.exit(1)
     cases = []
     with open(path, encoding="utf-8") as f:
         for line in f:
-            cases.append(SummarizationCase.model_validate_json(line))
+            cases.append(PatientTextCase.model_validate_json(line))
     return cases
 
 
-def generate_summary(client, model: str, text: str) -> dict:
-    """Send discharge letter to model and parse structured summary."""
-    prompt = SUMMARIZATION_PROMPT.format(text=text)
+def generate_explanation(client, model: str, text: str) -> dict:
+    """Send clinical text to model and get patient-friendly explanation."""
+    prompt = PATIENT_TEXT_PROMPT.format(text=text)
 
     raw, usage = call_model(client, model, prompt)
-    json_str = extract_json(raw)
 
-    log = {"raw": raw, "prompt_length": len(prompt), "response_length": len(raw), "usage": usage}
+    log_data = {"raw": raw, "prompt_length": len(prompt), "response_length": len(raw), "usage": usage}
 
-    try:
-        data = json.loads(json_str)
-        return {
-            "summary": {
-                "hauptdiagnose": data.get("hauptdiagnose", ""),
-                "therapie": data.get("therapie", ""),
-                "procedere": data.get("procedere", ""),
-                "offene_fragen": data.get("offene_fragen", ""),
-            },
-            **log,
-        }
-    except (json.JSONDecodeError, KeyError):
-        return {"summary": None, "parse_error": True, **log}
+    # For this task, the response is plain text (no JSON parsing needed)
+    explanation = raw.strip()
+    if not explanation:
+        return {"explanation": None, "parse_error": True, **log_data}
+
+    return {"explanation": explanation, **log_data}
 
 
 def evaluate_model(
     client,
-    judge_fn: Callable[..., SummarizationScore],
+    judge_fn: Callable[..., PatientTextScore],
     model: str,
-    cases: list[SummarizationCase],
+    cases: list[PatientTextCase],
 ) -> dict | None:
     """Run evaluation for a single model."""
     log.info(f"\n{'='*60}")
@@ -100,7 +95,7 @@ def evaluate_model(
         log.warning(f"Skipping {model}: {e}")
         return None
 
-    scores: list[SummarizationScore] = []
+    scores: list[PatientTextScore] = []
     predictions: list[dict] = []
     parse_errors = 0
     api_errors = 0
@@ -108,9 +103,9 @@ def evaluate_model(
     for i, case in enumerate(cases):
         log.info(f"  Case {i+1}/{len(cases)} ({case.fachbereich}, {case.id})...")
 
-        # Step 1: Get model summary
+        # Step 1: Get model explanation
         try:
-            prediction = generate_summary(client, model, case.text)
+            prediction = generate_explanation(client, model, case.text)
         except APIError as e:
             log.error(f"  API ERROR: {e.message}")
             predictions.append({"case_id": case.id, "error": e.message})
@@ -124,32 +119,27 @@ def evaluate_model(
 
         prediction["case_id"] = case.id
 
-        log.debug(f"  Response ({prediction.get('response_length', 0)} chars, "
-                   f"prompt={prediction.get('usage', {}).get('prompt_tokens')} tok, "
-                   f"completion={prediction.get('usage', {}).get('completion_tokens')} tok): "
-                   f"{prediction.get('raw', '')[:200]}")
-
         if prediction.get("parse_error"):
             parse_errors += 1
             predictions.append(prediction)
-            log.warning(f"  PARSE ERROR — raw response: {prediction.get('raw', '')[:300]}")
+            log.warning(f"  EMPTY RESPONSE")
             continue
 
-        # Step 2: Judge the summary
+        # Step 2: Judge the explanation
         try:
             score = judge_fn(
                 original_text=case.text,
-                gold_summary=case.gold_summary.model_dump(),
-                predicted_summary=prediction["summary"],
+                gold_explanation=case.gold_explanation,
+                pred_explanation=prediction["explanation"],
             )
             scores.append(score)
             prediction["judge_scores"] = {
-                "faktentreue": score.faktentreue,
+                "verstaendlichkeit": score.verstaendlichkeit,
+                "medizinische_korrektheit": score.medizinische_korrektheit,
                 "vollstaendigkeit": score.vollstaendigkeit,
-                "klinische_praezision": score.klinische_praezision,
                 "overall": score.overall,
             }
-            log.info(f"    F={score.faktentreue:.0f} V={score.vollstaendigkeit:.0f} P={score.klinische_praezision:.0f} -> {score.overall:.1f}")
+            log.info(f"    V={score.verstaendlichkeit:.0f} K={score.medizinische_korrektheit:.0f} Voll={score.vollstaendigkeit:.0f} -> {score.overall:.1f}")
         except Exception as e:
             log.error(f"  JUDGE ERROR: {e}")
             prediction["judge_error"] = str(e)
@@ -168,19 +158,19 @@ def evaluate_model(
         "n_scored": n,
         "n_parse_errors": parse_errors,
         "n_api_errors": api_errors,
-        "faktentreue": sum(s.faktentreue for s in scores) / n if n else 0,
+        "verstaendlichkeit": sum(s.verstaendlichkeit for s in scores) / n if n else 0,
+        "medizinische_korrektheit": sum(s.medizinische_korrektheit for s in scores) / n if n else 0,
         "vollstaendigkeit": sum(s.vollstaendigkeit for s in scores) / n if n else 0,
-        "klinische_praezision": sum(s.klinische_praezision for s in scores) / n if n else 0,
         "overall_score": sum(s.overall for s in scores) / n if n else 0,
     }
 
     log.info(f"\n  Results for {model}:")
-    log.info(f"    Faktentreue:          {summary['faktentreue']:.2f}")
-    log.info(f"    Vollständigkeit:      {summary['vollstaendigkeit']:.2f}")
-    log.info(f"    Klinische Präzision:  {summary['klinische_praezision']:.2f}")
-    log.info(f"    Overall:              {summary['overall_score']:.2f}")
-    log.info(f"    Parse Errors:         {parse_errors}/{len(cases)}")
-    log.info(f"    API Errors:           {api_errors}/{len(cases)}")
+    log.info(f"    Verständlichkeit:      {summary['verstaendlichkeit']:.2f}")
+    log.info(f"    Med. Korrektheit:      {summary['medizinische_korrektheit']:.2f}")
+    log.info(f"    Vollständigkeit:       {summary['vollstaendigkeit']:.2f}")
+    log.info(f"    Overall:               {summary['overall_score']:.2f}")
+    log.info(f"    Parse Errors:          {parse_errors}/{len(cases)}")
+    log.info(f"    API Errors:            {api_errors}/{len(cases)}")
 
     # Save per-model detail
     run_dir = settings.results_dir / model_slug(model) / TASK_NAME
@@ -193,7 +183,7 @@ def evaluate_model(
     return summary
 
 
-def _create_judge_fn() -> Callable[..., SummarizationScore]:
+def _create_judge_fn() -> Callable[..., PatientTextScore]:
     """Create a judge function using Gemini."""
     if not settings.gemini_api_key:
         log.error("GEMINI_API_KEY not set in .env (required for LLM-as-Judge)")
@@ -205,11 +195,11 @@ def _create_judge_fn() -> Callable[..., SummarizationScore]:
     judge_model = settings.judge_model
     log.info(f"Using Gemini judge: {judge_model}")
 
-    def judge_fn(original_text: str, gold_summary: dict, predicted_summary: dict) -> SummarizationScore:
-        return judge_summary_gemini(
+    def judge_fn(original_text: str, gold_explanation: str, pred_explanation: str) -> PatientTextScore:
+        return judge_patient_text_gemini(
             original_text=original_text,
-            gold_summary=gold_summary,
-            predicted_summary=predicted_summary,
+            gold_explanation=gold_explanation,
+            pred_explanation=pred_explanation,
             client=gemini_client,
             model=judge_model,
         )
@@ -223,7 +213,7 @@ def main():
     judge_fn = _create_judge_fn()
 
     cases = load_cases()
-    log.info(f"Loaded {len(cases)} cases from {settings.summarization_output_file}")
+    log.info(f"Loaded {len(cases)} cases from {settings.patient_text_output_file}")
 
     eval_args = parse_eval_args(TASK_NAME)
     log.info(f"Models: {[m.id for m in eval_args.models]}")
@@ -239,10 +229,10 @@ def main():
 
     log.info(f"\n{'='*60}")
     log.info(f"Leaderboard:")
-    log.info(f"{'Model':<45} {'Overall':>10} {'Fakten':>10} {'Vollst':>10} {'Präzis':>10}")
+    log.info(f"{'Model':<45} {'Overall':>10} {'Verst.':>10} {'Korrekt':>10} {'Vollst.':>10}")
     log.info("-" * 85)
     for r in sorted(all_results, key=lambda x: x["overall_score"], reverse=True):
-        log.info(f"{r['model']:<45} {r['overall_score']:>10.2f} {r['faktentreue']:>10.2f} {r['vollstaendigkeit']:>10.2f} {r['klinische_praezision']:>10.2f}")
+        log.info(f"{r['model']:<45} {r['overall_score']:>10.2f} {r['verstaendlichkeit']:>10.2f} {r['medizinische_korrektheit']:>10.2f} {r['vollstaendigkeit']:>10.2f}")
 
 
 if __name__ == "__main__":

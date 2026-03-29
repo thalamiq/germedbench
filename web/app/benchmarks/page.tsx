@@ -12,7 +12,7 @@ import { getBenchmarkCases } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Benchmarks",
   description:
-    "Klinische Tasks zur Evaluation generativer LLM-Fähigkeiten: ICD-10-Kodierung, Entitätsextraktion und Arztbrief-Zusammenfassung.",
+    "Klinische Tasks zur Evaluation generativer LLM-Fähigkeiten: ICD-10-Kodierung, Medikamentenextraktion, Arztbrief-Zusammenfassung und Klinisches Reasoning.",
   alternates: { canonical: "/benchmarks" },
 };
 
@@ -36,16 +36,22 @@ const TASKS = [
       "Differentialdiagnostik mit klinischer Begründung aus Fallvignetten",
   },
   {
-    id: "ner",
-    name: "Klinische Entitätsextraktion",
-    description:
-      "Diagnosen, Prozeduren, Medikamente und Laborwerte erkennen und klassifizieren",
-  },
-  {
     id: "med_extraction",
     name: "Medikamentenextraktion",
     description:
       "Wirkstoff, Dosis und Frequenz aus klinischem Freitext extrahieren",
+  },
+  {
+    id: "med_qa",
+    name: "Medizinisches Wissen",
+    description:
+      "Multiple-Choice-Fragen im IMPP-Stil zu klinischem Fachwissen beantworten",
+  },
+  {
+    id: "patient_text",
+    name: "Patientenverständliche Erklärung",
+    description:
+      "Komplexe medizinische Befunde für Patienten verständlich erklären",
   },
 ];
 

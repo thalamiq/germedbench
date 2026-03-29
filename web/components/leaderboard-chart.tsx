@@ -512,6 +512,17 @@ export function LeaderboardChart({ data, aggregated }: { data: LeaderboardEntry[
         <Button variant="ghost" size="sm" className="h-7 text-xs px-2" onClick={selectNone}>
           Keine
         </Button>
+
+        <span className="mx-1 h-4 w-px bg-border" />
+
+        <a
+          href="https://github.com/thalamiq/germedbench/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-4"
+        >
+          Es fehlt ein Modell? Issue öffnen
+        </a>
       </div>
 
       {/* Gesamt-Ranking */}
@@ -550,6 +561,7 @@ export function LeaderboardChart({ data, aggregated }: { data: LeaderboardEntry[
           </section>
         ))}
       </div>
+
     </div>
   );
 }

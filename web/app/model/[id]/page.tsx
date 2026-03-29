@@ -3,13 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getModelRun, getBenchmarkCases, getICD10Catalog } from "@/lib/data";
 import { getModelMeta, TASK_CONFIG } from "@/lib/types";
-import type { TaskId, SummarizationPrediction, ClinicalReasoningPrediction, NERPrediction, MedExtractionPrediction } from "@/lib/types";
+import type { TaskId, SummarizationPrediction, ClinicalReasoningPrediction, MedExtractionPrediction, MedQAPrediction, PatientTextPrediction } from "@/lib/types";
 import { Card, CardContent, CardHeader } from "@thalamiq/ui/components/card";
 import { Badge } from "@thalamiq/ui/components/badge";
 
 export const dynamic = "force-dynamic";
 
-const ALL_TASKS: TaskId[] = ["icd10_coding", "summarization", "clinical_reasoning", "ner", "med_extraction"];
+const ALL_TASKS: TaskId[] = ["icd10_coding", "summarization", "clinical_reasoning", "med_extraction", "med_qa", "patient_text"];
 
 export async function generateMetadata({
   params,
@@ -112,8 +112,7 @@ export default async function ModelDetailPage({
                   <Stat label="Overall" value={`${summary.overall_score.toFixed(1)}/5`} />
                   <Stat label="Faktentreue" value={`${summary.faktentreue.toFixed(1)}`} />
                   <Stat label="Vollständigkeit" value={`${summary.vollstaendigkeit.toFixed(1)}`} />
-                  <Stat label="Halluz.freiheit" value={`${summary.halluzinationsfreiheit.toFixed(1)}`} />
-                  <Stat label="Format" value={`${summary.formatkonformitaet.toFixed(1)}`} />
+                  <Stat label="Klin. Präzision" value={`${summary.klinische_praezision.toFixed(1)}`} />
                 </>
               )}
               {summary.task === "clinical_reasoning" && (
@@ -127,24 +126,27 @@ export default async function ModelDetailPage({
                   <Stat label="Red Flags" value={`${summary.red_flag_awareness.toFixed(1)}`} />
                 </>
               )}
-              {summary.task === "ner" && (
-                <>
-                  <Stat label="Micro F1" value={formatPct(summary.micro_f1)} />
-                  <Stat label="Diagnose" value={formatPct(summary.diagnose_f1)} />
-                  <Stat label="Prozedur" value={formatPct(summary.prozedur_f1)} />
-                  <Stat label="Medikament" value={formatPct(summary.medikament_f1)} />
-                  <Stat label="Laborwert" value={formatPct(summary.laborwert_f1)} />
-                  <Stat label="Precision" value={formatPct(summary.micro_precision)} />
-                  <Stat label="Recall" value={formatPct(summary.micro_recall)} />
-                </>
-              )}
               {summary.task === "med_extraction" && (
                 <>
-                  <Stat label="Wirkstoff F1" value={formatPct(summary.wirkstoff_f1)} />
-                  <Stat label="Partial F1" value={formatPct(summary.partial_f1)} />
                   <Stat label="Exact F1" value={formatPct(summary.exact_f1)} />
+                  <Stat label="Partial F1" value={formatPct(summary.partial_f1)} />
+                  <Stat label="Wirkstoff F1" value={formatPct(summary.wirkstoff_f1)} />
                   <Stat label="Precision" value={formatPct(summary.wirkstoff_precision)} />
                   <Stat label="Recall" value={formatPct(summary.wirkstoff_recall)} />
+                </>
+              )}
+              {summary.task === "med_qa" && (
+                <>
+                  <Stat label="Accuracy" value={formatPct(summary.accuracy)} />
+                  <Stat label="Richtig" value={`${summary.n_correct}/${summary.n_scored}`} />
+                </>
+              )}
+              {summary.task === "patient_text" && (
+                <>
+                  <Stat label="Overall" value={`${summary.overall_score.toFixed(1)}/5`} />
+                  <Stat label="Verständl." value={`${summary.verstaendlichkeit.toFixed(1)}`} />
+                  <Stat label="Korrektheit" value={`${summary.medizinische_korrektheit.toFixed(1)}`} />
+                  <Stat label="Vollständigkeit" value={`${summary.vollstaendigkeit.toFixed(1)}`} />
                 </>
               )}
               {errorCount > 0 && (
@@ -195,12 +197,23 @@ export default async function ModelDetailPage({
                     );
                   }
 
-                  if (task === "ner") {
+                  if (task === "patient_text") {
                     return (
-                      <NERCaseResult
+                      <PatientTextCaseResult
                         key={pred.case_id}
                         task={task}
-                        prediction={pred as NERPrediction}
+                        prediction={pred as PatientTextPrediction}
+                        goldCase={goldCase}
+                      />
+                    );
+                  }
+
+                  if (task === "med_qa") {
+                    return (
+                      <MedQACaseResult
+                        key={pred.case_id}
+                        task={task}
+                        prediction={pred as MedQAPrediction}
                         goldCase={goldCase}
                       />
                     );
@@ -386,8 +399,7 @@ function SummarizationCaseResult({
                 {([
                   ["Fakten", scores.faktentreue],
                   ["Vollst.", scores.vollstaendigkeit],
-                  ["Halluz.", scores.halluzinationsfreiheit],
-                  ["Format", scores.formatkonformitaet],
+                  ["Präzision", scores.klinische_praezision],
                 ] as const).map(([label, val]) => (
                   <div key={label} className="flex flex-col items-center gap-0.5">
                     <span className="font-mono text-sm font-semibold">{val}</span>
@@ -515,77 +527,6 @@ function ClinicalReasoningCaseResult({
 }
 
 // ---------------------------------------------------------------------------
-// NER
-// ---------------------------------------------------------------------------
-
-function NERCaseResult({
-  task,
-  prediction,
-  goldCase,
-}: {
-  task: string;
-  prediction: NERPrediction;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  goldCase: any;
-}) {
-  const hasError = prediction.error || prediction.parse_error;
-  const predCount = prediction.entities?.length ?? 0;
-  const goldCount = goldCase?.entities?.length ?? 0;
-
-  const typeColors: Record<string, string> = {
-    diagnose: "border-blue-500/30 bg-blue-500/5",
-    prozedur: "border-amber-500/30 bg-amber-500/5",
-    medikament: "border-green-500/30 bg-green-500/5",
-    laborwert: "border-purple-500/30 bg-purple-500/5",
-  };
-
-  return (
-    <Card>
-      <CardHeader className="pb-0">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Link
-              href={`/benchmarks/${task}/${prediction.case_id}`}
-              className="font-mono text-sm font-medium hover:underline"
-            >
-              {prediction.case_id}
-            </Link>
-            <span className="text-xs text-muted-foreground">{goldCase?.fachbereich}</span>
-          </div>
-          <Badge variant="secondary" className="text-xs">
-            {predCount}/{goldCount} Entitäten
-          </Badge>
-        </div>
-      </CardHeader>
-      <CardContent className="pt-3">
-        {hasError ? (
-          <p className="text-xs text-muted-foreground">
-            {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
-          </p>
-        ) : (
-          <div className="flex flex-wrap gap-1.5">
-            {prediction.entities?.slice(0, 10).map((e, i) => (
-              <span
-                key={i}
-                className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs ${typeColors[e.typ] ?? "border-border"}`}
-              >
-                <span className="text-muted-foreground">{e.typ}</span>
-                <span className="font-medium">{e.name}</span>
-              </span>
-            ))}
-            {predCount > 10 && (
-              <span className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-                +{predCount - 10}
-              </span>
-            )}
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Med Extraction
 // ---------------------------------------------------------------------------
 
@@ -644,6 +585,131 @@ function MedExtractionCaseResult({
             )}
           </div>
         )}
+      </CardContent>
+    </Card>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Patient Text
+// ---------------------------------------------------------------------------
+
+function PatientTextCaseResult({
+  task,
+  prediction,
+  goldCase,
+}: {
+  task: string;
+  prediction: PatientTextPrediction;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  goldCase: any;
+}) {
+  const hasError = prediction.error || prediction.parse_error;
+  const scores = prediction.judge_scores;
+
+  return (
+    <Card>
+      <CardHeader className="pb-0">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Link
+              href={`/benchmarks/${task}/${prediction.case_id}`}
+              className="font-mono text-sm font-medium hover:underline"
+            >
+              {prediction.case_id}
+            </Link>
+            <span className="text-xs text-muted-foreground">{goldCase?.fachbereich}</span>
+          </div>
+          {scores && (
+            <Badge variant="secondary" className="font-mono text-xs">
+              {scores.overall.toFixed(1)}/5
+            </Badge>
+          )}
+        </div>
+      </CardHeader>
+      <CardContent className="pt-3">
+        {hasError ? (
+          <p className="text-xs text-muted-foreground">
+            {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
+          </p>
+        ) : (
+          <div className="space-y-3">
+            {scores && (
+              <div className="flex gap-4 rounded-md bg-muted/50 px-3 py-2">
+                {([
+                  ["Verständl.", scores.verstaendlichkeit],
+                  ["Korrekt.", scores.medizinische_korrektheit],
+                  ["Vollst.", scores.vollstaendigkeit],
+                ] as const).map(([label, val]) => (
+                  <div key={label} className="flex flex-col items-center gap-0.5">
+                    <span className="font-mono text-sm font-semibold">{val}</span>
+                    <span className="text-[10px] text-muted-foreground">{label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {prediction.explanation && (
+              <p className="line-clamp-4 text-xs leading-relaxed text-muted-foreground">
+                {prediction.explanation}
+              </p>
+            )}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Med QA
+// ---------------------------------------------------------------------------
+
+function MedQACaseResult({
+  task,
+  prediction,
+  goldCase,
+}: {
+  task: string;
+  prediction: MedQAPrediction;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  goldCase: any;
+}) {
+  const hasError = prediction.error || prediction.parse_error;
+  const goldAnswer = goldCase?.correct_answer ?? "";
+  const isCorrect = !hasError && prediction.answer === goldAnswer;
+
+  return (
+    <Card className={isCorrect ? "border-green-500/30" : ""}>
+      <CardHeader className="pb-0">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Link
+              href={`/benchmarks/${task}/${prediction.case_id}`}
+              className="font-mono text-sm font-medium hover:underline"
+            >
+              {prediction.case_id}
+            </Link>
+            <span className="text-xs text-muted-foreground">{goldCase?.fachbereich}</span>
+          </div>
+          {hasError ? (
+            <Badge variant="destructive" className="text-xs">
+              {prediction.parse_error ? "Parse Error" : "API Error"}
+            </Badge>
+          ) : (
+            <Badge variant={isCorrect ? "default" : "secondary"} className="font-mono text-xs">
+              {prediction.answer ?? "?"} {isCorrect ? "✓" : "✗"}
+            </Badge>
+          )}
+        </div>
+      </CardHeader>
+      <CardContent className="pt-3">
+        {hasError ? (
+          <p className="text-xs text-muted-foreground">
+            {prediction.parse_error ? "Antwort konnte nicht geparst werden" : "API-Fehler"}
+          </p>
+        ) : prediction.reasoning ? (
+          <p className="line-clamp-3 text-xs leading-relaxed text-muted-foreground">{prediction.reasoning}</p>
+        ) : null}
       </CardContent>
     </Card>
   );

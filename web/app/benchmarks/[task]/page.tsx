@@ -42,7 +42,7 @@ Klinischer Text:
   summarization: {
     name: "Arztbrief-Zusammenfassung",
     description: "Strukturierte Kurzfassung von Entlassbriefen — bewertet durch LLM-as-Judge.",
-    metrics: ["Faktentreue", "Vollständigkeit", "Halluzinationsfreiheit", "Formatkonformität", "Overall"],
+    metrics: ["Faktentreue", "Vollständigkeit", "Klinische Präzision", "Overall"],
     input: "Vollständiger Entlassbrief",
     output: "Strukturierte Zusammenfassung (Hauptdiagnose, Therapie, Procedere, Offene Fragen)",
     prompt: `Du bist ein erfahrener deutscher Klinikarzt. Lies den folgenden Entlassbrief und erstelle eine strukturierte Zusammenfassung.
@@ -83,33 +83,6 @@ Erstelle 3-5 Differentialdiagnosen, geordnet nach Wahrscheinlichkeit (wahrschein
 Klinische Fallvignette:
 {text}`,
   },
-  ner: {
-    name: "Klinische Entitätsextraktion",
-    description: "Diagnosen, Prozeduren, Medikamente und Laborwerte aus klinischem Text erkennen — vollautomatisch evaluiert.",
-    metrics: ["Micro F1", "Diagnose F1", "Prozedur F1", "Medikament F1", "Laborwert F1"],
-    input: "Entlassbrief-Auszug",
-    output: "Strukturierte Entitätenliste (Diagnosen, Prozeduren, Medikamente, Laborwerte)",
-    prompt: `Du bist ein medizinischer NLP-Experte. Extrahiere alle klinischen Entitäten aus dem folgenden Text.
-
-Entitätstypen:
-- diagnose: Erkrankungen und Befunde (name + ICD-10-GM code)
-- prozedur: Eingriffe und Maßnahmen (name + OPS code)
-- medikament: Arzneimittel (name, wirkstoff, dosierung, einheit)
-- laborwert: Laborparameter (name, parameter, wert, einheit)
-
-Antworte ausschließlich im folgenden JSON-Format:
-{
-  "entities": [
-    {"typ": "diagnose", "name": "Vorhofflimmern", "code": "I48.0"},
-    {"typ": "prozedur", "name": "Elektrokardioversion", "code": "8-640.0"},
-    {"typ": "medikament", "name": "Metoprolol", "wirkstoff": "Metoprolol", "dosierung": "47.5mg 1-0-0", "einheit": "mg"},
-    {"typ": "laborwert", "name": "Kalium", "parameter": "Kalium", "wert": "4.2", "einheit": "mmol/L"}
-  ]
-}
-
-Klinischer Text:
-{text}`,
-  },
   med_extraction: {
     name: "Medikamentenextraktion",
     description: "Wirkstoff, Dosis und Frequenz aus klinischem Freitext extrahieren — vollautomatisch evaluiert.",
@@ -137,6 +110,54 @@ Antworte ausschließlich im folgenden JSON-Format:
 }
 
 Klinischer Text:
+{text}`,
+  },
+  med_qa: {
+    name: "Medizinisches Wissen",
+    description: "Multiple-Choice-Fragen im IMPP-Stil (Zweiter Abschnitt der Ärztlichen Prüfung) — vollautomatisch evaluiert.",
+    metrics: ["Accuracy"],
+    input: "Klinische Vignette + Multiple-Choice-Frage (A–E)",
+    output: "Antwortbuchstabe + Begründung",
+    prompt: `Du bist ein erfahrener deutscher Facharzt und beantwortest eine medizinische Prüfungsfrage.
+
+Lies die folgende Frage und die Antwortmöglichkeiten sorgfältig. Wähle die beste Antwort.
+
+Antworte ausschließlich im folgenden JSON-Format:
+{
+  "answer": "B",
+  "reasoning": "Kurze Begründung in 1-2 Sätzen"
+}
+
+Frage:
+{question}
+
+Antwortmöglichkeiten:
+A) ...
+B) ...
+C) ...
+D) ...
+E) ...`,
+  },
+  patient_text: {
+    name: "Patientenverständliche Erklärung",
+    description: "Komplexe medizinische Befunde für Patienten verständlich erklären — bewertet durch LLM-as-Judge.",
+    metrics: ["Verständlichkeit", "Med. Korrektheit", "Vollständigkeit", "Overall"],
+    input: "Medizinischer Fachtext (Befund, Laborbericht, OP-Bericht)",
+    output: "Patientenverständliche Erklärung in Laiensprache",
+    prompt: `Du bist ein erfahrener Arzt, der medizinische Befunde für Patienten verständlich erklärt.
+
+Lies den folgenden medizinischen Text und erkläre ihn so, dass ein Patient ohne medizinische Vorkenntnisse alles versteht.
+
+Regeln:
+- Erkläre jeden Fachbegriff in einfacher Sprache
+- Behalte alle wichtigen Informationen bei (Befunde, Diagnosen, Empfehlungen)
+- Verwende einen freundlichen, sachlichen Ton
+- Ordne Messwerte und Befunde verständlich ein (Was ist normal? Was weicht ab?)
+- Der Patient soll verstehen: Was wurde gefunden? Was bedeutet das? Was passiert als nächstes?
+
+Antworte ausschließlich mit der Patienten-Erklärung als Fließtext (kein JSON, kein Markdown). Beginne direkt mit der Erklärung.
+
+Medizinischer Text:
 {text}`,
   },
 };
@@ -336,7 +357,7 @@ export default async function TaskPage({
                 </CardHeader>
                 <CardContent className="min-w-0">
                   <p className="mb-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
-                    {c.text}
+                    {"question" in c ? c.question : c.text}
                   </p>
                   <div className="flex min-w-0 flex-wrap gap-x-2 gap-y-1.5 text-xs text-muted-foreground">
                     {"diagnosen" in c &&
@@ -374,15 +395,20 @@ export default async function TaskPage({
                         </span>
                       </>
                     )}
-                    {"entities" in c && (
-                      <span className="tabular-nums">
-                        {c.entities.length} Entitäten
-                      </span>
-                    )}
                     {"medications" in c && (
                       <span className="tabular-nums">
                         {c.medications.length} Medikamente
                       </span>
+                    )}
+                    {"correct_answer" in c && "options" in c && (
+                      <>
+                        <span className="max-w-full truncate" title={c.schwierigkeitsgrad}>
+                          {c.schwierigkeitsgrad}
+                        </span>
+                        <span className="font-mono text-foreground/90">
+                          Antwort: {c.correct_answer}
+                        </span>
+                      </>
                     )}
                   </div>
                 </CardContent>

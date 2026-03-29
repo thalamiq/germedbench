@@ -75,8 +75,8 @@ def score_automated(
     correct_diagnosis: str,
 ) -> tuple[float, float, float]:
     """Return (top1_accuracy, top3_recall, ddx_overlap_f1)."""
-    pred_names = [d.get("name", "") for d in predicted_diagnoses]
-    gold_names = [d.get("name", "") for d in gold_diagnoses]
+    pred_names = [d.get("name", "") for d in (predicted_diagnoses or [])]
+    gold_names = [d.get("name", "") for d in (gold_diagnoses or [])]
 
     top1 = 1.0 if pred_names and names_match(pred_names[0], correct_diagnosis) else 0.0
 
@@ -140,9 +140,9 @@ def _to_score(
     dp = float(judge_scores["ddx_plausibility"])
     rf = float(judge_scores["red_flag_awareness"])
 
-    auto_normalized = (top1 * 5 + top3 * 5 + ddx_f1 * 5) / 3
+    auto_normalized = top1 * 5 * 0.5 + top3 * 5 * 0.3 + ddx_f1 * 5 * 0.2
     judge_avg = (rq + dp + rf) / 3
-    overall = 0.4 * auto_normalized + 0.6 * judge_avg
+    overall = 0.6 * auto_normalized + 0.4 * judge_avg
 
     return ClinicalReasoningScore(
         top1_accuracy=top1,

@@ -38,8 +38,9 @@ class Settings(BaseSettings):
     icd10_num_cases: int = 10
     summarization_num_cases: int = 10
     clinical_reasoning_num_cases: int = 10
-    ner_num_cases: int = 10
     med_extraction_num_cases: int = 10
+    med_qa_num_cases: int = 10
+    patient_text_num_cases: int = 10
 
     # Evaluation models
     eval_models: list[EvalModel] = [
@@ -92,12 +93,16 @@ class Settings(BaseSettings):
         return self.data_dir / "clinical_reasoning.jsonl"
 
     @property
-    def ner_output_file(self) -> Path:
-        return self.data_dir / "ner.jsonl"
-
-    @property
     def med_extraction_output_file(self) -> Path:
         return self.data_dir / "med_extraction.jsonl"
+
+    @property
+    def med_qa_output_file(self) -> Path:
+        return self.data_dir / "med_qa.jsonl"
+
+    @property
+    def patient_text_output_file(self) -> Path:
+        return self.data_dir / "patient_text.jsonl"
 
 
 FACHBEREICHE = [

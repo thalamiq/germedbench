@@ -1,15 +1,17 @@
 """Scoring functions for discharge letter summarization task.
 
 Uses LLM-as-Judge (Gemini) to evaluate generated summaries
-against a gold standard using a clinical rubric.
+against a gold standard using a strict clinical rubric with
+three dimensions: Faktentreue, Vollständigkeit, Klinische Präzision.
 """
 
 import json
 from dataclasses import dataclass
 
 JUDGE_PROMPT = """\
-Du bist ein erfahrener klinischer Qualitätsprüfer. Bewerte die folgende Zusammenfassung \
-eines Entlassbriefs anhand der vier Kriterien unten.
+Du bist ein strenger klinischer Qualitätsprüfer mit dem Auftrag, Zusammenfassungen \
+von Entlassbriefen kritisch zu bewerten. Dein Ziel ist es, echte Qualitätsunterschiede \
+aufzudecken — vergib hohe Punkte nur bei nachweislich exzellenter Leistung.
 
 ## Originaltext (Entlassbrief)
 {original_text}
@@ -28,32 +30,44 @@ Offene Fragen: {pred_offene_fragen}
 
 ## Bewertungskriterien (jeweils 1-5 Punkte)
 
-**Faktentreue** (1-5): Sind alle genannten Fakten korrekt und im Originaltext belegbar?
-- 5: Alle Fakten korrekt
-- 3: Einzelne Ungenauigkeiten
-- 1: Mehrere falsche Fakten
+Bewerte jede Dimension einzeln. Nutze die volle Skala — eine 5 ist nur bei \
+fehlerfreier, klinisch exzellenter Leistung gerechtfertigt. Jeder noch so kleine \
+Mangel muss sich im Score widerspiegeln.
 
-**Vollständigkeit** (1-5): Sind alle klinisch relevanten Informationen enthalten?
-- 5: Alle wichtigen Punkte abgedeckt
-- 3: Wesentliche Punkte fehlen
-- 1: Stark unvollständig
+### Faktentreue (1-5)
+Sind ALLE genannten Fakten korrekt und im Originaltext belegbar? \
+Halluzinierte oder erfundene Informationen zählen als schwere Fehler.
+- 5: Jede Aussage ist korrekt und im Original belegbar. Keine Halluzinationen.
+- 4: Alle wesentlichen Fakten korrekt, aber eine einzelne Ungenauigkeit (z.B. ungenaue Dosisangabe, leicht unpräziser Zeitverlauf).
+- 3: Überwiegend korrekt, aber 2-3 relevante Fehler oder eine einzelne Halluzination (Information, die nicht im Original steht).
+- 2: Mehrere Fehler oder Halluzinationen, die das klinische Bild verzerren.
+- 1: Grundlegende Fakten falsch oder umfangreiche Halluzinationen.
 
-**Halluzinationsfreiheit** (1-5): Enthält die Zusammenfassung Informationen, die nicht im Original stehen?
-- 5: Keine Halluzinationen
-- 3: Einzelne hinzugedichtete Details
-- 1: Umfangreiche Halluzinationen
+### Vollständigkeit (1-5)
+Sind alle klinisch relevanten Informationen aus dem Gold Standard enthalten? \
+Vergleiche Punkt für Punkt: Diagnosen, Therapiedetails, Medikamente mit Dosierungen, \
+Laborwerte, Befunde, Nachsorgetermine.
+- 5: Alle Kernpunkte des Gold Standards sind enthalten, inklusive spezifischer Werte (LVEF, Laborwerte, Dosierungen, Zeitangaben).
+- 4: Die meisten Kernpunkte sind enthalten, aber 1-2 klinisch relevante Details fehlen (z.B. eine Medikamentendosis, ein Laborwert, ein Nachsorgetermin).
+- 3: Die Hauptdiagnose und grobe Therapie sind korrekt, aber mehrere wichtige Details fehlen (Medikamentennamen ohne Dosis, fehlende Befunde, fehlende Nachsorge).
+- 2: Nur die oberflächliche Kernaussage ist erkennbar. Wesentliche Therapie- oder Befunddetails fehlen komplett.
+- 1: Stark unvollständig oder kaum Bezug zum Gold Standard.
 
-**Formatkonformität** (1-5): Entspricht die Zusammenfassung dem erwarteten strukturierten Format?
-- 5: Perfekt strukturiert, klinisch angemessener Stil
-- 3: Teilweise strukturiert, akzeptabler Stil
-- 1: Unstrukturiert oder unbrauchbar
+### Klinische Präzision (1-5)
+Ist die Zusammenfassung spezifisch und klinisch verwertbar? \
+Generische Formulierungen, die nichts Konkretes aussagen, werden bestraft. \
+Die Zusammenfassung muss einem übernehmenden Arzt konkret weiterhelfen.
+- 5: Durchgehend spezifisch — konkrete Medikamentennamen mit Dosen, quantitative Befunde (z.B. "LVEF 35%", "CRP 45 mg/l"), präzise Nachsorgeempfehlungen mit Zeitangaben.
+- 4: Überwiegend spezifisch, aber an 1-2 Stellen unnötig vage (z.B. "medikamentöse Therapie eingeleitet" statt konkrete Medikamente, "Labor kontrollieren" statt spezifische Parameter).
+- 3: Mischung aus spezifischen und generischen Aussagen. Mehrere Stellen, an denen konkrete Informationen aus dem Originaltext durch vage Formulierungen ersetzt wurden.
+- 2: Überwiegend generisch. Könnte auf viele verschiedene Patienten zutreffen. Kaum spezifische Werte oder Medikamente genannt.
+- 1: Vollständig generisch oder unbrauchbar für die klinische Weiterbehandlung.
 
 Antworte ausschließlich im folgenden JSON-Format:
 {{
   "faktentreue": <1-5>,
   "vollstaendigkeit": <1-5>,
-  "halluzinationsfreiheit": <1-5>,
-  "formatkonformitaet": <1-5>
+  "klinische_praezision": <1-5>
 }}
 """
 
@@ -62,8 +76,7 @@ Antworte ausschließlich im folgenden JSON-Format:
 class SummarizationScore:
     faktentreue: float
     vollstaendigkeit: float
-    halluzinationsfreiheit: float
-    formatkonformitaet: float
+    klinische_praezision: float
     overall: float
 
 
@@ -88,14 +101,12 @@ def _build_prompt(
 def _to_score(scores: dict) -> SummarizationScore:
     f = float(scores["faktentreue"])
     v = float(scores["vollstaendigkeit"])
-    h = float(scores["halluzinationsfreiheit"])
-    k = float(scores["formatkonformitaet"])
+    p = float(scores["klinische_praezision"])
     return SummarizationScore(
         faktentreue=f,
         vollstaendigkeit=v,
-        halluzinationsfreiheit=h,
-        formatkonformitaet=k,
-        overall=(f + v + h + k) / 4,
+        klinische_praezision=p,
+        overall=(f + v + p) / 3,
     )
 
 
@@ -121,5 +132,3 @@ def judge_summary_gemini(
     parsed = json.loads(response.text)
     scores = parsed[0] if isinstance(parsed, list) else parsed
     return _to_score(scores)
-
-

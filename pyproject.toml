@@ -18,3 +18,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/germedbench"]
+
+[dependency-groups]
+dev = [
+    "pymupdf>=1.27.2.2",
+]

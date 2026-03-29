@@ -41,7 +41,7 @@ export default function MethodikPage() {
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             Bestehende deutsche Datensätze (GGPONC, BRONCO, GraSCCo) wurden für
             die BERT-Ära entwickelt und evaluieren vorwiegend klassische
-            NLP-Tasks wie Named Entity Recognition. Generative klinische
+            NLP-Tasks wie Named Entity Recognition oder Negationserkennung. Generative klinische
             Fähigkeiten moderner LLMs wurden für Deutsch bisher nicht
             systematisch und öffentlich bewertet.
           </p>
@@ -71,12 +71,16 @@ export default function MethodikPage() {
               (200–400 Wörter)
             </li>
             <li>
-              — Entitätsextraktion: Klinische Textauszüge mit Diagnosen,
-              Prozeduren, Medikamenten und Laborwerten (200–400 Wörter)
-            </li>
-            <li>
               — Medikamentenextraktion: Texte mit Medikamentenlisten
               (150–300 Wörter)
+            </li>
+            <li>
+              — Medizinisches Wissen: IMPP-Stil MC-Fragen mit Fallvignette
+              (5 Antwortmöglichkeiten)
+            </li>
+            <li>
+              — Patientenverständliche Erklärung: Medizinische Fachtexte
+              (Befundberichte, Histopathologie, Laborbefunde, 100–250 Wörter)
             </li>
           </ul>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -145,67 +149,6 @@ export default function MethodikPage() {
                     — Ob das Modell die korrekte Hauptdiagnose identifiziert.
                     Klinisch besonders relevant, da die Hauptdiagnose
                     abrechnungsrelevant ist.
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-2">
-                <div className="flex items-center gap-2">
-                  <CardTitle className="text-base">
-                    Klinische Entitätsextraktion
-                  </CardTitle>
-                  <Badge variant="default" className="text-xs">
-                    Aktiv
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm text-muted-foreground space-y-3">
-                <p>
-                  <span className="font-medium text-foreground">Aufgabe:</span>{" "}
-                  Das Modell erhält einen Auszug aus einem Entlassbrief und soll
-                  alle klinischen Entitäten erkennen und klassifizieren:
-                  Diagnosen (mit ICD-10-GM), Prozeduren (mit OPS), Medikamente
-                  (Wirkstoff, Dosierung) und Laborwerte (Parameter, Wert, Einheit).
-                </p>
-                <p>
-                  <span className="font-medium text-foreground">
-                    Evaluation:
-                  </span>{" "}
-                  Vollautomatisch, kein LLM-as-Judge erforderlich. Fünf Metriken:
-                </p>
-                <ul className="space-y-1.5 pl-1">
-                  <li>
-                    <span className="font-medium text-foreground">
-                      Micro F1
-                    </span>{" "}
-                    — Micro-gemittelter F1-Score über alle Entitätstypen.
-                    Primäre Leaderboard-Metrik.
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">
-                      Diagnose F1
-                    </span>{" "}
-                    — F1 für Diagnose-Entitäten (Name + ICD-10-GM Code).
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">
-                      Prozedur F1
-                    </span>{" "}
-                    — F1 für Prozedur-Entitäten (Name + OPS Code).
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">
-                      Medikament F1
-                    </span>{" "}
-                    — F1 für Medikamenten-Entitäten (Wirkstoff, Dosierung).
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">
-                      Laborwert F1
-                    </span>{" "}
-                    — F1 für Laborwert-Entitäten (Parameter, Wert, Einheit).
                   </li>
                 </ul>
               </CardContent>
@@ -335,6 +278,96 @@ export default function MethodikPage() {
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-2">
                   <CardTitle className="text-base">
+                    Medizinisches Wissen
+                  </CardTitle>
+                  <Badge variant="default" className="text-xs">
+                    Aktiv
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-3">
+                <p>
+                  <span className="font-medium text-foreground">Aufgabe:</span>{" "}
+                  Das Modell erhält eine klinische Multiple-Choice-Frage im Stil
+                  des IMPP M2 Staatsexamens (Zweiter Abschnitt der Ärztlichen
+                  Prüfung). Jede Frage enthält eine kurze Fallvignette und fünf
+                  Antwortmöglichkeiten (A–E), von denen genau eine korrekt ist.
+                </p>
+                <p>
+                  <span className="font-medium text-foreground">
+                    Evaluation:
+                  </span>{" "}
+                  Vollautomatisch, kein LLM-as-Judge erforderlich. Eine Metrik:
+                </p>
+                <ul className="space-y-1.5 pl-1">
+                  <li>
+                    <span className="font-medium text-foreground">
+                      Accuracy
+                    </span>{" "}
+                    — Anteil korrekt beantworteter Fragen. Misst klinisches
+                    Fachwissen über Diagnostik, Therapie, Pharmakologie und
+                    Pathophysiologie auf Staatsexamen-Niveau.
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-2">
+                  <CardTitle className="text-base">
+                    Patientenverständliche Erklärung
+                  </CardTitle>
+                  <Badge variant="default" className="text-xs">
+                    Aktiv
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-3">
+                <p>
+                  <span className="font-medium text-foreground">Aufgabe:</span>{" "}
+                  Das Modell erhält einen komplexen medizinischen Fachtext
+                  (Befundbericht, Laborbefund, Histopathologie, OP-Bericht) und
+                  soll diesen so erklären, dass ein Patient ohne medizinische
+                  Vorkenntnisse alles versteht.
+                </p>
+                <p>
+                  <span className="font-medium text-foreground">
+                    Evaluation:
+                  </span>{" "}
+                  LLM-as-Judge (<code className="text-xs">gemini-3.1-pro-preview</code>) bewertet
+                  jede Erklärung anhand einer strengen Rubrik mit drei
+                  Dimensionen (je 1–5):
+                </p>
+                <ul className="space-y-1.5 pl-1">
+                  <li>
+                    <span className="font-medium text-foreground">
+                      Verständlichkeit
+                    </span>{" "}
+                    — Ist der Text für einen Laien ohne Vorkenntnisse verständlich?
+                    Jeder unerklärte Fachbegriff ist ein Fehler.
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">
+                      Medizinische Korrektheit
+                    </span>{" "}
+                    — Sind alle medizinischen Sachverhalte korrekt vereinfacht?
+                    Keine irreführenden Vereinfachungen.
+                  </li>
+                  <li>
+                    <span className="font-medium text-foreground">
+                      Vollständigkeit
+                    </span>{" "}
+                    — Sind alle klinisch relevanten Informationen kommuniziert?
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-2">
+                  <CardTitle className="text-base">
                     Arztbrief-Zusammenfassung
                   </CardTitle>
                   <Badge variant="default" className="text-xs">
@@ -354,8 +387,8 @@ export default function MethodikPage() {
                     Evaluation:
                   </span>{" "}
                   LLM-as-Judge (<code className="text-xs">gemini-3.1-pro-preview</code>) bewertet
-                  jede Zusammenfassung anhand einer klinischen Rubrik mit vier
-                  Dimensionen (je 1–5):
+                  jede Zusammenfassung anhand einer strengen klinischen Rubrik mit drei
+                  Dimensionen (je 1–5, alle Ankerpunkte definiert):
                 </p>
                 <ul className="space-y-1.5 pl-1">
                   <li>
@@ -363,24 +396,21 @@ export default function MethodikPage() {
                       Faktentreue
                     </span>{" "}
                     — Sind alle genannten Fakten korrekt und im Original belegbar?
+                    Halluzinationen zählen als schwere Fehler.
                   </li>
                   <li>
                     <span className="font-medium text-foreground">
                       Vollständigkeit
                     </span>{" "}
-                    — Sind alle klinisch relevanten Informationen enthalten?
+                    — Sind alle klinisch relevanten Informationen aus dem
+                    Gold Standard enthalten? Punkt-für-Punkt-Vergleich.
                   </li>
                   <li>
                     <span className="font-medium text-foreground">
-                      Halluzinationsfreiheit
+                      Klinische Präzision
                     </span>{" "}
-                    — Enthält die Zusammenfassung keine erfundenen Informationen?
-                  </li>
-                  <li>
-                    <span className="font-medium text-foreground">
-                      Formatkonformität
-                    </span>{" "}
-                    — Entspricht die Zusammenfassung dem erwarteten Format?
+                    — Ist die Zusammenfassung spezifisch und klinisch verwertbar?
+                    Generische Formulierungen werden bestraft.
                   </li>
                 </ul>
               </CardContent>

@@ -16,8 +16,9 @@ PRIMARY_METRICS: dict[str, str] = {
     "icd10_coding": "exact_match_f1",
     "summarization": "overall_score",
     "clinical_reasoning": "overall_score",
-    "ner": "micro_f1",
-    "med_extraction": "wirkstoff_f1",
+    "med_extraction": "exact_f1",
+    "med_qa": "accuracy",
+    "patient_text": "overall_score",
 }
 
 # Provider -> (api_key_attr, base_url_attr)
@@ -198,7 +199,7 @@ def _sort_key(entry: dict) -> float:
     metric = PRIMARY_METRICS.get(task, "")
     if metric:
         return entry.get(metric, 0)
-    for key in ("overall_score", "exact_match_f1", "micro_f1", "wirkstoff_f1"):
+    for key in ("overall_score", "exact_match_f1", "exact_f1", "micro_f1", "wirkstoff_f1"):
         if key in entry:
             return entry[key]
     return 0
