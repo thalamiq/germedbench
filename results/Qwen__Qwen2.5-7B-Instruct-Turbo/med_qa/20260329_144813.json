@@ -1,0 +1,603 @@
+{
+  "summary": {
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "task": "med_qa",
+    "timestamp": "20260329_144813",
+    "n_cases": 49,
+    "n_scored": 49,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "accuracy": 0.8163265306122449,
+    "n_correct": 40
+  },
+  "predictions": [
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Symptome, insbesondere der retrosternalen Druckschmerzen, der Ausstrahlung in den linken Arm und den Unterkiefer, der Kaltschweißigkeit und Übelkeit, sowie die ST-Strecken-Hebungen in den Ableitungen II, III und aVF, sind klinisch typisch für einen ST-Hebungsinfarkt (STEMI) der Hinterwand.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Symptome, insbesondere der retrosternalen Druckschmerzen, der Ausstrahlung in den linken Arm und den Unterkiefer, der Kaltschweißigkeit und Übelkeit, sowie die ST-Strecken-Hebungen in den Ableitungen II, III und aVF, sind klinisch typisch für einen ST-Hebungsinfarkt (STEMI) der Hinterwand.\"\n}",
+      "prompt_length": 991,
+      "response_length": 349,
+      "usage": {
+        "prompt_tokens": 339,
+        "completion_tokens": 114
+      },
+      "case_id": "qa_001"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die klinischen Symptome wie obere Einflussstauung, Kussmaul-Zeichen und perikardialer 'Knock' sowie die respiratorische Variabilität des Mitraleinstromprofils in der Echokardiographie sind typisch für Pericarditis constrictiva.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die klinischen Symptome wie obere Einflussstauung, Kussmaul-Zeichen und perikardialer 'Knock' sowie die respiratorische Variabilität des Mitraleinstromprofils in der Echokardiographie sind typisch für Pericarditis constrictiva.\"\n}",
+      "prompt_length": 1276,
+      "response_length": 265,
+      "usage": {
+        "prompt_tokens": 411,
+        "completion_tokens": 85
+      },
+      "case_id": "qa_002"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Mosaik-Muster auf der HR-CT und die Lymphozytenfraktion von 55 % in der BAL sind klinische Merkmale der Sarkoidose Typ II. Zudem sind die intermittierenden grippeähnlichen Symptome und die inspiratorischen Rasselgeräusche typisch für diese Erkrankung.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Mosaik-Muster auf der HR-CT und die Lymphozytenfraktion von 55 % in der BAL sind klinische Merkmale der Sarkoidose Typ II. Zudem sind die intermittierenden grippeähnlichen Symptome und die inspiratorischen Rasselgeräusche typisch für diese Erkrankung.\"\n}",
+      "prompt_length": 1174,
+      "response_length": 293,
+      "usage": {
+        "prompt_tokens": 412,
+        "completion_tokens": 92
+      },
+      "case_id": "qa_003"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Symptome, insbesondere der Zittern in Ruhe, verminderte Mimik und Bradykinese, deutet auf Idiopathisches Parkinson-Syndrom hin. Die wächserne Stabilität des Widerstands bei passiven Bewegungen der Arme ist ein charakteristisches Merkmal des Parkinson-Syndroms.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Symptome, insbesondere der Zittern in Ruhe, verminderte Mimik und Bradykinese, deutet auf Idiopathisches Parkinson-Syndrom hin. Die wächserne Stabilität des Widerstands bei passiven Bewegungen der Arme ist ein charakteristisches Merkmal des Parkinson-Syndroms.\"\n}",
+      "prompt_length": 1064,
+      "response_length": 319,
+      "usage": {
+        "prompt_tokens": 344,
+        "completion_tokens": 97
+      },
+      "case_id": "qa_004"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die erhöhte Gamma-GT und die Xanthelasmen sind typisch für eine Lebererkrankung, insbesondere für eine Mikrozytäre Cholangiopathie, bei der antimitochondriale Antikörper (AMA-M2) häufig vorkommen.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die erhöhte Gamma-GT und die Xanthelasmen sind typisch für eine Lebererkrankung, insbesondere für eine Mikrozytäre Cholangiopathie, bei der antimitochondriale Antikörper (AMA-M2) häufig vorkommen.\"\n}",
+      "prompt_length": 1437,
+      "response_length": 234,
+      "usage": {
+        "prompt_tokens": 460,
+        "completion_tokens": 77
+      },
+      "case_id": "qa_005"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die B-Symptomatik, der Gewichtsverlust, die Schmerzen im rechten Flankenbereich und die inhomogene Raumforderung am oberen Nierenpol rechts sind typisch für das Stauffer-Syndrom, das oft bei Nierenzellkarzinomen auftritt und eine paraneoplastische Reaktion darstellt, die zu erhöhten Leberwerten führen kann.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die B-Symptomatik, der Gewichtsverlust, die Schmerzen im rechten Flankenbereich und die inhomogene Raumforderung am oberen Nierenpol rechts sind typisch für das Stauffer-Syndrom, das oft bei Nierenzellkarzinomen auftritt und eine paraneoplastische Reaktion darstellt, die zu erhöhten Leberwerten führen kann.\"\n}",
+      "prompt_length": 1478,
+      "response_length": 346,
+      "usage": {
+        "prompt_tokens": 466,
+        "completion_tokens": 108
+      },
+      "case_id": "qa_006"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Schmerzen, insbesondere der Anlaufschmerz und die eingeschränkte Bewegung im rechten Hüftgelenk, deutet auf eine Bursitis trochanterica hin. Entzündungsparameter sind im Normbereich, was eine akute entzündliche Ursache ausschließt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Schmerzen, insbesondere der Anlaufschmerz und die eingeschränkte Bewegung im rechten Hüftgelenk, deutet auf eine Bursitis trochanterica hin. Entzündungsparameter sind im Normbereich, was eine akute entzündliche Ursache ausschließt.\"\n}",
+      "prompt_length": 902,
+      "response_length": 290,
+      "usage": {
+        "prompt_tokens": 309,
+        "completion_tokens": 91
+      },
+      "case_id": "qa_007"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Halluzinationen, die Schwankungen der Aufmerksamkeit und Wachheit, die Verlangsamung sowie das beidseitige, zahnradartige Rigor der Extremitäten sind klinische Merkmale der Lewy-Body-Demenz. Die Verschlechterung der motorischen Symptomatik nach Verabreichung eines niederpotenten Neuroleptikums ist typisch für diese Erkrankung.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Halluzinationen, die Schwankungen der Aufmerksamkeit und Wachheit, die Verlangsamung sowie das beidseitige, zahnradartige Rigor der Extremitäten sind klinische Merkmale der Lewy-Body-Demenz. Die Verschlechterung der motorischen Symptomatik nach Verabreichung eines niederpotenten Neuroleptikums ist typisch für diese Erkrankung.\"\n}",
+      "prompt_length": 1291,
+      "response_length": 370,
+      "usage": {
+        "prompt_tokens": 412,
+        "completion_tokens": 117
+      },
+      "case_id": "qa_008"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Der fT4 ist deutlich erhöht, während TSH supprimiert ist, was auf eine Toxizität der Schilddrüse hinweist. Die sonographische Befundung einer Raumforderung im Bereich der rechten Adnexe sowie die geringfügig freie Flüssigkeit im Douglas-Raum sind klinisch typisch für einen Granulosazelltumor, der häufig mit einer Toxizität der Schilddrüse einhergeht.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Der fT4 ist deutlich erhöht, während TSH supprimiert ist, was auf eine Toxizität der Schilddrüse hinweist. Die sonographische Befundung einer Raumforderung im Bereich der rechten Adnexe sowie die geringfügig freie Flüssigkeit im Douglas-Raum sind klinisch typisch für einen Granulosazelltumor, der häufig mit einer Toxizität der Schilddrüse einhergeht.\"\n}",
+      "prompt_length": 1216,
+      "response_length": 390,
+      "usage": {
+        "prompt_tokens": 412,
+        "completion_tokens": 121
+      },
+      "case_id": "qa_009"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Der Patient zeigt Symptome wie Fieber, Husten mit gelblich-grünlichem Auswurf, atemabhängige Schmerzen und feinblasige Rasselgeräusche, die typisch für eine ambulant erworbene Pneumonie sind. Die Klopfschalldämpfung und die Tachypnoe unterstützen diese Diagnose.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Der Patient zeigt Symptome wie Fieber, Husten mit gelblich-grünlichem Auswurf, atemabhängige Schmerzen und feinblasige Rasselgeräusche, die typisch für eine ambulant erworbene Pneumonie sind. Die Klopfschalldämpfung und die Tachypnoe unterstützen diese Diagnose.\"\n}",
+      "prompt_length": 1024,
+      "response_length": 300,
+      "usage": {
+        "prompt_tokens": 359,
+        "completion_tokens": 97
+      },
+      "case_id": "qa_010"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Das klinische Bild mit progredienter Belastungsdyspnoe, kaltinduziertem Weißwerden der Finger, schmerzhafte Verhornungen und Risse an den Zeigefingern sowie eine restriktive Ventilationsstörung mit reduzierter Diffusionskapazität (DLCO) ist typisch für die Mikroangiopathie des Sjögrens-Syndroms, bei dem Anti-Jo-1-Antikörper häufig vorkommen.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Das klinische Bild mit progredienter Belastungsdyspnoe, kaltinduziertem Weißwerden der Finger, schmerzhafte Verhornungen und Risse an den Zeigefingern sowie eine restriktive Ventilationsstörung mit reduzierter Diffusionskapazität (DLCO) ist typisch für die Mikroangiopathie des Sjögrens-Syndroms, bei dem Anti-Jo-1-Antikörper häufig vorkommen.\"\n}",
+      "prompt_length": 1169,
+      "response_length": 381,
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 127
+      },
+      "case_id": "qa_011"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Symptome, einschließlich Zitterns, verminderten Mimik, verlangsamten Gang und Zahnradphänomen, ist typisch für das Idiopathische Parkinson-Syndrom.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Symptome, einschließlich Zitterns, verminderten Mimik, verlangsamten Gang und Zahnradphänomen, ist typisch für das Idiopathische Parkinson-Syndrom.\"\n}",
+      "prompt_length": 1134,
+      "response_length": 206,
+      "usage": {
+        "prompt_tokens": 375,
+        "completion_tokens": 65
+      },
+      "case_id": "qa_012"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die klinischen Symptome, die labortypischen Merkmale (hochgradig erhöhte cholestatische Leberwerte und erhöhtes CA 19-9) sowie die Bildgebung (diffuse, ödematöse Schwellung des Pankreaskopfes und Wandverdickung des distalen Ductus choledochus) sind typisch für Primär sklerosierende Cholangitis (PSC). Die erhöhte IgG4-Fraktion unterstützt diese Diagnose, da PSC oft mit einer erhöhten IgG4-Fraktion verbunden ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die klinischen Symptome, die labortypischen Merkmale (hochgradig erhöhte cholestatische Leberwerte und erhöhtes CA 19-9) sowie die Bildgebung (diffuse, ödematöse Schwellung des Pankreaskopfes und Wandverdickung des distalen Ductus choledochus) sind typisch für Primär sklerosierende Cholangitis (PSC). Die erhöhte IgG4-Fraktion unterstützt diese Diagnose, da PSC oft mit einer erhöhten IgG4-Fraktion verbunden ist.\"\n}",
+      "prompt_length": 1242,
+      "response_length": 452,
+      "usage": {
+        "prompt_tokens": 439,
+        "completion_tokens": 154
+      },
+      "case_id": "qa_013"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die erhöhte 5-HIES und die holosystolische Geräuschgebung mit Punctum maximum sind klinische Hinweise auf eine Zyanidpufferkrankung, die sich durch eingeschränkte Trikuspidalklappe ausprägt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die erhöhte 5-HIES und die holosystolische Geräuschgebung mit Punctum maximum sind klinische Hinweise auf eine Zyanidpufferkrankung, die sich durch eingeschränkte Trikuspidalklappe ausprägt.\"\n}",
+      "prompt_length": 1537,
+      "response_length": 228,
+      "usage": {
+        "prompt_tokens": 498,
+        "completion_tokens": 76
+      },
+      "case_id": "qa_014"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Schmerzen, insbesondere der Anlaufschmerz und die eingeschränkte Innenrotation, deutet auf eine Degenerierungsveränderung hin, die Koxarthrose typisch ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Schmerzen, insbesondere der Anlaufschmerz und die eingeschränkte Innenrotation, deutet auf eine Degenerierungsveränderung hin, die Koxarthrose typisch ist.\"\n}",
+      "prompt_length": 976,
+      "response_length": 214,
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 66
+      },
+      "case_id": "qa_015"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Patientin zeigt Symptome einer depressiven Episode, wie Erschöpfung, Interessenverlust, Gewichtsverlust, Antriebslosigkeit und negative Gedanken, was eine Depressive Episode mit somatischem Syndrom vermuten lässt. Die diffusen Rückenschmerzen und die psychomotorische Hemmung unterstützen diese Diagnose.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Patientin zeigt Symptome einer depressiven Episode, wie Erschöpfung, Interessenverlust, Gewichtsverlust, Antriebslosigkeit und negative Gedanken, was eine Depressive Episode mit somatischem Syndrom vermuten lässt. Die diffusen Rückenschmerzen und die psychomotorische Hemmung unterstützen diese Diagnose.\"\n}",
+      "prompt_length": 1227,
+      "response_length": 346,
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 96
+      },
+      "case_id": "qa_016"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die histologische Aufarbeitung der Stanzbiopsie zeigt intraepidermale, großleibige, PAS-positive Zellen mit prominenten Nucleolen, was typisch für Extramammäres Morbus Paget (EMPD) ist. Die klinischen Symptome und die chronische Natur des Pruritus sind auch mit dieser Diagnose verträglich.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die histologische Aufarbeitung der Stanzbiopsie zeigt intraepidermale, großleibige, PAS-positive Zellen mit prominenten Nucleolen, was typisch für Extramammäres Morbus Paget (EMPD) ist. Die klinischen Symptome und die chronische Natur des Pruritus sind auch mit dieser Diagnose verträglich.\"\n}",
+      "prompt_length": 1252,
+      "response_length": 328,
+      "usage": {
+        "prompt_tokens": 413,
+        "completion_tokens": 97
+      },
+      "case_id": "qa_017"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome wie Fieber, Schüttelfrost, produktiver Husten mit rostbraunem Sputum, atemabhängige Schmerzen und feinblasige Rasselgeräusche sind typisch für eine ambulant erworbene Pneumonie. Die Leukozytose und das erhöhte CRP bestätigen die entzündliche Reaktion, die bei Pneumonie vorliegt.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome wie Fieber, Schüttelfrost, produktiver Husten mit rostbraunem Sputum, atemabhängige Schmerzen und feinblasige Rasselgeräusche sind typisch für eine ambulant erworbene Pneumonie. Die Leukozytose und das erhöhte CRP bestätigen die entzündliche Reaktion, die bei Pneumonie vorliegt.\"\n}",
+      "prompt_length": 1057,
+      "response_length": 330,
+      "usage": {
+        "prompt_tokens": 361,
+        "completion_tokens": 113
+      },
+      "case_id": "qa_018"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Beschreibung der Schmerzen, die verstärkt werden im Liegen und beim tiefen Einatmen und sich bei Vornüberbeugen bessern, ist typisch für akute Perimyokarditis. Zusätzlich das schabende Geräusch über der Herzbasis (Perikarditis) und die erhöhten Labewerte (CRP, Troponin T) unterstützen diese Diagnose.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Beschreibung der Schmerzen, die verstärkt werden im Liegen und beim tiefen Einatmen und sich bei Vornüberbeugen bessern, ist typisch für akute Perimyokarditis. Zusätzlich das schabende Geräusch über der Herzbasis (Perikarditis) und die erhöhten Labewerte (CRP, Troponin T) unterstützen diese Diagnose.\"\n}",
+      "prompt_length": 1202,
+      "response_length": 343,
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 109
+      },
+      "case_id": "qa_019"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die klinischen Symptome, insbesondere die progrediente Dyspnoe, Gewichtsverlust, nächtliche Schweißausbrüche, einschießende Schmerzen, Fußheberparese, periphere Eosinophilie, erhöhtes CRP und die hämorrhagischen Hauteffloreszenzen sind typisch für Eosinophile Granulomatose mit Polyangiitis (EGPA).",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die klinischen Symptome, insbesondere die progrediente Dyspnoe, Gewichtsverlust, nächtliche Schweißausbrüche, einschießende Schmerzen, Fußheberparese, periphere Eosinophilie, erhöhtes CRP und die hämorrhagischen Hauteffloreszenzen sind typisch für Eosinophile Granulomatose mit Polyangiitis (EGPA).\"\n}",
+      "prompt_length": 1244,
+      "response_length": 336,
+      "usage": {
+        "prompt_tokens": 420,
+        "completion_tokens": 117
+      },
+      "case_id": "qa_020"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome, insbesondere das Zittern in Ruhe, die vornübergeneigte Gangart und die Hypomimie, sind typisch für das Idiopathische Parkinson-Syndrom.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome, insbesondere das Zittern in Ruhe, die vornübergeneigte Gangart und die Hypomimie, sind typisch für das Idiopathische Parkinson-Syndrom.\"\n}",
+      "prompt_length": 985,
+      "response_length": 187,
+      "usage": {
+        "prompt_tokens": 329,
+        "completion_tokens": 63
+      },
+      "case_id": "qa_021"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Hypergammaglobulinämie, die ANA und ASMA-Positivität sowie die zunehmende Müdigkeit und Schmerzen in den kleinen Fingergelenken deuten auf eine Autoimmunhepatitis (AIH) Typ 1 hin. Diese Kombination von Symptomen und Laborergebnissen ist typisch für AIH.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Hypergammaglobulinämie, die ANA und ASMA-Positivität sowie die zunehmende Müdigkeit und Schmerzen in den kleinen Fingergelenken deuten auf eine Autoimmunhepatitis (AIH) Typ 1 hin. Diese Kombination von Symptomen und Laborergebnissen ist typisch für AIH.\"\n}",
+      "prompt_length": 1365,
+      "response_length": 295,
+      "usage": {
+        "prompt_tokens": 463,
+        "completion_tokens": 97
+      },
+      "case_id": "qa_022"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Symptome und der neurologischen Untersuchung erinnert an Lambert-Eaton-Myasthenic-Syndrom (LEMS), bei dem Antikörper gegen präsynaptische spannungsgesteuerte Calciumkanäle (VGCC) häufig gefunden werden.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Symptome und der neurologischen Untersuchung erinnert an Lambert-Eaton-Myasthenic-Syndrom (LEMS), bei dem Antikörper gegen präsynaptische spannungsgesteuerte Calciumkanäle (VGCC) häufig gefunden werden.\"\n}",
+      "prompt_length": 1324,
+      "response_length": 261,
+      "usage": {
+        "prompt_tokens": 424,
+        "completion_tokens": 80
+      },
+      "case_id": "qa_023"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der belastungsabhängigen Schmerzen, der Anlaufschmerzen und die eingeschränkte Innenrotation im rechten Hüftgelenk sind klinische Merkmale der Hüftkopfnekrose. Die normale Entzündungsparameter bestätigen, dass es sich nicht um eine akute Entzündung handelt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der belastungsabhängigen Schmerzen, der Anlaufschmerzen und die eingeschränkte Innenrotation im rechten Hüftgelenk sind klinische Merkmale der Hüftkopfnekrose. Die normale Entzündungsparameter bestätigen, dass es sich nicht um eine akute Entzündung handelt.\"\n}",
+      "prompt_length": 1093,
+      "response_length": 312,
+      "usage": {
+        "prompt_tokens": 350,
+        "completion_tokens": 95
+      },
+      "case_id": "qa_024"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Beschreibung der tagesformabhängigen Symptome, Halluzinationen, Bradykinese und die Reaktion auf Haloperidol sind klinisch typisch für eine Lewy-Body-Demenz.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Beschreibung der tagesformabhängigen Symptome, Halluzinationen, Bradykinese und die Reaktion auf Haloperidol sind klinisch typisch für eine Lewy-Body-Demenz.\"\n}",
+      "prompt_length": 1338,
+      "response_length": 199,
+      "usage": {
+        "prompt_tokens": 437,
+        "completion_tokens": 62
+      },
+      "case_id": "qa_025"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Da die Biopsie eine intraepidermale, nicht-invasiv verlaufende Erkrankung zeigt, die sich in der PAS-Reaktion positiv darstellt, ist eine Koloskopie und Zystoskopie zur Ausschlussdiagnose von assoziierten Malignomen indiziert, da Lichen sclerosus eine bekannte Prädisposition für maligne Veränderungen darstellt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Da die Biopsie eine intraepidermale, nicht-invasiv verlaufende Erkrankung zeigt, die sich in der PAS-Reaktion positiv darstellt, ist eine Koloskopie und Zystoskopie zur Ausschlussdiagnose von assoziierten Malignomen indiziert, da Lichen sclerosus eine bekannte Prädisposition für maligne Veränderungen darstellt.\"\n}",
+      "prompt_length": 1577,
+      "response_length": 350,
+      "usage": {
+        "prompt_tokens": 491,
+        "completion_tokens": 106
+      },
+      "case_id": "qa_026"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome, insbesondere der retrosternalen Schmerz, die ausstrahlung in die linke Schulter und den Unterkiefer, Atemnot und Kaltschweißigkeit, sind typisch für akutes Koronarsyndrom, insbesondere einen Myokardinfarkt. Die bekannten Prädispositionen Diabetes mellitus Typ 2 und arterielle Hypertonie unterstützen diese Diagnose.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome, insbesondere der retrosternalen Schmerz, die ausstrahlung in die linke Schulter und den Unterkiefer, Atemnot und Kaltschweißigkeit, sind typisch für akutes Koronarsyndrom, insbesondere einen Myokardinfarkt. Die bekannten Prädispositionen Diabetes mellitus Typ 2 und arterielle Hypertonie unterstützen diese Diagnose.\"\n}",
+      "prompt_length": 962,
+      "response_length": 368,
+      "usage": {
+        "prompt_tokens": 329,
+        "completion_tokens": 112
+      },
+      "case_id": "qa_027"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kussmaul-Zeichen, der Perikardton, die gestauten Halsvenen und die normale systolische Ejektionsfraktion mit diastolischem Füllungsbehinderung sowie gestauter Vena cava inferior ohne respiratorische Variabilität sind klinische Hinweise auf Pericarditis constrictiva. Diese Diagnose ist auch mit einer früheren Strahlentherapie des Mediastinums verträglich.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kussmaul-Zeichen, der Perikardton, die gestauten Halsvenen und die normale systolische Ejektionsfraktion mit diastolischem Füllungsbehinderung sowie gestauter Vena cava inferior ohne respiratorische Variabilität sind klinische Hinweise auf Pericarditis constrictiva. Diese Diagnose ist auch mit einer früheren Strahlentherapie des Mediastinums verträglich.\"\n}",
+      "prompt_length": 1371,
+      "response_length": 398,
+      "usage": {
+        "prompt_tokens": 442,
+        "completion_tokens": 120
+      },
+      "case_id": "qa_028"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die periphere Eosinophilie von 28 % und der moderat erhöhte CRP sowie BSG deuten auf eine chronisch-eosinophile Pneumonie hin. Die bekannten Prädispositionserkrankungen Asthma bronchiale und chronische Polyposis nasi sowie das neu aufgetretene Kribbeln und Schwäche im linken Fuß sind auch konsistent mit dieser Diagnose.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die periphere Eosinophilie von 28 % und der moderat erhöhte CRP sowie BSG deuten auf eine chronisch-eosinophile Pneumonie hin. Die bekannten Prädispositionserkrankungen Asthma bronchiale und chronische Polyposis nasi sowie das neu aufgetretene Kribbeln und Schwäche im linken Fuß sind auch konsistent mit dieser Diagnose.\"\n}",
+      "prompt_length": 1287,
+      "response_length": 359,
+      "usage": {
+        "prompt_tokens": 432,
+        "completion_tokens": 111
+      },
+      "case_id": "qa_029"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Beschreibung der Symptome, insbesondere der Zittern der rechten Hand, der verminderten Mitschwingbewegung, der Bradykinese und des Zahnradphänomens, ist typisch für das Idiopathische Parkinson-Syndrom.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Beschreibung der Symptome, insbesondere der Zittern der rechten Hand, der verminderten Mitschwingbewegung, der Bradykinese und des Zahnradphänomens, ist typisch für das Idiopathische Parkinson-Syndrom.\"\n}",
+      "prompt_length": 1057,
+      "response_length": 243,
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 75
+      },
+      "case_id": "qa_030"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Symptome und der Mangel einer mechanischen Stenose oder eines Malignoms deutet auf eine Spastische Dysphagie hin, bei der vorzeitige, spastische Kontraktionen mit einer Distal Latency (DL) < 4,5 s typisch sind.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Symptome und der Mangel einer mechanischen Stenose oder eines Malignoms deutet auf eine Spastische Dysphagie hin, bei der vorzeitige, spastische Kontraktionen mit einer Distal Latency (DL) < 4,5 s typisch sind.\"\n}",
+      "prompt_length": 1618,
+      "response_length": 269,
+      "usage": {
+        "prompt_tokens": 538,
+        "completion_tokens": 83
+      },
+      "case_id": "qa_031"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Symptome und die Ergebnisse der Untersuchung weisen auf eine Myasthenia gravis hin, insbesondere die Post-Exercise-Facilitation. Die Bestimmung von Antikörpern gegen spannungsgesteuerte Calciumkanäle (VGCC-AK) ist ein wichtiger Schritt in der Diagnosebestimmung. Zudem ist eine CT-Thorax nützlich, um nach einem Tumor zu suchen, der zu paraneoplastischer Polymyositis führen könnte.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Symptome und die Ergebnisse der Untersuchung weisen auf eine Myasthenia gravis hin, insbesondere die Post-Exercise-Facilitation. Die Bestimmung von Antikörpern gegen spannungsgesteuerte Calciumkanäle (VGCC-AK) ist ein wichtiger Schritt in der Diagnosebestimmung. Zudem ist eine CT-Thorax nützlich, um nach einem Tumor zu suchen, der zu paraneoplastischer Polymyositis führen könnte.\"\n}",
+      "prompt_length": 1563,
+      "response_length": 441,
+      "usage": {
+        "prompt_tokens": 499,
+        "completion_tokens": 131
+      },
+      "case_id": "qa_032"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Beschreibung der belastungsabhängigen Schmerzen, der eingeschränkten Bewegungsfähigkeit im Hüftgelenk und der Anlaufschmerzen ist typisch für Koxarthrose. Die normwerten Entzündungsparameter und der unauffällige neurologische Status sprechen ebenfalls dafür, dass es sich um eine destruktive Erkrankung handelt, die nicht entzündlich ist.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Beschreibung der belastungsabhängigen Schmerzen, der eingeschränkten Bewegungsfähigkeit im Hüftgelenk und der Anlaufschmerzen ist typisch für Koxarthrose. Die normwerten Entzündungsparameter und der unauffällige neurologische Status sprechen ebenfalls dafür, dass es sich um eine destruktive Erkrankung handelt, die nicht entzündlich ist.\"\n}",
+      "prompt_length": 1053,
+      "response_length": 380,
+      "usage": {
+        "prompt_tokens": 341,
+        "completion_tokens": 112
+      },
+      "case_id": "qa_033"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome wie visuelle Halluzinationen, Ruhetremor, kleinschrittiges Gangbild und Bewegungen und Schreie während der Traumschlafphasen sind typisch für die Lewy-Body-Demenz.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome wie visuelle Halluzinationen, Ruhetremor, kleinschrittiges Gangbild und Bewegungen und Schreie während der Traumschlafphasen sind typisch für die Lewy-Body-Demenz.\"\n}",
+      "prompt_length": 1214,
+      "response_length": 214,
+      "usage": {
+        "prompt_tokens": 388,
+        "completion_tokens": 70
+      },
+      "case_id": "qa_034"
+    },
+    {
+      "answer": "E",
+      "reasoning": "Die klinischen Symptome, insbesondere die rechtsseitigen Unterbauchschmerzen, die walzenförmige Resistenz und die Tendenz, bis in die Flanken zu reichen, sind typisch für einen Tuboovarialabszess. Diese Diagnose ist auch mit dem fehlgeschlagenen Antibiotikatherapieversuch einvernehmlich.",
+      "raw": "{\n  \"answer\": \"E\",\n  \"reasoning\": \"Die klinischen Symptome, insbesondere die rechtsseitigen Unterbauchschmerzen, die walzenförmige Resistenz und die Tendenz, bis in die Flanken zu reichen, sind typisch für einen Tuboovarialabszess. Diese Diagnose ist auch mit dem fehlgeschlagenen Antibiotikatherapieversuch einvernehmlich.\"\n}",
+      "prompt_length": 1173,
+      "response_length": 326,
+      "usage": {
+        "prompt_tokens": 396,
+        "completion_tokens": 104
+      },
+      "case_id": "qa_035"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome, insbesondere der drückende retrosternalen Schmerz, die in den Arm und den Unterkiefer ausstrahlen, sowie die Begleiterscheinungen wie Übelkeit und kalter Schweiß, sind typisch für einen akuten Myokardinfarkt. Der Nikotinabusus und der arterielle Hypertonus erhöhen den Risikofaktor für einen Myokardinfarkt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome, insbesondere der drückende retrosternalen Schmerz, die in den Arm und den Unterkiefer ausstrahlen, sowie die Begleiterscheinungen wie Übelkeit und kalter Schweiß, sind typisch für einen akuten Myokardinfarkt. Der Nikotinabusus und der arterielle Hypertonus erhöhen den Risikofaktor für einen Myokardinfarkt.\"\n}",
+      "prompt_length": 1026,
+      "response_length": 359,
+      "usage": {
+        "prompt_tokens": 351,
+        "completion_tokens": 115
+      },
+      "case_id": "qa_036"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die klinischen Symptome, die laborchemischen Abnormitäten und die EKG-Änderungen sind typisch für eine akute Perimyocarditis. Das Reibegeräusch über dem Herzbeutel, die erhöhten Troponin Werte und die ST-Strecken-Hebungen sowie die Senkung der PQ-Strecke in den Ableitungen II, III und aVF sind klinisch charakteristisch für diese Diagnose.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die klinischen Symptome, die laborchemischen Abnormitäten und die EKG-Änderungen sind typisch für eine akute Perimyocarditis. Das Reibegeräusch über dem Herzbeutel, die erhöhten Troponin Werte und die ST-Strecken-Hebungen sowie die Senkung der PQ-Strecke in den Ableitungen II, III und aVF sind klinisch charakteristisch für diese Diagnose.\"\n}",
+      "prompt_length": 1173,
+      "response_length": 378,
+      "usage": {
+        "prompt_tokens": 382,
+        "completion_tokens": 121
+      },
+      "case_id": "qa_037"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die periphere Eosinophilie, der Anstieg des C-reaktiven Proteins und die Schwäche bei der Fußhebung rechts sowie die punktförmigen Rötungen an den Unterschenkeln sind klinische Merkmale der Eosinophile Granulomatose mit Polyangiitis (EGPA). Die Reduktion der oralen Glukokortikoid-Dauertherapie ist ein bekannte Auslöser für eine EGPA-Ausbruchskrankheit.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die periphere Eosinophilie, der Anstieg des C-reaktiven Proteins und die Schwäche bei der Fußhebung rechts sowie die punktförmigen Rötungen an den Unterschenkeln sind klinische Merkmale der Eosinophile Granulomatose mit Polyangiitis (EGPA). Die Reduktion der oralen Glukokortikoid-Dauertherapie ist ein bekannte Auslöser für eine EGPA-Ausbruchskrankheit.\"\n}",
+      "prompt_length": 1207,
+      "response_length": 392,
+      "usage": {
+        "prompt_tokens": 407,
+        "completion_tokens": 126
+      },
+      "case_id": "qa_038"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die klinischen Symptome, wie Ruhetremor, Hypomimie, erhöhter Muskeltonus und Zahnradphänomen, sind typisch für das Idiopathische Parkinson-Syndrom.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die klinischen Symptome, wie Ruhetremor, Hypomimie, erhöhter Muskeltonus und Zahnradphänomen, sind typisch für das Idiopathische Parkinson-Syndrom.\"\n}",
+      "prompt_length": 1024,
+      "response_length": 185,
+      "usage": {
+        "prompt_tokens": 341,
+        "completion_tokens": 67
+      },
+      "case_id": "qa_039"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die erhöhten Alkalische Phosphatase (ALP) und Gamma-GT-Werte sowie die fehlende Abdomenpathologie deuten auf eine Lebererkrankung hin. Die Anti-Mitochondriale Antikörper (AMA-M2) sind charakteristisch für die Autoimmunerkrankung Primary Biliary Cholangitis (PBC), die häufig mit einer Hashimoto-Thyreoiditis zusammenhängt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die erhöhten Alkalische Phosphatase (ALP) und Gamma-GT-Werte sowie die fehlende Abdomenpathologie deuten auf eine Lebererkrankung hin. Die Anti-Mitochondriale Antikörper (AMA-M2) sind charakteristisch für die Autoimmunerkrankung Primary Biliary Cholangitis (PBC), die häufig mit einer Hashimoto-Thyreoiditis zusammenhängt.\"\n}",
+      "prompt_length": 1357,
+      "response_length": 360,
+      "usage": {
+        "prompt_tokens": 453,
+        "completion_tokens": 113
+      },
+      "case_id": "qa_040"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die klinischen Symptome, insbesondere die generalisierte Hyperpigmentierung, prätibiale Ödeme, tastbare Hepatosplenomegalie und die erhöhten VEGF-Werte, sind typisch für die AL-Amyloidose. Zudem unterstützt die elektrophysiologische Untersuchung der demyelinisierenden Polyneuropathie die Diagnose.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die klinischen Symptome, insbesondere die generalisierte Hyperpigmentierung, prätibiale Ödeme, tastbare Hepatosplenomegalie und die erhöhten VEGF-Werte, sind typisch für die AL-Amyloidose. Zudem unterstützt die elektrophysiologische Untersuchung der demyelinisierenden Polyneuropathie die Diagnose.\"\n}",
+      "prompt_length": 1271,
+      "response_length": 336,
+      "usage": {
+        "prompt_tokens": 418,
+        "completion_tokens": 106
+      },
+      "case_id": "qa_041"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der Schmerzen, die insbesondere nach längeren Ruhephasen auftreten (Anlaufschmerz) und durch eine eingeschränkte Beweglichkeit des rechten Hüftgelenks gekennzeichnet sind, deutet auf eine Koxarthrose hin.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der Schmerzen, die insbesondere nach längeren Ruhephasen auftreten (Anlaufschmerz) und durch eine eingeschränkte Beweglichkeit des rechten Hüftgelenks gekennzeichnet sind, deutet auf eine Koxarthrose hin.\"\n}",
+      "prompt_length": 981,
+      "response_length": 259,
+      "usage": {
+        "prompt_tokens": 332,
+        "completion_tokens": 79
+      },
+      "case_id": "qa_042"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Patientin zeigt Symptome einer manischen Phase, die sich durch gesteigerten Antrieb, Redseligkeit und impulsives Verhalten charakterisiert sind. Diese Symptome sind typisch für eine Bipolar-II-Störung, bei der manische Phasen ohne psychotische Symptome auftreten können, während depressive Phasen häufiger sind.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Patientin zeigt Symptome einer manischen Phase, die sich durch gesteigerten Antrieb, Redseligkeit und impulsives Verhalten charakterisiert sind. Diese Symptome sind typisch für eine Bipolar-II-Störung, bei der manische Phasen ohne psychotische Symptome auftreten können, während depressive Phasen häufiger sind.\"\n}",
+      "prompt_length": 1274,
+      "response_length": 353,
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 96
+      },
+      "case_id": "qa_043"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die hohe Serum-beta-hCG-Konzentration, die persistierenden Schmierblutungen, die hämorrhagische Läsion im Vaginale und die multiple pulmonale Rundherde auf dem CT-Schirm sind klinische Merkmale des Gestationsbedingten Chorionkarzinoms.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die hohe Serum-beta-hCG-Konzentration, die persistierenden Schmierblutungen, die hämorrhagische Läsion im Vaginale und die multiple pulmonale Rundherde auf dem CT-Schirm sind klinische Merkmale des Gestationsbedingten Chorionkarzinoms.\"\n}",
+      "prompt_length": 1181,
+      "response_length": 273,
+      "usage": {
+        "prompt_tokens": 400,
+        "completion_tokens": 89
+      },
+      "case_id": "qa_044"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Beschreibung der Symptome, insbesondere der retrosternalen Schmerzen, die in den Arm und den Unterkiefer ausstrahlen, sowie die ST-Streckenhebungen auf dem EKG, sind klinisch typisch für einen Akuten Vorderwandmyokardinfarkt (STEMI).",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Beschreibung der Symptome, insbesondere der retrosternalen Schmerzen, die in den Arm und den Unterkiefer ausstrahlen, sowie die ST-Streckenhebungen auf dem EKG, sind klinisch typisch für einen Akuten Vorderwandmyokardinfarkt (STEMI).\"\n}",
+      "prompt_length": 1048,
+      "response_length": 275,
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 88
+      },
+      "case_id": "qa_045"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Das Musset-Zeichen ist ein charakteristisches Diastolikum, das bei einer Aortenstenose auftritt. Es ist hochfrequents, decrescendoförmig und zeigt sich im 3. Interkostalraum links parasternal, was den gegebenen Beschreibung entspricht.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Das Musset-Zeichen ist ein charakteristisches Diastolikum, das bei einer Aortenstenose auftritt. Es ist hochfrequents, decrescendoförmig und zeigt sich im 3. Interkostalraum links parasternal, was den gegebenen Beschreibung entspricht.\"\n}",
+      "prompt_length": 1059,
+      "response_length": 273,
+      "usage": {
+        "prompt_tokens": 373,
+        "completion_tokens": 90
+      },
+      "case_id": "qa_046"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination von zunehmender Dyspnoe, Gewichtsverlust, neu aufgetretenen Gefühlsstörungen und Schwäche beim Heben des rechten Fußes, zusammen mit einer ausgeprägten Eosinophilie und Myokarditis, deutet auf Eosinophile Granulomatose mit Polyangiitis (EGPA) hin.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination von zunehmender Dyspnoe, Gewichtsverlust, neu aufgetretenen Gefühlsstörungen und Schwäche beim Heben des rechten Fußes, zusammen mit einer ausgeprägten Eosinophilie und Myokarditis, deutet auf Eosinophile Granulomatose mit Polyangiitis (EGPA) hin.\"\n}",
+      "prompt_length": 1221,
+      "response_length": 301,
+      "usage": {
+        "prompt_tokens": 412,
+        "completion_tokens": 99
+      },
+      "case_id": "qa_047"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome wie Zittern in Ruhe, Verlangsamung der Bewegungen, Hypomimie und das Zahnradphänomen sind typisch für das Idiopathische Parkinson-Syndrom.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome wie Zittern in Ruhe, Verlangsamung der Bewegungen, Hypomimie und das Zahnradphänomen sind typisch für das Idiopathische Parkinson-Syndrom.\"\n}",
+      "prompt_length": 1128,
+      "response_length": 189,
+      "usage": {
+        "prompt_tokens": 367,
+        "completion_tokens": 64
+      },
+      "case_id": "qa_048"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die erhöhte Gamma-GT und die typischen Hautveränderungen an den Augenlidern sowie die Kratzspuren sind klinische Hinweise auf eine M2-Mitochondriale Antikörper-Associated Cholangitis (MAC). Diese Autoimmunerkrankung der Gallenwege ist oft mit erhöhten Gamma-GT-Werten verbunden und kann durch die spezifischen M2-Antikörper bestätigt werden.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die erhöhte Gamma-GT und die typischen Hautveränderungen an den Augenlidern sowie die Kratzspuren sind klinische Hinweise auf eine M2-Mitochondriale Antikörper-Associated Cholangitis (MAC). Diese Autoimmunerkrankung der Gallenwege ist oft mit erhöhten Gamma-GT-Werten verbunden und kann durch die spezifischen M2-Antikörper bestätigt werden.\"\n}",
+      "prompt_length": 1419,
+      "response_length": 379,
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 114
+      },
+      "case_id": "qa_049"
+    }
+  ]
+}

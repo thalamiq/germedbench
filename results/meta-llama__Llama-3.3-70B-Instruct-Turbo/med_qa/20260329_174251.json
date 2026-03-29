@@ -1,0 +1,603 @@
+{
+  "summary": {
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "task": "med_qa",
+    "timestamp": "20260329_174251",
+    "n_cases": 49,
+    "n_scored": 49,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "accuracy": 0.9591836734693877,
+    "n_correct": 47
+  },
+  "predictions": [
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus akut aufgetretenen, retrosternalen Druckschmerzen, die in den linken Arm und den Unterkiefer ausstrahlen, Kaltschweißigkeit, Übelkeit und signifikanten ST-Strecken-Hebungen in den Ableitungen II, III und aVF im Ruhe-EKG ist typisch für einen ST-Hebungsinfarkt (STEMI) der Hinterwand.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus akut aufgetretenen, retrosternalen Druckschmerzen, die in den linken Arm und den Unterkiefer ausstrahlen, Kaltschweißigkeit, Übelkeit und signifikanten ST-Strecken-Hebungen in den Ableitungen II, III und aVF im Ruhe-EKG ist typisch für einen ST-Hebungsinfarkt (STEMI) der Hinterwand.\"\n}",
+      "prompt_length": 991,
+      "response_length": 341,
+      "usage": {
+        "prompt_tokens": 348,
+        "completion_tokens": 114
+      },
+      "case_id": "qa_001"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Das Kussmaul-Zeichen und der perikardiale 'Knock' in Kombination mit der Echokardiographie-Befundung deuten auf eine Pericarditis constrictiva hin, die durch die vorangegangene Strahlentherapie des Mediastinums verursacht werden könnte.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Das Kussmaul-Zeichen und der perikardiale 'Knock' in Kombination mit der Echokardiographie-Befundung deuten auf eine Pericarditis constrictiva hin, die durch die vorangegangene Strahlentherapie des Mediastinums verursacht werden könnte.\"\n}",
+      "prompt_length": 1276,
+      "response_length": 274,
+      "usage": {
+        "prompt_tokens": 419,
+        "completion_tokens": 88
+      },
+      "case_id": "qa_002"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus klinischen Symptomen, dem Mosaik-Muster in der HR-CT, den zentrilobulären, milchglasartigen Knötchen und der BAL-Ergebnisse mit einer erhöhten Lymphozytenfraktion und einem niedrigen CD4/CD8-Quotienten sprechen für eine Sarkoidose, insbesondere Typ II.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus klinischen Symptomen, dem Mosaik-Muster in der HR-CT, den zentrilobulären, milchglasartigen Knötchen und der BAL-Ergebnisse mit einer erhöhten Lymphozytenfraktion und einem niedrigen CD4/CD8-Quotienten sprechen für eine Sarkoidose, insbesondere Typ II.\"\n}",
+      "prompt_length": 1174,
+      "response_length": 310,
+      "usage": {
+        "prompt_tokens": 420,
+        "completion_tokens": 103
+      },
+      "case_id": "qa_003"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome wie Zittern in Ruhe, Bradykinese, verminderte Mimik und erhöhter, wächserner Widerstand bei passiven Bewegungen sind typisch für das idiopathische Parkinson-Syndrom, insbesondere da die kraniale MRT-Bildgebung keine anderen pathologischen Befunde zeigt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome wie Zittern in Ruhe, Bradykinese, verminderte Mimik und erhöhter, wächserner Widerstand bei passiven Bewegungen sind typisch für das idiopathische Parkinson-Syndrom, insbesondere da die kraniale MRT-Bildgebung keine anderen pathologischen Befunde zeigt.\"\n}",
+      "prompt_length": 1064,
+      "response_length": 304,
+      "usage": {
+        "prompt_tokens": 354,
+        "completion_tokens": 93
+      },
+      "case_id": "qa_004"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Der Nachweis von antimitochondrialen Antikörpern (AMA-M2) im Serum ist ein wichtiger Marker für die primäre biliäre Cholangitis (PBC), eine Autoimmunerkrankung, die oft mit Juckreiz, Müdigkeit und einer Erhöhung der alkalischen Phosphatase einhergeht, wie in diesem Fall beschrieben.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Der Nachweis von antimitochondrialen Antikörpern (AMA-M2) im Serum ist ein wichtiger Marker für die primäre biliäre Cholangitis (PBC), eine Autoimmunerkrankung, die oft mit Juckreiz, Müdigkeit und einer Erhöhung der alkalischen Phosphatase einhergeht, wie in diesem Fall beschrieben.\"\n}",
+      "prompt_length": 1437,
+      "response_length": 321,
+      "usage": {
+        "prompt_tokens": 470,
+        "completion_tokens": 99
+      },
+      "case_id": "qa_005"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Das Stauffer-Syndrom ist eine paraneoplastische Erkrankung, die bei Patienten mit Nierenzellkarzinom auftreten kann und zu einer Erhöhung der Leberenzyme wie alkalische Phosphatase und Gamma-GT führen kann, ohne dass eine direkte Leberinfiltration oder -metastasen vorliegen.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Das Stauffer-Syndrom ist eine paraneoplastische Erkrankung, die bei Patienten mit Nierenzellkarzinom auftreten kann und zu einer Erhöhung der Leberenzyme wie alkalische Phosphatase und Gamma-GT führen kann, ohne dass eine direkte Leberinfiltration oder -metastasen vorliegen.\"\n}",
+      "prompt_length": 1478,
+      "response_length": 313,
+      "usage": {
+        "prompt_tokens": 479,
+        "completion_tokens": 95
+      },
+      "case_id": "qa_006"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome wie Anlaufschmerz, schmerzhaft eingeschränkte Innenrotation und Abduktion im Hüftgelenk sowie der normale Entzündungsparameterwert deuten auf eine degenerative Erkrankung hin, was typisch für Coxarthrose ist.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome wie Anlaufschmerz, schmerzhaft eingeschränkte Innenrotation und Abduktion im Hüftgelenk sowie der normale Entzündungsparameterwert deuten auf eine degenerative Erkrankung hin, was typisch für Coxarthrose ist.\"\n}",
+      "prompt_length": 902,
+      "response_length": 259,
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 81
+      },
+      "case_id": "qa_007"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus visuellen Halluzinationen, Schwankungen der Aufmerksamkeit und Wachheit, Verlangsamung, leicht vornübergeneigtem Gangbild und zahnradartigem Rigor sowie die Verschlechterung unter Neuroleptika sind typische Merkmale der Lewy-Body-Demenz.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus visuellen Halluzinationen, Schwankungen der Aufmerksamkeit und Wachheit, Verlangsamung, leicht vornübergeneigtem Gangbild und zahnradartigem Rigor sowie die Verschlechterung unter Neuroleptika sind typische Merkmale der Lewy-Body-Demenz.\"\n}",
+      "prompt_length": 1291,
+      "response_length": 295,
+      "usage": {
+        "prompt_tokens": 420,
+        "completion_tokens": 92
+      },
+      "case_id": "qa_008"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus einer Raumforderung im Bereich der Adnexe, einer supprimierten Schilddrüsenfunktion (TSH) bei gleichzeitig erhöhtem freiem Thyroxin (fT4) und den beschriebenen Symptomen wie Herzrasen, Fingertremor und ungewollte Gewichtsabnahme deutet auf eine Struma ovarii hin, eine seltene Form eines Ovarialtumors, der funktionstüchtige Schilddrüsengewebe enthält und somit zu einer Hyperthyreose führen kann.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus einer Raumforderung im Bereich der Adnexe, einer supprimierten Schilddrüsenfunktion (TSH) bei gleichzeitig erhöhtem freiem Thyroxin (fT4) und den beschriebenen Symptomen wie Herzrasen, Fingertremor und ungewollte Gewichtsabnahme deutet auf eine Struma ovarii hin, eine seltene Form eines Ovarialtumors, der funktionstüchtige Schilddrüsengewebe enthält und somit zu einer Hyperthyreose führen kann.\"\n}",
+      "prompt_length": 1216,
+      "response_length": 455,
+      "usage": {
+        "prompt_tokens": 423,
+        "completion_tokens": 146
+      },
+      "case_id": "qa_009"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome wie Fieber, Schüttelfrost, produktiver Husten mit gelblich-grünlichem Auswurf und atemabhängige Schmerzen im Thoraxbereich sowie die körperlichen Untersuchungsergebnisse wie Tachypnoe, feinblasige Rasselgeräusche und Klopfschalldämpfung deuten auf eine ambulant erworbene Pneumonie hin.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome wie Fieber, Schüttelfrost, produktiver Husten mit gelblich-grünlichem Auswurf und atemabhängige Schmerzen im Thoraxbereich sowie die körperlichen Untersuchungsergebnisse wie Tachypnoe, feinblasige Rasselgeräusche und Klopfschalldämpfung deuten auf eine ambulant erworbene Pneumonie hin.\"\n}",
+      "prompt_length": 1024,
+      "response_length": 337,
+      "usage": {
+        "prompt_tokens": 366,
+        "completion_tokens": 111
+      },
+      "case_id": "qa_010"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Das klinische Bild der Patientin mit progredienter Belastungsdyspnoe, unproduktivem Husten, schmerzhafte Verhornungen und Risse an den Fingern sowie Weißwerden der Finger bei Kälte und die körperlichen Untersuchungsergebnisse wie feinblasige Rasselgeräusche und eine restriktive Ventilationsstörung mit reduzierter Diffusionskapazität (DLCO) deuten auf eine systemische Sklerose hin, die häufig mit Anti-Scl-70-Antikörpern assoziiert ist.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Das klinische Bild der Patientin mit progredienter Belastungsdyspnoe, unproduktivem Husten, schmerzhafte Verhornungen und Risse an den Fingern sowie Weißwerden der Finger bei Kälte und die körperlichen Untersuchungsergebnisse wie feinblasige Rasselgeräusche und eine restriktive Ventilationsstörung mit reduzierter Diffusionskapazität (DLCO) deuten auf eine systemische Sklerose hin, die häufig mit Anti-Scl-70-Antikörpern assoziiert ist.\"\n}",
+      "prompt_length": 1169,
+      "response_length": 476,
+      "usage": {
+        "prompt_tokens": 405,
+        "completion_tokens": 150
+      },
+      "case_id": "qa_011"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus Zittern in Ruhe, verminderten Mimik, verlangsamtem Gang mit kleinschrittigem Gangbild und Zahnradphänomen sind typische Symptome des idiopathischen Parkinson-Syndroms. Diese Symptome entsprechen den klassischen Kriterien für die Diagnose des Morbus Parkinson.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus Zittern in Ruhe, verminderten Mimik, verlangsamtem Gang mit kleinschrittigem Gangbild und Zahnradphänomen sind typische Symptome des idiopathischen Parkinson-Syndroms. Diese Symptome entsprechen den klassischen Kriterien für die Diagnose des Morbus Parkinson.\"\n}",
+      "prompt_length": 1134,
+      "response_length": 317,
+      "usage": {
+        "prompt_tokens": 384,
+        "completion_tokens": 95
+      },
+      "case_id": "qa_012"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus cholestatischen Leberwerten, moderat erhöhtem CA 19-9, diffuser Schwellung des Pankreaskopfes und deutlicher Erhöhung der IgG4-Fraktion im Serum spricht stark für eine Autoimmunpankreatitis (AIP) Typ 1, die oft mit erhöhten IgG4-Spiegeln assoziiert ist.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus cholestatischen Leberwerten, moderat erhöhtem CA 19-9, diffuser Schwellung des Pankreaskopfes und deutlicher Erhöhung der IgG4-Fraktion im Serum spricht stark für eine Autoimmunpankreatitis (AIP) Typ 1, die oft mit erhöhten IgG4-Spiegeln assoziiert ist.\"\n}",
+      "prompt_length": 1242,
+      "response_length": 311,
+      "usage": {
+        "prompt_tokens": 442,
+        "completion_tokens": 112
+      },
+      "case_id": "qa_013"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus Belastungsdyspnoe, Knöchelödemen, Gesichtsrötungen, Diarrhöen und der laborchemische Nachweis einer deutlichen Steigerung der 5-Hydroxyindolessigsäure (5-HIES) im 24-Stunden-Sammelurin weist auf ein Karzinoid-Syndrom hin, das oft mit einer Trikuspidalinsuffizienz durch Verdickung und eingeschränkte Beweglichkeit der Trikuspidalklappe assoziiert ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus Belastungsdyspnoe, Knöchelödemen, Gesichtsrötungen, Diarrhöen und der laborchemische Nachweis einer deutlichen Steigerung der 5-Hydroxyindolessigsäure (5-HIES) im 24-Stunden-Sammelurin weist auf ein Karzinoid-Syndrom hin, das oft mit einer Trikuspidalinsuffizienz durch Verdickung und eingeschränkte Beweglichkeit der Trikuspidalklappe assoziiert ist.\"\n}",
+      "prompt_length": 1537,
+      "response_length": 409,
+      "usage": {
+        "prompt_tokens": 510,
+        "completion_tokens": 141
+      },
+      "case_id": "qa_014"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome der Patientin, wie der Anlaufschmerz morgens nach dem Aufstehen und die schmerzhaft eingeschränkte Innenrotation und Extension im rechten Hüftgelenk, sind typisch für eine Koxarthrose, also eine degenerative Erkrankung des Hüftgelenks, die häufig bei älteren Erwachsenen auftritt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome der Patientin, wie der Anlaufschmerz morgens nach dem Aufstehen und die schmerzhaft eingeschränkte Innenrotation und Extension im rechten Hüftgelenk, sind typisch für eine Koxarthrose, also eine degenerative Erkrankung des Hüftgelenks, die häufig bei älteren Erwachsenen auftritt.\"\n}",
+      "prompt_length": 976,
+      "response_length": 331,
+      "usage": {
+        "prompt_tokens": 330,
+        "completion_tokens": 106
+      },
+      "case_id": "qa_015"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus diffusen Rückenschmerzen, Erschöpfung, Interessenverlust, ungewolltem Gewichtsverlust, Antriebslosigkeit, psychomotorischer Hemmung und Gefühlen der Wertlosigkeit und Grübeln deutet auf eine depressive Episode mit somatischem Syndrom hin, da diese Symptome typischerweise mit einer depressiven Störung assoziiert sind.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus diffusen Rückenschmerzen, Erschöpfung, Interessenverlust, ungewolltem Gewichtsverlust, Antriebslosigkeit, psychomotorischer Hemmung und Gefühlen der Wertlosigkeit und Grübeln deutet auf eine depressive Episode mit somatischem Syndrom hin, da diese Symptome typischerweise mit einer depressiven Störung assoziiert sind.\"\n}",
+      "prompt_length": 1227,
+      "response_length": 376,
+      "usage": {
+        "prompt_tokens": 402,
+        "completion_tokens": 112
+      },
+      "case_id": "qa_016"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der intraepidermal gelegenen, großleibigen, PAS-positiven Zellen mit hellem Zytoplasma und prominenten Nucleoli, die die Basalmembran nicht überschreiten, ist typisch für den extramammären Morbus Paget (EMPD), eine seltene, maligne Erkrankung der Haut.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der intraepidermal gelegenen, großleibigen, PAS-positiven Zellen mit hellem Zytoplasma und prominenten Nucleoli, die die Basalmembran nicht überschreiten, ist typisch für den extramammären Morbus Paget (EMPD), eine seltene, maligne Erkrankung der Haut.\"\n}",
+      "prompt_length": 1252,
+      "response_length": 307,
+      "usage": {
+        "prompt_tokens": 421,
+        "completion_tokens": 97
+      },
+      "case_id": "qa_017"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome wie hohes Fieber, Schüttelfrost, produktiver Husten mit rostbraunem Sputum, atemabhängige Schmerzen im rechten unteren Thoraxbereich, Tachypnoe, Dämpfung des Klopfschalls und feinblasige Rasselgeräusche über dem rechten Unterlappen sowie die Laborergebnisse wie Leukozytose und stark erhöhtes CRP deuten auf eine ambulant erworbene Pneumonie hin.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome wie hohes Fieber, Schüttelfrost, produktiver Husten mit rostbraunem Sputum, atemabhängige Schmerzen im rechten unteren Thoraxbereich, Tachypnoe, Dämpfung des Klopfschalls und feinblasige Rasselgeräusche über dem rechten Unterlappen sowie die Laborergebnisse wie Leukozytose und stark erhöhtes CRP deuten auf eine ambulant erworbene Pneumonie hin.\"\n}",
+      "prompt_length": 1057,
+      "response_length": 397,
+      "usage": {
+        "prompt_tokens": 368,
+        "completion_tokens": 133
+      },
+      "case_id": "qa_018"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome des Patienten, wie stechende retrosternelae Schmerzen, die sich im Liegen und beim tiefen Einatmen verschlimmern und beim Vornüberbeugen verbessern, sind typisch für eine akute Perimyokarditis. Das schabende, systolisch-diastolische Geräusch über der Herzbasis, bekannt als Perikard-Reiben, unterstützt diese Diagnose ebenfalls.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome des Patienten, wie stechende retrosternelae Schmerzen, die sich im Liegen und beim tiefen Einatmen verschlimmern und beim Vornüberbeugen verbessern, sind typisch für eine akute Perimyokarditis. Das schabende, systolisch-diastolische Geräusch über der Herzbasis, bekannt als Perikard-Reiben, unterstützt diese Diagnose ebenfalls.\"\n}",
+      "prompt_length": 1202,
+      "response_length": 379,
+      "usage": {
+        "prompt_tokens": 406,
+        "completion_tokens": 114
+      },
+      "case_id": "qa_019"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus Asthma bronchiale, chronischer Rhinosinusitis, peripherer Eosinophilie, Hautmanifestationen und den beschriebenen Symptomen wie Dyspnoe, Gewichtsverlust und Schmerzen spricht stark für eine Eosinophile Granulomatose mit Polyangiitis (EGPA), auch bekannt als Churg-Strauss-Syndrom.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus Asthma bronchiale, chronischer Rhinosinusitis, peripherer Eosinophilie, Hautmanifestationen und den beschriebenen Symptomen wie Dyspnoe, Gewichtsverlust und Schmerzen spricht stark für eine Eosinophile Granulomatose mit Polyangiitis (EGPA), auch bekannt als Churg-Strauss-Syndrom.\"\n}",
+      "prompt_length": 1244,
+      "response_length": 338,
+      "usage": {
+        "prompt_tokens": 429,
+        "completion_tokens": 104
+      },
+      "case_id": "qa_020"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus Ruhezittern, gesteigerter Tonus mit Zahnradphänomen, Hypomimie und der beschriebenen Gangstörung mit vornübergeneigter Haltung und kleinen Schritten sind typische Symptome für das idiopathische Parkinson-Syndrom.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus Ruhezittern, gesteigerter Tonus mit Zahnradphänomen, Hypomimie und der beschriebenen Gangstörung mit vornübergeneigter Haltung und kleinen Schritten sind typische Symptome für das idiopathische Parkinson-Syndrom.\"\n}",
+      "prompt_length": 985,
+      "response_length": 270,
+      "usage": {
+        "prompt_tokens": 339,
+        "completion_tokens": 85
+      },
+      "case_id": "qa_021"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus Hypergammaglobulinämie, positiven antinukleären Antikörpern (ANA) und Antikörpern gegen glatte Muskulatur (ASMA) sowie die Erhöhung der Transaminasen sprechen für eine Autoimmunhepatitis (AIH) Typ 1, insbesondere bei einer Patientin mit bekannter Autoimmunerkrankung wie Hashimoto-Thyreoiditis.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus Hypergammaglobulinämie, positiven antinukleären Antikörpern (ANA) und Antikörpern gegen glatte Muskulatur (ASMA) sowie die Erhöhung der Transaminasen sprechen für eine Autoimmunhepatitis (AIH) Typ 1, insbesondere bei einer Patientin mit bekannter Autoimmunerkrankung wie Hashimoto-Thyreoiditis.\"\n}",
+      "prompt_length": 1365,
+      "response_length": 352,
+      "usage": {
+        "prompt_tokens": 464,
+        "completion_tokens": 112
+      },
+      "case_id": "qa_022"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome des Patienten, insbesondere die initiale Schwäche der proximalen Beine, die nach Anspannung der Muskulatur an Kraft gewinnt, und die Veränderung der Muskeleigenreflexe, deuten auf eine Lambert-Eaton-Myasthenische Syndrome (LEMS) hin, die oft mit Antikörpern gegen präsynaptische spannungsgesteuerte Calciumkanäle (VGCC) assoziiert ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome des Patienten, insbesondere die initiale Schwäche der proximalen Beine, die nach Anspannung der Muskulatur an Kraft gewinnt, und die Veränderung der Muskeleigenreflexe, deuten auf eine Lambert-Eaton-Myasthenische Syndrome (LEMS) hin, die oft mit Antikörpern gegen präsynaptische spannungsgesteuerte Calciumkanäle (VGCC) assoziiert ist.\"\n}",
+      "prompt_length": 1324,
+      "response_length": 386,
+      "usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 121
+      },
+      "case_id": "qa_023"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome der Patientin, wie belastungsabhängige Schmerzen, Anlaufschmerz und eingeschränkte Beweglichkeit im Hüftgelenk, sind typisch für eine Coxarthrose, also eine degenerative Erkrankung des Hüftgelenks.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome der Patientin, wie belastungsabhängige Schmerzen, Anlaufschmerz und eingeschränkte Beweglichkeit im Hüftgelenk, sind typisch für eine Coxarthrose, also eine degenerative Erkrankung des Hüftgelenks.\"\n}",
+      "prompt_length": 1093,
+      "response_length": 248,
+      "usage": {
+        "prompt_tokens": 362,
+        "completion_tokens": 82
+      },
+      "case_id": "qa_024"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome wie tagesformabhängige Schwankungen, Halluzinationen, unruhige Nächte mit Schlafschreien und die Verschlechterung der extrapyramidalen Motorik unter Haloperidol sprechen für eine Lewy-Body-Demenz, die durch diese Fluktuationen, visuellen Halluzinationen und Empfindlichkeiten gegenüber Neuroleptika gekennzeichnet ist.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome wie tagesformabhängige Schwankungen, Halluzinationen, unruhige Nächte mit Schlafschreien und die Verschlechterung der extrapyramidalen Motorik unter Haloperidol sprechen für eine Lewy-Body-Demenz, die durch diese Fluktuationen, visuellen Halluzinationen und Empfindlichkeiten gegenüber Neuroleptika gekennzeichnet ist.\"\n}",
+      "prompt_length": 1338,
+      "response_length": 369,
+      "usage": {
+        "prompt_tokens": 448,
+        "completion_tokens": 110
+      },
+      "case_id": "qa_025"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Beschreibung der intraepidermal gelegenen, großen Zellen mit hellem Zytoplasma und prominenten Nukleoli, die sich in der PAS-Reaktion positiv darstellen, deutet auf ein Paget-Karzinom der Vulva hin, das oft mit intraepithelialen Zellen assoziiert ist. Eine Koloskopie und Zystoskopie sind notwendig, um assoziierte Malignome auszuschließen, da das Paget-Karzinom der Vulva oft mit anderen malignen Erkrankungen assoziiert sein kann.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Beschreibung der intraepidermal gelegenen, großen Zellen mit hellem Zytoplasma und prominenten Nukleoli, die sich in der PAS-Reaktion positiv darstellen, deutet auf ein Paget-Karzinom der Vulva hin, das oft mit intraepithelialen Zellen assoziiert ist. Eine Koloskopie und Zystoskopie sind notwendig, um assoziierte Malignome auszuschließen, da das Paget-Karzinom der Vulva oft mit anderen malignen Erkrankungen assoziiert sein kann.\"\n}",
+      "prompt_length": 1577,
+      "response_length": 474,
+      "usage": {
+        "prompt_tokens": 503,
+        "completion_tokens": 149
+      },
+      "case_id": "qa_026"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome des Patienten wie massive retrosternale Schmerzen, die in die linke Schulter und den Unterkiefer ausstrahlen, Atemnot und Kaltschweißigkeit, kombiniert mit der Anamnese von Diabetes mellitus Typ 2 und arterieller Hypertonie, sprechen stark für ein akutes Koronarsyndrom, das durch eine plötzliche Unterbrechung der Blutzufuhr zum Herzen gekennzeichnet ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome des Patienten wie massive retrosternale Schmerzen, die in die linke Schulter und den Unterkiefer ausstrahlen, Atemnot und Kaltschweißigkeit, kombiniert mit der Anamnese von Diabetes mellitus Typ 2 und arterieller Hypertonie, sprechen stark für ein akutes Koronarsyndrom, das durch eine plötzliche Unterbrechung der Blutzufuhr zum Herzen gekennzeichnet ist.\"\n}",
+      "prompt_length": 962,
+      "response_length": 407,
+      "usage": {
+        "prompt_tokens": 334,
+        "completion_tokens": 124
+      },
+      "case_id": "qa_027"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus Kussmaul-Zeichen, Perikardton und diastolischer Füllungsbehinderung in der Echokardiographie sowie die Vorgeschichte einer Strahlentherapie des Mediastinums sprechen für eine Pericarditis constrictiva, die durch die Strahlentherapie verursacht worden sein könnte.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus Kussmaul-Zeichen, Perikardton und diastolischer Füllungsbehinderung in der Echokardiographie sowie die Vorgeschichte einer Strahlentherapie des Mediastinums sprechen für eine Pericarditis constrictiva, die durch die Strahlentherapie verursacht worden sein könnte.\"\n}",
+      "prompt_length": 1371,
+      "response_length": 321,
+      "usage": {
+        "prompt_tokens": 449,
+        "completion_tokens": 99
+      },
+      "case_id": "qa_028"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus Asthma bronchiale, chronischer Polyposis nasi, peripherer Eosinophilie und neu aufgetretenen neurologischen Symptomen wie Kribbeln und Schwäche im Bereich des linken Fußes spricht für eine Eosinophile Granulomatose mit Polyangiitis (EGPA), auch bekannt als Churg-Strauss-Syndrom.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus Asthma bronchiale, chronischer Polyposis nasi, peripherer Eosinophilie und neu aufgetretenen neurologischen Symptomen wie Kribbeln und Schwäche im Bereich des linken Fußes spricht für eine Eosinophile Granulomatose mit Polyangiitis (EGPA), auch bekannt als Churg-Strauss-Syndrom.\"\n}",
+      "prompt_length": 1287,
+      "response_length": 337,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 103
+      },
+      "case_id": "qa_029"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome wie Zittern in Ruhe, Bradykinese, verminderte Mitschwingbewegung und erhöhter Muskeltonus mit Zahnradphänomen sind typisch für das idiopathische Parkinson-Syndrom, eine neurodegenerative Erkrankung, die oft bei älteren Erwachsenen auftritt.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome wie Zittern in Ruhe, Bradykinese, verminderte Mitschwingbewegung und erhöhter Muskeltonus mit Zahnradphänomen sind typisch für das idiopathische Parkinson-Syndrom, eine neurodegenerative Erkrankung, die oft bei älteren Erwachsenen auftritt.\"\n}",
+      "prompt_length": 1057,
+      "response_length": 291,
+      "usage": {
+        "prompt_tokens": 359,
+        "completion_tokens": 95
+      },
+      "case_id": "qa_030"
+    },
+    {
+      "answer": "A",
+      "reasoning": "Die Symptome der Patientin, wie progrediente Dysphagie, nächtliches Regurgitieren unverdauter Speisereste und ungewollter Gewichtsverlust, in Kombination mit den Ergebnissen der Ösophagogastroduodenoskopie, deuten auf eine Achalasie hin, die durch einen erhöhten integrierten Relaxationsdruck (IRP) des unteren Ösophagussphinkters sowie eine fehlende Peristaltik des Ösophaguskörpers charakterisiert ist.",
+      "raw": "{\n  \"answer\": \"A\",\n  \"reasoning\": \"Die Symptome der Patientin, wie progrediente Dysphagie, nächtliches Regurgitieren unverdauter Speisereste und ungewollter Gewichtsverlust, in Kombination mit den Ergebnissen der Ösophagogastroduodenoskopie, deuten auf eine Achalasie hin, die durch einen erhöhten integrierten Relaxationsdruck (IRP) des unteren Ösophagussphinkters sowie eine fehlende Peristaltik des Ösophaguskörpers charakterisiert ist.\"\n}",
+      "prompt_length": 1618,
+      "response_length": 442,
+      "usage": {
+        "prompt_tokens": 542,
+        "completion_tokens": 139
+      },
+      "case_id": "qa_031"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome des Patienten, insbesondere die proximale Muskelschwäche, Mundtrockenheit und erectile Dysfunktion, in Kombination mit der Post-Exercise-Facilitation, deuten auf eine Lambert-Eaton-Myasthenische Syndrome (LEMS) hin, die oft mit Antikörpern gegen spannungsgesteuerte Calciumkanäle (VGCC-AK) assoziiert ist und häufig paraneoplastisch bei kleinen Zell-Lungenkarzinomen auftritt, weshalb eine CT-Thorax sinnvoll ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome des Patienten, insbesondere die proximale Muskelschwäche, Mundtrockenheit und erectile Dysfunktion, in Kombination mit der Post-Exercise-Facilitation, deuten auf eine Lambert-Eaton-Myasthenische Syndrome (LEMS) hin, die oft mit Antikörpern gegen spannungsgesteuerte Calciumkanäle (VGCC-AK) assoziiert ist und häufig paraneoplastisch bei kleinen Zell-Lungenkarzinomen auftritt, weshalb eine CT-Thorax sinnvoll ist.\"\n}",
+      "prompt_length": 1563,
+      "response_length": 464,
+      "usage": {
+        "prompt_tokens": 513,
+        "completion_tokens": 145
+      },
+      "case_id": "qa_032"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Symptome des Patienten, wie belastungsabhängige Schmerzen, Anlaufschmerz und eingeschränkte Beweglichkeit im Hüftgelenk, sind typisch für eine Koxarthrose, also eine degenerative Gelenkerkrankung des Hüftgelenks, die häufig bei älteren Patienten auftritt.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Symptome des Patienten, wie belastungsabhängige Schmerzen, Anlaufschmerz und eingeschränkte Beweglichkeit im Hüftgelenk, sind typisch für eine Koxarthrose, also eine degenerative Gelenkerkrankung des Hüftgelenks, die häufig bei älteren Patienten auftritt.\"\n}",
+      "prompt_length": 1053,
+      "response_length": 297,
+      "usage": {
+        "prompt_tokens": 352,
+        "completion_tokens": 98
+      },
+      "case_id": "qa_033"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus Gedächtnisverlust, Fluktuationen der geistigen Leistungsfähigkeit, visuellen Halluzinationen, Ruhetremor und dem kleinschrittigen Gangbild sowie die REM-Schlaf-Verhaltensstörung (heftige Bewegungen und Schreien während der Traumschlafphasen) sind typische Merkmale der Lewy-Body-Demenz.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus Gedächtnisverlust, Fluktuationen der geistigen Leistungsfähigkeit, visuellen Halluzinationen, Ruhetremor und dem kleinschrittigen Gangbild sowie die REM-Schlaf-Verhaltensstörung (heftige Bewegungen und Schreien während der Traumschlafphasen) sind typische Merkmale der Lewy-Body-Demenz.\"\n}",
+      "prompt_length": 1214,
+      "response_length": 344,
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 111
+      },
+      "case_id": "qa_034"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus akuten Unterbauchschmerzen, Fieber und einer tastbaren, walzenförmigen Resistenz im rechten Unterbauch, insbesondere nach einer vaginalen Entbindung und ohne Besserung unter Antibiotikatherapie, deutet stark auf eine Ovarialvenenthrombose hin, die eine bekannte, aber seltene Komplikation im Wochenbett ist.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus akuten Unterbauchschmerzen, Fieber und einer tastbaren, walzenförmigen Resistenz im rechten Unterbauch, insbesondere nach einer vaginalen Entbindung und ohne Besserung unter Antibiotikatherapie, deutet stark auf eine Ovarialvenenthrombose hin, die eine bekannte, aber seltene Komplikation im Wochenbett ist.\"\n}",
+      "prompt_length": 1173,
+      "response_length": 365,
+      "usage": {
+        "prompt_tokens": 402,
+        "completion_tokens": 107
+      },
+      "case_id": "qa_035"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome des Patienten wie drückende retrosternale Schmerzen, die in den linken Arm und den Unterkiefer ausstrahlen, Übelkeit und kalter Schweiß, sind typisch für einen akuten Myokardinfarkt, insbesondere bei einem Patienten mit langjährigem Nikotinabusus und arteriellem Hypertonus.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome des Patienten wie drückende retrosternale Schmerzen, die in den linken Arm und den Unterkiefer ausstrahlen, Übelkeit und kalter Schweiß, sind typisch für einen akuten Myokardinfarkt, insbesondere bei einem Patienten mit langjährigem Nikotinabusus und arteriellem Hypertonus.\"\n}",
+      "prompt_length": 1026,
+      "response_length": 325,
+      "usage": {
+        "prompt_tokens": 355,
+        "completion_tokens": 101
+      },
+      "case_id": "qa_036"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus stechenden retrosternalen Schmerzen, die sich im Liegen verschlimmern und beim Aufsitzen bessern, einem systolisch-diastolischen Reibegeräusch über dem Herzbeutel und den laborchemischen sowie EKG-Befunden spricht für eine akute Perimyocarditis, insbesondere nach einem grippalen Infekt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus stechenden retrosternalen Schmerzen, die sich im Liegen verschlimmern und beim Aufsitzen bessern, einem systolisch-diastolischen Reibegeräusch über dem Herzbeutel und den laborchemischen sowie EKG-Befunden spricht für eine akute Perimyocarditis, insbesondere nach einem grippalen Infekt.\"\n}",
+      "prompt_length": 1173,
+      "response_length": 345,
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 103
+      },
+      "case_id": "qa_037"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus Asthma bronchiale, peripherer Eosinophilie, neu aufgetretenen Hautveränderungen und dem Anstieg des C-reaktiven Proteins nach Reduktion der Glukokortikoid-Dauertherapie spricht für eine Eosinophile Granulomatose mit Polyangiitis (EGPA), auch bekannt als Churg-Strauss-Syndrom.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus Asthma bronchiale, peripherer Eosinophilie, neu aufgetretenen Hautveränderungen und dem Anstieg des C-reaktiven Proteins nach Reduktion der Glukokortikoid-Dauertherapie spricht für eine Eosinophile Granulomatose mit Polyangiitis (EGPA), auch bekannt als Churg-Strauss-Syndrom.\"\n}",
+      "prompt_length": 1207,
+      "response_length": 334,
+      "usage": {
+        "prompt_tokens": 413,
+        "completion_tokens": 107
+      },
+      "case_id": "qa_038"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome wie Ruhetremor, maskenhafte Mimik, erhöhter Muskeltonus und kleinschrittiger Gang ohne Mitschwingen der Arme sind typisch für das idiopathische Parkinson-Syndrom, eine neurodegenerative Erkrankung, die durch diese charakteristischen motorischen Symptome gekennzeichnet ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome wie Ruhetremor, maskenhafte Mimik, erhöhter Muskeltonus und kleinschrittiger Gang ohne Mitschwingen der Arme sind typisch für das idiopathische Parkinson-Syndrom, eine neurodegenerative Erkrankung, die durch diese charakteristischen motorischen Symptome gekennzeichnet ist.\"\n}",
+      "prompt_length": 1024,
+      "response_length": 324,
+      "usage": {
+        "prompt_tokens": 351,
+        "completion_tokens": 97
+      },
+      "case_id": "qa_039"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus Juckreiz, erhöhter Alkalischer Phosphatase und Gamma-GT sowie den leicht erhöhten Transaminasen ohne Anzeichen einer Obstruktion der Gallenwege oder Cholezystolithiasis deutet auf eine primäre biliäre Cholangitis (PBC) hin, für die der Nachweis von Anti-Mitochondrialen Antikörpern (AMA-M2) typisch ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus Juckreiz, erhöhter Alkalischer Phosphatase und Gamma-GT sowie den leicht erhöhten Transaminasen ohne Anzeichen einer Obstruktion der Gallenwege oder Cholezystolithiasis deutet auf eine primäre biliäre Cholangitis (PBC) hin, für die der Nachweis von Anti-Mitochondrialen Antikörpern (AMA-M2) typisch ist.\"\n}",
+      "prompt_length": 1357,
+      "response_length": 361,
+      "usage": {
+        "prompt_tokens": 458,
+        "completion_tokens": 115
+      },
+      "case_id": "qa_040"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus distal betonter symmetrischer Schwäche, Sensibilitätsstörungen, generalisierter Hyperpigmentierung, prätibialen Ödemen, Hepatosplenomegalie, monoklonaler Gammopathie und erhöhten VEGF-Werten im Serum ist typisch für das POEMS-Syndrom, ein seltenes multisystemisches Erkrankungsbild, das auch als Crow-Fukase-Syndrom bekannt ist.",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus distal betonter symmetrischer Schwäche, Sensibilitätsstörungen, generalisierter Hyperpigmentierung, prätibialen Ödemen, Hepatosplenomegalie, monoklonaler Gammopathie und erhöhten VEGF-Werten im Serum ist typisch für das POEMS-Syndrom, ein seltenes multisystemisches Erkrankungsbild, das auch als Crow-Fukase-Syndrom bekannt ist.\"\n}",
+      "prompt_length": 1271,
+      "response_length": 386,
+      "usage": {
+        "prompt_tokens": 425,
+        "completion_tokens": 126
+      },
+      "case_id": "qa_041"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome wie Leistenschmerzen, die durch Belastung verstärkt und durch Ruhe gelindert werden, sowie der Anlaufschmerz und die eingeschränkte Beweglichkeit des Hüftgelenks sind typisch für eine Koxarthrose, also eine degenerative Erkrankung des Hüftgelenks.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome wie Leistenschmerzen, die durch Belastung verstärkt und durch Ruhe gelindert werden, sowie der Anlaufschmerz und die eingeschränkte Beweglichkeit des Hüftgelenks sind typisch für eine Koxarthrose, also eine degenerative Erkrankung des Hüftgelenks.\"\n}",
+      "prompt_length": 981,
+      "response_length": 298,
+      "usage": {
+        "prompt_tokens": 342,
+        "completion_tokens": 94
+      },
+      "case_id": "qa_042"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Patientin zeigt Symptome einer hypomanen Episode, wie gesteigerter Antrieb, verringertes Schlafbedürfnis und impulsives Verhalten, ohne Hinweise auf manische Episoden oder psychotische Symptome, was auf eine Bipolar-II-Störung hindeutet.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Patientin zeigt Symptome einer hypomanen Episode, wie gesteigerter Antrieb, verringertes Schlafbedürfnis und impulsives Verhalten, ohne Hinweise auf manische Episoden oder psychotische Symptome, was auf eine Bipolar-II-Störung hindeutet.\"\n}",
+      "prompt_length": 1274,
+      "response_length": 279,
+      "usage": {
+        "prompt_tokens": 402,
+        "completion_tokens": 85
+      },
+      "case_id": "qa_043"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus persistierenden Schmierblutungen, Belastungsdyspnoe, Hämoptoe, einer lividen Läsion in der vaginalen Wand, vergrößertem Uterus und hoher Serum-beta-hCG-Konzentration ohne intrauterine Gravidität sowie multiple pulmonale Rundherde in der Thorax-CT deutet auf ein gestationsbedingtes Chorionkarzinom hin, das durch Trophoblast-Gewebe metastasieren kann.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus persistierenden Schmierblutungen, Belastungsdyspnoe, Hämoptoe, einer lividen Läsion in der vaginalen Wand, vergrößertem Uterus und hoher Serum-beta-hCG-Konzentration ohne intrauterine Gravidität sowie multiple pulmonale Rundherde in der Thorax-CT deutet auf ein gestationsbedingtes Chorionkarzinom hin, das durch Trophoblast-Gewebe metastasieren kann.\"\n}",
+      "prompt_length": 1181,
+      "response_length": 409,
+      "usage": {
+        "prompt_tokens": 406,
+        "completion_tokens": 130
+      },
+      "case_id": "qa_044"
+    },
+    {
+      "answer": "C",
+      "reasoning": "Die Kombination aus retrosternalen Schmerzen, Ausstrahlung in den linken Arm und den Unterkiefer, Atemnot und kaltschweißigem Auftreten, insbesondere bei einem Patienten mit Nikotinabusus und schlecht eingestelltem Diabetes mellitus Typ 2, sowie die signifikanten ST-Streckenhebungen in den Ableitungen V2 bis V6 im EKG, sind typische Anzeichen für einen akuten Vorderwandmyokardinfarkt (STEMI).",
+      "raw": "{\n  \"answer\": \"C\",\n  \"reasoning\": \"Die Kombination aus retrosternalen Schmerzen, Ausstrahlung in den linken Arm und den Unterkiefer, Atemnot und kaltschweißigem Auftreten, insbesondere bei einem Patienten mit Nikotinabusus und schlecht eingestelltem Diabetes mellitus Typ 2, sowie die signifikanten ST-Streckenhebungen in den Ableitungen V2 bis V6 im EKG, sind typische Anzeichen für einen akuten Vorderwandmyokardinfarkt (STEMI).\"\n}",
+      "prompt_length": 1048,
+      "response_length": 433,
+      "usage": {
+        "prompt_tokens": 360,
+        "completion_tokens": 137
+      },
+      "case_id": "qa_045"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Das beschriebene hochfrequente, decrescendoförmige Diastolikum mit Punctum maximum im 3. Interkostalraum links parasternal, das bei vornübergeneigtem Oberkörper besser hörbar ist, weist auf eine Aorteninsuffizienz hin, die mit dem Musset-Zeichen assoziiert ist, einem Vorzeichen für Aorteninsuffizienz, bei dem der Kopf der Patientin bei jedem Herzschlag nickt.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Das beschriebene hochfrequente, decrescendoförmige Diastolikum mit Punctum maximum im 3. Interkostalraum links parasternal, das bei vornübergeneigtem Oberkörper besser hörbar ist, weist auf eine Aorteninsuffizienz hin, die mit dem Musset-Zeichen assoziiert ist, einem Vorzeichen für Aorteninsuffizienz, bei dem der Kopf der Patientin bei jedem Herzschlag nickt.\"\n}",
+      "prompt_length": 1059,
+      "response_length": 399,
+      "usage": {
+        "prompt_tokens": 379,
+        "completion_tokens": 134
+      },
+      "case_id": "qa_046"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus Asthma bronchiale, Eosinophilie, Myokarditis und den beschriebenen Infiltraten in der Thorax-CT weist auf eine Eosinophile Granulomatose mit Polyangiitis (EGPA) hin, die auch als Churg-Strauss-Syndrom bekannt ist und durch eine Autoimmunreaktion mit eosinophiler Infiltration und Vasculitis gekennzeichnet ist.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus Asthma bronchiale, Eosinophilie, Myokarditis und den beschriebenen Infiltraten in der Thorax-CT weist auf eine Eosinophile Granulomatose mit Polyangiitis (EGPA) hin, die auch als Churg-Strauss-Syndrom bekannt ist und durch eine Autoimmunreaktion mit eosinophiler Infiltration und Vasculitis gekennzeichnet ist.\"\n}",
+      "prompt_length": 1221,
+      "response_length": 368,
+      "usage": {
+        "prompt_tokens": 417,
+        "completion_tokens": 112
+      },
+      "case_id": "qa_047"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Symptome wie Zittern in Ruhe, Verlangsamung der Bewegungsabläufe, Rigor, Zahnradphänomen und Hypomimie sind typisch für das idiopathische Parkinson-Syndrom. Die Kombination dieser Symptome, insbesondere das Auftreten des Zitterns in Ruhe und die Verlangsamung der Bewegungen, sprechen stark für diese Diagnose.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Symptome wie Zittern in Ruhe, Verlangsamung der Bewegungsabläufe, Rigor, Zahnradphänomen und Hypomimie sind typisch für das idiopathische Parkinson-Syndrom. Die Kombination dieser Symptome, insbesondere das Auftreten des Zitterns in Ruhe und die Verlangsamung der Bewegungen, sprechen stark für diese Diagnose.\"\n}",
+      "prompt_length": 1128,
+      "response_length": 352,
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 111
+      },
+      "case_id": "qa_048"
+    },
+    {
+      "answer": "B",
+      "reasoning": "Die Kombination aus Müdigkeit, Juckreiz, diskreten gelblichen Hautveränderungen an den medialen Augenlidern und den Laborbefunden mit einer Erhöhung der alkalischen Phosphatase und Gamma-GT weist auf eine primär biliäre Cholangitis (PBC) hin, für die Anti-Mitochondriale Antikörper (Subtyp M2) typisch sind.",
+      "raw": "{\n  \"answer\": \"B\",\n  \"reasoning\": \"Die Kombination aus Müdigkeit, Juckreiz, diskreten gelblichen Hautveränderungen an den medialen Augenlidern und den Laborbefunden mit einer Erhöhung der alkalischen Phosphatase und Gamma-GT weist auf eine primär biliäre Cholangitis (PBC) hin, für die Anti-Mitochondriale Antikörper (Subtyp M2) typisch sind.\"\n}",
+      "prompt_length": 1419,
+      "response_length": 345,
+      "usage": {
+        "prompt_tokens": 460,
+        "completion_tokens": 108
+      },
+      "case_id": "qa_049"
+    }
+  ]
+}

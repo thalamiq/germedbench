@@ -1,0 +1,2386 @@
+{
+  "summary": {
+    "model": "deepseek-ai/DeepSeek-V3.1",
+    "task": "clinical_reasoning",
+    "timestamp": "20260329_191620",
+    "n_cases": 50,
+    "n_scored": 49,
+    "n_parse_errors": 0,
+    "n_api_errors": 1,
+    "top1_accuracy": 0.7959183673469388,
+    "top3_recall": 0.8775510204081632,
+    "ddx_overlap_f1": 0.5950761256883705,
+    "reasoning_quality": 4.591836734693878,
+    "ddx_plausibility": 4.510204081632653,
+    "red_flag_awareness": 4.510204081632653,
+    "overall_score": 4.155685131195336
+  },
+  "predictions": [
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Bakterielle Pneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Die Kombination aus Fieber, produktivem Husten mit gelb-grünlichem Auswurf, fokalen Rasselgeräuschen, Dämpfung, erhöhten Entzündungsparametern (CRP, Leukos, Procalcitonin) und der alveolären Verschattung im Röntgen mit Aerobronchogramm ist hochspezifisch für eine Pneumonie.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Exazerbation einer COPD",
+          "icd10_code": "J44.1",
+          "reasoning": "Der Patient mit bekannter COPD GOLD II und persistierendem Nikotinabusus präsentiert sich mit erhöhter Dyspnoe und produktivem Husten. Die Infektparameter weisen jedoch primär auf eine pneumonische Ursache hin, nicht auf eine reine Exazerbation.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenabszess",
+          "icd10_code": "J85.2",
+          "reasoning": "Bei produktivem Husten, Fieber und atemabhängigen Thoraxschmerzen ist dies differenzialdiagnostisch zu erwägen, jedoch zeigt das Röntgenbild eine flächige Verschattung ohne typische Höhlenbildung, was die Wahrscheinlichkeit senkt.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Pleuropneumonie",
+          "icd10_code": "J18.1",
+          "reasoning": "Die atemabhängigen Schmerzen und die fokalen Befunde könnten auf eine Pleurabeteiligung hindeuten, jedoch ergibt die Bildgebung keinen Anhalt für einen relevanten Pleuraerguss, was diese Diagnose weniger wahrscheinlich macht.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Bakterielle Pneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Die Kombination aus Fieber, produktivem Husten mit gelb-grünlichem Auswurf, fokalen Rasselgeräuschen, Dämpfung, erhöhten Entzündungsparametern (CRP, Leukos, Procalcitonin) und der alveolären Verschattung im Röntgen mit Aerobronchogramm ist hochspezifisch für eine Pneumonie.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Exazerbation einer COPD\",\n      \"icd10_code\": \"J44.1\",\n      \"reasoning\": \"Der Patient mit bekannter COPD GOLD II und persistierendem Nikotinabusus präsentiert sich mit erhöhter Dyspnoe und produktivem Husten. Die Infektparameter weisen jedoch primär auf eine pneumonische Ursache hin, nicht auf eine reine Exazerbation.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenabszess\",\n      \"icd10_code\": \"J85.2\",\n      \"reasoning\": \"Bei produktivem Husten, Fieber und atemabhängigen Thoraxschmerzen ist dies differenzialdiagnostisch zu erwägen, jedoch zeigt das Röntgenbild eine flächige Verschattung ohne typische Höhlenbildung, was die Wahrscheinlichkeit senkt.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Pleuropneumonie\",\n      \"icd10_code\": \"J18.1\",\n      \"reasoning\": \"Die atemabhängigen Schmerzen und die fokalen Befunde könnten auf eine Pleurabeteiligung hindeuten, jedoch ergibt die Bildgebung keinen Anhalt für einen relevanten Pleuraerguss, was diese Diagnose weniger wahrscheinlich macht.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2460,
+      "response_length": 1527,
+      "usage": {
+        "prompt_tokens": 767,
+        "completion_tokens": 460
+      },
+      "case_id": "cr_001",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.25
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Perikarditis",
+          "icd10_code": "I30.9",
+          "reasoning": "Der zirkuläre Perikarderguss in der Echokardiographie, die konkavbogigen ST-Hebungen im EKG, die erhöhten Entzündungsparameter (CRP) sowie der grippale Vorinfekt sind hochgradig verdächtig für eine entzündliche Genese.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Dilatative Kardiomyopathie",
+          "icd10_code": "I42.0",
+          "reasoning": "Die Belastungsdyspnoe NYHA III, die prätibialen Ödeme, das signifikant erhöhte NT-proBNP und der reduzierte globale longitudinale Strain trotz erhaltener LVEF können auf eine beginnende myokardiale Pumpfunktionsstörung hindeuten.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Akutes Koronarsyndrom",
+          "icd10_code": "I24.9",
+          "reasoning": "Das erhöhte Troponin und das retrosternale Druckgefühl sind alarmierend, jedoch sprechen die fehlenden korrespondierenden ST-Senkungen und die konvexen (nicht ischämietypischen) ST-Hebungen eher gegen eine primär koronare Genese.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Rechtsherzinsuffizienz anderer Genese",
+          "icd10_code": "I50.1",
+          "reasoning": "Die prätibialen Ödeme, die eingeschränkt atemvariable V. cava inferior und die Dyspnoe könnten auf eine Rechtsherzbelastung hindeuten, die jedoch hier am ehesten durch die Perikarditis mit Erguss (Tamponade-Physiologie) erklärt wird.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Perikarditis\",\n      \"icd10_code\": \"I30.9\",\n      \"reasoning\": \"Der zirkuläre Perikarderguss in der Echokardiographie, die konkavbogigen ST-Hebungen im EKG, die erhöhten Entzündungsparameter (CRP) sowie der grippale Vorinfekt sind hochgradig verdächtig für eine entzündliche Genese.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Dilatative Kardiomyopathie\",\n      \"icd10_code\": \"I42.0\",\n      \"reasoning\": \"Die Belastungsdyspnoe NYHA III, die prätibialen Ödeme, das signifikant erhöhte NT-proBNP und der reduzierte globale longitudinale Strain trotz erhaltener LVEF können auf eine beginnende myokardiale Pumpfunktionsstörung hindeuten.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom\",\n      \"icd10_code\": \"I24.9\",\n      \"reasoning\": \"Das erhöhte Troponin und das retrosternale Druckgefühl sind alarmierend, jedoch sprechen die fehlenden korrespondierenden ST-Senkungen und die konvexen (nicht ischämietypischen) ST-Hebungen eher gegen eine primär koronare Genese.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Rechtsherzinsuffizienz anderer Genese\",\n      \"icd10_code\": \"I50.1\",\n      \"reasoning\": \"Die prätibialen Ödeme, die eingeschränkt atemvariable V. cava inferior und die Dyspnoe könnten auf eine Rechtsherzbelastung hindeuten, die jedoch hier am ehesten durch die Perikarditis mit Erguss (Tamponade-Physiologie) erklärt wird.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2321,
+      "response_length": 1486,
+      "usage": {
+        "prompt_tokens": 687,
+        "completion_tokens": 465
+      },
+      "case_id": "cr_002",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Exogen-allergische Alveolitis (Hypersensitivitätspneumonitis)",
+          "icd10_code": "J67.9",
+          "reasoning": "Die intensive Exposition gegenüber organischen Stäuben (Sanierung eines alten Gewächshauses), das klinische Bild mit Belastungsdyspnoe, trockenem Husten, Knistern, und das HR-CT mit Milchglasinfiltraten und Crazy-Paving-Muster sind hochverdächtig. Die milchig-trübe BAL und das negative ANCA unterstützen diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Idiopathische Lungenfibrose",
+          "icd10_code": "J84.10",
+          "reasoning": "Das progrediente, belastungsabhängige Atemnotsyndrom mit basalem Knistern, der Sauerstoffabfall und das HR-CT-Muster sind typisch. Die Aussparung der subpleuralen Mantelzone im CT ist jedoch ungewöhnlich und spricht eher gegen die klassische IPF.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Nicht-spezifische interstitielle Pneumonie (NSIP)",
+          "icd10_code": "J84.8",
+          "reasoning": "Kann sich ähnlich mit Dyspnoe, Knistern und Milchglasinfiltraten im CT präsentieren. Der leicht erhöhte ANA-Titer könnte auf einen zugrunde liegenden systemischen Prozess hinweisen, was eine NSIP im Rahmen einer Kollagenose möglich erscheinen lässt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pulmonale Alveolarproteinose",
+          "icd10_code": "J84.0",
+          "reasoning": "Das klassische Crazy-Paving-Muster im CT und die opaleszente, milchige BAL-Flüssigkeit sind pathognomonisch. Das Fehlen von Trommelschlägelfingern und die spezifische Exposition sind jedoch weniger typisch.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Medikamenteninduzierte interstitielle Lungenerkrankung",
+          "icd10_code": "J70.4",
+          "reasoning": "Kann ein ähnliches klinisches und radiologisches Bild verursachen. Beim Patienten sind jedoch keine dafür bekannten Medikamente in der Anamnese dokumentiert, was die Wahrscheinlichkeit verringert.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Exogen-allergische Alveolitis (Hypersensitivitätspneumonitis)\",\n      \"icd10_code\": \"J67.9\",\n      \"reasoning\": \"Die intensive Exposition gegenüber organischen Stäuben (Sanierung eines alten Gewächshauses), das klinische Bild mit Belastungsdyspnoe, trockenem Husten, Knistern, und das HR-CT mit Milchglasinfiltraten und Crazy-Paving-Muster sind hochverdächtig. Die milchig-trübe BAL und das negative ANCA unterstützen diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Idiopathische Lungenfibrose\",\n      \"icd10_code\": \"J84.10\",\n      \"reasoning\": \"Das progrediente, belastungsabhängige Atemnotsyndrom mit basalem Knistern, der Sauerstoffabfall und das HR-CT-Muster sind typisch. Die Aussparung der subpleuralen Mantelzone im CT ist jedoch ungewöhnlich und spricht eher gegen die klassische IPF.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Nicht-spezifische interstitielle Pneumonie (NSIP)\",\n      \"icd10_code\": \"J84.8\",\n      \"reasoning\": \"Kann sich ähnlich mit Dyspnoe, Knistern und Milchglasinfiltraten im CT präsentieren. Der leicht erhöhte ANA-Titer könnte auf einen zugrunde liegenden systemischen Prozess hinweisen, was eine NSIP im Rahmen einer Kollagenose möglich erscheinen lässt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pulmonale Alveolarproteinose\",\n      \"icd10_code\": \"J84.0\",\n      \"reasoning\": \"Das klassische Crazy-Paving-Muster im CT und die opaleszente, milchige BAL-Flüssigkeit sind pathognomonisch. Das Fehlen von Trommelschlägelfingern und die spezifische Exposition sind jedoch weniger typisch.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Medikamenteninduzierte interstitielle Lungenerkrankung\",\n      \"icd10_code\": \"J70.4\",\n      \"reasoning\": \"Kann ein ähnliches klinisches und radiologisches Bild verursachen. Beim Patienten sind jedoch keine dafür bekannten Medikamente in der Anamnese dokumentiert, was die Wahrscheinlichkeit verringert.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2709,
+      "response_length": 2030,
+      "usage": {
+        "prompt_tokens": 832,
+        "completion_tokens": 590
+      },
+      "case_id": "cr_003",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 2.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall (kardioembolisch)",
+          "icd10_code": "I63.4",
+          "reasoning": "Plötzliches Auftreten von Fazialisparese, Armmonoparese und motorischer Aphasie bei bekanntem paroxysmalem Vorhofflimmern ohne Antikoagulation, sowie Nachweis eines Gefäßverschlusses (M1-Verschluss links) in der CTA.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intrazerebrale Blutung",
+          "icd10_code": "I61.9",
+          "reasoning": "Akut aufgetretene fokale neurologische Defizite bei arterieller Hypertonie mit erhöhtem Blutdruck (175/95 mmHg) bei Aufnahme, jedoch schließt das initiale CCT ohne Blutungszeichen diese Diagnose aus.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Komplexe Migräne mit Aura",
+          "icd10_code": "G43.1",
+          "reasoning": "Kann fokale neurologische Symptome wie Aphasie und Hemiparese imitieren, ist aber bei diesem Alter und mit dem vorbestehenden kardiovaskulären Risikoprofil sehr unwahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Todd'sche Lähmung (postiktuales neurologisches Defizit)",
+          "icd10_code": "G40.9",
+          "reasoning": "Kann fokale neurologische Defizite nach einem nicht beobachteten epileptischen Anfall verursachen, aber die akute Symptomatik ohne Hinweise auf einen Anfall und der Gefäßbefund machen diese Diagnose unwahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Hirnmetastase",
+          "icd10_code": "C79.3",
+          "reasoning": "Kann zu akuten fokalen neurologischen Ausfällen führen, aber das Fehlen von Anhaltspunkten für eine Tumorerkrankung und der akute Beginn sprechen dagegen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall (kardioembolisch)\",\n      \"icd10_code\": \"I63.4\",\n      \"reasoning\": \"Plötzliches Auftreten von Fazialisparese, Armmonoparese und motorischer Aphasie bei bekanntem paroxysmalem Vorhofflimmern ohne Antikoagulation, sowie Nachweis eines Gefäßverschlusses (M1-Verschluss links) in der CTA.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intrazerebrale Blutung\",\n      \"icd10_code\": \"I61.9\",\n      \"reasoning\": \"Akut aufgetretene fokale neurologische Defizite bei arterieller Hypertonie mit erhöhtem Blutdruck (175/95 mmHg) bei Aufnahme, jedoch schließt das initiale CCT ohne Blutungszeichen diese Diagnose aus.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Komplexe Migräne mit Aura\",\n      \"icd10_code\": \"G43.1\",\n      \"reasoning\": \"Kann fokale neurologische Symptome wie Aphasie und Hemiparese imitieren, ist aber bei diesem Alter und mit dem vorbestehenden kardiovaskulären Risikoprofil sehr unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Todd'sche Lähmung (postiktuales neurologisches Defizit)\",\n      \"icd10_code\": \"G40.9\",\n      \"reasoning\": \"Kann fokale neurologische Defizite nach einem nicht beobachteten epileptischen Anfall verursachen, aber die akute Symptomatik ohne Hinweise auf einen Anfall und der Gefäßbefund machen diese Diagnose unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Hirnmetastase\",\n      \"icd10_code\": \"C79.3\",\n      \"reasoning\": \"Kann zu akuten fokalen neurologischen Ausfällen führen, aber das Fehlen von Anhaltspunkten für eine Tumorerkrankung und der akute Beginn sprechen dagegen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2505,
+      "response_length": 1714,
+      "usage": {
+        "prompt_tokens": 744,
+        "completion_tokens": 522
+      },
+      "case_id": "cr_004",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.888888888888889
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Pankreaskopfkarzinom",
+          "icd10_code": "C25.0",
+          "reasoning": "Der schmerzlose Ikterus mit Gewichtsverlust, acholischem Stuhl, erhöhtem CA 19-9 und der bildgebende Befund einer Cholestase mit erweiterten Gallenwegen bei diffuser Pankreasschwellung sind hochverdächtig.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Autoimmunpankreatitis (Typ 1)",
+          "icd10_code": "K86.1",
+          "reasoning": "Die diffuse Pankreasvergrößerung mit 'wurstförmiger' Konfiguration, Halo-Zeichen, Hypergammaglobulinämie (erhöhtes IgG) und das Fehlen eines klar abgrenzbaren Tumors im CT sprechen für diese entzündliche Ursache.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Cholangiokarzinom",
+          "icd10_code": "C24.0",
+          "reasoning": "Der schmerzlose Verschlussikterus mit Cholestase-Parametern und erhöhtem CA 19-9 ist typisch, jedoch zeigt das CT keine umschriebene Raumforderung im Gallengangssystem.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Primär sklerosierende Cholangitis (PSC)",
+          "icd10_code": "K83.0",
+          "reasoning": "Kann einen cholestatischen Ikterus mit Erweiterung der Gallenwege verursachen, die Hypergammaglobulinämie passt, jedoch ist das Pankreas in diesem Ausmaß typischerweise nicht betroffen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Pankreaskopfkarzinom\",\n      \"icd10_code\": \"C25.0\",\n      \"reasoning\": \"Der schmerzlose Ikterus mit Gewichtsverlust, acholischem Stuhl, erhöhtem CA 19-9 und der bildgebende Befund einer Cholestase mit erweiterten Gallenwegen bei diffuser Pankreasschwellung sind hochverdächtig.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Autoimmunpankreatitis (Typ 1)\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die diffuse Pankreasvergrößerung mit 'wurstförmiger' Konfiguration, Halo-Zeichen, Hypergammaglobulinämie (erhöhtes IgG) und das Fehlen eines klar abgrenzbaren Tumors im CT sprechen für diese entzündliche Ursache.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Cholangiokarzinom\",\n      \"icd10_code\": \"C24.0\",\n      \"reasoning\": \"Der schmerzlose Verschlussikterus mit Cholestase-Parametern und erhöhtem CA 19-9 ist typisch, jedoch zeigt das CT keine umschriebene Raumforderung im Gallengangssystem.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Primär sklerosierende Cholangitis (PSC)\",\n      \"icd10_code\": \"K83.0\",\n      \"reasoning\": \"Kann einen cholestatischen Ikterus mit Erweiterung der Gallenwege verursachen, die Hypergammaglobulinämie passt, jedoch ist das Pankreas in diesem Ausmaß typischerweise nicht betroffen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2850,
+      "response_length": 1356,
+      "usage": {
+        "prompt_tokens": 883,
+        "completion_tokens": 437
+      },
+      "case_id": "cr_005",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Angioimmunoblastisches T-Zell-Lymphom",
+          "icd10_code": "C84.7",
+          "reasoning": "Die Trias aus B-Symptomatik, generalisierter Lymphadenopathie und polyklonaler Hypergammaglobulinämie mit positivem Coombs-Test ist hochverdächtig. Zusätzlich passen Hautausschlag, Eosinophilie und Autoimmunphänomene zum Krankheitsbild.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Morbus Hodgkin",
+          "icd10_code": "C81",
+          "reasoning": "Klassische Präsentation mit B-Symptomen, Lymphadenopathie und Pruritus. Die Lymphopenie und Erhöhung von LDH sowie CRP sind typische Begleitbefunde.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Systemischer Lupus erythematodes",
+          "icd10_code": "M32",
+          "reasoning": "Der Hautausschlag, Gelenkschmerzen, hämolytische Anämie (positiver Coombs-Test) und Lymphopenie sind charakteristisch. Die ausgeprägte Lymphadenopathie und Organbeteiligung (Splenomegalie) können im Rahmen eines schweren Schubes auftreten.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Adultes Still-Syndrom",
+          "icd10_code": "M06.1",
+          "reasoning": "Die rezidivierenden Fieberschübe, der Hautausschlag, Gelenkschmerzen und die ausgeprägte Entzündungsaktivität (erhöhtes CRP, Ferritin) passen zum Bild. Die Lymphadenopathie und Splenomegalie sind mögliche Zusatzbefunde.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Chronisch-lymphatische Leukämie",
+          "icd10_code": "C91.1",
+          "reasoning": "Kann mit Lymphadenopathie, B-Symptomatik und Autoimmunphänomenen wie einer Coombs-positiven Anämie einhergehen. Die ausgeprägte Lymphopenie und Hypergammaglobulinämie sind jedoch weniger typisch.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Angioimmunoblastisches T-Zell-Lymphom\",\n      \"icd10_code\": \"C84.7\",\n      \"reasoning\": \"Die Trias aus B-Symptomatik, generalisierter Lymphadenopathie und polyklonaler Hypergammaglobulinämie mit positivem Coombs-Test ist hochverdächtig. Zusätzlich passen Hautausschlag, Eosinophilie und Autoimmunphänomene zum Krankheitsbild.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Morbus Hodgkin\",\n      \"icd10_code\": \"C81\",\n      \"reasoning\": \"Klassische Präsentation mit B-Symptomen, Lymphadenopathie und Pruritus. Die Lymphopenie und Erhöhung von LDH sowie CRP sind typische Begleitbefunde.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Systemischer Lupus erythematodes\",\n      \"icd10_code\": \"M32\",\n      \"reasoning\": \"Der Hautausschlag, Gelenkschmerzen, hämolytische Anämie (positiver Coombs-Test) und Lymphopenie sind charakteristisch. Die ausgeprägte Lymphadenopathie und Organbeteiligung (Splenomegalie) können im Rahmen eines schweren Schubes auftreten.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Adultes Still-Syndrom\",\n      \"icd10_code\": \"M06.1\",\n      \"reasoning\": \"Die rezidivierenden Fieberschübe, der Hautausschlag, Gelenkschmerzen und die ausgeprägte Entzündungsaktivität (erhöhtes CRP, Ferritin) passen zum Bild. Die Lymphadenopathie und Splenomegalie sind mögliche Zusatzbefunde.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Chronisch-lymphatische Leukämie\",\n      \"icd10_code\": \"C91.1\",\n      \"reasoning\": \"Kann mit Lymphadenopathie, B-Symptomatik und Autoimmunphänomenen wie einer Coombs-positiven Anämie einhergehen. Die ausgeprägte Lymphopenie und Hypergammaglobulinämie sind jedoch weniger typisch.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2385,
+      "response_length": 1761,
+      "usage": {
+        "prompt_tokens": 738,
+        "completion_tokens": 544
+      },
+      "case_id": "cr_006",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666665
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Mediale Schenkelhalsfraktur links",
+          "icd10_code": "S72.0",
+          "reasoning": "Die Kombination aus Sturzereignis, klinischen Zeichen (Beinverkürzung, Außenrotation, axialer Stauchungsschmerz) und dem radiologischen Nachweis einer subkapitalen Fraktur mit Dislokation nach Garden III bestätigt die Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pertrochantäre Femurfraktur",
+          "icd10_code": "S72.1",
+          "reasoning": "Kann ähnliche klinische Zeichen wie Verkürzung und Außenrotation verursachen, wird jedoch durch die bildgebend eindeutig subkapitale Lokalisation und Garden-Klassifikation ausgeschlossen.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Luxatio femoris",
+          "icd10_code": "S73.0",
+          "reasoning": "Klinisch durch Außenrotationsfehlstellung und Schmerzen ähnlich, jedoch zeigt das Röntgenbild eindeutig eine Fraktur und keine Luxation, zudem ist das Acetabulum unauffällig.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Femorale Stressfraktur",
+          "icd10_code": "M84.35",
+          "reasoning": "Wegen der bekannten Osteoporose grundsätzlich möglich, aber das akute Trauma und das frische, dislozierte Frakturbild im Röntgen sprechen klar für ein akutes Ereignis.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Mediale Schenkelhalsfraktur links\",\n      \"icd10_code\": \"S72.0\",\n      \"reasoning\": \"Die Kombination aus Sturzereignis, klinischen Zeichen (Beinverkürzung, Außenrotation, axialer Stauchungsschmerz) und dem radiologischen Nachweis einer subkapitalen Fraktur mit Dislokation nach Garden III bestätigt die Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pertrochantäre Femurfraktur\",\n      \"icd10_code\": \"S72.1\",\n      \"reasoning\": \"Kann ähnliche klinische Zeichen wie Verkürzung und Außenrotation verursachen, wird jedoch durch die bildgebend eindeutig subkapitale Lokalisation und Garden-Klassifikation ausgeschlossen.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Luxatio femoris\",\n      \"icd10_code\": \"S73.0\",\n      \"reasoning\": \"Klinisch durch Außenrotationsfehlstellung und Schmerzen ähnlich, jedoch zeigt das Röntgenbild eindeutig eine Fraktur und keine Luxation, zudem ist das Acetabulum unauffällig.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Femorale Stressfraktur\",\n      \"icd10_code\": \"M84.35\",\n      \"reasoning\": \"Wegen der bekannten Osteoporose grundsätzlich möglich, aber das akute Trauma und das frische, dislozierte Frakturbild im Röntgen sprechen klar für ein akutes Ereignis.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2571,
+      "response_length": 1334,
+      "usage": {
+        "prompt_tokens": 734,
+        "completion_tokens": 398
+      },
+      "case_id": "cr_007",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Major Depression",
+          "icd10_code": "F32.2",
+          "reasoning": "Die depressive Symptomatik mit Antriebsminderung, Freudlosigkeit, Interessenverlust, Früherwachen, Inappetenz und Gewichtsverlust erfüllt die Kriterien einer schweren depressiven Episode.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Alkoholbedingte kognitive Störung",
+          "icd10_code": "F10.73",
+          "reasoning": "Der regelmäßige hohe Alkoholkonsum (eine Flasche Wein/Abend), erhöhte CDT- und MCV-Werte sowie die globale Hirnatrophie im MRT sind vereinbar mit alkoholtoxischen Hirnschäden, welche die kognitiven Defizite erklären.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Vitamin-B12-/Folsäure-Mangelenzephalopathie",
+          "icd10_code": "E53.8",
+          "reasoning": "Die deutlich erniedrigten Vitamin-B12- und Folsäurespiegel können sowohl die depressiven Symptome als auch die kognitiven Defizite (MMSE 23/30) und die makrozytäre Anämie (erhöhtes MCV) verursachen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Parkinson-Syndrom",
+          "icd10_code": "G20",
+          "reasoning": "Der Ruhetremor, der Rigor, die psychomotorische Verlangsamung und das kleinschrittige Gangbild sind klassische motorische Frühzeichen eines Parkinson-Syndroms, welches häufig mit Depressionen einhergeht.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Vaskuläre Enzephalopathie",
+          "icd10_code": "I67.2",
+          "reasoning": "Die vorbestehende arterielle Hypertonie ist ein Risikofaktor für mikrovaskuläre Schäden, die zu kognitiven Defiziten und einer sekundären depressiven Symptomatik führen können.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Major Depression\",\n      \"icd10_code\": \"F32.2\",\n      \"reasoning\": \"Die depressive Symptomatik mit Antriebsminderung, Freudlosigkeit, Interessenverlust, Früherwachen, Inappetenz und Gewichtsverlust erfüllt die Kriterien einer schweren depressiven Episode.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Alkoholbedingte kognitive Störung\",\n      \"icd10_code\": \"F10.73\",\n      \"reasoning\": \"Der regelmäßige hohe Alkoholkonsum (eine Flasche Wein/Abend), erhöhte CDT- und MCV-Werte sowie die globale Hirnatrophie im MRT sind vereinbar mit alkoholtoxischen Hirnschäden, welche die kognitiven Defizite erklären.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Vitamin-B12-/Folsäure-Mangelenzephalopathie\",\n      \"icd10_code\": \"E53.8\",\n      \"reasoning\": \"Die deutlich erniedrigten Vitamin-B12- und Folsäurespiegel können sowohl die depressiven Symptome als auch die kognitiven Defizite (MMSE 23/30) und die makrozytäre Anämie (erhöhtes MCV) verursachen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Parkinson-Syndrom\",\n      \"icd10_code\": \"G20\",\n      \"reasoning\": \"Der Ruhetremor, der Rigor, die psychomotorische Verlangsamung und das kleinschrittige Gangbild sind klassische motorische Frühzeichen eines Parkinson-Syndroms, welches häufig mit Depressionen einhergeht.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Vaskuläre Enzephalopathie\",\n      \"icd10_code\": \"I67.2\",\n      \"reasoning\": \"Die vorbestehende arterielle Hypertonie ist ein Risikofaktor für mikrovaskuläre Schäden, die zu kognitiven Defiziten und einer sekundären depressiven Symptomatik führen können.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2709,
+      "response_length": 1702,
+      "usage": {
+        "prompt_tokens": 825,
+        "completion_tokens": 521
+      },
+      "case_id": "cr_008",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.888888888888889
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ovarialkarzinom (fortgeschrittenes Stadium)",
+          "icd10_code": "C56",
+          "reasoning": "Die Kombination aus einer großen, soliden, echoreichen Adnexraumforderung, massiv erhöhtem CA-125, Aszites, Pleuraerguss (Belastungsdyspnoe) und B-Symptomatik (Gewichtsverlust) ist hochverdächtig für ein malignes Ovarialkarzinom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Ovarielles Fibrom oder Fibrothekom",
+          "icd10_code": "D27",
+          "reasoning": "Der solide, glatt begrenzte, echoreiche Tumor mit geringer Vaskularisation und das begleitende Meigs-Syndrom (Aszites, Pleuraerguss) bei negativen Tumormarkern außer CA-125 passen zu einem benignen Fibrom, welches CA-125 erhöhen kann.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Metastasierung im Ovar (Krukenberg-Tumor)",
+          "icd10_code": "C79.6",
+          "reasoning": "Obwohl die Patientin jung ist und keine Primärtumor-Anamnese hat, kann eine solide, oft beidseitige Ovarialmetastase, z.B. eines Magenkarzinoms, mit Aszites und Ergussbildung vorliegen; die Tumormarker CEA und AFP sind jedoch nicht erhöht.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Tuberkulose mit Peritonealbefall",
+          "icd10_code": "A18.3",
+          "reasoning": "Kann sich als chronische Peritonitis mit Aszites, Adnextumoren (tuberkulöse Salpingitis) und Ergüssen präsentieren; das gering erhöhte CRP und die B-Symptomatik sind vereinbar, der extrem hohe CA-125-Wert ist jedoch untypisch.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ovarialkarzinom (fortgeschrittenes Stadium)\",\n      \"icd10_code\": \"C56\",\n      \"reasoning\": \"Die Kombination aus einer großen, soliden, echoreichen Adnexraumforderung, massiv erhöhtem CA-125, Aszites, Pleuraerguss (Belastungsdyspnoe) und B-Symptomatik (Gewichtsverlust) ist hochverdächtig für ein malignes Ovarialkarzinom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Ovarielles Fibrom oder Fibrothekom\",\n      \"icd10_code\": \"D27\",\n      \"reasoning\": \"Der solide, glatt begrenzte, echoreiche Tumor mit geringer Vaskularisation und das begleitende Meigs-Syndrom (Aszites, Pleuraerguss) bei negativen Tumormarkern außer CA-125 passen zu einem benignen Fibrom, welches CA-125 erhöhen kann.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Metastasierung im Ovar (Krukenberg-Tumor)\",\n      \"icd10_code\": \"C79.6\",\n      \"reasoning\": \"Obwohl die Patientin jung ist und keine Primärtumor-Anamnese hat, kann eine solide, oft beidseitige Ovarialmetastase, z.B. eines Magenkarzinoms, mit Aszites und Ergussbildung vorliegen; die Tumormarker CEA und AFP sind jedoch nicht erhöht.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Tuberkulose mit Peritonealbefall\",\n      \"icd10_code\": \"A18.3\",\n      \"reasoning\": \"Kann sich als chronische Peritonitis mit Aszites, Adnextumoren (tuberkulöse Salpingitis) und Ergüssen präsentieren; das gering erhöhte CRP und die B-Symptomatik sind vereinbar, der extrem hohe CA-125-Wert ist jedoch untypisch.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2494,
+      "response_length": 1555,
+      "usage": {
+        "prompt_tokens": 768,
+        "completion_tokens": 490
+      },
+      "case_id": "cr_009",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.25
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Pneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Die Trias aus Fieber, produktivem Husten mit gelb-grünlichem Auswurf und Schüttelfrost, kombiniert mit den klinischen Befunden einer Klopfschalldämpfung, Rasselgeräuschen, erhöhten Entzündungsparametern (CRP, PCT, Leukos) und dem radiologischen Nachweis einer homogenen Verschattung mit Aerobronchogramm im rechten Unterlappen ist hochspezifisch für eine bakterielle Pneumonie.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Exazerbation einer chronisch obstruktiven Lungenerkrankung (COPD)",
+          "icd10_code": "J44.1",
+          "reasoning": "Aufgrund der Raucheranamnese (30 Pack Years) und der produktiven Symptomatik ist eine infektgetriggerte Exazerbation einer vorbestehenden COPD differenzialdiagnostisch in Betracht zu ziehen, wobei die fokalen Befunde und das hohe Fieber eher für eine Pneumonie sprechen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenabszess",
+          "icd10_code": "J85.2",
+          "reasoning": "Bei Rauchern mit schwerer Pneumonie kann sich ein Abszess entwickeln. Die ausgeprägte systemische Entzündungsreaktion (hohes Fieber, Schüttelfrost, hohes CRP/PCT) und die fokale Verschattung im Röntgen sind vereinbar, jedoch zeigt das Röntgenbild kein typisches Flüssigkeitsniveau und der Erguss fehlt, was die Wahrscheinlichkeit senkt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Obstruktive Pneumonie durch Bronchialkarzinom",
+          "icd10_code": "J18.2",
+          "reasoning": "Das Alter und die ausgeprägte Raucheranamnese sind Risikofaktoren für ein Bronchialkarzinom, welches durch eine Obstruktion zu einer poststenotischen Pneumonie führen kann. Die akute, hochfieberhafte Präsentation ist jedoch untypisch und spricht primär für einen infektiologischen Prozess.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Pneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Die Trias aus Fieber, produktivem Husten mit gelb-grünlichem Auswurf und Schüttelfrost, kombiniert mit den klinischen Befunden einer Klopfschalldämpfung, Rasselgeräuschen, erhöhten Entzündungsparametern (CRP, PCT, Leukos) und dem radiologischen Nachweis einer homogenen Verschattung mit Aerobronchogramm im rechten Unterlappen ist hochspezifisch für eine bakterielle Pneumonie.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Exazerbation einer chronisch obstruktiven Lungenerkrankung (COPD)\",\n      \"icd10_code\": \"J44.1\",\n      \"reasoning\": \"Aufgrund der Raucheranamnese (30 Pack Years) und der produktiven Symptomatik ist eine infektgetriggerte Exazerbation einer vorbestehenden COPD differenzialdiagnostisch in Betracht zu ziehen, wobei die fokalen Befunde und das hohe Fieber eher für eine Pneumonie sprechen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenabszess\",\n      \"icd10_code\": \"J85.2\",\n      \"reasoning\": \"Bei Rauchern mit schwerer Pneumonie kann sich ein Abszess entwickeln. Die ausgeprägte systemische Entzündungsreaktion (hohes Fieber, Schüttelfrost, hohes CRP/PCT) und die fokale Verschattung im Röntgen sind vereinbar, jedoch zeigt das Röntgenbild kein typisches Flüssigkeitsniveau und der Erguss fehlt, was die Wahrscheinlichkeit senkt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Obstruktive Pneumonie durch Bronchialkarzinom\",\n      \"icd10_code\": \"J18.2\",\n      \"reasoning\": \"Das Alter und die ausgeprägte Raucheranamnese sind Risikofaktoren für ein Bronchialkarzinom, welches durch eine Obstruktion zu einer poststenotischen Pneumonie führen kann. Die akute, hochfieberhafte Präsentation ist jedoch untypisch und spricht primär für einen infektiologischen Prozess.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2630,
+      "response_length": 1885,
+      "usage": {
+        "prompt_tokens": 778,
+        "completion_tokens": 556
+      },
+      "case_id": "cr_010",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Perikarditis",
+          "icd10_code": "I30.9",
+          "reasoning": "Die diffusen ST-Hebungen im EKG, die lageabhängige Schmerzbesserung im Sitzen mit nach vorne gebeugtem Oberkörper, die leisen Herztöne und die erhöhten Entzündungsparameter (CRP, Leukozyten) nach vorausgegangenem Infekt sind hochgradig typisch.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akute Herzinsuffizienz",
+          "icd10_code": "I50.9",
+          "reasoning": "Die Belastungsdyspnoe, Orthopnoe, basalen Rasselgeräusche, erhöhte NT-proBNP-Werte und die gestauten Jugularvenen weisen auf eine akute Dekompensation hin, möglicherweise getriggert durch die Perikarditis.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Akutes Koronarsyndrom (Myokardinfarkt)",
+          "icd10_code": "I21.9",
+          "reasoning": "Das erhöhte Troponin und der retrosternale Druck mit Ausstrahlung in den Unterkiefer sind alarmierend, jedoch sprechen die diffusen, konkaven ST-Hebungen ohne ST-Senkungen und die fehlende Q-Zackenbildung eher gegen einen Myokardinfarkt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die Dyspnoe, Tachykardie und leicht erhöhten D-Dimere sind verdächtig, jedoch fehlen typische Risikofaktoren, und die Thoraxübersichtsaufnahme zeigt keine pulmonalen Stauungszeichen, was die Wahrscheinlichkeit senkt.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Perikarditis\",\n      \"icd10_code\": \"I30.9\",\n      \"reasoning\": \"Die diffusen ST-Hebungen im EKG, die lageabhängige Schmerzbesserung im Sitzen mit nach vorne gebeugtem Oberkörper, die leisen Herztöne und die erhöhten Entzündungsparameter (CRP, Leukozyten) nach vorausgegangenem Infekt sind hochgradig typisch.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akute Herzinsuffizienz\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Die Belastungsdyspnoe, Orthopnoe, basalen Rasselgeräusche, erhöhte NT-proBNP-Werte und die gestauten Jugularvenen weisen auf eine akute Dekompensation hin, möglicherweise getriggert durch die Perikarditis.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom (Myokardinfarkt)\",\n      \"icd10_code\": \"I21.9\",\n      \"reasoning\": \"Das erhöhte Troponin und der retrosternale Druck mit Ausstrahlung in den Unterkiefer sind alarmierend, jedoch sprechen die diffusen, konkaven ST-Hebungen ohne ST-Senkungen und die fehlende Q-Zackenbildung eher gegen einen Myokardinfarkt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die Dyspnoe, Tachykardie und leicht erhöhten D-Dimere sind verdächtig, jedoch fehlen typische Risikofaktoren, und die Thoraxübersichtsaufnahme zeigt keine pulmonalen Stauungszeichen, was die Wahrscheinlichkeit senkt.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2348,
+      "response_length": 1468,
+      "usage": {
+        "prompt_tokens": 726,
+        "completion_tokens": 463
+      },
+      "case_id": "cr_011",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Eosinophile Granulomatose mit Polyangiitis (Churg-Strauss-Syndrom)",
+          "icd10_code": "M30.1",
+          "reasoning": "Die Trias aus Asthma bronchiale, ausgeprägter Blut- und Gewebseosinophilie sowie neurologischer Beteiligung (Mononeuritis multiplex) ist hochcharakteristisch. Die erhöhten p-ANCA (MPO-Antikörper), die pulmonalen Infiltrate und die Hautveränderungen komplettieren das Bild.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Allergische bronchopulmonale Aspergillose (ABPA)",
+          "icd10_code": "B44.9",
+          "reasoning": "Das schwierig kontrollierte Asthma, die chronische Rhinosinusitis, die hohe Blut- und Gewebseosinophilie sowie der stark erhöhte Gesamt-IgE-Spiegel sind typische Befunde. Die neurologischen Symptome und positiven ANCA passen jedoch weniger gut.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hypereosinophiles Syndrom (HES)",
+          "icd10_code": "D72.1",
+          "reasoning": "Die ausgeprägte Eosinophilie mit Organschädigung (Lunge, Neurologie, Haut) ist führend. Das Syndrom kann pulmonale Infiltrate und neurologische Symptome verursachen, jedoch sind Asthma und ANCA-Typisch für EGPA.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Granulomatose mit Polyangiitis (GPA)",
+          "icd10_code": "M31.3",
+          "reasoning": "Die ANCA-Assoziation und die neurologische Beteiligung sind vereinbar. Die vorherrschende Eosinophilie, das Asthma und die Art der pulmonalen Infiltrate (Milchglasinfiltrate statt Noduli) sind jedoch untypisch für eine GPA.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Medikamenten-induzierte Eosinophilie",
+          "icd10_code": "D72.1",
+          "reasoning": "Kann als seltene Nebenwirkung von Medikamenten auftreten und pulmonale sowie neurologische Symptome verursachen. Die spezifische Konstellation der Symptome und der positive ANCA-Titer machen diese Diagnose jedoch sehr unwahrscheinlich.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Eosinophile Granulomatose mit Polyangiitis (Churg-Strauss-Syndrom)\",\n      \"icd10_code\": \"M30.1\",\n      \"reasoning\": \"Die Trias aus Asthma bronchiale, ausgeprägter Blut- und Gewebseosinophilie sowie neurologischer Beteiligung (Mononeuritis multiplex) ist hochcharakteristisch. Die erhöhten p-ANCA (MPO-Antikörper), die pulmonalen Infiltrate und die Hautveränderungen komplettieren das Bild.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Allergische bronchopulmonale Aspergillose (ABPA)\",\n      \"icd10_code\": \"B44.9\",\n      \"reasoning\": \"Das schwierig kontrollierte Asthma, die chronische Rhinosinusitis, die hohe Blut- und Gewebseosinophilie sowie der stark erhöhte Gesamt-IgE-Spiegel sind typische Befunde. Die neurologischen Symptome und positiven ANCA passen jedoch weniger gut.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hypereosinophiles Syndrom (HES)\",\n      \"icd10_code\": \"D72.1\",\n      \"reasoning\": \"Die ausgeprägte Eosinophilie mit Organschädigung (Lunge, Neurologie, Haut) ist führend. Das Syndrom kann pulmonale Infiltrate und neurologische Symptome verursachen, jedoch sind Asthma und ANCA-Typisch für EGPA.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Granulomatose mit Polyangiitis (GPA)\",\n      \"icd10_code\": \"M31.3\",\n      \"reasoning\": \"Die ANCA-Assoziation und die neurologische Beteiligung sind vereinbar. Die vorherrschende Eosinophilie, das Asthma und die Art der pulmonalen Infiltrate (Milchglasinfiltrate statt Noduli) sind jedoch untypisch für eine GPA.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Medikamenten-induzierte Eosinophilie\",\n      \"icd10_code\": \"D72.1\",\n      \"reasoning\": \"Kann als seltene Nebenwirkung von Medikamenten auftreten und pulmonale sowie neurologische Symptome verursachen. Die spezifische Konstellation der Symptome und der positive ANCA-Titer machen diese Diagnose jedoch sehr unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2518,
+      "response_length": 1995,
+      "usage": {
+        "prompt_tokens": 756,
+        "completion_tokens": 593
+      },
+      "case_id": "cr_012",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666665
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall",
+          "icd10_code": "I63.9",
+          "reasoning": "Das akute Auftreten einer Aphasie, Hemiparese rechts (Armbetonung) und Fazialisparese bei bekanntem VHF ohne Antikoagulation sowie das Hyperdense Media Sign in der CCT sprechen für einen Verschluss der linken A. cerebri media.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intrazerebrale Blutung",
+          "icd10_code": "I61.9",
+          "reasoning": "Trotz initial negativer CCT auf Blutung ist das Risiko aufgrund der pausierten Antikoagulation bei VHF und Hypertonie erhöht; eine kleine Blutung könnte initial übersehen worden sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Transitorische ischämische Attacke (TIA)",
+          "icd10_code": "G45.9",
+          "reasoning": "Die Symptome sind typisch für eine TIA, jedoch ist die Persistenz der Symptome mit einem NIHSS von 12 und die Dauer von 75 Minuten sprechen eher für einen manifesten Schlaganfall.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Zerebrales Raumforderung (Tumor, Abszess)",
+          "icd10_code": "C71.9",
+          "reasoning": "Kann ähnliche fokale neurologische Defizite verursachen, aber das akute Auftreten und das Fehlen einer Raumforderung in der CCT machen dies unwahrscheinlich.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall\",\n      \"icd10_code\": \"I63.9\",\n      \"reasoning\": \"Das akute Auftreten einer Aphasie, Hemiparese rechts (Armbetonung) und Fazialisparese bei bekanntem VHF ohne Antikoagulation sowie das Hyperdense Media Sign in der CCT sprechen für einen Verschluss der linken A. cerebri media.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intrazerebrale Blutung\",\n      \"icd10_code\": \"I61.9\",\n      \"reasoning\": \"Trotz initial negativer CCT auf Blutung ist das Risiko aufgrund der pausierten Antikoagulation bei VHF und Hypertonie erhöht; eine kleine Blutung könnte initial übersehen worden sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Transitorische ischämische Attacke (TIA)\",\n      \"icd10_code\": \"G45.9\",\n      \"reasoning\": \"Die Symptome sind typisch für eine TIA, jedoch ist die Persistenz der Symptome mit einem NIHSS von 12 und die Dauer von 75 Minuten sprechen eher für einen manifesten Schlaganfall.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Zerebrales Raumforderung (Tumor, Abszess)\",\n      \"icd10_code\": \"C71.9\",\n      \"reasoning\": \"Kann ähnliche fokale neurologische Defizite verursachen, aber das akute Auftreten und das Fehlen einer Raumforderung in der CCT machen dies unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2380,
+      "response_length": 1354,
+      "usage": {
+        "prompt_tokens": 681,
+        "completion_tokens": 405
+      },
+      "case_id": "cr_013",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Pankreaskopfkarzinom",
+          "icd10_code": "C25.0",
+          "reasoning": "Das Double-Duct-Phänomen, die echoarme Raumforderung im Pankreaskopf, der erhöhte CA 19-9-Wert, der schmerzlose Ikterus mit Gewichtsverlust und die Risikofaktoren (Rauchen, Diabetes) sind hochverdächtig.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Die diffuse, inhomogene Schwellung des Organs, der Alkoholkonsum und der Diabetes sind passend; jedoch sind das ausgeprägte Double-Duct-Phänomen und der scharfe Halo-Zeichen-Saum eher untypisch.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Cholangiokarzinom",
+          "icd10_code": "C24.0",
+          "reasoning": "Der Verschlussikterus mit Erweiterung des Ductus choledochus und erhöhtem CA 19-9 ist vereinbar, jedoch ist die Raumforderung primär im Pankreaskopf lokalisiert.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Autoimmunpankreatitis (Typ 1)",
+          "icd10_code": "K86.1",
+          "reasoning": "Die diffuse Organbeteiligung und der schmale echoarme Randsaum (Halo-Zeichen) sind charakteristisch, aber das fokale Double-Duct-Phänomen und die deutliche Raumforderung sind atypisch.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Pankreaskopfkarzinom\",\n      \"icd10_code\": \"C25.0\",\n      \"reasoning\": \"Das Double-Duct-Phänomen, die echoarme Raumforderung im Pankreaskopf, der erhöhte CA 19-9-Wert, der schmerzlose Ikterus mit Gewichtsverlust und die Risikofaktoren (Rauchen, Diabetes) sind hochverdächtig.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die diffuse, inhomogene Schwellung des Organs, der Alkoholkonsum und der Diabetes sind passend; jedoch sind das ausgeprägte Double-Duct-Phänomen und der scharfe Halo-Zeichen-Saum eher untypisch.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Cholangiokarzinom\",\n      \"icd10_code\": \"C24.0\",\n      \"reasoning\": \"Der Verschlussikterus mit Erweiterung des Ductus choledochus und erhöhtem CA 19-9 ist vereinbar, jedoch ist die Raumforderung primär im Pankreaskopf lokalisiert.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Autoimmunpankreatitis (Typ 1)\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die diffuse Organbeteiligung und der schmale echoarme Randsaum (Halo-Zeichen) sind charakteristisch, aber das fokale Double-Duct-Phänomen und die deutliche Raumforderung sind atypisch.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2502,
+      "response_length": 1312,
+      "usage": {
+        "prompt_tokens": 755,
+        "completion_tokens": 419
+      },
+      "case_id": "cr_014",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Paraneoplastische limbische Enzephalitis",
+          "icd10_code": "G13.0",
+          "reasoning": "Die Trias aus Wesensänderung, Gedächtnisstörungen und fokalen Anfällen bei Nachweis einer Bronchialkarzinom-verdächtigen Raumforderung im CT-Thorax, SIADH, Lambert-Eaton-Phänomen und positiven oligoklonalen Banden im Liquor ist hochspezifisch für eine paraneoplastische Genese.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Kleinzelliges Bronchialkarzinom",
+          "icd10_code": "C34.9",
+          "reasoning": "Die zentrale Raumforderung im rechten Oberlappen mit Lymphadenopathie bei einem Patienten mit ausgeprägtem Nikotinabusus und paraneoplastischen Syndromen (SIADH, Lambert-Eaton) ist sehr verdächtig auf ein kleinzelliges Bronchialkarzinom als Primärtumor.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Herpes-simplex-Virus-Enzephalitis",
+          "icd10_code": "B00.4",
+          "reasoning": "Die limbische Symptomatik mit Krampfanfällen, Verhaltensänderung und Pleozytose im Liquor sowie MRT-Veränderungen der Temporallappen ist typisch, jedoch sind die ausgeprägten paraneoplastischen Zeichen (B-Symptomatik, Lambert-Eaton, Tumor) gegen eine primär infektiöse Ursache sprechend.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Primäres ZNS-Lymphom",
+          "icd10_code": "C85.1",
+          "reasoning": "Kann sich mit neuropsychiatrischen Symptomen, Krampfanfällen und liquorzytologischen Veränderungen präsentieren, jedoch sind die thorakale Raumforderung und die spezifischen paraneoplastischen Phänomene (Lambert-Eaton) deutlich wegweisender für ein systemisches, paraneoplastisches Geschehen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Paraneoplastische limbische Enzephalitis\",\n      \"icd10_code\": \"G13.0\",\n      \"reasoning\": \"Die Trias aus Wesensänderung, Gedächtnisstörungen und fokalen Anfällen bei Nachweis einer Bronchialkarzinom-verdächtigen Raumforderung im CT-Thorax, SIADH, Lambert-Eaton-Phänomen und positiven oligoklonalen Banden im Liquor ist hochspezifisch für eine paraneoplastische Genese.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Kleinzelliges Bronchialkarzinom\",\n      \"icd10_code\": \"C34.9\",\n      \"reasoning\": \"Die zentrale Raumforderung im rechten Oberlappen mit Lymphadenopathie bei einem Patienten mit ausgeprägtem Nikotinabusus und paraneoplastischen Syndromen (SIADH, Lambert-Eaton) ist sehr verdächtig auf ein kleinzelliges Bronchialkarzinom als Primärtumor.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Herpes-simplex-Virus-Enzephalitis\",\n      \"icd10_code\": \"B00.4\",\n      \"reasoning\": \"Die limbische Symptomatik mit Krampfanfällen, Verhaltensänderung und Pleozytose im Liquor sowie MRT-Veränderungen der Temporallappen ist typisch, jedoch sind die ausgeprägten paraneoplastischen Zeichen (B-Symptomatik, Lambert-Eaton, Tumor) gegen eine primär infektiöse Ursache sprechend.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Primäres ZNS-Lymphom\",\n      \"icd10_code\": \"C85.1\",\n      \"reasoning\": \"Kann sich mit neuropsychiatrischen Symptomen, Krampfanfällen und liquorzytologischen Veränderungen präsentieren, jedoch sind die thorakale Raumforderung und die spezifischen paraneoplastischen Phänomene (Lambert-Eaton) deutlich wegweisender für ein systemisches, paraneoplastisches Geschehen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2649,
+      "response_length": 1712,
+      "usage": {
+        "prompt_tokens": 787,
+        "completion_tokens": 510
+      },
+      "case_id": "cr_015",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Mediale Schenkelhalsfraktur rechts",
+          "icd10_code": "S72.01",
+          "reasoning": "Die Kombination aus Sturz, stärksten Leistenschmerzen, Beinverkürzung mit Außenrotation im klinischen Befund sowie die radiologisch nachgewiesene Unterbrechung der Kortikalis im medialen Schenkelhals mit Dislokation ist hochgradig pathognomonisch.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pertrochantäre Femurfraktur",
+          "icd10_code": "S72.11",
+          "reasoning": "Der Klopfschmerz über dem Trochanter major und der Sturzmechanismus sind vereinbar, jedoch zeigt das Röntgenbild explizit intakte Trochanteren und eine Frakturlinie im Schenkelhals, was diese Diagnose weniger wahrscheinlich macht.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Luxation des Hüftgelenks",
+          "icd10_code": "S73.0",
+          "reasoning": "Die Fehlstellung und Verkürzung des Beins könnten initial an eine Luxation denken lassen, jedoch ist das Röntgenbild mit einer Fraktur und einem intakten Acetabulum wegweisend, zudem sind Luxationen nach einfachen Stürzen bei Erwachsenen sehr selten.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Femorale Stressfraktur bei Osteoporose",
+          "icd10_code": "M84.45",
+          "reasoning": "Die vorbekannte schwere Osteoporose (T-Score -2.8) prädisponiert für eine pathologische Fraktur, aber der akute Sturz als auslösendes Ereignis und das radiologische Bild sprechen klar für eine akute traumatische Fraktur und nicht für eine vorbestehende Stressfraktur.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Mediale Schenkelhalsfraktur rechts\",\n      \"icd10_code\": \"S72.01\",\n      \"reasoning\": \"Die Kombination aus Sturz, stärksten Leistenschmerzen, Beinverkürzung mit Außenrotation im klinischen Befund sowie die radiologisch nachgewiesene Unterbrechung der Kortikalis im medialen Schenkelhals mit Dislokation ist hochgradig pathognomonisch.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pertrochantäre Femurfraktur\",\n      \"icd10_code\": \"S72.11\",\n      \"reasoning\": \"Der Klopfschmerz über dem Trochanter major und der Sturzmechanismus sind vereinbar, jedoch zeigt das Röntgenbild explizit intakte Trochanteren und eine Frakturlinie im Schenkelhals, was diese Diagnose weniger wahrscheinlich macht.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Luxation des Hüftgelenks\",\n      \"icd10_code\": \"S73.0\",\n      \"reasoning\": \"Die Fehlstellung und Verkürzung des Beins könnten initial an eine Luxation denken lassen, jedoch ist das Röntgenbild mit einer Fraktur und einem intakten Acetabulum wegweisend, zudem sind Luxationen nach einfachen Stürzen bei Erwachsenen sehr selten.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Femorale Stressfraktur bei Osteoporose\",\n      \"icd10_code\": \"M84.45\",\n      \"reasoning\": \"Die vorbekannte schwere Osteoporose (T-Score -2.8) prädisponiert für eine pathologische Fraktur, aber der akute Sturz als auslösendes Ereignis und das radiologische Bild sprechen klar für eine akute traumatische Fraktur und nicht für eine vorbestehende Stressfraktur.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2513,
+      "response_length": 1601,
+      "usage": {
+        "prompt_tokens": 741,
+        "completion_tokens": 468
+      },
+      "case_id": "cr_016",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Primärer Hyperparathyreoidismus",
+          "icd10_code": "E21.0",
+          "reasoning": "Die Hyperkalzämie (2,92 mmol/l) und Hypophosphatämie (0,68 mmol/l) sind klassisch. Die depressive Symptomatik, Antriebslosigkeit, Obstipation, Müdigkeit und proximale Muskelschwäche sind typische neuropsychiatrische und neuromuskuläre Manifestationen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Schwere depressive Episode",
+          "icd10_code": "F32.2",
+          "reasoning": "Die Antriebslosigkeit, Freudlosigkeit, soziale Rückzug, Konzentrationsstörungen, Gewichtsverlust und Schlafstörungen sind kernsymptomatisch. Die somatischen Befunde könnten eine eigenständige oder sekundäre Komponente darstellen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Malignom-assoziierte Hyperkalzämie",
+          "icd10_code": "C80.9",
+          "reasoning": "Die unerklärte Hyperkalzämie mit Hypophosphatämie, Gewichtsverlust und depressiver Symptomatik sind Warnzeichen, auch wenn der Patient keine weiteren offensichtlichen Tumorsymptome zeigt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Vitamin-D-Intoxikation",
+          "icd10_code": "E67.3",
+          "reasoning": "Kann eine Hyperkalzämie und deren Symptome wie Antriebslosigkeit, Obstipation und Nierensteine (Nephrolithiasis in der Sonographie) verursachen, ist jedoch ohne Anamnese einer Supplementation weniger wahrscheinlich.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Primärer Hyperparathyreoidismus\",\n      \"icd10_code\": \"E21.0\",\n      \"reasoning\": \"Die Hyperkalzämie (2,92 mmol/l) und Hypophosphatämie (0,68 mmol/l) sind klassisch. Die depressive Symptomatik, Antriebslosigkeit, Obstipation, Müdigkeit und proximale Muskelschwäche sind typische neuropsychiatrische und neuromuskuläre Manifestationen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Schwere depressive Episode\",\n      \"icd10_code\": \"F32.2\",\n      \"reasoning\": \"Die Antriebslosigkeit, Freudlosigkeit, soziale Rückzug, Konzentrationsstörungen, Gewichtsverlust und Schlafstörungen sind kernsymptomatisch. Die somatischen Befunde könnten eine eigenständige oder sekundäre Komponente darstellen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Malignom-assoziierte Hyperkalzämie\",\n      \"icd10_code\": \"C80.9\",\n      \"reasoning\": \"Die unerklärte Hyperkalzämie mit Hypophosphatämie, Gewichtsverlust und depressiver Symptomatik sind Warnzeichen, auch wenn der Patient keine weiteren offensichtlichen Tumorsymptome zeigt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Vitamin-D-Intoxikation\",\n      \"icd10_code\": \"E67.3\",\n      \"reasoning\": \"Kann eine Hyperkalzämie und deren Symptome wie Antriebslosigkeit, Obstipation und Nierensteine (Nephrolithiasis in der Sonographie) verursachen, ist jedoch ohne Anamnese einer Supplementation weniger wahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2512,
+      "response_length": 1476,
+      "usage": {
+        "prompt_tokens": 776,
+        "completion_tokens": 429
+      },
+      "case_id": "cr_017",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.25
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ovarialkarzinom",
+          "icd10_code": "C56",
+          "reasoning": "Die Kombination aus einer komplexen, solid-zystischen Adnexraumforderung mit erhöhtem CA-125, progredientem Aszites und paradoxem Gewichtsverlust bei gesteigertem Appetit ist hochverdächtig für ein malignes Ovarialkarzinom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hyperthyreose mit sekundärer Herzinsuffizienz",
+          "icd10_code": "E05.90",
+          "reasoning": "Die supprimierten TSH- und erhöhten fT3/fT4-Werte bei Tachykardie, Herzrasen, Schwitzen und Gewichtsverlust beweisen eine Hyperthyreose, die den Aszites und die Dyspnoe durch eine hochgradige Herzinsuffizienz erklären könnte.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Benigner Ovarialtumor (Brenner-Tumor, Fibrom) mit Meigs-Syndrom",
+          "icd10_code": "D27",
+          "reasoning": "Ein benigner, solider Ovarialtumor (hier derbe Raumforderung) kann in seltenen Fällen ein Meigs-Syndrom mit Aszites und Pleuraerguss (hier als Dyspnoe manifestiert) verursachen, wobei die Hyperthyreose ein Zufallsbefund wäre.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Struma ovarii",
+          "icd10_code": "D27",
+          "reasoning": "Eine seltene, funktionelle Struma ovarii als Teil eines Teratoms könnte sowohl die ovarielle Raumforderung als auch die Hyperthyreose mit den entsprechenden systemischen Symptomen erklären.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ovarialkarzinom\",\n      \"icd10_code\": \"C56\",\n      \"reasoning\": \"Die Kombination aus einer komplexen, solid-zystischen Adnexraumforderung mit erhöhtem CA-125, progredientem Aszites und paradoxem Gewichtsverlust bei gesteigertem Appetit ist hochverdächtig für ein malignes Ovarialkarzinom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hyperthyreose mit sekundärer Herzinsuffizienz\",\n      \"icd10_code\": \"E05.90\",\n      \"reasoning\": \"Die supprimierten TSH- und erhöhten fT3/fT4-Werte bei Tachykardie, Herzrasen, Schwitzen und Gewichtsverlust beweisen eine Hyperthyreose, die den Aszites und die Dyspnoe durch eine hochgradige Herzinsuffizienz erklären könnte.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Benigner Ovarialtumor (Brenner-Tumor, Fibrom) mit Meigs-Syndrom\",\n      \"icd10_code\": \"D27\",\n      \"reasoning\": \"Ein benigner, solider Ovarialtumor (hier derbe Raumforderung) kann in seltenen Fällen ein Meigs-Syndrom mit Aszites und Pleuraerguss (hier als Dyspnoe manifestiert) verursachen, wobei die Hyperthyreose ein Zufallsbefund wäre.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Struma ovarii\",\n      \"icd10_code\": \"D27\",\n      \"reasoning\": \"Eine seltene, funktionelle Struma ovarii als Teil eines Teratoms könnte sowohl die ovarielle Raumforderung als auch die Hyperthyreose mit den entsprechenden systemischen Symptomen erklären.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2646,
+      "response_length": 1474,
+      "usage": {
+        "prompt_tokens": 819,
+        "completion_tokens": 456
+      },
+      "case_id": "cr_018",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Bakterielle Pneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Die Trias aus Fieber, produktivem Husten mit gelb-grünlichem Auswurf und neu aufgetretenen thorakalen Schmerzen, kombiniert mit den Auskultationsbefunden (abgeschwächtes Atemgeräusch, Rasselgeräusche), der Dämpfung, dem Röntgenbefund (Verschattung mit Aerobronchogramm) und den stark erhöhten Entzündungsparametern (Leukozytose, CRP, PCT) spricht für eine fokale Lungenentzündung.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "COPD-Exazerbation mit Pneumonie",
+          "icd10_code": "J44.0",
+          "reasoning": "Die massive Verschlechterung nach initialer Erkältung bei langjährigem Nikotinabusus (40 Pack-Years) als Hauptrisikofaktor für COPD, gepaart mit den Zeichen einer Infektion (Fieber, purulenter Auswurf) und respiratorischer Insuffizienz (Tachypnoe, niedrige Sättigung), deutet auf eine exazerbierte COPD mit bakterieller Superinfektion hin.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Lungenabszess",
+          "icd10_code": "J85.2",
+          "reasoning": "Der produktive Husten, das hohe Fieber und die ausgeprägten systemischen Entzündungszeichen (hohes CRP, Leukozytose) könnten auf eine komplizierte Infektion mit Einschmelzung hindeuten, auch wenn das klassische Aerobronchogramm im Röntgen primär für eine Pneumonie spricht.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pleuropneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Die atemabhängigen Schmerzen in der rechten Thoraxseite in Kombination mit der Dämpfung und den abgeschwächten Atemgeräuschen lassen auf einen begleitenden Pleuraerguss als Komplikation der Pneumonie schließen.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Bakterielle Pneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Die Trias aus Fieber, produktivem Husten mit gelb-grünlichem Auswurf und neu aufgetretenen thorakalen Schmerzen, kombiniert mit den Auskultationsbefunden (abgeschwächtes Atemgeräusch, Rasselgeräusche), der Dämpfung, dem Röntgenbefund (Verschattung mit Aerobronchogramm) und den stark erhöhten Entzündungsparametern (Leukozytose, CRP, PCT) spricht für eine fokale Lungenentzündung.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"COPD-Exazerbation mit Pneumonie\",\n      \"icd10_code\": \"J44.0\",\n      \"reasoning\": \"Die massive Verschlechterung nach initialer Erkältung bei langjährigem Nikotinabusus (40 Pack-Years) als Hauptrisikofaktor für COPD, gepaart mit den Zeichen einer Infektion (Fieber, purulenter Auswurf) und respiratorischer Insuffizienz (Tachypnoe, niedrige Sättigung), deutet auf eine exazerbierte COPD mit bakterieller Superinfektion hin.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Lungenabszess\",\n      \"icd10_code\": \"J85.2\",\n      \"reasoning\": \"Der produktive Husten, das hohe Fieber und die ausgeprägten systemischen Entzündungszeichen (hohes CRP, Leukozytose) könnten auf eine komplizierte Infektion mit Einschmelzung hindeuten, auch wenn das klassische Aerobronchogramm im Röntgen primär für eine Pneumonie spricht.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pleuropneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Die atemabhängigen Schmerzen in der rechten Thoraxseite in Kombination mit der Dämpfung und den abgeschwächten Atemgeräuschen lassen auf einen begleitenden Pleuraerguss als Komplikation der Pneumonie schließen.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2609,
+      "response_length": 1761,
+      "usage": {
+        "prompt_tokens": 792,
+        "completion_tokens": 546
+      },
+      "case_id": "cr_019",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Takotsubo-Syndrom",
+          "icd10_code": "I51.81",
+          "reasoning": "Die Symptome traten nach emotionalem Stress auf, das Echokardiogramm zeigt die typische apikale Akinesie bei hyperkontraktiler Basis, und die Koronarangiographie war unauffällig, was für ein Stress-Kardiomyopathie spricht.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Koronarsyndrom (STEMI)",
+          "icd10_code": "I21.9",
+          "reasoning": "Die ST-Hebungen im EKG, der ansteigende Troponin-Wert und die klinische Präsentation mit Thoraxschmerzen und Dyspnoe sind klassisch für einen Myokardinfarkt, obwohl die Koronararterien frei waren.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Myokarditis",
+          "icd10_code": "I40.9",
+          "reasoning": "Erhöhte Troponin- und Entzündungswerte (CRP, Leukozyten) bei globaler systolischer Dysfunktion können auf eine akute Entzündung des Herzmuskels hinweisen, auch wenn die Symptomatik hier sehr akut ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.99",
+          "reasoning": "Akute Dyspnoe, Tachykardie und ein erhöhter NT-proBNP-Wert sind vereinbar, jedoch sprechen die fehlende D-Dimer-Erhöhung und die typischen EKG/Echo-Befunde eines Takotsubo dagegen.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Hypertensive Krise mit Lungenödem",
+          "icd10_code": "I11.0",
+          "reasoning": "Bekannte Hypertonie und Rasselgeräusche deuten auf ein Lungenödem hin, jedoch war der Blutdruck bei Aufnahme erniedrigt, was diese Diagnose unwahrscheinlich macht.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Takotsubo-Syndrom\",\n      \"icd10_code\": \"I51.81\",\n      \"reasoning\": \"Die Symptome traten nach emotionalem Stress auf, das Echokardiogramm zeigt die typische apikale Akinesie bei hyperkontraktiler Basis, und die Koronarangiographie war unauffällig, was für ein Stress-Kardiomyopathie spricht.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom (STEMI)\",\n      \"icd10_code\": \"I21.9\",\n      \"reasoning\": \"Die ST-Hebungen im EKG, der ansteigende Troponin-Wert und die klinische Präsentation mit Thoraxschmerzen und Dyspnoe sind klassisch für einen Myokardinfarkt, obwohl die Koronararterien frei waren.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Myokarditis\",\n      \"icd10_code\": \"I40.9\",\n      \"reasoning\": \"Erhöhte Troponin- und Entzündungswerte (CRP, Leukozyten) bei globaler systolischer Dysfunktion können auf eine akute Entzündung des Herzmuskels hinweisen, auch wenn die Symptomatik hier sehr akut ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.99\",\n      \"reasoning\": \"Akute Dyspnoe, Tachykardie und ein erhöhter NT-proBNP-Wert sind vereinbar, jedoch sprechen die fehlende D-Dimer-Erhöhung und die typischen EKG/Echo-Befunde eines Takotsubo dagegen.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Hypertensive Krise mit Lungenödem\",\n      \"icd10_code\": \"I11.0\",\n      \"reasoning\": \"Bekannte Hypertonie und Rasselgeräusche deuten auf ein Lungenödem hin, jedoch war der Blutdruck bei Aufnahme erniedrigt, was diese Diagnose unwahrscheinlich macht.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2711,
+      "response_length": 1659,
+      "usage": {
+        "prompt_tokens": 816,
+        "completion_tokens": 517
+      },
+      "case_id": "cr_020",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Exogen-allergische Alveolitis (Hypersensitivitätspneumonitis)",
+          "icd10_code": "J67.9",
+          "reasoning": "Die Exposition gegenüber organischen Stäuben (Holzstaub bei Möbelrestauration), Belastungsdyspnoe, trockener Husten, Nachtschweiß, Gewichtsverlust, basale Rasselgeräusche, reduzierte Sauerstoffsättigung und das HRCT-Bild mit Milchglastrübungen, zentrilobulären Knötchen und Air-Trapping sind hochgradig verdächtig.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Idiopathische Lungenfibrose",
+          "icd10_code": "J84.1",
+          "reasoning": "Die progrediente Belastungsdyspnoe, der Reizhusten, die Gewichtsabnahme, die basalen Rasselgeräusche (Sklerophonie) und die radiologischen Veränderungen (Milchglastrübungen, Mosaikmuster) passen zu einer fibrosierenden Lungenerkrankung, obwohl das Air-Trapping eher untypisch ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Sarkoidose",
+          "icd10_code": "D86.0",
+          "reasoning": "Der erhöhte lösliche Interleukin-2-Rezeptor (sIL-2R), die Allgemeinsymptome (Gewichtsverlust, Nachtschweiß), der Reizhusten und die radiologischen Knötchen sind vereinbar. Der normale ACE-Wert und das Fehlen von Lymphadenopathie schmälern die Wahrscheinlichkeit jedoch.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Hypersensitivitätspneumonitis mit fibrosierendem Verlauf",
+          "icd10_code": "J67.9",
+          "reasoning": "Stellt eine Unterform der EAA dar und erklärt die chronische Progredienz, die systemischen Symptome (Gewichtsverlust) und die fibrosierenden Veränderungen im CT bei fortbestehender Antigenexposition.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Andere interstitielle Lungenerkrankung (z.B. NSIP)",
+          "icd10_code": "J84.8",
+          "reasoning": "Kann mit ähnlichen Symptomen und radiologischen Mustern (Milchglastrübungen) einhergehen, jedoch ist die spezifische Antigenexposition des Patienten und das Mosaikmuster/Air-Trapping weniger typisch als für eine EAA.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Exogen-allergische Alveolitis (Hypersensitivitätspneumonitis)\",\n      \"icd10_code\": \"J67.9\",\n      \"reasoning\": \"Die Exposition gegenüber organischen Stäuben (Holzstaub bei Möbelrestauration), Belastungsdyspnoe, trockener Husten, Nachtschweiß, Gewichtsverlust, basale Rasselgeräusche, reduzierte Sauerstoffsättigung und das HRCT-Bild mit Milchglastrübungen, zentrilobulären Knötchen und Air-Trapping sind hochgradig verdächtig.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Idiopathische Lungenfibrose\",\n      \"icd10_code\": \"J84.1\",\n      \"reasoning\": \"Die progrediente Belastungsdyspnoe, der Reizhusten, die Gewichtsabnahme, die basalen Rasselgeräusche (Sklerophonie) und die radiologischen Veränderungen (Milchglastrübungen, Mosaikmuster) passen zu einer fibrosierenden Lungenerkrankung, obwohl das Air-Trapping eher untypisch ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Sarkoidose\",\n      \"icd10_code\": \"D86.0\",\n      \"reasoning\": \"Der erhöhte lösliche Interleukin-2-Rezeptor (sIL-2R), die Allgemeinsymptome (Gewichtsverlust, Nachtschweiß), der Reizhusten und die radiologischen Knötchen sind vereinbar. Der normale ACE-Wert und das Fehlen von Lymphadenopathie schmälern die Wahrscheinlichkeit jedoch.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Hypersensitivitätspneumonitis mit fibrosierendem Verlauf\",\n      \"icd10_code\": \"J67.9\",\n      \"reasoning\": \"Stellt eine Unterform der EAA dar und erklärt die chronische Progredienz, die systemischen Symptome (Gewichtsverlust) und die fibrosierenden Veränderungen im CT bei fortbestehender Antigenexposition.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Andere interstitielle Lungenerkrankung (z.B. NSIP)\",\n      \"icd10_code\": \"J84.8\",\n      \"reasoning\": \"Kann mit ähnlichen Symptomen und radiologischen Mustern (Milchglastrübungen) einhergehen, jedoch ist die spezifische Antigenexposition des Patienten und das Mosaikmuster/Air-Trapping weniger typisch als für eine EAA.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2345,
+      "response_length": 2086,
+      "usage": {
+        "prompt_tokens": 704,
+        "completion_tokens": 641
+      },
+      "case_id": "cr_021",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666665
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Morbus Parkinson",
+          "icd10_code": "G20",
+          "reasoning": "Die Trias aus Ruhetremor (Pillendreher-Phänomen), Rigor (Zahnradphänomen) und Bradykinese (reduzierte Mimik, Mikrographie, kleinschrittiger Gang) ist klassisch. Zusätzlich unterstützen die nicht-motorischen Symptome (Obstipation, REM-Schlaf-Verhaltensstörung) die Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Essentieller Tremor",
+          "icd10_code": "G25.0",
+          "reasoning": "Ein Tremor der Hand ist vorhanden, jedoch tritt der essenzielle Tremor typischerweise bei Aktion auf und nicht in Ruhe, was ihn hier weniger wahrscheinlich macht. Das Nachlassen des Tremors bei Bewegung spricht eher für Parkinson.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Arteriopathia cerebri (vaskuläres Parkinson-Syndrom)",
+          "icd10_code": "I67.9",
+          "reasoning": "Das MRT zeigt keine signifikanten vaskulären Läsionen, und der Gangbildbefund (kleinschrittig, vornübergebeugt) ist für Parkinson typischer als für ein vaskuläres Syndrom, was die Wahrscheinlichkeit verringert.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Medikamenteninduziertes Parkinson-Syndrom",
+          "icd10_code": "G21.1",
+          "reasoning": "Es werden keine Medikamente erwähnt, die ein Parkinson-Syndrom auslösen könnten (z.B. Neuroleptika). Der schleichende Beginn und die Progression über neun Monate sind atypisch für eine medikamentöse Ursache.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Multisystematrophie (MSA-Parkinson-Typ)",
+          "icd10_code": "G90.3",
+          "reasoning": "Könnte bei Parkinson-ähnlicher Symptomatik in Betracht gezogen werden, aber das Fehlen von frühzeitigen autonomen Störungen (außer Obstipation) oder zerebellären Zeichen macht es weniger wahrscheinlich. Der stabile Pull-Test spricht gegen eine MSA.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Morbus Parkinson\",\n      \"icd10_code\": \"G20\",\n      \"reasoning\": \"Die Trias aus Ruhetremor (Pillendreher-Phänomen), Rigor (Zahnradphänomen) und Bradykinese (reduzierte Mimik, Mikrographie, kleinschrittiger Gang) ist klassisch. Zusätzlich unterstützen die nicht-motorischen Symptome (Obstipation, REM-Schlaf-Verhaltensstörung) die Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Essentieller Tremor\",\n      \"icd10_code\": \"G25.0\",\n      \"reasoning\": \"Ein Tremor der Hand ist vorhanden, jedoch tritt der essenzielle Tremor typischerweise bei Aktion auf und nicht in Ruhe, was ihn hier weniger wahrscheinlich macht. Das Nachlassen des Tremors bei Bewegung spricht eher für Parkinson.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Arteriopathia cerebri (vaskuläres Parkinson-Syndrom)\",\n      \"icd10_code\": \"I67.9\",\n      \"reasoning\": \"Das MRT zeigt keine signifikanten vaskulären Läsionen, und der Gangbildbefund (kleinschrittig, vornübergebeugt) ist für Parkinson typischer als für ein vaskuläres Syndrom, was die Wahrscheinlichkeit verringert.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Medikamenteninduziertes Parkinson-Syndrom\",\n      \"icd10_code\": \"G21.1\",\n      \"reasoning\": \"Es werden keine Medikamente erwähnt, die ein Parkinson-Syndrom auslösen könnten (z.B. Neuroleptika). Der schleichende Beginn und die Progression über neun Monate sind atypisch für eine medikamentöse Ursache.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Multisystematrophie (MSA-Parkinson-Typ)\",\n      \"icd10_code\": \"G90.3\",\n      \"reasoning\": \"Könnte bei Parkinson-ähnlicher Symptomatik in Betracht gezogen werden, aber das Fehlen von frühzeitigen autonomen Störungen (außer Obstipation) oder zerebellären Zeichen macht es weniger wahrscheinlich. Der stabile Pull-Test spricht gegen eine MSA.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2834,
+      "response_length": 1926,
+      "usage": {
+        "prompt_tokens": 831,
+        "completion_tokens": 583
+      },
+      "case_id": "cr_022",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.888888888888889
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Primär sklerosierende Cholangitis",
+          "icd10_code": "K83.01",
+          "reasoning": "Die MRCP zeigt die charakteristischen multifokalen Stenosen und Kalibersprünge der Gallenwege mit perlschnurartigem Aspekt. Die Erhöhung der alkalischen Phosphatase und Gamma-GT sowie der positive p-ANCA-Titer bei bekannter Colitis ulcerosa sind hochgradig verdächtig.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Cholangiokarzinom",
+          "icd10_code": "C24.0",
+          "reasoning": "Der ungewollte Gewichtsverlust, die Nachtschweißigkeit und die laborchemische Cholestase bei bildgebendem Nachweis von Gallengangsstenosen erfordern den Ausschluss eines Malignoms, insbesondere bei PSC-Risikokonstellation.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "IgG4-assoziierte Cholangitis",
+          "icd10_code": "K83.8",
+          "reasoning": "Die Gallengangsveränderungen in der MRCP und die Erhöhung der Cholestaseparameter könnten auch zu dieser Differentialdiagnose passen, jedoch fehlen typische Merkmale wie eine Pankreasbeteiligung oder eine IgG4-Erhöhung.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Cholelithiasis mit Gallengangsobstruktion",
+          "icd10_code": "K80.3",
+          "reasoning": "Die krampfartigen Oberbauchschmerzen und die diskrete Gallenblasenwandverdickung könnten auf eine Steinpathologie hinweisen, jedoch zeigen Sonographie und MRCP keine Konkremente und die Stenosen sind für eine Steinobstruktion nicht typisch.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Mesalazin-induzierte hepatotoxische Reaktion",
+          "icd10_code": "K71.0",
+          "reasoning": "Mesalazin kann cholestatische Leberschäden verursachen, jedoch erklären die typischen MRCP-Veränderungen und der positive p-ANCA-Titer die Befunde nicht vollständig.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Primär sklerosierende Cholangitis\",\n      \"icd10_code\": \"K83.01\",\n      \"reasoning\": \"Die MRCP zeigt die charakteristischen multifokalen Stenosen und Kalibersprünge der Gallenwege mit perlschnurartigem Aspekt. Die Erhöhung der alkalischen Phosphatase und Gamma-GT sowie der positive p-ANCA-Titer bei bekannter Colitis ulcerosa sind hochgradig verdächtig.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Cholangiokarzinom\",\n      \"icd10_code\": \"C24.0\",\n      \"reasoning\": \"Der ungewollte Gewichtsverlust, die Nachtschweißigkeit und die laborchemische Cholestase bei bildgebendem Nachweis von Gallengangsstenosen erfordern den Ausschluss eines Malignoms, insbesondere bei PSC-Risikokonstellation.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"IgG4-assoziierte Cholangitis\",\n      \"icd10_code\": \"K83.8\",\n      \"reasoning\": \"Die Gallengangsveränderungen in der MRCP und die Erhöhung der Cholestaseparameter könnten auch zu dieser Differentialdiagnose passen, jedoch fehlen typische Merkmale wie eine Pankreasbeteiligung oder eine IgG4-Erhöhung.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Cholelithiasis mit Gallengangsobstruktion\",\n      \"icd10_code\": \"K80.3\",\n      \"reasoning\": \"Die krampfartigen Oberbauchschmerzen und die diskrete Gallenblasenwandverdickung könnten auf eine Steinpathologie hinweisen, jedoch zeigen Sonographie und MRCP keine Konkremente und die Stenosen sind für eine Steinobstruktion nicht typisch.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Mesalazin-induzierte hepatotoxische Reaktion\",\n      \"icd10_code\": \"K71.0\",\n      \"reasoning\": \"Mesalazin kann cholestatische Leberschäden verursachen, jedoch erklären die typischen MRCP-Veränderungen und der positive p-ANCA-Titer die Befunde nicht vollständig.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2622,
+      "response_length": 1871,
+      "usage": {
+        "prompt_tokens": 771,
+        "completion_tokens": 549
+      },
+      "case_id": "cr_023",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666665
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Lymphom (insbesondere aggressives Non-Hodgkin-Lymphom)",
+          "icd10_code": "C85.9",
+          "reasoning": "Die Kombination aus B-Symptomen (Gewichtsverlust, Nachtschweiß), generalisierter Lymphadenopathie, Hepatosplenomegalie, Hautinfiltrationen, Zytopenien, erhöhter LDH und atypischen Zellen im Blutbild ist hochverdächtig für ein malignes Lymphom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Leukämie (insbesondere Haarzellenleukämie oder andere lymphatische Leukämien)",
+          "icd10_code": "C91.4",
+          "reasoning": "Die Panzytopenie mit atypischen mononukleären Zellen im Blutbild, Hepatosplenomegalie und Hautinfiltrationen kann auf eine Haarzellenleukämie oder andere lymphoproliferative Erkrankungen passen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Metastasiertes Karzinom (insbesondere Bronchialkarzinom)",
+          "icd10_code": "C78.0",
+          "reasoning": "Bei der Raucherin mit Lymphadenopathie, Hautmetastasen (lividen Knoten) und pulmonalen Infiltraten muss an ein metastasiertes Bronchialkarzinom gedacht werden, auch wenn kein Primärtumor im CT nachweisbar ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Sarkoidose",
+          "icd10_code": "D86.9",
+          "reasoning": "Die Lymphadenopathie, Hautveränderungen, pulmonale Infiltrate und Hyperkalzämie könnten zu einer Sarkoidose passen, allerdings sind die Zytopenien und der schwere Allgemeinzustand eher untypisch.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Tuberkulose",
+          "icd10_code": "A15.9",
+          "reasoning": "B-Symptome, Lymphadenopathie und Hautknoten könnten auf eine miliare Tuberkulose hinweisen, jedoch sind die Hautveränderungen hier typischerweise schmerzhaft und die Zytopenien eher ungewöhnlich.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "```json\n{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Lymphom (insbesondere aggressives Non-Hodgkin-Lymphom)\",\n      \"icd10_code\": \"C85.9\",\n      \"reasoning\": \"Die Kombination aus B-Symptomen (Gewichtsverlust, Nachtschweiß), generalisierter Lymphadenopathie, Hepatosplenomegalie, Hautinfiltrationen, Zytopenien, erhöhter LDH und atypischen Zellen im Blutbild ist hochverdächtig für ein malignes Lymphom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Leukämie (insbesondere Haarzellenleukämie oder andere lymphatische Leukämien)\",\n      \"icd10_code\": \"C91.4\",\n      \"reasoning\": \"Die Panzytopenie mit atypischen mononukleären Zellen im Blutbild, Hepatosplenomegalie und Hautinfiltrationen kann auf eine Haarzellenleukämie oder andere lymphoproliferative Erkrankungen passen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Metastasiertes Karzinom (insbesondere Bronchialkarzinom)\",\n      \"icd10_code\": \"C78.0\",\n      \"reasoning\": \"Bei der Raucherin mit Lymphadenopathie, Hautmetastasen (lividen Knoten) und pulmonalen Infiltraten muss an ein metastasiertes Bronchialkarzinom gedacht werden, auch wenn kein Primärtumor im CT nachweisbar ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Sarkoidose\",\n      \"icd10_code\": \"D86.9\",\n      \"reasoning\": \"Die Lymphadenopathie, Hautveränderungen, pulmonale Infiltrate und Hyperkalzämie könnten zu einer Sarkoidose passen, allerdings sind die Zytopenien und der schwere Allgemeinzustand eher untypisch.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Tuberkulose\",\n      \"icd10_code\": \"A15.9\",\n      \"reasoning\": \"B-Symptome, Lymphadenopathie und Hautknoten könnten auf eine miliare Tuberkulose hinweisen, jedoch sind die Hautveränderungen hier typischerweise schmerzhaft und die Zytopenien eher ungewöhnlich.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}\n```",
+      "prompt_length": 2653,
+      "response_length": 1849,
+      "usage": {
+        "prompt_tokens": 794,
+        "completion_tokens": 552
+      },
+      "case_id": "cr_024",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Innenmeniskusriss",
+          "icd10_code": "S83.2",
+          "reasoning": "Der akute Schmerz medial, positiver McMurray-Test bei Innenrotation und das Blockierungsgefühl sind hochspezifisch für eine Läsion des Innenmeniskus.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Läsion des Ligamentum collaterale mediale (Grad II)",
+          "icd10_code": "S83.4",
+          "reasoning": "Der lokalisierte Druckschmerz über dem medialen Gelenkspalt und die positiven Steinmann-Tests weisen auf eine Teilruptur des Innenbandes hin.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Knorpelläsion (Chondrale/osteochondrale Fraktur)",
+          "icd10_code": "M24.1",
+          "reasoning": "Das initiale Knacken und das Blockierungsgefühl könnten auf eine Abscherverletzung des Knorpels oder Knochen-Knorpels hindeuten, auch wenn das Röntgen initial unauffällig ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Vorderer Kreuzbandriss",
+          "icd10_code": "S83.5",
+          "reasoning": "Das Distorsionstrauma und das initiale Knacken sind typisch, jedoch sprechen die klinisch stabilen Stabilitätstests (Lachman, Schublade) bei muskulärer Gegenspannung gegen eine komplette Ruptur.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Innenmeniskusriss\",\n      \"icd10_code\": \"S83.2\",\n      \"reasoning\": \"Der akute Schmerz medial, positiver McMurray-Test bei Innenrotation und das Blockierungsgefühl sind hochspezifisch für eine Läsion des Innenmeniskus.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Läsion des Ligamentum collaterale mediale (Grad II)\",\n      \"icd10_code\": \"S83.4\",\n      \"reasoning\": \"Der lokalisierte Druckschmerz über dem medialen Gelenkspalt und die positiven Steinmann-Tests weisen auf eine Teilruptur des Innenbandes hin.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Knorpelläsion (Chondrale/osteochondrale Fraktur)\",\n      \"icd10_code\": \"M24.1\",\n      \"reasoning\": \"Das initiale Knacken und das Blockierungsgefühl könnten auf eine Abscherverletzung des Knorpels oder Knochen-Knorpels hindeuten, auch wenn das Röntgen initial unauffällig ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Vorderer Kreuzbandriss\",\n      \"icd10_code\": \"S83.5\",\n      \"reasoning\": \"Das Distorsionstrauma und das initiale Knacken sind typisch, jedoch sprechen die klinisch stabilen Stabilitätstests (Lachman, Schublade) bei muskulärer Gegenspannung gegen eine komplette Ruptur.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2749,
+      "response_length": 1278,
+      "usage": {
+        "prompt_tokens": 823,
+        "completion_tokens": 397
+      },
+      "case_id": "cr_025",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Schwere depressive Episode",
+          "icd10_code": "F32.2",
+          "reasoning": "Die Symptomatik mit Antriebslosigkeit, Morgentief, sozialem Rückzug, Gewichtsverlust, Schlafstörungen und ausgeprägter Grübelneigung entspricht den Kernkriterien einer schweren Depression. Die positive Familienanamnese für Suizid stützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Somatische Ursache der depressiven Symptomatik (z.B. Malignom)",
+          "icd10_code": "F06.3X",
+          "reasoning": "Der progrediente Gewichtsverlust, das diffuse Druckgefühl im Oberbauch und die leicht erhöhten Leberwerte bei normaler Bildgebung könnten auf eine okkulte somatische Erkrankung als Ursache der psychischen Symptome hinweisen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Endokrinopathie (z.B. Nebennierenrindeninsuffizienz)",
+          "icd10_code": "E27.1",
+          "reasoning": "Das leicht erhöhte Cortisol bei Elektrolytverschiebung (Hypokaliämie) und Gewichtsverlust könnte auf eine beginnende Nebennierenrindeninsuffizienz mit atypischer Cortisolanpassung hindeuten.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Anorexia nervosa",
+          "icd10_code": "F50.0",
+          "reasoning": "Der erhebliche Gewichtsverlust mit BMI 17,5 kg/m² und Appetitlosigkeit sind mit einer Essstörung vereinbar, jedoch sind die typischen kognitiven Merkmale wie Körperschemastörung nicht beschrieben.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Schwere depressive Episode\",\n      \"icd10_code\": \"F32.2\",\n      \"reasoning\": \"Die Symptomatik mit Antriebslosigkeit, Morgentief, sozialem Rückzug, Gewichtsverlust, Schlafstörungen und ausgeprägter Grübelneigung entspricht den Kernkriterien einer schweren Depression. Die positive Familienanamnese für Suizid stützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Somatische Ursache der depressiven Symptomatik (z.B. Malignom)\",\n      \"icd10_code\": \"F06.3X\",\n      \"reasoning\": \"Der progrediente Gewichtsverlust, das diffuse Druckgefühl im Oberbauch und die leicht erhöhten Leberwerte bei normaler Bildgebung könnten auf eine okkulte somatische Erkrankung als Ursache der psychischen Symptome hinweisen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Endokrinopathie (z.B. Nebennierenrindeninsuffizienz)\",\n      \"icd10_code\": \"E27.1\",\n      \"reasoning\": \"Das leicht erhöhte Cortisol bei Elektrolytverschiebung (Hypokaliämie) und Gewichtsverlust könnte auf eine beginnende Nebennierenrindeninsuffizienz mit atypischer Cortisolanpassung hindeuten.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Anorexia nervosa\",\n      \"icd10_code\": \"F50.0\",\n      \"reasoning\": \"Der erhebliche Gewichtsverlust mit BMI 17,5 kg/m² und Appetitlosigkeit sind mit einer Essstörung vereinbar, jedoch sind die typischen kognitiven Merkmale wie Körperschemastörung nicht beschrieben.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2579,
+      "response_length": 1500,
+      "usage": {
+        "prompt_tokens": 763,
+        "completion_tokens": 442
+      },
+      "case_id": "cr_026",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Puerperaler Ovarialvenenthrombose",
+          "icd10_code": "O22.3",
+          "reasoning": "Akute Schmerzen im rechten Unterbauch mit Ausstrahlung in die Flanke, therapierefraktäres Fieber und eine echoarme, tubuläre, avaskuläre Struktur im Sonogramm sind hochverdächtig für eine Thrombose der V. ovarica im Wochenbett.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akute Pyelonephritis",
+          "icd10_code": "N10",
+          "reasoning": "Fieber, Flankenschmerz, Klopfschmerz im Nierenlager und Leukozyturie sprechen für eine Nierenbeckenentzündung, jedoch ist die fehlende Besserung unter Antibiotikatherapie atypisch.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Appendizitis",
+          "icd10_code": "K35.9",
+          "reasoning": "Akute rechtsseitige Unterbauchschmerzen mit Abwehrspannung und Entzündungsparameter könnten für eine Blinddarmentzündung sprechen, obwohl die sonographische Darstellung erschwert war.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hämatom im Ligamentum latum",
+          "icd10_code": "O90.8",
+          "reasoning": "Postpartal kann es zu einem verzögert auftretenden, infizierten Hämatom kommen, welches Schmerzen, Fieber und eine echoarme Raumforderung verursachen kann.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Abszedierende Adnexitis",
+          "icd10_code": "N70.9",
+          "reasoning": "Die Kombination aus Fieber, Unterbauchschmerz und Entzündungsparameter könnte für einen eitrigen Entzündungsherd im Bereich der Adnexe sprechen, ist aber aufgrund der Lokalisation kranial des Ovars weniger wahrscheinlich.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Puerperaler Ovarialvenenthrombose\",\n      \"icd10_code\": \"O22.3\",\n      \"reasoning\": \"Akute Schmerzen im rechten Unterbauch mit Ausstrahlung in die Flanke, therapierefraktäres Fieber und eine echoarme, tubuläre, avaskuläre Struktur im Sonogramm sind hochverdächtig für eine Thrombose der V. ovarica im Wochenbett.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akute Pyelonephritis\",\n      \"icd10_code\": \"N10\",\n      \"reasoning\": \"Fieber, Flankenschmerz, Klopfschmerz im Nierenlager und Leukozyturie sprechen für eine Nierenbeckenentzündung, jedoch ist die fehlende Besserung unter Antibiotikatherapie atypisch.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Appendizitis\",\n      \"icd10_code\": \"K35.9\",\n      \"reasoning\": \"Akute rechtsseitige Unterbauchschmerzen mit Abwehrspannung und Entzündungsparameter könnten für eine Blinddarmentzündung sprechen, obwohl die sonographische Darstellung erschwert war.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hämatom im Ligamentum latum\",\n      \"icd10_code\": \"O90.8\",\n      \"reasoning\": \"Postpartal kann es zu einem verzögert auftretenden, infizierten Hämatom kommen, welches Schmerzen, Fieber und eine echoarme Raumforderung verursachen kann.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Abszedierende Adnexitis\",\n      \"icd10_code\": \"N70.9\",\n      \"reasoning\": \"Die Kombination aus Fieber, Unterbauchschmerz und Entzündungsparameter könnte für einen eitrigen Entzündungsherd im Bereich der Adnexe sprechen, ist aber aufgrund der Lokalisation kranial des Ovars weniger wahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2999,
+      "response_length": 1672,
+      "usage": {
+        "prompt_tokens": 881,
+        "completion_tokens": 501
+      },
+      "case_id": "cr_027",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666665
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Dekompensation einer chronischen Herzinsuffizienz",
+          "icd10_code": "I50.23",
+          "reasoning": "Die Trias aus Orthopnoe, peripheren Ödemen und Jugularvenenstauung mit stark erhöhtem NT-proBNP, Kardiomegalie im Röntgen und pulmonaler Stauung ist hochgradig typisch für eine Herzinsuffizienz-Exazerbation, begünstigt durch Hypertonus und KHK-Risikofaktoren.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Koronare Herzkrankheit mit ischämischer Kardiomyopathie",
+          "icd10_code": "I25.2",
+          "reasoning": "Die Risikofaktoren (Hypertonus, Diabetes, Nikotinabusus) und das leicht erhöhte Troponin bei Dyspnoe deuten auf eine koronare Genese der Herzinsuffizienz hin, auch ohne akute thorakale Schmerzen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pulmonale Hypertonie",
+          "icd10_code": "I27.0",
+          "reasoning": "Die Belastungs- und Ruhedyspnoe mit Sauerstoffsättigung von 89%, Rechtsherzbelastungszeichen (Jugularvenenstauung, periphere Ödeme) und erhöhtem NT-proBNP könnten auf eine sekundäre pulmonale Hypertonie infolge der Grunderkrankungen hindeuten.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronisch obstruktive Lungenerkrankung (COPD) mit Rechtsherzinsuffizienz",
+          "icd10_code": "J44.9",
+          "reasoning": "Der langjährige Nikotinabusus (40 Pack-years) ist ein Hauptrisikofaktor für COPD, die sekundär zu einem Cor pulmonale mit Ödemen und Stauungszeichen führen könnte, allerdings fehlen typische Auskultationsbefunde wie Giemen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Niereninsuffizienz mit kardio-renem Syndrom",
+          "icd10_code": "N18.9",
+          "reasoning": "Das erhöhte Kreatinin (1,5 mg/dl) weist auf eine renale Mitbeteiligung hin; eine renale Ursache der Volumenüberladung ist möglich, steht aber hinter der kardialen Genese zurück.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Dekompensation einer chronischen Herzinsuffizienz\",\n      \"icd10_code\": \"I50.23\",\n      \"reasoning\": \"Die Trias aus Orthopnoe, peripheren Ödemen und Jugularvenenstauung mit stark erhöhtem NT-proBNP, Kardiomegalie im Röntgen und pulmonaler Stauung ist hochgradig typisch für eine Herzinsuffizienz-Exazerbation, begünstigt durch Hypertonus und KHK-Risikofaktoren.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Koronare Herzkrankheit mit ischämischer Kardiomyopathie\",\n      \"icd10_code\": \"I25.2\",\n      \"reasoning\": \"Die Risikofaktoren (Hypertonus, Diabetes, Nikotinabusus) und das leicht erhöhte Troponin bei Dyspnoe deuten auf eine koronare Genese der Herzinsuffizienz hin, auch ohne akute thorakale Schmerzen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pulmonale Hypertonie\",\n      \"icd10_code\": \"I27.0\",\n      \"reasoning\": \"Die Belastungs- und Ruhedyspnoe mit Sauerstoffsättigung von 89%, Rechtsherzbelastungszeichen (Jugularvenenstauung, periphere Ödeme) und erhöhtem NT-proBNP könnten auf eine sekundäre pulmonale Hypertonie infolge der Grunderkrankungen hindeuten.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronisch obstruktive Lungenerkrankung (COPD) mit Rechtsherzinsuffizienz\",\n      \"icd10_code\": \"J44.9\",\n      \"reasoning\": \"Der langjährige Nikotinabusus (40 Pack-years) ist ein Hauptrisikofaktor für COPD, die sekundär zu einem Cor pulmonale mit Ödemen und Stauungszeichen führen könnte, allerdings fehlen typische Auskultationsbefunde wie Giemen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Niereninsuffizienz mit kardio-renem Syndrom\",\n      \"icd10_code\": \"N18.9\",\n      \"reasoning\": \"Das erhöhte Kreatinin (1,5 mg/dl) weist auf eine renale Mitbeteiligung hin; eine renale Ursache der Volumenüberladung ist möglich, steht aber hinter der kardialen Genese zurück.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2170,
+      "response_length": 1934,
+      "usage": {
+        "prompt_tokens": 676,
+        "completion_tokens": 609
+      },
+      "case_id": "cr_028",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Aortenklappenstenose",
+          "icd10_code": "I35.0",
+          "reasoning": "Das raue Systolikum mit Punctum maximum im 2. ICR rechts, die Fortleitung in die Karotiden, der Pulsus parvus et tardus sowie die echokardiographisch eingeschränkte Öffnungsbewegung der Aortenklappe mit echoreichen Strukturen sind hochgradig charakteristisch.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hypertrophe Kardiomyopathie",
+          "icd10_code": "I42.1",
+          "reasoning": "Die konzentrische LV-Hypertrophie im EKG und Echo, die Belastungsdyspnoe und die Synkope bei einem sportlichen Patienten passen zur dynamischen Ausflussbahnobstruktion, auch wenn das Systolikum eher für eine valvuläre Stenose spricht.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Koronare Herzkrankheit",
+          "icd10_code": "I25.1",
+          "reasoning": "Das retrosternale Druckgefühl unter Belastung, die ST-Streckensenkungen im EKG und der moderat erhöhte NT-proBNP-Wert könnten auf eine Ischämie hinweisen, jedoch ist die Angina pectoris nicht klassisch und die Echobefunde sind weniger passend.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Herzinsuffizienz mit erhaltener Ejektionsfraktion (HFpEF)",
+          "icd10_code": "I50.3",
+          "reasoning": "Die Belastungsdyspnoe (NYHA II), die LV-Hypertrophie bei vorbestehender Hypertonie und das erhöhte NT-proBNP sind vereinbar, erklären jedoch nicht das charakteristische Systolikum und die Klappenpathologie.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Aortenklappenstenose\",\n      \"icd10_code\": \"I35.0\",\n      \"reasoning\": \"Das raue Systolikum mit Punctum maximum im 2. ICR rechts, die Fortleitung in die Karotiden, der Pulsus parvus et tardus sowie die echokardiographisch eingeschränkte Öffnungsbewegung der Aortenklappe mit echoreichen Strukturen sind hochgradig charakteristisch.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hypertrophe Kardiomyopathie\",\n      \"icd10_code\": \"I42.1\",\n      \"reasoning\": \"Die konzentrische LV-Hypertrophie im EKG und Echo, die Belastungsdyspnoe und die Synkope bei einem sportlichen Patienten passen zur dynamischen Ausflussbahnobstruktion, auch wenn das Systolikum eher für eine valvuläre Stenose spricht.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Koronare Herzkrankheit\",\n      \"icd10_code\": \"I25.1\",\n      \"reasoning\": \"Das retrosternale Druckgefühl unter Belastung, die ST-Streckensenkungen im EKG und der moderat erhöhte NT-proBNP-Wert könnten auf eine Ischämie hinweisen, jedoch ist die Angina pectoris nicht klassisch und die Echobefunde sind weniger passend.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Herzinsuffizienz mit erhaltener Ejektionsfraktion (HFpEF)\",\n      \"icd10_code\": \"I50.3\",\n      \"reasoning\": \"Die Belastungsdyspnoe (NYHA II), die LV-Hypertrophie bei vorbestehender Hypertonie und das erhöhte NT-proBNP sind vereinbar, erklären jedoch nicht das charakteristische Systolikum und die Klappenpathologie.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2551,
+      "response_length": 1549,
+      "usage": {
+        "prompt_tokens": 751,
+        "completion_tokens": 471
+      },
+      "case_id": "cr_029",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Eosinophile Granulomatose mit Polyangiitis (EGPA)",
+          "icd10_code": "M31.30",
+          "reasoning": "Die Trias aus schwerem, therapierefraktärem Asthma, ausgeprägter peripherer Eosinophilie (absolut >1500/µl) und neu aufgetretenen neurologischen sowie Hautbefunden (Purpura) bei positivem p-ANCA (MPO) ist hochcharakteristisch für EGPA.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Allergische bronchopulmonale Aspergillose (ABPA)",
+          "icd10_code": "B44.91",
+          "reasoning": "Das schwere Asthma, die hohe Eosinophilie, die IgE-Erhöhung und die migrierenden Infiltrate im CT passen zu ABPA, jedoch erklären die neurologischen Symptome und der positive ANCA-Titer diese Diagnose nicht vollständig.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronisch eosinophile Pneumonie",
+          "icd10_code": "J82",
+          "reasoning": "Die Belastungsdyspnoe, die milchglasinfiltrate im CT und die ausgeprägte Eosinophilie sind typisch, aber die Erkrankung verursacht typischerweise keine Vaskulitis-zeichen wie Purpura oder Mononeuropathie.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Idiopathisches hypereosinophiles Syndrom",
+          "icd10_code": "D72.1",
+          "reasoning": "Kann die Eosinophilie, die pulmonalen und neurologischen Symptome erklären, jedoch ist das gleichzeitige Vorliegen von Asthma, Sinusitis und einem positiven p-ANCA-Titer für EGPA spezifischer.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Eosinophile Granulomatose mit Polyangiitis (EGPA)\",\n      \"icd10_code\": \"M31.30\",\n      \"reasoning\": \"Die Trias aus schwerem, therapierefraktärem Asthma, ausgeprägter peripherer Eosinophilie (absolut >1500/µl) und neu aufgetretenen neurologischen sowie Hautbefunden (Purpura) bei positivem p-ANCA (MPO) ist hochcharakteristisch für EGPA.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Allergische bronchopulmonale Aspergillose (ABPA)\",\n      \"icd10_code\": \"B44.91\",\n      \"reasoning\": \"Das schwere Asthma, die hohe Eosinophilie, die IgE-Erhöhung und die migrierenden Infiltrate im CT passen zu ABPA, jedoch erklären die neurologischen Symptome und der positive ANCA-Titer diese Diagnose nicht vollständig.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronisch eosinophile Pneumonie\",\n      \"icd10_code\": \"J82\",\n      \"reasoning\": \"Die Belastungsdyspnoe, die milchglasinfiltrate im CT und die ausgeprägte Eosinophilie sind typisch, aber die Erkrankung verursacht typischerweise keine Vaskulitis-zeichen wie Purpura oder Mononeuropathie.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Idiopathisches hypereosinophiles Syndrom\",\n      \"icd10_code\": \"D72.1\",\n      \"reasoning\": \"Kann die Eosinophilie, die pulmonalen und neurologischen Symptome erklären, jedoch ist das gleichzeitige Vorliegen von Asthma, Sinusitis und einem positiven p-ANCA-Titer für EGPA spezifischer.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2570,
+      "response_length": 1499,
+      "usage": {
+        "prompt_tokens": 798,
+        "completion_tokens": 453
+      },
+      "case_id": "cr_030",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall",
+          "icd10_code": "I63.9",
+          "reasoning": "Das akut aufgetretene fokal-neurologische Defizit mit Aphasie, Hemiparese rechts und positiven Pyramidenbahnzeichen, kombiniert mit dem CTA-Befund eines Verschlusses der linken A. cerebri media, ist hochgradig typisch für einen ischämischen Insult.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intrazerebrale Blutung",
+          "icd10_code": "I61.9",
+          "reasoning": "Trotz initial unauffälligem CCT kann eine kleine Blutung initial radiologisch maskiert sein; die akute Symptomatik und die vorbestehende Hypertonie sind klassische Risikofaktoren.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hirnvenen- und Sinusthrombose",
+          "icd10_code": "I67.6",
+          "reasoning": "Kann sich ebenfalls mit einem akuten fokal-neurologischen Defizit präsentieren, ist jedoch aufgrund des typischen Gefäßbefundes in der CTA und des klinischen Gesamtbildes weniger wahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Komplizierte Migräne mit Aura",
+          "icd10_code": "G43.1",
+          "reasoning": "Kann fokal-neurologische Ausfälle wie Aphasie und Hemiparese verursachen, tritt aber typischerweise mit Kopfschmerz auf und ist bei diesem Patienten mit vaskulären Risikofaktoren und Gefäßverschluss sehr unwahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Todd'sche Parese",
+          "icd10_code": "G40.9",
+          "reasoning": "Eine postiktuelle Lähmung nach einem fokalen Anfall ist als Differenzialdiagnose zu bedenken, jedoch fehlen hierfür Anhaltspunkte wie ein vorausgegangener Krampfanfall oder ein verwaschenes EEG.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall\",\n      \"icd10_code\": \"I63.9\",\n      \"reasoning\": \"Das akut aufgetretene fokal-neurologische Defizit mit Aphasie, Hemiparese rechts und positiven Pyramidenbahnzeichen, kombiniert mit dem CTA-Befund eines Verschlusses der linken A. cerebri media, ist hochgradig typisch für einen ischämischen Insult.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intrazerebrale Blutung\",\n      \"icd10_code\": \"I61.9\",\n      \"reasoning\": \"Trotz initial unauffälligem CCT kann eine kleine Blutung initial radiologisch maskiert sein; die akute Symptomatik und die vorbestehende Hypertonie sind klassische Risikofaktoren.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hirnvenen- und Sinusthrombose\",\n      \"icd10_code\": \"I67.6\",\n      \"reasoning\": \"Kann sich ebenfalls mit einem akuten fokal-neurologischen Defizit präsentieren, ist jedoch aufgrund des typischen Gefäßbefundes in der CTA und des klinischen Gesamtbildes weniger wahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Komplizierte Migräne mit Aura\",\n      \"icd10_code\": \"G43.1\",\n      \"reasoning\": \"Kann fokal-neurologische Ausfälle wie Aphasie und Hemiparese verursachen, tritt aber typischerweise mit Kopfschmerz auf und ist bei diesem Patienten mit vaskulären Risikofaktoren und Gefäßverschluss sehr unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Todd'sche Parese\",\n      \"icd10_code\": \"G40.9\",\n      \"reasoning\": \"Eine postiktuelle Lähmung nach einem fokalen Anfall ist als Differenzialdiagnose zu bedenken, jedoch fehlen hierfür Anhaltspunkte wie ein vorausgegangener Krampfanfall oder ein verwaschenes EEG.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2802,
+      "response_length": 1750,
+      "usage": {
+        "prompt_tokens": 809,
+        "completion_tokens": 533
+      },
+      "case_id": "cr_031",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Magenkarzinom",
+          "icd10_code": "C16.9",
+          "reasoning": "Die epigastrischen Schmerzen, das frühzeitige Sättigungsgefühl, der Gewichtsverlust, die Anämie mit Hinweis auf chronische Blutung (Teerstuhl) und die sonographisch nachgewiesene antralse Wandverdickung sind hochverdächtig für ein Malignom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Ulcus ventriculi",
+          "icd10_code": "K25.9",
+          "reasoning": "Die langjährige NSAR-Einnahme ist ein Hauptrisikofaktor für Magenulzera, die die epigastrischen Schmerzen, die okkulte Blutung mit Anämie und Teerstuhl sowie die lokale Wandverdickung im Sonogramm erklären können.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Die leicht erhöhte Lipase, die epigastrischen Schmerzen und der Gewichtsverlust sind vereinbar, wobei das Fehlen von Steatorrhoe und der unauffällige Pankreasbefund im Ultraschall dagegen sprechen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Magenlymphom",
+          "icd10_code": "C85.9",
+          "reasoning": "Kann sich ähnlich wie ein Karzinom mit Wandverdickung, B-Symptomatik und Ulzerationen präsentieren, ist jedoch deutlich seltener und wird daher als weniger wahrscheinlich eingestuft.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Magenkarzinom\",\n      \"icd10_code\": \"C16.9\",\n      \"reasoning\": \"Die epigastrischen Schmerzen, das frühzeitige Sättigungsgefühl, der Gewichtsverlust, die Anämie mit Hinweis auf chronische Blutung (Teerstuhl) und die sonographisch nachgewiesene antralse Wandverdickung sind hochverdächtig für ein Malignom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Ulcus ventriculi\",\n      \"icd10_code\": \"K25.9\",\n      \"reasoning\": \"Die langjährige NSAR-Einnahme ist ein Hauptrisikofaktor für Magenulzera, die die epigastrischen Schmerzen, die okkulte Blutung mit Anämie und Teerstuhl sowie die lokale Wandverdickung im Sonogramm erklären können.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die leicht erhöhte Lipase, die epigastrischen Schmerzen und der Gewichtsverlust sind vereinbar, wobei das Fehlen von Steatorrhoe und der unauffällige Pankreasbefund im Ultraschall dagegen sprechen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Magenlymphom\",\n      \"icd10_code\": \"C85.9\",\n      \"reasoning\": \"Kann sich ähnlich wie ein Karzinom mit Wandverdickung, B-Symptomatik und Ulzerationen präsentieren, ist jedoch deutlich seltener und wird daher als weniger wahrscheinlich eingestuft.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2388,
+      "response_length": 1375,
+      "usage": {
+        "prompt_tokens": 684,
+        "completion_tokens": 428
+      },
+      "case_id": "cr_032",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Hämophagozytische Lymphohistiozytose (HLH)",
+          "icd10_code": "D76.1",
+          "reasoning": "Die Trias aus Fieber, Splenomegalie und Panzytopenie, kombiniert mit extrem erhöhtem Ferritin und sIL-2R, sowie Hypertriglyzeridämie erfüllen die diagnostischen Kriterien für HLH.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Primäres ZNS-Lymphom",
+          "icd10_code": "C83.5",
+          "reasoning": "Die progredienten kognitiven Defizite, die Wesensveränderung und die zerebralen T2-hyperintensen Läsionen im MRT sind hochverdächtig, ebenso wie die B-Symptomatik und die ausgeprägte Erhöhung des sIL-2R als Aktivitätsmarker.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Vaskulitis des Zentralnervensystems",
+          "icd10_code": "I67.7",
+          "reasoning": "Die neurologischen Symptome (Ataxie, Psychomotorikverlangsamung) zusammen mit den punktförmigen Marklagerläsionen im MRT und der systemischen Entzündung (CRP, Fieber) könnten auf eine entzündliche Gefäßerkrankung hindeuten.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Metastasierende solide Tumorkrankheit mit Knochenmarksbeteiligung",
+          "icd10_code": "C79.9",
+          "reasoning": "Die B-Symptomatik, Kachexie, Panzytopenie und die massive LDH-Erhöhung sind klassisch für eine fortgeschrittene Tumorerkrankung, auch wenn im CT keine solide Raumforderung nachweisbar war.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Morbus Waldenström",
+          "icd10_code": "C88.0",
+          "reasoning": "Die Hyperviskositätssymptome wie neurologische Ausfälle und Petechien, kombiniert mit Panzytopenie, Splenomegalie und extrem hohem sIL-2R, sind vereinbar mit dieser lymphoproliferativen Erkrankung, obwohl keine Lymphadenopathie vorliegt.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Hämophagozytische Lymphohistiozytose (HLH)\",\n      \"icd10_code\": \"D76.1\",\n      \"reasoning\": \"Die Trias aus Fieber, Splenomegalie und Panzytopenie, kombiniert mit extrem erhöhtem Ferritin und sIL-2R, sowie Hypertriglyzeridämie erfüllen die diagnostischen Kriterien für HLH.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Primäres ZNS-Lymphom\",\n      \"icd10_code\": \"C83.5\",\n      \"reasoning\": \"Die progredienten kognitiven Defizite, die Wesensveränderung und die zerebralen T2-hyperintensen Läsionen im MRT sind hochverdächtig, ebenso wie die B-Symptomatik und die ausgeprägte Erhöhung des sIL-2R als Aktivitätsmarker.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Vaskulitis des Zentralnervensystems\",\n      \"icd10_code\": \"I67.7\",\n      \"reasoning\": \"Die neurologischen Symptome (Ataxie, Psychomotorikverlangsamung) zusammen mit den punktförmigen Marklagerläsionen im MRT und der systemischen Entzündung (CRP, Fieber) könnten auf eine entzündliche Gefäßerkrankung hindeuten.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Metastasierende solide Tumorkrankheit mit Knochenmarksbeteiligung\",\n      \"icd10_code\": \"C79.9\",\n      \"reasoning\": \"Die B-Symptomatik, Kachexie, Panzytopenie und die massive LDH-Erhöhung sind klassisch für eine fortgeschrittene Tumorerkrankung, auch wenn im CT keine solide Raumforderung nachweisbar war.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Morbus Waldenström\",\n      \"icd10_code\": \"C88.0\",\n      \"reasoning\": \"Die Hyperviskositätssymptome wie neurologische Ausfälle und Petechien, kombiniert mit Panzytopenie, Splenomegalie und extrem hohem sIL-2R, sind vereinbar mit dieser lymphoproliferativen Erkrankung, obwohl keine Lymphadenopathie vorliegt.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2535,
+      "response_length": 1824,
+      "usage": {
+        "prompt_tokens": 766,
+        "completion_tokens": 579
+      },
+      "case_id": "cr_033",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.22222222222222224
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Koxarthrose",
+          "icd10_code": "M16.1",
+          "reasoning": "Die Kombination aus belastungsabhängigem und Anlaufschmerz, Bewegungseinschränkung, positiver Drehmann-Zeichen sowie der radiologische Nachweis einer Gelenkspaltverschmälerung, subchondralen Sklerose, Osteophyten und Geröllzysten ist pathognomonisch für eine Hüftgelenksarthrose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Femorales Impingement (FAI)",
+          "icd10_code": "M24.8",
+          "reasoning": "Der Schmerz in der Leiste, die schmerzhafte Einschränkung der Innenrotation und die radiologischen Veränderungen (Osteophyten) können auf ein mechanisches Impingement als mögliche Ursache der sekundären Arthrose hinweisen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Aseptische Hüftkopfnekrose",
+          "icd10_code": "M87.05",
+          "reasoning": "Trotz unauffälliger Laborwerte kann das klinische Bild mit belastungsabhängigen und nächtlichen Schmerzen sowie die radiologischen Zysten an eine Nekrose denken lassen, auch wenn typische Spätzeichen (Kollaps) fehlen.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Enthesitis bei Spondyloarthritis",
+          "icd10_code": "M46.0",
+          "reasoning": "Der nächtliche Schmerz und die Enthesiopathie-ähnliche Symptomatik sind differenzialdiagnostisch zu erwägen, jedoch sprechen der negative Rheumafaktor und das fehlende entzündliche Laborprofil dagegen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Koxarthrose\",\n      \"icd10_code\": \"M16.1\",\n      \"reasoning\": \"Die Kombination aus belastungsabhängigem und Anlaufschmerz, Bewegungseinschränkung, positiver Drehmann-Zeichen sowie der radiologische Nachweis einer Gelenkspaltverschmälerung, subchondralen Sklerose, Osteophyten und Geröllzysten ist pathognomonisch für eine Hüftgelenksarthrose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Femorales Impingement (FAI)\",\n      \"icd10_code\": \"M24.8\",\n      \"reasoning\": \"Der Schmerz in der Leiste, die schmerzhafte Einschränkung der Innenrotation und die radiologischen Veränderungen (Osteophyten) können auf ein mechanisches Impingement als mögliche Ursache der sekundären Arthrose hinweisen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Aseptische Hüftkopfnekrose\",\n      \"icd10_code\": \"M87.05\",\n      \"reasoning\": \"Trotz unauffälliger Laborwerte kann das klinische Bild mit belastungsabhängigen und nächtlichen Schmerzen sowie die radiologischen Zysten an eine Nekrose denken lassen, auch wenn typische Spätzeichen (Kollaps) fehlen.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Enthesitis bei Spondyloarthritis\",\n      \"icd10_code\": \"M46.0\",\n      \"reasoning\": \"Der nächtliche Schmerz und die Enthesiopathie-ähnliche Symptomatik sind differenzialdiagnostisch zu erwägen, jedoch sprechen der negative Rheumafaktor und das fehlende entzündliche Laborprofil dagegen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2473,
+      "response_length": 1497,
+      "usage": {
+        "prompt_tokens": 735,
+        "completion_tokens": 452
+      },
+      "case_id": "cr_034",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Schwere depressive Episode",
+          "icd10_code": "F32.2",
+          "reasoning": "Die Symptomtrias aus tiefer gedrückter Stimmung, Antriebsminderung mit Agitiertheit, Schlafstörungen (Früherwachen), Gewichtsverlust durch Inappetenz und ausgeprägter Lebensmüdigkeit entspricht dem klassischen Bild einer schweren Depression.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Anpassungsstörung mit depressiver Reaktion",
+          "icd10_code": "F43.21",
+          "reasoning": "Die berufliche Überforderung als zentraler Gedankeninhalt und der zeitliche Zusammenhang mit dem sozialen Rückzug legen eine maladaptive Reaktion auf psychosoziale Belastungsfaktoren nahe.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Subklinische Hypothyreose",
+          "icd10_code": "E02",
+          "reasoning": "Das leicht erhöhte TSH bei grenzwertigem fT4, der Tremor, die Antriebsminderung und depressive Symptomatik können auf eine Schilddrüsenfehlfunktion als Mitverursacher hinweisen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Somatoforme Störung",
+          "icd10_code": "F45.0",
+          "reasoning": "Das organisch abgeklärte Globusgefühl und der therapieresistente Tinnitus können Ausdruck einer somatoformen Störung im Rahmen der depressiven Erkrankung sein.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Schwere depressive Episode\",\n      \"icd10_code\": \"F32.2\",\n      \"reasoning\": \"Die Symptomtrias aus tiefer gedrückter Stimmung, Antriebsminderung mit Agitiertheit, Schlafstörungen (Früherwachen), Gewichtsverlust durch Inappetenz und ausgeprägter Lebensmüdigkeit entspricht dem klassischen Bild einer schweren Depression.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Anpassungsstörung mit depressiver Reaktion\",\n      \"icd10_code\": \"F43.21\",\n      \"reasoning\": \"Die berufliche Überforderung als zentraler Gedankeninhalt und der zeitliche Zusammenhang mit dem sozialen Rückzug legen eine maladaptive Reaktion auf psychosoziale Belastungsfaktoren nahe.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Subklinische Hypothyreose\",\n      \"icd10_code\": \"E02\",\n      \"reasoning\": \"Das leicht erhöhte TSH bei grenzwertigem fT4, der Tremor, die Antriebsminderung und depressive Symptomatik können auf eine Schilddrüsenfehlfunktion als Mitverursacher hinweisen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Somatoforme Störung\",\n      \"icd10_code\": \"F45.0\",\n      \"reasoning\": \"Das organisch abgeklärte Globusgefühl und der therapieresistente Tinnitus können Ausdruck einer somatoformen Störung im Rahmen der depressiven Erkrankung sein.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2584,
+      "response_length": 1357,
+      "usage": {
+        "prompt_tokens": 749,
+        "completion_tokens": 391
+      },
+      "case_id": "cr_035",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.888888888888889
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Anti-NMDA-Rezeptor-Enzephalitis",
+          "icd10_code": "G04.81",
+          "reasoning": "Die Kombination aus initialer psychiatrischer Symptomatik, Krampfanfall, autonomer Instabilität, Dyskinesien und der im TVUS gefundenen ovariellen Raumforderung ist hochspezifisch für eine paraneoplastische Enzephalitis, typischerweise durch ein Teratom verursacht.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Enzephalitis (andere infektiöse/autoimmune Ursache)",
+          "icd10_code": "G04.90",
+          "reasoning": "Die lymphozytäre Pleozytose im Liquor, die grippeähnlichen Prodromi und die neurologisch-psychiatrische Symptomatik sprechen für eine entzündliche Hirnerkrankung, auch wenn die gängigen viralen Erreger (HSV/VZV) ausgeschlossen wurden.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Maligner Ovarialtumor mit zerebralen Metastasen",
+          "icd10_code": "C56",
+          "reasoning": "Die Adnexraumforderung könnte ein Malignom darstellen, das paraneoplastisch oder durch Metastasierung die neurologischen und psychiatrischen Symptome verursacht, auch wenn das MRT keine Läsionen zeigt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Akute schizophrene Psychose (primär psychiatrisch)",
+          "icd10_code": "F20.0",
+          "reasoning": "Die initiale Symptomatik mit Agitiertheit und Verfolgungswahn war der ursprüngliche Aufnahmegrund, jedoch sind die neurologischen und autonomen Symptome damit nicht ausreichend erklärbar.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Neuroleptika-maligne-Syndrom",
+          "icd10_code": "G21.0",
+          "reasoning": "Die Rigidität, autonome Instabilität und Bewusstseinsstörung könnten passen, jedoch gibt es in der Anamnese keine Exposition gegenüber Neuroleptika vor Symptombeginn.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Anti-NMDA-Rezeptor-Enzephalitis\",\n      \"icd10_code\": \"G04.81\",\n      \"reasoning\": \"Die Kombination aus initialer psychiatrischer Symptomatik, Krampfanfall, autonomer Instabilität, Dyskinesien und der im TVUS gefundenen ovariellen Raumforderung ist hochspezifisch für eine paraneoplastische Enzephalitis, typischerweise durch ein Teratom verursacht.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Enzephalitis (andere infektiöse/autoimmune Ursache)\",\n      \"icd10_code\": \"G04.90\",\n      \"reasoning\": \"Die lymphozytäre Pleozytose im Liquor, die grippeähnlichen Prodromi und die neurologisch-psychiatrische Symptomatik sprechen für eine entzündliche Hirnerkrankung, auch wenn die gängigen viralen Erreger (HSV/VZV) ausgeschlossen wurden.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Maligner Ovarialtumor mit zerebralen Metastasen\",\n      \"icd10_code\": \"C56\",\n      \"reasoning\": \"Die Adnexraumforderung könnte ein Malignom darstellen, das paraneoplastisch oder durch Metastasierung die neurologischen und psychiatrischen Symptome verursacht, auch wenn das MRT keine Läsionen zeigt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Akute schizophrene Psychose (primär psychiatrisch)\",\n      \"icd10_code\": \"F20.0\",\n      \"reasoning\": \"Die initiale Symptomatik mit Agitiertheit und Verfolgungswahn war der ursprüngliche Aufnahmegrund, jedoch sind die neurologischen und autonomen Symptome damit nicht ausreichend erklärbar.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Neuroleptika-maligne-Syndrom\",\n      \"icd10_code\": \"G21.0\",\n      \"reasoning\": \"Die Rigidität, autonome Instabilität und Bewusstseinsstörung könnten passen, jedoch gibt es in der Anamnese keine Exposition gegenüber Neuroleptika vor Symptombeginn.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2667,
+      "response_length": 1853,
+      "usage": {
+        "prompt_tokens": 783,
+        "completion_tokens": 544
+      },
+      "case_id": "cr_036",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.4444444444444445
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Dekompensation einer chronischen Herzinsuffizienz",
+          "icd10_code": "I50.23",
+          "reasoning": "Die Belastungsdyspnoe (NYHA III), periphere Ödeme, Halsvenenstauung, Rasselgeräusche, erhöhtes NT-proBNP, Kardiomegalie im Röntgen und die Vorgeschichte mit Myokardinfarkt und Hypertonie sind klassisch für eine Herzinsuffizienz.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Koronare Herzkrankheit mit akuter Ischämie",
+          "icd10_code": "I24.9",
+          "reasoning": "Die leicht erhöhten Troponin-Werte bei bekannter KHK und Zustand nach Myokardinfarkt deuten auf eine akute ischämische Komponente als Auslöser der Dekompensation hin.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Niereninsuffizienz (kardiorenales Syndrom)",
+          "icd10_code": "N18.9",
+          "reasoning": "Die eingeschränkte GFR von 48 ml/min und erhöhtes Kreatinin bei gleichzeitiger Herzinsuffizienz sprechen für ein kardiorenales Syndrom, welches die Ödeme und Flüssigkeitsretention verstärkt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Medikamenten-Non-Adhärenz als auslösender Faktor",
+          "icd10_code": "Z91.14",
+          "reasoning": "Die lückenhafte Einnahme der antihypertensiven und kardioprotektiven Medikation (Ramipril, ASS) bei depressiver Verstimmung erklärt die akute Verschlechterung der kontrollierten Vorerkrankungen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pulmonale Hypertonie",
+          "icd10_code": "I27.0",
+          "reasoning": "Die verstärkte Lungengefäßzeichnung im Röntgen, die Dyspnoe und die peripheren Ödeme können auf eine sekundäre pulmonale Hypertonie als Folge der linksventrikulären Dysfunktion hinweisen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Dekompensation einer chronischen Herzinsuffizienz\",\n      \"icd10_code\": \"I50.23\",\n      \"reasoning\": \"Die Belastungsdyspnoe (NYHA III), periphere Ödeme, Halsvenenstauung, Rasselgeräusche, erhöhtes NT-proBNP, Kardiomegalie im Röntgen und die Vorgeschichte mit Myokardinfarkt und Hypertonie sind klassisch für eine Herzinsuffizienz.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Koronare Herzkrankheit mit akuter Ischämie\",\n      \"icd10_code\": \"I24.9\",\n      \"reasoning\": \"Die leicht erhöhten Troponin-Werte bei bekannter KHK und Zustand nach Myokardinfarkt deuten auf eine akute ischämische Komponente als Auslöser der Dekompensation hin.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Niereninsuffizienz (kardiorenales Syndrom)\",\n      \"icd10_code\": \"N18.9\",\n      \"reasoning\": \"Die eingeschränkte GFR von 48 ml/min und erhöhtes Kreatinin bei gleichzeitiger Herzinsuffizienz sprechen für ein kardiorenales Syndrom, welches die Ödeme und Flüssigkeitsretention verstärkt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Medikamenten-Non-Adhärenz als auslösender Faktor\",\n      \"icd10_code\": \"Z91.14\",\n      \"reasoning\": \"Die lückenhafte Einnahme der antihypertensiven und kardioprotektiven Medikation (Ramipril, ASS) bei depressiver Verstimmung erklärt die akute Verschlechterung der kontrollierten Vorerkrankungen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pulmonale Hypertonie\",\n      \"icd10_code\": \"I27.0\",\n      \"reasoning\": \"Die verstärkte Lungengefäßzeichnung im Röntgen, die Dyspnoe und die peripheren Ödeme können auf eine sekundäre pulmonale Hypertonie als Folge der linksventrikulären Dysfunktion hinweisen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2395,
+      "response_length": 1767,
+      "usage": {
+        "prompt_tokens": 763,
+        "completion_tokens": 561
+      },
+      "case_id": "cr_037",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Perikarditis",
+          "icd10_code": "I30.9",
+          "reasoning": "Die Schmerzcharakteristik (Lageabhängigkeit mit Verstärkung im Liegen und bei Inspiration, Besserung durch Vorbeugen), der vorausgegangene grippale Infekt, das CRP, die EKG-Veränderungen (Niedervoltage, T-Abflachungen) und der echokardiographisch gesicherte Perikarderguss sind hochkonkordant.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Myokarditis",
+          "icd10_code": "I40.0",
+          "reasoning": "Der vorausgegangene Infekt, die erhöhten kardialen Biomarker (Troponin, NT-proBNP) und die Entzündungszeichen (CRP, Leukozyten) bei fehlenden Wandbewegungsstörungen in der Echokardiographie sprechen für eine entzündliche Beteiligung des Myokards.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Instabile Angina pectoris / Nicht-ST-Hebungsinfarkt (NSTEMI)",
+          "icd10_code": "I20.0",
+          "reasoning": "Die thorakalen Schmerzen, die kardiovaskulären Risikofaktoren (Hypertonus, Nikotinabusus) und der erhöhte Troponin-Wert sind verdächtig, werden jedoch durch die fehlenden ST-Hebungen und die untypische Schmerzanamnese (Lageabhängigkeit) relativiert.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die Belastungsdyspnoe, Tachykardie, Tachypnoe, reduzierte Sauerstoffsättigung und das leicht erhöhte D-Dimer sind passend, jedoch ist der D-Dimer-Wert nur grenzwertig erhöht und die Symptomatik wird besser durch den Perikarderguss erklärt.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Perikarditis\",\n      \"icd10_code\": \"I30.9\",\n      \"reasoning\": \"Die Schmerzcharakteristik (Lageabhängigkeit mit Verstärkung im Liegen und bei Inspiration, Besserung durch Vorbeugen), der vorausgegangene grippale Infekt, das CRP, die EKG-Veränderungen (Niedervoltage, T-Abflachungen) und der echokardiographisch gesicherte Perikarderguss sind hochkonkordant.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Myokarditis\",\n      \"icd10_code\": \"I40.0\",\n      \"reasoning\": \"Der vorausgegangene Infekt, die erhöhten kardialen Biomarker (Troponin, NT-proBNP) und die Entzündungszeichen (CRP, Leukozyten) bei fehlenden Wandbewegungsstörungen in der Echokardiographie sprechen für eine entzündliche Beteiligung des Myokards.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Instabile Angina pectoris / Nicht-ST-Hebungsinfarkt (NSTEMI)\",\n      \"icd10_code\": \"I20.0\",\n      \"reasoning\": \"Die thorakalen Schmerzen, die kardiovaskulären Risikofaktoren (Hypertonus, Nikotinabusus) und der erhöhte Troponin-Wert sind verdächtig, werden jedoch durch die fehlenden ST-Hebungen und die untypische Schmerzanamnese (Lageabhängigkeit) relativiert.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die Belastungsdyspnoe, Tachykardie, Tachypnoe, reduzierte Sauerstoffsättigung und das leicht erhöhte D-Dimer sind passend, jedoch ist der D-Dimer-Wert nur grenzwertig erhöht und die Symptomatik wird besser durch den Perikarderguss erklärt.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2926,
+      "response_length": 1610,
+      "usage": {
+        "prompt_tokens": 881,
+        "completion_tokens": 504
+      },
+      "case_id": "cr_038",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Chronische Hypersensitivitätspneumonitis (Vogelhalterlunge)",
+          "icd10_code": "J67.2",
+          "reasoning": "Die Exposition gegenüber Vogelkot (Wellensittichhaltung) in Kombination mit Belastungsdyspnoe, Reizhusten, Gewichtsverlust, basaler Krepitation, Sauerstoffabfall unter Belastung und dem HR-CT-Befund mit Mosaikmuster, Air-Trapping und Milchglasknötchen ist hochverdächtig.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Idiopathische Lungenfibrose",
+          "icd10_code": "J84.1",
+          "reasoning": "Das progrediente Bild mit Belastungsdyspnoe, Reizhusten, basaler Sklerophonie, Sauerstoffdesättigung sowie die retikulären Veränderungen und Traktionsbronchiektasen im HR-CT sprechen für diese Diagnose, obwohl das Mosaikmuster eher untypisch ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Sarkoidose",
+          "icd10_code": "D86.0",
+          "reasoning": "Der erhöhte CRP-Wert, der unproduktive Husten, der Gewichtsverlust und die milchglasartigen Knötchen im CT sind vereinbar, jedoch macht das normale ACE und das dominante Air-Trapping/Mosaikmuster diese Diagnose weniger wahrscheinlich.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Exogen-allergische Alveolitis durch organische Stäube (z.B. Schimmelpilze)",
+          "icd10_code": "J67.9",
+          "reasoning": "Die berufliche Exposition als Restaurator (Schimmelpilzsporen in alten Büchern) könnte eine weitere Form der Hypersensitivitätspneumonitis erklären und die Symptome sowie die radiologischen Veränderungen verursachen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische eosinophile Pneumonie",
+          "icd10_code": "J82",
+          "reasoning": "Reizhusten, Dyspnoe, Gewichtsverlust und Milchglaskonsolidierungen wären passend, jedoch fehlt eine periphere Eosinophilie, was die Wahrscheinlichkeit deutlich senkt.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Chronische Hypersensitivitätspneumonitis (Vogelhalterlunge)\",\n      \"icd10_code\": \"J67.2\",\n      \"reasoning\": \"Die Exposition gegenüber Vogelkot (Wellensittichhaltung) in Kombination mit Belastungsdyspnoe, Reizhusten, Gewichtsverlust, basaler Krepitation, Sauerstoffabfall unter Belastung und dem HR-CT-Befund mit Mosaikmuster, Air-Trapping und Milchglasknötchen ist hochverdächtig.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Idiopathische Lungenfibrose\",\n      \"icd10_code\": \"J84.1\",\n      \"reasoning\": \"Das progrediente Bild mit Belastungsdyspnoe, Reizhusten, basaler Sklerophonie, Sauerstoffdesättigung sowie die retikulären Veränderungen und Traktionsbronchiektasen im HR-CT sprechen für diese Diagnose, obwohl das Mosaikmuster eher untypisch ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Sarkoidose\",\n      \"icd10_code\": \"D86.0\",\n      \"reasoning\": \"Der erhöhte CRP-Wert, der unproduktive Husten, der Gewichtsverlust und die milchglasartigen Knötchen im CT sind vereinbar, jedoch macht das normale ACE und das dominante Air-Trapping/Mosaikmuster diese Diagnose weniger wahrscheinlich.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Exogen-allergische Alveolitis durch organische Stäube (z.B. Schimmelpilze)\",\n      \"icd10_code\": \"J67.9\",\n      \"reasoning\": \"Die berufliche Exposition als Restaurator (Schimmelpilzsporen in alten Büchern) könnte eine weitere Form der Hypersensitivitätspneumonitis erklären und die Symptome sowie die radiologischen Veränderungen verursachen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische eosinophile Pneumonie\",\n      \"icd10_code\": \"J82\",\n      \"reasoning\": \"Reizhusten, Dyspnoe, Gewichtsverlust und Milchglaskonsolidierungen wären passend, jedoch fehlt eine periphere Eosinophilie, was die Wahrscheinlichkeit deutlich senkt.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2474,
+      "response_length": 1926,
+      "usage": {
+        "prompt_tokens": 746,
+        "completion_tokens": 577
+      },
+      "case_id": "cr_039",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666665
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Multiple Sklerose",
+          "icd10_code": "G35",
+          "reasoning": "Die Kombination aus akuter Optikusneuritis mit Schmerzen bei Augenbewegung, einer früheren Episode mit sensiblen Symptomen (Kribbeln im Bein), oligoklonalen Banden im Liquor, multiplen T2-hyperintensen Marklagerläsionen im MRT und einer aktiven, KM-aufnehmenden Läsion des N. opticus ist hochgradig typisch für eine MS.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Neuromyelitis optica Spektrumerkrankung (NMOSD)",
+          "icd10_code": "G36.0",
+          "reasoning": "Die akute einseitige Optikusneuritis ist ein Leitsymptom. Die frühere sensible Symptomatik und die Läsionen im ZNS sind vereinbar, jedoch ist das Fehlen einer Myelitis und das Vorhandensein von oligoklonalen Banden (typisch für MS, untypisch für NMOSD) weniger charakteristisch.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Akute demyelinisierende Enzephalomyelitis (ADEM)",
+          "icd10_code": "G36.9",
+          "reasoning": "Kann eine akute Optikusneuritis und multiple Marklagerläsionen verursachen, tritt jedoch typischerweise monophasisch und oft postinfektiös auf. Der schubförmige Verlauf mit zwei getrennten Ereignissen (jetzige Optikusneuritis, frühere sensible Störung) spricht eher für MS.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Optikusneuritis anderer Genese (z.B. infektionsassoziiert)",
+          "icd10_code": "H46",
+          "reasoning": "Klinisch und bildgebend passend für eine Optikusneuritis, jedoch fehlen im Fall Hinweise auf eine Infektion (normales CRP, normale Leukozyten, kein Fieber), was diese Ursache weniger wahrscheinlich macht.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Multiple Sklerose\",\n      \"icd10_code\": \"G35\",\n      \"reasoning\": \"Die Kombination aus akuter Optikusneuritis mit Schmerzen bei Augenbewegung, einer früheren Episode mit sensiblen Symptomen (Kribbeln im Bein), oligoklonalen Banden im Liquor, multiplen T2-hyperintensen Marklagerläsionen im MRT und einer aktiven, KM-aufnehmenden Läsion des N. opticus ist hochgradig typisch für eine MS.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Neuromyelitis optica Spektrumerkrankung (NMOSD)\",\n      \"icd10_code\": \"G36.0\",\n      \"reasoning\": \"Die akute einseitige Optikusneuritis ist ein Leitsymptom. Die frühere sensible Symptomatik und die Läsionen im ZNS sind vereinbar, jedoch ist das Fehlen einer Myelitis und das Vorhandensein von oligoklonalen Banden (typisch für MS, untypisch für NMOSD) weniger charakteristisch.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Akute demyelinisierende Enzephalomyelitis (ADEM)\",\n      \"icd10_code\": \"G36.9\",\n      \"reasoning\": \"Kann eine akute Optikusneuritis und multiple Marklagerläsionen verursachen, tritt jedoch typischerweise monophasisch und oft postinfektiös auf. Der schubförmige Verlauf mit zwei getrennten Ereignissen (jetzige Optikusneuritis, frühere sensible Störung) spricht eher für MS.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Optikusneuritis anderer Genese (z.B. infektionsassoziiert)\",\n      \"icd10_code\": \"H46\",\n      \"reasoning\": \"Klinisch und bildgebend passend für eine Optikusneuritis, jedoch fehlen im Fall Hinweise auf eine Infektion (normales CRP, normale Leukozyten, kein Fieber), was diese Ursache weniger wahrscheinlich macht.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2651,
+      "response_length": 1721,
+      "usage": {
+        "prompt_tokens": 774,
+        "completion_tokens": 518
+      },
+      "case_id": "cr_040",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Autoimmunpankreatitis (Typ 1)",
+          "icd10_code": "K86.8",
+          "reasoning": "Die Kombination aus wurstförmiger Pankreasvergrößerung mit hypodensem Randsaum („halo sign“) in der CT, der erhöhte IgG4-Wert und der laborchemische Nachweis einer cholestatischen Hepatitis sind hoch charakteristisch.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pankreaskarzinom",
+          "icd10_code": "C25.9",
+          "reasoning": "Das klinische Bild mit Oberbauchschmerzen, Gewichtsverlust, Ikterus sowie der leicht erhöhte Tumormarker CA 19-9 bei einem Patienten mit Nikotinanamnese sind verdächtig.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Kann ebenfalls mit Oberbauchschmerzen, Gewichtsverlust und einer Pankreaskopfvergrößerung einhergehen, die bildmorphologischen Zeichen („sausage-like“, „halo sign“) und der hohe IgG4-Wert sprechen jedoch primär dagegen.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Choledocholithiasis",
+          "icd10_code": "K80.5",
+          "reasoning": "Ikterus und Cholestase-Parameter sind passend, jedoch schließt der fehlende Nachweis von Konkrementen in Sonographie und CT sowie die diffuse Pankreasvergrößerung diese Diagnose eher aus.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Autoimmunpankreatitis (Typ 1)\",\n      \"icd10_code\": \"K86.8\",\n      \"reasoning\": \"Die Kombination aus wurstförmiger Pankreasvergrößerung mit hypodensem Randsaum („halo sign“) in der CT, der erhöhte IgG4-Wert und der laborchemische Nachweis einer cholestatischen Hepatitis sind hoch charakteristisch.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pankreaskarzinom\",\n      \"icd10_code\": \"C25.9\",\n      \"reasoning\": \"Das klinische Bild mit Oberbauchschmerzen, Gewichtsverlust, Ikterus sowie der leicht erhöhte Tumormarker CA 19-9 bei einem Patienten mit Nikotinanamnese sind verdächtig.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Kann ebenfalls mit Oberbauchschmerzen, Gewichtsverlust und einer Pankreaskopfvergrößerung einhergehen, die bildmorphologischen Zeichen („sausage-like“, „halo sign“) und der hohe IgG4-Wert sprechen jedoch primär dagegen.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Choledocholithiasis\",\n      \"icd10_code\": \"K80.5\",\n      \"reasoning\": \"Ikterus und Cholestase-Parameter sind passend, jedoch schließt der fehlende Nachweis von Konkrementen in Sonographie und CT sowie die diffuse Pankreasvergrößerung diese Diagnose eher aus.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2435,
+      "response_length": 1360,
+      "usage": {
+        "prompt_tokens": 742,
+        "completion_tokens": 421
+      },
+      "case_id": "cr_041",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Neuroendokriner Tumor (NET) des terminalen Ileums mit hepatischer Metastasierung und Karzinoid-Syndrom",
+          "icd10_code": "C7A.1",
+          "reasoning": "Die Trias aus Flush-Symptomatik, Diarrhö und Bronchospasmen ist klassisch für das Karzinoid-Syndrom. Die erhöhten Biomarker (Chromogranin A, 5-HIES), die Raumforderung im terminalen Ileum mit desmoplastischer Reaktion im CT und die charakteristischen Lebermetastasen in der Bildgebung bestätigen dies.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Karzinoid-Herzkrankheit",
+          "icd10_code": "I39.8",
+          "reasoning": "Das holosystolische Geräusch mit positivem Rivero-Carvallo-Zeichen, die echokardiographisch gesicherte Trikuspidalinsuffizienz/Pulmonalstenose und das erhöhte NT-proBNP sind typisch für eine durch Serotonin-Ausschüttung verursachte Endokardfibrose bei fortgeschrittenem Karzinoid-Syndrom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Metastasiertes Adenokarzinom des Gastrointestinaltraktes",
+          "icd10_code": "C26.9",
+          "reasoning": "Der ungewollte Gewichtsverlust, die hepatische Metastasierung und die Raumforderung im Ileum sind auch bei Adenokarzinomen möglich. Das spezifische Karzinoid-Syndrom mit Flush und die massiv erhöhten neuroendokrinen Marker machen dies jedoch weniger wahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Chronisch-entzündliche Darmerkrankung (Morbus Crohn)",
+          "icd10_code": "K50.9",
+          "reasoning": "Die Diarrhö und die terminal-ileale Raumforderung könnten auf einen Morbus Crohn hindeuten. Das Fehlen von Blut im Stuhl, das Vorliegen eines ausgeprägten Karzinoid-Syndroms und die spezifischen Metastasen schließen dies jedoch nahezu aus.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Neuroendokriner Tumor (NET) des terminalen Ileums mit hepatischer Metastasierung und Karzinoid-Syndrom\",\n      \"icd10_code\": \"C7A.1\",\n      \"reasoning\": \"Die Trias aus Flush-Symptomatik, Diarrhö und Bronchospasmen ist klassisch für das Karzinoid-Syndrom. Die erhöhten Biomarker (Chromogranin A, 5-HIES), die Raumforderung im terminalen Ileum mit desmoplastischer Reaktion im CT und die charakteristischen Lebermetastasen in der Bildgebung bestätigen dies.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Karzinoid-Herzkrankheit\",\n      \"icd10_code\": \"I39.8\",\n      \"reasoning\": \"Das holosystolische Geräusch mit positivem Rivero-Carvallo-Zeichen, die echokardiographisch gesicherte Trikuspidalinsuffizienz/Pulmonalstenose und das erhöhte NT-proBNP sind typisch für eine durch Serotonin-Ausschüttung verursachte Endokardfibrose bei fortgeschrittenem Karzinoid-Syndrom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Metastasiertes Adenokarzinom des Gastrointestinaltraktes\",\n      \"icd10_code\": \"C26.9\",\n      \"reasoning\": \"Der ungewollte Gewichtsverlust, die hepatische Metastasierung und die Raumforderung im Ileum sind auch bei Adenokarzinomen möglich. Das spezifische Karzinoid-Syndrom mit Flush und die massiv erhöhten neuroendokrinen Marker machen dies jedoch weniger wahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Chronisch-entzündliche Darmerkrankung (Morbus Crohn)\",\n      \"icd10_code\": \"K50.9\",\n      \"reasoning\": \"Die Diarrhö und die terminal-ileale Raumforderung könnten auf einen Morbus Crohn hindeuten. Das Fehlen von Blut im Stuhl, das Vorliegen eines ausgeprägten Karzinoid-Syndroms und die spezifischen Metastasen schließen dies jedoch nahezu aus.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2869,
+      "response_length": 1805,
+      "usage": {
+        "prompt_tokens": 872,
+        "completion_tokens": 541
+      },
+      "case_id": "cr_042",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.25
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Schenkelhalsfraktur rechts",
+          "icd10_code": "S72.00",
+          "reasoning": "Die Kombination aus Sturzereignis, klinischen Zeichen (Verkürzung, Außenrotation, schmerzhafte axiale Stauchung) und dem radiologischen Nachweis einer Fraktur mit Dislokation (Garden III) bestätigt die Diagnose eindeutig.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Coxarthrose",
+          "icd10_code": "M16.1",
+          "reasoning": "Die vorbestehenden belastungsabhängigen Hüftschmerzen über zwei Jahre und die radiologisch gesicherten degenerativen Veränderungen mit Gelenkspaltverschmälerung sind wegweisend für diese Grunderkrankung.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pathologische Fraktur bei Osteoporose",
+          "icd10_code": "M80.08",
+          "reasoning": "Die bekannte Osteoporose (T-Score -2,8) stellt einen wesentlichen prädisponierenden Faktor dar, der bereits durch ein Bagatelltrauma (Sturz über Teppichrand) zu einer Fraktur führen kann.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hüftgelenksinfekt (Koxitis)",
+          "icd10_code": "M00.85",
+          "reasoning": "Das geringgradig erhöhte CRP (12,5 mg/l) bei normalen Leukozyten könnte auf einen entzündlichen Prozess hinweisen, ist jedoch im Kontext des akuten Traumas und der Fraktur eher als Begleitreaktion zu werten.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Schenkelhalsfraktur rechts\",\n      \"icd10_code\": \"S72.00\",\n      \"reasoning\": \"Die Kombination aus Sturzereignis, klinischen Zeichen (Verkürzung, Außenrotation, schmerzhafte axiale Stauchung) und dem radiologischen Nachweis einer Fraktur mit Dislokation (Garden III) bestätigt die Diagnose eindeutig.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Coxarthrose\",\n      \"icd10_code\": \"M16.1\",\n      \"reasoning\": \"Die vorbestehenden belastungsabhängigen Hüftschmerzen über zwei Jahre und die radiologisch gesicherten degenerativen Veränderungen mit Gelenkspaltverschmälerung sind wegweisend für diese Grunderkrankung.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pathologische Fraktur bei Osteoporose\",\n      \"icd10_code\": \"M80.08\",\n      \"reasoning\": \"Die bekannte Osteoporose (T-Score -2,8) stellt einen wesentlichen prädisponierenden Faktor dar, der bereits durch ein Bagatelltrauma (Sturz über Teppichrand) zu einer Fraktur führen kann.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hüftgelenksinfekt (Koxitis)\",\n      \"icd10_code\": \"M00.85\",\n      \"reasoning\": \"Das geringgradig erhöhte CRP (12,5 mg/l) bei normalen Leukozyten könnte auf einen entzündlichen Prozess hinweisen, ist jedoch im Kontext des akuten Traumas und der Fraktur eher als Begleitreaktion zu werten.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2381,
+      "response_length": 1401,
+      "usage": {
+        "prompt_tokens": 694,
+        "completion_tokens": 422
+      },
+      "case_id": "cr_043",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Morbus Basedow",
+          "icd10_code": "E05.0",
+          "reasoning": "Die Kombination aus Tachykardie, Tremor, Gewichtsverlust trotz gesteigertem Appetit, Wärmeintoleranz, pathologischen Laborwerten (supprimiertes TSH, erhöhtes fT3/fT4) und positivem TRAK sowie dem sonographischen Bild des \"Schilddrüseninfernos\" ist hochspezifisch für eine Immunhyperthyreose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Anpassungsstörung mit depressiver Reaktion (Burnout-Syndrom)",
+          "icd10_code": "F43.20",
+          "reasoning": "Die berufliche Belastung als Auslöser, zusammen mit den Symptomen Erschöpfung, innere Unruhe, Schlafstörungen und dysphorisch-gereizter Stimmung, ist passend, wird jedoch durch die objektiven Befunde der Schilddrüsenüberfunktion überlagert.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Generalisierte Angststörung",
+          "icd10_code": "F41.1",
+          "reasoning": "Das Gefühl des \"Getriebenseins\", die psychomotorische Unruhe und die vegetative Symptomatik mit Tachykardie und Tremor könnten auch hierfür sprechen, sind aber sekundär durch die Hyperthyreose erklärbar.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Schilddrüsenautonomie",
+          "icd10_code": "E05.2",
+          "reasoning": "Kann ebenfalls eine Hyperthyreose mit ähnlicher Symptomatik verursachen, ist jedoch bei positivem TRAK-Nachweis und dem typischen Ultraschallbefund sehr unwahrscheinlich.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Morbus Basedow\",\n      \"icd10_code\": \"E05.0\",\n      \"reasoning\": \"Die Kombination aus Tachykardie, Tremor, Gewichtsverlust trotz gesteigertem Appetit, Wärmeintoleranz, pathologischen Laborwerten (supprimiertes TSH, erhöhtes fT3/fT4) und positivem TRAK sowie dem sonographischen Bild des \\\"Schilddrüseninfernos\\\" ist hochspezifisch für eine Immunhyperthyreose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Anpassungsstörung mit depressiver Reaktion (Burnout-Syndrom)\",\n      \"icd10_code\": \"F43.20\",\n      \"reasoning\": \"Die berufliche Belastung als Auslöser, zusammen mit den Symptomen Erschöpfung, innere Unruhe, Schlafstörungen und dysphorisch-gereizter Stimmung, ist passend, wird jedoch durch die objektiven Befunde der Schilddrüsenüberfunktion überlagert.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Generalisierte Angststörung\",\n      \"icd10_code\": \"F41.1\",\n      \"reasoning\": \"Das Gefühl des \\\"Getriebenseins\\\", die psychomotorische Unruhe und die vegetative Symptomatik mit Tachykardie und Tremor könnten auch hierfür sprechen, sind aber sekundär durch die Hyperthyreose erklärbar.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Schilddrüsenautonomie\",\n      \"icd10_code\": \"E05.2\",\n      \"reasoning\": \"Kann ebenfalls eine Hyperthyreose mit ähnlicher Symptomatik verursachen, ist jedoch bei positivem TRAK-Nachweis und dem typischen Ultraschallbefund sehr unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2649,
+      "response_length": 1512,
+      "usage": {
+        "prompt_tokens": 828,
+        "completion_tokens": 461
+      },
+      "case_id": "cr_044",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "case_id": "cr_045",
+      "error": "Error code: 503 - {'id': 'od2PbzE-6z2FuN-9e4081d4aa2c5d4e', 'error': {'message': 'Service unavailable', 'type': 'service_unavailable', 'param': None, 'code': None}}"
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Dekompensation einer chronischen Herzinsuffizienz",
+          "icd10_code": "I50.23",
+          "reasoning": "Die Belastungs- und Ruhedyspnoe mit Orthopnoe, die peripheren Ödeme, die Jugularvenenstauung sowie das stark erhöhte NT-proBNP und die kardiomegalie im Röntgen sind klassische Zeichen einer Herzinsuffizienzdekompensation, besonders vor dem Hintergrund von Myokardinfarkt und Hypertonus.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Koronare Herzkrankheit mit ischämischer Kardiomyopathie",
+          "icd10_code": "I25.5",
+          "reasoning": "Die Vorgeschichte mit Myokardinfarkt und Stentversorgung sowie der arterielle Hypertonus sind etablierte Risikofaktoren für eine ischämische Kardiomyopathie, die die aktuelle Symptomatik der Herzinsuffizienz verursachen kann.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Niereninsuffizienz mit Volumenüberladung",
+          "icd10_code": "N18.9",
+          "reasoning": "Die leicht eingeschränkte GFR (58 ml/min) und die Hyponatriämie könnten auf eine renale Mitbeteiligung hinweisen, die die Volumenüberladung und Ödeme verstärkt, auch wenn sie nicht die primäre Ursache der Dekompensation ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.99",
+          "reasoning": "Als ehemaliger Raucher mit eingeschränkter Mobilität durch die Herzinsuffizienz besteht ein erhöhtes Thromboserisiko. Die Dyspnoe und die Hypoxämie könnten dazu passen, jedoch sprechen das fehlende Risikoprofil und der normale CRP-Wert eher dagegen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Dekompensation einer chronischen Herzinsuffizienz\",\n      \"icd10_code\": \"I50.23\",\n      \"reasoning\": \"Die Belastungs- und Ruhedyspnoe mit Orthopnoe, die peripheren Ödeme, die Jugularvenenstauung sowie das stark erhöhte NT-proBNP und die kardiomegalie im Röntgen sind klassische Zeichen einer Herzinsuffizienzdekompensation, besonders vor dem Hintergrund von Myokardinfarkt und Hypertonus.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Koronare Herzkrankheit mit ischämischer Kardiomyopathie\",\n      \"icd10_code\": \"I25.5\",\n      \"reasoning\": \"Die Vorgeschichte mit Myokardinfarkt und Stentversorgung sowie der arterielle Hypertonus sind etablierte Risikofaktoren für eine ischämische Kardiomyopathie, die die aktuelle Symptomatik der Herzinsuffizienz verursachen kann.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Niereninsuffizienz mit Volumenüberladung\",\n      \"icd10_code\": \"N18.9\",\n      \"reasoning\": \"Die leicht eingeschränkte GFR (58 ml/min) und die Hyponatriämie könnten auf eine renale Mitbeteiligung hinweisen, die die Volumenüberladung und Ödeme verstärkt, auch wenn sie nicht die primäre Ursache der Dekompensation ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.99\",\n      \"reasoning\": \"Als ehemaliger Raucher mit eingeschränkter Mobilität durch die Herzinsuffizienz besteht ein erhöhtes Thromboserisiko. Die Dyspnoe und die Hypoxämie könnten dazu passen, jedoch sprechen das fehlende Risikoprofil und der normale CRP-Wert eher dagegen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2369,
+      "response_length": 1628,
+      "usage": {
+        "prompt_tokens": 752,
+        "completion_tokens": 497
+      },
+      "case_id": "cr_046",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Aortendissektion (Typ A)",
+          "icd10_code": "I71.0",
+          "reasoning": "Die akuten reißenden thorakalen Schmerzen mit Rückenschmerzausstrahlung, die Blutdruckdifferenz zwischen den Armen, die mediastinale Verbreiterung im Röntgen, die dilatierte Aorta ascendens im Echo und der geringe Perikarderguss sind hochverdächtig für eine akute Typ-A-Dissektion.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Koronarsyndrom (Instabile Angina pectoris/NSTEMI)",
+          "icd10_code": "I20.0",
+          "reasoning": "Die retrosternalen Schmerzen und der geringfügig erhöhte Troponin-T-Wert mit nur minimalem Anstieg im Verlauf passen zu einem NSTEMI, insbesondere bei den kardiovaskulären Risikofaktoren Hypertonie und Nikotinabusus.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Perikarditis",
+          "icd10_code": "I30.9",
+          "reasoning": "Der thorakale Schmerz, der geringe Perikarderguss in der Echokardiographie und das erhöhte CRP könnten für eine Perikarditis sprechen, jedoch ist der Schmerzcharakter atypisch reißend und die anderen Befunde sind weniger spezifisch.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Aortenerkrankung bei Marfan-Syndrom oder anderer Bindegewebserkrankung",
+          "icd10_code": "Q87.4",
+          "reasoning": "Die dilative Aortenwurzel-Erkrankung bei jüngerem Patienten könnte auf eine zugrundeliegende Bindegewebserkrankung hinweisen, die das Dissektionsrisiko erhöht, ist aber ohne weitere klinische Zeichen (z.B. Stigmata) weniger wahrscheinlich.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Aortendissektion (Typ A)\",\n      \"icd10_code\": \"I71.0\",\n      \"reasoning\": \"Die akuten reißenden thorakalen Schmerzen mit Rückenschmerzausstrahlung, die Blutdruckdifferenz zwischen den Armen, die mediastinale Verbreiterung im Röntgen, die dilatierte Aorta ascendens im Echo und der geringe Perikarderguss sind hochverdächtig für eine akute Typ-A-Dissektion.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom (Instabile Angina pectoris/NSTEMI)\",\n      \"icd10_code\": \"I20.0\",\n      \"reasoning\": \"Die retrosternalen Schmerzen und der geringfügig erhöhte Troponin-T-Wert mit nur minimalem Anstieg im Verlauf passen zu einem NSTEMI, insbesondere bei den kardiovaskulären Risikofaktoren Hypertonie und Nikotinabusus.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Perikarditis\",\n      \"icd10_code\": \"I30.9\",\n      \"reasoning\": \"Der thorakale Schmerz, der geringe Perikarderguss in der Echokardiographie und das erhöhte CRP könnten für eine Perikarditis sprechen, jedoch ist der Schmerzcharakter atypisch reißend und die anderen Befunde sind weniger spezifisch.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Aortenerkrankung bei Marfan-Syndrom oder anderer Bindegewebserkrankung\",\n      \"icd10_code\": \"Q87.4\",\n      \"reasoning\": \"Die dilative Aortenwurzel-Erkrankung bei jüngerem Patienten könnte auf eine zugrundeliegende Bindegewebserkrankung hinweisen, die das Dissektionsrisiko erhöht, ist aber ohne weitere klinische Zeichen (z.B. Stigmata) weniger wahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2340,
+      "response_length": 1611,
+      "usage": {
+        "prompt_tokens": 724,
+        "completion_tokens": 481
+      },
+      "case_id": "cr_047",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Eosinophile Granulomatose mit Polyangiitis (EGPA)",
+          "icd10_code": "M30.1",
+          "reasoning": "Die Trias aus Asthma, ausgeprägter Bluteosinophilie und positiven MPO-ANCA, kombiniert mit pulmonalen Infiltraten, neurologischer Beteiligung (Mononeuritis multiplex) und Hautpurpura, ist hochgradig charakteristisch für EGPA.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Allergische bronchopulmonale Aspergillose (ABPA)",
+          "icd10_code": "B44.91",
+          "reasoning": "Das Asthma, die Eosinophilie, die IgE-Erhöhung, die migrierenden Infiltrate und die chronische Rhinosinusitis mit Polyposis sind typisch für ABPA, jedoch erklärt diese Diagnose die systemische Vaskulitis (ANCA, Purpura, Neuropathie) nicht.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Idiopathische hypereosinophile Syndrom (HES)",
+          "icd10_code": "D72.1",
+          "reasoning": "Die ausgeprägte Eosinophilie, die B-Symptomatik, die pulmonalen Infiltrate und die neurologische Beteiligung passen zu einem HES, jedoch sprechen die positiven ANCA und die Vaskulitis-Manifestationen (Purpura) eher für eine sekundäre Ursache wie EGPA.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Granulomatose mit Polyangiitis (GPA)",
+          "icd10_code": "M31.30",
+          "reasoning": "Die ANCA-Positivität (wenn auch atypisch p-ANCA statt c-ANCA), die pulmonalen Infiltrate und die B-Symptomatik sind vereinbar, jedoch sind das spät einsetzende Asthma, die extreme Eosinophilie und die Rhinosinusitis mit Polyposis für EGPA wesentlich charakteristischer.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Chronische eosinophile Pneumonie",
+          "icd10_code": "J82",
+          "reasoning": "Die progrediente Dyspnoe, der nächtliche Husten, die Eosinophilie und die migrierenden Milchglasinfiltrate im CT sind klassisch, aber die systemischen Vaskulitiszeichen (ANCA, Purpura, Neuropathie) sind damit nicht zu erklären.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Eosinophile Granulomatose mit Polyangiitis (EGPA)\",\n      \"icd10_code\": \"M30.1\",\n      \"reasoning\": \"Die Trias aus Asthma, ausgeprägter Bluteosinophilie und positiven MPO-ANCA, kombiniert mit pulmonalen Infiltraten, neurologischer Beteiligung (Mononeuritis multiplex) und Hautpurpura, ist hochgradig charakteristisch für EGPA.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Allergische bronchopulmonale Aspergillose (ABPA)\",\n      \"icd10_code\": \"B44.91\",\n      \"reasoning\": \"Das Asthma, die Eosinophilie, die IgE-Erhöhung, die migrierenden Infiltrate und die chronische Rhinosinusitis mit Polyposis sind typisch für ABPA, jedoch erklärt diese Diagnose die systemische Vaskulitis (ANCA, Purpura, Neuropathie) nicht.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Idiopathische hypereosinophile Syndrom (HES)\",\n      \"icd10_code\": \"D72.1\",\n      \"reasoning\": \"Die ausgeprägte Eosinophilie, die B-Symptomatik, die pulmonalen Infiltrate und die neurologische Beteiligung passen zu einem HES, jedoch sprechen die positiven ANCA und die Vaskulitis-Manifestationen (Purpura) eher für eine sekundäre Ursache wie EGPA.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Granulomatose mit Polyangiitis (GPA)\",\n      \"icd10_code\": \"M31.30\",\n      \"reasoning\": \"Die ANCA-Positivität (wenn auch atypisch p-ANCA statt c-ANCA), die pulmonalen Infiltrate und die B-Symptomatik sind vereinbar, jedoch sind das spät einsetzende Asthma, die extreme Eosinophilie und die Rhinosinusitis mit Polyposis für EGPA wesentlich charakteristischer.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Chronische eosinophile Pneumonie\",\n      \"icd10_code\": \"J82\",\n      \"reasoning\": \"Die progrediente Dyspnoe, der nächtliche Husten, die Eosinophilie und die migrierenden Milchglasinfiltrate im CT sind klassisch, aber die systemischen Vaskulitiszeichen (ANCA, Purpura, Neuropathie) sind damit nicht zu erklären.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2709,
+      "response_length": 2013,
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 609
+      },
+      "case_id": "cr_048",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.888888888888889
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall (Arteria cerebri media-Infarkt) durch kardioembolische Genese",
+          "icd10_code": "I63.0",
+          "reasoning": "Die plötzliche Symptomatik mit Aphasie, Hemiparese, Blickwendung und das hyperdense Mediazeichen im cCT bei bekanntem Vorhofflimmern und pausierter Antikoagulation sind hochspezifisch für einen embolischen Verschluss der linken A. cerebri media.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intrazerebrale Blutung",
+          "icd10_code": "I61.9",
+          "reasoning": "Trotz initial unauffälligem cCT ohne Blutung kann eine kleine Blutung initial übersehen werden; das Risiko ist aufgrund der arteriellen Hypertonie und Antikoagulationspause erhöht, aber die Bildgebung spricht primär gegen diese Diagnose.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Komplexe Migräne mit Aura",
+          "icd10_code": "G43.1",
+          "reasoning": "Kann fokal-neurologische Ausfälle wie Aphasie und Hemiparese imitieren, aber das plötzliche Auftreten im Alter von 68 Jahren ohne Migränenanamnese und die passenden Bildgebungsbefunde machen dies sehr unwahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Tumorapoplexie oder zerebrales Lymphom",
+          "icd10_code": "C71.9",
+          "reasoning": "Kann akut zu fokal-neurologischen Defiziten führen, aber das cCT zeigt keine Raumforderung, sondern ein klassisches Ischämie- und Gefäßzeichen, was diese Diagnose sehr unwahrscheinlich macht.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall (Arteria cerebri media-Infarkt) durch kardioembolische Genese\",\n      \"icd10_code\": \"I63.0\",\n      \"reasoning\": \"Die plötzliche Symptomatik mit Aphasie, Hemiparese, Blickwendung und das hyperdense Mediazeichen im cCT bei bekanntem Vorhofflimmern und pausierter Antikoagulation sind hochspezifisch für einen embolischen Verschluss der linken A. cerebri media.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intrazerebrale Blutung\",\n      \"icd10_code\": \"I61.9\",\n      \"reasoning\": \"Trotz initial unauffälligem cCT ohne Blutung kann eine kleine Blutung initial übersehen werden; das Risiko ist aufgrund der arteriellen Hypertonie und Antikoagulationspause erhöht, aber die Bildgebung spricht primär gegen diese Diagnose.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Komplexe Migräne mit Aura\",\n      \"icd10_code\": \"G43.1\",\n      \"reasoning\": \"Kann fokal-neurologische Ausfälle wie Aphasie und Hemiparese imitieren, aber das plötzliche Auftreten im Alter von 68 Jahren ohne Migränenanamnese und die passenden Bildgebungsbefunde machen dies sehr unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Tumorapoplexie oder zerebrales Lymphom\",\n      \"icd10_code\": \"C71.9\",\n      \"reasoning\": \"Kann akut zu fokal-neurologischen Defiziten führen, aber das cCT zeigt keine Raumforderung, sondern ein klassisches Ischämie- und Gefäßzeichen, was diese Diagnose sehr unwahrscheinlich macht.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2742,
+      "response_length": 1544,
+      "usage": {
+        "prompt_tokens": 799,
+        "completion_tokens": 466
+      },
+      "case_id": "cr_049",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Autoimmunpankreatitis (Typ 1)",
+          "icd10_code": "K86.81",
+          "reasoning": "Die deutlich erhöhte IgG4-Serumkonzentration, das 'wurstförmige' Pankreas mit Halo-Zeichen in der Bildgebung und das Fehlen einer Gangdilatation sind hochspezifisch für diese Erkrankung.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pankreaskarzinom",
+          "icd10_code": "C25.9",
+          "reasoning": "Die Trias aus Oberbauchschmerzen, Gewichtsverlust und erhöhtem CA 19-9 bei einer Raumforderung im Pankreaskopf ist sehr verdächtig, wobei das Fehlen einer Gangdilatation und das IgG4-Erhöhung atypisch sind.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Die intermittierenden Oberbauchschmerzen, die exokrine Pankreasinsuffizienz (Fettstühle) und die leicht erhöhte Lipase passen zum Bild, die fokale Raumforderung und der ausgeprägte IgG4-Anstieg sind jedoch untypisch.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pankraasdivertikel oder zystische Neoplasie",
+          "icd10_code": "K86.2",
+          "reasoning": "Kann sich als Raumforderung im Pankreas präsentieren, erklärt jedoch nicht die ausgeprägten entzündlichen Parameter (CRP, IgG4) oder den Gewichtsverlust.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Autoimmunpankreatitis (Typ 1)\",\n      \"icd10_code\": \"K86.81\",\n      \"reasoning\": \"Die deutlich erhöhte IgG4-Serumkonzentration, das 'wurstförmige' Pankreas mit Halo-Zeichen in der Bildgebung und das Fehlen einer Gangdilatation sind hochspezifisch für diese Erkrankung.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pankreaskarzinom\",\n      \"icd10_code\": \"C25.9\",\n      \"reasoning\": \"Die Trias aus Oberbauchschmerzen, Gewichtsverlust und erhöhtem CA 19-9 bei einer Raumforderung im Pankreaskopf ist sehr verdächtig, wobei das Fehlen einer Gangdilatation und das IgG4-Erhöhung atypisch sind.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die intermittierenden Oberbauchschmerzen, die exokrine Pankreasinsuffizienz (Fettstühle) und die leicht erhöhte Lipase passen zum Bild, die fokale Raumforderung und der ausgeprägte IgG4-Anstieg sind jedoch untypisch.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pankraasdivertikel oder zystische Neoplasie\",\n      \"icd10_code\": \"K86.2\",\n      \"reasoning\": \"Kann sich als Raumforderung im Pankreas präsentieren, erklärt jedoch nicht die ausgeprägten entzündlichen Parameter (CRP, IgG4) oder den Gewichtsverlust.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2682,
+      "response_length": 1354,
+      "usage": {
+        "prompt_tokens": 805,
+        "completion_tokens": 425
+      },
+      "case_id": "cr_050",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,943 @@
+{
+  "summary": {
+    "model": "nvidia/Llama-3.1-Nemotron-70B-Instruct",
+    "task": "icd10_coding",
+    "timestamp": "20260329_182612",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "exact_match_f1": 0.526087200381318,
+    "exact_match_precision": 0.4923174603174603,
+    "exact_match_recall": 0.5887142857142857,
+    "category_match_f1": 0.7583373326020384,
+    "hauptdiagnose_accuracy": 0.5
+  },
+  "predictions": [
+    {
+      "codes": [
+        "J15.0",
+        "I10.90",
+        "E11.90",
+        "R06.0"
+      ],
+      "hauptdiagnose": "J15.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J15.0\", \"typ\": \"Hauptdiagnose\"}, // Ambulant erworbene Pneumonie, nicht näher bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht präzise bezeichnet\n    {\"code\": \"R06.0\", \"typ\": \"Nebendiagnose\"} // Husten\n  ]\n}",
+      "prompt_length": 2110,
+      "response_length": 371,
+      "usage": {
+        "prompt_tokens": 669,
+        "completion_tokens": 141
+      },
+      "case_id": "case_001"
+    },
+    {
+      "codes": [
+        "I21.0",
+        "I10.90",
+        "E11.90",
+        "I25.11",
+        "I50.1"
+      ],
+      "hauptdiagnose": "I21.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.0\", \"typ\": \"Hauptdiagnose\"}, // Akuter Myokardinfarkt (Hauptdiagnose aufgrund der Erwähnung von hochsensitivem Troponin T-Anstieg und Koronarangiographie-Befunden)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie ohne Angabe einer Komplikation\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, ohne Angabe einer Komplikation\n    {\"code\": \"I25.11\", \"typ\": \"Nebendiagnose\"}, // Koronare Herzkrankheit, 2-Gefäß-Erkrankung (abgeleitet aus der Koronarangiographie)\n    {\"code\": \"I50.1\", \"typ\": \"Nebendiagnose\"} // Reduzierte linksventrikuläre Ejektionsfraktion (LVEF 45%)\n  ]\n}",
+      "prompt_length": 2131,
+      "response_length": 660,
+      "usage": {
+        "prompt_tokens": 667,
+        "completion_tokens": 247
+      },
+      "case_id": "case_002"
+    },
+    {
+      "codes": [
+        "J15.9",
+        "J44.11",
+        "I48.0",
+        "I11.0",
+        "I50.22",
+        "E11.90",
+        "N18.3",
+        "R06.0"
+      ],
+      "hauptdiagnose": "J15.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J15.9\", \"typ\": \"Hauptdiagnose\"}, // Pneumonie, nicht näher bezeichnet\n    {\"code\": \"J44.11\", \"typ\": \"Nebendiagnose\"}, // Chronische obstruktive Lungenkrankheit (COPD) mit akuter Exazerbation, schwere Atemnot\n    {\"code\": \"I48.0\", \"typ\": \"Nebendiagnose\"}, // Vorhofflimmern, paroxysmal\n    {\"code\": \"I11.0\", \"typ\": \"Nebendiagnose\"}, // Hypertensive Herzkrankheit mit (kongestiver) Herzinsuffizienz\n    {\"code\": \"I50.22\", \"typ\": \"Nebendiagnose\"}, // Herzinsuffizienz, Stadium NYHA III\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht näher bezeichnet, ohne Komplikationen\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium 3a\n    {\"code\": \"R06.0\", \"typ\": \"Nebendiagnose\"} // Dyspnoe bei Anstrengung\n  ]\n}",
+      "prompt_length": 2238,
+      "response_length": 807,
+      "usage": {
+        "prompt_tokens": 692,
+        "completion_tokens": 311
+      },
+      "case_id": "case_003"
+    },
+    {
+      "codes": [
+        "I63.3",
+        "I10.90",
+        "E78.5",
+        "R47.0"
+      ],
+      "hauptdiagnose": "I63.3",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I63.3\", \"typ\": \"Hauptdiagnose\"},  // Akuter embolischer Infarkt im Stromgebiet der A. cerebri media\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},  // Arterieller Hypertonus, nicht näher bezeichnet\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"},  // Hyperlipidämie, nicht näher bezeichnet (erhöhtes LDL-Cholesterin)\n    {\"code\": \"R47.0\", \"typ\": \"Nebendiagnose\"}  // Aphasie und verwandte Störungen (motorische Aphasie)\n  ]\n}",
+      "prompt_length": 2358,
+      "response_length": 457,
+      "usage": {
+        "prompt_tokens": 734,
+        "completion_tokens": 173
+      },
+      "case_id": "case_004"
+    },
+    {
+      "codes": [
+        "K25.0",
+        "D62.0",
+        "I10.90",
+        "E11.90",
+        "G45.9",
+        "R06.0",
+        "R42"
+      ],
+      "hauptdiagnose": "K25.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"K25.0\", \"typ\": \"Hauptdiagnose\"}, // Ulcus ventriculi, akut, mit Blutung (Forrest III)\n    {\"code\": \"D62.0\", \"typ\": \"Nebendiagnose\"}, // Anämie durch akute Blutung\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, ohne Komplikation\n    {\"code\": \"G45.9\", \"typ\": \"Nebendiagnose\"}, // Zerebrale transitorische Ischämie (TIA), ohne Angabe einer Komplikation\n    {\"code\": \"R06.0\", \"typ\": \"Nebendiagnose\"}, // Dyspnoe bei Anstrengung (Belastungsdyspnoe)\n    {\"code\": \"R42\", \"typ\": \"Nebendiagnose\"} // Schwindel und Taumel, nicht näher bezeichnet\n  ]\n}",
+      "prompt_length": 2125,
+      "response_length": 690,
+      "usage": {
+        "prompt_tokens": 672,
+        "completion_tokens": 266
+      },
+      "case_id": "case_005"
+    },
+    {
+      "codes": [
+        "C34.3",
+        "C79.5",
+        "J44.11",
+        "J00.0",
+        "N18.3",
+        "D64.9",
+        "R07.1"
+      ],
+      "hauptdiagnose": "C34.3",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C34.3\", \"typ\": \"Hauptdiagnose\"}, // Adenokarzinom der Lunge, nicht näher bezeichnet\n    {\"code\": \"C79.5\", \"typ\": \"Nebendiagnose\"}, // Sekundäre bösartige Neubildung der Knochen und des Knochensystems\n    {\"code\": \"J44.11\", \"typ\": \"Nebendiagnose\"}, // Chronische obstruktive Lungenkrankheit (COPD) mit akuter Exazerbation, schwere Atemwegsobstruktion\n    {\"code\": \"J00.0\", \"typ\": \"Nebendiagnose\"}, // Akute Infektion der oberen Atemwege, nicht näher bezeichnet\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium 3b (GFR 30-44 ml/min)\n    {\"code\": \"D64.9\", \"typ\": \"Nebendiagnose\"}, // Anämie, nicht näher bezeichnet\n    {\"code\": \"R07.1\", \"typ\": \"Nebendiagnose\"} // Belastungsdyspnoe\n  ]\n}",
+      "prompt_length": 2224,
+      "response_length": 757,
+      "usage": {
+        "prompt_tokens": 709,
+        "completion_tokens": 292
+      },
+      "case_id": "case_006"
+    },
+    {
+      "codes": [
+        "S72.04",
+        "I10.90",
+        "E11.90"
+      ],
+      "hauptdiagnose": "S72.04",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"S72.04\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2047,
+      "response_length": 169,
+      "usage": {
+        "prompt_tokens": 616,
+        "completion_tokens": 74
+      },
+      "case_id": "case_007"
+    },
+    {
+      "codes": [
+        "F32.0",
+        "I10.90",
+        "E66.01"
+      ],
+      "hauptdiagnose": "F32.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"F32.0\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E66.01\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2283,
+      "response_length": 168,
+      "usage": {
+        "prompt_tokens": 705,
+        "completion_tokens": 74
+      },
+      "case_id": "case_008"
+    },
+    {
+      "codes": [
+        "C55.9",
+        "E11.90",
+        "I10.90",
+        "N18.3",
+        "I48.0",
+        "E66.01"
+      ],
+      "hauptdiagnose": "C55.9",
+      "raw": "```\n{\n  \"diagnosen\": [\n    {\"code\": \"C55.9\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I48.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E66.01\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n```",
+      "prompt_length": 2194,
+      "response_length": 316,
+      "usage": {
+        "prompt_tokens": 684,
+        "completion_tokens": 135
+      },
+      "case_id": "case_009"
+    },
+    {
+      "codes": [
+        "I50.0",
+        "I10.90",
+        "E66.0",
+        "R06.0",
+        "R60.0"
+      ],
+      "hauptdiagnose": "I50.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I50.0\", \"typ\": \"Hauptdiagnose\"},  // Herzinsuffizienz, nicht spezifiziert\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},  // Essentielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E66.0\", \"typ\": \"Nebendiagnose\"},  // Adipositas durch übermäßige Kalorienzufuhr, Grad I\n    {\"code\": \"R06.0\", \"typ\": \"Nebendiagnose\"},  // Dyspnoe bei Anstrengung\n    {\"code\": \"R60.0\", \"typ\": \"Nebendiagnose\"}   // Generalisierte Ödeme\n  ]\n}",
+      "prompt_length": 2160,
+      "response_length": 460,
+      "usage": {
+        "prompt_tokens": 710,
+        "completion_tokens": 185
+      },
+      "case_id": "case_010"
+    },
+    {
+      "codes": [
+        "I21.0",
+        "E11.90",
+        "I10.90",
+        "N18.3",
+        "I50.1"
+      ],
+      "hauptdiagnose": "I21.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.0\", \"typ\": \"Hauptdiagnose\"}, // Akuter Myokardinfarkt (hochgradige Stenose des RIVA (LAD) und signifikantes Troponin-T-Release)\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, ohne Komplikationen (langjähriger Diabetes mellitus Typ 2)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Essentielle Hypertonie, nicht näher bezeichnet (arterielle Hypertonie)\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium G3a (chronische Niereninsuffizienz im Stadium G3a)\n    {\"code\": \"I50.1\", \"typ\": \"Nebendiagnose\"} // Lungenstauung bei Herzkrankheit (belastungsabhängige Dyspnoe (NYHA III) und leicht reduzierte LVEF von 45 %)\n  ]\n}",
+      "prompt_length": 1914,
+      "response_length": 726,
+      "usage": {
+        "prompt_tokens": 616,
+        "completion_tokens": 266
+      },
+      "case_id": "case_011"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "I50.22",
+        "I10.90",
+        "E11.90",
+        "F17.100",
+        "N18.3",
+        "J96.09"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"}, // COPD GOLD IV\n    {\"code\": \"I50.22\", \"typ\": \"Nebendiagnose\"}, // Chronische Herzinsuffizienz (HFrEF, NYHA III)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus Typ 2\n    {\"code\": \"F17.100\", \"typ\": \"Nebendiagnose\"}, // Langjähriger Nikotinabusus\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // CKD Stadium 3\n    {\"code\": \"J96.09\", \"typ\": \"Nebendiagnose\"} // Respiratorische Insuffizienz, anderenorts nicht klassifiziert\n  ]\n}",
+      "prompt_length": 2268,
+      "response_length": 588,
+      "usage": {
+        "prompt_tokens": 687,
+        "completion_tokens": 228
+      },
+      "case_id": "case_012"
+    },
+    {
+      "codes": [
+        "G45.8",
+        "I10.90",
+        "I70.9",
+        "E78.5"
+      ],
+      "hauptdiagnose": "G45.8",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"G45.8\", \"typ\": \"Hauptdiagnose\"},  // Transitorische ischämische Attacke (TIA)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},  // Arterielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"I70.9\", \"typ\": \"Nebendiagnose\"},  // Atherosklerose, nicht näher bezeichnet\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"}  // Hypercholesterinämie\n  ]\n}",
+      "prompt_length": 2110,
+      "response_length": 375,
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 146
+      },
+      "case_id": "case_013"
+    },
+    {
+      "codes": [
+        "K92.0",
+        "K25.0",
+        "I10.90",
+        "E11.90",
+        "M54.5",
+        "D62.0"
+      ],
+      "hauptdiagnose": "K92.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"K92.0\", \"typ\": \"Hauptdiagnose\"}, // Akute Hämatemesis\n    {\"code\": \"K25.0\", \"typ\": \"Nebendiagnose\"}, // Ulcus ventriculi (im Antrum, Stadium Forrest Ib)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht näher bezeichnet\n    {\"code\": \"M54.5\", \"typ\": \"Nebendiagnose\"}, // Chronisches LWS-Syndrom\n    {\"code\": \"D62.0\", \"typ\": \"Nebendiagnose\"} // Akute Blutungsanämie\n  ]\n}",
+      "prompt_length": 2130,
+      "response_length": 532,
+      "usage": {
+        "prompt_tokens": 662,
+        "completion_tokens": 205
+      },
+      "case_id": "case_014"
+    },
+    {
+      "codes": [
+        "C18.6",
+        "R18",
+        "C78.6",
+        "E11.90",
+        "I10.90",
+        "I48.0",
+        "N18.3",
+        "K92.2",
+        "R63.0"
+      ],
+      "hauptdiagnose": "C18.6",
+      "raw": "```\n{\n  \"diagnosen\": [\n    {\"code\": \"C18.6\", \"typ\": \"Hauptdiagnose\"}, // Adenokarzinom des Sigmas, metastasiert (pT3, pN2, M1)\n    {\"code\": \"R18\", \"typ\": \"Nebendiagnose\"}, // Maligner Aszites\n    {\"code\": \"C78.6\", \"typ\": \"Nebendiagnose\"}, // Sekundäre bösartige Neubildung des Peritoneums\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht präzise bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Essentielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"I48.0\", \"typ\": \"Nebendiagnose\"}, // Vorhofflimmern, paroxysmal\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium 3a\n    {\"code\": \"K92.2\", \"typ\": \"Nebendiagnose\"}, // Übelkeit, nicht näher bezeichnet\n    {\"code\": \"R63.0\", \"typ\": \"Nebendiagnose\"} // Inappetenz\n  ]\n}\n```",
+      "prompt_length": 2223,
+      "response_length": 810,
+      "usage": {
+        "prompt_tokens": 687,
+        "completion_tokens": 320
+      },
+      "case_id": "case_015"
+    },
+    {
+      "codes": [
+        "S72.04",
+        "I10.90",
+        "T84.0",
+        "Z47.0",
+        "Z92.1"
+      ],
+      "hauptdiagnose": "S72.04",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"S72.04\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"T84.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z47.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z92.1\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n\n**Erklärung der Kodierungen:**\n\n* **S72.04** (Hauptdiagnose): Dislozierte mediale Schenkelhalsfraktur links (Garden III) - spezifische Kodierung für die beschriebene Fraktur.\n* **I10.90** (Nebendiagnose): Essentielle Hypertonie, nicht näher bezeichnet - Kodierung für die langjährig bekannte arterielle Hypertonie.\n* **T84.0** (Nebendiagnose): Mechanische Komplikation durch eine Hüftendoprothese - obwohl im Text keine Komplikation erwähnt wird, ist die operative Versorgung mittels zementierter Hüft-Hemiendoprothese dokumentiert, was diese Kodierung rechtfertigt, um den Eingriff abzubilden.\n* **Z47.0** (Nebendiagnose): Nachbehandlung nach Fraktur - aufgrund der postoperativen Betreuung und der Empfehlung für eine Anschlussheilbehandlung.\n* **Z92.1** (Nebendiagnose): Langfristige (chronische) Anwendung antikoagulanz - aufgrund der empfohlenen Fortführung der medikamentösen Thromboseprophylaxe.",
+      "prompt_length": 2136,
+      "response_length": 1164,
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 408
+      },
+      "case_id": "case_016"
+    },
+    {
+      "codes": [
+        "F32.0",
+        "Z56.6",
+        "G44.2",
+        "M54.2",
+        "I10.90"
+      ],
+      "hauptdiagnose": "F32.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"F32.0\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"Z56.6\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"G44.2\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"M54.2\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2366,
+      "response_length": 263,
+      "usage": {
+        "prompt_tokens": 722,
+        "completion_tokens": 116
+      },
+      "case_id": "case_017"
+    },
+    {
+      "codes": [
+        "C54.9",
+        "E11.90",
+        "N18.3",
+        "I25.10",
+        "E66.02",
+        "I10.90"
+      ],
+      "hauptdiagnose": "C54.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C54.9\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I25.10\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E66.02\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 1998,
+      "response_length": 309,
+      "usage": {
+        "prompt_tokens": 635,
+        "completion_tokens": 132
+      },
+      "case_id": "case_018"
+    },
+    {
+      "codes": [
+        "I42.0",
+        "I51.7",
+        "I10.90",
+        "I50.01",
+        "J81.0",
+        "I89.0"
+      ],
+      "hauptdiagnose": "I42.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I42.0\", \"typ\": \"Hauptdiagnose\"}, // Hypertrophische Kardiomyopathie nicht erwähnt, stattdessen linksventrikuläre Hypertrophie bei chronischer Druckbelastung, nächstbeste Kategorie: I42.0 (Kardiomyopathie, nicht näher bezeichnet), jedoch spezifischer: \n    {\"code\": \"I51.7\", \"typ\": \"Nebendiagnose\"}, // Hypertrophie des Herzens (linksventrikuläre Hypertrophie bei chronischer Druckbelastung)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"I50.01\", \"typ\": \"Nebendiagnose\"}, // Herzinsuffizienz, mittelgradig reduzierte linksventrikuläre Ejektionsfraktion (HFmrEF, EF 42 %)\n    {\"code\": \"J81.0\", \"typ\": \"Nebendiagnose\"}, // Akute Belastungsdyspnoe (kardiale Dekompensation)\n    {\"code\": \"I89.0\", \"typ\": \"Nebendiagnose\"} // Ödeme, anderenorts nicht klassifiziert (prätibiale Ödeme)\n  ]\n}",
+      "prompt_length": 2238,
+      "response_length": 880,
+      "usage": {
+        "prompt_tokens": 687,
+        "completion_tokens": 313
+      },
+      "case_id": "case_019"
+    },
+    {
+      "codes": [
+        "I21.4",
+        "I10.90",
+        "E11.90",
+        "I25.81",
+        "N18.3"
+      ],
+      "hauptdiagnose": "I21.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"}, // Akuter Myokardinfarkt (NSTEMI)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Hypertonus, nicht näher bezeichnet\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, ohne Komplikationen\n    {\"code\": \"I25.81\", \"typ\": \"Nebendiagnose\"}, // Hochgradige Stenose der Koronararterien\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"} // Chronische Niereninsuffizienz, Stadium 3a\n  ]\n}",
+      "prompt_length": 1971,
+      "response_length": 470,
+      "usage": {
+        "prompt_tokens": 608,
+        "completion_tokens": 183
+      },
+      "case_id": "case_020"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "E11.90",
+        "I10.90",
+        "N18.3",
+        "F17.1",
+        "J96.09",
+        "R09.02"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"}, // COPD mit akuter Exazerbation, GOLD IV D\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht näher bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Hypertonie, nicht näher bezeichnet\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium 3\n    {\"code\": \"F17.1\", \"typ\": \"Nebendiagnose\"}, // Psychische und Verhaltensstörungen durch Tabak (langjähriger Nikotinabusus)\n    {\"code\": \"J96.09\", \"typ\": \"Nebendiagnose\"}, // Respiratorische Insuffizienz, nicht näher bezeichnet (global-respiratorische Insuffizienz)\n    {\"code\": \"R09.02\", \"typ\": \"Nebendiagnose\"} // Produktiver Husten\n  ]\n}",
+      "prompt_length": 2147,
+      "response_length": 729,
+      "usage": {
+        "prompt_tokens": 655,
+        "completion_tokens": 265
+      },
+      "case_id": "case_021"
+    },
+    {
+      "codes": [
+        "G45.9",
+        "I10.90",
+        "I70.9"
+      ],
+      "hauptdiagnose": "G45.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"G45.9\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I70.9\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2009,
+      "response_length": 165,
+      "usage": {
+        "prompt_tokens": 621,
+        "completion_tokens": 72
+      },
+      "case_id": "case_022"
+    },
+    {
+      "codes": [
+        "K25.0",
+        "D62.9",
+        "M17.9",
+        "I10.90"
+      ],
+      "hauptdiagnose": "K25.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"K25.0\", \"typ\": \"Hauptdiagnose\"}, // Ulcus ventriculi: akute Blutung\n    {\"code\": \"D62.9\", \"typ\": \"Nebendiagnose\"}, // Anämie, nicht näher bezeichnet\n    {\"code\": \"M17.9\", \"typ\": \"Nebendiagnose\"}, // Gonarthrose, nicht näher bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"} // Hypertonie, nicht näher bezeichnet\n  ]\n}",
+      "prompt_length": 2106,
+      "response_length": 358,
+      "usage": {
+        "prompt_tokens": 672,
+        "completion_tokens": 138
+      },
+      "case_id": "case_023"
+    },
+    {
+      "codes": [
+        "C34.3",
+        "J45.51",
+        "E11.90",
+        "N18.3",
+        "D63.0",
+        "J94.8",
+        "J98.09"
+      ],
+      "hauptdiagnose": "C34.3",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C34.3\", \"typ\": \"Hauptdiagnose\"}, // Bösartige Neubildung des linken Bronchus oder Lungenlappens, nicht näher bezeichnet\n    {\"code\": \"J45.51\", \"typ\": \"Nebendiagnose\"}, // COPD mit akuter Exazerbation, schwere Atemnot\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht näher bezeichnet, ohne Komplikation\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium 3\n    {\"code\": \"D63.0\", \"typ\": \"Nebendiagnose\"}, // Anämie bei Neubildungen {C00-D49}\n    {\"code\": \"J94.8\", \"typ\": \"Nebendiagnose\"}, // Sonstige näher bezeichnete Pleuralegenschaften, Pleuraerguss (maligner Charakter bestätigt)\n    {\"code\": \"J98.09\", \"typ\": \"Nebendiagnose\"} // Sonstige näher bezeichnete Krankheiten der Atemwege, Kompressionsatelektase\n  ]\n}",
+      "prompt_length": 2033,
+      "response_length": 817,
+      "usage": {
+        "prompt_tokens": 649,
+        "completion_tokens": 302
+      },
+      "case_id": "case_024"
+    },
+    {
+      "codes": [
+        "S42.24",
+        "I10.90",
+        "M97.01",
+        "T93.1"
+      ],
+      "hauptdiagnose": "S42.24",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"S42.24\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"M97.01\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"T93.1\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n\n**Erklärung der Kodierungen:**\n\n* **S42.24 (Hauptdiagnose):** Dislozierte subkapitale Humerusfraktur rechts (Collum chirurgicum, 3-Fragment-Fraktur) - Diese Diagnose ist die Hauptursache für die Vorstellung in der Notaufnahme und den anschließenden chirurgischen Eingriff.\n* **I10.90 (Nebendiagnose):** Langjährig bekannte, medikamentös behandelte arterielle Hypertonie ohne Angabe einer Verschlechterung oder Komplikation - Hier wird die allgemeine Kategorie für essentielle Hypertonie ohne Angabe von Komplikationen verwendet, da der Text keine spezifischen Details über eine Verschlechterung oder spezifische Komplikationen der Hypertonie liefert.\n* **M97.01 (Nebendiagnose):** Pseudoparalyse des rechten Armes als Folge der Fraktur - Diese Diagnose bezieht sich auf die schmerzbedingte Pseudoparalyse, die direkt mit der Hauptdiagnose (Fraktur) in Zusammenhang steht. Die ICD-10-GM bietet spezifische Codes für posttraumatische Pseudoparalyse, die hier angewendet wird.\n* **T93.1 (Nebendiagnose):** Folgen einer Fraktur der oberen Extremität - Dieser Code bezieht sich auf die langfristigen Folgen oder die Phase der Genesung nach einer Fraktur der oberen Extremität, was im Kontext der Entlassung und der empfohlenen Nachsorge relevant ist.",
+      "prompt_length": 2215,
+      "response_length": 1461,
+      "usage": {
+        "prompt_tokens": 683,
+        "completion_tokens": 477
+      },
+      "case_id": "case_025"
+    },
+    {
+      "codes": [
+        "F33.1",
+        "F10.10",
+        "I10.90"
+      ],
+      "hauptdiagnose": "F33.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"F33.1\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"F10.10\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2379,
+      "response_length": 168,
+      "usage": {
+        "prompt_tokens": 711,
+        "completion_tokens": 74
+      },
+      "case_id": "case_026"
+    },
+    {
+      "codes": [
+        "C54.0",
+        "E11.90",
+        "E66.0",
+        "N30.0",
+        "I48.0",
+        "N18.3",
+        "R82.0",
+        "I10.90"
+      ],
+      "hauptdiagnose": "C54.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C54.0\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E66.0\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"N30.0\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I48.0\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"R82.0\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2119,
+      "response_length": 408,
+      "usage": {
+        "prompt_tokens": 661,
+        "completion_tokens": 179
+      },
+      "case_id": "case_027"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "J43.0",
+        "I10.90",
+        "J12.9",
+        "R06.0"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"}, // Akute Exazerbation der COPD\n    {\"code\": \"J43.0\", \"typ\": \"Nebendiagnose\"}, // Lungenemphysem (COPD GOLD III)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie ohne Angabe einer Komplikation\n    {\"code\": \"J12.9\", \"typ\": \"Nebendiagnose\"}, // Akute respiratorische Infektion, nicht näher bezeichnet\n    {\"code\": \"R06.0\", \"typ\": \"Nebendiagnose\"} // Husten\n  ]\n}",
+      "prompt_length": 2066,
+      "response_length": 450,
+      "usage": {
+        "prompt_tokens": 646,
+        "completion_tokens": 172
+      },
+      "case_id": "case_028"
+    },
+    {
+      "codes": [
+        "I21.4",
+        "E11.90",
+        "I10.90",
+        "I25.8",
+        "I43.8"
+      ],
+      "hauptdiagnose": "I21.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"}, // NSTEMI (Non-ST-Elevation-Myokardinfarkt)\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht präzise bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Essentielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"I25.8\", \"typ\": \"Nebendiagnose\"}, // Sonstige Formen der ischämischen Herzkrankheit (koronare 2-Gefäßerkrankung)\n    {\"code\": \"I43.8\", \"typ\": \"Nebendiagnose\"} // Sonstige sekundäre Schlusselleistungsstörungen des Herzens (leicht eingeschränkte linksventrikuläre Pumpfunktion mit LVEF von 45%)\n  ]\n}",
+      "prompt_length": 2312,
+      "response_length": 621,
+      "usage": {
+        "prompt_tokens": 742,
+        "completion_tokens": 232
+      },
+      "case_id": "case_029"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "I50.22",
+        "I10.90",
+        "E11.90",
+        "N18.3",
+        "J96.00",
+        "I51.89"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"}, // COPD (GOLD IV, Gruppe D) mit akuter Exazerbation\n    {\"code\": \"I50.22\", \"typ\": \"Nebendiagnose\"}, // Chronische Herzinsuffizienz (NYHA III)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie ohne Angabe einer Komplikation\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus Typ 2 ohne Angabe einer Komplikation\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium 3a\n    {\"code\": \"J96.00\", \"typ\": \"Nebendiagnose\"}, // Respiratorische Partialinsuffizienz, nicht näher bezeichnet\n    {\"code\": \"I51.89\", \"typ\": \"Nebendiagnose\"} // Kardiale Dekompensation, nicht näher bezeichnet\n  ]\n}",
+      "prompt_length": 2195,
+      "response_length": 725,
+      "usage": {
+        "prompt_tokens": 693,
+        "completion_tokens": 265
+      },
+      "case_id": "case_030"
+    },
+    {
+      "codes": [
+        "I63.5",
+        "I10.90",
+        "E78.5",
+        "R42"
+      ],
+      "hauptdiagnose": "I63.5",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I63.5\", \"typ\": \"Hauptdiagnose\"},  // Zerebraler Infarkt im hinteren (posterior) Stromgebiet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},  // Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"},  // Hypercholesterinämie\n    {\"code\": \"R42\", \"typ\": \"Nebendiagnose\"}  // Schwindel und Seekrankheit, nicht näher bezeichnet\n  ]\n}",
+      "prompt_length": 2162,
+      "response_length": 388,
+      "usage": {
+        "prompt_tokens": 673,
+        "completion_tokens": 148
+      },
+      "case_id": "case_031"
+    },
+    {
+      "codes": [
+        "K25.0",
+        "D64.9",
+        "M54.9",
+        "I10.90",
+        "E11.90",
+        "T45.1X6A"
+      ],
+      "hauptdiagnose": "K25.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"K25.0\", \"typ\": \"Hauptdiagnose\"}, // Ulcus ventriculi (Magengeschwür) akut, mit Blutung\n    {\"code\": \"D64.9\", \"typ\": \"Nebendiagnose\"}, // Anämie, nicht näher bezeichnet (normochrome, normozytäre Anämie)\n    {\"code\": \"M54.9\", \"typ\": \"Nebendiagnose\"}, // Lumbalgie, nicht näher bezeichnet (chronische Lumbalgie)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Essentielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht näher bezeichnet\n    {\"code\": \"T45.1X6A\", \"typ\": \"Nebendiagnose\"} // Vergiftung: Nichtsteroidale Antirheumatika (Ibuprofen), schwere Vergiftung, anfängliche Behandlung\n  ]\n}",
+      "prompt_length": 2188,
+      "response_length": 696,
+      "usage": {
+        "prompt_tokens": 706,
+        "completion_tokens": 260
+      },
+      "case_id": "case_032"
+    },
+    {
+      "codes": [
+        "C25.0",
+        "C78.7",
+        "K83.1",
+        "N18.3",
+        "D62.0",
+        "J44.1",
+        "I10.90",
+        "E11.90"
+      ],
+      "hauptdiagnose": "C25.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C25.0\", \"typ\": \"Hauptdiagnose\"}, // Bösartige Neubildung des Pankreaskopfes\n    {\"code\": \"C78.7\", \"typ\": \"Nebendiagnose\"}, // Sekundäre bösartige Neubildung der Leber\n    {\"code\": \"K83.1\", \"typ\": \"Nebendiagnose\"}, // Cholestase\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Nierenkrankheit, Stadium G3a\n    {\"code\": \"D62.0\", \"typ\": \"Nebendiagnose\"}, // Anämie bei chronischer Krankheit (tumorassoziiert)\n    {\"code\": \"J44.1\", \"typ\": \"Nebendiagnose\"}, // Chronische obstruktive Lungenkrankheit (COPD), Stadium II\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Essentielle Hypertonie ohne Angabe einer Hypertoniekrise\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"} // Diabetes mellitus, Typ 2, ohne Angabe von Komplikationen\n  ]\n}",
+      "prompt_length": 2469,
+      "response_length": 780,
+      "usage": {
+        "prompt_tokens": 776,
+        "completion_tokens": 298
+      },
+      "case_id": "case_033"
+    },
+    {
+      "codes": [
+        "S72.21B",
+        "I10.90",
+        "Z47.0",
+        "Z92.3",
+        "Z86.73"
+      ],
+      "hauptdiagnose": "S72.21B",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"S72.21B\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z47.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z92.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z86.73\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n\n**Erklärung der Kodierungen:**\n\n* **S72.21B** (Hauptdiagnose): Dislozierte mediale Schenkelhalsfraktur (AO 31-B2) - Die spezifische Klassifikation nach AO (Arbeitsgemeinschaft für Osteosynthesefragen) wird in der ICD-10-GM nicht direkt verwendet, aber die Beschreibung passt zur Kategorie der dislozierten Schenkelhalsfraktur.\n* **I10.90** (Nebendiagnose): Hypertonus, nicht näher bezeichnet - Der Patient hat einen bekannten arteriellen Hypertonus, der mit einem ACE-Hemmer therapiert wird.\n* **Z47.0** (Nebendiagnose): Nachbehandlung nach Frakturbehandlung, konservativ - Obwohl der Patient eine operative Versorgung erhielt, kann dieser Code für die Nachbehandlungsphase nach der operativen Frakturbehandlung angesehen werden.\n* **Z92.3** (Nebendiagnose): Langzeitverwendung von Antikoagulanzien - Empfehlung für die Fortführung der medikamentösen Thromboseprophylaxe.\n* **Z86.73** (Nebendiagnose): Person mit Geschichte einer Fraktur (als Komplikation) - Nach der Entlassung bleibt die Geschichte der Fraktur und deren Behandlung relevant.",
+      "prompt_length": 2104,
+      "response_length": 1307,
+      "usage": {
+        "prompt_tokens": 641,
+        "completion_tokens": 438
+      },
+      "case_id": "case_034"
+    },
+    {
+      "codes": [
+        "F33.2",
+        "I10.90",
+        "E11.90",
+        "R45.8",
+        "F32.8",
+        "Z73.0"
+      ],
+      "hauptdiagnose": "F33.2",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"F33.2\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"R45.8\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"F32.8\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z73.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n\n**Erklärung der Kodierungen:**\n\n* **F33.2 (Hauptdiagnose)**: Rezidivierende depressive Störung, gegenwärtig akute Episode mit schweren Symptomen (entspricht der beschriebenen \"akuten Exazerbation einer rezidivierenden depressiven Symptomatik\")\n* **I10.90 (Nebendiagnose)**: Essentielle Hypertonie, nicht näher bezeichnet (entspricht der \"vorbekannten arteriellen Hypertonie\")\n* **E11.90 (Nebendiagnose)**: Diabetes mellitus, Typ 2, nicht näher bezeichnet (entspricht dem \"Diabetes mellitus Typ 2\")\n* **R45.8 (Nebendiagnose)**: Andere Symptome, die das Gemüt und das Verhalten betreffen (umfasst die \"Zukunftsängste\" und den \"Grübelzwang\", da spezifischere Codes auf Basis des Textes nicht möglich sind)\n* **F32.8 (Nebendiagnose)**: Sonstige depressive Episoden (könnte für die \"gedrückte, antriebsgeminderte Stimmungslage\" und \"psychomotorische Verlangsamung\" verwendet werden, aber F33.2 als Hauptdiagnose ist spezifischer; hier als zusätzliche Nebendiagnose aufgeführt, um die Komplexität der Symptomatik abzubilden, aber in der Praxis könnte man sich auf F33.2 beschränken)\n* **Z73.0 (Nebendiagnose)**: Probleme im Zusammenhang mit dem Einsatz von Arbeitskraft (entspricht der \"beruflichen Überlastung\" und der \"stufenweisen beruflichen Wiedereingliederung\")",
+      "prompt_length": 2105,
+      "response_length": 1570,
+      "usage": {
+        "prompt_tokens": 639,
+        "completion_tokens": 538
+      },
+      "case_id": "case_035"
+    },
+    {
+      "codes": [
+        "C54.1",
+        "E11.90",
+        "E66.01",
+        "N18.3",
+        "N93.0"
+      ],
+      "hauptdiagnose": "C54.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C54.1\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E66.01\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"N93.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2027,
+      "response_length": 260,
+      "usage": {
+        "prompt_tokens": 647,
+        "completion_tokens": 112
+      },
+      "case_id": "case_036"
+    },
+    {
+      "codes": [
+        "J44.1",
+        "J43.9",
+        "I10.90",
+        "F17.2",
+        "J15.9"
+      ],
+      "hauptdiagnose": "J44.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.1\", \"typ\": \"Hauptdiagnose\"}, // Akute Exazerbation der chronisch-obstruktiven Lungenerkrankung (COPD)\n    {\"code\": \"J43.9\", \"typ\": \"Nebendiagnose\"}, // Lungenemphysem\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie ohne Angabe einer Hypertoniekrise\n    {\"code\": \"F17.2\", \"typ\": \"Nebendiagnose\"}, // Langjähriger Nikotinabusus\n    {\"code\": \"J15.9\", \"typ\": \"Nebendiagnose\"} // Bakterielle Pneumonie, nicht näher bezeichnet (Verdacht auf bakterielle Infektexazerbation)\n  ]\n}",
+      "prompt_length": 2168,
+      "response_length": 534,
+      "usage": {
+        "prompt_tokens": 680,
+        "completion_tokens": 200
+      },
+      "case_id": "case_037"
+    },
+    {
+      "codes": [
+        "I21.0",
+        "I10.90",
+        "E11.90",
+        "F17.2",
+        "I25.81",
+        "I43.8"
+      ],
+      "hauptdiagnose": "I21.0",
+      "raw": "```\n{\n  \"diagnosen\": [\n    {\"code\": \"I21.0\", \"typ\": \"Hauptdiagnose\"},  // Akuter Myokardinfarkt, ST-Hebungs-Infarkt, Ableitungen V1-V6\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},  // Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},  // Diabetes mellitus, Typ 2, ohne Komplikation\n    {\"code\": \"F17.2\", \"typ\": \"Nebendiagnose\"},  // Psychische und Verhaltensstörungen durch Tabak: Entwöhnungssyndrom, anderenorts nicht klassifiziert (für den Nikotinabusus)\n    {\"code\": \"I25.81\", \"typ\": \"Nebendiagnose\"},  // Thrombose koronarer Arterien, anderenorts nicht klassifiziert (für den thrombotischen Verschluss des RIVA)\n    {\"code\": \"I43.8\", \"typ\": \"Nebendiagnose\"}  // Sonstige Formen der Herzinsuffizienz (für die moderat eingeschränkte LVEF)\n  ]\n}\n```",
+      "prompt_length": 2090,
+      "response_length": 786,
+      "usage": {
+        "prompt_tokens": 659,
+        "completion_tokens": 295
+      },
+      "case_id": "case_038"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "J96.09",
+        "R06.0",
+        "E11.90",
+        "I10.90",
+        "I50.01",
+        "Z87.891"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "```\n{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"}, // COPD GOLD IV mit akuter Exazerbation\n    {\"code\": \"J96.09\", \"typ\": \"Nebendiagnose\"}, // Respiratorische Insuffizienz, nicht näher bezeichnet\n    {\"code\": \"R06.0\", \"typ\": \"Nebendiagnose\"}, // Tachypnoe\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus, Typ 2, nicht näher bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Hypertonie, nicht näher bezeichnet\n    {\"code\": \"I50.01\", \"typ\": \"Nebendiagnose\"}, // Kardiale Dekompensation, EF 45-49%\n    {\"code\": \"Z87.891\", \"typ\": \"Nebendiagnose\"} // Persönliche Vorgeschichte: Rauchen\n  ]\n}\n```",
+      "prompt_length": 2339,
+      "response_length": 642,
+      "usage": {
+        "prompt_tokens": 727,
+        "completion_tokens": 243
+      },
+      "case_id": "case_039"
+    },
+    {
+      "codes": [
+        "G45.93",
+        "I10.90",
+        "I70.2",
+        "Z92.0"
+      ],
+      "hauptdiagnose": "G45.93",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"G45.93\", \"typ\": \"Hauptdiagnose\"},  // Transitorische ischämische Attacke (TIA), nicht näher bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},  // Essentielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"I70.2\", \"typ\": \"Nebendiagnose\"},  // Atherosklerose der Karotis-Arterien\n    {\"code\": \"Z92.0\", \"typ\": \"Nebendiagnose\"}  // Langfristige (antihypertensive) Medikation\n  ]\n}",
+      "prompt_length": 2244,
+      "response_length": 420,
+      "usage": {
+        "prompt_tokens": 706,
+        "completion_tokens": 161
+      },
+      "case_id": "case_040"
+    },
+    {
+      "codes": [
+        "K63.2",
+        "K57.12",
+        "I10.90",
+        "E11.90",
+        "D50.0"
+      ],
+      "hauptdiagnose": "K63.2",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"K63.2\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"K57.12\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"D50.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2097,
+      "response_length": 261,
+      "usage": {
+        "prompt_tokens": 639,
+        "completion_tokens": 112
+      },
+      "case_id": "case_041"
+    },
+    {
+      "codes": [
+        "C20.9",
+        "D64.9",
+        "E11.90",
+        "N18.3",
+        "I48.0",
+        "I10.90"
+      ],
+      "hauptdiagnose": "C20.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C20.9\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"D64.9\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I48.0\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2005,
+      "response_length": 312,
+      "usage": {
+        "prompt_tokens": 631,
+        "completion_tokens": 137
+      },
+      "case_id": "case_042"
+    },
+    {
+      "codes": [
+        "S72.03.3",
+        "E11.90",
+        "I10.90",
+        "T84.0",
+        "Z47.0"
+      ],
+      "hauptdiagnose": "S72.03.3",
+      "raw": "```\n{\n  \"diagnosen\": [\n    {\"code\": \"S72.03.3\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"T84.0\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"Z47.0\", \"typ\": \"Nebendiagnose\"}\n  ]\n}\n```\n\n**Erklärung der Kodierungen:**\n\n*   **S72.03.3** (Hauptdiagnose): Dislozierte mediale Schenkelhalsfraktur (Garden-Typ III) - Diese Diagnose ist die Hauptursache für den stationären Aufenthalt.\n*   **E11.90** (Nebendiagnose): Diabetes mellitus, Typ 2, nicht näher bezeichnet - Vorbekannte Erkrankung des Patienten.\n*   **I10.90** (Nebendiagnose): Essentielle Hypertonie, nicht näher bezeichnet - Vorbekannte Erkrankung des Patienten.\n*   **T84.0** (Nebendiagnose): Mechanische Komplikation durch eine Hüftendoprothese - Obwohl im Text keine Komplikationen mit der Hüft-TEP beschrieben werden, ist die Implantation einer Prothese kodierbar. Da keine spezifischen Komplikationen genannt sind, wird der allgemeine Code verwendet.\n*   **Z47.0** (Nebendiagnose): Nachbehandlung nach Implantation oder Transplantation von Knochen oder Gelenken - Die Nachbehandlung und die Empfehlungen nach der Entlassung (z.B. Anschlussheilbehandlung, Wundkontrolle, Fädenziehen) fallen unter diese Kategorie.",
+      "prompt_length": 2432,
+      "response_length": 1260,
+      "usage": {
+        "prompt_tokens": 725,
+        "completion_tokens": 439
+      },
+      "case_id": "case_043"
+    },
+    {
+      "codes": [
+        "F33.1",
+        "F41.1",
+        "E78.0",
+        "M54.5"
+      ],
+      "hauptdiagnose": "F33.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"F33.1\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"F41.1\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E78.0\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"M54.5\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2309,
+      "response_length": 214,
+      "usage": {
+        "prompt_tokens": 693,
+        "completion_tokens": 95
+      },
+      "case_id": "case_044"
+    },
+    {
+      "codes": [
+        "C54.1",
+        "E11.90",
+        "I10.90",
+        "E66.01",
+        "N18.3",
+        "L08.9",
+        "E03.9"
+      ],
+      "hauptdiagnose": "C54.1",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C54.1\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E66.01\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"L08.9\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E03.9\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2326,
+      "response_length": 361,
+      "usage": {
+        "prompt_tokens": 716,
+        "completion_tokens": 158
+      },
+      "case_id": "case_045"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "J22.0",
+        "I10.90",
+        "E11.90"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"}, \n    {\"code\": \"J22.0\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, \n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 2306,
+      "response_length": 217,
+      "usage": {
+        "prompt_tokens": 754,
+        "completion_tokens": 95
+      },
+      "case_id": "case_046"
+    },
+    {
+      "codes": [
+        "I21.4",
+        "I25.11",
+        "I25.81",
+        "I43.8",
+        "I51.81",
+        "I10.90",
+        "E11.90"
+      ],
+      "hauptdiagnose": "I21.4",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"I21.4\", \"typ\": \"Hauptdiagnose\"}, // NSTEMI (Nicht-ST-Hebungsinfarkt)\n    {\"code\": \"I25.11\", \"typ\": \"Nebendiagnose\"}, // Koronare Herzkrankheit, mit Angina pectoris\n    {\"code\": \"I25.81\", \"typ\": \"Nebendiagnose\"}, // Atherosklerose der Koronararterien, mit Stenose (hochgradige 90%-Stenose des Ramus circumflexus)\n    {\"code\": \"I43.8\", \"typ\": \"Nebendiagnose\"}, // Sonstige Formen der Herzinsuffizienz (leicht eingeschränkte linksventrikuläre Pumpfunktion, LVEF 45 %)\n    {\"code\": \"I51.81\", \"typ\": \"Nebendiagnose\"}, // Umschriebene Hypokinesie der Posterolateralwand\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Essentielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"} // Diabetes mellitus, Typ 2, ohne Komplikation\n  ]\n}",
+      "prompt_length": 2059,
+      "response_length": 794,
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 302
+      },
+      "case_id": "case_047"
+    },
+    {
+      "codes": [
+        "J44.11",
+        "J96.09",
+        "J15.9",
+        "I50.22",
+        "I10.90",
+        "N18.3",
+        "E11.90"
+      ],
+      "hauptdiagnose": "J44.11",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"J44.11\", \"typ\": \"Hauptdiagnose\"}, // COPD GOLD IV mit akuter Exazerbation\n    {\"code\": \"J96.09\", \"typ\": \"Nebendiagnose\"}, // Respiratorische Globalinsuffizienz, nicht näher bezeichnet\n    {\"code\": \"J15.9\", \"typ\": \"Nebendiagnose\"}, // Bakterielle Pneumonie, nicht näher bezeichnet (Infekt-getriggertes Exazerbationsereignis)\n    {\"code\": \"I50.22\", \"typ\": \"Nebendiagnose\"}, // Herzinsuffizienz, leichte kardiale Dekompensation, mit reduzierter Ejektionsfraktion (HFrEF)\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Arterielle Hypertonie, nicht näher bezeichnet\n    {\"code\": \"N18.3\", \"typ\": \"Nebendiagnose\"}, // Chronische Niereninsuffizienz, Stadium 3\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"} // Diabetes mellitus, Typ 2, nicht näher bezeichnet\n  ]\n}",
+      "prompt_length": 2064,
+      "response_length": 793,
+      "usage": {
+        "prompt_tokens": 650,
+        "completion_tokens": 287
+      },
+      "case_id": "case_048"
+    },
+    {
+      "codes": [
+        "G45.9",
+        "I10.90",
+        "E78.5",
+        "I70.9"
+      ],
+      "hauptdiagnose": "G45.9",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"G45.9\", \"typ\": \"Hauptdiagnose\"},\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"E78.5\", \"typ\": \"Nebendiagnose\"},\n    {\"code\": \"I70.9\", \"typ\": \"Nebendiagnose\"}\n  ]\n}",
+      "prompt_length": 1989,
+      "response_length": 212,
+      "usage": {
+        "prompt_tokens": 620,
+        "completion_tokens": 92
+      },
+      "case_id": "case_049"
+    },
+    {
+      "codes": [
+        "C25.0",
+        "E11.90",
+        "I10.90",
+        "R11.0",
+        "R21",
+        "R63.4",
+        "K83.1"
+      ],
+      "hauptdiagnose": "C25.0",
+      "raw": "{\n  \"diagnosen\": [\n    {\"code\": \"C25.0\", \"typ\": \"Hauptdiagnose\"}, // Adenokarzinom des Pankreaskopfes\n    {\"code\": \"E11.90\", \"typ\": \"Nebendiagnose\"}, // Diabetes mellitus Typ 2, nicht näher bezeichnet\n    {\"code\": \"I10.90\", \"typ\": \"Nebendiagnose\"}, // Hypertonie, nicht näher bezeichnet\n    {\"code\": \"R11.0\", \"typ\": \"Nebendiagnose\"}, // Ikterus (schmerzlos)\n    {\"code\": \"R21\", \"typ\": \"Nebendiagnose\"}, // Pruritus (Juckreiz)\n    {\"code\": \"R63.4\", \"typ\": \"Nebendiagnose\"}, // Unbeabsichtigter Gewichtsverlust\n    {\"code\": \"K83.1\", \"typ\": \"Nebendiagnose\"} // Obstruktive Cholestase (aufgrund des Aufstaus des Ductus choledochus)\n  ]\n}",
+      "prompt_length": 2209,
+      "response_length": 633,
+      "usage": {
+        "prompt_tokens": 690,
+        "completion_tokens": 247
+      },
+      "case_id": "case_050"
+    }
+  ]
+}

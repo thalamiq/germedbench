@@ -26,7 +26,7 @@ Alle Texte variieren über 9 Fachbereiche (Innere Medizin, Kardiologie, Pneumolo
 ```bash
 uv sync
 cp .env.example .env
-# API-Keys in .env eintragen (GEMINI_API_KEY, TOGETHER_API_KEY, CHAT_AI_API_KEY)
+# API-Keys in .env eintragen (GEMINI_API_KEY, TOGETHER_API_KEY, DEEPINFRA_API_KEY)
 ```
 
 ### Daten generieren
@@ -56,9 +56,9 @@ uv run python scripts/run_eval_clinical_reasoning.py -j 4
 uv run python scripts/run_eval_patient_text.py -j 4
 
 # Optionen
-uv run python scripts/run_eval_icd10.py --provider together   # Nur Together-Modelle
-uv run python scripts/run_eval_icd10.py -p chat_ai            # Nur Chat-AI-Modelle
-uv run python scripts/run_eval_icd10.py "llama-3.3-70b-instruct"  # Spezifisches Modell
+uv run python scripts/run_eval_icd10.py --provider together    # Nur Together-Modelle
+uv run python scripts/run_eval_icd10.py -p deepinfra           # Nur DeepInfra-Modelle
+uv run python scripts/run_eval_icd10.py "deepseek-ai/DeepSeek-V3.1"  # Spezifisches Modell
 ```
 
 Ergebnisse werden nach `results/<model>/<task>/<timestamp>.json` geschrieben.
@@ -106,11 +106,11 @@ Alle Settings werden über `.env` gesteuert (siehe `.env.example`):
 | `GENERATION_MODEL` | `gemini-3-flash-preview` | Modell für synthetische Fälle |
 | `JUDGE_MODEL` | `gemini-3-flash-preview` | Modell für LLM-as-Judge |
 | `TOGETHER_API_KEY` | — | API-Key für Together AI Modelle |
-| `CHAT_AI_API_KEY` | — | API-Key für Chat-AI (Academic Cloud) Modelle |
+| `DEEPINFRA_API_KEY` | — | API-Key für DeepInfra Modelle |
 
 ## Tech-Stack
 
-- **Benchmark:** Python, pydantic-settings, google-genai, openai (Together AI + Chat-AI)
+- **Benchmark:** Python, pydantic-settings, google-genai, openai (Together AI + DeepInfra)
 - **Website:** Next.js 15, Tailwind CSS v4, @thalamiq/ui
 - **Paketmanager:** uv (Python), pnpm (Web)
 

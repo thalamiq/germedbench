@@ -1,0 +1,2068 @@
+{
+  "summary": {
+    "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "task": "clinical_reasoning",
+    "timestamp": "20260329_185556",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "top1_accuracy": 0.8,
+    "top3_recall": 0.9,
+    "ddx_overlap_f1": 0.5921428571428572,
+    "reasoning_quality": 4.42,
+    "ddx_plausibility": 4.4,
+    "red_flag_awareness": 4.2,
+    "overall_score": 4.101285714285714
+  },
+  "predictions": [
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Pneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Der Patient zeigt klassische Symptome einer Pneumonie wie produktiver Husten, Fieber, Dyspnoe und auskultatorisch feinblasige Rasselgeräusche über dem rechten Unterlappen. Die Röntgenthorax-Aufnahme bestätigt eine alveoläre Verschattung im rechten Unterlappen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akute Exazerbation einer COPD",
+          "icd10_code": "J44.1",
+          "reasoning": "Der Patient hat eine bekannte COPD und zeigt eine zunehmende Belastungsdyspnoe und erhöhte Atemfrequenz. Allerdings sprechen die deutlichen Infiltrate im Röntgenbild und die ausgeprägte Entzündungsreaktion (CRP, Leukozyten) eher für eine Pneumonie.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die akute Dyspnoe und Tachykardie könnten auch auf eine Lungenembolie hinweisen. Allerdings fehlen typische Risikofaktoren oder klinische Zeichen wie ein kalter Schweiß oder eine ausgeprägte Hypoxie ohne adäquate Erklärung durch die bekannten Vorerkrankungen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Pneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer Pneumonie wie produktiver Husten, Fieber, Dyspnoe und auskultatorisch feinblasige Rasselgeräusche über dem rechten Unterlappen. Die Röntgenthorax-Aufnahme bestätigt eine alveoläre Verschattung im rechten Unterlappen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akute Exazerbation einer COPD\",\n      \"icd10_code\": \"J44.1\",\n      \"reasoning\": \"Der Patient hat eine bekannte COPD und zeigt eine zunehmende Belastungsdyspnoe und erhöhte Atemfrequenz. Allerdings sprechen die deutlichen Infiltrate im Röntgenbild und die ausgeprägte Entzündungsreaktion (CRP, Leukozyten) eher für eine Pneumonie.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die akute Dyspnoe und Tachykardie könnten auch auf eine Lungenembolie hinweisen. Allerdings fehlen typische Risikofaktoren oder klinische Zeichen wie ein kalter Schweiß oder eine ausgeprägte Hypoxie ohne adäquate Erklärung durch die bekannten Vorerkrankungen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2460,
+      "response_length": 1187,
+      "usage": {
+        "prompt_tokens": 701,
+        "completion_tokens": 330
+      },
+      "case_id": "cr_001",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Myokarditis mit Perikardbeteiligung",
+          "icd10_code": "I40.9",
+          "reasoning": "Der Patient präsentiert sich mit progredienter Dyspnoe, retrosternalem Druckgefühl und laborchemischen Hinweisen auf eine kardiale Beteiligung (erhöhtes Troponin T und NT-proBNP). Die Echokardiographie zeigt einen zirkulären Perikarderguss und eine eingeschränkte linksventrikuläre Funktion (reduzierter globaler longitudinaler Strain).",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Perikarditis",
+          "icd10_code": "I30.9",
+          "reasoning": "Der Patient weist einen zirkulären Perikarderguss auf, ST-Streckenhebungen im EKG und laborchemische Entzündungszeichen (CRP-Erhöhung). Diese Befunde sprechen für eine Perikarditis.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Kardiale Dekompensation bei koronarer Herzkrankheit",
+          "icd10_code": "I50.9",
+          "reasoning": "Der Patient hat einen langjährigen Nikotinabusus und einen arteriellen Hypertonus, was das Risiko für eine koronare Herzkrankheit erhöht. Die Dyspnoe und das erhöhte NT-proBNP könnten auf eine kardiale Dekompensation hinweisen.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Myokarditis mit Perikardbeteiligung\",\n      \"icd10_code\": \"I40.9\",\n      \"reasoning\": \"Der Patient präsentiert sich mit progredienter Dyspnoe, retrosternalem Druckgefühl und laborchemischen Hinweisen auf eine kardiale Beteiligung (erhöhtes Troponin T und NT-proBNP). Die Echokardiographie zeigt einen zirkulären Perikarderguss und eine eingeschränkte linksventrikuläre Funktion (reduzierter globaler longitudinaler Strain).\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Perikarditis\",\n      \"icd10_code\": \"I30.9\",\n      \"reasoning\": \"Der Patient weist einen zirkulären Perikarderguss auf, ST-Streckenhebungen im EKG und laborchemische Entzündungszeichen (CRP-Erhöhung). Diese Befunde sprechen für eine Perikarditis.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Kardiale Dekompensation bei koronarer Herzkrankheit\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Der Patient hat einen langjährigen Nikotinabusus und einen arteriellen Hypertonus, was das Risiko für eine koronare Herzkrankheit erhöht. Die Dyspnoe und das erhöhte NT-proBNP könnten auf eine kardiale Dekompensation hinweisen.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2321,
+      "response_length": 1211,
+      "usage": {
+        "prompt_tokens": 626,
+        "completion_tokens": 336
+      },
+      "case_id": "cr_002",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Exogen-allergische Alveolitis",
+          "icd10_code": "J67.9",
+          "reasoning": "Der Patient berichtet über die intensive Sanierung eines alten Gewächshauses, was eine Exposition gegenüber allergenen Substanzen wahrscheinlich macht. Das HR-CT zeigt ein 'Crazy Paving'-Muster, das bei dieser Erkrankung typisch ist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Idiopathische pulmonale Fibrose (IPF)",
+          "icd10_code": "J84.1",
+          "reasoning": "Die Symptome wie Belastungsdyspnoe und Reizhusten sowie das basal betonte Klettverschlussknistern sind mit IPF vereinbar. Allerdings ist das 'Crazy Paving'-Muster im HR-CT nicht typisch für IPF, sondern eher für andere interstitielle Lungenerkrankungen.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Nicht-spezifische interstitielle Pneumonie (NSIP)",
+          "icd10_code": "J84.89",
+          "reasoning": "Das HR-CT-Muster mit Milchglasinfiltraten und 'Crazy Paving' ist vereinbar mit NSIP. Die Anamnese und die Laborwerte (z.B. ANA-Titer 1:160) könnten auf eine autoimmune Komponente hindeuten, die bei NSIP vorkommen kann.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pneumonitis durch anorganische Staubexposition",
+          "icd10_code": "J63.8",
+          "reasoning": "Die Exposition gegenüber Staub bei der Sanierung des Gewächshauses könnte eine Pneumonitis durch anorganische Staubexposition verursacht haben. Allerdings fehlen spezifische Hinweise auf eine solche Exposition.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Exogen-allergische Alveolitis\",\n      \"icd10_code\": \"J67.9\",\n      \"reasoning\": \"Der Patient berichtet über die intensive Sanierung eines alten Gewächshauses, was eine Exposition gegenüber allergenen Substanzen wahrscheinlich macht. Das HR-CT zeigt ein 'Crazy Paving'-Muster, das bei dieser Erkrankung typisch ist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Idiopathische pulmonale Fibrose (IPF)\",\n      \"icd10_code\": \"J84.1\",\n      \"reasoning\": \"Die Symptome wie Belastungsdyspnoe und Reizhusten sowie das basal betonte Klettverschlussknistern sind mit IPF vereinbar. Allerdings ist das 'Crazy Paving'-Muster im HR-CT nicht typisch für IPF, sondern eher für andere interstitielle Lungenerkrankungen.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Nicht-spezifische interstitielle Pneumonie (NSIP)\",\n      \"icd10_code\": \"J84.89\",\n      \"reasoning\": \"Das HR-CT-Muster mit Milchglasinfiltraten und 'Crazy Paving' ist vereinbar mit NSIP. Die Anamnese und die Laborwerte (z.B. ANA-Titer 1:160) könnten auf eine autoimmune Komponente hindeuten, die bei NSIP vorkommen kann.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pneumonitis durch anorganische Staubexposition\",\n      \"icd10_code\": \"J63.8\",\n      \"reasoning\": \"Die Exposition gegenüber Staub bei der Sanierung des Gewächshauses könnte eine Pneumonitis durch anorganische Staubexposition verursacht haben. Allerdings fehlen spezifische Hinweise auf eine solche Exposition.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2709,
+      "response_length": 1557,
+      "usage": {
+        "prompt_tokens": 743,
+        "completion_tokens": 423
+      },
+      "case_id": "cr_003",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.25
+      },
+      "judge_scores": {
+        "reasoning_quality": 2.0,
+        "ddx_plausibility": 1.0,
+        "red_flag_awareness": 2.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Schlaganfall (ischämischer Insult)",
+          "icd10_code": "I63.-",
+          "reasoning": "Der Patient zeigt plötzlich aufgetretene neurologische Ausfälle (zentrale Fazialisparese, Armhalteparese, motorische Aphasie) und hat ein bekanntes Vorhofflimmern, was ein Risikofaktor für embolische Ereignisse ist. Die CT-Angiographie zeigt einen Abbruch des Kontrastmittelstroms im M1-Segment der Arteria cerebri media links.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Transitorische ischämische Attacke (TIA)",
+          "icd10_code": "G45.-",
+          "reasoning": "Die Symptome des Patienten könnten auch auf eine TIA hinweisen, insbesondere wenn sie innerhalb kurzer Zeit nach Auftreten behandelt werden könnten. Allerdings spricht die nachgewiesene Okklusion in der CT-Angiographie eher für einen manifesten Infarkt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Intrakranielle Blutung mit atypischer Präsentation",
+          "icd10_code": "I60.-, I61.-",
+          "reasoning": "Obwohl das initiale CCT keine intrakranielle Blutung zeigte, kann bei entsprechender Klinik eine Blutung nicht vollständig ausgeschlossen werden, insbesondere wenn es sich um eine kleine oder atypisch lokalisierte Blutung handelt.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Schlaganfall (ischämischer Insult)\",\n      \"icd10_code\": \"I63.-\",\n      \"reasoning\": \"Der Patient zeigt plötzlich aufgetretene neurologische Ausfälle (zentrale Fazialisparese, Armhalteparese, motorische Aphasie) und hat ein bekanntes Vorhofflimmern, was ein Risikofaktor für embolische Ereignisse ist. Die CT-Angiographie zeigt einen Abbruch des Kontrastmittelstroms im M1-Segment der Arteria cerebri media links.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Transitorische ischämische Attacke (TIA)\",\n      \"icd10_code\": \"G45.-\",\n      \"reasoning\": \"Die Symptome des Patienten könnten auch auf eine TIA hinweisen, insbesondere wenn sie innerhalb kurzer Zeit nach Auftreten behandelt werden könnten. Allerdings spricht die nachgewiesene Okklusion in der CT-Angiographie eher für einen manifesten Infarkt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Intrakranielle Blutung mit atypischer Präsentation\",\n      \"icd10_code\": \"I60.-, I61.-\",\n      \"reasoning\": \"Obwohl das initiale CCT keine intrakranielle Blutung zeigte, kann bei entsprechender Klinik eine Blutung nicht vollständig ausgeschlossen werden, insbesondere wenn es sich um eine kleine oder atypisch lokalisierte Blutung handelt.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2505,
+      "response_length": 1310,
+      "usage": {
+        "prompt_tokens": 659,
+        "completion_tokens": 335
+      },
+      "case_id": "cr_004",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Autoimmune-Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Die diffuse Vergrößerung des Pankreas mit Verlust der Lobulierung und das Halo-Zeichen im CT sind typische Zeichen einer Autoimmune-Pankreatitis. Die Hypergammaglobulinämie unterstützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pankreaskarzinom",
+          "icd10_code": "C25.9",
+          "reasoning": "Der schmerzlose Ikterus, der ungewollte Gewichtsverlust und die Erhöhung von CA 19-9 sprechen für ein Pankreaskarzinom. Die dilatierten Gallenwege und der erweiterte Ductus choledochus sind ebenfalls vereinbar mit einer Obstruktion durch einen Tumor.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Die Erhöhung der Lipase und die diffusen Veränderungen im Pankreas könnten auch auf eine chronische Pankreatitis hinweisen. Allerdings ist die diffuse Vergrößerung des Pankreas und das Halo-Zeichen eher untypisch für eine chronische Pankreatitis.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Autoimmune-Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die diffuse Vergrößerung des Pankreas mit Verlust der Lobulierung und das Halo-Zeichen im CT sind typische Zeichen einer Autoimmune-Pankreatitis. Die Hypergammaglobulinämie unterstützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pankreaskarzinom\",\n      \"icd10_code\": \"C25.9\",\n      \"reasoning\": \"Der schmerzlose Ikterus, der ungewollte Gewichtsverlust und die Erhöhung von CA 19-9 sprechen für ein Pankreaskarzinom. Die dilatierten Gallenwege und der erweiterte Ductus choledochus sind ebenfalls vereinbar mit einer Obstruktion durch einen Tumor.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die Erhöhung der Lipase und die diffusen Veränderungen im Pankreas könnten auch auf eine chronische Pankreatitis hinweisen. Allerdings ist die diffuse Vergrößerung des Pankreas und das Halo-Zeichen eher untypisch für eine chronische Pankreatitis.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2850,
+      "response_length": 1127,
+      "usage": {
+        "prompt_tokens": 813,
+        "completion_tokens": 307
+      },
+      "case_id": "cr_005",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Lymphom",
+          "icd10_code": "C85.9",
+          "reasoning": "Die Patientin präsentiert generalisierte Lymphadenopathie, Splenomegalie, B-Symptomatik und eine polyklonale Hypergammaglobulinämie, was auf ein Lymphom hindeutet.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Autoimmunerkrankung (z.B. systemischer Lupus erythematodes)",
+          "icd10_code": "M32.9",
+          "reasoning": "Der positive direkte Coombs-Test und die polyklonale Hypergammaglobulinämie sprechen für eine Autoimmunerkrankung. Die Symptomatik mit Hautausschlag, Gelenkschmerzen und Splenomegalie unterstützt diese Diagnose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Infektionserkrankung (z.B. HIV, Tuberkulose)",
+          "icd10_code": "A49.9",
+          "reasoning": "Die B-Symptomatik, generalisierte Lymphadenopathie und Splenomegalie können auch auf eine Infektionserkrankung hinweisen. Die Laborwerte mit erhöhter LDH und Ferritin unterstützen diese Möglichkeit.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Castleman-Krankheit",
+          "icd10_code": "D47.Z2",
+          "reasoning": "Die Kombination aus generalisierter Lymphadenopathie, Splenomegalie, polyklonaler Hypergammaglobulinämie und B-Symptomatik könnte auch auf eine Castleman-Krankheit hindeuten.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Lymphom\",\n      \"icd10_code\": \"C85.9\",\n      \"reasoning\": \"Die Patientin präsentiert generalisierte Lymphadenopathie, Splenomegalie, B-Symptomatik und eine polyklonale Hypergammaglobulinämie, was auf ein Lymphom hindeutet.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Autoimmunerkrankung (z.B. systemischer Lupus erythematodes)\",\n      \"icd10_code\": \"M32.9\",\n      \"reasoning\": \"Der positive direkte Coombs-Test und die polyklonale Hypergammaglobulinämie sprechen für eine Autoimmunerkrankung. Die Symptomatik mit Hautausschlag, Gelenkschmerzen und Splenomegalie unterstützt diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Infektionserkrankung (z.B. HIV, Tuberkulose)\",\n      \"icd10_code\": \"A49.9\",\n      \"reasoning\": \"Die B-Symptomatik, generalisierte Lymphadenopathie und Splenomegalie können auch auf eine Infektionserkrankung hinweisen. Die Laborwerte mit erhöhter LDH und Ferritin unterstützen diese Möglichkeit.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Castleman-Krankheit\",\n      \"icd10_code\": \"D47.Z2\",\n      \"reasoning\": \"Die Kombination aus generalisierter Lymphadenopathie, Splenomegalie, polyklonaler Hypergammaglobulinämie und B-Symptomatik könnte auch auf eine Castleman-Krankheit hindeuten.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2385,
+      "response_length": 1357,
+      "usage": {
+        "prompt_tokens": 662,
+        "completion_tokens": 381
+      },
+      "case_id": "cr_006",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Mediale Schenkelhalsfraktur",
+          "icd10_code": "S72.0",
+          "reasoning": "Die Röntgenaufnahme zeigt eine Diskontinuität der Kortikalis im subkapitalen Bereich des proximalen Femurs links mit Dislokation der Fragmente, passend zu einer medialen Schenkelhalsfraktur.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pertrochantäre Femurfraktur",
+          "icd10_code": "S72.1",
+          "reasoning": "Die Klinik mit Verkürzung und Außenrotationsfehlstellung des Beines sowie der Druckschmerz über der Leiste sind auch vereinbar mit einer pertrochantären Femurfraktur, jedoch zeigt die Röntgenaufnahme eine subkapitale Fraktur.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hüftgelenksdistorsion oder -kontusion",
+          "icd10_code": "S73.0 oder S70.0",
+          "reasoning": "Die Patientin hat Schmerzen in der Leistenregion und eine schmerzhafte Bewegungseinschränkung, jedoch zeigt die Röntgenaufnahme eindeutig eine Fraktur, sodass eine einfache Distorsion oder Kontusion unwahrscheinlich ist.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Mediale Schenkelhalsfraktur\",\n      \"icd10_code\": \"S72.0\",\n      \"reasoning\": \"Die Röntgenaufnahme zeigt eine Diskontinuität der Kortikalis im subkapitalen Bereich des proximalen Femurs links mit Dislokation der Fragmente, passend zu einer medialen Schenkelhalsfraktur.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pertrochantäre Femurfraktur\",\n      \"icd10_code\": \"S72.1\",\n      \"reasoning\": \"Die Klinik mit Verkürzung und Außenrotationsfehlstellung des Beines sowie der Druckschmerz über der Leiste sind auch vereinbar mit einer pertrochantären Femurfraktur, jedoch zeigt die Röntgenaufnahme eine subkapitale Fraktur.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hüftgelenksdistorsion oder -kontusion\",\n      \"icd10_code\": \"S73.0 oder S70.0\",\n      \"reasoning\": \"Die Patientin hat Schmerzen in der Leistenregion und eine schmerzhafte Bewegungseinschränkung, jedoch zeigt die Röntgenaufnahme eindeutig eine Fraktur, sodass eine einfache Distorsion oder Kontusion unwahrscheinlich ist.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2571,
+      "response_length": 1106,
+      "usage": {
+        "prompt_tokens": 658,
+        "completion_tokens": 304
+      },
+      "case_id": "cr_007",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666666
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Depressive Episode mit kognitiven Defiziten",
+          "icd10_code": "F32.2",
+          "reasoning": "Der Patient zeigt klassische Symptome einer depressiven Episode wie Freudlosigkeit, Interessenverlust und Früherwachen. Die kognitiven Defizite könnten Ausdruck einer depressiven Pseudodemenz sein.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Beginnende Parkinson-Krankheit mit depressiver Komorbidität",
+          "icd10_code": "G20",
+          "reasoning": "Der Patient weist neurologische Symptome wie Ruhetremor, Rigor und ein kleinschrittiges Gangbild auf, die auf eine beginnende Parkinson-Krankheit hindeuten könnten. Die depressive Symptomatik könnte eine komorbide Störung sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Alkoholbedingte kognitive Störung/ Demenz",
+          "icd10_code": "F10.7",
+          "reasoning": "Der Patient konsumiert regelmäßig Alkohol und zeigt erhöhte Leberwerte (GGT) sowie ein erhöhtes CDT, was auf einen chronischen Alkoholkonsum hinweist. Die kognitiven Defizite könnten alkoholbedingt sein.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Vitamin B12-Mangel",
+          "icd10_code": "E53.8",
+          "reasoning": "Der Patient hat einen erniedrigten Vitamin B12-Spiegel, der zu kognitiven Defiziten und depressiven Symptomen beitragen könnte.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Depressive Episode mit kognitiven Defiziten\",\n      \"icd10_code\": \"F32.2\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer depressiven Episode wie Freudlosigkeit, Interessenverlust und Früherwachen. Die kognitiven Defizite könnten Ausdruck einer depressiven Pseudodemenz sein.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Beginnende Parkinson-Krankheit mit depressiver Komorbidität\",\n      \"icd10_code\": \"G20\",\n      \"reasoning\": \"Der Patient weist neurologische Symptome wie Ruhetremor, Rigor und ein kleinschrittiges Gangbild auf, die auf eine beginnende Parkinson-Krankheit hindeuten könnten. Die depressive Symptomatik könnte eine komorbide Störung sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Alkoholbedingte kognitive Störung/ Demenz\",\n      \"icd10_code\": \"F10.7\",\n      \"reasoning\": \"Der Patient konsumiert regelmäßig Alkohol und zeigt erhöhte Leberwerte (GGT) sowie ein erhöhtes CDT, was auf einen chronischen Alkoholkonsum hinweist. Die kognitiven Defizite könnten alkoholbedingt sein.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Vitamin B12-Mangel\",\n      \"icd10_code\": \"E53.8\",\n      \"reasoning\": \"Der Patient hat einen erniedrigten Vitamin B12-Spiegel, der zu kognitiven Defiziten und depressiven Symptomen beitragen könnte.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2709,
+      "response_length": 1394,
+      "usage": {
+        "prompt_tokens": 738,
+        "completion_tokens": 365
+      },
+      "case_id": "cr_008",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 1.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ovarialkarzinom",
+          "icd10_code": "C56",
+          "reasoning": "Die Patientin präsentiert eine große solide Raumforderung im rechten Ovar, massiv erhöhtes CA-125, Aszites und einen Pleuraerguss, was typische Befunde für ein fortgeschrittenes Ovarialkarzinom sind.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Borderline-Tumor des Ovars",
+          "icd10_code": "D39.1",
+          "reasoning": "Die glatt begrenzte, solide Raumforderung im Ovar und der erhöhte CA-125-Wert könnten auch auf einen Borderline-Tumor hinweisen, allerdings ist die Wahrscheinlichkeit aufgrund der ausgeprägten Symptomatik und der Höhe des CA-125-Wertes geringer als für ein Ovarialkarzinom.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Tuboovarialabszess oder chronische Adnexitis",
+          "icd10_code": "N70.1",
+          "reasoning": "Die Patientin hat zwar ein Kupfer-IUP, was das Risiko für eine Adnexitis erhöht, aber die Laborwerte zeigen nur eine leichte Entzündungsreaktion (CRP 12 mg/l) und die Raumforderung ist glatt begrenzt, was eher untypisch für einen Abszess ist.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ovarialkarzinom\",\n      \"icd10_code\": \"C56\",\n      \"reasoning\": \"Die Patientin präsentiert eine große solide Raumforderung im rechten Ovar, massiv erhöhtes CA-125, Aszites und einen Pleuraerguss, was typische Befunde für ein fortgeschrittenes Ovarialkarzinom sind.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Borderline-Tumor des Ovars\",\n      \"icd10_code\": \"D39.1\",\n      \"reasoning\": \"Die glatt begrenzte, solide Raumforderung im Ovar und der erhöhte CA-125-Wert könnten auch auf einen Borderline-Tumor hinweisen, allerdings ist die Wahrscheinlichkeit aufgrund der ausgeprägten Symptomatik und der Höhe des CA-125-Wertes geringer als für ein Ovarialkarzinom.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Tuboovarialabszess oder chronische Adnexitis\",\n      \"icd10_code\": \"N70.1\",\n      \"reasoning\": \"Die Patientin hat zwar ein Kupfer-IUP, was das Risiko für eine Adnexitis erhöht, aber die Laborwerte zeigen nur eine leichte Entzündungsreaktion (CRP 12 mg/l) und die Raumforderung ist glatt begrenzt, was eher untypisch für einen Abszess ist.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2494,
+      "response_length": 1166,
+      "usage": {
+        "prompt_tokens": 686,
+        "completion_tokens": 326
+      },
+      "case_id": "cr_009",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Pneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Der Patient zeigt klassische Symptome einer Pneumonie wie produktiven Husten, Fieber, Schüttelfrost und eine deutliche Klopfschalldämpfung basal rechts mit feinblasigen Rasselgeräuschen. Das Röntgen-Thorax bestätigt eine flächige, homogene Verschattung des rechten Unterlappens mit positivem Aerobronchogramm.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akute Bronchitis",
+          "icd10_code": "J20.9",
+          "reasoning": "Der Patient hat produktiven Husten und Fieber, was auch bei einer akuten Bronchitis auftreten kann. Allerdings sprechen die deutlichen Rasselgeräusche und die Verschattung im Röntgen-Thorax eher für eine Pneumonie.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die progrediente Belastungsdyspnoe und die leichte Hypoxie könnten auch auf eine Lungenembolie hinweisen. Allerdings fehlen typische Symptome wie plötzlicher Beginn oder Risikofaktoren wie kürzliche Immobilisation.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Pneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer Pneumonie wie produktiven Husten, Fieber, Schüttelfrost und eine deutliche Klopfschalldämpfung basal rechts mit feinblasigen Rasselgeräuschen. Das Röntgen-Thorax bestätigt eine flächige, homogene Verschattung des rechten Unterlappens mit positivem Aerobronchogramm.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akute Bronchitis\",\n      \"icd10_code\": \"J20.9\",\n      \"reasoning\": \"Der Patient hat produktiven Husten und Fieber, was auch bei einer akuten Bronchitis auftreten kann. Allerdings sprechen die deutlichen Rasselgeräusche und die Verschattung im Röntgen-Thorax eher für eine Pneumonie.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die progrediente Belastungsdyspnoe und die leichte Hypoxie könnten auch auf eine Lungenembolie hinweisen. Allerdings fehlen typische Symptome wie plötzlicher Beginn oder Risikofaktoren wie kürzliche Immobilisation.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2630,
+      "response_length": 1144,
+      "usage": {
+        "prompt_tokens": 701,
+        "completion_tokens": 316
+      },
+      "case_id": "cr_010",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Perikarditis mit Perikarderguss",
+          "icd10_code": "I30.9",
+          "reasoning": "Die klinischen Befunde wie lageabhängige Beschwerden, Besserung im Sitzen bei nach vorne gebeugtem Oberkörper, leise Herztöne, Verbreiterung der Herzsilhouette im Röntgen-Thorax und diffuse ST-Streckenhebungen im EKG sprechen für eine akute Perikarditis mit Perikarderguss.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akuter Myokardinfarkt",
+          "icd10_code": "I21.9",
+          "reasoning": "Erhöhtes Troponin T und retrosternales Druckgefühl könnten auf einen akuten Myokardinfarkt hindeuten, jedoch sprechen die diffusen ST-Streckenhebungen und die klinischen Befunde eher gegen einen klassischen Myokardinfarkt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Myokarditis",
+          "icd10_code": "I40.9",
+          "reasoning": "Die erhöhten Entzündungswerte (CRP, Leukozyten), das erhöhte Troponin T und die ST-Streckenhebungen im EKG könnten auch auf eine Myokarditis hinweisen, jedoch ist die Klinik mit lageabhängigen Beschwerden und leisen Herztönen eher atypisch.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Perikarditis mit Perikarderguss\",\n      \"icd10_code\": \"I30.9\",\n      \"reasoning\": \"Die klinischen Befunde wie lageabhängige Beschwerden, Besserung im Sitzen bei nach vorne gebeugtem Oberkörper, leise Herztöne, Verbreiterung der Herzsilhouette im Röntgen-Thorax und diffuse ST-Streckenhebungen im EKG sprechen für eine akute Perikarditis mit Perikarderguss.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akuter Myokardinfarkt\",\n      \"icd10_code\": \"I21.9\",\n      \"reasoning\": \"Erhöhtes Troponin T und retrosternales Druckgefühl könnten auf einen akuten Myokardinfarkt hindeuten, jedoch sprechen die diffusen ST-Streckenhebungen und die klinischen Befunde eher gegen einen klassischen Myokardinfarkt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Myokarditis\",\n      \"icd10_code\": \"I40.9\",\n      \"reasoning\": \"Die erhöhten Entzündungswerte (CRP, Leukozyten), das erhöhte Troponin T und die ST-Streckenhebungen im EKG könnten auch auf eine Myokarditis hinweisen, jedoch ist die Klinik mit lageabhängigen Beschwerden und leisen Herztönen eher atypisch.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2348,
+      "response_length": 1173,
+      "usage": {
+        "prompt_tokens": 663,
+        "completion_tokens": 341
+      },
+      "case_id": "cr_011",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Eosinophile Granulomatose mit Polyangiitis (EGPA)",
+          "icd10_code": "M30.1",
+          "reasoning": "Der Patient zeigt eine ausgeprägte Eosinophilie, Asthma bronchiale, chronische Rhinosinusitis mit Polyposis nasi und neurologische Symptome, die auf eine Vaskulitis hinweisen, sowie positive p-ANCA (MPO-Antikörper).",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hypereosinophiles Syndrom (HES)",
+          "icd10_code": "D72.1",
+          "reasoning": "Die ausgeprägte Eosinophilie und die damit verbundenen Symptome wie Asthma und Gewichtsverlust könnten auf ein HES hinweisen, jedoch fehlen hierfür typische Zeichen einer Endorganschädigung.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Eosinophile Pneumonie (CEP)",
+          "icd10_code": "J82",
+          "reasoning": "Die flüchtigen Milchglasinfiltrate im CT-Thorax und die ausgeprägte Eosinophilie könnten auf eine CEP hindeuten, jedoch erklärt dies nicht vollständig die neurologischen Symptome und die positive p-ANCA.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Eosinophile Granulomatose mit Polyangiitis (EGPA)\",\n      \"icd10_code\": \"M30.1\",\n      \"reasoning\": \"Der Patient zeigt eine ausgeprägte Eosinophilie, Asthma bronchiale, chronische Rhinosinusitis mit Polyposis nasi und neurologische Symptome, die auf eine Vaskulitis hinweisen, sowie positive p-ANCA (MPO-Antikörper).\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hypereosinophiles Syndrom (HES)\",\n      \"icd10_code\": \"D72.1\",\n      \"reasoning\": \"Die ausgeprägte Eosinophilie und die damit verbundenen Symptome wie Asthma und Gewichtsverlust könnten auf ein HES hinweisen, jedoch fehlen hierfür typische Zeichen einer Endorganschädigung.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Eosinophile Pneumonie (CEP)\",\n      \"icd10_code\": \"J82\",\n      \"reasoning\": \"Die flüchtigen Milchglasinfiltrate im CT-Thorax und die ausgeprägte Eosinophilie könnten auf eine CEP hindeuten, jedoch erklärt dies nicht vollständig die neurologischen Symptome und die positive p-ANCA.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2518,
+      "response_length": 1093,
+      "usage": {
+        "prompt_tokens": 674,
+        "completion_tokens": 303
+      },
+      "case_id": "cr_012",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall",
+          "icd10_code": "I63.-",
+          "reasoning": "Das 'Hyperdense Media Sign' der linken Arteria cerebri media und die Verstreichung der Inselrinde links im CCT sprechen für einen akuten ischämischen Schlaganfall. Die klinischen Symptome wie Aphasie, Fazialisparese und Hemiparese rechts passen zu einem linkshemisphärischen Mediainfarkt.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intrazerebrale Blutung mit initial unauffälligem CCT",
+          "icd10_code": "I61.-",
+          "reasoning": "Obwohl das initiale CCT keine Blutung zeigt, kann bei sehr frischen Blutungen oder bestimmten Lokalisationen die Diagnose schwierig sein. Allerdings ist dies bei einem so deutlichen 'Hyperdense Media Sign' weniger wahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "TIA (Transitorische ischämische Attacke) mit prolongierten Symptomen",
+          "icd10_code": "G45.-",
+          "reasoning": "Die Symptomatik könnte auch einer TIA mit prolongierten Symptomen entsprechen, allerdings spricht der NIHSS von 12 für eine deutliche neurologische Beeinträchtigung, die eher für einen manifesten Schlaganfall spricht.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall\",\n      \"icd10_code\": \"I63.-\",\n      \"reasoning\": \"Das 'Hyperdense Media Sign' der linken Arteria cerebri media und die Verstreichung der Inselrinde links im CCT sprechen für einen akuten ischämischen Schlaganfall. Die klinischen Symptome wie Aphasie, Fazialisparese und Hemiparese rechts passen zu einem linkshemisphärischen Mediainfarkt.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intrazerebrale Blutung mit initial unauffälligem CCT\",\n      \"icd10_code\": \"I61.-\",\n      \"reasoning\": \"Obwohl das initiale CCT keine Blutung zeigt, kann bei sehr frischen Blutungen oder bestimmten Lokalisationen die Diagnose schwierig sein. Allerdings ist dies bei einem so deutlichen 'Hyperdense Media Sign' weniger wahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"TIA (Transitorische ischämische Attacke) mit prolongierten Symptomen\",\n      \"icd10_code\": \"G45.-\",\n      \"reasoning\": \"Die Symptomatik könnte auch einer TIA mit prolongierten Symptomen entsprechen, allerdings spricht der NIHSS von 12 für eine deutliche neurologische Beeinträchtigung, die eher für einen manifesten Schlaganfall spricht.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2380,
+      "response_length": 1248,
+      "usage": {
+        "prompt_tokens": 610,
+        "completion_tokens": 321
+      },
+      "case_id": "cr_013",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Pankreaskarzinom",
+          "icd10_code": "C25.0",
+          "reasoning": "Die Kombination aus Oberbauchbeschwerden, Gewichtsverlust, Ikterus, Erweiterung des Ductus choledochus und pancreaticus (Double-Duct-Phänomen) sowie einer Raumforderung im Pankreaskopfbereich spricht für ein Pankreaskarzinom. Der erhöhte Tumormarker CA 19-9 unterstützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Autoimmune Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Die Endosonographie zeigt eine diffuse, inhomogene Schwellung des Pankreas mit einem 'Halo-Zeichen', was auf eine autoimmune Pankreatitis hindeuten könnte. Die Klinik mit Ikterus und Oberbauchbeschwerden ist vereinbar.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.0",
+          "reasoning": "Die Erweiterung des Ductus pancreaticus und die inhomogene Schwellung des Pankreas könnten auch auf eine chronische Pankreatitis hinweisen. Der Patient hat einen mäßigen Alkoholkonsum, was ein Risikofaktor für eine chronische Pankreatitis ist.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Pankreaskarzinom\",\n      \"icd10_code\": \"C25.0\",\n      \"reasoning\": \"Die Kombination aus Oberbauchbeschwerden, Gewichtsverlust, Ikterus, Erweiterung des Ductus choledochus und pancreaticus (Double-Duct-Phänomen) sowie einer Raumforderung im Pankreaskopfbereich spricht für ein Pankreaskarzinom. Der erhöhte Tumormarker CA 19-9 unterstützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Autoimmune Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die Endosonographie zeigt eine diffuse, inhomogene Schwellung des Pankreas mit einem 'Halo-Zeichen', was auf eine autoimmune Pankreatitis hindeuten könnte. Die Klinik mit Ikterus und Oberbauchbeschwerden ist vereinbar.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.0\",\n      \"reasoning\": \"Die Erweiterung des Ductus pancreaticus und die inhomogene Schwellung des Pankreas könnten auch auf eine chronische Pankreatitis hinweisen. Der Patient hat einen mäßigen Alkoholkonsum, was ein Risikofaktor für eine chronische Pankreatitis ist.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2502,
+      "response_length": 1177,
+      "usage": {
+        "prompt_tokens": 671,
+        "completion_tokens": 317
+      },
+      "case_id": "cr_014",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Paraneoplastische limbische Enzephalitis bei kleinzelligem Bronchialkarzinom",
+          "icd10_code": "G94.8*",
+          "reasoning": "Die Kombination aus Wesensänderung, Gedächtnisstörungen, fokal-komplexen Krampfanfällen, B-Symptomatik, Lambert-Eaton-Phänomen, erhöhtem NSE und einer zentral gelegenen Raumforderung im CT-Thorax mit mediastinaler Lymphadenopathie spricht für eine paraneoplastische limbische Enzephalitis bei kleinzelligem Bronchialkarzinom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Autoimmune Enzephalitis",
+          "icd10_code": "G04.81",
+          "reasoning": "Die lymphozytäre Pleozytose und das erhöhte Gesamteiweiß im Liquor sowie die signalangehobenen Läsionen im cMRT sprechen für eine Enzephalitis. Die Präsenz oligoklonaler Banden unterstützt eine autoimmune Genese.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Zentrale ZNS-Lymphom",
+          "icd10_code": "C85.9",
+          "reasoning": "Die neurologischen Symptome, die lymphozytäre Pleozytose und das erhöhte Gesamteiweiß im Liquor könnten auch auf ein ZNS-Lymphom hinweisen. Die erhöhte LDH und die B-Symptomatik unterstützen diese Diagnose.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Paraneoplastische limbische Enzephalitis bei kleinzelligem Bronchialkarzinom\",\n      \"icd10_code\": \"G94.8*\",\n      \"reasoning\": \"Die Kombination aus Wesensänderung, Gedächtnisstörungen, fokal-komplexen Krampfanfällen, B-Symptomatik, Lambert-Eaton-Phänomen, erhöhtem NSE und einer zentral gelegenen Raumforderung im CT-Thorax mit mediastinaler Lymphadenopathie spricht für eine paraneoplastische limbische Enzephalitis bei kleinzelligem Bronchialkarzinom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Autoimmune Enzephalitis\",\n      \"icd10_code\": \"G04.81\",\n      \"reasoning\": \"Die lymphozytäre Pleozytose und das erhöhte Gesamteiweiß im Liquor sowie die signalangehobenen Läsionen im cMRT sprechen für eine Enzephalitis. Die Präsenz oligoklonaler Banden unterstützt eine autoimmune Genese.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Zentrale ZNS-Lymphom\",\n      \"icd10_code\": \"C85.9\",\n      \"reasoning\": \"Die neurologischen Symptome, die lymphozytäre Pleozytose und das erhöhte Gesamteiweiß im Liquor könnten auch auf ein ZNS-Lymphom hinweisen. Die erhöhte LDH und die B-Symptomatik unterstützen diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2649,
+      "response_length": 1233,
+      "usage": {
+        "prompt_tokens": 705,
+        "completion_tokens": 352
+      },
+      "case_id": "cr_015",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Schenkelhalsfraktur",
+          "icd10_code": "S72.0",
+          "reasoning": "Die Bildgebung zeigt eine deutliche Unterbrechung der Kortikalis im Bereich des medialen Schenkelhalses mit Dislokation der Fragmente, was typisch für eine Schenkelhalsfraktur ist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pertrochantäre Femurfraktur",
+          "icd10_code": "S72.1",
+          "reasoning": "Der Klopfschmerz über dem Trochanter major und die Fehlstellung des Beines könnten auch auf eine pertrochantäre Femurfraktur hindeuten, jedoch zeigt die Bildgebung eine intakte knöcherne Struktur des Trochanter major.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hüftgelenksdistorsion oder -kontusion",
+          "icd10_code": "S73.0 oder S70.0",
+          "reasoning": "Die starken Schmerzen und die schmerzbedingte Bewegungseinschränkung könnten auch durch eine Hüftgelenksdistorsion oder -kontusion verursacht werden, jedoch spricht die deutliche Unterbrechung der Kortikalis im Schenkelhalsbereich gegen diese Diagnose.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Schenkelhalsfraktur\",\n      \"icd10_code\": \"S72.0\",\n      \"reasoning\": \"Die Bildgebung zeigt eine deutliche Unterbrechung der Kortikalis im Bereich des medialen Schenkelhalses mit Dislokation der Fragmente, was typisch für eine Schenkelhalsfraktur ist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pertrochantäre Femurfraktur\",\n      \"icd10_code\": \"S72.1\",\n      \"reasoning\": \"Der Klopfschmerz über dem Trochanter major und die Fehlstellung des Beines könnten auch auf eine pertrochantäre Femurfraktur hindeuten, jedoch zeigt die Bildgebung eine intakte knöcherne Struktur des Trochanter major.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hüftgelenksdistorsion oder -kontusion\",\n      \"icd10_code\": \"S73.0 oder S70.0\",\n      \"reasoning\": \"Die starken Schmerzen und die schmerzbedingte Bewegungseinschränkung könnten auch durch eine Hüftgelenksdistorsion oder -kontusion verursacht werden, jedoch spricht die deutliche Unterbrechung der Kortikalis im Schenkelhalsbereich gegen diese Diagnose.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2513,
+      "response_length": 1112,
+      "usage": {
+        "prompt_tokens": 659,
+        "completion_tokens": 309
+      },
+      "case_id": "cr_016",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666666
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Primäre Hyperparathyreoidismus",
+          "icd10_code": "E21.0",
+          "reasoning": "Der Patient weist eine Hyperkalzämie (Calcium 2,92 mmol/l) und eine Hypophosphatämie (Phosphat 0,68 mmol/l) auf, was auf einen primären Hyperparathyreoidismus hindeuten könnte. Die Symptome wie Antriebslosigkeit, Konzentrationsstörungen und Muskelschwäche können durch die Hyperkalzämie erklärt werden.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Depressive Episode",
+          "icd10_code": "F32.2",
+          "reasoning": "Der Patient zeigt klassische Symptome einer depressiven Episode wie Antriebslosigkeit, Freudlosigkeit und sozialen Rückzug. Die depressive Stimmung und der verminderte Affekt unterstützen diese Diagnose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hypothyreose",
+          "icd10_code": "E03.9",
+          "reasoning": "Obwohl der TSH-Wert im Normbereich liegt, könnten die Symptome wie Müdigkeit, Obstipation und Muskelschwäche auf eine Hypothyreose hindeuten. Allerdings ist der TSH-Wert normal, was diese Diagnose unwahrscheinlicher macht.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Primäre Hyperparathyreoidismus\",\n      \"icd10_code\": \"E21.0\",\n      \"reasoning\": \"Der Patient weist eine Hyperkalzämie (Calcium 2,92 mmol/l) und eine Hypophosphatämie (Phosphat 0,68 mmol/l) auf, was auf einen primären Hyperparathyreoidismus hindeuten könnte. Die Symptome wie Antriebslosigkeit, Konzentrationsstörungen und Muskelschwäche können durch die Hyperkalzämie erklärt werden.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Depressive Episode\",\n      \"icd10_code\": \"F32.2\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer depressiven Episode wie Antriebslosigkeit, Freudlosigkeit und sozialen Rückzug. Die depressive Stimmung und der verminderte Affekt unterstützen diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hypothyreose\",\n      \"icd10_code\": \"E03.9\",\n      \"reasoning\": \"Obwohl der TSH-Wert im Normbereich liegt, könnten die Symptome wie Müdigkeit, Obstipation und Muskelschwäche auf eine Hypothyreose hindeuten. Allerdings ist der TSH-Wert normal, was diese Diagnose unwahrscheinlicher macht.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2512,
+      "response_length": 1156,
+      "usage": {
+        "prompt_tokens": 695,
+        "completion_tokens": 311
+      },
+      "case_id": "cr_017",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ovarialkarzinom",
+          "icd10_code": "C56",
+          "reasoning": "Die Patientin präsentiert eine komplexe Adnexraumforderung mit Aszites und erhöhtem CA-125, was typisch für ein Ovarialkarzinom ist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hyperthyreose bei unklarer Schilddrüsenerkrankung",
+          "icd10_code": "E05.9",
+          "reasoning": "Die Laborwerte zeigen eine supprimierte TSH und erhöhte fT3 und fT4 Werte, was auf eine Hyperthyreose hinweist. Die Symptome wie Herzrasen, Schwitzen und Gewichtsverlust unterstützen diese Diagnose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Benigne Adnexerkrankung (z.B. Ovarialzyste oder -tumor)",
+          "icd10_code": "N83.2",
+          "reasoning": "Die Adnexraumforderung könnte auch benigne sein, jedoch sprechen der komplexe sonographische Befund und das erhöhte CA-125 eher gegen eine einfache benigne Zyste.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ovarialkarzinom\",\n      \"icd10_code\": \"C56\",\n      \"reasoning\": \"Die Patientin präsentiert eine komplexe Adnexraumforderung mit Aszites und erhöhtem CA-125, was typisch für ein Ovarialkarzinom ist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hyperthyreose bei unklarer Schilddrüsenerkrankung\",\n      \"icd10_code\": \"E05.9\",\n      \"reasoning\": \"Die Laborwerte zeigen eine supprimierte TSH und erhöhte fT3 und fT4 Werte, was auf eine Hyperthyreose hinweist. Die Symptome wie Herzrasen, Schwitzen und Gewichtsverlust unterstützen diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Benigne Adnexerkrankung (z.B. Ovarialzyste oder -tumor)\",\n      \"icd10_code\": \"N83.2\",\n      \"reasoning\": \"Die Adnexraumforderung könnte auch benigne sein, jedoch sprechen der komplexe sonographische Befund und das erhöhte CA-125 eher gegen eine einfache benigne Zyste.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2646,
+      "response_length": 978,
+      "usage": {
+        "prompt_tokens": 746,
+        "completion_tokens": 283
+      },
+      "case_id": "cr_018",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 2.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Pneumonie",
+          "icd10_code": "J18.9",
+          "reasoning": "Die Kombination aus Fieber, produktivem Husten, atemabhängigen Schmerzen, abgeschwächtem Atemgeräusch und einer homogenen Verschattung im Röntgen-Thorax-Bild mit positivem Aerobronchogramm ist typisch für eine Pneumonie.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akute Bronchitis mit komplizierender Pleuritis",
+          "icd10_code": "J40",
+          "reasoning": "Die initiale Erkältungssymptomatik und der produktive Husten könnten auf eine akute Bronchitis hinweisen, die atemabhängigen Schmerzen auf eine Pleuritis. Allerdings spricht das Röntgenbild eher für eine Pneumonie.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die Dyspnoe bei geringer Belastung und die atemabhängigen Schmerzen könnten auch auf eine Lungenembolie hinweisen. Allerdings fehlen typische Risikofaktoren oder Zeichen einer tiefen Venenthrombose, und das Röntgenbild ist nicht typisch für eine Lungenembolie.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Pneumonie\",\n      \"icd10_code\": \"J18.9\",\n      \"reasoning\": \"Die Kombination aus Fieber, produktivem Husten, atemabhängigen Schmerzen, abgeschwächtem Atemgeräusch und einer homogenen Verschattung im Röntgen-Thorax-Bild mit positivem Aerobronchogramm ist typisch für eine Pneumonie.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akute Bronchitis mit komplizierender Pleuritis\",\n      \"icd10_code\": \"J40\",\n      \"reasoning\": \"Die initiale Erkältungssymptomatik und der produktive Husten könnten auf eine akute Bronchitis hinweisen, die atemabhängigen Schmerzen auf eine Pleuritis. Allerdings spricht das Röntgenbild eher für eine Pneumonie.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die Dyspnoe bei geringer Belastung und die atemabhängigen Schmerzen könnten auch auf eine Lungenembolie hinweisen. Allerdings fehlen typische Risikofaktoren oder Zeichen einer tiefen Venenthrombose, und das Röntgenbild ist nicht typisch für eine Lungenembolie.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2609,
+      "response_length": 1129,
+      "usage": {
+        "prompt_tokens": 714,
+        "completion_tokens": 311
+      },
+      "case_id": "cr_019",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Tako-Tsubo-Kardiomyopathie",
+          "icd10_code": "I42.88",
+          "reasoning": "Die Patientin präsentiert klassische Symptome und Befunde einer Tako-Tsubo-Kardiomyopathie, einschließlich akuter Thoraxschmerzen, Dyspnoe, ST-Strecken-Hebungen im EKG, hochgradig eingeschränkter LVEF und charakteristischem Kontraktionsmuster in der Echokardiographie und Lävokardiographie, ausgelöst durch eine emotional belastende Nachricht.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Koronarsyndrom (Myokardinfarkt)",
+          "icd10_code": "I21.9",
+          "reasoning": "Erhöhte Troponin-Werte und ST-Strecken-Hebungen im EKG könnten auf einen Myokardinfarkt hindeuten, jedoch zeigte die Herzkatheteruntersuchung keine koronare Stenose oder Verschluss.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Myokarditis",
+          "icd10_code": "I40.9",
+          "reasoning": "Die Patientin weist erhöhte Troponin-Werte und eine eingeschränkte LVEF auf, was auch bei einer Myokarditis auftreten kann. Allerdings fehlen typische Symptome wie Fieber oder eine kürzlich durchgemachte Infektion.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Tako-Tsubo-Kardiomyopathie\",\n      \"icd10_code\": \"I42.88\",\n      \"reasoning\": \"Die Patientin präsentiert klassische Symptome und Befunde einer Tako-Tsubo-Kardiomyopathie, einschließlich akuter Thoraxschmerzen, Dyspnoe, ST-Strecken-Hebungen im EKG, hochgradig eingeschränkter LVEF und charakteristischem Kontraktionsmuster in der Echokardiographie und Lävokardiographie, ausgelöst durch eine emotional belastende Nachricht.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom (Myokardinfarkt)\",\n      \"icd10_code\": \"I21.9\",\n      \"reasoning\": \"Erhöhte Troponin-Werte und ST-Strecken-Hebungen im EKG könnten auf einen Myokardinfarkt hindeuten, jedoch zeigte die Herzkatheteruntersuchung keine koronare Stenose oder Verschluss.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Myokarditis\",\n      \"icd10_code\": \"I40.9\",\n      \"reasoning\": \"Die Patientin weist erhöhte Troponin-Werte und eine eingeschränkte LVEF auf, was auch bei einer Myokarditis auftreten kann. Allerdings fehlen typische Symptome wie Fieber oder eine kürzlich durchgemachte Infektion.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2711,
+      "response_length": 1183,
+      "usage": {
+        "prompt_tokens": 737,
+        "completion_tokens": 334
+      },
+      "case_id": "cr_020",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666666
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Exogen-allergische Alveolitis (EAA)",
+          "icd10_code": "J67.9",
+          "reasoning": "Der Patient hat eine Vorgeschichte, die auf eine Exposition gegenüber Antigenen hinweist (Restaurierung antiker Möbel in der häuslichen Werkstatt), und zeigt typische Symptome und HRCT-Befunde (milchglasartige Trübungen, zentrilobuläre Knötchen, Mosaikmuster mit Air-Trapping) einer EAA.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Sarkoidose",
+          "icd10_code": "D86.9",
+          "reasoning": "Der Patient weist Symptome wie Belastungsdyspnoe, Reizhusten und Gewichtsabnahme auf, die auch bei Sarkoidose auftreten können. Der moderat erhöhte sIL-2R-Spiegel unterstützt diese Diagnose, obwohl der ACE-Spiegel normal ist.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Idiopathische pulmonale Fibrose (IPF)",
+          "icd10_code": "J84.112",
+          "reasoning": "Die Symptome des Patienten wie Belastungsdyspnoe und Reizhusten sowie die HRCT-Befunde (milchglasartige Trübungen) könnten auch auf eine IPF hinweisen. Allerdings ist das Vorhandensein eines Mosaikmusters mit Air-Trapping eher untypisch für IPF.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Rheumatologische Erkrankung mit Lungenbeteiligung",
+          "icd10_code": "M35.9",
+          "reasoning": "Die leicht erhöhten ANA-Titer könnten auf eine rheumatologische Erkrankung hinweisen, die auch die Lunge betreffen kann. Allerdings sind die ANCA und Rheumafaktoren negativ, was einige rheumatologische Erkrankungen unwahrscheinlicher macht.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Exogen-allergische Alveolitis (EAA)\",\n      \"icd10_code\": \"J67.9\",\n      \"reasoning\": \"Der Patient hat eine Vorgeschichte, die auf eine Exposition gegenüber Antigenen hinweist (Restaurierung antiker Möbel in der häuslichen Werkstatt), und zeigt typische Symptome und HRCT-Befunde (milchglasartige Trübungen, zentrilobuläre Knötchen, Mosaikmuster mit Air-Trapping) einer EAA.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Sarkoidose\",\n      \"icd10_code\": \"D86.9\",\n      \"reasoning\": \"Der Patient weist Symptome wie Belastungsdyspnoe, Reizhusten und Gewichtsabnahme auf, die auch bei Sarkoidose auftreten können. Der moderat erhöhte sIL-2R-Spiegel unterstützt diese Diagnose, obwohl der ACE-Spiegel normal ist.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Idiopathische pulmonale Fibrose (IPF)\",\n      \"icd10_code\": \"J84.112\",\n      \"reasoning\": \"Die Symptome des Patienten wie Belastungsdyspnoe und Reizhusten sowie die HRCT-Befunde (milchglasartige Trübungen) könnten auch auf eine IPF hinweisen. Allerdings ist das Vorhandensein eines Mosaikmusters mit Air-Trapping eher untypisch für IPF.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Rheumatologische Erkrankung mit Lungenbeteiligung\",\n      \"icd10_code\": \"M35.9\",\n      \"reasoning\": \"Die leicht erhöhten ANA-Titer könnten auf eine rheumatologische Erkrankung hinweisen, die auch die Lunge betreffen kann. Allerdings sind die ANCA und Rheumafaktoren negativ, was einige rheumatologische Erkrankungen unwahrscheinlicher macht.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2345,
+      "response_length": 1611,
+      "usage": {
+        "prompt_tokens": 633,
+        "completion_tokens": 447
+      },
+      "case_id": "cr_021",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Parkinson-Syndrom (Morbus Parkinson)",
+          "icd10_code": "G20",
+          "reasoning": "Der Patient zeigt klassische Symptome eines Parkinson-Syndroms wie Ruhetremor, Bradykinese, Rigor und Hypomimie. Die Mikrographie und das 'Pillendreher-Phänomen' sind charakteristische Zeichen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Multisystematrophie (MSA)",
+          "icd10_code": "G90.3",
+          "reasoning": "Die Kombination aus Parkinson-Symptomen und autonomer Dysfunktion (z.B. Obstipation) könnte auch auf eine Multisystematrophie hindeuten. Allerdings fehlen deutliche Zeichen einer ausgeprägten autonomen Dysfunktion oder zerebellären Symptomatik.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Progressive supranukleäre Blickparese (PSP)",
+          "icd10_code": "G23.1",
+          "reasoning": "Obwohl die klassischen okulomotorischen Störungen fehlen, könnte eine PSP in Betracht gezogen werden, insbesondere bei älteren Patienten mit Parkinson-Symptomen. Allerdings ist die Symptomatik noch nicht typisch für eine PSP.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Parkinson-Syndrom (Morbus Parkinson)\",\n      \"icd10_code\": \"G20\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome eines Parkinson-Syndroms wie Ruhetremor, Bradykinese, Rigor und Hypomimie. Die Mikrographie und das 'Pillendreher-Phänomen' sind charakteristische Zeichen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Multisystematrophie (MSA)\",\n      \"icd10_code\": \"G90.3\",\n      \"reasoning\": \"Die Kombination aus Parkinson-Symptomen und autonomer Dysfunktion (z.B. Obstipation) könnte auch auf eine Multisystematrophie hindeuten. Allerdings fehlen deutliche Zeichen einer ausgeprägten autonomen Dysfunktion oder zerebellären Symptomatik.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Progressive supranukleäre Blickparese (PSP)\",\n      \"icd10_code\": \"G23.1\",\n      \"reasoning\": \"Obwohl die klassischen okulomotorischen Störungen fehlen, könnte eine PSP in Betracht gezogen werden, insbesondere bei älteren Patienten mit Parkinson-Symptomen. Allerdings ist die Symptomatik noch nicht typisch für eine PSP.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2834,
+      "response_length": 1133,
+      "usage": {
+        "prompt_tokens": 736,
+        "completion_tokens": 302
+      },
+      "case_id": "cr_022",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Primär sklerosierende Cholangitis (PSC)",
+          "icd10_code": "K83.0",
+          "reasoning": "Die Kombination aus rezidivierenden Oberbauchschmerzen, erhöhten Cholestaseparametern (AP, Gamma-GT) und charakteristischen Veränderungen der Gallenwege in der MRCP (multiple segmentale Stenosen, Kalibersprungphänomene, perlschnurartiger Aspekt) spricht stark für eine PSC. Die Assoziation mit Colitis ulcerosa unterstützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Cholangiokarzinom",
+          "icd10_code": "C22.1",
+          "reasoning": "Der ungewollte Gewichtsverlust, Nachtschweißigkeit und die laborchemischen Entzündungszeichen könnten auf ein Malignom hinweisen. Die Veränderungen in der MRCP könnten auch durch ein Cholangiokarzinom verursacht werden, obwohl die beschriebenen Veränderungen eher typisch für PSC sind.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "IgG4-assoziierte Cholangitis",
+          "icd10_code": "K83.8",
+          "reasoning": "Die laborchemischen und bildgebenden Befunde (erhöhte Cholestaseparameter, Veränderungen der Gallenwege) könnten auch durch eine IgG4-assoziierte Cholangitis erklärt werden. Der fehlende Hinweis auf erhöhte IgG4-Spiegel im Text schließt diese Diagnose jedoch nicht aus.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Primär sklerosierende Cholangitis (PSC)\",\n      \"icd10_code\": \"K83.0\",\n      \"reasoning\": \"Die Kombination aus rezidivierenden Oberbauchschmerzen, erhöhten Cholestaseparametern (AP, Gamma-GT) und charakteristischen Veränderungen der Gallenwege in der MRCP (multiple segmentale Stenosen, Kalibersprungphänomene, perlschnurartiger Aspekt) spricht stark für eine PSC. Die Assoziation mit Colitis ulcerosa unterstützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Cholangiokarzinom\",\n      \"icd10_code\": \"C22.1\",\n      \"reasoning\": \"Der ungewollte Gewichtsverlust, Nachtschweißigkeit und die laborchemischen Entzündungszeichen könnten auf ein Malignom hinweisen. Die Veränderungen in der MRCP könnten auch durch ein Cholangiokarzinom verursacht werden, obwohl die beschriebenen Veränderungen eher typisch für PSC sind.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"IgG4-assoziierte Cholangitis\",\n      \"icd10_code\": \"K83.8\",\n      \"reasoning\": \"Die laborchemischen und bildgebenden Befunde (erhöhte Cholestaseparameter, Veränderungen der Gallenwege) könnten auch durch eine IgG4-assoziierte Cholangitis erklärt werden. Der fehlende Hinweis auf erhöhte IgG4-Spiegel im Text schließt diese Diagnose jedoch nicht aus.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2622,
+      "response_length": 1345,
+      "usage": {
+        "prompt_tokens": 701,
+        "completion_tokens": 358
+      },
+      "case_id": "cr_023",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Non-Hodgkin-Lymphom",
+          "icd10_code": "C85.9",
+          "reasoning": "Die Patientin präsentiert Symptome wie Lymphadenopathie, Splenomegalie, Anämie, Thrombozytopenie und atypische mononukleäre Zellen im Blut, die typisch für ein Non-Hodgkin-Lymphom sind.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Lymphom mit Hautbeteiligung (z.B. kutane T-Zell-Lymphome)",
+          "icd10_code": "C84.5",
+          "reasoning": "Die lividen Hautveränderungen und Knoten könnten auf eine kutane Manifestation eines Lymphoms hinweisen, insbesondere angesichts der systemischen Symptome und Laborbefunde.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Metastasierendes Karzinom mit Lymphominfektion",
+          "icd10_code": "C80.0",
+          "reasoning": "Die Patientin hat eine Vorgeschichte als Raucherin und präsentiert Symptome wie Gewichtsverlust und Nachtschweiß, die auf ein Malignom hindeuten könnten. Die Hautveränderungen und Lymphadenopathie könnten auch durch Metastasen eines unbekannten Primärtumors verursacht sein.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Non-Hodgkin-Lymphom\",\n      \"icd10_code\": \"C85.9\",\n      \"reasoning\": \"Die Patientin präsentiert Symptome wie Lymphadenopathie, Splenomegalie, Anämie, Thrombozytopenie und atypische mononukleäre Zellen im Blut, die typisch für ein Non-Hodgkin-Lymphom sind.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Lymphom mit Hautbeteiligung (z.B. kutane T-Zell-Lymphome)\",\n      \"icd10_code\": \"C84.5\",\n      \"reasoning\": \"Die lividen Hautveränderungen und Knoten könnten auf eine kutane Manifestation eines Lymphoms hinweisen, insbesondere angesichts der systemischen Symptome und Laborbefunde.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Metastasierendes Karzinom mit Lymphominfektion\",\n      \"icd10_code\": \"C80.0\",\n      \"reasoning\": \"Die Patientin hat eine Vorgeschichte als Raucherin und präsentiert Symptome wie Gewichtsverlust und Nachtschweiß, die auf ein Malignom hindeuten könnten. Die Hautveränderungen und Lymphadenopathie könnten auch durch Metastasen eines unbekannten Primärtumors verursacht sein.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2653,
+      "response_length": 1122,
+      "usage": {
+        "prompt_tokens": 726,
+        "completion_tokens": 310
+      },
+      "case_id": "cr_024",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 0.0,
+        "ddx_overlap_f1": 0.0
+      },
+      "judge_scores": {
+        "reasoning_quality": 2.0,
+        "ddx_plausibility": 2.0,
+        "red_flag_awareness": 2.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Meniskusläsion",
+          "icd10_code": "M23.2",
+          "reasoning": "Der Patient zeigt einen positiven McMurray-Test und positive Steinmann-Tests, was auf eine Meniskusläsion hindeutet. Zudem berichtet er über ein Blockierungsgefühl bei Streckversuchen und lokalisierten Druckschmerz über dem medialen Gelenkspalt.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Mediale Meniskusläsion mit Begleitverletzungen",
+          "icd10_code": "M23.3",
+          "reasoning": "Die Symptomatik und die positiven Tests deuten auf eine mediale Meniskusläsion hin. Begleitverletzungen wie eine leichte Seitenbandläsion sind möglich, aber die Stabilitätstests waren bei muskulärer Gegenspannung unauffällig.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Kniegelenkdistorsion mit Synovialitis",
+          "icd10_code": "S83.5",
+          "reasoning": "Der Patient hat ein Distorsionstrauma erlitten und zeigt einen intraartikulären Erguss. Eine Synovialitis als Reaktion auf das Trauma ist möglich, aber die spezifischen Meniskuszeichen sprechen eher für eine Meniskusläsion.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chondraler oder osteochondraler Defekt",
+          "icd10_code": "M23.8",
+          "reasoning": "Obwohl die Röntgenbilder unauffällig sind, könnte ein chondraler oder osteochondraler Defekt vorliegen, der im Röntgen nicht sichtbar ist. Die Symptomatik könnte auch durch solche Läsionen erklärt werden.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Meniskusläsion\",\n      \"icd10_code\": \"M23.2\",\n      \"reasoning\": \"Der Patient zeigt einen positiven McMurray-Test und positive Steinmann-Tests, was auf eine Meniskusläsion hindeutet. Zudem berichtet er über ein Blockierungsgefühl bei Streckversuchen und lokalisierten Druckschmerz über dem medialen Gelenkspalt.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Mediale Meniskusläsion mit Begleitverletzungen\",\n      \"icd10_code\": \"M23.3\",\n      \"reasoning\": \"Die Symptomatik und die positiven Tests deuten auf eine mediale Meniskusläsion hin. Begleitverletzungen wie eine leichte Seitenbandläsion sind möglich, aber die Stabilitätstests waren bei muskulärer Gegenspannung unauffällig.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Kniegelenkdistorsion mit Synovialitis\",\n      \"icd10_code\": \"S83.5\",\n      \"reasoning\": \"Der Patient hat ein Distorsionstrauma erlitten und zeigt einen intraartikulären Erguss. Eine Synovialitis als Reaktion auf das Trauma ist möglich, aber die spezifischen Meniskuszeichen sprechen eher für eine Meniskusläsion.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chondraler oder osteochondraler Defekt\",\n      \"icd10_code\": \"M23.8\",\n      \"reasoning\": \"Obwohl die Röntgenbilder unauffällig sind, könnte ein chondraler oder osteochondraler Defekt vorliegen, der im Röntgen nicht sichtbar ist. Die Symptomatik könnte auch durch solche Läsionen erklärt werden.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2749,
+      "response_length": 1513,
+      "usage": {
+        "prompt_tokens": 729,
+        "completion_tokens": 411
+      },
+      "case_id": "cr_025",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Depressive Episode (schwere depressive Episode mit somatischem Syndrom)",
+          "icd10_code": "F32.2",
+          "reasoning": "Die Patientin zeigt klassische Symptome einer schweren depressiven Episode, wie Antriebslosigkeit, Gewichtsverlust, Durchschlafstörungen, Morgentief und Grübelzwang. Die Symptomatik entspricht dem somatischen Syndrom einer Depression.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Anorexia nervosa (bei depressiver Symptomatik)",
+          "icd10_code": "F50.0",
+          "reasoning": "Der erhebliche Gewichtsverlust und der niedrige BMI könnten auf eine Essstörung hinweisen, jedoch stehen die depressive Symptomatik und die somatischen Beschwerden im Vordergrund.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hypothyreose (latent oder sekundär)",
+          "icd10_code": "E03.9",
+          "reasoning": "Obwohl der TSH-Wert im Normbereich liegt, könnten die Symptome wie Antriebslosigkeit, Gewichtszunahme (nicht explizit, aber Appetitlosigkeit) und depressive Verstimmung auf eine Hypothyreose hinweisen. Ein sekundärer Hypothyreoidismus oder eine beginnende Schilddrüsenfunktionsstörung kann jedoch nicht ausgeschlossen werden.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Depressive Episode (schwere depressive Episode mit somatischem Syndrom)\",\n      \"icd10_code\": \"F32.2\",\n      \"reasoning\": \"Die Patientin zeigt klassische Symptome einer schweren depressiven Episode, wie Antriebslosigkeit, Gewichtsverlust, Durchschlafstörungen, Morgentief und Grübelzwang. Die Symptomatik entspricht dem somatischen Syndrom einer Depression.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Anorexia nervosa (bei depressiver Symptomatik)\",\n      \"icd10_code\": \"F50.0\",\n      \"reasoning\": \"Der erhebliche Gewichtsverlust und der niedrige BMI könnten auf eine Essstörung hinweisen, jedoch stehen die depressive Symptomatik und die somatischen Beschwerden im Vordergrund.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hypothyreose (latent oder sekundär)\",\n      \"icd10_code\": \"E03.9\",\n      \"reasoning\": \"Obwohl der TSH-Wert im Normbereich liegt, könnten die Symptome wie Antriebslosigkeit, Gewichtszunahme (nicht explizit, aber Appetitlosigkeit) und depressive Verstimmung auf eine Hypothyreose hinweisen. Ein sekundärer Hypothyreoidismus oder eine beginnende Schilddrüsenfunktionsstörung kann jedoch nicht ausgeschlossen werden.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2579,
+      "response_length": 1259,
+      "usage": {
+        "prompt_tokens": 688,
+        "completion_tokens": 323
+      },
+      "case_id": "cr_026",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Thrombophlebitis der Vena ovarica",
+          "icd10_code": "I86.8",
+          "reasoning": "Die Patientin präsentiert sich mit Schmerzen im rechten Unterbauch, Fieber und einer tubulären, echoarmen Struktur rechtsseitig, die bis in die Höhe des Nierenunterpols reicht und im Farbdoppler keine Flusssignale aufweist, was typisch für eine Thrombophlebitis der Vena ovarica ist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pyelonephritis",
+          "icd10_code": "N10",
+          "reasoning": "Die Patientin hat Fieber, Schmerzen im rechten Unterbauch mit Ausstrahlung in die Flanke und ein klopfschmerzhaftes rechtes Nierenlager, was auf eine Pyelonephritis hindeuten könnte. Allerdings spricht die fehlende Besserung unter antibiotischer Therapie und die Bildgebung eher gegen eine unkomplizierte Pyelonephritis.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Appendizitis",
+          "icd10_code": "K35.2",
+          "reasoning": "Die Patientin hat Schmerzen im rechten Unterbauch und eine ausgeprägte Entzündungskonstellation. Die Appendix ist jedoch sonographisch nicht zweifelsfrei beurteilbar, was eine Appendizitis weder bestätigt noch ausschließt.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Thrombophlebitis der Vena ovarica\",\n      \"icd10_code\": \"I86.8\",\n      \"reasoning\": \"Die Patientin präsentiert sich mit Schmerzen im rechten Unterbauch, Fieber und einer tubulären, echoarmen Struktur rechtsseitig, die bis in die Höhe des Nierenunterpols reicht und im Farbdoppler keine Flusssignale aufweist, was typisch für eine Thrombophlebitis der Vena ovarica ist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pyelonephritis\",\n      \"icd10_code\": \"N10\",\n      \"reasoning\": \"Die Patientin hat Fieber, Schmerzen im rechten Unterbauch mit Ausstrahlung in die Flanke und ein klopfschmerzhaftes rechtes Nierenlager, was auf eine Pyelonephritis hindeuten könnte. Allerdings spricht die fehlende Besserung unter antibiotischer Therapie und die Bildgebung eher gegen eine unkomplizierte Pyelonephritis.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Appendizitis\",\n      \"icd10_code\": \"K35.2\",\n      \"reasoning\": \"Die Patientin hat Schmerzen im rechten Unterbauch und eine ausgeprägte Entzündungskonstellation. Die Appendix ist jedoch sonographisch nicht zweifelsfrei beurteilbar, was eine Appendizitis weder bestätigt noch ausschließt.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2999,
+      "response_length": 1251,
+      "usage": {
+        "prompt_tokens": 793,
+        "completion_tokens": 341
+      },
+      "case_id": "cr_027",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Dekompensation einer chronischen Herzinsuffizienz",
+          "icd10_code": "I50.9",
+          "reasoning": "Der Patient zeigt klassische Symptome einer Herzinsuffizienz wie Belastungsdyspnoe, Orthopnoe, prätibiale Ödeme und Jugularvenenstauung. Der stark erhöhte NT-proBNP-Wert unterstützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Koronarsyndrom mit Herzinsuffizienz",
+          "icd10_code": "I24.9",
+          "reasoning": "Obwohl das Troponin T nicht erhöht ist, könnte ein akutes Koronarsyndrom mit Herzinsuffizienz vorliegen, insbesondere bei bekanntem Nikotinabusus und Hypertonus. Allerdings fehlt der typische Brustschmerz.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Nicht-kardiale Dyspnoe bei Niereninsuffizienz oder anderen Komorbiditäten",
+          "icd10_code": "R06.0",
+          "reasoning": "Die leicht eingeschränkte Nierenfunktion (Kreatinin 1,5 mg/dl) könnte eine Rolle bei der Dyspnoe spielen, ist aber allein wahrscheinlich nicht ausreichend für die ausgeprägte Symptomatik.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Dekompensation einer chronischen Herzinsuffizienz\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer Herzinsuffizienz wie Belastungsdyspnoe, Orthopnoe, prätibiale Ödeme und Jugularvenenstauung. Der stark erhöhte NT-proBNP-Wert unterstützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom mit Herzinsuffizienz\",\n      \"icd10_code\": \"I24.9\",\n      \"reasoning\": \"Obwohl das Troponin T nicht erhöht ist, könnte ein akutes Koronarsyndrom mit Herzinsuffizienz vorliegen, insbesondere bei bekanntem Nikotinabusus und Hypertonus. Allerdings fehlt der typische Brustschmerz.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Nicht-kardiale Dyspnoe bei Niereninsuffizienz oder anderen Komorbiditäten\",\n      \"icd10_code\": \"R06.0\",\n      \"reasoning\": \"Die leicht eingeschränkte Nierenfunktion (Kreatinin 1,5 mg/dl) könnte eine Rolle bei der Dyspnoe spielen, ist aber allein wahrscheinlich nicht ausreichend für die ausgeprägte Symptomatik.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2170,
+      "response_length": 1128,
+      "usage": {
+        "prompt_tokens": 615,
+        "completion_tokens": 310
+      },
+      "case_id": "cr_028",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Aortenklappenstenose",
+          "icd10_code": "I35.0",
+          "reasoning": "Der Patient zeigt klassische Symptome und Untersuchungsbefunde einer Aortenklappenstenose wie ein raues Systolikum mit Fortleitung in die Karotiden, Pulsus parvus et tardus und eingeschränkte Öffnungsbewegung der Aortenklappe in der Echokardiographie.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hypertrophe Kardiomyopathie",
+          "icd10_code": "I42.1",
+          "reasoning": "Die konzentrische Hypertrophie des linken Ventrikels und die erhöhten NT-proBNP-Werte könnten auch auf eine hypertrophe Kardiomyopathie hinweisen, jedoch sprechen die deutlich eingeschränkte Öffnungsbewegung der Aortenklappe und das Systolikum eher gegen diese Diagnose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Koronare Herzkrankheit",
+          "icd10_code": "I25.1",
+          "reasoning": "Die ST-Streckensenkungen und T-Negativierungen im EKG sowie das gelegentliche retrosternale Druckgefühl unter Belastung könnten auf eine koronare Herzkrankheit hindeuten, jedoch wurde eine Angina pectoris im klassischen Sinne verneint und das Troponin T war nicht erhöht.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Aortenklappenstenose\",\n      \"icd10_code\": \"I35.0\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome und Untersuchungsbefunde einer Aortenklappenstenose wie ein raues Systolikum mit Fortleitung in die Karotiden, Pulsus parvus et tardus und eingeschränkte Öffnungsbewegung der Aortenklappe in der Echokardiographie.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hypertrophe Kardiomyopathie\",\n      \"icd10_code\": \"I42.1\",\n      \"reasoning\": \"Die konzentrische Hypertrophie des linken Ventrikels und die erhöhten NT-proBNP-Werte könnten auch auf eine hypertrophe Kardiomyopathie hinweisen, jedoch sprechen die deutlich eingeschränkte Öffnungsbewegung der Aortenklappe und das Systolikum eher gegen diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Koronare Herzkrankheit\",\n      \"icd10_code\": \"I25.1\",\n      \"reasoning\": \"Die ST-Streckensenkungen und T-Negativierungen im EKG sowie das gelegentliche retrosternale Druckgefühl unter Belastung könnten auf eine koronare Herzkrankheit hindeuten, jedoch wurde eine Angina pectoris im klassischen Sinne verneint und das Troponin T war nicht erhöht.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2551,
+      "response_length": 1230,
+      "usage": {
+        "prompt_tokens": 679,
+        "completion_tokens": 331
+      },
+      "case_id": "cr_029",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Eosinophile Granulomatose mit Polyangiitis (EGPA)",
+          "icd10_code": "M30.1",
+          "reasoning": "Der Patient zeigt eine deutliche Eosinophilie, Asthma bronchiale, milchglasartige Infiltrate in der Bildgebung und positive p-ANCA (MPO-Antikörper), was typische Merkmale einer EGPA sind.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Chronische Eosinophile Pneumonie (CEP)",
+          "icd10_code": "J82",
+          "reasoning": "Die Eosinophilie und die milchglasartigen Infiltrate im CT-Thorax könnten auch auf eine CEP hinweisen, jedoch fehlen hierfür typischerweise die systemischen Entzündungszeichen und die Beteiligung anderer Organe wie bei EGPA.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hypereosinophiles Syndrom (HES)",
+          "icd10_code": "D72.1",
+          "reasoning": "Die ausgeprägte Eosinophilie könnte auch auf ein HES hindeuten, jedoch ist die Organbeteiligung (z.B. die neurologischen Symptome und die Hautläsionen) bei EGPA typischer.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Eosinophile Granulomatose mit Polyangiitis (EGPA)\",\n      \"icd10_code\": \"M30.1\",\n      \"reasoning\": \"Der Patient zeigt eine deutliche Eosinophilie, Asthma bronchiale, milchglasartige Infiltrate in der Bildgebung und positive p-ANCA (MPO-Antikörper), was typische Merkmale einer EGPA sind.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Chronische Eosinophile Pneumonie (CEP)\",\n      \"icd10_code\": \"J82\",\n      \"reasoning\": \"Die Eosinophilie und die milchglasartigen Infiltrate im CT-Thorax könnten auch auf eine CEP hinweisen, jedoch fehlen hierfür typischerweise die systemischen Entzündungszeichen und die Beteiligung anderer Organe wie bei EGPA.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hypereosinophiles Syndrom (HES)\",\n      \"icd10_code\": \"D72.1\",\n      \"reasoning\": \"Die ausgeprägte Eosinophilie könnte auch auf ein HES hindeuten, jedoch ist die Organbeteiligung (z.B. die neurologischen Symptome und die Hautläsionen) bei EGPA typischer.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2570,
+      "response_length": 1067,
+      "usage": {
+        "prompt_tokens": 715,
+        "completion_tokens": 302
+      },
+      "case_id": "cr_030",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall",
+          "icd10_code": "I63.-",
+          "reasoning": "Der Patient zeigt abrupt aufgetretene fokal-neurologische Defizite (motorische Aphasie, zentrale Fazialisparese, Hemiparese rechts) und die Bildgebung (CTA) zeigt einen Verschluss des M1-Segments der linken ACM, was die Diagnose eines ischämischen Schlaganfalls unterstützt.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intrazerebrale Blutung mit initial unauffälligem CCT",
+          "icd10_code": "I61.-",
+          "reasoning": "Obwohl das initiale CCT keine Blutung zeigte, kann eine kleine Blutung oder eine Blutung in einer ungünstigen Lokalisation initial übersehen worden sein. Allerdings ist dies bei einem ASPECT-Score von 10 unwahrscheinlich.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "TIA (Transitorische ischämische Attacke) mit prolongierten Symptomen",
+          "icd10_code": "G45.-",
+          "reasoning": "Die Symptomatik könnte auch einer TIA entsprechen, die länger als üblich anhält. Allerdings spricht der objektive Nachweis eines Gefäßverschlusses in der CTA eher für einen ischämischen Schlaganfall.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall\",\n      \"icd10_code\": \"I63.-\",\n      \"reasoning\": \"Der Patient zeigt abrupt aufgetretene fokal-neurologische Defizite (motorische Aphasie, zentrale Fazialisparese, Hemiparese rechts) und die Bildgebung (CTA) zeigt einen Verschluss des M1-Segments der linken ACM, was die Diagnose eines ischämischen Schlaganfalls unterstützt.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intrazerebrale Blutung mit initial unauffälligem CCT\",\n      \"icd10_code\": \"I61.-\",\n      \"reasoning\": \"Obwohl das initiale CCT keine Blutung zeigte, kann eine kleine Blutung oder eine Blutung in einer ungünstigen Lokalisation initial übersehen worden sein. Allerdings ist dies bei einem ASPECT-Score von 10 unwahrscheinlich.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"TIA (Transitorische ischämische Attacke) mit prolongierten Symptomen\",\n      \"icd10_code\": \"G45.-\",\n      \"reasoning\": \"Die Symptomatik könnte auch einer TIA entsprechen, die länger als üblich anhält. Allerdings spricht der objektive Nachweis eines Gefäßverschlusses in der CTA eher für einen ischämischen Schlaganfall.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2802,
+      "response_length": 1208,
+      "usage": {
+        "prompt_tokens": 720,
+        "completion_tokens": 324
+      },
+      "case_id": "cr_031",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Magenkarzinom",
+          "icd10_code": "C16.9",
+          "reasoning": "Die Kombination aus progredienten epigastrischen Schmerzen, Völlegefühl, Gewichtsverlust, mikrozytärer Anämie und sonographischem Nachweis einer echoarmen Wandverdickung im Antrum pyloricum spricht stark für ein Magenkarzinom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Magenlymphom",
+          "icd10_code": "C85.9",
+          "reasoning": "Die Symptome und die sonographischen Befunde könnten auch auf ein Magenlymphom hindeuten, insbesondere bei Vorliegen einer ausgeprägten Wandverdickung und einer mikrozytären Anämie.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Gastritis oder Ulkuskrankheit",
+          "icd10_code": "K29.5/K25.9",
+          "reasoning": "Die Symptome und Laborbefunde (z.B. NSAR-Einnahme, epigastrische Schmerzen, mikrozytäre Anämie) könnten auch durch eine chronische Gastritis oder eine Ulkuskrankheit erklärt werden, jedoch erklärt dies nicht vollständig die sonographisch nachgewiesene Wandverdickung.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pankreaskarzinom",
+          "icd10_code": "C25.9",
+          "reasoning": "Die leicht erhöhte Lipase und die epigastrischen Schmerzen könnten auf ein Pankreaskarzinom hindeuten, jedoch ist das Pankreas sonographisch im Korpus- und Schwanzbereich unauffällig.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Magenkarzinom\",\n      \"icd10_code\": \"C16.9\",\n      \"reasoning\": \"Die Kombination aus progredienten epigastrischen Schmerzen, Völlegefühl, Gewichtsverlust, mikrozytärer Anämie und sonographischem Nachweis einer echoarmen Wandverdickung im Antrum pyloricum spricht stark für ein Magenkarzinom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Magenlymphom\",\n      \"icd10_code\": \"C85.9\",\n      \"reasoning\": \"Die Symptome und die sonographischen Befunde könnten auch auf ein Magenlymphom hindeuten, insbesondere bei Vorliegen einer ausgeprägten Wandverdickung und einer mikrozytären Anämie.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Gastritis oder Ulkuskrankheit\",\n      \"icd10_code\": \"K29.5/K25.9\",\n      \"reasoning\": \"Die Symptome und Laborbefunde (z.B. NSAR-Einnahme, epigastrische Schmerzen, mikrozytäre Anämie) könnten auch durch eine chronische Gastritis oder eine Ulkuskrankheit erklärt werden, jedoch erklärt dies nicht vollständig die sonographisch nachgewiesene Wandverdickung.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pankreaskarzinom\",\n      \"icd10_code\": \"C25.9\",\n      \"reasoning\": \"Die leicht erhöhte Lipase und die epigastrischen Schmerzen könnten auf ein Pankreaskarzinom hindeuten, jedoch ist das Pankreas sonographisch im Korpus- und Schwanzbereich unauffällig.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2388,
+      "response_length": 1425,
+      "usage": {
+        "prompt_tokens": 613,
+        "completion_tokens": 397
+      },
+      "case_id": "cr_032",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.25
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Hämophagozytische Lymphohistiozytose (HLH)",
+          "icd10_code": "D76.1",
+          "reasoning": "Der Patient zeigt klassische Symptome einer HLH wie Fieber, Splenomegalie, Panzytopenie, Hyperferritinämie und erhöhte sIL-2R-Werte, die auf eine Aktivierung des Immunsystems hinweisen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Lymphom",
+          "icd10_code": "C85.9",
+          "reasoning": "Die B-Symptomatik, Splenomegalie und die laborchemischen Befunde (LDH-Erhöhung, sIL-2R-Erhöhung) sprechen für ein Lymphom. Die fehlende Lymphadenopathie schließt ein Lymphom nicht aus.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intravaskuläres Lymphom",
+          "icd10_code": "C85.8",
+          "reasoning": "Die neurologischen Symptome, die lividen Hautareale und die Petechien könnten auf ein intravaskuläres Lymphom hinweisen, das oft mit neurologischen Symptomen und Hautmanifestationen einhergeht.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Hämophagozytische Lymphohistiozytose (HLH)\",\n      \"icd10_code\": \"D76.1\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer HLH wie Fieber, Splenomegalie, Panzytopenie, Hyperferritinämie und erhöhte sIL-2R-Werte, die auf eine Aktivierung des Immunsystems hinweisen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Lymphom\",\n      \"icd10_code\": \"C85.9\",\n      \"reasoning\": \"Die B-Symptomatik, Splenomegalie und die laborchemischen Befunde (LDH-Erhöhung, sIL-2R-Erhöhung) sprechen für ein Lymphom. Die fehlende Lymphadenopathie schließt ein Lymphom nicht aus.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intravaskuläres Lymphom\",\n      \"icd10_code\": \"C85.8\",\n      \"reasoning\": \"Die neurologischen Symptome, die lividen Hautareale und die Petechien könnten auf ein intravaskuläres Lymphom hinweisen, das oft mit neurologischen Symptomen und Hautmanifestationen einhergeht.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2535,
+      "response_length": 1001,
+      "usage": {
+        "prompt_tokens": 679,
+        "completion_tokens": 295
+      },
+      "case_id": "cr_033",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Coxarthrose",
+          "icd10_code": "M16.9",
+          "reasoning": "Die Bildgebung zeigt eine deutliche Verschmälerung des Gelenkspalts, subchondrale Sklerosierung und Osteophytenbildungen, typisch für eine Coxarthrose. Die Klinik mit belastungsabhängigen Schmerzen, Bewegungseinschränkung und positivem Drehmann-Zeichen unterstützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hüftkopfnekrose",
+          "icd10_code": "M87.9",
+          "reasoning": "Die nächtlichen Schmerzen und das positive Drehmann-Zeichen könnten auf eine Hüftkopfnekrose hindeuten, obwohl die Bildgebung hierfür keinen direkten Hinweis liefert. Die ausgeprägte Schmerzsymptomatik und Bewegungseinschränkung könnten jedoch auch bei einer fortgeschrittenen Coxarthrose erklärt werden.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Rheumatoide Arthritis der Hüfte",
+          "icd10_code": "M06.9",
+          "reasoning": "Obwohl der Rheumafaktor negativ ist und die Laborwerte keine deutliche Entzündungsreaktion zeigen, könnte eine seronegative rheumatoide Arthritis nicht vollständig ausgeschlossen werden. Die Klinik spricht jedoch eher gegen eine rheumatische Genese.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Coxarthrose\",\n      \"icd10_code\": \"M16.9\",\n      \"reasoning\": \"Die Bildgebung zeigt eine deutliche Verschmälerung des Gelenkspalts, subchondrale Sklerosierung und Osteophytenbildungen, typisch für eine Coxarthrose. Die Klinik mit belastungsabhängigen Schmerzen, Bewegungseinschränkung und positivem Drehmann-Zeichen unterstützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hüftkopfnekrose\",\n      \"icd10_code\": \"M87.9\",\n      \"reasoning\": \"Die nächtlichen Schmerzen und das positive Drehmann-Zeichen könnten auf eine Hüftkopfnekrose hindeuten, obwohl die Bildgebung hierfür keinen direkten Hinweis liefert. Die ausgeprägte Schmerzsymptomatik und Bewegungseinschränkung könnten jedoch auch bei einer fortgeschrittenen Coxarthrose erklärt werden.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Rheumatoide Arthritis der Hüfte\",\n      \"icd10_code\": \"M06.9\",\n      \"reasoning\": \"Obwohl der Rheumafaktor negativ ist und die Laborwerte keine deutliche Entzündungsreaktion zeigen, könnte eine seronegative rheumatoide Arthritis nicht vollständig ausgeschlossen werden. Die Klinik spricht jedoch eher gegen eine rheumatische Genese.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2473,
+      "response_length": 1259,
+      "usage": {
+        "prompt_tokens": 655,
+        "completion_tokens": 325
+      },
+      "case_id": "cr_034",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Depressive Episode",
+          "icd10_code": "F32",
+          "reasoning": "Der Patient zeigt klassische Symptome einer Depression wie Antriebsminderung, Schlafstörungen, Gewichtsverlust, Gefühl der emotionalen Leere und Lebensmüdigkeit.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hypothyreose",
+          "icd10_code": "E03.9",
+          "reasoning": "Der TSH-Wert ist leicht erhöht, was auf eine subklinische Hypothyreose hindeuten könnte. Symptome wie Antriebsminderung, depressive Verstimmung und Gewichtszunahme (nicht explizit genannt, aber Inappetenz mit Gewichtsverlust könnte ein atypisches Zeichen sein) können auch bei Hypothyreose auftreten.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Parkinson-Syndrom",
+          "icd10_code": "G20",
+          "reasoning": "Der Patient zeigt einen feinschlägigen Haltetremor und eine milde Bradykinese, was auf ein Parkinson-Syndrom hindeuten könnte. Allerdings ist das Vollbild eines Parkinson-Syndroms mit den Kardinalsymptomen Tremor, Rigor, Bradykinese und posturaler Instabilität nicht vollständig ausgeprägt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Alkoholabhängigkeit/ -missbrauch",
+          "icd10_code": "F10.2",
+          "reasoning": "Die Laborwerte zeigen eine leicht erhöhte Gamma-GT und ein erhöhtes MCV, was auf einen möglichen Alkoholmissbrauch hindeuten könnte. Allerdings fehlen direkte Hinweise auf Alkoholkonsum in der Fallvignette.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Depressive Episode\",\n      \"icd10_code\": \"F32\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer Depression wie Antriebsminderung, Schlafstörungen, Gewichtsverlust, Gefühl der emotionalen Leere und Lebensmüdigkeit.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hypothyreose\",\n      \"icd10_code\": \"E03.9\",\n      \"reasoning\": \"Der TSH-Wert ist leicht erhöht, was auf eine subklinische Hypothyreose hindeuten könnte. Symptome wie Antriebsminderung, depressive Verstimmung und Gewichtszunahme (nicht explizit genannt, aber Inappetenz mit Gewichtsverlust könnte ein atypisches Zeichen sein) können auch bei Hypothyreose auftreten.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Parkinson-Syndrom\",\n      \"icd10_code\": \"G20\",\n      \"reasoning\": \"Der Patient zeigt einen feinschlägigen Haltetremor und eine milde Bradykinese, was auf ein Parkinson-Syndrom hindeuten könnte. Allerdings ist das Vollbild eines Parkinson-Syndroms mit den Kardinalsymptomen Tremor, Rigor, Bradykinese und posturaler Instabilität nicht vollständig ausgeprägt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Alkoholabhängigkeit/ -missbrauch\",\n      \"icd10_code\": \"F10.2\",\n      \"reasoning\": \"Die Laborwerte zeigen eine leicht erhöhte Gamma-GT und ein erhöhtes MCV, was auf einen möglichen Alkoholmissbrauch hindeuten könnte. Allerdings fehlen direkte Hinweise auf Alkoholkonsum in der Fallvignette.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2584,
+      "response_length": 1513,
+      "usage": {
+        "prompt_tokens": 672,
+        "completion_tokens": 403
+      },
+      "case_id": "cr_035",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.6666666666666665
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 3.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Autoimmune Enzephalitis (NMDAR-Enzephalitis)",
+          "icd10_code": "G04.81",
+          "reasoning": "Die Kombination aus psychiatrischen Symptomen, kognitiven Defiziten, orofazialen Dyskinesien, autonomer Instabilität und generalisierter muskulärer Rigidität ist typisch für eine NMDAR-Enzephalitis. Der Nachweis einer ovariellen Teratome im TVUS unterstützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Infektiöse Enzephalitis",
+          "icd10_code": "A85.9",
+          "reasoning": "Die lymphozytäre Pleozytose im Liquor und die unspezifischen Prodromi sprechen für eine Enzephalitis. Allerdings ist die virologische PCR (HSV, VZV) negativ.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Tumorassoziierte Enzephalitis (paraneoplastische Enzephalitis)",
+          "icd10_code": "C00-D49",
+          "reasoning": "Die ovariellen Raumforderung könnte ein Teratom oder ein anderer Tumor sein, der eine paraneoplastische Enzephalitis verursacht. Allerdings ist dies seltener als eine autoimmune Enzephalitis.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Autoimmune Enzephalitis (NMDAR-Enzephalitis)\",\n      \"icd10_code\": \"G04.81\",\n      \"reasoning\": \"Die Kombination aus psychiatrischen Symptomen, kognitiven Defiziten, orofazialen Dyskinesien, autonomer Instabilität und generalisierter muskulärer Rigidität ist typisch für eine NMDAR-Enzephalitis. Der Nachweis einer ovariellen Teratome im TVUS unterstützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Infektiöse Enzephalitis\",\n      \"icd10_code\": \"A85.9\",\n      \"reasoning\": \"Die lymphozytäre Pleozytose im Liquor und die unspezifischen Prodromi sprechen für eine Enzephalitis. Allerdings ist die virologische PCR (HSV, VZV) negativ.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Tumorassoziierte Enzephalitis (paraneoplastische Enzephalitis)\",\n      \"icd10_code\": \"C00-D49\",\n      \"reasoning\": \"Die ovariellen Raumforderung könnte ein Teratom oder ein anderer Tumor sein, der eine paraneoplastische Enzephalitis verursacht. Allerdings ist dies seltener als eine autoimmune Enzephalitis.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2667,
+      "response_length": 1122,
+      "usage": {
+        "prompt_tokens": 699,
+        "completion_tokens": 320
+      },
+      "case_id": "cr_036",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Dekompensation einer chronischen Herzinsuffizienz",
+          "icd10_code": "I50.9",
+          "reasoning": "Der Patient zeigt klassische Symptome einer Herzinsuffizienz wie Belastungsdyspnoe, Nykturie, Gewichtszunahme und Unterschenkelödeme. Der NT-proBNP-Wert ist deutlich erhöht, und die Bildgebung zeigt eine Kardiomegalie und Zeichen der Lungenstauung.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Koronarsyndrom",
+          "icd10_code": "I24.9",
+          "reasoning": "Der Patient hat einen Zustand nach Myokardinfarkt und Stent-Implantation, und der Troponin-T-Wert ist leicht erhöht. Dies könnte auf ein akutes Koronarsyndrom hindeuten, obwohl der Wert nur geringfügig über dem Referenzwert liegt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Niereninsuffizienz mit Volumenüberladung",
+          "icd10_code": "N19",
+          "reasoning": "Der Patient hat eine eingeschränkte Nierenfunktion (GFR 48 ml/min) und eine Gewichtszunahme, was auf eine Volumenüberladung hinweisen könnte. Allerdings ist der Kreatininwert nicht stark erhöht, und andere Symptome sprechen eher für eine kardiale Ursache.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Dekompensation einer chronischen Herzinsuffizienz\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer Herzinsuffizienz wie Belastungsdyspnoe, Nykturie, Gewichtszunahme und Unterschenkelödeme. Der NT-proBNP-Wert ist deutlich erhöht, und die Bildgebung zeigt eine Kardiomegalie und Zeichen der Lungenstauung.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom\",\n      \"icd10_code\": \"I24.9\",\n      \"reasoning\": \"Der Patient hat einen Zustand nach Myokardinfarkt und Stent-Implantation, und der Troponin-T-Wert ist leicht erhöht. Dies könnte auf ein akutes Koronarsyndrom hindeuten, obwohl der Wert nur geringfügig über dem Referenzwert liegt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Niereninsuffizienz mit Volumenüberladung\",\n      \"icd10_code\": \"N19\",\n      \"reasoning\": \"Der Patient hat eine eingeschränkte Nierenfunktion (GFR 48 ml/min) und eine Gewichtszunahme, was auf eine Volumenüberladung hinweisen könnte. Allerdings ist der Kreatininwert nicht stark erhöht, und andere Symptome sprechen eher für eine kardiale Ursache.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2395,
+      "response_length": 1216,
+      "usage": {
+        "prompt_tokens": 696,
+        "completion_tokens": 332
+      },
+      "case_id": "cr_037",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.3333333333333333
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Perikarditis",
+          "icd10_code": "I30.0",
+          "reasoning": "Der Patient zeigt typische Symptome einer Perikarditis wie thorakale Schmerzen, die sich im Liegen verstärken und beim Vorbeugen lindern, sowie einen Perikarderguss in der Echokardiographie.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Myokarditis",
+          "icd10_code": "I40.9",
+          "reasoning": "Erhöhte Troponin-T-Werte und NT-proBNP deuten auf eine Myokardschädigung hin. Der vorausgegangene grippale Infekt könnte eine Myokarditis begünstigt haben.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Akutes Koronarsyndrom",
+          "icd10_code": "I24.9",
+          "reasoning": "Trotz fehlender klassischer ST-Streckenhebungen im EKG und fehlender regionaler Wandbewegungsstörungen in der Echokardiographie sind die erhöhten Troponin-T-Werte und die Risikofaktoren (Nikotinabusus, arterielle Hypertonie) hinweisend auf ein akutes Koronarsyndrom.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Lungenembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die erhöhten D-Dimere und die Dyspnoe könnten auf eine Lungenembolie hindeuten, jedoch sprechen die normale Lungenfelddarstellung im Röntgen-Thorax und die fehlende Halsvenenstauung dagegen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Perikarditis\",\n      \"icd10_code\": \"I30.0\",\n      \"reasoning\": \"Der Patient zeigt typische Symptome einer Perikarditis wie thorakale Schmerzen, die sich im Liegen verstärken und beim Vorbeugen lindern, sowie einen Perikarderguss in der Echokardiographie.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Myokarditis\",\n      \"icd10_code\": \"I40.9\",\n      \"reasoning\": \"Erhöhte Troponin-T-Werte und NT-proBNP deuten auf eine Myokardschädigung hin. Der vorausgegangene grippale Infekt könnte eine Myokarditis begünstigt haben.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom\",\n      \"icd10_code\": \"I24.9\",\n      \"reasoning\": \"Trotz fehlender klassischer ST-Streckenhebungen im EKG und fehlender regionaler Wandbewegungsstörungen in der Echokardiographie sind die erhöhten Troponin-T-Werte und die Risikofaktoren (Nikotinabusus, arterielle Hypertonie) hinweisend auf ein akutes Koronarsyndrom.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Lungenembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die erhöhten D-Dimere und die Dyspnoe könnten auf eine Lungenembolie hindeuten, jedoch sprechen die normale Lungenfelddarstellung im Röntgen-Thorax und die fehlende Halsvenenstauung dagegen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2926,
+      "response_length": 1345,
+      "usage": {
+        "prompt_tokens": 799,
+        "completion_tokens": 394
+      },
+      "case_id": "cr_038",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.75
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Exogen-allergische Alveolitis (EAA)",
+          "icd10_code": "J67.9",
+          "reasoning": "Der Patient zeigt Symptome wie Belastungsdyspnoe, Reizhusten, subfebrile Temperaturen und Gewichtsverlust, die mit einer EAA vereinbar sind. Die berufliche Exposition gegenüber alten Dokumenten und die Haltung von Wellensittichen in der Freizeit bieten potenzielle Allergenquellen.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Idiopathische pulmonale Fibrose (IPF)",
+          "icd10_code": "J84.1",
+          "reasoning": "Die HR-CT-Befunde mit retikulären Veränderungen und Traktionsbronchiektasen basal sowie das 'Headcheese-Sign' könnten auf eine IPF hindeuten, jedoch ist das 'Headcheese-Sign' eher untypisch für eine IPF.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Nicht-spezifische interstitielle Pneumonie (NSIP)",
+          "icd10_code": "J84.89",
+          "reasoning": "Die HR-CT-Befunde mit einem diffusen Verteilungsmuster, milchglasartigen Veränderungen und Air-Trapping könnten auch auf eine NSIP hinweisen. Die Klinik mit Dyspnoe und Reizhusten passt ebenfalls.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Exogen-allergische Alveolitis (EAA)\",\n      \"icd10_code\": \"J67.9\",\n      \"reasoning\": \"Der Patient zeigt Symptome wie Belastungsdyspnoe, Reizhusten, subfebrile Temperaturen und Gewichtsverlust, die mit einer EAA vereinbar sind. Die berufliche Exposition gegenüber alten Dokumenten und die Haltung von Wellensittichen in der Freizeit bieten potenzielle Allergenquellen.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Idiopathische pulmonale Fibrose (IPF)\",\n      \"icd10_code\": \"J84.1\",\n      \"reasoning\": \"Die HR-CT-Befunde mit retikulären Veränderungen und Traktionsbronchiektasen basal sowie das 'Headcheese-Sign' könnten auf eine IPF hindeuten, jedoch ist das 'Headcheese-Sign' eher untypisch für eine IPF.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Nicht-spezifische interstitielle Pneumonie (NSIP)\",\n      \"icd10_code\": \"J84.89\",\n      \"reasoning\": \"Die HR-CT-Befunde mit einem diffusen Verteilungsmuster, milchglasartigen Veränderungen und Air-Trapping könnten auch auf eine NSIP hinweisen. Die Klinik mit Dyspnoe und Reizhusten passt ebenfalls.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2474,
+      "response_length": 1171,
+      "usage": {
+        "prompt_tokens": 672,
+        "completion_tokens": 326
+      },
+      "case_id": "cr_039",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Multiple Sklerose (MS)",
+          "icd10_code": "G35",
+          "reasoning": "Die Patientin zeigt Symptome und Befunde, die typisch für eine Multiple Sklerose sind, wie eine Optikusneuritis, eine diskrete lymphozytäre Pleozytose im Liquor, Liquor-spezifische oligoklonale Banden, T2-hyperintense Läsionen im cMRT und eine verlängerte P100-Latenz im VEP.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Neuromyelitis-optica-Spektrum-Erkrankung (NMOSD)",
+          "icd10_code": "G36.0",
+          "reasoning": "Die Optikusneuritis und die entzündlichen Veränderungen im cMRT könnten auch auf eine NMOSD hinweisen, insbesondere wenn man die Beteiligung des Nervus opticus und die Kontrastmittelaufnahme in Betracht zieht.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Isolierte Optikusneuritis",
+          "icd10_code": "H46",
+          "reasoning": "Die Symptome und Befunde der Patientin könnten auch durch eine isolierte Optikusneuritis erklärt werden, jedoch sprechen die Vorgeschichte mit transienten neurologischen Symptomen und die MRT-Befunde mit multiplen Läsionen für eine demyelinisierende Erkrankung wie MS.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Multiple Sklerose (MS)\",\n      \"icd10_code\": \"G35\",\n      \"reasoning\": \"Die Patientin zeigt Symptome und Befunde, die typisch für eine Multiple Sklerose sind, wie eine Optikusneuritis, eine diskrete lymphozytäre Pleozytose im Liquor, Liquor-spezifische oligoklonale Banden, T2-hyperintense Läsionen im cMRT und eine verlängerte P100-Latenz im VEP.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Neuromyelitis-optica-Spektrum-Erkrankung (NMOSD)\",\n      \"icd10_code\": \"G36.0\",\n      \"reasoning\": \"Die Optikusneuritis und die entzündlichen Veränderungen im cMRT könnten auch auf eine NMOSD hinweisen, insbesondere wenn man die Beteiligung des Nervus opticus und die Kontrastmittelaufnahme in Betracht zieht.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Isolierte Optikusneuritis\",\n      \"icd10_code\": \"H46\",\n      \"reasoning\": \"Die Symptome und Befunde der Patientin könnten auch durch eine isolierte Optikusneuritis erklärt werden, jedoch sprechen die Vorgeschichte mit transienten neurologischen Symptomen und die MRT-Befunde mit multiplen Läsionen für eine demyelinisierende Erkrankung wie MS.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2651,
+      "response_length": 1212,
+      "usage": {
+        "prompt_tokens": 677,
+        "completion_tokens": 328
+      },
+      "case_id": "cr_040",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Autoimmune Pankreatitis (AIP) Typ 1",
+          "icd10_code": "K86.1",
+          "reasoning": "Die Bildgebung zeigt eine 'sausage-like appearance' des Pankreas und ein 'halo sign', typisch für AIP. Zudem ist IgG4 erhöht.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pankreaskarzinom",
+          "icd10_code": "C25.9",
+          "reasoning": "Der Patient hat Risikofaktoren (Nikotinkonsum) und Symptome (Gewichtsverlust, Ikterus) sowie erhöhte CA 19-9-Werte, die auf ein Pankreaskarzinom hindeuten könnten. Die Bildgebung zeigt jedoch keine typische Raumforderung.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Der Patient hat eine Vorgeschichte mit Nikotinkonsum und Alkoholkonsum, was Risikofaktoren für eine chronische Pankreatitis sind. Die Bildgebung zeigt jedoch keine typischen Veränderungen wie Kalzifikationen oder eine deutliche Dilatation des Ductus pancreaticus.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Autoimmune Pankreatitis (AIP) Typ 1\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die Bildgebung zeigt eine 'sausage-like appearance' des Pankreas und ein 'halo sign', typisch für AIP. Zudem ist IgG4 erhöht.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pankreaskarzinom\",\n      \"icd10_code\": \"C25.9\",\n      \"reasoning\": \"Der Patient hat Risikofaktoren (Nikotinkonsum) und Symptome (Gewichtsverlust, Ikterus) sowie erhöhte CA 19-9-Werte, die auf ein Pankreaskarzinom hindeuten könnten. Die Bildgebung zeigt jedoch keine typische Raumforderung.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Der Patient hat eine Vorgeschichte mit Nikotinkonsum und Alkoholkonsum, was Risikofaktoren für eine chronische Pankreatitis sind. Die Bildgebung zeigt jedoch keine typischen Veränderungen wie Kalzifikationen oder eine deutliche Dilatation des Ductus pancreaticus.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2435,
+      "response_length": 1052,
+      "usage": {
+        "prompt_tokens": 673,
+        "completion_tokens": 299
+      },
+      "case_id": "cr_041",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Karzinoid-Syndrom",
+          "icd10_code": "E34.0",
+          "reasoning": "Der Patient zeigt klassische Symptome wie Flush, Diarrhö und eine hochgradige Trikuspidalinsuffizienz, zudem sind Chromogranin A und 5-HIES deutlich erhöht, was auf eine neuroendokrine Neoplasie hinweist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Neuroendokrine Neoplasie (NEN) des Dünndarms mit Lebermetastasen",
+          "icd10_code": "C7A.0",
+          "reasoning": "Die Bildgebung zeigt eine Läsion im terminalen Ileum mit Lebermetastasen, was auf eine NEN des Dünndarms hinweist, die häufigste Ursache für ein Karzinoid-Syndrom.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Asthma bronchiale mit sekundären kardialen Komplikationen",
+          "icd10_code": "J45.909",
+          "reasoning": "Der Patient wurde initial wegen eines vermuteten Asthma bronchiale behandelt, jedoch blieb die Therapie erfolglos. Die kardialen Befunde sind nicht typisch für Asthma-bedingte Komplikationen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Karzinoid-Syndrom\",\n      \"icd10_code\": \"E34.0\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome wie Flush, Diarrhö und eine hochgradige Trikuspidalinsuffizienz, zudem sind Chromogranin A und 5-HIES deutlich erhöht, was auf eine neuroendokrine Neoplasie hinweist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Neuroendokrine Neoplasie (NEN) des Dünndarms mit Lebermetastasen\",\n      \"icd10_code\": \"C7A.0\",\n      \"reasoning\": \"Die Bildgebung zeigt eine Läsion im terminalen Ileum mit Lebermetastasen, was auf eine NEN des Dünndarms hinweist, die häufigste Ursache für ein Karzinoid-Syndrom.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Asthma bronchiale mit sekundären kardialen Komplikationen\",\n      \"icd10_code\": \"J45.909\",\n      \"reasoning\": \"Der Patient wurde initial wegen eines vermuteten Asthma bronchiale behandelt, jedoch blieb die Therapie erfolglos. Die kardialen Befunde sind nicht typisch für Asthma-bedingte Komplikationen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2869,
+      "response_length": 1065,
+      "usage": {
+        "prompt_tokens": 796,
+        "completion_tokens": 303
+      },
+      "case_id": "cr_042",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Schenkelhalsfraktur",
+          "icd10_code": "S72.0",
+          "reasoning": "Die Röntgendiagnostik zeigt eine deutliche Unterbrechung der Schenkelhalskontur rechts mit Dislokation der Fragmente, passend zu einer Schenkelhalsfraktur.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pertrochantäre Femurfraktur",
+          "icd10_code": "S72.1",
+          "reasoning": "Die Klinik mit Schmerzen in der Leiste und Fehlstellung des Beines könnte auch auf eine pertrochantäre Femurfraktur hindeuten, jedoch zeigt die Röntgendiagnostik eine Schenkelhalsfraktur.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Hüftgelenksluxation",
+          "icd10_code": "S73.0",
+          "reasoning": "Die Fehlstellung und Schmerzen könnten auch auf eine Hüftgelenksluxation hindeuten, jedoch zeigt die Röntgendiagnostik eine Fraktur und keine Luxation.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Schenkelhalsfraktur\",\n      \"icd10_code\": \"S72.0\",\n      \"reasoning\": \"Die Röntgendiagnostik zeigt eine deutliche Unterbrechung der Schenkelhalskontur rechts mit Dislokation der Fragmente, passend zu einer Schenkelhalsfraktur.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pertrochantäre Femurfraktur\",\n      \"icd10_code\": \"S72.1\",\n      \"reasoning\": \"Die Klinik mit Schmerzen in der Leiste und Fehlstellung des Beines könnte auch auf eine pertrochantäre Femurfraktur hindeuten, jedoch zeigt die Röntgendiagnostik eine Schenkelhalsfraktur.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Hüftgelenksluxation\",\n      \"icd10_code\": \"S73.0\",\n      \"reasoning\": \"Die Fehlstellung und Schmerzen könnten auch auf eine Hüftgelenksluxation hindeuten, jedoch zeigt die Röntgendiagnostik eine Fraktur und keine Luxation.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2381,
+      "response_length": 927,
+      "usage": {
+        "prompt_tokens": 624,
+        "completion_tokens": 273
+      },
+      "case_id": "cr_043",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Hyperthyreose bei Morbus Basedow",
+          "icd10_code": "E05.0",
+          "reasoning": "Die Patientin zeigt klassische Symptome einer Hyperthyreose wie Gewichtsabnahme trotz gesteigertem Appetit, Wärmeintoleranz, Schwitzen, Tachykardie und Tremor. Laborchemisch ist der TSH-Basalwert supprimiert, während fT3 und fT4 erhöht sind. Der Nachweis von TRAK und die sonographischen Befunde (inhomogenes, echoarmes Muster und gesteigerte Vaskularisation) unterstützen die Diagnose eines Morbus Basedow.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Depressive Episode mit somatischen Symptomen",
+          "icd10_code": "F32.1",
+          "reasoning": "Die Patientin wurde initial unter dem Verdacht einer depressiven Episode bzw. eines Burnout-Syndroms zugewiesen und zeigt Symptome wie Erschöpfung, innere Unruhe und Schlafstörungen. Allerdings lassen sich viele ihrer Symptome durch die laborchemisch und sonographisch gesicherte Hyperthyreose erklären.",
+          "likelihood": "gering"
+        },
+        {
+          "name": "Andere Formen der Hyperthyreose (z.B. autoimmune Thyreoiditis)",
+          "icd10_code": "E05.9",
+          "reasoning": "Obwohl die Befunde stark für einen Morbus Basedow sprechen, könnten andere Ursachen einer Hyperthyreose wie eine autoimmune Thyreoiditis (z.B. Hashimoto-Thyreoiditis in der Initialphase) in Betracht gezogen werden. Allerdings ist die Anwesenheit von TRAK und das sonographische Bild eher typisch für einen Morbus Basedow.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Hyperthyreose bei Morbus Basedow\",\n      \"icd10_code\": \"E05.0\",\n      \"reasoning\": \"Die Patientin zeigt klassische Symptome einer Hyperthyreose wie Gewichtsabnahme trotz gesteigertem Appetit, Wärmeintoleranz, Schwitzen, Tachykardie und Tremor. Laborchemisch ist der TSH-Basalwert supprimiert, während fT3 und fT4 erhöht sind. Der Nachweis von TRAK und die sonographischen Befunde (inhomogenes, echoarmes Muster und gesteigerte Vaskularisation) unterstützen die Diagnose eines Morbus Basedow.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Depressive Episode mit somatischen Symptomen\",\n      \"icd10_code\": \"F32.1\",\n      \"reasoning\": \"Die Patientin wurde initial unter dem Verdacht einer depressiven Episode bzw. eines Burnout-Syndroms zugewiesen und zeigt Symptome wie Erschöpfung, innere Unruhe und Schlafstörungen. Allerdings lassen sich viele ihrer Symptome durch die laborchemisch und sonographisch gesicherte Hyperthyreose erklären.\",\n      \"likelihood\": \"gering\"\n    },\n    {\n      \"name\": \"Andere Formen der Hyperthyreose (z.B. autoimmune Thyreoiditis)\",\n      \"icd10_code\": \"E05.9\",\n      \"reasoning\": \"Obwohl die Befunde stark für einen Morbus Basedow sprechen, könnten andere Ursachen einer Hyperthyreose wie eine autoimmune Thyreoiditis (z.B. Hashimoto-Thyreoiditis in der Initialphase) in Betracht gezogen werden. Allerdings ist die Anwesenheit von TRAK und das sonographische Bild eher typisch für einen Morbus Basedow.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2649,
+      "response_length": 1538,
+      "usage": {
+        "prompt_tokens": 743,
+        "completion_tokens": 402
+      },
+      "case_id": "cr_044",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 3.0,
+        "red_flag_awareness": 1.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Tiefenvenenthrombose (TVT)",
+          "icd10_code": "I80.2",
+          "reasoning": "Die Patientin weist eine erhöhte D-Dimere-Konzentration auf und in der Sonographie zeigt sich eine tubuläre, inkompressible Struktur parauterin rechts, die bis zur Vena cava reicht, was typisch für eine TVT ist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Ovarialvenenthrombose",
+          "icd10_code": "O22.8",
+          "reasoning": "Die Patientin ist postpartal, hat Fieber und Schmerzen im Unterbauch, und die Sonographie zeigt ein vergrößertes rechtes Ovar. Eine Ovarialvenenthrombose ist im Wochenbett eine bekannte Komplikation.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Appendizitis",
+          "icd10_code": "K35.2",
+          "reasoning": "Die Patientin hat Schmerzen im rechten Unterbauch, Fieber und eine Leukozytose, was für eine Appendizitis spricht. Allerdings ist die Appendix sonographisch nicht sicher darstellbar.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Tiefenvenenthrombose (TVT)\",\n      \"icd10_code\": \"I80.2\",\n      \"reasoning\": \"Die Patientin weist eine erhöhte D-Dimere-Konzentration auf und in der Sonographie zeigt sich eine tubuläre, inkompressible Struktur parauterin rechts, die bis zur Vena cava reicht, was typisch für eine TVT ist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Ovarialvenenthrombose\",\n      \"icd10_code\": \"O22.8\",\n      \"reasoning\": \"Die Patientin ist postpartal, hat Fieber und Schmerzen im Unterbauch, und die Sonographie zeigt ein vergrößertes rechtes Ovar. Eine Ovarialvenenthrombose ist im Wochenbett eine bekannte Komplikation.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Appendizitis\",\n      \"icd10_code\": \"K35.2\",\n      \"reasoning\": \"Die Patientin hat Schmerzen im rechten Unterbauch, Fieber und eine Leukozytose, was für eine Appendizitis spricht. Allerdings ist die Appendix sonographisch nicht sicher darstellbar.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2739,
+      "response_length": 1018,
+      "usage": {
+        "prompt_tokens": 781,
+        "completion_tokens": 288
+      },
+      "case_id": "cr_045",
+      "automated_scores": {
+        "top1_accuracy": 0.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 3.0,
+        "ddx_plausibility": 4.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Akute Dekompensation einer chronischen Herzinsuffizienz",
+          "icd10_code": "I50.9",
+          "reasoning": "Der Patient zeigt klassische Symptome einer Herzinsuffizienz wie Luftnot, Orthopnoe, Gewichtszunahme, Ödeme und Jugularvenenstauung. Der stark erhöhte NT-proBNP-Wert unterstützt diese Diagnose.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Koronarsyndrom",
+          "icd10_code": "I24.9",
+          "reasoning": "Der Patient hat eine Vorgeschichte mit Myokardinfarkt und Stentversorgung. Der leicht erhöhte Troponin-T-Wert könnte auf eine myokardiale Ischämie hinweisen, obwohl der Patient keine Thoraxschmerzen angibt.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Niereninsuffizienz mit Volumenüberladung",
+          "icd10_code": "N19",
+          "reasoning": "Die eingeschränkte Nierenfunktion (GFR 58 ml/min) könnte zu einer Volumenüberladung geführt haben, die sich in Ödemen und Luftnot äußert. Allerdings ist die Nierenfunktion nicht so stark eingeschränkt, dass dies allein die Symptomatik erklären würde.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Akute Dekompensation einer chronischen Herzinsuffizienz\",\n      \"icd10_code\": \"I50.9\",\n      \"reasoning\": \"Der Patient zeigt klassische Symptome einer Herzinsuffizienz wie Luftnot, Orthopnoe, Gewichtszunahme, Ödeme und Jugularvenenstauung. Der stark erhöhte NT-proBNP-Wert unterstützt diese Diagnose.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom\",\n      \"icd10_code\": \"I24.9\",\n      \"reasoning\": \"Der Patient hat eine Vorgeschichte mit Myokardinfarkt und Stentversorgung. Der leicht erhöhte Troponin-T-Wert könnte auf eine myokardiale Ischämie hinweisen, obwohl der Patient keine Thoraxschmerzen angibt.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Niereninsuffizienz mit Volumenüberladung\",\n      \"icd10_code\": \"N19\",\n      \"reasoning\": \"Die eingeschränkte Nierenfunktion (GFR 58 ml/min) könnte zu einer Volumenüberladung geführt haben, die sich in Ödemen und Luftnot äußert. Allerdings ist die Nierenfunktion nicht so stark eingeschränkt, dass dies allein die Symptomatik erklären würde.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2369,
+      "response_length": 1132,
+      "usage": {
+        "prompt_tokens": 682,
+        "completion_tokens": 307
+      },
+      "case_id": "cr_046",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.28571428571428575
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 4.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Aortendissektion",
+          "icd10_code": "I71.0",
+          "reasoning": "Der Patient präsentiert sich mit reißenden Thoraxschmerzen und Ausstrahlung in den Rücken, einer dilatierten Aorta ascendens im TTE und einer Verbreiterung des Mediastinums im Röntgenthorax, was klassische Zeichen einer Aortendissektion sind.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Akutes Koronarsyndrom (ACS)",
+          "icd10_code": "I24.9",
+          "reasoning": "Der Patient hat retrosternale Schmerzen und erhöhte Troponin-T-Werte, was auf eine myokardiale Ischämie hindeuten könnte. Allerdings sprechen die Schmerzcharakteristik und die Ausstrahlung eher gegen ein klassisches ACS.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Pulmonalembolie",
+          "icd10_code": "I26.9",
+          "reasoning": "Die erhöhten D-Dimere und die Tachypnoe könnten auf eine Pulmonalembolie hinweisen. Allerdings fehlen typische EKG-Veränderungen oder eine ausgeprägte Hypoxie.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Aortendissektion\",\n      \"icd10_code\": \"I71.0\",\n      \"reasoning\": \"Der Patient präsentiert sich mit reißenden Thoraxschmerzen und Ausstrahlung in den Rücken, einer dilatierten Aorta ascendens im TTE und einer Verbreiterung des Mediastinums im Röntgenthorax, was klassische Zeichen einer Aortendissektion sind.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Akutes Koronarsyndrom (ACS)\",\n      \"icd10_code\": \"I24.9\",\n      \"reasoning\": \"Der Patient hat retrosternale Schmerzen und erhöhte Troponin-T-Werte, was auf eine myokardiale Ischämie hindeuten könnte. Allerdings sprechen die Schmerzcharakteristik und die Ausstrahlung eher gegen ein klassisches ACS.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Pulmonalembolie\",\n      \"icd10_code\": \"I26.9\",\n      \"reasoning\": \"Die erhöhten D-Dimere und die Tachypnoe könnten auf eine Pulmonalembolie hinweisen. Allerdings fehlen typische EKG-Veränderungen oder eine ausgeprägte Hypoxie.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2340,
+      "response_length": 1048,
+      "usage": {
+        "prompt_tokens": 663,
+        "completion_tokens": 294
+      },
+      "case_id": "cr_047",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Eosinophile Granulomatose mit Polyangiitis (EGPA)",
+          "icd10_code": "M30.1",
+          "reasoning": "Der Patient weist eine Kombination aus Asthma bronchiale, Eosinophilie, pulmonalen Infiltraten und einer Vaskulitis (nachgewiesen durch positive p-ANCA und Purpura-Läsionen) auf, was typisch für EGPA ist.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Hypereosinophiles Syndrom (HES)",
+          "icd10_code": "D72.1",
+          "reasoning": "Die ausgeprägte Eosinophilie und die Beteiligung mehrerer Organe (Lunge, Nervensystem) könnten auch auf ein HES hindeuten, jedoch fehlen hierfür typische ANCA.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Eosinophile Pneumonie (CEP)",
+          "icd10_code": "J82",
+          "reasoning": "Die pulmonalen Symptome und Infiltrate sowie die Eosinophilie könnten auch auf eine CEP hinweisen, jedoch erklärt dies nicht die neurologischen Symptome und die Vaskulitiszeichen.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Eosinophile Granulomatose mit Polyangiitis (EGPA)\",\n      \"icd10_code\": \"M30.1\",\n      \"reasoning\": \"Der Patient weist eine Kombination aus Asthma bronchiale, Eosinophilie, pulmonalen Infiltraten und einer Vaskulitis (nachgewiesen durch positive p-ANCA und Purpura-Läsionen) auf, was typisch für EGPA ist.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Hypereosinophiles Syndrom (HES)\",\n      \"icd10_code\": \"D72.1\",\n      \"reasoning\": \"Die ausgeprägte Eosinophilie und die Beteiligung mehrerer Organe (Lunge, Nervensystem) könnten auch auf ein HES hindeuten, jedoch fehlen hierfür typische ANCA.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Eosinophile Pneumonie (CEP)\",\n      \"icd10_code\": \"J82\",\n      \"reasoning\": \"Die pulmonalen Symptome und Infiltrate sowie die Eosinophilie könnten auch auf eine CEP hinweisen, jedoch erklärt dies nicht die neurologischen Symptome und die Vaskulitiszeichen.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2709,
+      "response_length": 1027,
+      "usage": {
+        "prompt_tokens": 736,
+        "completion_tokens": 289
+      },
+      "case_id": "cr_048",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.5714285714285715
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Ischämischer Schlaganfall",
+          "icd10_code": "I63.-",
+          "reasoning": "Der Patient zeigt eine akute neurologische Symptomatik mit globaler Aphasie, rechtsseitiger Hemisymptomatik und Déviation conjuguée, passend zu einem linkshemisphärischen Insult. Die Bildgebung bestätigt einen Verschluss der linken A. cerebri media und Frühzeichen einer Ischämie.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Intrazerebrale Blutung mit sekundärer klinischer Verschlechterung",
+          "icd10_code": "I61.-",
+          "reasoning": "Obwohl die initiale cCT keine Blutung zeigt, kann eine sekundäre Einblutung oder eine andere Komplikation nicht ausgeschlossen werden, insbesondere bei bekanntem Vorhofflimmern und Pausieren der Antikoagulation.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Todd-Parese nach epileptischem Anfall",
+          "icd10_code": "G83.8",
+          "reasoning": "Eine Todd-Parese könnte eine ähnliche Symptomatik wie ein Schlaganfall verursachen, jedoch fehlen Hinweise auf einen Krampfanfall in der Anamnese.",
+          "likelihood": "gering"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Ischämischer Schlaganfall\",\n      \"icd10_code\": \"I63.-\",\n      \"reasoning\": \"Der Patient zeigt eine akute neurologische Symptomatik mit globaler Aphasie, rechtsseitiger Hemisymptomatik und Déviation conjuguée, passend zu einem linkshemisphärischen Insult. Die Bildgebung bestätigt einen Verschluss der linken A. cerebri media und Frühzeichen einer Ischämie.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Intrazerebrale Blutung mit sekundärer klinischer Verschlechterung\",\n      \"icd10_code\": \"I61.-\",\n      \"reasoning\": \"Obwohl die initiale cCT keine Blutung zeigt, kann eine sekundäre Einblutung oder eine andere Komplikation nicht ausgeschlossen werden, insbesondere bei bekanntem Vorhofflimmern und Pausieren der Antikoagulation.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Todd-Parese nach epileptischem Anfall\",\n      \"icd10_code\": \"G83.8\",\n      \"reasoning\": \"Eine Todd-Parese könnte eine ähnliche Symptomatik wie ein Schlaganfall verursachen, jedoch fehlen Hinweise auf einen Krampfanfall in der Anamnese.\",\n      \"likelihood\": \"gering\"\n    }\n  ]\n}",
+      "prompt_length": 2742,
+      "response_length": 1133,
+      "usage": {
+        "prompt_tokens": 703,
+        "completion_tokens": 296
+      },
+      "case_id": "cr_049",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 4.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    },
+    {
+      "differentialdiagnosen": [
+        {
+          "name": "Autoimmune Pankreatitis (Typ 1)",
+          "icd10_code": "K86.1",
+          "reasoning": "Die Kombination aus diffuser, 'wurstförmiger' Auftreibung des Pankreas, erhöhtem IgG4 und dem 'Halo-Zeichen' in der Bildgebung spricht stark für eine autoimmune Pankreatitis. Zudem fehlt eine prästenotische Gangdilatation trotz Raumforderung im Pankreaskopf.",
+          "likelihood": "hoch"
+        },
+        {
+          "name": "Pankreaskarzinom",
+          "icd10_code": "C25.9",
+          "reasoning": "Der Patient präsentiert Symptome wie Oberbauchschmerzen, Gewichtsverlust und veränderten Stuhlgang, die auf ein Pankreaskarzinom hindeuten könnten. Der leicht erhöhte CA 19-9-Wert unterstützt diese Diagnose.",
+          "likelihood": "mittel"
+        },
+        {
+          "name": "Chronische Pankreatitis",
+          "icd10_code": "K86.1",
+          "reasoning": "Die Symptome des Patienten wie Oberbauchschmerzen und veränderter Stuhlgang könnten auch auf eine chronische Pankreatitis hinweisen. Die erhöhte Lipase und die Veränderungen im Pankreas in der Bildgebung unterstützen diese Diagnose.",
+          "likelihood": "mittel"
+        }
+      ],
+      "raw": "{\n  \"differentialdiagnosen\": [\n    {\n      \"name\": \"Autoimmune Pankreatitis (Typ 1)\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die Kombination aus diffuser, 'wurstförmiger' Auftreibung des Pankreas, erhöhtem IgG4 und dem 'Halo-Zeichen' in der Bildgebung spricht stark für eine autoimmune Pankreatitis. Zudem fehlt eine prästenotische Gangdilatation trotz Raumforderung im Pankreaskopf.\",\n      \"likelihood\": \"hoch\"\n    },\n    {\n      \"name\": \"Pankreaskarzinom\",\n      \"icd10_code\": \"C25.9\",\n      \"reasoning\": \"Der Patient präsentiert Symptome wie Oberbauchschmerzen, Gewichtsverlust und veränderten Stuhlgang, die auf ein Pankreaskarzinom hindeuten könnten. Der leicht erhöhte CA 19-9-Wert unterstützt diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    },\n    {\n      \"name\": \"Chronische Pankreatitis\",\n      \"icd10_code\": \"K86.1\",\n      \"reasoning\": \"Die Symptome des Patienten wie Oberbauchschmerzen und veränderter Stuhlgang könnten auch auf eine chronische Pankreatitis hinweisen. Die erhöhte Lipase und die Veränderungen im Pankreas in der Bildgebung unterstützen diese Diagnose.\",\n      \"likelihood\": \"mittel\"\n    }\n  ]\n}",
+      "prompt_length": 2682,
+      "response_length": 1136,
+      "usage": {
+        "prompt_tokens": 729,
+        "completion_tokens": 305
+      },
+      "case_id": "cr_050",
+      "automated_scores": {
+        "top1_accuracy": 1.0,
+        "top3_recall": 1.0,
+        "ddx_overlap_f1": 0.8571428571428571
+      },
+      "judge_scores": {
+        "reasoning_quality": 5.0,
+        "ddx_plausibility": 5.0,
+        "red_flag_awareness": 5.0
+      }
+    }
+  ]
+}

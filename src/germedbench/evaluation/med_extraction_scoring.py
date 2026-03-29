@@ -6,7 +6,7 @@ by Wirkstoff (fuzzy), then checks Dosis and Frequenz.
 
 from dataclasses import dataclass
 
-from germedbench.evaluation.utils import f1, names_match
+from germedbench.evaluation.utils import f1, match_names_llm
 
 
 @dataclass
@@ -21,10 +21,14 @@ class MedExtractionScore:
 def _normalize_str(s: str) -> str:
     """Normalize string for comparison: lowercase, strip, collapse spaces, normalize units."""
     import re
+    if not s:
+        return ""
     s = s.strip().lower()
     # Remove parenthetical notes: "1-0-0 (tapering)" -> "1-0-0"
     s = re.sub(r"\s*\(.*?\)\s*", " ", s)
-    # Insert space between number and unit: "40mg" -> "40 mg", "4,5g" -> "4,5 g"
+    # Normalize decimal separator: "47,5" -> "47.5"
+    s = re.sub(r"(\d),(\d)", r"\1.\2", s)
+    # Insert space between number and unit: "40mg" -> "40 mg", "4.5g" -> "4.5 g"
     s = re.sub(r"(\d)\s*([a-zµ])", r"\1 \2", s)
     return " ".join(s.split())
 
@@ -50,33 +54,26 @@ def score_med_extraction(
     predicted = predicted or []
     gold = gold or []
 
-    matched_gold: set[int] = set()
-    wirkstoff_tp = 0
+    # Match wirkstoffe using LLM-assisted matching
+    gold_names = [g.get("wirkstoff", "") for g in gold]
+    pred_names = [p.get("wirkstoff", "") for p in predicted]
+    pairs = match_names_llm(gold_names, pred_names, domain="medications")
+
+    wirkstoff_tp = len(pairs)
     partial_tp = 0
     exact_tp = 0
 
-    for pred in predicted:
-        pred_wirkstoff = pred.get("wirkstoff", "")
-        pred_dosis = pred.get("dosis", "")
-        pred_frequenz = pred.get("frequenz", "")
+    for gi, pi in pairs:
+        pred = predicted[pi]
+        g = gold[gi]
 
-        for gi, g in enumerate(gold):
-            if gi in matched_gold:
-                continue
-            if not names_match(pred_wirkstoff, g.get("wirkstoff", "")):
-                continue
+        dosis_ok = _strings_match(pred.get("dosis", ""), g.get("dosis", ""))
+        freq_ok = _strings_match(pred.get("frequenz", ""), g.get("frequenz", ""))
 
-            matched_gold.add(gi)
-            wirkstoff_tp += 1
-
-            dosis_ok = _strings_match(pred_dosis, g.get("dosis", ""))
-            freq_ok = _strings_match(pred_frequenz, g.get("frequenz", ""))
-
-            if dosis_ok or freq_ok:
-                partial_tp += 1
-            if dosis_ok and freq_ok:
-                exact_tp += 1
-            break
+        if dosis_ok or freq_ok:
+            partial_tp += 1
+        if dosis_ok and freq_ok:
+            exact_tp += 1
 
     n_pred = len(predicted)
     n_gold = len(gold)

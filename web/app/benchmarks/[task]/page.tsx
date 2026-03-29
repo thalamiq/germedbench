@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@thalamiq/ui/components/card";
+import { LeaderboardTable } from "./leaderboard-table";
 
 export const dynamic = "force-dynamic";
 
@@ -93,8 +94,8 @@ Klinische Fallvignette:
 
 Für jedes Medikament extrahiere:
 - wirkstoff: Der Wirkstoff (z.B. "Metoprolol", "Ramipril")
-- dosis: Die Dosierung (z.B. "47.5 mg", "5 mg")
-- frequenz: Die Einnahmefrequenz (z.B. "1-0-0", "2x täglich", "alle 8h")
+- dosis: NUR die Einzeldosis mit Einheit (z.B. "47.5 mg", "5 mg", "14 IE")
+- frequenz: Einnahmeschema im Format X-X-X oder X-X-X-X (z.B. "1-0-0", "1-1-1", "0-0-0-1"). Für Bedarfsmedikation: "bei Bedarf". Für Einmalgaben: "einmalig".
 - darreichungsform: Die Darreichungsform (z.B. "p.o.", "i.v.", "s.c.")
 
 Antworte ausschließlich im folgenden JSON-Format:
@@ -189,7 +190,50 @@ export default async function TaskPage({
   const cases = getBenchmarkCases(task);
   const leaderboard = getLeaderboard(task);
   const taskConfig = TASK_CONFIG[task as TaskId];
-  const isPercent = taskConfig && !["overall_score"].includes(taskConfig.primaryMetric);
+
+  // Define all metrics per task for the leaderboard table
+  const TASK_METRICS: Record<string, { key: string; label: string; format: "pct" | "score" }[]> = {
+    icd10_coding: [
+      { key: "exact_match_f1", label: "Exact F1", format: "pct" },
+      { key: "category_match_f1", label: "Cat F1", format: "pct" },
+      { key: "hauptdiagnose_accuracy", label: "HD Acc", format: "pct" },
+      { key: "exact_match_precision", label: "Prec", format: "pct" },
+      { key: "exact_match_recall", label: "Recall", format: "pct" },
+    ],
+    summarization: [
+      { key: "overall_score", label: "Overall", format: "score" },
+      { key: "faktentreue", label: "Fakten", format: "score" },
+      { key: "vollstaendigkeit", label: "Vollst.", format: "score" },
+      { key: "klinische_praezision", label: "Präzision", format: "score" },
+    ],
+    clinical_reasoning: [
+      { key: "overall_score", label: "Overall", format: "score" },
+      { key: "top1_accuracy", label: "Top-1", format: "pct" },
+      { key: "top3_recall", label: "Top-3", format: "pct" },
+      { key: "ddx_overlap_f1", label: "DDx F1", format: "pct" },
+      { key: "reasoning_quality", label: "Reason.", format: "score" },
+      { key: "ddx_plausibility", label: "Plausi.", format: "score" },
+      { key: "red_flag_awareness", label: "Red Fl.", format: "score" },
+    ],
+    med_extraction: [
+      { key: "exact_f1", label: "Exact F1", format: "pct" },
+      { key: "partial_f1", label: "Partial F1", format: "pct" },
+      { key: "wirkstoff_f1", label: "Wirkstoff F1", format: "pct" },
+      { key: "wirkstoff_precision", label: "Prec", format: "pct" },
+      { key: "wirkstoff_recall", label: "Recall", format: "pct" },
+    ],
+    med_qa: [
+      { key: "accuracy", label: "Accuracy", format: "pct" },
+    ],
+    patient_text: [
+      { key: "overall_score", label: "Overall", format: "score" },
+      { key: "verstaendlichkeit", label: "Verständl.", format: "score" },
+      { key: "medizinische_korrektheit", label: "Korrekt.", format: "score" },
+      { key: "vollstaendigkeit", label: "Vollst.", format: "score" },
+    ],
+  };
+
+  const metrics = TASK_METRICS[task] ?? [];
 
   return (
     <div>
@@ -237,97 +281,7 @@ export default async function TaskPage({
           <h2 className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
             Leaderboard
           </h2>
-          <Card>
-            <CardContent className="overflow-x-auto py-0">
-              <table className="w-full min-w-[360px]">
-                <thead>
-                  <tr className="border-b text-xs text-muted-foreground">
-                    <th className="py-2.5 text-left font-medium w-8">#</th>
-                    <th className="py-2.5 text-left font-medium">Modell</th>
-                    <th className="py-2.5 text-right font-medium">
-                      {taskConfig?.primaryMetricLabel ?? "Score"}
-                    </th>
-                    <th className="py-2.5 text-right font-medium">Errors</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {leaderboard.slice(0, 3).map((entry, i) => {
-                    const primaryValue = (entry[taskConfig?.primaryMetric ?? ""] as number) ?? 0;
-                    const errors = entry.n_parse_errors + entry.n_api_errors;
-                    return (
-                      <tr key={entry.model} className="border-b last:border-0">
-                        <td className="py-2.5 text-sm text-muted-foreground">{i + 1}</td>
-                        <td className="py-2.5">
-                          <Link
-                            href={`/model/${encodeURIComponent(entry.model)}`}
-                            className="text-sm font-medium hover:underline"
-                          >
-                            {entry.shortName}
-                          </Link>
-                          <span className="ml-2 text-xs text-muted-foreground">{entry.provider}</span>
-                        </td>
-                        <td className="py-2.5 text-right font-mono text-sm">
-                          {isPercent
-                            ? `${(primaryValue * 100).toFixed(1)}%`
-                            : primaryValue.toFixed(2)
-                          }
-                        </td>
-                        <td className="py-2.5 text-right text-xs text-muted-foreground">
-                          {errors > 0 ? (
-                            <span className="text-destructive">{errors}</span>
-                          ) : (
-                            "0"
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-              {leaderboard.length > 3 && (
-                <details className="border-t">
-                  <summary className="cursor-pointer py-2.5 text-center text-xs text-muted-foreground hover:text-foreground">
-                    {leaderboard.length - 3} weitere Modelle anzeigen
-                  </summary>
-                  <table className="w-full">
-                    <tbody>
-                      {leaderboard.slice(3).map((entry, i) => {
-                        const primaryValue = (entry[taskConfig?.primaryMetric ?? ""] as number) ?? 0;
-                        const errors = entry.n_parse_errors + entry.n_api_errors;
-                        return (
-                          <tr key={entry.model} className="border-b last:border-0">
-                            <td className="py-2.5 text-sm text-muted-foreground w-8">{i + 4}</td>
-                            <td className="py-2.5">
-                              <Link
-                                href={`/model/${encodeURIComponent(entry.model)}`}
-                                className="text-sm font-medium hover:underline"
-                              >
-                                {entry.shortName}
-                              </Link>
-                              <span className="ml-2 text-xs text-muted-foreground">{entry.provider}</span>
-                            </td>
-                            <td className="py-2.5 text-right font-mono text-sm">
-                              {isPercent
-                                ? `${(primaryValue * 100).toFixed(1)}%`
-                                : primaryValue.toFixed(2)
-                              }
-                            </td>
-                            <td className="py-2.5 text-right text-xs text-muted-foreground">
-                              {errors > 0 ? (
-                                <span className="text-destructive">{errors}</span>
-                              ) : (
-                                "0"
-                              )}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </details>
-              )}
-            </CardContent>
-          </Card>
+          <LeaderboardTable leaderboard={leaderboard} metrics={metrics} />
         </div>
       )}
 

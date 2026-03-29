@@ -50,6 +50,61 @@ const SIZE_LABELS: Record<ModelSize | "all", string> = {
   large: "L (>40B)",
 };
 
+/** Room for Y ticks and rotated X-axis model names (Recharts clips to SVG viewBox). */
+const BAR_CHART_MARGIN = { top: 10, right: 14, left: 12, bottom: 52 };
+
+// ---------------------------------------------------------------------------
+// Per-task metric definitions
+// ---------------------------------------------------------------------------
+
+interface MetricDef {
+  key: string;
+  label: string;
+  scale: "pct" | "score5";
+  tip: string;
+}
+
+const TASK_METRICS: Record<TaskId, MetricDef[]> = {
+  icd10_coding: [
+    { key: "exact_match_f1", label: "Exact F1", scale: "pct", tip: "F1 auf vollständigen ICD-10-GM Codes (z.B. I21.0)" },
+    { key: "category_match_f1", label: "Cat F1", scale: "pct", tip: "F1 auf Kategorie-Ebene (z.B. I21 statt I21.0)" },
+    { key: "hauptdiagnose_accuracy", label: "HD Acc", scale: "pct", tip: "Korrekte Hauptdiagnose identifiziert?" },
+    { key: "exact_match_precision", label: "Precision", scale: "pct", tip: "Anteil korrekter Codes unter allen vorhergesagten" },
+    { key: "exact_match_recall", label: "Recall", scale: "pct", tip: "Anteil gefundener Codes unter allen Gold-Codes" },
+  ],
+  summarization: [
+    { key: "overall_score", label: "Overall", scale: "score5", tip: "Durchschnitt über alle drei Dimensionen (1–5)" },
+    { key: "faktentreue", label: "Faktentreue", scale: "score5", tip: "Sind alle genannten Fakten korrekt und belegbar?" },
+    { key: "vollstaendigkeit", label: "Vollständigkeit", scale: "score5", tip: "Sind alle klinisch relevanten Informationen enthalten?" },
+    { key: "klinische_praezision", label: "Präzision", scale: "score5", tip: "Ist die Zusammenfassung spezifisch und klinisch verwertbar?" },
+  ],
+  clinical_reasoning: [
+    { key: "overall_score", label: "Overall", scale: "score5", tip: "Gewichteter Durchschnitt aller Metriken" },
+    { key: "top1_accuracy", label: "Top-1 Acc", scale: "pct", tip: "Korrekte Diagnose an erster Stelle?" },
+    { key: "top3_recall", label: "Top-3 Recall", scale: "pct", tip: "Korrekte Diagnose unter den ersten drei?" },
+    { key: "ddx_overlap_f1", label: "DDx F1", scale: "pct", tip: "Überlappung mit Referenz-Differentialdiagnosen" },
+    { key: "reasoning_quality", label: "Reasoning", scale: "score5", tip: "Klinisch nachvollziehbare, befundbasierte Begründung?" },
+    { key: "ddx_plausibility", label: "Plausibilität", scale: "score5", tip: "Klinisch sinnvolle Reihenfolge der Differentialdiagnosen?" },
+    { key: "red_flag_awareness", label: "Red Flags", scale: "score5", tip: "Werden gefährliche Differentialdiagnosen berücksichtigt?" },
+  ],
+  med_extraction: [
+    { key: "exact_f1", label: "Exact F1", scale: "pct", tip: "Wirkstoff, Dosis und Frequenz alle korrekt" },
+    { key: "partial_f1", label: "Partial F1", scale: "pct", tip: "Wirkstoff korrekt + mindestens Dosis oder Frequenz" },
+    { key: "wirkstoff_f1", label: "Wirkstoff F1", scale: "pct", tip: "F1 auf Ebene der Wirkstoff-Erkennung (fuzzy)" },
+    { key: "wirkstoff_precision", label: "Precision", scale: "pct", tip: "Anteil korrekter Wirkstoffe unter allen extrahierten" },
+    { key: "wirkstoff_recall", label: "Recall", scale: "pct", tip: "Anteil gefundener Wirkstoffe unter allen Gold-Wirkstoffen" },
+  ],
+  med_qa: [
+    { key: "accuracy", label: "Accuracy", scale: "pct", tip: "Anteil korrekt beantworteter MC-Fragen" },
+  ],
+  patient_text: [
+    { key: "overall_score", label: "Overall", scale: "score5", tip: "Durchschnitt über alle drei Dimensionen (1–5)" },
+    { key: "verstaendlichkeit", label: "Verständlichkeit", scale: "score5", tip: "Für Laien ohne Vorkenntnisse verständlich?" },
+    { key: "medizinische_korrektheit", label: "Korrektheit", scale: "score5", tip: "Medizinisch korrekt vereinfacht, ohne Irreführung?" },
+    { key: "vollstaendigkeit", label: "Vollständigkeit", scale: "score5", tip: "Alle klinisch relevanten Informationen kommuniziert?" },
+  ],
+};
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -158,10 +213,7 @@ function AggregatedChart({
       <CardContent className="pt-6">
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-            <BarChart
-              data={chartData}
-              margin={{ left: 0, right: 8, top: 8, bottom: 0 }}
-            >
+            <BarChart data={chartData} margin={BAR_CHART_MARGIN}>
               <CartesianGrid
                 vertical={false}
                 strokeDasharray="3 3"
@@ -171,6 +223,7 @@ function AggregatedChart({
               <XAxis
                 type="category"
                 dataKey="name"
+                padding={{ left: 8, right: 8 }}
                 tick={(props: Record<string, unknown>) => (
                   <AxisTickWithIcon
                     x={props.x as number}
@@ -189,7 +242,7 @@ function AggregatedChart({
                 domain={[0, 100]}
                 tick={{ fontSize: 11 }}
                 tickFormatter={(v) => `${v.toFixed(0)}%`}
-                width={40}
+                width={48}
                 stroke="var(--muted-foreground, #6b7280)"
               />
               <Tooltip
@@ -241,31 +294,31 @@ function TaskChart({
   task,
   data,
   activeModels,
+  metric,
 }: {
   task: TaskId;
   data: LeaderboardEntry[];
   activeModels: Set<string>;
+  metric: MetricDef;
 }) {
   const router = useRouter();
-  const taskConfig = TASK_CONFIG[task];
   const taskData = data.filter(
     (d) => d.task === task && activeModels.has(d.model)
   );
 
-  const primaryMetric = taskConfig.primaryMetric;
   const sorted = [...taskData].sort(
     (a, b) =>
-      ((b[primaryMetric] as number) ?? 0) -
-      ((a[primaryMetric] as number) ?? 0)
+      ((b[metric.key] as number) ?? 0) -
+      ((a[metric.key] as number) ?? 0)
   );
 
-  const isScaleToFive = task === "summarization" || task === "clinical_reasoning";
+  const isScaleToFive = metric.scale === "score5";
   const maxValue = isScaleToFive ? 5 : 100;
   const formatValue = (v: number) =>
     isScaleToFive ? v.toFixed(1) : `${v.toFixed(1)}%`;
 
   const chartData: ChartEntry[] = sorted.map((entry) => {
-    const raw = (entry[primaryMetric] as number) ?? 0;
+    const raw = (entry[metric.key] as number) ?? 0;
     const errors = entry.n_parse_errors + entry.n_api_errors;
     const total = entry.n_cases || 1;
     return {
@@ -293,10 +346,7 @@ function TaskChart({
       <CardContent className="pt-6">
         <div className="h-72">
           <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-            <BarChart
-              data={chartData}
-              margin={{ left: 0, right: 8, top: 8, bottom: 0 }}
-            >
+            <BarChart data={chartData} margin={BAR_CHART_MARGIN}>
               <CartesianGrid
                 vertical={false}
                 strokeDasharray="3 3"
@@ -306,6 +356,7 @@ function TaskChart({
               <XAxis
                 type="category"
                 dataKey="name"
+                padding={{ left: 8, right: 8 }}
                 tick={(props: Record<string, unknown>) => (
                   <AxisTickWithIcon
                     x={props.x as number}
@@ -324,7 +375,7 @@ function TaskChart({
                 domain={[0, maxValue]}
                 tick={{ fontSize: 11 }}
                 tickFormatter={(v) => formatValue(v)}
-                width={40}
+                width={48}
                 stroke="var(--muted-foreground, #6b7280)"
               />
               <Tooltip
@@ -375,6 +426,66 @@ function TaskChart({
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// LeaderboardChart (main)
+// ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// TaskSection — title + metric tabs + chart
+// ---------------------------------------------------------------------------
+
+function TaskSection({
+  task,
+  data,
+  activeModels,
+}: {
+  task: TaskId;
+  data: LeaderboardEntry[];
+  activeModels: Set<string>;
+}) {
+  const metrics = TASK_METRICS[task];
+  const [activeMetric, setActiveMetric] = useState(metrics[0].key);
+  const metric = metrics.find((m) => m.key === activeMetric) ?? metrics[0];
+
+  return (
+    <section className="min-w-0">
+      <h2 className="text-lg font-semibold tracking-tight">
+        <Link href={`/benchmarks/${task}`} className="hover:underline">
+          {TASK_CONFIG[task].name}
+        </Link>
+      </h2>
+      {metrics.length > 1 ? (
+        <div className="mt-1.5 mb-3 flex flex-wrap gap-1">
+          {metrics.map((m) => (
+            <button
+              key={m.key}
+              onClick={() => setActiveMetric(m.key)}
+              title={m.tip}
+              className={`rounded-md px-2 py-0.5 text-xs transition-colors ${
+                m.key === activeMetric
+                  ? "bg-primary text-primary-foreground font-medium"
+                  : "bg-muted/60 text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {m.label}
+            </button>
+          ))}
+        </div>
+      ) : (
+        <p className="mt-1 mb-3 text-sm text-muted-foreground">
+          {metrics[0].label}
+        </p>
+      )}
+      <TaskChart
+        task={task}
+        data={data}
+        activeModels={activeModels}
+        metric={metric}
+      />
+    </section>
   );
 }
 
@@ -544,21 +655,12 @@ export function LeaderboardChart({ data, aggregated }: { data: LeaderboardEntry[
       {/* Per-task charts in grid */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {availableTasks.map((task) => (
-          <section key={task} className="min-w-0">
-            <h2 className="text-lg font-semibold tracking-tight">
-              <Link href={`/benchmarks/${task}`} className="hover:underline">
-                {TASK_CONFIG[task].name}
-              </Link>
-            </h2>
-            <p className="mt-1 mb-3 text-sm text-muted-foreground">
-              {TASK_CONFIG[task].primaryMetricLabel}
-            </p>
-            <TaskChart
-              task={task}
-              data={data}
-              activeModels={effectiveModels}
-            />
-          </section>
+          <TaskSection
+            key={task}
+            task={task}
+            data={data}
+            activeModels={effectiveModels}
+          />
         ))}
       </div>
 

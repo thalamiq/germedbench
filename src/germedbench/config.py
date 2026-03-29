@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=PROJECT_ROOT / ".env",
         env_file_encoding="utf-8",
+        extra="ignore",
     )
 
     # Gemini (data generation + LLM-as-Judge)
@@ -30,9 +31,9 @@ class Settings(BaseSettings):
     together_api_key: str = ""
     together_base_url: str = "https://api.together.xyz/v1"
 
-    # Provider: Chat-AI (Academic Cloud)
-    chat_ai_api_key: str = ""
-    chat_ai_base_url: str = "https://chat-ai.academiccloud.de/v1"
+    # Provider: DeepInfra
+    deepinfra_api_key: str = ""
+    deepinfra_base_url: str = "https://api.deepinfra.com/v1/openai"
 
     # Per-task case generation
     icd10_num_cases: int = 50
@@ -45,31 +46,22 @@ class Settings(BaseSettings):
     # Evaluation models
     eval_models: list[EvalModel] = [
         # --- Together AI ---
-        EvalModel(id="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", provider="together"),
-        EvalModel(id="deepseek-ai/DeepSeek-V3.1", provider="together"),
-        EvalModel(id="mistralai/Mistral-Small-24B-Instruct-2501", provider="together"),
-        EvalModel(id="mistralai/Mixtral-8x7B-Instruct-v0.1", provider="together"),
-        EvalModel(id="Qwen/Qwen2.5-7B-Instruct-Turbo", provider="together"),
-        EvalModel(id="google/gemma-3n-E4B-it", provider="together"),
-        # --- Chat-AI (Academic Cloud) ---
-        # Large
-        # EvalModel(id="apertus-70b-instruct-2509", provider="chat_ai"),
-        # EvalModel(id="deepseek-r1-distill-llama-70b", provider="chat_ai"),
-        # EvalModel(id="devstral-2-123b-instruct-2512", provider="chat_ai"),
-        EvalModel(id="mistral-large-3-675b-instruct-2512", provider="chat_ai"),
-        EvalModel(id="openai-gpt-oss-120b", provider="chat_ai"),
-        EvalModel(id="glm-4.7", provider="chat_ai"),
-        # EvalModel(id="qwen3-235b-a22b", provider="chat_ai"),  # thinking model, too slow + hits max_tokens
-        # Mid-range
-        EvalModel(id="gemma-3-27b-it", provider="chat_ai"),
-        EvalModel(id="medgemma-27b-it", provider="chat_ai"),
-        EvalModel(id="llama-3.3-70b-instruct", provider="chat_ai"),
-        EvalModel(id="llama-3.1-sauerkrautlm-70b-instruct", provider="chat_ai"),
-        EvalModel(id="qwen3-30b-a3b-instruct-2507", provider="chat_ai"),
-        # EvalModel(id="qwen3-32b", provider="chat_ai"),  # thinking model, too slow + hits max_tokens
-        # Small
-        # EvalModel(id="meta-llama-3.1-8b-instruct", provider="chat_ai"),  # refuses to answer, hallucinates tool calls
-        # EvalModel(id="teuken-7b-instruct-research", provider="chat_ai"),
+        EvalModel(id="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8"),
+        EvalModel(id="meta-llama/Llama-3.3-70B-Instruct-Turbo"),
+        EvalModel(id="deepseek-ai/DeepSeek-V3.1"),
+        EvalModel(id="mistralai/Mistral-Small-24B-Instruct-2501"),
+        EvalModel(id="mistralai/Mixtral-8x7B-Instruct-v0.1"),
+        EvalModel(id="Qwen/Qwen2.5-7B-Instruct-Turbo"),
+        EvalModel(id="google/gemma-3n-E4B-it"),
+        EvalModel(id="openai/gpt-oss-120b"),
+        # EvalModel(id="zai-org/GLM-4.7"),  # slow, poor output quality
+        # --- DeepInfra ---
+        EvalModel(id="google/gemma-3-27b-it", provider="deepinfra"),
+        EvalModel(id="Qwen/Qwen2.5-72B-Instruct", provider="deepinfra"),
+        # EvalModel(id="zai-org/GLM-5", provider="deepinfra"),  # slow, poor output quality
+        EvalModel(id="deepseek-ai/DeepSeek-V3.2", provider="deepinfra"),
+        EvalModel(id="meta-llama/Meta-Llama-3.1-8B-Instruct", provider="deepinfra"),
+        EvalModel(id="nvidia/Llama-3.1-Nemotron-70B-Instruct", provider="deepinfra"),
     ]
 
     @property

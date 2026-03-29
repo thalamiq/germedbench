@@ -22,7 +22,16 @@ Anforderungen:
 - Verwende realistische Wirkstoffe, Dosierungen und Einnahmefrequenzen
 - Mische verschiedene Darreichungsformen (Tabletten, Injektionen, Infusionen)
 
-Erstelle zusätzlich eine strukturierte Liste aller Medikamente im Text:
+Erstelle zusätzlich eine strukturierte Liste aller Medikamente im Text.
+
+WICHTIG — Strikte Feldtrennung:
+- "dosis" enthält NUR die Einzeldosis mit Einheit (z.B. "47.5 mg", "500 mg", "14 IE", "2 Hübe"). \
+KEINE Frequenz, KEINE Infusionsraten, KEINE Zeitangaben in der Dosis.
+- "frequenz" enthält NUR das Einnahmeschema im Format X-X-X oder X-X-X-X (z.B. "1-0-0", "1-1-1", "0-0-0-1"). \
+Verwende IMMER dieses Schema-Format, nicht "2x täglich" oder "3x tgl.". \
+Für Bedarfsmedikation: "bei Bedarf". Für Einmalgaben: "einmalig".
+- Dosis und Frequenz NIEMALS vermischen (FALSCH: "80 mg/24h", RICHTIG: dosis="80 mg", frequenz="kontinuierlich")
+- Dezimaltrennzeichen: Punkt verwenden (z.B. "47.5 mg", nicht "47,5 mg")
 
 Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar):
 {{

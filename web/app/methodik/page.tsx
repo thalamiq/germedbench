@@ -29,21 +29,24 @@ export default function MethodikPage() {
         <section>
           <h2 className="mb-3 text-lg font-semibold">Warum GerMedBench?</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
+            Im Gesundheitswesen gelten strenge Datenschutz- und
+            Regulierungsanforderungen. Patientendaten dürfen in der Regel nicht
+            an externe Cloud-Dienste übermittelt werden — in der Praxis bedeutet
+            das, dass Kliniken und Gesundheitsunternehmen auf{" "}
+            <strong>Open-Weights-Modelle</strong> angewiesen sind, die lokal
+            oder on-premise betrieben werden können.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             Allgemeine LLM-Leaderboards wie{" "}
             <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80">Artificial Analysis</a> und{" "}
             <a href="https://lmarena.ai/" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80">LM Arena</a>{" "}
             messen Modelle auf englischsprachigen, domänenübergreifenden Tasks.
             GerMedBench ergänzt diese um eine Dimension, die dort fehlt:
-            die Evaluation auf <strong>deutschen klinischen Texten</strong> mit
-            fachspezifischen Aufgaben wie ICD-10-Kodierung, Arztbrief-Zusammenfassung
-            und Differentialdiagnostik.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Bestehende deutsche Datensätze (GGPONC, BRONCO, GraSCCo) wurden für
-            die BERT-Ära entwickelt und evaluieren vorwiegend klassische
-            NLP-Tasks wie Named Entity Recognition oder Negationserkennung. Generative klinische
-            Fähigkeiten moderner LLMs wurden für Deutsch bisher nicht
-            systematisch und öffentlich bewertet.
+            die Evaluation von <strong>Open-Weights-Modellen</strong> auf{" "}
+            <strong>deutschen klinischen Texten</strong> mit fachspezifischen
+            Aufgaben wie ICD-10-Kodierung, Arztbrief-Zusammenfassung und
+            Differentialdiagnostik — genau die Modelle, die im klinischen
+            Alltag tatsächlich einsetzbar sind.
           </p>
         </section>
 
@@ -178,8 +181,11 @@ export default function MethodikPage() {
                   <span className="font-medium text-foreground">
                     Evaluation:
                   </span>{" "}
-                  Hybrid — automatische DDx-Metriken plus LLM-as-Judge. Sechs
-                  Metriken:
+                  Hybrid — automatische DDx-Metriken plus LLM-as-Judge.
+                  Diagnose-Namen werden per LLM-assistiertem Matching verglichen
+                  (Gemini Flash Lite), um Synonym-Varianten korrekt zu erkennen
+                  (z.B. &quot;Bakterielle Pneumonie&quot; ↔ &quot;Ambulant erworbene Pneumonie&quot;).
+                  Sechs Metriken:
                 </p>
                 <ul className="space-y-1.5 pl-1">
                   <li>
@@ -249,7 +255,10 @@ export default function MethodikPage() {
                   <span className="font-medium text-foreground">
                     Evaluation:
                   </span>{" "}
-                  Vollautomatisch, kein LLM-as-Judge erforderlich. Drei Metriken:
+                  Vollautomatisch. Wirkstoff-Matching per LLM-assistiertem
+                  Vergleich (Gemini Flash Lite), um Handelsnamen, Salzformen
+                  und Abkürzungen korrekt zuzuordnen
+                  (z.B. &quot;ASS&quot; ↔ &quot;Acetylsalicylsäure&quot;). Drei Metriken:
                 </p>
                 <ul className="space-y-1.5 pl-1">
                   <li>
@@ -424,7 +433,7 @@ export default function MethodikPage() {
         <section>
           <h2 className="mb-3 text-lg font-semibold">Modell-Inferenz</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Open-Source-Modelle werden über Together AI evaluiert. Jedes Modell
+            Open-Source-Modelle werden über Together AI und DeepInfra evaluiert. Jedes Modell
             erhält denselben Prompt mit dem klinischen Text und soll die
             Ergebnisse in einem strukturierten JSON-Format zurückgeben. Die
             Inferenz erfolgt mit Temperatur 0 für maximale Reproduzierbarkeit.
@@ -445,6 +454,13 @@ export default function MethodikPage() {
               — Die aktuelle Datengrundlage ist synthetisch. Synthetische Texte
               können systematische Muster aufweisen, die in echten klinischen
               Texten nicht vorkommen.
+            </li>
+            <li>
+              — GerMedBench verwendet Frontier-Modelle (Gemini) als Ground-Truth-Generator
+              und LLM-as-Judge. Die Qualität der Benchmark-Daten und der
+              generativen Bewertungen ist damit durch die Fähigkeiten dieser
+              Modelle begrenzt — insbesondere bei deutschem medizinischem
+              Fachvokabular können auch Frontier-Modelle Fehler machen.
             </li>
             <li>
               — ICD-10-GM Kodierung ist ein komplexer Prozess, der in der

@@ -24,7 +24,7 @@ PRIMARY_METRICS: dict[str, str] = {
 # Provider -> (api_key_attr, base_url_attr)
 _PROVIDER_CONFIG: dict[str, tuple[str, str]] = {
     "together": ("together_api_key", "together_base_url"),
-    "chat_ai": ("chat_ai_api_key", "chat_ai_base_url"),
+    "deepinfra": ("deepinfra_api_key", "deepinfra_base_url"),
 }
 
 _clients: dict[str, OpenAI] = {}
@@ -54,7 +54,7 @@ def get_client(provider: str) -> OpenAI:
 
 import time as _time
 
-MAX_TOKENS = 8192  # high ceiling for thinking models; shorter responses stop early
+MAX_TOKENS = 4096
 MAX_RETRIES = 3
 
 
@@ -104,7 +104,8 @@ def parse_eval_args(task_name: str) -> EvalArgs:
     args = parser.parse_args()
 
     if args.models:
-        models = [EvalModel(id=m) for m in args.models]
+        configured = {m.id: m for m in settings.eval_models}
+        models = [configured.get(m, EvalModel(id=m)) for m in args.models]
     else:
         models = list(settings.eval_models)
         if args.provider:
@@ -127,13 +128,18 @@ def model_slug(model: str) -> str:
 def extract_json(raw: str) -> str:
     """Extract first JSON object from model response.
 
-    Handles: <think> blocks (closed and unclosed), markdown fences, trailing commentary.
+    Handles: <think> blocks (closed and unclosed), markdown fences, trailing commentary,
+    and inline // comments in JSON (common with smaller models).
     """
     import re
 
     # Strip <think>...</think> (or unclosed <think>... to end)
     text = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL)
     text = re.sub(r"<think>.*", "", text, flags=re.DOTALL)
+
+    # Strip inline // comments (not inside strings)
+    text = re.sub(r'(?<=[,\]\}\"\d])\s*//[^\n]*', '', text)
+
     text = text.strip()
 
     # Try markdown fences first

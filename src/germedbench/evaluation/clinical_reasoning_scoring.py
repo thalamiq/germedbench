@@ -8,7 +8,7 @@ Hybrid evaluation:
 import json
 from dataclasses import dataclass
 
-from germedbench.evaluation.utils import f1, names_match
+from germedbench.evaluation.utils import f1, match_diagnoses_llm
 
 JUDGE_PROMPT = """\
 Du bist ein erfahrener klinischer Prüfer. Bewerte die folgende Differentialdiagnostik \
@@ -74,29 +74,30 @@ def score_automated(
     gold_diagnoses: list[dict],
     correct_diagnosis: str,
 ) -> tuple[float, float, float]:
-    """Return (top1_accuracy, top3_recall, ddx_overlap_f1)."""
+    """Return (top1_accuracy, top3_recall, ddx_overlap_f1).
+
+    Uses LLM-assisted matching (Gemini Flash Lite) to handle synonym variations
+    in diagnosis names (e.g. "Bakterielle Pneumonie" ↔ "Ambulant erworbene Pneumonie").
+    """
     pred_names = [d.get("name", "") for d in (predicted_diagnoses or [])]
     gold_names = [d.get("name", "") for d in (gold_diagnoses or [])]
 
-    top1 = 1.0 if pred_names and names_match(pred_names[0], correct_diagnosis) else 0.0
-
+    # Use LLM-assisted matching for correct_diagnosis against top predictions
+    top1 = 0.0
     top3 = 0.0
-    for name in pred_names[:3]:
-        if names_match(name, correct_diagnosis):
+    if pred_names:
+        top_names = pred_names[:3]
+        matches = match_diagnoses_llm([correct_diagnosis], top_names)
+        if matches:
+            matched_pred_idx = matches[0][1]
+            if matched_pred_idx == 0:
+                top1 = 1.0
             top3 = 1.0
-            break
 
-    # DDx overlap F1 (set-level, fuzzy)
-    matched_gold: set[int] = set()
-    matched_pred: set[int] = set()
-    for pi, pn in enumerate(pred_names):
-        for gi, gn in enumerate(gold_names):
-            if gi in matched_gold:
-                continue
-            if names_match(pn, gn):
-                matched_gold.add(gi)
-                matched_pred.add(pi)
-                break
+    # DDx overlap F1 via LLM-assisted matching
+    pairs = match_diagnoses_llm(gold_names, pred_names)
+    matched_gold = {gi for gi, _ in pairs}
+    matched_pred = {pi for _, pi in pairs}
 
     precision = len(matched_pred) / len(pred_names) if pred_names else 0.0
     recall = len(matched_gold) / len(gold_names) if gold_names else 0.0

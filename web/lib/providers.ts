@@ -13,6 +13,7 @@ const PROVIDER_CONFIG: Record<string, ProviderConfig> = {
   OpenAI: { color: "#000000", icon: "/icons/openai.svg" },
   "Swiss AI": { color: "#E42313", icon: "" },
   "Z.ai": { color: "#4A4A4A", icon: "/icons/zai.svg" },
+  NVIDIA: { color: "#76B900", icon: "/icons/nvidia.svg" },
   "OpenGPT-X": { color: "#003399", icon: "" },
 };
 

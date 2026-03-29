@@ -8,7 +8,7 @@ Offenes Benchmark-Framework zur Evaluation von LLMs auf deutschen klinischen Tex
 - **Website (Next.js):** `web/` — Leaderboard + Benchmark-Explorer
 - **Paketmanager:** uv (Python), pnpm (Web)
 - **Daten-Generierung:** Gemini 3 Flash (via `google-genai`)
-- **Modell-Inferenz:** Together AI (via `openai` SDK)
+- **Modell-Inferenz:** Together AI + DeepInfra (via `openai` SDK)
 - **Evaluation-Judge:** Gemini 3 Flash (via `google-genai`, für generative Tasks)
 - **Lizenz:** Apache 2.0
 
@@ -23,7 +23,7 @@ germedbench/
 │   ├── gen_helpers.py           # Shared: parse_gen_args, load_base_cases, write_cases
 │   ├── eval_helpers.py          # Shared: model_slug, extract_json, update_latest
 │   └── evaluation/
-│       ├── utils.py             # Shared: f1, names_match, normalize_code
+│       ├── utils.py             # Shared: f1, match_names_llm, normalize_code
 │       ├── icd10_scoring.py     # Exact Match, Category Match
 │       ├── summarization_scoring.py   # LLM-as-Judge
 │       ├── clinical_reasoning_scoring.py  # Hybrid: Auto DDx + LLM-as-Judge

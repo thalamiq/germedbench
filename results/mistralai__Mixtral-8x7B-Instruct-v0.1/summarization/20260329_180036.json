@@ -1,0 +1,1097 @@
+{
+  "summary": {
+    "model": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "task": "summarization",
+    "timestamp": "20260329_180036",
+    "n_cases": 50,
+    "n_scored": 48,
+    "n_parse_errors": 2,
+    "n_api_errors": 0,
+    "faktentreue": 4.479166666666667,
+    "vollstaendigkeit": 2.5208333333333335,
+    "klinische_praezision": 2.4583333333333335,
+    "overall_score": 3.152777777777778
+  },
+  "predictions": [
+    {
+      "summary": {
+        "hauptdiagnose": "Akut dekompensierte chronische Herzinsuffizienz (HFrEF: 35%) mit Niereninsuffizienz und Vorhofflimmern",
+        "therapie": "Forcierte Diurese, Umstellung auf ARNI (Sacubitril/Valsartan), Einleitung SGLT2-Inhibitor (Empagliflozin), Betablocker-Dosissteigerung, orale Antikoagulation mit Apixaban, Probeexzision Hautläsion",
+        "procedere": "Kardiologische Verlaufskontrolle in 4-6 Wochen, engmaschige Laborkontrollen, schrittweise Aufdosierung ARNI und ggf. Einleitung Mineralokortikoidrezeptor-Antagonist, dermatologische Nachsorge für Hautbiopsie",
+        "offene_fragen": "Histologieergebnis der Hautbiopsie, urologische Kontrolle bei leicht erhöhtem PSA-Wert"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akut dekompensierte chronische Herzinsuffizienz (HFrEF: 35%) mit Niereninsuffizienz und Vorhofflimmern\",\n  \"therapie\": \"Forcierte Diurese, Umstellung auf ARNI (Sacubitril/Valsartan), Einleitung SGLT2-Inhibitor (Empagliflozin), Betablocker-Dosissteigerung, orale Antikoagulation mit Apixaban, Probeexzision Hautläsion\",\n  \"procedere\": \"Kardiologische Verlaufskontrolle in 4-6 Wochen, engmaschige Laborkontrollen, schrittweise Aufdosierung ARNI und ggf. Einleitung Mineralokortikoidrezeptor-Antagonist, dermatologische Nachsorge für Hautbiopsie\",\n  \"offene_fragen\": \"Histologieergebnis der Hautbiopsie, urologische Kontrolle bei leicht erhöhtem PSA-Wert\"\n}",
+      "prompt_length": 6739,
+      "response_length": 677,
+      "usage": {
+        "prompt_tokens": 2679,
+        "completion_tokens": 264
+      },
+      "case_id": "summ_001",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Hauptdiagnose ist akut dekompensierte chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), zusätzlich persistierendes Vorhofflimmern",
+        "therapie": "Forcierte diuretische Therapie, orale Antikoagulation mit Edoxaban, Bisoprolol zur Frequenzkontrolle, leitliniengerechte Optimierung der Herzinsuffizienzmedikation (Sacubitril/Valsartan, Empagliflozin), Behandlung eines lokalen Hämatoms nach Koronarangiographie",
+        "procedere": "Kardiologische Kontrolle in 3 Monaten, medikamentöse Titration bei stabiler Nierenfunktion und Blutdruckwerten, dringende urologische Vorstellung innerhalb der nächsten 2 Wochen, Laborkontrollen in 1 Woche beim Hausarzt",
+        "offene_fragen": "Möglichkeit eines Prostatakarzinoms aufgrund auffälligen PSA-Wertes und unauffälliger Sonographie"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Hauptdiagnose ist akut dekompensierte chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), zusätzlich persistierendes Vorhofflimmern\",\n  \"therapie\": \"Forcierte diuretische Therapie, orale Antikoagulation mit Edoxaban, Bisoprolol zur Frequenzkontrolle, leitliniengerechte Optimierung der Herzinsuffizienzmedikation (Sacubitril/Valsartan, Empagliflozin), Behandlung eines lokalen Hämatoms nach Koronarangiographie\",\n  \"procedere\": \"Kardiologische Kontrolle in 3 Monaten, medikamentöse Titration bei stabiler Nierenfunktion und Blutdruckwerten, dringende urologische Vorstellung innerhalb der nächsten 2 Wochen, Laborkontrollen in 1 Woche beim Hausarzt\",\n  \"offene_fragen\": \"Möglichkeit eines Prostatakarzinoms aufgrund auffälligen PSA-Wertes und unauffälliger Sonographie\"\n}",
+      "prompt_length": 6770,
+      "response_length": 813,
+      "usage": {
+        "prompt_tokens": 2701,
+        "completion_tokens": 288
+      },
+      "case_id": "summ_002",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exazerbierte COPD GOLD IV mit schwerem Lungenemphysem und akuter respiratorischer Insuffizienz, chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion, peripheres Bronchialkarzinom (Rundherd rechter Oberlappen, 16x14 mm) mit erhöhtem Tumormarker CYFRA 21-1, erosive Gastritis mit intermittierender gastrointestinaler Blutung",
+        "therapie": "Kalkulierte Antibiose, inhalative Therapie mit Trimbow, Salbutamol bei Bedarf, Antikoagulation mit Edoxaban, Pantoprazol, Furosemid, Bisoprolol, Ramipril, Prednisolon-Ausschleichschema, LTOT mit 2l O2/min für mind. 16h/Tag",
+        "procedere": "Zeitnahe Wiedervorstellung in pneumologischer Ambulanz zur Besprechung des histologischen Befundes der Lungenbiopsie, kardiologische Kontrolle der LVEF und Herzinsuffizienzmedikation in 4-6 Wochen, Laborkontrollen beim Hausarzt in 3 Tagen, bei Malignitätsnachweis Vorstellung im interdisziplinären Tumorboard zur Therapieplanung",
+        "offene_fragen": "Histologisches Ergebnis der Lungenpunktion steht noch aus, Diskrepanz zwischen Rundherdgröße und CYFRA 21-1, klinische Überwachung einer möglichen gastrointestinalen Blutung unter reduzierter Antikoagulation"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akut exazerbierte COPD GOLD IV mit schwerem Lungenemphysem und akuter respiratorischer Insuffizienz, chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion, peripheres Bronchialkarzinom (Rundherd rechter Oberlappen, 16x14 mm) mit erhöhtem Tumormarker CYFRA 21-1, erosive Gastritis mit intermittierender gastrointestinaler Blutung\",\n  \"therapie\": \"Kalkulierte Antibiose, inhalative Therapie mit Trimbow, Salbutamol bei Bedarf, Antikoagulation mit Edoxaban, Pantoprazol, Furosemid, Bisoprolol, Ramipril, Prednisolon-Ausschleichschema, LTOT mit 2l O2/min für mind. 16h/Tag\",\n  \"procedere\": \"Zeitnahe Wiedervorstellung in pneumologischer Ambulanz zur Besprechung des histologischen Befundes der Lungenbiopsie, kardiologische Kontrolle der LVEF und Herzinsuffizienzmedikation in 4-6 Wochen, Laborkontrollen beim Hausarzt in 3 Tagen, bei Malignitätsnachweis Vorstellung im interdisziplinären Tumorboard zur Therapieplanung\",\n  \"offene_fragen\": \"Histologisches Ergebnis der Lungenpunktion steht noch aus, Diskrepanz zwischen Rundherdgröße und CYFRA 21-1, klinische Überwachung einer möglichen gastrointestinalen Blutung unter reduzierter Antikoagulation\"\n}",
+      "prompt_length": 5998,
+      "response_length": 1179,
+      "usage": {
+        "prompt_tokens": 2414,
+        "completion_tokens": 435
+      },
+      "case_id": "summ_003",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit einem ischämischen Hirninfarkt im Stromgebiet der Arteria cerebri media links (M0-Segment) und Verdacht auf mikroangiopathische Genese eingewiesen.",
+        "therapie": "Es wurde eine Sekundärprophylaxe mit ASS eingeleitet, die aufgrund von Magenbeschwerden auf Clopidogrel umgestellt wurde. Zusätzlich erhielt der Patient Pantoprazol zur Magenschutz. Bei Fieber und Dysurie wurde eine kalkulierte antibiotische Therapie mit Cotrimoxazol gestartet. Für die arterielle Hypertonie und den erhöhten LDL-Wert wurden Ramipril und Atorvastatin verordnet.",
+        "procedere": "Es ist eine konsequente Sekundärprophylaxe mit Clopidogrel, Fortführung der antihypertensiven Therapie mit Ramipril, Lipidsenkung mit Atorvastatin und Abschluss der antibiotischen Therapie mit Cotrimoxazol empfohlen. Eine neurologische Kontrolluntersuchung inklusive Duplexsonographie sollte in 3 Monaten erfolgen. Nikotinkarenz wird dringend empfohlen.",
+        "offene_fragen": "Es stehen noch Befunde der Borrelien-Serologie und die letzten 24h des Langzeit-EKGs aus."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit einem ischämischen Hirninfarkt im Stromgebiet der Arteria cerebri media links (M0-Segment) und Verdacht auf mikroangiopathische Genese eingewiesen.\",\n  \"therapie\": \"Es wurde eine Sekundärprophylaxe mit ASS eingeleitet, die aufgrund von Magenbeschwerden auf Clopidogrel umgestellt wurde. Zusätzlich erhielt der Patient Pantoprazol zur Magenschutz. Bei Fieber und Dysurie wurde eine kalkulierte antibiotische Therapie mit Cotrimoxazol gestartet. Für die arterielle Hypertonie und den erhöhten LDL-Wert wurden Ramipril und Atorvastatin verordnet.\",\n  \"procedere\": \"Es ist eine konsequente Sekundärprophylaxe mit Clopidogrel, Fortführung der antihypertensiven Therapie mit Ramipril, Lipidsenkung mit Atorvastatin und Abschluss der antibiotischen Therapie mit Cotrimoxazol empfohlen. Eine neurologische Kontrolluntersuchung inklusive Duplexsonographie sollte in 3 Monaten erfolgen. Nikotinkarenz wird dringend empfohlen.\",\n  \"offene_fragen\": \"Es stehen noch Befunde der Borrelien-Serologie und die letzten 24h des Langzeit-EKGs aus.\"\n}",
+      "prompt_length": 6287,
+      "response_length": 1075,
+      "usage": {
+        "prompt_tokens": 2459,
+        "completion_tokens": 367
+      },
+      "case_id": "summ_004",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akute Sigmadivertikulitis mit unterer gastrointestinaler Blutung und persistierendem Vorhofflimmern",
+        "therapie": "Blutstillung durch Hemoclip-Applikation, Antibiotika-Therapie mit Ceftriaxon und Metronidazol, Umstellung der Antikoagulation von Phenprocoumon auf Apixaban, Behandlung der arteriellen Hypertonie mit Ramipril und Bisoprolol, Therapie des Diabetes mellitus Typ 2 mit Metformin, Ulkusprophylaxe mit Pantoprazol",
+        "procedere": "Vervollständigung der antibiotischen Therapie für 10 Tage, körperliche Schonung für 2 Wochen, ballaststoffarme Kost für die erste Woche nach Entlassung, Kontrolle des kleinen Blutbildes, Kreatinin und CRP beim Hausarzt in 3 Tagen, urologische Vorstellung zur Abklärung des PSA-Wertes und der Prostatavergrößerung in ca. 4 Wochen, Durchführung eines MRT-Abdomen mit hepatobiliärem Kontrastmittel in 3 Monaten zur weiteren Charakterisierung des Leberherdes, Kontrolle des CA 19-9 in 6 Wochen nach vollständigem Abklingen der Entzündung",
+        "offene_fragen": "Ergebnis der Histopathologie des abgetragenen Polyps"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akute Sigmadivertikulitis mit unterer gastrointestinaler Blutung und persistierendem Vorhofflimmern\",\n  \"therapie\": \"Blutstillung durch Hemoclip-Applikation, Antibiotika-Therapie mit Ceftriaxon und Metronidazol, Umstellung der Antikoagulation von Phenprocoumon auf Apixaban, Behandlung der arteriellen Hypertonie mit Ramipril und Bisoprolol, Therapie des Diabetes mellitus Typ 2 mit Metformin, Ulkusprophylaxe mit Pantoprazol\",\n  \"procedere\": \"Vervollständigung der antibiotischen Therapie für 10 Tage, körperliche Schonung für 2 Wochen, ballaststoffarme Kost für die erste Woche nach Entlassung, Kontrolle des kleinen Blutbildes, Kreatinin und CRP beim Hausarzt in 3 Tagen, urologische Vorstellung zur Abklärung des PSA-Wertes und der Prostatavergrößerung in ca. 4 Wochen, Durchführung eines MRT-Abdomen mit hepatobiliärem Kontrastmittel in 3 Monaten zur weiteren Charakterisierung des Leberherdes, Kontrolle des CA 19-9 in 6 Wochen nach vollständigem Abklingen der Entzündung\",\n  \"offene_fragen\": \"Ergebnis der Histopathologie des abgetragenen Polyps\"\n}",
+      "prompt_length": 6216,
+      "response_length": 1078,
+      "usage": {
+        "prompt_tokens": 2488,
+        "completion_tokens": 387
+      },
+      "case_id": "summ_005",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Metastasiertes Adenokarzinom des Colon ascendens mit Lebermetastase und Verdacht auf onkologischen Progress",
+        "therapie": "Behandlung mit FOLFOX-Schema abgebrochen und auf FOLFIRI-Schema umgestellt, Anwendung von Filgrastim zur Behandlung der febrilen Neutropenie, Gabe von Melperon zur Behandlung des Delirs, Umstellung der Schmerztherapie auf Hydromorphon, Fortführung der therapeutischen Antikoagulation mit Apixaban, Ergänzung der Medikation um Bisoprolol zur Behandlung der Herzinsuffizienz.",
+        "procedere": "Fortführung der FOLFIRI-Therapie, wöchentliche Laborkontrollen beim Hausarzt, kardiologische Verlaufskontrolle zur Evaluation der LVEF unter optimierter Herzinsuffizienzmedikation in 4-6 Wochen, Skelettszintigraphie zum Ausschluss von Knochenmetastasen, weitere Behandlung in onkologischer Ambulanz.",
+        "offene_fragen": "Ergebnis der Skelettszintigraphie, weitere Entwicklung des CEA-Werts im Vergleich zur Bildgebung"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Metastasiertes Adenokarzinom des Colon ascendens mit Lebermetastase und Verdacht auf onkologischen Progress\",\n  \"therapie\": \"Behandlung mit FOLFOX-Schema abgebrochen und auf FOLFIRI-Schema umgestellt, Anwendung von Filgrastim zur Behandlung der febrilen Neutropenie, Gabe von Melperon zur Behandlung des Delirs, Umstellung der Schmerztherapie auf Hydromorphon, Fortführung der therapeutischen Antikoagulation mit Apixaban, Ergänzung der Medikation um Bisoprolol zur Behandlung der Herzinsuffizienz.\",\n  \"procedere\": \"Fortführung der FOLFIRI-Therapie, wöchentliche Laborkontrollen beim Hausarzt, kardiologische Verlaufskontrolle zur Evaluation der LVEF unter optimierter Herzinsuffizienzmedikation in 4-6 Wochen, Skelettszintigraphie zum Ausschluss von Knochenmetastasen, weitere Behandlung in onkologischer Ambulanz.\",\n  \"offene_fragen\": \"Ergebnis der Skelettszintigraphie, weitere Entwicklung des CEA-Werts im Vergleich zur Bildgebung\"\n}",
+      "prompt_length": 5880,
+      "response_length": 961,
+      "usage": {
+        "prompt_tokens": 2341,
+        "completion_tokens": 326
+      },
+      "case_id": "summ_006",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde wegen einer pertrochantären Femurfraktur rechts behandelt, die durch einen Sturz verursacht wurde.",
+        "therapie": "Es wurde eine intramedulläre Kraftträgerosteosynthese durchgeführt. Postoperativ erhielt der Patient Medikamente zur Behandlung eines hyperaktiven Delirs und die medikamentöse Therapie wurde an die Nierenfunktion angepasst. Die Wundheilung war unauffällig und eine schmerzadaptierte Vollbelastung des rechten Beines wurde durchgeführt.",
+        "procedere": "Empfohlen wird eine schmerzadaptierte Vollbelastung des rechten Beines am Rollator/Unterarmgehstützen, Fadenentfernung durch den Hausarzt, radiologische Verlaufskontrolle der rechten Hüfte in 6 Wochen, Fortführung der Antikoagulation mit Apixaban in reduzierter Dosis, Kontrolle der Retentionsparameter in einer Woche und Vorstellung beim Hautarzt zur Befundbesprechung der Hautbiopsie.",
+        "offene_fragen": "Es bestehen offene Fragen zur Kontrolle der Retentionsparameter und zur Abklärung der persistierend leicht erhöhten LDH im ambulanten Bereich."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde wegen einer pertrochantären Femurfraktur rechts behandelt, die durch einen Sturz verursacht wurde.\",\n  \"therapie\": \"Es wurde eine intramedulläre Kraftträgerosteosynthese durchgeführt. Postoperativ erhielt der Patient Medikamente zur Behandlung eines hyperaktiven Delirs und die medikamentöse Therapie wurde an die Nierenfunktion angepasst. Die Wundheilung war unauffällig und eine schmerzadaptierte Vollbelastung des rechten Beines wurde durchgeführt.\",\n  \"procedere\": \"Empfohlen wird eine schmerzadaptierte Vollbelastung des rechten Beines am Rollator/Unterarmgehstützen, Fadenentfernung durch den Hausarzt, radiologische Verlaufskontrolle der rechten Hüfte in 6 Wochen, Fortführung der Antikoagulation mit Apixaban in reduzierter Dosis, Kontrolle der Retentionsparameter in einer Woche und Vorstellung beim Hautarzt zur Befundbesprechung der Hautbiopsie.\",\n  \"offene_fragen\": \"Es bestehen offene Fragen zur Kontrolle der Retentionsparameter und zur Abklärung der persistierend leicht erhöhten LDH im ambulanten Bereich.\"\n}",
+      "prompt_length": 6075,
+      "response_length": 1065,
+      "usage": {
+        "prompt_tokens": 2328,
+        "completion_tokens": 342
+      },
+      "case_id": "summ_007",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Rezidivierende depressive Störung, gegenwärtig schwere Episode ohne psychotische Symptome (ICD-10: F33.2)",
+        "therapie": "Multimodales Therapiekonzept mit medikamentöser Therapie (SNRI Venlafaxin, Ramipril, Amlodipin, Metformin, Pantoprazol), Einzel- und Gruppenpsychotherapie, Ergotherapie sowie Sport- und Bewegungstherapie. Behandlung einer hypertensiven Krise und Anpassung der antihypertensiven Medikation.",
+        "procedere": "Fortführung der medikamentösen Therapie, zeitnahe urologische Vorstellung zur Abklärung des PSA-Wertes, Kontrolle des HbA1c und der Leberwerte, Terminierung einer Polygraphie/Polysomnographie im Schlaflabor zur Optimierung der CPAP-Therapie, Fortführung der ambulanten Psychotherapie und Wiedereingliederung ins Berufsleben.",
+        "offene_fragen": "Abklärung des erhöhten PSA-Wertes, Optimierung der CPAP-Therapie"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Rezidivierende depressive Störung, gegenwärtig schwere Episode ohne psychotische Symptome (ICD-10: F33.2)\",\n  \"therapie\": \"Multimodales Therapiekonzept mit medikamentöser Therapie (SNRI Venlafaxin, Ramipril, Amlodipin, Metformin, Pantoprazol), Einzel- und Gruppenpsychotherapie, Ergotherapie sowie Sport- und Bewegungstherapie. Behandlung einer hypertensiven Krise und Anpassung der antihypertensiven Medikation.\",\n  \"procedere\": \"Fortführung der medikamentösen Therapie, zeitnahe urologische Vorstellung zur Abklärung des PSA-Wertes, Kontrolle des HbA1c und der Leberwerte, Terminierung einer Polygraphie/Polysomnographie im Schlaflabor zur Optimierung der CPAP-Therapie, Fortführung der ambulanten Psychotherapie und Wiedereingliederung ins Berufsleben.\",\n  \"offene_fragen\": \"Abklärung des erhöhten PSA-Wertes, Optimierung der CPAP-Therapie\"\n}",
+      "prompt_length": 6770,
+      "response_length": 868,
+      "usage": {
+        "prompt_tokens": 2654,
+        "completion_tokens": 317
+      },
+      "case_id": "summ_008",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Endometriumkarzinom (V.a. pT1b, pN0 (0/14), L0, V0, G2) mit nosokomialem Harnwegsinfekt durch E. coli und absolutem Arrhythmie bei Vorhofflimmern",
+        "therapie": "Totale laparoskopische Hysterektomie mit beidseitiger Adnektomie und pelviner Lymphonodektomie, Bluttransfusion, Umstellung der Diabetesmedikation auf intensiviertes Insulin-Schema, Einmalgabe Fosfomycin 3g p.o. zur Behandlung der Harnwegsinfektion",
+        "procedere": "Körperliche Schonung für 6 Wochen, Wiedervorstellung in onkologischer Sprechstunde zur Besprechung des endgültigen histopathologischen Befundes und Festlegung des adjuvanten Vorgehens, Medikamentöse Fortführung von Apixaban und Metformin (letzteres abhängig von Nierenwerten), Wundkontrolle und Fadenentfernung, Verlaufskontrolle der Leberläsion mittels kontrastmittelverstärktem MRT Abdomen in 6 Wochen, Uricult-Kontrolle in 1 Woche",
+        "offene_fragen": "Keine offenen klinischen Fragen erwähnt"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Endometriumkarzinom (V.a. pT1b, pN0 (0/14), L0, V0, G2) mit nosokomialem Harnwegsinfekt durch E. coli und absolutem Arrhythmie bei Vorhofflimmern\",\n  \"therapie\": \"Totale laparoskopische Hysterektomie mit beidseitiger Adnektomie und pelviner Lymphonodektomie, Bluttransfusion, Umstellung der Diabetesmedikation auf intensiviertes Insulin-Schema, Einmalgabe Fosfomycin 3g p.o. zur Behandlung der Harnwegsinfektion\",\n  \"procedere\": \"Körperliche Schonung für 6 Wochen, Wiedervorstellung in onkologischer Sprechstunde zur Besprechung des endgültigen histopathologischen Befundes und Festlegung des adjuvanten Vorgehens, Medikamentöse Fortführung von Apixaban und Metformin (letzteres abhängig von Nierenwerten), Wundkontrolle und Fadenentfernung, Verlaufskontrolle der Leberläsion mittels kontrastmittelverstärktem MRT Abdomen in 6 Wochen, Uricult-Kontrolle in 1 Woche\",\n  \"offene_fragen\": \"Keine offenen klinischen Fragen erwähnt\"\n}",
+      "prompt_length": 6351,
+      "response_length": 951,
+      "usage": {
+        "prompt_tokens": 2471,
+        "completion_tokens": 365
+      },
+      "case_id": "summ_009",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akute Dekompensation einer vorbekannten Herzinsuffizienz mit reduzierter Ejektionsfraktion, Vorhofflimmern, Nosokomialer Harnwegsinfekt",
+        "therapie": "Intravenöse Diuretikatherapie mit Furosemid, orale Antikoagulation mit Edoxaban, Betablocker-Therapie mit Metoprololsuccinat, Umstellung von Ramipril auf ARNI Sacubitril/Valsartan, Einleitung von SGLT2-Inhibitor Empagliflozin, kalkulierte Antibiose mit Cefuroxim",
+        "procedere": "Fortführung der medikamentösen Therapie, kardiologische Kontrolle in 4 Wochen, urologische Vorstellung in den nächsten 2-3 Wochen, Abschluss der Antibiose-Therapie bis einschließlich 23.10.2023, tägliche Gewichtskontrollen",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akute Dekompensation einer vorbekannten Herzinsuffizienz mit reduzierter Ejektionsfraktion, Vorhofflimmern, Nosokomialer Harnwegsinfekt\",\n  \"therapie\": \"Intravenöse Diuretikatherapie mit Furosemid, orale Antikoagulation mit Edoxaban, Betablocker-Therapie mit Metoprololsuccinat, Umstellung von Ramipril auf ARNI Sacubitril/Valsartan, Einleitung von SGLT2-Inhibitor Empagliflozin, kalkulierte Antibiose mit Cefuroxim\",\n  \"procedere\": \"Fortführung der medikamentösen Therapie, kardiologische Kontrolle in 4 Wochen, urologische Vorstellung in den nächsten 2-3 Wochen, Abschluss der Antibiose-Therapie bis einschließlich 23.10.2023, tägliche Gewichtskontrollen\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 6673,
+      "response_length": 710,
+      "usage": {
+        "prompt_tokens": 2661,
+        "completion_tokens": 279
+      },
+      "case_id": "summ_010",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Hauptdiagnose ist eine akute kardiale Dekompensation bei vorbekannter chronischer Herzinsuffizienz (HFrEF) mit ischämischer Kardiopathie und bekannter KHK, zusätzlich persistierendes Vorhofflimmern, chronische Niereninsuffizienz Stadium G3a, Diabetes mellitus Typ 2 und Verdacht auf Basalzellkarzinom am rechten Unterarm",
+        "therapie": "Es wurde eine forcierte intravenöse Diurese durchgeführt, um die Dekompensation zu behandeln. Die Medikation wurde im Rahmen der leitliniengerechten Herzinsuffizienztherapie optimiert, wobei ein SGLT2-Inhibitor, Bisoprolol und ein ACE-Hemmer (in reduzierter Dosierung) hinzugefügt wurden. Eine Stanzbiopsie für die Hautläsion am Unterarm wurde durchgeführt.",
+        "procedere": "Es wird empfohlen, in 3-5 Tagen nach Entlassung die Nierenwerte und Elektrolyte kontrollieren zu lassen. Eine ambulante kardiologische Kontrolle inklusive Echokardiographie sollte in 6-8 Wochen erfolgen. Der Patient muss sich zudem zur Befundbesprechung der Hautbiopsie beim Dermatologen vorstellen. Die Medikation sollte unter Beachtung der Nierenfunktion und Blutdruckwerte angepasst werden.",
+        "offene_fragen": "Es steht ein Histologie-Ergebnis der Hautbiopsie aus."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Hauptdiagnose ist eine akute kardiale Dekompensation bei vorbekannter chronischer Herzinsuffizienz (HFrEF) mit ischämischer Kardiopathie und bekannter KHK, zusätzlich persistierendes Vorhofflimmern, chronische Niereninsuffizienz Stadium G3a, Diabetes mellitus Typ 2 und Verdacht auf Basalzellkarzinom am rechten Unterarm\",\n  \"therapie\": \"Es wurde eine forcierte intravenöse Diurese durchgeführt, um die Dekompensation zu behandeln. Die Medikation wurde im Rahmen der leitliniengerechten Herzinsuffizienztherapie optimiert, wobei ein SGLT2-Inhibitor, Bisoprolol und ein ACE-Hemmer (in reduzierter Dosierung) hinzugefügt wurden. Eine Stanzbiopsie für die Hautläsion am Unterarm wurde durchgeführt.\",\n  \"procedere\": \"Es wird empfohlen, in 3-5 Tagen nach Entlassung die Nierenwerte und Elektrolyte kontrollieren zu lassen. Eine ambulante kardiologische Kontrolle inklusive Echokardiographie sollte in 6-8 Wochen erfolgen. Der Patient muss sich zudem zur Befundbesprechung der Hautbiopsie beim Dermatologen vorstellen. Die Medikation sollte unter Beachtung der Nierenfunktion und Blutdruckwerte angepasst werden.\",\n  \"offene_fragen\": \"Es steht ein Histologie-Ergebnis der Hautbiopsie aus.\"\n}",
+      "prompt_length": 6293,
+      "response_length": 1209,
+      "usage": {
+        "prompt_tokens": 2522,
+        "completion_tokens": 421
+      },
+      "case_id": "summ_011",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exazerbierte COPD (AECOPD) GOLD IV, Verdacht auf zentrales Bronchialkarzinom des rechten Oberlappens, chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), permanentes Vorhofflimmern, chronische Niereninsuffizienz, Diabetes mellitus Typ 2, nosokomialer Harnwegsinfekt",
+        "therapie": "Behandlung der AECOPD und pulmonalen Infektsituation mit intravenöser Antibiose (Ceftriaxon) und systemischer Steroidgabe (Prednisolon), intensivierte Inhalationstherapie, Steigerung der Diuretika-Dosis zur Kompensation der Herzinsuffizienz, Bronchoskopie mit Probenentnahme, antibiotische Therapie zur Behandlung der Harnwegsinfektion, Fortführung der oralen Antikoagulation mit Edoxaban",
+        "procedere": "Fortführung der Inhalationstherapie und herzinsuffizienzspezifischen Medikation, Wiedervorstellung in der pneumologischen Ambulanz zur Befundbesprechung der Histologie und Planung des weiteren Procedere, Durchführung von CT Abdomen und Schädel-MRT zum Staging, Kontrolle der Nierenwerte und Elektrolyte durch den Hausarzt, kardiologische Verlaufskontrolle in 3 Monaten",
+        "offene_fragen": "Histopathologische Befunde stehen noch aus"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akut exazerbierte COPD (AECOPD) GOLD IV, Verdacht auf zentrales Bronchialkarzinom des rechten Oberlappens, chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), permanentes Vorhofflimmern, chronische Niereninsuffizienz, Diabetes mellitus Typ 2, nosokomialer Harnwegsinfekt\",\n  \"therapie\": \"Behandlung der AECOPD und pulmonalen Infektsituation mit intravenöser Antibiose (Ceftriaxon) und systemischer Steroidgabe (Prednisolon), intensivierte Inhalationstherapie, Steigerung der Diuretika-Dosis zur Kompensation der Herzinsuffizienz, Bronchoskopie mit Probenentnahme, antibiotische Therapie zur Behandlung der Harnwegsinfektion, Fortführung der oralen Antikoagulation mit Edoxaban\",\n  \"procedere\": \"Fortführung der Inhalationstherapie und herzinsuffizienzspezifischen Medikation, Wiedervorstellung in der pneumologischen Ambulanz zur Befundbesprechung der Histologie und Planung des weiteren Procedere, Durchführung von CT Abdomen und Schädel-MRT zum Staging, Kontrolle der Nierenwerte und Elektrolyte durch den Hausarzt, kardiologische Verlaufskontrolle in 3 Monaten\",\n  \"offene_fragen\": \"Histopathologische Befunde stehen noch aus\"\n}",
+      "prompt_length": 6186,
+      "response_length": 1173,
+      "usage": {
+        "prompt_tokens": 2526,
+        "completion_tokens": 404
+      },
+      "case_id": "summ_012",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit einem akuten ischämischen Hirninfarkt im Stromgebiet der A. cerebri media links (M2-Segment distal) und neu diagnostiziertem paroxysmalem Vorhofflimmern behandelt.",
+        "therapie": "Es wurde eine orale Antikoagulation mit Apixaban eingeleitet, nachdem paroxysmales Vorhofflimmern im Langzeit-EKG nachgewiesen wurde. Zusätzlich erhielt der Patient eine antibiotische Therapie gegen einen Harnwegsinfekt. Blutdruck und Diabetes wurden ebenfalls medikamentös behandelt. Logopädische und physiotherapeutische Maßnahmen führten zu einer Verbesserung der Symptome.",
+        "procedere": "Es wird empfohlen, die orale Antikoagulation mit Apixaban dauerhaft fortzusetzen, die Blutdruckeinstellung und Diabetes-Einstellung zu optimieren, eine urologische Kontrolle in 4-6 Wochen wahrzunehmen, ein Kontroll-cMRT und eine neurologische Untersuchung in 3 Monaten durchzuführen, die ambulante Sprachtherapie fortzusetzen und den CRP und Urinstatus beim Hausarzt kontrollieren zu lassen.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit einem akuten ischämischen Hirninfarkt im Stromgebiet der A. cerebri media links (M2-Segment distal) und neu diagnostiziertem paroxysmalem Vorhofflimmern behandelt.\",\n  \"therapie\": \"Es wurde eine orale Antikoagulation mit Apixaban eingeleitet, nachdem paroxysmales Vorhofflimmern im Langzeit-EKG nachgewiesen wurde. Zusätzlich erhielt der Patient eine antibiotische Therapie gegen einen Harnwegsinfekt. Blutdruck und Diabetes wurden ebenfalls medikamentös behandelt. Logopädische und physiotherapeutische Maßnahmen führten zu einer Verbesserung der Symptome.\",\n  \"procedere\": \"Es wird empfohlen, die orale Antikoagulation mit Apixaban dauerhaft fortzusetzen, die Blutdruckeinstellung und Diabetes-Einstellung zu optimieren, eine urologische Kontrolle in 4-6 Wochen wahrzunehmen, ein Kontroll-cMRT und eine neurologische Untersuchung in 3 Monaten durchzuführen, die ambulante Sprachtherapie fortzusetzen und den CRP und Urinstatus beim Hausarzt kontrollieren zu lassen.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 6378,
+      "response_length": 1043,
+      "usage": {
+        "prompt_tokens": 2591,
+        "completion_tokens": 347
+      },
+      "case_id": "summ_013",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akute obere Gastrointestinalblutung (Forrest IIb) bei Ulcus ventriculi und äthyltoxische Leberzirrhose (Child-Pugh B, Score 8 Pkt.)",
+        "therapie": "Blutstillung durch Clipping und Adrenalinunterspritzung, Volumensubstitution, Hochdosis-PPI-Therapie, diagnostische und therapeutische Aszitespunktion, Anpassung der Diabetesmedikation. Pausierung der oralen Antikoagulation mit Apixaban.",
+        "procedere": "Fortführung der PPI-Therapie, Wiederaufnahme der Antikoagulation mit Apixaban, diuretische Therapie, Kontroll-Gastroskopie zur Ulcusbeurteilung, CEA-Verlaufskontrolle, engmaschige sonographische Leberkontrollen.",
+        "offene_fragen": "Ursache des erhöhten CEA-Werts"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akute obere Gastrointestinalblutung (Forrest IIb) bei Ulcus ventriculi und äthyltoxische Leberzirrhose (Child-Pugh B, Score 8 Pkt.)\",\n  \"therapie\": \"Blutstillung durch Clipping und Adrenalinunterspritzung, Volumensubstitution, Hochdosis-PPI-Therapie, diagnostische und therapeutische Aszitespunktion, Anpassung der Diabetesmedikation. Pausierung der oralen Antikoagulation mit Apixaban.\",\n  \"procedere\": \"Fortführung der PPI-Therapie, Wiederaufnahme der Antikoagulation mit Apixaban, diuretische Therapie, Kontroll-Gastroskopie zur Ulcusbeurteilung, CEA-Verlaufskontrolle, engmaschige sonographische Leberkontrollen.\",\n  \"offene_fragen\": \"Ursache des erhöhten CEA-Werts\"\n}",
+      "prompt_length": 5901,
+      "response_length": 695,
+      "usage": {
+        "prompt_tokens": 2343,
+        "completion_tokens": 262
+      },
+      "case_id": "summ_014",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Metastasiertes Adenokarzinom des Sigmas mit Lebermetastasen, behandelt mit palliativer Chemotherapie (FOLFOX6/Bevacizumab)",
+        "therapie": "Vierter Zyklus der palliativen Chemotherapie wurde appliziert, wobei die Oxaliplatin-Dosis aufgrund von CIPN (polyneuropathie) reduziert wurde. Es traten Komplikationen in Form von febriler Neutropenie und Delir auf, die medikamentös behandelt wurden. Eine Hautläsion wurde biopsiert und wird histologisch untersucht.",
+        "procedere": "Fortführung der palliativen Systemtherapie mit geplanter Dosisanpassung bei persistierender Polyneuropathie. Engmaschige Laborkontrollen, kurzfristige Verlaufskontrolle des Tumormarkers CEA in 4 Wochen und bei weiterem Anstieg PET-CT. Fortführung der Medikation für Herzinsuffizienz, Antikoagulation und Diabetes. Abklärung des histologischen Befundes der Hautbiopsie.",
+        "offene_fragen": "Keine offenen klinischen Fragen"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Metastasiertes Adenokarzinom des Sigmas mit Lebermetastasen, behandelt mit palliativer Chemotherapie (FOLFOX6/Bevacizumab)\",\n  \"therapie\": \"Vierter Zyklus der palliativen Chemotherapie wurde appliziert, wobei die Oxaliplatin-Dosis aufgrund von CIPN (polyneuropathie) reduziert wurde. Es traten Komplikationen in Form von febriler Neutropenie und Delir auf, die medikamentös behandelt wurden. Eine Hautläsion wurde biopsiert und wird histologisch untersucht.\",\n  \"procedere\": \"Fortführung der palliativen Systemtherapie mit geplanter Dosisanpassung bei persistierender Polyneuropathie. Engmaschige Laborkontrollen, kurzfristige Verlaufskontrolle des Tumormarkers CEA in 4 Wochen und bei weiterem Anstieg PET-CT. Fortführung der Medikation für Herzinsuffizienz, Antikoagulation und Diabetes. Abklärung des histologischen Befundes der Hautbiopsie.\",\n  \"offene_fragen\": \"Keine offenen klinischen Fragen\"\n}",
+      "prompt_length": 6763,
+      "response_length": 924,
+      "usage": {
+        "prompt_tokens": 2720,
+        "completion_tokens": 322
+      },
+      "case_id": "summ_015",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Pertrochantere Femurfraktur rechts (AO 31-A2.2) nach häuslichem Sturzereignis",
+        "therapie": "Operative Versorgung mit intramedullärer Kraftträgerosteosynthese, medikamentöse Therapie zur Behandlung eines hyperaktiven Delirs und sekundären Anämie, Dosisanpassung von Antikoagulation und antihypertensiver Therapie, Inzisionsbiopsie am lateralen rechten Unterschenkel",
+        "procedere": "Schmerzadaptierte Vollbelastung des rechten Beines, Fortsetzung der Medikation und Thromboseprophylaxe, Wundpflege und Entfernung der Fäden in 14 Tagen, klinische und röntgenologische Kontrolle der rechten Hüfte in 6 Wochen, zeitnahe Besprechung des Biopsieergebnisses, Laborkontrolle in 3-5 Tagen",
+        "offene_fragen": "Befund der Inzisionsbiopsie am lateralen rechten Unterschenkel"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Pertrochantere Femurfraktur rechts (AO 31-A2.2) nach häuslichem Sturzereignis\",\n  \"therapie\": \"Operative Versorgung mit intramedullärer Kraftträgerosteosynthese, medikamentöse Therapie zur Behandlung eines hyperaktiven Delirs und sekundären Anämie, Dosisanpassung von Antikoagulation und antihypertensiver Therapie, Inzisionsbiopsie am lateralen rechten Unterschenkel\",\n  \"procedere\": \"Schmerzadaptierte Vollbelastung des rechten Beines, Fortsetzung der Medikation und Thromboseprophylaxe, Wundpflege und Entfernung der Fäden in 14 Tagen, klinische und röntgenologische Kontrolle der rechten Hüfte in 6 Wochen, zeitnahe Besprechung des Biopsieergebnisses, Laborkontrolle in 3-5 Tagen\",\n  \"offene_fragen\": \"Befund der Inzisionsbiopsie am lateralen rechten Unterschenkel\"\n}",
+      "prompt_length": 6262,
+      "response_length": 794,
+      "usage": {
+        "prompt_tokens": 2513,
+        "completion_tokens": 293
+      },
+      "case_id": "summ_016",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit einer rezidivierenden depressiven Störung, schwerer Episode ohne psychotische Symptome (F33.2) und psychischen und Verhaltensstörungen durch Alkohol mit Abhängigkeitssyndrom (F10.21) diagnostiziert.",
+        "therapie": "Die Behandlung umfasste Multidisciplinäre Ansätze einschließlich Einzel- und Gruppengespräche, Ergotherapie und Sporttherapie. Medikamentös wurde initial Escitalopram verabreicht, das aufgrund von Hyponatriämie abgesetzt und durch Venlafaxin (SNRI) ersetzt wurde. Zusätzlich wurde Mirtazapin zur Schlafanstoßung eingesetzt. Bei einem fieberhaften Harnwegsinfekt wurde Nitrofurantoin verabreicht.",
+        "procedere": "Herr Müller wird in die ambulante fachärztliche Weiterbehandlung entlassen, einschließlich fortgesetzter psychotherapeutischer Gespräche. Es sind enge Kontrollen der Elektrolyte (insbesondere Natrium) unter der aktuellen Medikation erforderlich. Termine für ambulante psychiatrische Vorstellung, cMRT des Schädels, Laborkontrollen und urologische Kontrolle wurden vereinbart.",
+        "offene_fragen": "Es bestehen offene Fragen zur weiteren Abklärung der kognitiven Defizite und des Verdachts auf beginnende vaskuläre Enzephalopathie."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit einer rezidivierenden depressiven Störung, schwerer Episode ohne psychotische Symptome (F33.2) und psychischen und Verhaltensstörungen durch Alkohol mit Abhängigkeitssyndrom (F10.21) diagnostiziert.\",\n  \"therapie\": \"Die Behandlung umfasste Multidisciplinäre Ansätze einschließlich Einzel- und Gruppengespräche, Ergotherapie und Sporttherapie. Medikamentös wurde initial Escitalopram verabreicht, das aufgrund von Hyponatriämie abgesetzt und durch Venlafaxin (SNRI) ersetzt wurde. Zusätzlich wurde Mirtazapin zur Schlafanstoßung eingesetzt. Bei einem fieberhaften Harnwegsinfekt wurde Nitrofurantoin verabreicht.\",\n  \"procedere\": \"Herr Müller wird in die ambulante fachärztliche Weiterbehandlung entlassen, einschließlich fortgesetzter psychotherapeutischer Gespräche. Es sind enge Kontrollen der Elektrolyte (insbesondere Natrium) unter der aktuellen Medikation erforderlich. Termine für ambulante psychiatrische Vorstellung, cMRT des Schädels, Laborkontrollen und urologische Kontrolle wurden vereinbart.\",\n  \"offene_fragen\": \"Es bestehen offene Fragen zur weiteren Abklärung der kognitiven Defizite und des Verdachts auf beginnende vaskuläre Enzephalopathie.\"\n}",
+      "prompt_length": 5723,
+      "response_length": 1208,
+      "usage": {
+        "prompt_tokens": 2257,
+        "completion_tokens": 406
+      },
+      "case_id": "summ_017",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Die Patientin wurde wegen eines Endometriumkarzinoms (G2, endometrioid) operiert und erhielt eine laparoskopisch assistierte vaginale Hysterektomie mit beidseitiger Adnexektomie und Sentinel-Lymphonodektomie. Es konnten keine Makrometastasen intraoperativ festgestellt werden.",
+        "therapie": "Es erfolgten zwei Erythrozytenkonzentrate und Vollelektrolytlösung bei postoperativer Nachblutung am ersten Tag. Die Patientin erhielt eine prophylaktische Antikoagulation mit Enoxaparin und die Medikation zur Blutdruckkontrolle sowie das Basalinsulin wurden angepasst. Die präoperative Antikoagulation mit Apixaban wird 10-14 Tage postoperativ nach sicherer Wundheilung wieder aufgenommen.",
+        "procedere": "Es ist eine Wundkontrolle und Fadenzug beim niedergelassenen Gynäkologen in 4-5 Tagen vorgesehen. Die Patientin soll in unserer Tumorsprechstunde am 24.05.2024 um 10:00 Uhr zur Besprechung des endgültigen histopathologischen Befundes und Festlegung des weiteren Vorgehens wieder vorgestellt werden. Eine hausärztliche Kontrolle des Kreatinin-Wertes und des Hb-Wertes in 1 Woche ist empfohlen.",
+        "offene_fragen": "Die Tumormarker-Konstellation (CA-125: 148 U/ml) bleibt unklar, da ein retroperitoneales Rezidiv oder eine peritoneale Aussaat intraoperativ makroskopisch nicht sichtbar war. Die endgültige Histologie steht noch aus."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Die Patientin wurde wegen eines Endometriumkarzinoms (G2, endometrioid) operiert und erhielt eine laparoskopisch assistierte vaginale Hysterektomie mit beidseitiger Adnexektomie und Sentinel-Lymphonodektomie. Es konnten keine Makrometastasen intraoperativ festgestellt werden.\",\n  \"therapie\": \"Es erfolgten zwei Erythrozytenkonzentrate und Vollelektrolytlösung bei postoperativer Nachblutung am ersten Tag. Die Patientin erhielt eine prophylaktische Antikoagulation mit Enoxaparin und die Medikation zur Blutdruckkontrolle sowie das Basalinsulin wurden angepasst. Die präoperative Antikoagulation mit Apixaban wird 10-14 Tage postoperativ nach sicherer Wundheilung wieder aufgenommen.\",\n  \"procedere\": \"Es ist eine Wundkontrolle und Fadenzug beim niedergelassenen Gynäkologen in 4-5 Tagen vorgesehen. Die Patientin soll in unserer Tumorsprechstunde am 24.05.2024 um 10:00 Uhr zur Besprechung des endgültigen histopathologischen Befundes und Festlegung des weiteren Vorgehens wieder vorgestellt werden. Eine hausärztliche Kontrolle des Kreatinin-Wertes und des Hb-Wertes in 1 Woche ist empfohlen.\",\n  \"offene_fragen\": \"Die Tumormarker-Konstellation (CA-125: 148 U/ml) bleibt unklar, da ein retroperitoneales Rezidiv oder eine peritoneale Aussaat intraoperativ makroskopisch nicht sichtbar war. Die endgültige Histologie steht noch aus.\"\n}",
+      "prompt_length": 5719,
+      "response_length": 1360,
+      "usage": {
+        "prompt_tokens": 2289,
+        "completion_tokens": 473
+      },
+      "case_id": "summ_018",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit akut dekompensierter chronischer Herzinsuffizienz bei bekannter ischämischer Kardiopathie und reduzierter Ejektionsfraktion (HFrEF) behandelt. Zusätzlich bestanden ein passageres hypoaktives Delir, benigne Prostatahyperplasie mit diskordanten Befunden, chronische Niereninsuffizienz, arterielle Hypertonie und Diabetes mellitus Typ 2.",
+        "therapie": "Es wurde eine forcierte diuretische Therapie durchgeführt, wodurch eine ausreichende Diurese und Verbesserung der Atmung erreicht wurde. Zusätzlich wurde die Medikation für Herzinsuffizienz leitliniengerecht umgestellt, und eine Therapie mit SGLT2-Inhibitor begonnen. Ein hypoaktives Delir wurde mit Pipamperon behandelt und trat innerhalb von drei Tagen zurück.",
+        "procedere": "Es wird empfohlen, die Medikation fortzuführen und tägliche Gewichtskontrollen durchzuführen. Eine kardiologische Kontrolle in 4-6 Wochen und eine dringende urologische Wiedervorstellung innerhalb der nächsten 4 Wochen zur weiteren Abklärung der Prostata sind geplant. Pipamperon soll bei fehlender Unruhe ausschleichend abgesetzt werden.",
+        "offene_fragen": "Es bestehen offene Fragen zur Prostata, da der PSA-Wert erhöht ist, aber die digital-rektale Untersuchung und Sonographie unauffällig waren."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit akut dekompensierter chronischer Herzinsuffizienz bei bekannter ischämischer Kardiopathie und reduzierter Ejektionsfraktion (HFrEF) behandelt. Zusätzlich bestanden ein passageres hypoaktives Delir, benigne Prostatahyperplasie mit diskordanten Befunden, chronische Niereninsuffizienz, arterielle Hypertonie und Diabetes mellitus Typ 2.\",\n  \"therapie\": \"Es wurde eine forcierte diuretische Therapie durchgeführt, wodurch eine ausreichende Diurese und Verbesserung der Atmung erreicht wurde. Zusätzlich wurde die Medikation für Herzinsuffizienz leitliniengerecht umgestellt, und eine Therapie mit SGLT2-Inhibitor begonnen. Ein hypoaktives Delir wurde mit Pipamperon behandelt und trat innerhalb von drei Tagen zurück.\",\n  \"procedere\": \"Es wird empfohlen, die Medikation fortzuführen und tägliche Gewichtskontrollen durchzuführen. Eine kardiologische Kontrolle in 4-6 Wochen und eine dringende urologische Wiedervorstellung innerhalb der nächsten 4 Wochen zur weiteren Abklärung der Prostata sind geplant. Pipamperon soll bei fehlender Unruhe ausschleichend abgesetzt werden.\",\n  \"offene_fragen\": \"Es bestehen offene Fragen zur Prostata, da der PSA-Wert erhöht ist, aber die digital-rektale Untersuchung und Sonographie unauffällig waren.\"\n}",
+      "prompt_length": 6199,
+      "response_length": 1282,
+      "usage": {
+        "prompt_tokens": 2444,
+        "completion_tokens": 431
+      },
+      "case_id": "summ_019",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Hans-Joachim Müller wurde mit dem Verdacht auf ACS (akuter Koronarsyndrom) stationär aufgenommen und diagnostiziert mit akutem Myokardinfarkt ohne ST-Hebung (NSTEMI), chronischer Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), arterieller Hypertonie, chronischer Niereninsuffizienz Stadium 3a und Verdacht auf Prostata-Neoplasie.",
+        "therapie": "Es wurde eine Koronarangiographie durchgeführt mit anschließender PTCA und Stentimplantation in die RCA. Zusätzlich erfolgte eine Umstellung der Medikation zur Behandlung der Herzinsuffizienz, einschließlich der Einleitung von Sacubitril/Valsartan und Furosemid. Bei Entlassung betrug die LVEF ca. 35%.",
+        "procedere": "Es wird empfohlen, eine ambulante kardiologische Kontrolle in 6-8 Wochen zur Evaluation der LVEF unter optimierter Herzinsuffizienz-Medikation durchzuführen. Bei persistierend eingeschränkter LVEF < 35% sollte die Indikation zur ICD-Implantation geprüft werden. Weiterhin wird eine zeitnahe urologische Vorstellung zur Abklärung des erhöhten PSA-Werts angeraten.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Hans-Joachim Müller wurde mit dem Verdacht auf ACS (akuter Koronarsyndrom) stationär aufgenommen und diagnostiziert mit akutem Myokardinfarkt ohne ST-Hebung (NSTEMI), chronischer Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), arterieller Hypertonie, chronischer Niereninsuffizienz Stadium 3a und Verdacht auf Prostata-Neoplasie.\",\n  \"therapie\": \"Es wurde eine Koronarangiographie durchgeführt mit anschließender PTCA und Stentimplantation in die RCA. Zusätzlich erfolgte eine Umstellung der Medikation zur Behandlung der Herzinsuffizienz, einschließlich der Einleitung von Sacubitril/Valsartan und Furosemid. Bei Entlassung betrug die LVEF ca. 35%.\",\n  \"procedere\": \"Es wird empfohlen, eine ambulante kardiologische Kontrolle in 6-8 Wochen zur Evaluation der LVEF unter optimierter Herzinsuffizienz-Medikation durchzuführen. Bei persistierend eingeschränkter LVEF < 35% sollte die Indikation zur ICD-Implantation geprüft werden. Weiterhin wird eine zeitnahe urologische Vorstellung zur Abklärung des erhöhten PSA-Werts angeraten.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 5981,
+      "response_length": 1101,
+      "usage": {
+        "prompt_tokens": 2452,
+        "completion_tokens": 385
+      },
+      "case_id": "summ_020",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akute Exazerbation einer COPD GOLD IV, Community-acquired Pneumonia des rechten Unterlappens, akute respiratorische Insuffizienz, Chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion, Persistierendes Vorhofflimmern, Verdacht auf paraneoplastisches Syndrom bei isolierter CEA-Erhöhung, Akutes Delirium, Diabetes mellitus Typ 2",
+        "therapie": "Kalkulierte intravenöse Antibiose mit Piperacillin/Tazobactam, intermittierende nicht-invasive Ventilation, systemische Steroidtherapie, intensivierte Inhalationstherapie, Eskalation der Antibiose auf Meropenem, Therapie mit Melperon zur Behandlung des Delirs, intensivierte Diurese mit Furosemid, orale Antibiose mit Ciprofloxacin",
+        "procedere": "Körperliche Schonung für weitere 2 Wochen, Abschluss der oralen Antibiose mit Ciprofloxacin, ambulante pneumologische Kontrolle inkl. Bodyplethysmographie und Diffusionskapazität in 6 Wochen, kardiologische Verlaufskontrolle zur Evaluation einer Umstellung der Herzinsuffizienzmedikation nach Stabilisierung der Nierenfunktion, dringende Durchführung einer Koloskopie und Abdomensonographie zur weiteren Abklärung des erhöhten CEA-Wertes",
+        "offene_fragen": "Zum Entlasszeitpunkt steht die finale Resistenzprüfung der Sputumkultur vom 14.05. noch aus. Die Genese der CEA-Erhöhung ist unklar; ein maligner Prozess ist trotz unauffälliger Thorax-Bildgebung nicht ausgeschlossen."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akute Exazerbation einer COPD GOLD IV, Community-acquired Pneumonia des rechten Unterlappens, akute respiratorische Insuffizienz, Chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion, Persistierendes Vorhofflimmern, Verdacht auf paraneoplastisches Syndrom bei isolierter CEA-Erhöhung, Akutes Delirium, Diabetes mellitus Typ 2\",\n  \"therapie\": \"Kalkulierte intravenöse Antibiose mit Piperacillin/Tazobactam, intermittierende nicht-invasive Ventilation, systemische Steroidtherapie, intensivierte Inhalationstherapie, Eskalation der Antibiose auf Meropenem, Therapie mit Melperon zur Behandlung des Delirs, intensivierte Diurese mit Furosemid, orale Antibiose mit Ciprofloxacin\",\n  \"procedere\": \"Körperliche Schonung für weitere 2 Wochen, Abschluss der oralen Antibiose mit Ciprofloxacin, ambulante pneumologische Kontrolle inkl. Bodyplethysmographie und Diffusionskapazität in 6 Wochen, kardiologische Verlaufskontrolle zur Evaluation einer Umstellung der Herzinsuffizienzmedikation nach Stabilisierung der Nierenfunktion, dringende Durchführung einer Koloskopie und Abdomensonographie zur weiteren Abklärung des erhöhten CEA-Wertes\",\n  \"offene_fragen\": \"Zum Entlasszeitpunkt steht die finale Resistenzprüfung der Sputumkultur vom 14.05. noch aus. Die Genese der CEA-Erhöhung ist unklar; ein maligner Prozess ist trotz unauffälliger Thorax-Bildgebung nicht ausgeschlossen.\"\n}",
+      "prompt_length": 6569,
+      "response_length": 1405,
+      "usage": {
+        "prompt_tokens": 2652,
+        "completion_tokens": 485
+      },
+      "case_id": "summ_021",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit einem akuten ischämischen Hirninfarkt im Stromgebiet der Arteria cerebri media links (M2-Segment) und arterieller Hypertonie diagnostiziert.",
+        "therapie": "Es wurde eine Sekundärprophylaxe mit ASS begonnen, die aufgrund von Unverträglichkeit auf Clopidogrel umgestellt wurde. Zusätzlich wurde eine PPI-Schutztherapie etabliert. Bei wiederholten Blutdruckwerten über 150/90 mmHg wurde die antihypertensive Medikation angepasst. Zur Lipidsenkung begannen wir eine Therapie mit Atorvastatin. Herr Müller erhielt eine kalkulierte antibiotische Therapie mit Nitrofurantoin zur Behandlung eines nosokomialen Harnwegsinfekts.",
+        "procedere": "Es ist eine urologische Vorstellung zur Abklärung des PSA-Wertes und Sonographie der Prostata innerhalb der nächsten 2-4 Wochen empfohlen. Eine häusärztliche Laborkontrolle (CRP, Nierenwerte, LDL) soll in 2 Wochen erfolgen. Der Patient wird gebeten, sich bezüglich des Ergebnisses des 72h-Langzeit-EKGs in unserer Klinik zu melden. Eine ambulante Verlaufskontrolle in unserer neurologischen Poliklinik mit cMRT-Kontrolle ist in 3 Monaten vorgesehen.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit einem akuten ischämischen Hirninfarkt im Stromgebiet der Arteria cerebri media links (M2-Segment) und arterieller Hypertonie diagnostiziert.\",\n  \"therapie\": \"Es wurde eine Sekundärprophylaxe mit ASS begonnen, die aufgrund von Unverträglichkeit auf Clopidogrel umgestellt wurde. Zusätzlich wurde eine PPI-Schutztherapie etabliert. Bei wiederholten Blutdruckwerten über 150/90 mmHg wurde die antihypertensive Medikation angepasst. Zur Lipidsenkung begannen wir eine Therapie mit Atorvastatin. Herr Müller erhielt eine kalkulierte antibiotische Therapie mit Nitrofurantoin zur Behandlung eines nosokomialen Harnwegsinfekts.\",\n  \"procedere\": \"Es ist eine urologische Vorstellung zur Abklärung des PSA-Wertes und Sonographie der Prostata innerhalb der nächsten 2-4 Wochen empfohlen. Eine häusärztliche Laborkontrolle (CRP, Nierenwerte, LDL) soll in 2 Wochen erfolgen. Der Patient wird gebeten, sich bezüglich des Ergebnisses des 72h-Langzeit-EKGs in unserer Klinik zu melden. Eine ambulante Verlaufskontrolle in unserer neurologischen Poliklinik mit cMRT-Kontrolle ist in 3 Monaten vorgesehen.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 6416,
+      "response_length": 1164,
+      "usage": {
+        "prompt_tokens": 2568,
+        "completion_tokens": 410
+      },
+      "case_id": "summ_022",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit akutem Ulcus ventriculi (Forrest IIb) und chronischer Niereninsuffizienz Stadium IIIa behandelt.",
+        "therapie": "Es wurde eine endoskopische Blutstillung mittels Hämoclip-Applikation und Unterspritzung durchgeführt. Die Antikoagulation mit Apixaban wurde pausiert und nach Stabilisierung wieder aufgenommen. Die Schmerztherapie wurde von Naproxen auf Metamizol umgestellt. Zusätzlich wurde forcierte Hydratation und eine antihypertensive Therapie mit Ramipril durchgeführt.",
+        "procedere": "Es wird empfohlen, die PPI-Therapie mit Pantoprazol für 4 Wochen fortzuführen und danach bei notwendiger NSAR-Therapie oder Antikoagulation dauerhaft einzunehmen. NSAR sind strengstens verboten. Laborkontrollen (Hb, Kreatinin) sollten am 22.05.2024 erfolgen. Kontroll-ÖGD in 4 Wochen und MRCP in 3 Monaten sind geplant.",
+        "offene_fragen": "Es besteht eine diagnostische Unsicherheit hinsichtlich der Seitengangs-IPMN des Pankreaskopfes aufgrund des erhöhten Tumormarkers CEA bei unauffälliger Bildgebung."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit akutem Ulcus ventriculi (Forrest IIb) und chronischer Niereninsuffizienz Stadium IIIa behandelt.\",\n  \"therapie\": \"Es wurde eine endoskopische Blutstillung mittels Hämoclip-Applikation und Unterspritzung durchgeführt. Die Antikoagulation mit Apixaban wurde pausiert und nach Stabilisierung wieder aufgenommen. Die Schmerztherapie wurde von Naproxen auf Metamizol umgestellt. Zusätzlich wurde forcierte Hydratation und eine antihypertensive Therapie mit Ramipril durchgeführt.\",\n  \"procedere\": \"Es wird empfohlen, die PPI-Therapie mit Pantoprazol für 4 Wochen fortzuführen und danach bei notwendiger NSAR-Therapie oder Antikoagulation dauerhaft einzunehmen. NSAR sind strengstens verboten. Laborkontrollen (Hb, Kreatinin) sollten am 22.05.2024 erfolgen. Kontroll-ÖGD in 4 Wochen und MRCP in 3 Monaten sind geplant.\",\n  \"offene_fragen\": \"Es besteht eine diagnostische Unsicherheit hinsichtlich der Seitengangs-IPMN des Pankreaskopfes aufgrund des erhöhten Tumormarkers CEA bei unauffälliger Bildgebung.\"\n}",
+      "prompt_length": 6263,
+      "response_length": 1047,
+      "usage": {
+        "prompt_tokens": 2470,
+        "completion_tokens": 372
+      },
+      "case_id": "summ_023",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Metastasiertes Adenokarzinom der Lunge (NSCLC) des rechten Oberlappens mit Lebermetastasen, nosokomiale Pneumonie, hypertensive Krise, chronische Herzinsuffizienz (HFrEF), Vorhofflimmern, chronische Niereninsuffizienz und Diabetes mellitus Typ 2",
+        "therapie": "Verschobene Chemotherapie mit Carboplatin und Pemetrexed, antibiotische Therapie mit Piperacillin/Tazobactam zur Behandlung der Pneumonie, Umstellung der Antikoagulation von Phenprocoumon auf Apixaban, Dosisreduktion der Chemotherapie aufgrund eingeschränkter Nierenfunktion, Blutdruckeinstellung mit Nitrendipin und Ramipril, Fortführung von Metoprololsuccinat, Pantoprazol und Pemetrexed-Supplementation",
+        "procedere": "Fortführung der Chemotherapie mit dem 3. Zyklus am 08.11.2023, Kontrolle des Blutbildes, Kreatinins und Elektrolyte am 30.10.2023, Überwachung der Nierenfunktion bei Apixaban-Therapie, telefonischer Kontakt nach Erhalt des Liquid Biopsy-Befunds zur Klärung einer evtl. Tyrosinkinase-Inhibitor-Therapie, Verlaufskontrolle der LVEF mittels Echo in 8-12 Wochen, Optimierung der Diabeteseinstellung durch den niedergelassenen Diabetologen",
+        "offene_fragen": "Ergebnis der Liquid Biopsy bezüglich Plasma-T790M-Status und Klonalevolution des Tumors"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Metastasiertes Adenokarzinom der Lunge (NSCLC) des rechten Oberlappens mit Lebermetastasen, nosokomiale Pneumonie, hypertensive Krise, chronische Herzinsuffizienz (HFrEF), Vorhofflimmern, chronische Niereninsuffizienz und Diabetes mellitus Typ 2\",\n  \"therapie\": \"Verschobene Chemotherapie mit Carboplatin und Pemetrexed, antibiotische Therapie mit Piperacillin/Tazobactam zur Behandlung der Pneumonie, Umstellung der Antikoagulation von Phenprocoumon auf Apixaban, Dosisreduktion der Chemotherapie aufgrund eingeschränkter Nierenfunktion, Blutdruckeinstellung mit Nitrendipin und Ramipril, Fortführung von Metoprololsuccinat, Pantoprazol und Pemetrexed-Supplementation\",\n  \"procedere\": \"Fortführung der Chemotherapie mit dem 3. Zyklus am 08.11.2023, Kontrolle des Blutbildes, Kreatinins und Elektrolyte am 30.10.2023, Überwachung der Nierenfunktion bei Apixaban-Therapie, telefonischer Kontakt nach Erhalt des Liquid Biopsy-Befunds zur Klärung einer evtl. Tyrosinkinase-Inhibitor-Therapie, Verlaufskontrolle der LVEF mittels Echo in 8-12 Wochen, Optimierung der Diabeteseinstellung durch den niedergelassenen Diabetologen\",\n  \"offene_fragen\": \"Ergebnis der Liquid Biopsy bezüglich Plasma-T790M-Status und Klonalevolution des Tumors\"\n}",
+      "prompt_length": 6173,
+      "response_length": 1257,
+      "usage": {
+        "prompt_tokens": 2456,
+        "completion_tokens": 467
+      },
+      "case_id": "summ_024",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Dislozierte mediale Schenkelhalsfraktur rechts (AO 31-B2), Erstdiagnose eines paroxysmalen Vorhofflimmerns, Verdacht auf malignes Melanom",
+        "therapie": "Implantation einer zementierten Duokopfprothese rechts, Exzision einer Hautläsion am Rücken, medikamentöse Therapie mit Melperon, Antikoagulation mit Apixaban, Reduktion der Metoprololsuccinat-Dosis, Stressulkusprophylaxe mit Pantoprazol",
+        "procedere": "Wundkontrolle und Fadenentfernung am 23.10.2023, Fortführung der physio- und ergotherapeutischen Maßnahmen, Vollbelastung des rechten Beines erlaubt, kardiologische Verlaufskontrolle in ca. 4 Wochen, dringende Rücksprache bezüglich der Histologie des Hautbefunds, Laborkontrolle (CRP, Kreatinin) in der kommenden Woche",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Dislozierte mediale Schenkelhalsfraktur rechts (AO 31-B2), Erstdiagnose eines paroxysmalen Vorhofflimmerns, Verdacht auf malignes Melanom\",\n  \"therapie\": \"Implantation einer zementierten Duokopfprothese rechts, Exzision einer Hautläsion am Rücken, medikamentöse Therapie mit Melperon, Antikoagulation mit Apixaban, Reduktion der Metoprololsuccinat-Dosis, Stressulkusprophylaxe mit Pantoprazol\",\n  \"procedere\": \"Wundkontrolle und Fadenentfernung am 23.10.2023, Fortführung der physio- und ergotherapeutischen Maßnahmen, Vollbelastung des rechten Beines erlaubt, kardiologische Verlaufskontrolle in ca. 4 Wochen, dringende Rücksprache bezüglich der Histologie des Hautbefunds, Laborkontrolle (CRP, Kreatinin) in der kommenden Woche\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 5285,
+      "response_length": 783,
+      "usage": {
+        "prompt_tokens": 2084,
+        "completion_tokens": 301
+      },
+      "case_id": "summ_025",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Rezidivierende depressive Störung, gegenwärtig schwere Episode ohne psychotische Symptome (F33.2)",
+        "therapie": "Multimodales psychosomatisches Setting mit Einzel- und Gruppentherapie, Ergotherapie und körperorientierten Verfahren. Pharmakologisch: Initial Venlafaxin, dann Sertralin (100 mg 1-0-0), Ramipril (5 mg 1-0-0) zur Blutdruckeinstellung, Metformin (500 mg 1-0-0-1) für Diabetes mellitus Typ 2.",
+        "procedere": "1. Ambulante psychiatrische Weiterbehandlung. 2. Fortführung der antidepressiven Therapie für mindestens 6-12 Monate. 3. Urologische Kontrolle (PSA-Verlaufskontrolle und ggf. mpMRT der Prostata in ca. 4-6 Wochen). 4. Diabetologische Mitbetreuung (Kontrolle des HbA1c in 3 Monaten). 5. CPAP-Therapie.",
+        "offene_fragen": "PSA-Wert Diskrepanz und TRH-Test-Ergebnis"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Rezidivierende depressive Störung, gegenwärtig schwere Episode ohne psychotische Symptome (F33.2)\",\n  \"therapie\": \"Multimodales psychosomatisches Setting mit Einzel- und Gruppentherapie, Ergotherapie und körperorientierten Verfahren. Pharmakologisch: Initial Venlafaxin, dann Sertralin (100 mg 1-0-0), Ramipril (5 mg 1-0-0) zur Blutdruckeinstellung, Metformin (500 mg 1-0-0-1) für Diabetes mellitus Typ 2.\",\n  \"procedere\": \"1. Ambulante psychiatrische Weiterbehandlung. 2. Fortführung der antidepressiven Therapie für mindestens 6-12 Monate. 3. Urologische Kontrolle (PSA-Verlaufskontrolle und ggf. mpMRT der Prostata in ca. 4-6 Wochen). 4. Diabetologische Mitbetreuung (Kontrolle des HbA1c in 3 Monaten). 5. CPAP-Therapie.\",\n  \"offene_fragen\": \"PSA-Wert Diskrepanz und TRH-Test-Ergebnis\"\n}",
+      "prompt_length": 6547,
+      "response_length": 813,
+      "usage": {
+        "prompt_tokens": 2572,
+        "completion_tokens": 332
+      },
+      "case_id": "summ_026",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Endometriumkarzinom (V.a. pT2a, G3, endometrioid) mit postoperativer Nachblutung und vorläufigem Stadium pT2a",
+        "therapie": "Laparoskopische Hysterektomie mit beidseitiger Adnexektomie, Sentinel-Lymphknoten-Biopsie und Resektion eines suspekten Peritonealherdes. Notfallmäßige Re-Laparoskopie zur Hämostase. Transfusion von 2 Erythrozytenkonzentraten. Wiedereinstellung der oralen Antikoagulation mit Apixaban am 4. postoperativen Tag in reduzierter Dosis.",
+        "procedere": "Wundkontrolle und Fadenentfernung durch den niedergelassenen Gynäkologen. Wiedervorstellung in der Tumorsprechstunde zur Besprechung der Histopathologie und Festlegung der adjuvanten Therapie. Fortführung von Apixaban, vorübergehende Pause von Ramipril und Metformin. Engmaschige Laborkontrollen durch den Hausarzt.",
+        "offene_fragen": "Histologischer Befund der Sentinel-Lymphknoten und des Peritonealherdes, Diskrepanz zwischen CA-125-Wert und CT-Bildgebung bezüglich Peritonealkarzinose"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Endometriumkarzinom (V.a. pT2a, G3, endometrioid) mit postoperativer Nachblutung und vorläufigem Stadium pT2a\",\n  \"therapie\": \"Laparoskopische Hysterektomie mit beidseitiger Adnexektomie, Sentinel-Lymphknoten-Biopsie und Resektion eines suspekten Peritonealherdes. Notfallmäßige Re-Laparoskopie zur Hämostase. Transfusion von 2 Erythrozytenkonzentraten. Wiedereinstellung der oralen Antikoagulation mit Apixaban am 4. postoperativen Tag in reduzierter Dosis.\",\n  \"procedere\": \"Wundkontrolle und Fadenentfernung durch den niedergelassenen Gynäkologen. Wiedervorstellung in der Tumorsprechstunde zur Besprechung der Histopathologie und Festlegung der adjuvanten Therapie. Fortführung von Apixaban, vorübergehende Pause von Ramipril und Metformin. Engmaschige Laborkontrollen durch den Hausarzt.\",\n  \"offene_fragen\": \"Histologischer Befund der Sentinel-Lymphknoten und des Peritonealherdes, Diskrepanz zwischen CA-125-Wert und CT-Bildgebung bezüglich Peritonealkarzinose\"\n}",
+      "prompt_length": 5298,
+      "response_length": 993,
+      "usage": {
+        "prompt_tokens": 2151,
+        "completion_tokens": 369
+      },
+      "case_id": "summ_027",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit akuter Dekompensation einer chronischen Herzinsuffizienz (HFrEF) und akuter Nierenschädigung eingewiesen.",
+        "therapie": "Es wurde eine forcierte Diurese durchgeführt, wodurch eine Gewichtsreduktion von 6,2 kg erreicht wurde. Zusätzlich erfolgte eine Optimierung der Herzinsuffizienzmedikation durch Umstellung auf Sacubitril/Valsartan und Einleitung eines SGLT2-Inhibitor-Konzepts. Ein passageres Delir wurde mit Pipamperon und Reorientierungshilfen behandelt.",
+        "procedere": "Es wird empfohlen, die Diuretika-Therapie fortzuführen und die ARNI-Therapie allmählich auf die Zieldosis zu steigern. Eine Laborkontrolle soll in 5-7 Tagen erfolgen. Eine dringende urologische Abklärung des erhöhten PSA-Wertes wird empfohlen, sowie eine kardiologische Verlaufskontrolle in 3 Monaten.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit akuter Dekompensation einer chronischen Herzinsuffizienz (HFrEF) und akuter Nierenschädigung eingewiesen.\",\n  \"therapie\": \"Es wurde eine forcierte Diurese durchgeführt, wodurch eine Gewichtsreduktion von 6,2 kg erreicht wurde. Zusätzlich erfolgte eine Optimierung der Herzinsuffizienzmedikation durch Umstellung auf Sacubitril/Valsartan und Einleitung eines SGLT2-Inhibitor-Konzepts. Ein passageres Delir wurde mit Pipamperon und Reorientierungshilfen behandelt.\",\n  \"procedere\": \"Es wird empfohlen, die Diuretika-Therapie fortzuführen und die ARNI-Therapie allmählich auf die Zieldosis zu steigern. Eine Laborkontrolle soll in 5-7 Tagen erfolgen. Eine dringende urologische Abklärung des erhöhten PSA-Wertes wird empfohlen, sowie eine kardiologische Verlaufskontrolle in 3 Monaten.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 6369,
+      "response_length": 858,
+      "usage": {
+        "prompt_tokens": 2561,
+        "completion_tokens": 303
+      },
+      "case_id": "summ_028",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit akut dekompensierter chronischer Herzinsuffizienz (HFrEF mit LVEF 32%) aufgenommen, verursacht durch ischämische Kardiomyopathie. Zusätzlich bestand ein permanentes Vorhofflimmern, eine koronare 1-Gefäßerkrankung, chronische Niereninsuffizienz, Diabetes mellitus Typ 2 und eine verdächtige Hautläsion am rechten Oberarm.",
+        "therapie": "Es wurde eine intravenöse Diurese durchgeführt, um die Herzinsuffizienz zu behandeln. Nach Stabilisierung erfolgte eine Koronarangiographie mit PTCA und DES-Implantation in der RCA. Der Patient erhielt eine orale Antikoagulation mit Edoxaban, leitliniengerechte Herzinsuffizienzmedikation, Empagliflozin zur Behandlung von Diabetes mellitus und HFrEF sowie Furosemid zur Diurese.",
+        "procedere": "Es wird eine kardiologische Kontrolle in 4 Wochen empfohlen, um die LVEF zu überprüfen und ggf. die Medikation anzupassen. Die Punktionsstelle in der Leiste sollte in 3 Tagen durch den Hausarzt kontrolliert werden. Das Ergebnis der Hautstanze sollte in 5-7 Tagen abgefragt und bei Bestätigung eines Basalioms eine vollständige Exzision durchgeführt werden. Engmaschige Laborkontrollen von Kreatinin, Kalium und Glukoseprofil werden empfohlen.",
+        "offene_fragen": "Das histologische Ergebnis der Hautstanze steht noch aus."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit akut dekompensierter chronischer Herzinsuffizienz (HFrEF mit LVEF 32%) aufgenommen, verursacht durch ischämische Kardiomyopathie. Zusätzlich bestand ein permanentes Vorhofflimmern, eine koronare 1-Gefäßerkrankung, chronische Niereninsuffizienz, Diabetes mellitus Typ 2 und eine verdächtige Hautläsion am rechten Oberarm.\",\n  \"therapie\": \"Es wurde eine intravenöse Diurese durchgeführt, um die Herzinsuffizienz zu behandeln. Nach Stabilisierung erfolgte eine Koronarangiographie mit PTCA und DES-Implantation in der RCA. Der Patient erhielt eine orale Antikoagulation mit Edoxaban, leitliniengerechte Herzinsuffizienzmedikation, Empagliflozin zur Behandlung von Diabetes mellitus und HFrEF sowie Furosemid zur Diurese.\",\n  \"procedere\": \"Es wird eine kardiologische Kontrolle in 4 Wochen empfohlen, um die LVEF zu überprüfen und ggf. die Medikation anzupassen. Die Punktionsstelle in der Leiste sollte in 3 Tagen durch den Hausarzt kontrolliert werden. Das Ergebnis der Hautstanze sollte in 5-7 Tagen abgefragt und bei Bestätigung eines Basalioms eine vollständige Exzision durchgeführt werden. Engmaschige Laborkontrollen von Kreatinin, Kalium und Glukoseprofil werden empfohlen.\",\n  \"offene_fragen\": \"Das histologische Ergebnis der Hautstanze steht noch aus.\"\n}",
+      "prompt_length": 6379,
+      "response_length": 1306,
+      "usage": {
+        "prompt_tokens": 2521,
+        "completion_tokens": 444
+      },
+      "case_id": "summ_029",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exazerbierte COPD GOLD IV (Stadium D), ambulant erworbene Pneumonie (CAP) des rechten Unterlappens, chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), Tachyarrhythmia absoluta bei permanentem Vorhofflimmern, chronische Niereninsuffizienz Stadium G3a, Diabetes mellitus Typ 2, Verdacht auf bronchiales Malignom",
+        "therapie": "Antibiotische Therapie mit Ceftriaxon und Clarithromycin, systemische Glukokortikoidtherapie mit Prednisolon, intensivierte Inhalationstherapie mit Salbutamol/Ipratropiumbromid, forcierte Diurese mit Furosemid, Bronchoskopie zur Abklärung des Rundherdes, medikamentöse Therapie zur Behandlung von Herzinsuffizienz, Blutzuckerselbstkontrollen",
+        "procedere": "Medikamentöse Fortführung gemäß Medikationsplan, ambulante CT-Thorax-Kontrolle in 3 Monaten, kardiologische Kontrolle in 4-6 Wochen, pneumologische Verlaufskontrolle inkl. Bodyplethysmographie in 6 Wochen, Fortführung der oralen Antikoagulation mit Apixaban, Vorstellung beim Diabetologen zur Neueinstellung der oralen Antidiabetika",
+        "offene_fragen": "Histopathologisches Ergebnis der Biopsie aus Segment 6"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akut exazerbierte COPD GOLD IV (Stadium D), ambulant erworbene Pneumonie (CAP) des rechten Unterlappens, chronische Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), Tachyarrhythmia absoluta bei permanentem Vorhofflimmern, chronische Niereninsuffizienz Stadium G3a, Diabetes mellitus Typ 2, Verdacht auf bronchiales Malignom\",\n  \"therapie\": \"Antibiotische Therapie mit Ceftriaxon und Clarithromycin, systemische Glukokortikoidtherapie mit Prednisolon, intensivierte Inhalationstherapie mit Salbutamol/Ipratropiumbromid, forcierte Diurese mit Furosemid, Bronchoskopie zur Abklärung des Rundherdes, medikamentöse Therapie zur Behandlung von Herzinsuffizienz, Blutzuckerselbstkontrollen\",\n  \"procedere\": \"Medikamentöse Fortführung gemäß Medikationsplan, ambulante CT-Thorax-Kontrolle in 3 Monaten, kardiologische Kontrolle in 4-6 Wochen, pneumologische Verlaufskontrolle inkl. Bodyplethysmographie in 6 Wochen, Fortführung der oralen Antikoagulation mit Apixaban, Vorstellung beim Diabetologen zur Neueinstellung der oralen Antidiabetika\",\n  \"offene_fragen\": \"Histopathologisches Ergebnis der Biopsie aus Segment 6\"\n}",
+      "prompt_length": 6522,
+      "response_length": 1147,
+      "usage": {
+        "prompt_tokens": 2584,
+        "completion_tokens": 409
+      },
+      "case_id": "summ_030",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit einem akuten ischämischen Hirninfarkt im Stromgebiet der Arteria cerebri media (ACM) rechts, mediotemporal (I63.3), bei Verdacht auf kardiogene Embolie behandelt.",
+        "therapie": "Es erfolgte eine systemische Thrombolyse mit Actilyse, anschließend eine Sekundärprophylaxe mit ASS und oraler Antikoagulation mit Apixaban. Zusätzlich wurde eine Statintherapie mit Atorvastatin eingeleitet. Der Patient erhielt eine kalkulierte Antibiose zur Behandlung eines nosokomialen Harnwegsinfekts durch Escherichia coli. Des Weiteren wurde eine Dosisanpassung von Metformin für die Behandlung des Diabetes mellitus Typ 2 vorgenommen.",
+        "procedere": "Fortführung der oralen Antikoagulation mit Apixaban, Fortführung der Antibiose bis einschließlich 24.05.2024, ambulante urologische Kontrolle des PSA-Werts in 4-6 Wochen, Blutdruckeinstellung und Blutzuckerkontrolle durch den Hausarzt, logopädische und physiotherapeutische Beübung sowie neurologische Verlaufskontrolle in 3 Monaten.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit einem akuten ischämischen Hirninfarkt im Stromgebiet der Arteria cerebri media (ACM) rechts, mediotemporal (I63.3), bei Verdacht auf kardiogene Embolie behandelt.\",\n  \"therapie\": \"Es erfolgte eine systemische Thrombolyse mit Actilyse, anschließend eine Sekundärprophylaxe mit ASS und oraler Antikoagulation mit Apixaban. Zusätzlich wurde eine Statintherapie mit Atorvastatin eingeleitet. Der Patient erhielt eine kalkulierte Antibiose zur Behandlung eines nosokomialen Harnwegsinfekts durch Escherichia coli. Des Weiteren wurde eine Dosisanpassung von Metformin für die Behandlung des Diabetes mellitus Typ 2 vorgenommen.\",\n  \"procedere\": \"Fortführung der oralen Antikoagulation mit Apixaban, Fortführung der Antibiose bis einschließlich 24.05.2024, ambulante urologische Kontrolle des PSA-Werts in 4-6 Wochen, Blutdruckeinstellung und Blutzuckerkontrolle durch den Hausarzt, logopädische und physiotherapeutische Beübung sowie neurologische Verlaufskontrolle in 3 Monaten.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 5953,
+      "response_length": 1049,
+      "usage": {
+        "prompt_tokens": 2435,
+        "completion_tokens": 365
+      },
+      "case_id": "summ_031",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akuter Schub einer vorbekannten Colitis ulcerosa, aktuell als Linksseitenkolitis imponierend (Mayo-Score 2)",
+        "therapie": "Es wurde eine intravenöse Flüssigkeitssubstitution und eine systemische Steroidtherapie mit Prednisolon eingeleitet. Nach rascher klinischer Stabilisierung wurde auf eine orale Gabe umgestellt. Zusätzlich erfolgte eine Eskalation der Dauertherapie auf Azathioprin. Metformin wurde pausiert und auf ein intensiviertes Insulin-Schema umgestellt.",
+        "procedere": "Es sind engmaschige Laborkontrollen notwendig. Eine Wiedervorstellung beim niedergelassenen Gastroenterologen in 2 Wochen sowie eine Kontrolle des CEA-Wertes in 4-6 Wochen nach Abklingen der Entzündungsaktivität ist empfohlen. Die antibiotische Therapie mit Ciprofloxacin wurde abgeschlossen.",
+        "offene_fragen": "Ob der erhöhte CEA-Wert im Rahmen der floriden Entzündungsaktivität zu werten ist, bedarf weiterer Abklärung."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akuter Schub einer vorbekannten Colitis ulcerosa, aktuell als Linksseitenkolitis imponierend (Mayo-Score 2)\",\n  \"therapie\": \"Es wurde eine intravenöse Flüssigkeitssubstitution und eine systemische Steroidtherapie mit Prednisolon eingeleitet. Nach rascher klinischer Stabilisierung wurde auf eine orale Gabe umgestellt. Zusätzlich erfolgte eine Eskalation der Dauertherapie auf Azathioprin. Metformin wurde pausiert und auf ein intensiviertes Insulin-Schema umgestellt.\",\n  \"procedere\": \"Es sind engmaschige Laborkontrollen notwendig. Eine Wiedervorstellung beim niedergelassenen Gastroenterologen in 2 Wochen sowie eine Kontrolle des CEA-Wertes in 4-6 Wochen nach Abklingen der Entzündungsaktivität ist empfohlen. Die antibiotische Therapie mit Ciprofloxacin wurde abgeschlossen.\",\n  \"offene_fragen\": \"Ob der erhöhte CEA-Wert im Rahmen der floriden Entzündungsaktivität zu werten ist, bedarf weiterer Abklärung.\"\n}",
+      "prompt_length": 6394,
+      "response_length": 937,
+      "usage": {
+        "prompt_tokens": 2534,
+        "completion_tokens": 315
+      },
+      "case_id": "summ_032",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Rezidiviertes, metastasiertes Adenokarzinom des Sigmas mit Progress unter Zweitlinientherapie, neue suspekte noduläre Raumforderung im rechten Lungenunterlappen",
+        "therapie": "Empirische Breitband-Antibiose mit Piperacillin/Tazobactam, G-CSF, Pantoprazol zur Behandlung der erosiven Gastritis, Insulin-Schema für Diabetes mellitus Typ 2, Prophylaxe mit Enoxaparin, Loperamid bei Bedarf",
+        "procedere": "Laborkontrolle beim Hausarzt, Fortführung von Pantoprazol und Prophylaxe mit Enoxaparin, onkologische Wiedervorstellung zur Besprechung des Histologie-Ergebnisses der Lungenbiopsie und Planung des nächsten Zyklus FOLFIRI mit Dosisreduktion, Metformin bleibt pausiert",
+        "offene_fragen": "Natur des neuen Lungenrundherdes (Metastasierung oder entzündliche Veränderung)"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Rezidiviertes, metastasiertes Adenokarzinom des Sigmas mit Progress unter Zweitlinientherapie, neue suspekte noduläre Raumforderung im rechten Lungenunterlappen\",\n  \"therapie\": \"Empirische Breitband-Antibiose mit Piperacillin/Tazobactam, G-CSF, Pantoprazol zur Behandlung der erosiven Gastritis, Insulin-Schema für Diabetes mellitus Typ 2, Prophylaxe mit Enoxaparin, Loperamid bei Bedarf\",\n  \"procedere\": \"Laborkontrolle beim Hausarzt, Fortführung von Pantoprazol und Prophylaxe mit Enoxaparin, onkologische Wiedervorstellung zur Besprechung des Histologie-Ergebnisses der Lungenbiopsie und Planung des nächsten Zyklus FOLFIRI mit Dosisreduktion, Metformin bleibt pausiert\",\n  \"offene_fragen\": \"Natur des neuen Lungenrundherdes (Metastasierung oder entzündliche Veränderung)\"\n}",
+      "prompt_length": 6435,
+      "response_length": 800,
+      "usage": {
+        "prompt_tokens": 2629,
+        "completion_tokens": 289
+      },
+      "case_id": "summ_033",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": null,
+      "parse_error": true,
+      "raw": " {\n  \"hauptdiagnose\": \"Dislozierte mediale Schenkelhalsfraktur links, implantiert mit einer zementierten bipolaren Duokopfprothese\",\n  \"therapie\": \"Operative Versorgung der Fraktur durch Implantation einer Hemi-Endoprothese am 05.10.2",
+      "prompt_length": 6004,
+      "response_length": 234,
+      "usage": {
+        "prompt_tokens": 2387,
+        "completion_tokens": 86
+      },
+      "case_id": "summ_034"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit einer rezidivierenden depressiven Störung, schwerer Episode ohne psychotische Symptome (F33.2) behandelt.",
+        "therapie": "Es wurde eine Medikation mit Sertralin eingeleitet, die aufgrund von Nebenwirkungen auf Venlafaxin umgestellt wurde. Zusätzlich erhielt er Mirtazapin zur Schlafanbahnung. Herr Müller nahm an Depressionsgruppen und Einzelgesprächen teil. Bei hypertensiver Krise wurde Nitrendipin verabreicht und eine dauerhafte Therapie mit Ramipril und Amlodipin eingeleitet.",
+        "procedere": "Es wird empfohlen, die Medikation fortzuführen und einen Termin bei einer Psychiaterin wahrzunehmen. Ein cMRT zur Abklärung kognitiver Defizite ist anberaumt. Der Hausarzt sollte den Blutdruck engmaschig kontrollieren und Herr Müller sollte seine Alkoholabstinenz fortsetzen und eine Selbsthilfegruppe aufsuchen.",
+        "offene_fragen": "Es bestehen offene Fragen zu den kognitiven Defiziten und dem Verdacht auf beginnende vaskuläre kognitive Beeinträchtigung (G31.84)."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit einer rezidivierenden depressiven Störung, schwerer Episode ohne psychotische Symptome (F33.2) behandelt.\",\n  \"therapie\": \"Es wurde eine Medikation mit Sertralin eingeleitet, die aufgrund von Nebenwirkungen auf Venlafaxin umgestellt wurde. Zusätzlich erhielt er Mirtazapin zur Schlafanbahnung. Herr Müller nahm an Depressionsgruppen und Einzelgesprächen teil. Bei hypertensiver Krise wurde Nitrendipin verabreicht und eine dauerhafte Therapie mit Ramipril und Amlodipin eingeleitet.\",\n  \"procedere\": \"Es wird empfohlen, die Medikation fortzuführen und einen Termin bei einer Psychiaterin wahrzunehmen. Ein cMRT zur Abklärung kognitiver Defizite ist anberaumt. Der Hausarzt sollte den Blutdruck engmaschig kontrollieren und Herr Müller sollte seine Alkoholabstinenz fortsetzen und eine Selbsthilfegruppe aufsuchen.\",\n  \"offene_fragen\": \"Es bestehen offene Fragen zu den kognitiven Defiziten und dem Verdacht auf beginnende vaskuläre kognitive Beeinträchtigung (G31.84).\"\n}",
+      "prompt_length": 5351,
+      "response_length": 1016,
+      "usage": {
+        "prompt_tokens": 2144,
+        "completion_tokens": 350
+      },
+      "case_id": "summ_035",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": null,
+      "parse_error": true,
+      "raw": " {\n  \"hauptdiagnose\": \"Endometriumkarzinom des Corpus uteri (V.a. pT1b, G2)\",\n  \"therapie\": \"Laparoskopische totale Hysterektomie mit beidseitiger Adnexektomie und pelviner Lymphonodektomie, medikamentöse Therapie mit Haloperidol für Delir, kalkulierte antibiotische Therapie mit Ceftriaxon für nosokomialen Harnwegsinfekt\",\n  \"procedere\": \"Befundbesprechung in gynäkologischer Ambulanz zur finalen Histologie und Festlegung adjuvanter Therapie, Laborkontrolle beim Hausarzt, Kontrolle des Tumormarkers CA-12",
+      "prompt_length": 6031,
+      "response_length": 508,
+      "usage": {
+        "prompt_tokens": 2509,
+        "completion_tokens": 193
+      },
+      "case_id": "summ_036"
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akut dekompensierte chronische Herzinsuffizienz (NYHA IV bei Aufnahme, NYHA II bei Entlassung) mit hypertensiver Herzkrankheit und tachykardem Vorhofflimmern",
+        "therapie": "Forcierte diuretische Therapie mit Furosemid i.v., anschließend Umstellung auf Torasemid p.o., Einleitung von Spironolacton, Dapagliflozin als SGLT2-Inhibitor, Erhöhung der Bisoprolol-Dosis zur Frequenzkontrolle des Vorhofflimmerns, orale Kaliumchlorid-Substitution. Histologie der Hautläsion und urologische Abklärung des PSA-Wertes noch ausstehend.",
+        "procedere": "Kurzfristige Laborkontrolle (Elektrolyte, Kreatinin), tägliche Gewichtskontrollen, kardiologische Verlaufskontrolle in 4-6 Wochen, urologische Vorstellung zur Abklärung des PSA-Wertes in ca. 4 Wochen. Histologischer Befund der Hautstanze wird direkt nach Erhalt zugestellt.",
+        "offene_fragen": "Keine offenen klinischen Fragen"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akut dekompensierte chronische Herzinsuffizienz (NYHA IV bei Aufnahme, NYHA II bei Entlassung) mit hypertensiver Herzkrankheit und tachykardem Vorhofflimmern\",\n  \"therapie\": \"Forcierte diuretische Therapie mit Furosemid i.v., anschließend Umstellung auf Torasemid p.o., Einleitung von Spironolacton, Dapagliflozin als SGLT2-Inhibitor, Erhöhung der Bisoprolol-Dosis zur Frequenzkontrolle des Vorhofflimmerns, orale Kaliumchlorid-Substitution. Histologie der Hautläsion und urologische Abklärung des PSA-Wertes noch ausstehend.\",\n  \"procedere\": \"Kurzfristige Laborkontrolle (Elektrolyte, Kreatinin), tägliche Gewichtskontrollen, kardiologische Verlaufskontrolle in 4-6 Wochen, urologische Vorstellung zur Abklärung des PSA-Wertes in ca. 4 Wochen. Histologischer Befund der Hautstanze wird direkt nach Erhalt zugestellt.\",\n  \"offene_fragen\": \"Keine offenen klinischen Fragen\"\n}",
+      "prompt_length": 6268,
+      "response_length": 897,
+      "usage": {
+        "prompt_tokens": 2535,
+        "completion_tokens": 334
+      },
+      "case_id": "summ_037",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Hans-Joachim Müller wurde mit akut dekompensierter chronischer Herzinsuffizienz (HFrEF) und neu diagnostiziertem persistierendem Vorhofflimmern behandelt.",
+        "therapie": "Es wurde eine forcierte diuretische Therapie durchgeführt, wodurch eine ausreichende Diurese und Gewichtsreduktion erreicht wurde. Zusätzlich wurde eine orale Antikoagulation mit Apixaban eingeleitet und die Medikation zur Frequenzkontrolle sowie zur Optimierung der Herzinsuffizienztherapie angepasst. Konservative Therapie für ein kleines Leistenhämatom wurde durchgeführt.",
+        "procedere": "Es wird empfohlen, innerhalb der nächsten 7 Tage eine hausärztliche Kontrolle der Nierenwerte und Elektrolyte durchführen, tägliche Gewichtskontrollen durch den Patienten fortzusetzen, eine kardiologische Verlaufskontrolle in 3 Monaten zur Re-Evaluation der LVEF durchzuführen, eine dringende urologische Vorstellung zur weiteren Abklärung des erhöhten PSA-Wertes vorzunehmen und die Leiste bei Schwellungszunahme oder Schmerzen erneut sonographisch kontrollieren.",
+        "offene_fragen": "Keine offenen klinischen Fragen"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Hans-Joachim Müller wurde mit akut dekompensierter chronischer Herzinsuffizienz (HFrEF) und neu diagnostiziertem persistierendem Vorhofflimmern behandelt.\",\n  \"therapie\": \"Es wurde eine forcierte diuretische Therapie durchgeführt, wodurch eine ausreichende Diurese und Gewichtsreduktion erreicht wurde. Zusätzlich wurde eine orale Antikoagulation mit Apixaban eingeleitet und die Medikation zur Frequenzkontrolle sowie zur Optimierung der Herzinsuffizienztherapie angepasst. Konservative Therapie für ein kleines Leistenhämatom wurde durchgeführt.\",\n  \"procedere\": \"Es wird empfohlen, innerhalb der nächsten 7 Tage eine hausärztliche Kontrolle der Nierenwerte und Elektrolyte durchführen, tägliche Gewichtskontrollen durch den Patienten fortzusetzen, eine kardiologische Verlaufskontrolle in 3 Monaten zur Re-Evaluation der LVEF durchzuführen, eine dringende urologische Vorstellung zur weiteren Abklärung des erhöhten PSA-Wertes vorzunehmen und die Leiste bei Schwellungszunahme oder Schmerzen erneut sonographisch kontrollieren.\",\n  \"offene_fragen\": \"Keine offenen klinischen Fragen\"\n}",
+      "prompt_length": 6180,
+      "response_length": 1115,
+      "usage": {
+        "prompt_tokens": 2506,
+        "completion_tokens": 367
+      },
+      "case_id": "summ_038",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akut exazerbierte COPD (GOLD IV) und Verdacht auf zentrales Bronchialkarzinom des rechten Oberlappens",
+        "therapie": "Es wurde eine kalkulierte intravenöse Antibiose mit Ceftriaxon und Clarithromycin durchgeführt sowie eine Steroidstoßtherapie eingeleitet. Zusätzlich erfolgte eine Umstellung der Antikoagulation auf Apixaban und eine Anpassung der Herzinsuffizienzmedikation. Eine Bronchoskopie wurde durchgeführt, allerdings ohne eindeutigen Tumorbefund.",
+        "procedere": "Fortführung der medikamentösen Therapie, Ausschleichen des Prednisolons, Abwarten der Pathohistologie und ggf. Vorstellung in der interdisziplinären Tumorkonferenz. Durchführung einer ambulanten pneumologischen Kontrolle inkl. Bodyplethysmographie und BGA, kardiologischer Kontrolle und CT-Thorax-Kontrolle in den nächsten Wochen.",
+        "offene_fragen": "Ergebnis der Pathohistologie und Klärung der Infiltratregredienz unter Antibiose"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akut exazerbierte COPD (GOLD IV) und Verdacht auf zentrales Bronchialkarzinom des rechten Oberlappens\",\n  \"therapie\": \"Es wurde eine kalkulierte intravenöse Antibiose mit Ceftriaxon und Clarithromycin durchgeführt sowie eine Steroidstoßtherapie eingeleitet. Zusätzlich erfolgte eine Umstellung der Antikoagulation auf Apixaban und eine Anpassung der Herzinsuffizienzmedikation. Eine Bronchoskopie wurde durchgeführt, allerdings ohne eindeutigen Tumorbefund.\",\n  \"procedere\": \"Fortführung der medikamentösen Therapie, Ausschleichen des Prednisolons, Abwarten der Pathohistologie und ggf. Vorstellung in der interdisziplinären Tumorkonferenz. Durchführung einer ambulanten pneumologischen Kontrolle inkl. Bodyplethysmographie und BGA, kardiologischer Kontrolle und CT-Thorax-Kontrolle in den nächsten Wochen.\",\n  \"offene_fragen\": \"Ergebnis der Pathohistologie und Klärung der Infiltratregredienz unter Antibiose\"\n}",
+      "prompt_length": 6586,
+      "response_length": 935,
+      "usage": {
+        "prompt_tokens": 2667,
+        "completion_tokens": 319
+      },
+      "case_id": "summ_039",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Hans-Joachim Müller wurde mit einem ischämischen Hirninfarkt im Mediastromgebiet rechts (TOAST: kardioembolisch bei paroxysmalem Vorhofflimmern) behandelt.",
+        "therapie": "Es wurde eine mechanische Thrombektomie durchgeführt, gefolgt von einer oralen Antikoagulation mit Apixaban zur Sekundärprophylaxe. Zusätzlich wurde eine antihypertensive Therapie mit Metoprololsuccinat und eine Statintherapie mit Atorvastatin eingeleitet. Eine urologische Abklärung ist aufgrund des erhöhten PSA-Wertes notwendig.",
+        "procedere": "Herr Müller wird eine neurologische Rehabilitation (Phase C) beginnen und eine urologische Abklärung mit multiparametrischen MRT und Biopsie erhalten. Eine hausärztliche Verlaufskontrolle der rechten Leiste und Laborkontrollen sind empfohlen. Eine Halsschlagader-Sonographie soll in 6 Monaten wiederholt werden.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Hans-Joachim Müller wurde mit einem ischämischen Hirninfarkt im Mediastromgebiet rechts (TOAST: kardioembolisch bei paroxysmalem Vorhofflimmern) behandelt.\",\n  \"therapie\": \"Es wurde eine mechanische Thrombektomie durchgeführt, gefolgt von einer oralen Antikoagulation mit Apixaban zur Sekundärprophylaxe. Zusätzlich wurde eine antihypertensive Therapie mit Metoprololsuccinat und eine Statintherapie mit Atorvastatin eingeleitet. Eine urologische Abklärung ist aufgrund des erhöhten PSA-Wertes notwendig.\",\n  \"procedere\": \"Herr Müller wird eine neurologische Rehabilitation (Phase C) beginnen und eine urologische Abklärung mit multiparametrischen MRT und Biopsie erhalten. Eine hausärztliche Verlaufskontrolle der rechten Leiste und Laborkontrollen sind empfohlen. Eine Halsschlagader-Sonographie soll in 6 Monaten wiederholt werden.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 6971,
+      "response_length": 893,
+      "usage": {
+        "prompt_tokens": 2696,
+        "completion_tokens": 301
+      },
+      "case_id": "summ_040",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Verdacht auf Malignom des Pankreaskopfes (cT2 cN0 cM0, UICC Stadium IB), leichte Post-ERCP-Pankreatitis (PEAP), Diabetes mellitus Typ 2, permanentes Vorhofflimmern, arterielle Hypertonie, nosokomialer Harnwegsinfekt durch E. coli",
+        "therapie": "ERCP mit Stentimplantation, intensivierte Insulintherapie, kalkulierte antibiotische Therapie mit Piperacillin/Tazobactam, Pantoprazol, Kreon zur Enzymersatztherapie",
+        "procedere": "Vorstellung in interdisziplinärem Tumorboard nach Vorliegen der Histologie, chirurgische Vorstellung zur Evaluation einer Pylorus-erhaltenden Whipple-Operation bei Bestätigung der Malignität, Stentwechsel/-entfernung nach 8-10 Wochen, Laborkontrollen beim Hausarzt in 3 Tagen, Fortführung der Insulintherapie mit ambulanter Diabetiker-Schulung",
+        "offene_fragen": "Endgültiges Histologieergebnis der EUS-FNA"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Verdacht auf Malignom des Pankreaskopfes (cT2 cN0 cM0, UICC Stadium IB), leichte Post-ERCP-Pankreatitis (PEAP), Diabetes mellitus Typ 2, permanentes Vorhofflimmern, arterielle Hypertonie, nosokomialer Harnwegsinfekt durch E. coli\",\n  \"therapie\": \"ERCP mit Stentimplantation, intensivierte Insulintherapie, kalkulierte antibiotische Therapie mit Piperacillin/Tazobactam, Pantoprazol, Kreon zur Enzymersatztherapie\",\n  \"procedere\": \"Vorstellung in interdisziplinärem Tumorboard nach Vorliegen der Histologie, chirurgische Vorstellung zur Evaluation einer Pylorus-erhaltenden Whipple-Operation bei Bestätigung der Malignität, Stentwechsel/-entfernung nach 8-10 Wochen, Laborkontrollen beim Hausarzt in 3 Tagen, Fortführung der Insulintherapie mit ambulanter Diabetiker-Schulung\",\n  \"offene_fragen\": \"Endgültiges Histologieergebnis der EUS-FNA\"\n}",
+      "prompt_length": 6348,
+      "response_length": 865,
+      "usage": {
+        "prompt_tokens": 2545,
+        "completion_tokens": 315
+      },
+      "case_id": "summ_041",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Metastasiertes Nicht-kleinzelliges Bronchialkarzinom (Adenokarzinom) der Lunge im Stadium cT3 cN2 cM1b mit pulmonalen und ossären Metastasen, PD-L1 Expression > 50 %, EGFR/ALK/ROS1-negativ",
+        "therapie": "Palliative Chemo-Immuntherapie mit Pembrolizumab/Carboplatin/Pemetrexed (3. Zyklus verabreicht), kalkulierte antibiotische Therapie mit Piperacillin/Tazobactam für febrile Neutropenie, orales Bridging mit niedermolekularem Heparin während passagere Thrombozytopenie",
+        "procedere": "Fortführung der Antibiose für 3 Tage, engmaschige Kontrolle des Blutbildes und Nierenretentionsparameter, Vorstellung zur 4. Applikation der Chemo-Immuntherapie geplant, Kontroll-CT Thorax/Abdomen in ca. 6 Wochen, Fortführung der Herzinsuffizienzmedikation und Antikoagulation, Metformin erst bei stabiler GFR > 45 ml/min wieder ansetzen",
+        "offene_fragen": "Ergebnis der Liquid Biopsy zur erneuten molekulargenetischen Untersuchung steht noch aus"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Metastasiertes Nicht-kleinzelliges Bronchialkarzinom (Adenokarzinom) der Lunge im Stadium cT3 cN2 cM1b mit pulmonalen und ossären Metastasen, PD-L1 Expression > 50 %, EGFR/ALK/ROS1-negativ\",\n  \"therapie\": \"Palliative Chemo-Immuntherapie mit Pembrolizumab/Carboplatin/Pemetrexed (3. Zyklus verabreicht), kalkulierte antibiotische Therapie mit Piperacillin/Tazobactam für febrile Neutropenie, orales Bridging mit niedermolekularem Heparin während passagere Thrombozytopenie\",\n  \"procedere\": \"Fortführung der Antibiose für 3 Tage, engmaschige Kontrolle des Blutbildes und Nierenretentionsparameter, Vorstellung zur 4. Applikation der Chemo-Immuntherapie geplant, Kontroll-CT Thorax/Abdomen in ca. 6 Wochen, Fortführung der Herzinsuffizienzmedikation und Antikoagulation, Metformin erst bei stabiler GFR > 45 ml/min wieder ansetzen\",\n  \"offene_fragen\": \"Ergebnis der Liquid Biopsy zur erneuten molekulargenetischen Untersuchung steht noch aus\"\n}",
+      "prompt_length": 6634,
+      "response_length": 964,
+      "usage": {
+        "prompt_tokens": 2786,
+        "completion_tokens": 367
+      },
+      "case_id": "summ_042",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Dislozierte mediale Schenkelhalsfraktur rechts, behandelt mit zementfreier Hüft-Totalendoprothese",
+        "therapie": "Implantation einer zementfreien Hüft-TEP, medikamentöse Therapie mit Pipamperon zur Behandlung eines postoperativen Delirs, Schmerztherapie mit Ibuprofen, Metamizol und Oxycodon/Nalaxon, Shave-Exzision des suspekten Hautbefunds am Rücken",
+        "procedere": "Schmerzorientierte Belastung bis zur Vollbelastung, Fadenentfernung am 26.10.2023, Besprechung des ausstehenden Histologie-Ergebnisses des Rückenbefundes, kardiologische Kontrolle des Troponin-Wertes in 2 Wochen, dauerhafte Vermeidung von NSAR aufgrund der Nierensituation",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Dislozierte mediale Schenkelhalsfraktur rechts, behandelt mit zementfreier Hüft-Totalendoprothese\",\n  \"therapie\": \"Implantation einer zementfreien Hüft-TEP, medikamentöse Therapie mit Pipamperon zur Behandlung eines postoperativen Delirs, Schmerztherapie mit Ibuprofen, Metamizol und Oxycodon/Nalaxon, Shave-Exzision des suspekten Hautbefunds am Rücken\",\n  \"procedere\": \"Schmerzorientierte Belastung bis zur Vollbelastung, Fadenentfernung am 26.10.2023, Besprechung des ausstehenden Histologie-Ergebnisses des Rückenbefundes, kardiologische Kontrolle des Troponin-Wertes in 2 Wochen, dauerhafte Vermeidung von NSAR aufgrund der Nierensituation\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 6029,
+      "response_length": 697,
+      "usage": {
+        "prompt_tokens": 2363,
+        "completion_tokens": 271
+      },
+      "case_id": "summ_043",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit einer rezidivierenden depressiven Störung, schwerer Episode ohne psychotische Symptome (ICD-10: F33.2) behandelt.",
+        "therapie": "Die Behandlung umfasste eine multimodale Therapie mit Einzel- und Gruppengesprächstherapie, Ergo-, Sport- und Musiktherapie sowie die Medikation mit Sertralin und später Venlafaxin. Zusätzlich erhielt er Medikation für seine arterielle Hypertonie, Gastritis und zur Bedarfsbehandlung von Angstzuständen.",
+        "procedere": "Es wird empfohlen, die Medikation mit Venlafaxin für mindestens 6-12 Monate fortzuführen, um ein Rezidiv zu vermeiden. Eine ambulante Psychotherapie ist vereinbart, und es wird eine kardiologische/hausärztliche Kontrolle empfohlen. Sobald der Befund der Polysomnographie vorliegt, sollte eine Entscheidung über eine eventuelle CPAP-Maskentherapie getroffen werden. Die Teilnahme an Selbsthilfegruppen zur Abstinenzkontrolle soll fortgesetzt werden.",
+        "offene_fragen": "Es steht ein vorläufiger Kurzbericht zu einem Verdacht auf obstruktives Schlafapnoe-Syndrom mit einem Apnoe-Hypopnoe-Index (AHI) von 18/h zur Verfügung. Der endgültige Befund und die Therapieempfehlung müssen noch abgewartet werden."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit einer rezidivierenden depressiven Störung, schwerer Episode ohne psychotische Symptome (ICD-10: F33.2) behandelt.\",\n  \"therapie\": \"Die Behandlung umfasste eine multimodale Therapie mit Einzel- und Gruppengesprächstherapie, Ergo-, Sport- und Musiktherapie sowie die Medikation mit Sertralin und später Venlafaxin. Zusätzlich erhielt er Medikation für seine arterielle Hypertonie, Gastritis und zur Bedarfsbehandlung von Angstzuständen.\",\n  \"procedere\": \"Es wird empfohlen, die Medikation mit Venlafaxin für mindestens 6-12 Monate fortzuführen, um ein Rezidiv zu vermeiden. Eine ambulante Psychotherapie ist vereinbart, und es wird eine kardiologische/hausärztliche Kontrolle empfohlen. Sobald der Befund der Polysomnographie vorliegt, sollte eine Entscheidung über eine eventuelle CPAP-Maskentherapie getroffen werden. Die Teilnahme an Selbsthilfegruppen zur Abstinenzkontrolle soll fortgesetzt werden.\",\n  \"offene_fragen\": \"Es steht ein vorläufiger Kurzbericht zu einem Verdacht auf obstruktives Schlafapnoe-Syndrom mit einem Apnoe-Hypopnoe-Index (AHI) von 18/h zur Verfügung. Der endgültige Befund und die Therapieempfehlung müssen noch abgewartet werden.\"\n}",
+      "prompt_length": 6207,
+      "response_length": 1204,
+      "usage": {
+        "prompt_tokens": 2344,
+        "completion_tokens": 421
+      },
+      "case_id": "summ_044",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Die Patientin wurde mit einer postmenopausalen Blutung aufgrund eines Endometriumkarzinoms (V.a. pT1b, G2) behandelt.",
+        "therapie": "Es wurde eine totale laparoskopische Hysterektomie mit beidseitiger Adnexektomie und pelviner Lymphonodektomie durchgeführt. Postoperativ wurde ein konservatives Management des vaginalen Stumpfhämatoms gewählt. Die Blutzuckereinstellung war dysreguliert, was eine zeitweise Korrektur mit kurzwirksamem Insulin erforderte.",
+        "procedere": "Es ist eine Wundkontrolle und Fadenentfernung durch den niedergelassenen Gynäkologen, Kontrolle der Nierenwerte und des Blutbildes durch den Hausarzt, Fortführung der Medikation sowie eine Wiedervorstellung in der Tumorsprechstunde geplant. Der Patientin wird körperliche Schonung für 6 Wochen empfohlen.",
+        "offene_fragen": "Die endgültige Histologie der Lymphknoten und des rechten Adnexe steht noch aus, insbesondere die Korrelation des erhöhten Tumormarkers CA-125 mit der unauffälligen Bildgebung hinsichtlich einer möglichen okkulten peritonealen Beteiligung."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Die Patientin wurde mit einer postmenopausalen Blutung aufgrund eines Endometriumkarzinoms (V.a. pT1b, G2) behandelt.\",\n  \"therapie\": \"Es wurde eine totale laparoskopische Hysterektomie mit beidseitiger Adnexektomie und pelviner Lymphonodektomie durchgeführt. Postoperativ wurde ein konservatives Management des vaginalen Stumpfhämatoms gewählt. Die Blutzuckereinstellung war dysreguliert, was eine zeitweise Korrektur mit kurzwirksamem Insulin erforderte.\",\n  \"procedere\": \"Es ist eine Wundkontrolle und Fadenentfernung durch den niedergelassenen Gynäkologen, Kontrolle der Nierenwerte und des Blutbildes durch den Hausarzt, Fortführung der Medikation sowie eine Wiedervorstellung in der Tumorsprechstunde geplant. Der Patientin wird körperliche Schonung für 6 Wochen empfohlen.\",\n  \"offene_fragen\": \"Die endgültige Histologie der Lymphknoten und des rechten Adnexe steht noch aus, insbesondere die Korrelation des erhöhten Tumormarkers CA-125 mit der unauffälligen Bildgebung hinsichtlich einer möglichen okkulten peritonealen Beteiligung.\"\n}",
+      "prompt_length": 5205,
+      "response_length": 1067,
+      "usage": {
+        "prompt_tokens": 2132,
+        "completion_tokens": 360
+      },
+      "case_id": "summ_045",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 2.0,
+        "overall": 3.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Infektexazerbierte COPD (GOLD III) mit radiologisch gesicherter Pneumonie des rechten Unterlappens, Erstdiagnose eines paroxysmalen Vorhofflimmerns, arterielle Hypertonie Grad II, chronische Niereninsuffizienz Stadium G3a, Verdacht auf ACE-Hemmer-induzierten Husten",
+        "therapie": "Antibiotische Therapie mit Ampicillin/Sulbactam, anschließend gewechselt zu Levofloxacin; orale Antikoagulation mit Apixaban zur Behandlung des Vorhofflimmerns; AT1-Rezeptor-Antagonist Candesartan zur Blutdruckkontrolle und Linderung des Reizhustens; inhalative Therapie mit Ipratropiumbromid/Fenoterol und systemische Steroidgabe; Metoprololsuccinat zur Frequenzkontrolle des Vorhofflimmerns.",
+        "procedere": "Fortführung der antibiotischen Therapie und Antikoagulation, hausärztliche Laborkontrolle, Durchführung eines 24h-Langzeit-EKGs und pneumologische Verlaufskontrolle inklusive Bodyplethysmographie und Diffusionskapazität; telefonische Rücksprache bei Vorliegen eines resistenten Keims in der Sputumkultur.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Infektexazerbierte COPD (GOLD III) mit radiologisch gesicherter Pneumonie des rechten Unterlappens, Erstdiagnose eines paroxysmalen Vorhofflimmerns, arterielle Hypertonie Grad II, chronische Niereninsuffizienz Stadium G3a, Verdacht auf ACE-Hemmer-induzierten Husten\",\n  \"therapie\": \"Antibiotische Therapie mit Ampicillin/Sulbactam, anschließend gewechselt zu Levofloxacin; orale Antikoagulation mit Apixaban zur Behandlung des Vorhofflimmerns; AT1-Rezeptor-Antagonist Candesartan zur Blutdruckkontrolle und Linderung des Reizhustens; inhalative Therapie mit Ipratropiumbromid/Fenoterol und systemische Steroidgabe; Metoprololsuccinat zur Frequenzkontrolle des Vorhofflimmerns.\",\n  \"procedere\": \"Fortführung der antibiotischen Therapie und Antikoagulation, hausärztliche Laborkontrolle, Durchführung eines 24h-Langzeit-EKGs und pneumologische Verlaufskontrolle inklusive Bodyplethysmographie und Diffusionskapazität; telefonische Rücksprache bei Vorliegen eines resistenten Keims in der Sputumkultur.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 6313,
+      "response_length": 1053,
+      "usage": {
+        "prompt_tokens": 2573,
+        "completion_tokens": 375
+      },
+      "case_id": "summ_046",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.3333333333333335
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit Verdacht auf NSTEMI (Akutes Koronarsyndrom) stationär aufgenommen, welcher durch laborchemische und echokardiographische Untersuchungen bestätigt wurde. Es erfolgte eine Koronarangiographie mit anschließender PCI und DES-Implantation in der distalen RCX.",
+        "therapie": "Es wurde eine Triple-Therapie mit Apixaban 2,5 mg 2x tägl., Clopidogrel 75 mg 1x tägl. und ASS 100 mg 1x tägl. für 7 Tage postinterventionell eingeleitet. Zusätzlich wurden Ramipril, Metoprololsuccinat, Atorvastatin, Pantoprazol und Metformin verordnet. Eine kurze Phase eines hyperaktiven Delirs wurde mit Melperon behandelt.",
+        "procedere": "Es sind kardiologische und laborkontrollierende Termine zur Überwachung der Genesung einzuhalten. Eine dringende gastroenterologische Abklärung zur Abklärung des erhöhten CEA-Wertes ist auszustehen. Eine Wundkontrolle der Punktionsstelle an der A. radialis re. ist notwendig. Empfohlen werden körperliche Schonung für 1 Woche, moderates Ausdauertraining, Diabetesschulung und Ernährungsberatung.",
+        "offene_fragen": "Keine offenen klinischen Fragen"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit Verdacht auf NSTEMI (Akutes Koronarsyndrom) stationär aufgenommen, welcher durch laborchemische und echokardiographische Untersuchungen bestätigt wurde. Es erfolgte eine Koronarangiographie mit anschließender PCI und DES-Implantation in der distalen RCX.\",\n  \"therapie\": \"Es wurde eine Triple-Therapie mit Apixaban 2,5 mg 2x tägl., Clopidogrel 75 mg 1x tägl. und ASS 100 mg 1x tägl. für 7 Tage postinterventionell eingeleitet. Zusätzlich wurden Ramipril, Metoprololsuccinat, Atorvastatin, Pantoprazol und Metformin verordnet. Eine kurze Phase eines hyperaktiven Delirs wurde mit Melperon behandelt.\",\n  \"procedere\": \"Es sind kardiologische und laborkontrollierende Termine zur Überwachung der Genesung einzuhalten. Eine dringende gastroenterologische Abklärung zur Abklärung des erhöhten CEA-Wertes ist auszustehen. Eine Wundkontrolle der Punktionsstelle an der A. radialis re. ist notwendig. Empfohlen werden körperliche Schonung für 1 Woche, moderates Ausdauertraining, Diabetesschulung und Ernährungsberatung.\",\n  \"offene_fragen\": \"Keine offenen klinischen Fragen\"\n}",
+      "prompt_length": 6381,
+      "response_length": 1114,
+      "usage": {
+        "prompt_tokens": 2573,
+        "completion_tokens": 387
+      },
+      "case_id": "summ_047",
+      "judge_scores": {
+        "faktentreue": 3.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.0
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Herr Müller wurde mit akut exazerbierter COPD (GOLD IV, Gruppe D), chronischer Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), permanentem Vorhofflimmern, chronischer Niereninsuffizienz und Verdacht auf Bronchialkarzinom des rechten Unterlappens behandelt.",
+        "therapie": "Es wurde eine kalkulierte antibiotische Therapie, inhalative Bronchodilatatoren, systemische Steroide, Melperon zur Delirbehandlung und lokale Adrenalin-Lösung bei Hämoptoe angewendet. Die Antikoagulation wurde von Lixiana auf Enoxaparin umgestellt und dann pausiert, um sie anschließend wieder aufzunehmen.",
+        "procedere": "Fortführung der inhalativen Therapie, Prednisolon-Ausschleichplan, Wiederaufnahme oraler Antikoagulation, Erwartung der Histologie der Biopsieergebnisse und Befundbesprechung in der Ambulanz, geplantes Staging und Vorstellung im Tumorboard bei Malignitätsnachweis, kardiologische und pneumologische Verlaufskontrollen.",
+        "offene_fragen": "Die Tumormarker stehen im Kontrast zur geringen Größe des Rundherdes, was eine differenzialdiagnostische Abklärung erfordert."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Herr Müller wurde mit akut exazerbierter COPD (GOLD IV, Gruppe D), chronischer Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF), permanentem Vorhofflimmern, chronischer Niereninsuffizienz und Verdacht auf Bronchialkarzinom des rechten Unterlappens behandelt.\",\n  \"therapie\": \"Es wurde eine kalkulierte antibiotische Therapie, inhalative Bronchodilatatoren, systemische Steroide, Melperon zur Delirbehandlung und lokale Adrenalin-Lösung bei Hämoptoe angewendet. Die Antikoagulation wurde von Lixiana auf Enoxaparin umgestellt und dann pausiert, um sie anschließend wieder aufzunehmen.\",\n  \"procedere\": \"Fortführung der inhalativen Therapie, Prednisolon-Ausschleichplan, Wiederaufnahme oraler Antikoagulation, Erwartung der Histologie der Biopsieergebnisse und Befundbesprechung in der Ambulanz, geplantes Staging und Vorstellung im Tumorboard bei Malignitätsnachweis, kardiologische und pneumologische Verlaufskontrollen.\",\n  \"offene_fragen\": \"Die Tumormarker stehen im Kontrast zur geringen Größe des Rundherdes, was eine differenzialdiagnostische Abklärung erfordert.\"\n}",
+      "prompt_length": 6082,
+      "response_length": 1104,
+      "usage": {
+        "prompt_tokens": 2435,
+        "completion_tokens": 372
+      },
+      "case_id": "summ_048",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Der Patient wurde mit einem ischämischen Hirninfarkt im Mediastromgebiet links, verursacht durch eine hochgradige Stenose der A. carotis interna links, behandelt.",
+        "therapie": "Der Patient erhielt eine sekundärprophylaktische Therapie mit ASS, die später auf Clopidogrel umgestellt wurde. Zusätzlich wurde Atorvastatin zur Senkung des vaskulären Risikoprofils verabreicht. Bei Fieber und Dysurie leitete das Team eine gezielte Antibiose mit Fosfomycin ein. Die Indikation zur Karotis-Endarteriektomie (TEA) links wurde in der interdisziplinären Gefäßkonferenz gestellt.",
+        "procedere": "Der Patient sollte sich stationär in der Klinik für Gefäßchirurgie zur Karotis-TEA links am 30.10.2023 einfinden. Es wird eine telefonische Abfrage des 72h-Langzeit-EKGs am 25.10.2023 empfohlen. Bei Nachweis von Vorhofflimmern ist eine Umstellung der Medikation erforderlich. Eine urologische Kontrolle des PSA-Werts ist in ca. 3 Monaten vorgesehen. Der Hausarzt sollte regelmäßige Kontrollen der Leberwerte und CK unter Statinstherapie durchführen.",
+        "offene_fragen": "Keine"
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Der Patient wurde mit einem ischämischen Hirninfarkt im Mediastromgebiet links, verursacht durch eine hochgradige Stenose der A. carotis interna links, behandelt.\",\n  \"therapie\": \"Der Patient erhielt eine sekundärprophylaktische Therapie mit ASS, die später auf Clopidogrel umgestellt wurde. Zusätzlich wurde Atorvastatin zur Senkung des vaskulären Risikoprofils verabreicht. Bei Fieber und Dysurie leitete das Team eine gezielte Antibiose mit Fosfomycin ein. Die Indikation zur Karotis-Endarteriektomie (TEA) links wurde in der interdisziplinären Gefäßkonferenz gestellt.\",\n  \"procedere\": \"Der Patient sollte sich stationär in der Klinik für Gefäßchirurgie zur Karotis-TEA links am 30.10.2023 einfinden. Es wird eine telefonische Abfrage des 72h-Langzeit-EKGs am 25.10.2023 empfohlen. Bei Nachweis von Vorhofflimmern ist eine Umstellung der Medikation erforderlich. Eine urologische Kontrolle des PSA-Werts ist in ca. 3 Monaten vorgesehen. Der Hausarzt sollte regelmäßige Kontrollen der Leberwerte und CK unter Statinstherapie durchführen.\",\n  \"offene_fragen\": \"Keine\"\n}",
+      "prompt_length": 5893,
+      "response_length": 1094,
+      "usage": {
+        "prompt_tokens": 2369,
+        "completion_tokens": 390
+      },
+      "case_id": "summ_049",
+      "judge_scores": {
+        "faktentreue": 4.0,
+        "vollstaendigkeit": 2.0,
+        "klinische_praezision": 2.0,
+        "overall": 2.6666666666666665
+      }
+    },
+    {
+      "summary": {
+        "hauptdiagnose": "Akute obere Gastrointestinalblutung bei Ulcus ventriculi, persistierendes Vorhofflimmern, chronische Niereninsuffizienz Stadium IIIa, arterielle Hypertonie, Diabetes mellitus Typ 2, und unklare CEA-Erhöhung",
+        "therapie": "Es wurden zwei Hämoclips zur Blutstillung am Ulcus ventriculi angebracht und Biopsien entnommen. Der Patient erhielt Antibiotika zur Behandlung einer Aspirationspneumonie. Die orale Antikoagulation wurde auf Apixaban 2,5 mg 1-0-1 umgestellt. Zusätzlich wurden Pantoprazol, Ramipril, Metformin und Bisoprolol verordnet.",
+        "procedere": "Es ist eine gastroskopische Verlaufskontrolle in 6 Wochen empfohlen. Eine hausärztliche Laborkontrolle sollte in einer Woche durchgeführt werden. Eine CEA-Kontrolle ist in 4 Wochen vorgesehen, bei weiterhin erhöhten Werten wird eine CT-Thorax/Abdomen empfohlen. Der Patient sollte NSAR meiden und bei Schmerzen Metamizol oder Paracetamol einnehmen. Die Antikoagulation sollte in reduzierter Dosis fortgeführt werden.",
+        "offene_fragen": "Die Ursache der CEA-Erhöhung ist noch unklar."
+      },
+      "raw": " {\n  \"hauptdiagnose\": \"Akute obere Gastrointestinalblutung bei Ulcus ventriculi, persistierendes Vorhofflimmern, chronische Niereninsuffizienz Stadium IIIa, arterielle Hypertonie, Diabetes mellitus Typ 2, und unklare CEA-Erhöhung\",\n  \"therapie\": \"Es wurden zwei Hämoclips zur Blutstillung am Ulcus ventriculi angebracht und Biopsien entnommen. Der Patient erhielt Antibiotika zur Behandlung einer Aspirationspneumonie. Die orale Antikoagulation wurde auf Apixaban 2,5 mg 1-0-1 umgestellt. Zusätzlich wurden Pantoprazol, Ramipril, Metformin und Bisoprolol verordnet.\",\n  \"procedere\": \"Es ist eine gastroskopische Verlaufskontrolle in 6 Wochen empfohlen. Eine hausärztliche Laborkontrolle sollte in einer Woche durchgeführt werden. Eine CEA-Kontrolle ist in 4 Wochen vorgesehen, bei weiterhin erhöhten Werten wird eine CT-Thorax/Abdomen empfohlen. Der Patient sollte NSAR meiden und bei Schmerzen Metamizol oder Paracetamol einnehmen. Die Antikoagulation sollte in reduzierter Dosis fortgeführt werden.\",\n  \"offene_fragen\": \"Die Ursache der CEA-Erhöhung ist noch unklar.\"\n}",
+      "prompt_length": 5689,
+      "response_length": 1071,
+      "usage": {
+        "prompt_tokens": 2258,
+        "completion_tokens": 379
+      },
+      "case_id": "summ_050",
+      "judge_scores": {
+        "faktentreue": 5.0,
+        "vollstaendigkeit": 3.0,
+        "klinische_praezision": 3.0,
+        "overall": 3.6666666666666665
+      }
+    }
+  ]
+}

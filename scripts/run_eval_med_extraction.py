@@ -22,8 +22,8 @@ Du bist ein pharmazeutischer Experte. Extrahiere alle Medikamente aus dem folgen
 
 Für jedes Medikament extrahiere:
 - wirkstoff: Der Wirkstoff (z.B. "Metoprolol", "Ramipril")
-- dosis: Die Dosierung (z.B. "47.5 mg", "5 mg")
-- frequenz: Die Einnahmefrequenz (z.B. "1-0-0", "2x täglich", "alle 8h")
+- dosis: NUR die Einzeldosis mit Einheit (z.B. "47.5 mg", "5 mg", "14 IE")
+- frequenz: Einnahmeschema im Format X-X-X oder X-X-X-X (z.B. "1-0-0", "1-1-1", "0-0-0-1"). Für Bedarfsmedikation: "bei Bedarf". Für Einmalgaben: "einmalig".
 - darreichungsform: Die Darreichungsform (z.B. "p.o.", "i.v.", "s.c.")
 
 Antworte ausschließlich im folgenden JSON-Format (kein Markdown, kein Kommentar):
