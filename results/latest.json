@@ -1,5 +1,31 @@
 [
   {
+    "model": "deepseek-ai/DeepSeek-V3.1",
+    "task": "patient_text",
+    "timestamp": "20260329_211807",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 4.44,
+    "medizinische_korrektheit": 4.82,
+    "vollstaendigkeit": 4.56,
+    "overall_score": 4.6066666666666665
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "task": "patient_text",
+    "timestamp": "20260329_215123",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 4.52,
+    "medizinische_korrektheit": 4.86,
+    "vollstaendigkeit": 4.44,
+    "overall_score": 4.6066666666666665
+  },
+  {
     "model": "openai/gpt-oss-120b",
     "task": "clinical_reasoning",
     "timestamp": "20260329_185754",
@@ -14,6 +40,32 @@
     "ddx_plausibility": 4.76,
     "red_flag_awareness": 4.72,
     "overall_score": 4.391
+  },
+  {
+    "model": "openai/gpt-oss-120b",
+    "task": "patient_text",
+    "timestamp": "20260329_210453",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 3.4,
+    "medizinische_korrektheit": 4.42,
+    "vollstaendigkeit": 4.86,
+    "overall_score": 4.226666666666667
+  },
+  {
+    "model": "google/gemma-3-27b-it",
+    "task": "patient_text",
+    "timestamp": "20260329_212239",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 3.54,
+    "medizinische_korrektheit": 4.42,
+    "vollstaendigkeit": 4.68,
+    "overall_score": 4.213333333333333
   },
   {
     "model": "deepseek-ai/DeepSeek-V3.1",
@@ -49,6 +101,19 @@
   },
   {
     "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "task": "patient_text",
+    "timestamp": "20260329_210254",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 3.58,
+    "medizinische_korrektheit": 4.72,
+    "vollstaendigkeit": 4.1,
+    "overall_score": 4.133333333333333
+  },
+  {
+    "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
     "task": "clinical_reasoning",
     "timestamp": "20260329_185556",
     "n_cases": 50,
@@ -64,6 +129,32 @@
     "overall_score": 4.101285714285714
   },
   {
+    "model": "Qwen/Qwen2.5-72B-Instruct",
+    "task": "patient_text",
+    "timestamp": "20260329_212151",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 3.44,
+    "medizinische_korrektheit": 4.08,
+    "vollstaendigkeit": 4.2,
+    "overall_score": 3.9066666666666663
+  },
+  {
+    "model": "nvidia/Llama-3.1-Nemotron-70B-Instruct",
+    "task": "patient_text",
+    "timestamp": "20260329_213210",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 3.0,
+    "medizinische_korrektheit": 4.22,
+    "vollstaendigkeit": 4.46,
+    "overall_score": 3.893333333333333
+  },
+  {
     "model": "openai/gpt-oss-120b",
     "task": "summarization",
     "timestamp": "20260329_175958",
@@ -77,6 +168,19 @@
     "overall_score": 3.86
   },
   {
+    "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+    "task": "patient_text",
+    "timestamp": "20260329_205905",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 2.86,
+    "medizinische_korrektheit": 4.22,
+    "vollstaendigkeit": 4.28,
+    "overall_score": 3.786666666666667
+  },
+  {
     "model": "deepseek-ai/DeepSeek-V3.1",
     "task": "summarization",
     "timestamp": "20260329_181104",
@@ -88,6 +192,19 @@
     "vollstaendigkeit": 3.06,
     "klinische_praezision": 3.0,
     "overall_score": 3.68
+  },
+  {
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "task": "patient_text",
+    "timestamp": "20260329_210529",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 3.2,
+    "medizinische_korrektheit": 4.08,
+    "vollstaendigkeit": 3.62,
+    "overall_score": 3.6333333333333333
   },
   {
     "model": "deepseek-ai/DeepSeek-V3.2",
@@ -193,6 +310,19 @@
     "overall_score": 3.42
   },
   {
+    "model": "google/gemma-3n-E4B-it",
+    "task": "patient_text",
+    "timestamp": "20260329_211849",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 3.02,
+    "medizinische_korrektheit": 3.22,
+    "vollstaendigkeit": 4.02,
+    "overall_score": 3.42
+  },
+  {
     "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
     "task": "summarization",
     "timestamp": "20260329_175924",
@@ -204,6 +334,19 @@
     "vollstaendigkeit": 2.64,
     "klinische_praezision": 2.56,
     "overall_score": 3.3466666666666667
+  },
+  {
+    "model": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "task": "patient_text",
+    "timestamp": "20260329_210129",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 2.36,
+    "medizinische_korrektheit": 3.8,
+    "vollstaendigkeit": 3.86,
+    "overall_score": 3.34
   },
   {
     "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
@@ -303,6 +446,32 @@
     "overall_score": 2.6933333333333334
   },
   {
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "task": "patient_text",
+    "timestamp": "20260329_213023",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 2.4,
+    "medizinische_korrektheit": 2.34,
+    "vollstaendigkeit": 2.98,
+    "overall_score": 2.5733333333333333
+  },
+  {
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "task": "patient_text",
+    "timestamp": "20260329_205741",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "verstaendlichkeit": 2.36,
+    "medizinische_korrektheit": 2.12,
+    "vollstaendigkeit": 3.06,
+    "overall_score": 2.5133333333333336
+  },
+  {
     "model": "google/gemma-3n-E4B-it",
     "task": "clinical_reasoning",
     "timestamp": "20260329_191132",
@@ -395,6 +564,118 @@
     "n_correct": 47
   },
   {
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "task": "med_extraction",
+    "timestamp": "20260329_211908",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.985228144404615,
+    "wirkstoff_precision": 0.9913636363636364,
+    "wirkstoff_recall": 0.9815079365079364,
+    "partial_f1": 0.985228144404615,
+    "exact_f1": 0.9583695585460292
+  },
+  {
+    "model": "Qwen/Qwen2.5-72B-Instruct",
+    "task": "med_extraction",
+    "timestamp": "20260329_214000",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9748296548652585,
+    "wirkstoff_precision": 1.0,
+    "wirkstoff_recall": 0.9538463203463203,
+    "partial_f1": 0.9728296548652585,
+    "exact_f1": 0.9508910583740305
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.1",
+    "task": "med_extraction",
+    "timestamp": "20260329_212248",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9757770232863112,
+    "wirkstoff_precision": 0.9963636363636365,
+    "wirkstoff_recall": 0.9596645021645022,
+    "partial_f1": 0.9732770232863112,
+    "exact_f1": 0.9506776080816328
+  },
+  {
+    "model": "nvidia/Llama-3.1-Nemotron-70B-Instruct",
+    "task": "med_extraction",
+    "timestamp": "20260329_213052",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9775678068061968,
+    "wirkstoff_precision": 0.9708953823953824,
+    "wirkstoff_recall": 0.9874444444444443,
+    "partial_f1": 0.9749011401395302,
+    "exact_f1": 0.9485888062745648
+  },
+  {
+    "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+    "task": "med_extraction",
+    "timestamp": "20260329_211937",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9764705064756215,
+    "wirkstoff_precision": 0.9750835275835276,
+    "wirkstoff_recall": 0.9818650793650794,
+    "partial_f1": 0.9689508986324843,
+    "exact_f1": 0.9474449993030555
+  },
+  {
+    "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "task": "med_extraction",
+    "timestamp": "20260329_212152",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9800262840313991,
+    "wirkstoff_precision": 0.9782828282828282,
+    "wirkstoff_recall": 0.9847222222222223,
+    "partial_f1": 0.9750066761882619,
+    "exact_f1": 0.9457561881142443
+  },
+  {
+    "model": "openai/gpt-oss-120b",
+    "task": "med_extraction",
+    "timestamp": "20260329_212113",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9820134994303793,
+    "wirkstoff_precision": 0.9846969696969697,
+    "wirkstoff_recall": 0.9818650793650794,
+    "partial_f1": 0.9774383360316864,
+    "exact_f1": 0.9434790205531894
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "task": "med_extraction",
+    "timestamp": "20260329_214350",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9824846773752414,
+    "wirkstoff_precision": 0.9817525252525253,
+    "wirkstoff_recall": 0.9857539682539682,
+    "partial_f1": 0.9731375841519871,
+    "exact_f1": 0.9406372190798089
+  },
+  {
     "model": "deepseek-ai/DeepSeek-V3.1",
     "task": "med_qa",
     "timestamp": "20260329_145000",
@@ -415,6 +696,48 @@
     "n_api_errors": 0,
     "accuracy": 0.9387755102040817,
     "n_correct": 46
+  },
+  {
+    "model": "google/gemma-3-27b-it",
+    "task": "med_extraction",
+    "timestamp": "20260329_212642",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9737785221314632,
+    "wirkstoff_precision": 0.9643145743145743,
+    "wirkstoff_recall": 0.9868650793650794,
+    "partial_f1": 0.9615366920661039,
+    "exact_f1": 0.936623739006092
+  },
+  {
+    "model": "google/gemma-3n-E4B-it",
+    "task": "med_extraction",
+    "timestamp": "20260329_213040",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9745013907660965,
+    "wirkstoff_precision": 0.9661327561327562,
+    "wirkstoff_recall": 0.9869444444444444,
+    "partial_f1": 0.9632595607007371,
+    "exact_f1": 0.9321807897984368
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "task": "med_extraction",
+    "timestamp": "20260329_213305",
+    "n_cases": 50,
+    "n_scored": 49,
+    "n_parse_errors": 1,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9661741192521011,
+    "wirkstoff_precision": 0.9662109432517596,
+    "wirkstoff_recall": 0.9711775186264983,
+    "partial_f1": 0.9538525239473125,
+    "exact_f1": 0.9275854190885879
   },
   {
     "model": "Qwen/Qwen2.5-72B-Instruct",
@@ -439,6 +762,20 @@
     "n_correct": 45
   },
   {
+    "model": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "task": "med_extraction",
+    "timestamp": "20260329_212116",
+    "n_cases": 50,
+    "n_scored": 44,
+    "n_parse_errors": 6,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9626965688797239,
+    "wirkstoff_precision": 0.9876606978879706,
+    "wirkstoff_recall": 0.943854945559491,
+    "partial_f1": 0.9498177810009362,
+    "exact_f1": 0.9089771265573404
+  },
+  {
     "model": "nvidia/Llama-3.1-Nemotron-70B-Instruct",
     "task": "med_qa",
     "timestamp": "20260329_184020",
@@ -448,6 +785,20 @@
     "n_api_errors": 18,
     "accuracy": 0.9032258064516129,
     "n_correct": 28
+  },
+  {
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "task": "med_extraction",
+    "timestamp": "20260329_211811",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9411034191127071,
+    "wirkstoff_precision": 0.9901414141414142,
+    "wirkstoff_recall": 0.9020288600288601,
+    "partial_f1": 0.9391986572079452,
+    "exact_f1": 0.8903677904482857
   },
   {
     "model": "google/gemma-3n-E4B-it",

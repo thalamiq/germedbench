@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -187,13 +187,15 @@ function AggregatedChart({
   activeModels: Set<string>;
 }) {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const filtered = aggregated.filter((d) => activeModels.has(d.model));
 
-  if (filtered.length === 0) {
+  if (!mounted || filtered.length === 0) {
     return (
       <Card>
-        <CardContent className="py-12 text-center text-sm text-muted-foreground">
-          Keine Ergebnisse.
+        <CardContent className={filtered.length === 0 && mounted ? "py-12 text-center text-sm text-muted-foreground" : "pt-6"}>
+          {filtered.length === 0 && mounted ? "Keine Ergebnisse." : <div className="h-80" />}
         </CardContent>
       </Card>
     );
@@ -302,6 +304,8 @@ function TaskChart({
   metric: MetricDef;
 }) {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const taskData = data.filter(
     (d) => d.task === task && activeModels.has(d.model)
   );
@@ -331,11 +335,11 @@ function TaskChart({
     };
   });
 
-  if (chartData.length === 0) {
+  if (!mounted || chartData.length === 0) {
     return (
       <Card>
-        <CardContent className="py-12 text-center text-sm text-muted-foreground">
-          Keine Ergebnisse für diesen Task.
+        <CardContent className={chartData.length === 0 && mounted ? "py-12 text-center text-sm text-muted-foreground" : "pt-6"}>
+          {chartData.length === 0 && mounted ? "Keine Ergebnisse für diesen Task." : <div className="h-72" />}
         </CardContent>
       </Card>
     );
