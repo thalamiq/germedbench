@@ -19,8 +19,14 @@ class MedExtractionScore:
 
 
 def _normalize_str(s: str) -> str:
-    """Normalize string for comparison: lowercase, strip, collapse spaces."""
-    return " ".join(s.strip().lower().split())
+    """Normalize string for comparison: lowercase, strip, collapse spaces, normalize units."""
+    import re
+    s = s.strip().lower()
+    # Remove parenthetical notes: "1-0-0 (tapering)" -> "1-0-0"
+    s = re.sub(r"\s*\(.*?\)\s*", " ", s)
+    # Insert space between number and unit: "40mg" -> "40 mg", "4,5g" -> "4,5 g"
+    s = re.sub(r"(\d)\s*([a-zµ])", r"\1 \2", s)
+    return " ".join(s.split())
 
 
 def _strings_match(a: str, b: str) -> bool:

@@ -1,0 +1,2580 @@
+{
+  "summary": {
+    "model": "qwen3-30b-a3b-instruct-2507",
+    "task": "med_extraction",
+    "timestamp": "20260329_143645",
+    "n_cases": 50,
+    "n_scored": 50,
+    "n_parse_errors": 0,
+    "n_api_errors": 0,
+    "wirkstoff_f1": 0.9389421362950775,
+    "wirkstoff_precision": 0.9616666666666667,
+    "wirkstoff_recall": 0.9218571428571428,
+    "partial_f1": 0.9043741487270899,
+    "exact_f1": 0.7308553537965302
+  },
+  "predictions": [
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Amlodipin",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "14 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Amlodipin\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"14 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2123,
+      "response_length": 685,
+      "usage": {
+        "prompt_tokens": 742,
+        "completion_tokens": 271
+      },
+      "case_id": "med_001"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Acetylsalicylsäure",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ticagrelor",
+          "dosis": "90 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "2,5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "2,5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Dapagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "12 E",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Ferric-Carboxymaltose",
+          "dosis": "500 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Acetylsalicylsäure\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ticagrelor\",\n      \"dosis\": \"90 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"2,5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"2,5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Dapagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"12 E\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Ferric-Carboxymaltose\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2170,
+      "response_length": 965,
+      "usage": {
+        "prompt_tokens": 777,
+        "completion_tokens": 381
+      },
+      "case_id": "med_002"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Tiotropium",
+          "dosis": "2,5µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "inhalativ"
+        },
+        {
+          "wirkstoff": "Formoterol",
+          "dosis": "2,5µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "inhalativ"
+        },
+        {
+          "wirkstoff": "Prednisolon",
+          "dosis": "20mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "20mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "16 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Amoxicillin",
+          "dosis": "875mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Clavulansäure",
+          "dosis": "125mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Salbutamol",
+          "dosis": "100µg",
+          "frequenz": "bei Bedarf, max. 4x täglich",
+          "darreichungsform": "inhalativ"
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Tiotropium\",\n      \"dosis\": \"2,5µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"inhalativ\"\n    },\n    {\n      \"wirkstoff\": \"Formoterol\",\n      \"dosis\": \"2,5µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"inhalativ\"\n    },\n    {\n      \"wirkstoff\": \"Prednisolon\",\n      \"dosis\": \"20mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"20mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"16 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Amoxicillin\",\n      \"dosis\": \"875mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Clavulansäure\",\n      \"dosis\": \"125mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Salbutamol\",\n      \"dosis\": \"100µg\",\n      \"frequenz\": \"bei Bedarf, max. 4x täglich\",\n      \"darreichungsform\": \"inhalativ\"\n    }\n  ]\n}",
+      "prompt_length": 2268,
+      "response_length": 1376,
+      "usage": {
+        "prompt_tokens": 839,
+        "completion_tokens": 532
+      },
+      "case_id": "med_003"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "ASS",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "20 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Vollelektrolytlösung",
+          "dosis": "500 ml",
+          "frequenz": "Einmalige Gabe",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"20 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Vollelektrolytlösung\",\n      \"dosis\": \"500 ml\",\n      \"frequenz\": \"Einmalige Gabe\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2005,
+      "response_length": 687,
+      "usage": {
+        "prompt_tokens": 716,
+        "completion_tokens": 265
+      },
+      "case_id": "med_004"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ciprofloxacin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metronidazol",
+          "dosis": "400 mg",
+          "frequenz": "1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "100 E/ml",
+          "frequenz": "0-0-0-12",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Novaminsulfon",
+          "dosis": "500 mg",
+          "frequenz": "bei Bedarf bis zu 1-1-1-1",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ciprofloxacin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metronidazol\",\n      \"dosis\": \"400 mg\",\n      \"frequenz\": \"1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"100 E/ml\",\n      \"frequenz\": \"0-0-0-12\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Novaminsulfon\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"bei Bedarf bis zu 1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2165,
+      "response_length": 845,
+      "usage": {
+        "prompt_tokens": 763,
+        "completion_tokens": 329
+      },
+      "case_id": "med_005"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "100 E/ml 0-0-0-20 I.E.",
+          "frequenz": "0-0-0-20",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pregabalin",
+          "dosis": "75 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Hydromorphon",
+          "dosis": "4 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Hydromorphon",
+          "dosis": "1,3 mg",
+          "frequenz": "max. 4x/Tag",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "60 mg",
+          "frequenz": "0-0-1-0",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Darbepoetin alfa",
+          "dosis": "40 µg",
+          "frequenz": "1x wöchentlich",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"100 E/ml 0-0-0-20 I.E.\",\n      \"frequenz\": \"0-0-0-20\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pregabalin\",\n      \"dosis\": \"75 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Hydromorphon\",\n      \"dosis\": \"4 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Hydromorphon\",\n      \"dosis\": \"1,3 mg\",\n      \"frequenz\": \"max. 4x/Tag\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"60 mg\",\n      \"frequenz\": \"0-0-1-0\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Darbepoetin alfa\",\n      \"dosis\": \"40 µg\",\n      \"frequenz\": \"1x wöchentlich\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2479,
+      "response_length": 1115,
+      "usage": {
+        "prompt_tokens": 893,
+        "completion_tokens": 439
+      },
+      "case_id": "med_006"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Metamizol",
+          "dosis": "500 mg",
+          "frequenz": "1-1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ibuprofen",
+          "dosis": "400 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "20 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Metamizol\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ibuprofen\",\n      \"dosis\": \"400 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"20 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2033,
+      "response_length": 675,
+      "usage": {
+        "prompt_tokens": 700,
+        "completion_tokens": 265
+      },
+      "case_id": "med_007"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Venlafaxin",
+          "dosis": "225 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Quetiapin",
+          "dosis": "100 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Haldol Decanoat",
+          "dosis": "50 mg",
+          "frequenz": "alle 4 Wochen",
+          "darreichungsform": "i.m."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Venlafaxin\",\n      \"dosis\": \"225 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Quetiapin\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Haldol Decanoat\",\n      \"dosis\": \"50 mg\",\n      \"frequenz\": \"alle 4 Wochen\",\n      \"darreichungsform\": \"i.m.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 1996,
+      "response_length": 820,
+      "usage": {
+        "prompt_tokens": 697,
+        "completion_tokens": 318
+      },
+      "case_id": "med_008"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47.5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Empagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Cefuroxim",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Novaminsulfon",
+          "dosis": "500 mg",
+          "frequenz": "1-1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Eisen-Carboxymaltose",
+          "dosis": "500 mg",
+          "frequenz": "einmalig am 12.11.",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47.5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Empagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Cefuroxim\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Novaminsulfon\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Eisen-Carboxymaltose\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"einmalig am 12.11.\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2403,
+      "response_length": 1233,
+      "usage": {
+        "prompt_tokens": 907,
+        "completion_tokens": 481
+      },
+      "case_id": "med_009"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Sterofundin ISO",
+          "dosis": "500 ml",
+          "frequenz": "Einmalig am Entlasstag",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Sterofundin ISO\",\n      \"dosis\": \"500 ml\",\n      \"frequenz\": \"Einmalig am Entlasstag\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2023,
+      "response_length": 701,
+      "usage": {
+        "prompt_tokens": 713,
+        "completion_tokens": 272
+      },
+      "case_id": "med_010"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "2,5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Empagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "18 E",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "bei Bedarf",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"2,5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Empagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"18 E\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"bei Bedarf\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 1940,
+      "response_length": 944,
+      "usage": {
+        "prompt_tokens": 696,
+        "completion_tokens": 363
+      },
+      "case_id": "med_011"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Tiotropium/Olodaterol",
+          "dosis": "2,5/2,5 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Budesonid/Formoterol",
+          "dosis": "160/4,5 µg",
+          "frequenz": "2-0-2",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "18 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Salbutamol",
+          "dosis": "0,1 mg",
+          "frequenz": "bei Bedarf max. 4x täglich",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Tiotropium/Olodaterol\",\n      \"dosis\": \"2,5/2,5 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Budesonid/Formoterol\",\n      \"dosis\": \"160/4,5 µg\",\n      \"frequenz\": \"2-0-2\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"18 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Salbutamol\",\n      \"dosis\": \"0,1 mg\",\n      \"frequenz\": \"bei Bedarf max. 4x täglich\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2269,
+      "response_length": 1131,
+      "usage": {
+        "prompt_tokens": 844,
+        "completion_tokens": 441
+      },
+      "case_id": "med_012"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "ASS",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Atorvastatin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin (Lantus)",
+          "dosis": "14 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Sterofundin ISO",
+          "dosis": "500 ml",
+          "frequenz": "1x",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Atorvastatin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin (Lantus)\",\n      \"dosis\": \"14 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Sterofundin ISO\",\n      \"dosis\": \"500 ml\",\n      \"frequenz\": \"1x\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2168,
+      "response_length": 687,
+      "usage": {
+        "prompt_tokens": 772,
+        "completion_tokens": 264
+      },
+      "case_id": "med_013"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Cefuroxim",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metronidazol",
+          "dosis": "400 mg",
+          "frequenz": "1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "16 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Novaminsulfon",
+          "dosis": "",
+          "frequenz": "1-1-1-1",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Cefuroxim\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metronidazol\",\n      \"dosis\": \"400 mg\",\n      \"frequenz\": \"1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"16 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Novaminsulfon\",\n      \"dosis\": \"\",\n      \"frequenz\": \"1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2079,
+      "response_length": 813,
+      "usage": {
+        "prompt_tokens": 774,
+        "completion_tokens": 315
+      },
+      "case_id": "med_014"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Oxycodon/Naloxon",
+          "dosis": "10/5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Tinzaparin",
+          "dosis": "14.000 IE",
+          "frequenz": "1-0-0",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Oxaliplatin",
+          "dosis": "150 mg",
+          "frequenz": "einmalig stationär erfolgt",
+          "darreichungsform": "i.v."
+        },
+        {
+          "wirkstoff": "5-Fluoruracil",
+          "dosis": "4000 mg",
+          "frequenz": "stationär abgeschlossen",
+          "darreichungsform": "i.v. via Elastomerpumpe über 46h"
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Oxycodon/Naloxon\",\n      \"dosis\": \"10/5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Tinzaparin\",\n      \"dosis\": \"14.000 IE\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Oxaliplatin\",\n      \"dosis\": \"150 mg\",\n      \"frequenz\": \"einmalig stationär erfolgt\",\n      \"darreichungsform\": \"i.v.\"\n    },\n    {\n      \"wirkstoff\": \"5-Fluoruracil\",\n      \"dosis\": \"4000 mg\",\n      \"frequenz\": \"stationär abgeschlossen\",\n      \"darreichungsform\": \"i.v. via Elastomerpumpe über 46h\"\n    }\n  ]\n}",
+      "prompt_length": 2104,
+      "response_length": 1160,
+      "usage": {
+        "prompt_tokens": 770,
+        "completion_tokens": 450
+      },
+      "case_id": "med_015"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ibuprofen",
+          "dosis": "400 mg",
+          "frequenz": "1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg (0,4 ml)",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ibuprofen\",\n      \"dosis\": \"400 mg\",\n      \"frequenz\": \"1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg (0,4 ml)\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 1923,
+      "response_length": 552,
+      "usage": {
+        "prompt_tokens": 685,
+        "completion_tokens": 217
+      },
+      "case_id": "med_016"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Sertralin",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Quetiapin",
+          "dosis": "50 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Lorazepam",
+          "dosis": "1 mg",
+          "frequenz": "max. 1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Risperidon",
+          "dosis": "25 mg",
+          "frequenz": "Intervall 14 Tage",
+          "darreichungsform": "i.m."
+        },
+        {
+          "wirkstoff": "Ferinject",
+          "dosis": "500 mg",
+          "frequenz": "einmalig",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Sertralin\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Quetiapin\",\n      \"dosis\": \"50 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Lorazepam\",\n      \"dosis\": \"1 mg\",\n      \"frequenz\": \"max. 1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Risperidon\",\n      \"dosis\": \"25 mg\",\n      \"frequenz\": \"Intervall 14 Tage\",\n      \"darreichungsform\": \"i.m.\"\n    },\n    {\n      \"wirkstoff\": \"Ferinject\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"einmalig\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2243,
+      "response_length": 838,
+      "usage": {
+        "prompt_tokens": 778,
+        "completion_tokens": 324
+      },
+      "case_id": "med_017"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metamizol",
+          "dosis": "500mg",
+          "frequenz": "1-1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "22 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Colecalciferol",
+          "dosis": "1000 IE",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metamizol\",\n      \"dosis\": \"500mg\",\n      \"frequenz\": \"1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"22 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Colecalciferol\",\n      \"dosis\": \"1000 IE\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2134,
+      "response_length": 1081,
+      "usage": {
+        "prompt_tokens": 755,
+        "completion_tokens": 423
+      },
+      "case_id": "med_018"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "16 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"16 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 1998,
+      "response_length": 564,
+      "usage": {
+        "prompt_tokens": 705,
+        "completion_tokens": 223
+      },
+      "case_id": "med_019"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Sacubitril/Valsartan",
+          "dosis": "49/51 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Dapagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Spironolacton",
+          "dosis": "25 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "14 I.E.",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Sacubitril/Valsartan\",\n      \"dosis\": \"49/51 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Dapagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Spironolacton\",\n      \"dosis\": \"25 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"14 I.E.\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2223,
+      "response_length": 960,
+      "usage": {
+        "prompt_tokens": 827,
+        "completion_tokens": 375
+      },
+      "case_id": "med_020"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Tiotropium/Olodaterol",
+          "dosis": "2,5/2,5 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "Inhalation"
+        },
+        {
+          "wirkstoff": "Prednisolon",
+          "dosis": "20 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Dapagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "18 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Tiotropium/Olodaterol\",\n      \"dosis\": \"2,5/2,5 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"Inhalation\"\n    },\n    {\n      \"wirkstoff\": \"Prednisolon\",\n      \"dosis\": \"20 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Dapagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"18 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2156,
+      "response_length": 1105,
+      "usage": {
+        "prompt_tokens": 762,
+        "completion_tokens": 431
+      },
+      "case_id": "med_021"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "ASS",
+          "dosis": "100 mg",
+          "frequenz": "0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "20 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Urapidil",
+          "dosis": "50 mg",
+          "frequenz": "einmalig",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"20 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Urapidil\",\n      \"dosis\": \"50 mg\",\n      \"frequenz\": \"einmalig\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2269,
+      "response_length": 668,
+      "usage": {
+        "prompt_tokens": 774,
+        "completion_tokens": 256
+      },
+      "case_id": "med_022"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ciprofloxacin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metronidazol",
+          "dosis": "400 mg",
+          "frequenz": "1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47.5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Sitagliptin",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ciprofloxacin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metronidazol\",\n      \"dosis\": \"400 mg\",\n      \"frequenz\": \"1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47.5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Sitagliptin\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2063,
+      "response_length": 825,
+      "usage": {
+        "prompt_tokens": 772,
+        "completion_tokens": 323
+      },
+      "case_id": "med_023"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Pembrolizumab",
+          "dosis": "200 mg",
+          "frequenz": "nächster Zyklus am 16.06.",
+          "darreichungsform": "i.v."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pregabalin",
+          "dosis": "75 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Sertralin",
+          "dosis": "50 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Darbepoetin alfa",
+          "dosis": "40 µg",
+          "frequenz": "einmal wöchentlich (immer montags)",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Pembrolizumab\",\n      \"dosis\": \"200 mg\",\n      \"frequenz\": \"nächster Zyklus am 16.06.\",\n      \"darreichungsform\": \"i.v.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pregabalin\",\n      \"dosis\": \"75 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Sertralin\",\n      \"dosis\": \"50 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Darbepoetin alfa\",\n      \"dosis\": \"40 µg\",\n      \"frequenz\": \"einmal wöchentlich (immer montags)\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2073,
+      "response_length": 991,
+      "usage": {
+        "prompt_tokens": 718,
+        "completion_tokens": 381
+      },
+      "case_id": "med_024"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ibuprofen",
+          "dosis": "600 mg",
+          "frequenz": "1-1-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Novaminsulfon",
+          "dosis": "30 Tropfen",
+          "frequenz": "bis zu 4x täglich",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ibuprofen\",\n      \"dosis\": \"600 mg\",\n      \"frequenz\": \"1-1-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Novaminsulfon\",\n      \"dosis\": \"30 Tropfen\",\n      \"frequenz\": \"bis zu 4x täglich\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2210,
+      "response_length": 701,
+      "usage": {
+        "prompt_tokens": 769,
+        "completion_tokens": 273
+      },
+      "case_id": "med_025"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Sertralin",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Aripiprazol",
+          "dosis": "400 mg",
+          "frequenz": "alle 4 Wochen",
+          "darreichungsform": "i.m. Injektion"
+        },
+        {
+          "wirkstoff": "Ferric Carboxymaltose",
+          "dosis": "500 mg",
+          "frequenz": "einmalig",
+          "darreichungsform": "i.v. Infusion"
+        },
+        {
+          "wirkstoff": "Lorazepam",
+          "dosis": "1 mg",
+          "frequenz": "bei Bedarf (max. 1-0-1)",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Sertralin\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Aripiprazol\",\n      \"dosis\": \"400 mg\",\n      \"frequenz\": \"alle 4 Wochen\",\n      \"darreichungsform\": \"i.m. Injektion\"\n    },\n    {\n      \"wirkstoff\": \"Ferric Carboxymaltose\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"einmalig\",\n      \"darreichungsform\": \"i.v. Infusion\"\n    },\n    {\n      \"wirkstoff\": \"Lorazepam\",\n      \"dosis\": \"1 mg\",\n      \"frequenz\": \"bei Bedarf (max. 1-0-1)\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2037,
+      "response_length": 869,
+      "usage": {
+        "prompt_tokens": 694,
+        "completion_tokens": 335
+      },
+      "case_id": "med_026"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "24 IE",
+          "frequenz": "0-0-0-24",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Insulin Aspart",
+          "dosis": "6-8-8 IE",
+          "frequenz": "6-8-8",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "60 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Sertralin",
+          "dosis": "50 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Eisen-Carboxymaltose",
+          "dosis": "500 mg",
+          "frequenz": "einmalig",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"24 IE\",\n      \"frequenz\": \"0-0-0-24\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Aspart\",\n      \"dosis\": \"6-8-8 IE\",\n      \"frequenz\": \"6-8-8\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"60 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Sertralin\",\n      \"dosis\": \"50 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Eisen-Carboxymaltose\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"einmalig\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2075,
+      "response_length": 1101,
+      "usage": {
+        "prompt_tokens": 769,
+        "completion_tokens": 424
+      },
+      "case_id": "med_027"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Tiotropiumbromid",
+          "dosis": "18 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "inhalativ"
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "14 E",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Eisen-III-Carboxymaltose",
+          "dosis": "500 mg",
+          "frequenz": "einmalig",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Tiotropiumbromid\",\n      \"dosis\": \"18 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"inhalativ\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"14 E\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Eisen-III-Carboxymaltose\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"einmalig\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2178,
+      "response_length": 708,
+      "usage": {
+        "prompt_tokens": 744,
+        "completion_tokens": 273
+      },
+      "case_id": "med_028"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Entresto",
+          "dosis": "24/26 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Empagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "14 E",
+          "frequenz": "0-0-0-14 E",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Entresto\",\n      \"dosis\": \"24/26 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Empagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"14 E\",\n      \"frequenz\": \"0-0-0-14 E\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 1967,
+      "response_length": 813,
+      "usage": {
+        "prompt_tokens": 708,
+        "completion_tokens": 318
+      },
+      "case_id": "med_029"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Tiotropium",
+          "dosis": "18 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "Inhalation"
+        },
+        {
+          "wirkstoff": "Salmeterol/Fluticason",
+          "dosis": "50/500 µg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "Inhalation"
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "100 E/ml",
+          "frequenz": "0-0-0-14 IE",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Tiotropium\",\n      \"dosis\": \"18 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"Inhalation\"\n    },\n    {\n      \"wirkstoff\": \"Salmeterol/Fluticason\",\n      \"dosis\": \"50/500 µg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"Inhalation\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"100 E/ml\",\n      \"frequenz\": \"0-0-0-14 IE\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2187,
+      "response_length": 1110,
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 433
+      },
+      "case_id": "med_030"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "ASS",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Atorvastatin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "20 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Vitamin B12",
+          "dosis": "1000 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "i.m."
+        },
+        {
+          "wirkstoff": "NaCl",
+          "dosis": "0,9 %",
+          "frequenz": "1-0-0",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Atorvastatin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"20 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Vitamin B12\",\n      \"dosis\": \"1000 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"i.m.\"\n    },\n    {\n      \"wirkstoff\": \"NaCl\",\n      \"dosis\": \"0,9 %\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 1943,
+      "response_length": 796,
+      "usage": {
+        "prompt_tokens": 674,
+        "completion_tokens": 313
+      },
+      "case_id": "med_031"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "14 IE",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Vitamin-B-Komplex",
+          "dosis": "1 Dragee",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Hydroxocobalamin",
+          "dosis": "1000 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "i.m."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"14 IE\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Vitamin-B-Komplex\",\n      \"dosis\": \"1 Dragee\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Hydroxocobalamin\",\n      \"dosis\": \"1000 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"i.m.\"\n    }\n  ]\n}",
+      "prompt_length": 2157,
+      "response_length": 827,
+      "usage": {
+        "prompt_tokens": 775,
+        "completion_tokens": 321
+      },
+      "case_id": "med_032"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Oxycodon",
+          "dosis": "10 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Naloxon",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin-Natrium",
+          "dosis": "60 mg (6000 IE)",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pembrolizumab",
+          "dosis": "200 mg",
+          "frequenz": "i.v.",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Oxycodon\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Naloxon\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin-Natrium\",\n      \"dosis\": \"60 mg (6000 IE)\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pembrolizumab\",\n      \"dosis\": \"200 mg\",\n      \"frequenz\": \"i.v.\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2076,
+      "response_length": 1077,
+      "usage": {
+        "prompt_tokens": 761,
+        "completion_tokens": 419
+      },
+      "case_id": "med_033"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ibuprofen",
+          "dosis": "600 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metamizol-Natrium",
+          "dosis": "500 mg/ml Tropfen",
+          "frequenz": "4 x 20 Tropfen",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ibuprofen\",\n      \"dosis\": \"600 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metamizol-Natrium\",\n      \"dosis\": \"500 mg/ml Tropfen\",\n      \"frequenz\": \"4 x 20 Tropfen\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2246,
+      "response_length": 701,
+      "usage": {
+        "prompt_tokens": 762,
+        "completion_tokens": 273
+      },
+      "case_id": "med_034"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Venlafaxin",
+          "dosis": "150 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Quetiapin",
+          "dosis": "200 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Vitamin B12",
+          "dosis": "1000 µg",
+          "frequenz": "alle 4 Wochen",
+          "darreichungsform": "i.m.-Injektion"
+        },
+        {
+          "wirkstoff": "Lorazepam",
+          "dosis": "1 mg",
+          "frequenz": "Schmelztablette sublingual bei Bedarf, max. 1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Vollelektrolytlösung",
+          "dosis": "500 ml",
+          "frequenz": "einmalig bei Aufnahme erfolgt",
+          "darreichungsform": "i.v.-Infusion"
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Venlafaxin\",\n      \"dosis\": \"150 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Quetiapin\",\n      \"dosis\": \"200 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Vitamin B12\",\n      \"dosis\": \"1000 µg\",\n      \"frequenz\": \"alle 4 Wochen\",\n      \"darreichungsform\": \"i.m.-Injektion\"\n    },\n    {\n      \"wirkstoff\": \"Lorazepam\",\n      \"dosis\": \"1 mg\",\n      \"frequenz\": \"Schmelztablette sublingual bei Bedarf, max. 1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Vollelektrolytlösung\",\n      \"dosis\": \"500 ml\",\n      \"frequenz\": \"einmalig bei Aufnahme erfolgt\",\n      \"darreichungsform\": \"i.v.-Infusion\"\n    }\n  ]\n}",
+      "prompt_length": 2382,
+      "response_length": 1050,
+      "usage": {
+        "prompt_tokens": 839,
+        "completion_tokens": 407
+      },
+      "case_id": "med_035"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47.5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Cefuroxim",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg (4.000 IE)",
+          "frequenz": "0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Novaminsulfon",
+          "dosis": "500 mg",
+          "frequenz": "1-1-1-1",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47.5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Cefuroxim\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg (4.000 IE)\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Novaminsulfon\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2098,
+      "response_length": 960,
+      "usage": {
+        "prompt_tokens": 773,
+        "completion_tokens": 378
+      },
+      "case_id": "med_036"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "2.5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Torasemid",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "20 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Dalteparin",
+          "dosis": "5.000 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Kaliumchlorid",
+          "dosis": "40 mmol",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"2.5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Torasemid\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"20 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Dalteparin\",\n      \"dosis\": \"5.000 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Kaliumchlorid\",\n      \"dosis\": \"40 mmol\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2113,
+      "response_length": 823,
+      "usage": {
+        "prompt_tokens": 739,
+        "completion_tokens": 329
+      },
+      "case_id": "med_037"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Sacubitril/Valsartan",
+          "dosis": "24/26 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Empagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargine",
+          "dosis": "14 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Sacubitril/Valsartan\",\n      \"dosis\": \"24/26 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Empagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargine\",\n      \"dosis\": \"14 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 1992,
+      "response_length": 829,
+      "usage": {
+        "prompt_tokens": 732,
+        "completion_tokens": 326
+      },
+      "case_id": "med_038"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Tiotropium/Olodaterol",
+          "dosis": "2,5/2,5 µg",
+          "frequenz": "0-0-2",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Budesonid/Formoterol",
+          "dosis": "160/4,5 µg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "18 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Prednisolon",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Eisen-Carboxymaltose",
+          "dosis": "500 mg",
+          "frequenz": "1",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Tiotropium/Olodaterol\",\n      \"dosis\": \"2,5/2,5 µg\",\n      \"frequenz\": \"0-0-2\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Budesonid/Formoterol\",\n      \"dosis\": \"160/4,5 µg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"18 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Prednisolon\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Eisen-Carboxymaltose\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2021,
+      "response_length": 1365,
+      "usage": {
+        "prompt_tokens": 759,
+        "completion_tokens": 530
+      },
+      "case_id": "med_039"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "ASS",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Atorvastatin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Vitamin B12",
+          "dosis": "1000 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Atorvastatin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Vitamin B12\",\n      \"dosis\": \"1000 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2077,
+      "response_length": 673,
+      "usage": {
+        "prompt_tokens": 730,
+        "completion_tokens": 265
+      },
+      "case_id": "med_040"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Mesalazin",
+          "dosis": "1000 mg",
+          "frequenz": "1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Prednisolon",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Hydroxocobalamin",
+          "dosis": "1000 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "i.m."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Mesalazin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Prednisolon\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Hydroxocobalamin\",\n      \"dosis\": \"1000 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"i.m.\"\n    }\n  ]\n}",
+      "prompt_length": 2220,
+      "response_length": 814,
+      "usage": {
+        "prompt_tokens": 747,
+        "completion_tokens": 319
+      },
+      "case_id": "med_041"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "500 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Morphinhydrat ret.",
+          "dosis": "30 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Dexamethason",
+          "dosis": "4 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Dalteparin",
+          "dosis": "5.000 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pemetrexed",
+          "dosis": "500 mg/m²",
+          "frequenz": "zyklisch",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Morphinhydrat ret.\",\n      \"dosis\": \"30 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Dexamethason\",\n      \"dosis\": \"4 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Dalteparin\",\n      \"dosis\": \"5.000 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pemetrexed\",\n      \"dosis\": \"500 mg/m²\",\n      \"frequenz\": \"zyklisch\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2223,
+      "response_length": 1104,
+      "usage": {
+        "prompt_tokens": 819,
+        "completion_tokens": 434
+      },
+      "case_id": "med_042"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metamizol-Natrium",
+          "dosis": "25-25-25-25 Tropfen",
+          "frequenz": "25-25-25-25",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ibuprofen",
+          "dosis": "600 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin-Natrium",
+          "dosis": "40 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metamizol-Natrium\",\n      \"dosis\": \"25-25-25-25 Tropfen\",\n      \"frequenz\": \"25-25-25-25\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ibuprofen\",\n      \"dosis\": \"600 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin-Natrium\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 2097,
+      "response_length": 716,
+      "usage": {
+        "prompt_tokens": 738,
+        "completion_tokens": 293
+      },
+      "case_id": "med_043"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Venlafaxin",
+          "dosis": "150 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Quetiapin",
+          "dosis": "50 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Risperidon",
+          "dosis": "37.5 mg",
+          "frequenz": "nächste Applikation am 22.11. fällig",
+          "darreichungsform": "i.m."
+        },
+        {
+          "wirkstoff": "Ibuprofen",
+          "dosis": "400 mg",
+          "frequenz": "Bedarfsmedikation",
+          "darreichungsform": "p.o."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Venlafaxin\",\n      \"dosis\": \"150 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Quetiapin\",\n      \"dosis\": \"50 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Risperidon\",\n      \"dosis\": \"37.5 mg\",\n      \"frequenz\": \"nächste Applikation am 22.11. fällig\",\n      \"darreichungsform\": \"i.m.\"\n    },\n    {\n      \"wirkstoff\": \"Ibuprofen\",\n      \"dosis\": \"400 mg\",\n      \"frequenz\": \"Bedarfsmedikation\",\n      \"darreichungsform\": \"p.o.\"\n    }\n  ]\n}",
+      "prompt_length": 2214,
+      "response_length": 850,
+      "usage": {
+        "prompt_tokens": 753,
+        "completion_tokens": 330
+      },
+      "case_id": "med_044"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprololsuccinat",
+          "dosis": "47.5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "L-Thyroxin",
+          "dosis": "75 µg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "16 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Novaminsulfon",
+          "dosis": "500 mg",
+          "frequenz": "1-1-1-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Enoxaparin",
+          "dosis": "40 mg",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprololsuccinat\",\n      \"dosis\": \"47.5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"L-Thyroxin\",\n      \"dosis\": \"75 µg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"16 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Novaminsulfon\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1-1-1-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Enoxaparin\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    }\n  ]\n}",
+      "prompt_length": 1987,
+      "response_length": 962,
+      "usage": {
+        "prompt_tokens": 746,
+        "completion_tokens": 380
+      },
+      "case_id": "med_045"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Torasemid",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "12 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Eisen-Carboxymaltose",
+          "dosis": "500 mg",
+          "frequenz": "1",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Torasemid\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"12 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Eisen-Carboxymaltose\",\n      \"dosis\": \"500 mg\",\n      \"frequenz\": \"1\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2198,
+      "response_length": 823,
+      "usage": {
+        "prompt_tokens": 774,
+        "completion_tokens": 322
+      },
+      "case_id": "med_046"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Bisoprolol",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Empagliflozin",
+          "dosis": "10 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "16 E",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Eisen-III-Carboxymaltose",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Bisoprolol\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Empagliflozin\",\n      \"dosis\": \"10 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"16 E\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Eisen-III-Carboxymaltose\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 2044,
+      "response_length": 1097,
+      "usage": {
+        "prompt_tokens": 759,
+        "completion_tokens": 435
+      },
+      "case_id": "med_047"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Ceftriaxon",
+          "dosis": "2g",
+          "frequenz": "1-0-0",
+          "darreichungsform": "i.v."
+        },
+        {
+          "wirkstoff": "Prednisolon",
+          "dosis": "40mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metoprolol",
+          "dosis": "47,5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Furosemid",
+          "dosis": "40 mg",
+          "frequenz": "1-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Apixaban",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "22 IE",
+          "frequenz": "0-0-0-22",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Tiotropium",
+          "dosis": "18 µg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "Inhalat"
+        },
+        {
+          "wirkstoff": "Budesonid",
+          "dosis": "320 µg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "Inhalat"
+        },
+        {
+          "wirkstoff": "Formoterol",
+          "dosis": "9 µg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "Inhalat"
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Ceftriaxon\",\n      \"dosis\": \"2g\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"i.v.\"\n    },\n    {\n      \"wirkstoff\": \"Prednisolon\",\n      \"dosis\": \"40mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metoprolol\",\n      \"dosis\": \"47,5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Furosemid\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Apixaban\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"22 IE\",\n      \"frequenz\": \"0-0-0-22\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Tiotropium\",\n      \"dosis\": \"18 µg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"Inhalat\"\n    },\n    {\n      \"wirkstoff\": \"Budesonid\",\n      \"dosis\": \"320 µg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"Inhalat\"\n    },\n    {\n      \"wirkstoff\": \"Formoterol\",\n      \"dosis\": \"9 µg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"Inhalat\"\n    }\n  ]\n}",
+      "prompt_length": 1985,
+      "response_length": 1337,
+      "usage": {
+        "prompt_tokens": 722,
+        "completion_tokens": 520
+      },
+      "case_id": "med_048"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "ASS",
+          "dosis": "100 mg",
+          "frequenz": "1-0-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Insulin Glargin",
+          "dosis": "14 IE",
+          "frequenz": "0-0-0-1",
+          "darreichungsform": "s.c."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "Einmalige Kurzinfusion",
+          "darreichungsform": "i.v."
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"ASS\",\n      \"dosis\": \"100 mg\",\n      \"frequenz\": \"1-0-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Insulin Glargin\",\n      \"dosis\": \"14 IE\",\n      \"frequenz\": \"0-0-0-1\",\n      \"darreichungsform\": \"s.c.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"Einmalige Kurzinfusion\",\n      \"darreichungsform\": \"i.v.\"\n    }\n  ]\n}",
+      "prompt_length": 1908,
+      "response_length": 698,
+      "usage": {
+        "prompt_tokens": 666,
+        "completion_tokens": 270
+      },
+      "case_id": "med_049"
+    },
+    {
+      "medications": [
+        {
+          "wirkstoff": "Mesalazin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Prednisolon",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Pantoprazol",
+          "dosis": "40 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Ramipril",
+          "dosis": "5 mg",
+          "frequenz": "1-0-0",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Metformin",
+          "dosis": "1000 mg",
+          "frequenz": "1-0-1",
+          "darreichungsform": "p.o."
+        },
+        {
+          "wirkstoff": "Vitamin B12",
+          "dosis": "1000 µg",
+          "frequenz": "alle 4 Wochen beim Hausarzt",
+          "darreichungsform": "i.m."
+        },
+        {
+          "wirkstoff": "Infliximab",
+          "dosis": "5 mg/kg KG",
+          "frequenz": "nächste Applikation am 26.05.2024",
+          "darreichungsform": "i.v. Infusion"
+        }
+      ],
+      "raw": "{\n  \"medications\": [\n    {\n      \"wirkstoff\": \"Mesalazin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Prednisolon\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Pantoprazol\",\n      \"dosis\": \"40 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Ramipril\",\n      \"dosis\": \"5 mg\",\n      \"frequenz\": \"1-0-0\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Metformin\",\n      \"dosis\": \"1000 mg\",\n      \"frequenz\": \"1-0-1\",\n      \"darreichungsform\": \"p.o.\"\n    },\n    {\n      \"wirkstoff\": \"Vitamin B12\",\n      \"dosis\": \"1000 µg\",\n      \"frequenz\": \"alle 4 Wochen beim Hausarzt\",\n      \"darreichungsform\": \"i.m.\"\n    },\n    {\n      \"wirkstoff\": \"Infliximab\",\n      \"dosis\": \"5 mg/kg KG\",\n      \"frequenz\": \"nächste Applikation am 26.05.2024\",\n      \"darreichungsform\": \"i.v. Infusion\"\n    }\n  ]\n}",
+      "prompt_length": 2201,
+      "response_length": 1003,
+      "usage": {
+        "prompt_tokens": 786,
+        "completion_tokens": 387
+      },
+      "case_id": "med_050"
+    }
+  ]
+}
