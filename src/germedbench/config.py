@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     generation_model: str = "gemini-3-flash-preview"
     generation_temperature: float = 0.9
-    judge_model: str = "gemini-3.1-pro-preview"
+    judge_model: str = "gemini-3-flash-preview"
 
     # Provider: Together AI
     together_api_key: str = ""
@@ -35,12 +35,12 @@ class Settings(BaseSettings):
     chat_ai_base_url: str = "https://chat-ai.academiccloud.de/v1"
 
     # Per-task case generation
-    icd10_num_cases: int = 10
-    summarization_num_cases: int = 10
-    clinical_reasoning_num_cases: int = 10
-    med_extraction_num_cases: int = 10
-    med_qa_num_cases: int = 10
-    patient_text_num_cases: int = 10
+    icd10_num_cases: int = 50
+    summarization_num_cases: int = 50
+    clinical_reasoning_num_cases: int = 50
+    med_extraction_num_cases: int = 50
+    med_qa_num_cases: int = 50
+    patient_text_num_cases: int = 50
 
     # Evaluation models
     eval_models: list[EvalModel] = [
@@ -112,6 +112,9 @@ FACHBEREICHE = [
     "Neurologie",
     "Gastroenterologie",
     "Onkologie",
+    "Orthopädie/Unfallchirurgie",
+    "Psychiatrie/Psychosomatik",
+    "Gynäkologie/Geburtshilfe",
 ]
 
 KOMPLEXITAET = [

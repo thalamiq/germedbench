@@ -84,9 +84,10 @@ export default function MethodikPage() {
             </li>
           </ul>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Alle Texte variieren über sechs Fachbereiche (Innere Medizin,
+            Alle Texte variieren über neun Fachbereiche (Innere Medizin,
             Kardiologie, Pneumologie, Neurologie, Gastroenterologie,
-            Onkologie) und drei Komplexitätsgrade. Die synthetische
+            Onkologie, Orthopädie/Unfallchirurgie, Psychiatrie/Psychosomatik,
+            Gynäkologie/Geburtshilfe) und drei Komplexitätsgrade. Die synthetische
             Generierung vermeidet Datenschutzprobleme und ermöglicht eine
             kontrollierte Variation. Langfristig ist die Integration
             öffentlicher Korpora (GraSCCo, GGPONC 2.0) sowie
@@ -335,7 +336,7 @@ export default function MethodikPage() {
                   <span className="font-medium text-foreground">
                     Evaluation:
                   </span>{" "}
-                  LLM-as-Judge (<code className="text-xs">gemini-3.1-pro-preview</code>) bewertet
+                  LLM-as-Judge (<code className="text-xs">gemini-3-flash-preview</code>) bewertet
                   jede Erklärung anhand einer strengen Rubrik mit drei
                   Dimensionen (je 1–5):
                 </p>
@@ -386,7 +387,7 @@ export default function MethodikPage() {
                   <span className="font-medium text-foreground">
                     Evaluation:
                   </span>{" "}
-                  LLM-as-Judge (<code className="text-xs">gemini-3.1-pro-preview</code>) bewertet
+                  LLM-as-Judge (<code className="text-xs">gemini-3-flash-preview</code>) bewertet
                   jede Zusammenfassung anhand einer strengen klinischen Rubrik mit drei
                   Dimensionen (je 1–5, alle Ankerpunkte definiert):
                 </p>

@@ -9,7 +9,7 @@ Offenes Benchmark-Framework zur Evaluation von LLMs auf deutschen klinischen Tex
 - **Paketmanager:** uv (Python), pnpm (Web)
 - **Daten-Generierung:** Gemini 3 Flash (via `google-genai`)
 - **Modell-Inferenz:** Together AI (via `openai` SDK)
-- **Evaluation-Judge:** Gemini 3.1 Pro (via `google-genai`, für generative Tasks)
+- **Evaluation-Judge:** Gemini 3 Flash (via `google-genai`, für generative Tasks)
 - **Lizenz:** Apache 2.0
 
 ## Architektur
