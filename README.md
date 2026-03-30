@@ -120,4 +120,4 @@ Apache 2.0
 
 ---
 
-Ein Projekt von [ThalamiQ GmbH](https://thalamiq.io).
+Ein Projekt von [ThalamiQ](https://thalamiq.io).
